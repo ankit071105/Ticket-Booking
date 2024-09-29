@@ -1,8 +1,8 @@
-Contribution Guidelines
+# Contribution Guidelines
 GSSoC Rules and Regulations
 As a participant in the GirlScript Summer of Code (GSSoC), please adhere to the following guidelines:
 
-Communication:
+# Communication:
 
 Ensure clear and respectful communication within the community.
 Ask questions and seek help when needed.
@@ -35,7 +35,7 @@ License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 
-1. Clone the repository:
+# 1. Clone the repository:
    ```bash
    git clone https://github.com/ankit071105/Ticket-Booking.git
 
