@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sell Train Ticket</title>
+  <link rel="shortcut icon" href="images/4.jpeg" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Ticket Marketplace</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="bus_sell.html">Sell Bus Ticket</a></li>
+      <li><a href="train_sell.html">Sell Train Ticket</a></li>
+      <li><a href="buy.html">Buy Ticket</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sell Train Ticket Form -->
+  <section class="sell-ticket">
+    <h1>Sell Train Ticket</h1>
+    <form id="trainTicketForm">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+
+      <label for="ticketNumber">Ticket Number:</label>
+      <input type="text" id="ticketNumber" required>
+
+      <label for="trainNumber">Train Number:</label>
+      <input type="text" id="trainNumber" required>
+
+      <label for="departureLocation">Departure Location:</label>
+      <input type="text" id="departureLocation" required>
+
+      <label for="arrivalLocation">Arrival Location:</label>
+      <input type="text" id="arrivalLocation" required>
+
+      <label for="departureTime">Departure Time:</label>
+      <input type="time" id="departureTime" required>
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" required>
+
+      <label for="coachType">Coach Type:</label>
+      <select id="coachType" required>
+        <option value="Sleeper">Sleeper</option>
+        <option value="Non-AC">Non-AC</option>
+        <option value="AC">AC</option>
+      </select>
+
+      <label for="acClass">AC Class (If applicable):</label>
+      <select id="acClass">
+        <option value="">--Select AC Class--</option>
+        <option value="First">First</option>
+        <option value="Second">Second</option>
+        <option value="Third">Third</option>
+        <option value="Economy">Economy</option>
+      </select>
+
+      <label for="seatNumber">Seat Number:</label>
+      <input type="text" id="seatNumber" required>
+
+      <label for="price">Original Price:</label>
+      <input type="number" id="price" required>
+
+      <button type="submit" class="btn">Submit Ticket</button>
+    </form>
+
+    <p id="sellerMessage"></p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Ticket Marketplace | All rights reserved.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
