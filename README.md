@@ -23,4 +23,9 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-https://github.com/ankit071105/Ticket-Booking
+   git clone https://github.com/ankit071105/Ticket-Booking.git
+
+
+
+
+
