@@ -1,25 +1,39 @@
-# Ticket Booking
+Contribution Guidelines
+GSSoC Rules and Regulations
+As a participant in the GirlScript Summer of Code (GSSoC), please adhere to the following guidelines:
 
-## Project Description
-Ticket Booking is a web platform that enables users to buy and sell bus and train tickets easily. The website acts as a mediator between sellers and buyers, ensuring a smooth transaction process while charging a nominal fee for each ticket sold. Users can list their tickets with required details, and buyers can browse available listings, complete their purchases, and receive tickets via WhatsApp.
+Communication:
 
-## Features
-- **User-Friendly Interface**: Simple navigation for buying and selling tickets.
-- **Ticket Listing**: Sellers can easily list their bus and train tickets with details such as ticket number, seat number, and coach type.
-- **Payment Integration**: Secure payment processing using popular gateways (e.g., Stripe, Razorpay).
-- **WhatsApp Integration**: Tickets are sent directly to buyers via WhatsApp.
-- **User Dashboard**: Allows users to view active listings and transaction history.
-- **Responsive Design**: Works seamlessly on both desktop and mobile devices.
+Ensure clear and respectful communication within the community.
+Ask questions and seek help when needed.
+Issue Tracking:
 
-## Tech Stack
-- **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB
-- **Payment Gateway**: Stripe or Razorpay
-- **Hosting**: Heroku or Vercel
+Before creating a pull request, ensure that you have been assigned an issue to work on.
+If you encounter bugs, raise an issue in the repository instead of directly creating a pull request.
+Pull Requests:
 
-## Installation
-To run this project locally, follow these steps:
+Pull requests should only be created for issues that have been assigned to you.
+Ensure that your code adheres to the project’s coding standards and includes necessary documentation.
+Commit Messages:
+
+Write clear and descriptive commit messages.
+Follow conventional commit messages format where possible (e.g., fix: corrected the typo in README.md).
+Review Process:
+
+Be open to feedback on your pull requests and make necessary revisions.
+Review other contributors' pull requests constructively and respectfully.
+Respect Deadlines:
+
+Be mindful of the project timeline and adhere to deadlines for issues you take on.
+Usage
+Selling Tickets: Click on the "Sell Ticket" button, fill in the required details, and submit your listing.
+Buying Tickets: Click on the "Buy Ticket" button to view available listings, select a ticket, and complete your purchase.
+Deployment
+The project is deployed and can be accessed at: Live Deployment Link
+
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
 
 1. Clone the repository:
    ```bash
