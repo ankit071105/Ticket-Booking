@@ -1,0 +1,32 @@
+# Node.js dependencies
+/node_modules
+/npm-debug.log
+/yarn-error.log
+
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific files (macOS)
+.DS_Store
+
+# IDE-specific files (VSCode)
+.vscode
+.idea/
+
+# Temporary files
+*.tmp
+*.swp
+
+# Build files
+/dist
+/build
+
+# Coverage reports
+/coverage
