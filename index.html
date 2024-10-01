@@ -6,6 +6,7 @@
     <title>Ticket Booking</title>
     <link rel="shortcut icon" href="images/4.jpeg" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
     * {
     margin: 0;
@@ -25,49 +26,71 @@ body {
 h1, h2, h3, p {
     margin-bottom: 20px;
 }
-.navbar {
-    background-color: #092143;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+        .navbar {
+            background-color: #092143;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-.navbar .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #00bfa6;
-}
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .navbar .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-.nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
+        .navbar .logo-image {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
 
-.nav-links a:hover {
-    color: #00bfa6;
-}
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00bfa6;
+        }
 
-#darkModeToggle {
-    background-color: transparent;
-    border: none;
-    color: #fff;
-    font-size: 1.2rem;
-    cursor: pointer;
-}
+        .nav-links a:hover {
+            color: #00bfa6;
+        }
+
+        #darkModeToggle {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
 .caption {
     position: absolute;
@@ -389,14 +412,16 @@ img {
 </style>
 </head>
 <body>
-
     <nav class="navbar">
-        <div class="logo">Ticket Booking</div>
+        <div class="logo-container">
+            <img src="images/4.jpeg" alt="Ticket Booking Logo" class="logo-image">
+            <div class="logo">Ticket Booking</div>
+        </div>
         <ul class="nav-links">
-            <li><a href="#about">About Us</a></li>
-            <li><a href="buy.html">Buy</a></li>
-            <li><a href="sell.html">Sell</a></li>
-            <li><a href="#sxs">Contact</a></li>
+            <li><a href="#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href="buy.html"><i class="fas fa-shopping-cart"></i> Buy</a></li>
+            <li><a href="sell.html"><i class="fas fa-tag"></i> Sell</a></li>
+            <li><a href="#sxs"><i class="fas fa-envelope"></i> Contact</a></li>
         </ul>
         <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
     </nav>
