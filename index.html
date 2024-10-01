@@ -503,11 +503,23 @@ function prevSlide() {
 setInterval(nextSlide, 5000); 
 showSlide(currentSlide);
 const darkModeToggle = document.getElementById('darkModeToggle');
+const body = document.querySelector('body');
 if (darkModeToggle) { 
     darkModeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode'); 
+        if (body.classList.contains('dark-mode')) {
+    darkModeToggle.innerHTML = "🔆";
+}
+else{
+    darkModeToggle.innerHTML = "🌙";
+}
     });
 }
+// change icon of the dark/light mode
+
+
+
+
 
 </script>
 </body>
