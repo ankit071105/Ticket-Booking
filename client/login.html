@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white">
+
+<div class="relative flex items-top justify-center min-h-[700px] bg-white sm:items-center sm:pt-0">
+    <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+        <div class="mt-8 overflow-hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="p-6 mr-2 bg-gray-100 sm:rounded-lg">
+                    <h1 class="text-3xl sm:text-4xl text-gray-800 font-extrabold tracking-tight">
+                        Welcome! Back
+                    </h1>
+                    <br /><br />
+                    <p class="text-normal text-lg sm:text-xl font-medium text-gray-600 mt-2">
+                        Don't Have an Account ?
+                    </p><br />
+                    <a href="/signup"
+                       class="md:w-32 bg-orange-700 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg mt-3 transition ease-in-out duration-300">
+                        Register
+                    </a>
+                </div>
+
+                <form id="loginForm" class="p-6 flex flex-col justify-center">
+                    <h2 class="text-3xl sm:text-4xl text-gray-800 font-extrabold tracking-tight">
+                        Log in
+                    </h2>
+                    <br />
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="Email"
+                        class="w-full mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
+                        required
+                    />
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        placeholder="Password"
+                        class="w-full mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
+                        required
+                    />
+                    <p id="errorMessage" class="text-red-500 mt-2"></p>
+                    <button type="submit"
+                            class="md:w-32 bg-orange-700 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg mt-3 transition ease-in-out duration-300">
+                        SignIn
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', async function(event) {
+        event.preventDefault(); // Prevent the form from submitting the default way
+
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        try {
+            const response = await fetch('http://localhost:7865/api/v1/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: email,
+                    password: password
+                })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                alert('Login successful!');
+                
+                // Store the token in localStorage (or sessionStorage if you prefer)
+                localStorage.setItem('authToken', data.token);
+
+                // Redirect to dashboard or another page after successful login
+                window.location.href = '/dashboard.html'; // Update this with your actual dashboard path
+            } else {
+                document.getElementById('errorMessage').textContent = data.message || 'Login failed!';
+            }
+        } catch (error) {
+            document.getElementById('errorMessage').textContent = 'An error occurred during login!';
+        }
+    });
+</script>
+
+</body>
+</html>
