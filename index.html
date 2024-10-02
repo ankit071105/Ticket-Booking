@@ -26,6 +26,7 @@ body {
 h1, h2, h3, p {
     margin-bottom: 20px;
 }
+    
         .navbar {
             background-color: #092143;
             color: white;
@@ -302,11 +303,11 @@ body.dark-mode .ticket-card button:hover {
         flex: 1 1 calc(45% - 20px); 
     }
 
-    .navbar .nav-links {
+    /* .navbar .nav-links {
         flex-direction: column;
         gap: 10px;
         align-items: flex-start; 
-    }
+    } */
  
 }
 
@@ -409,6 +410,126 @@ img {
     object-fit: cover; 
 }
 
+.navbar .subcontainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 10px;
+}
+
+.menu-toggle .bar {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 3px 0;
+        transition: 0.4s;
+}
+@media(max-width: 768px) {
+        .menu-toggle {
+            display: flex;
+        }
+
+        .nav-links {
+            position: fixed;
+            right: -100%;
+            top: 70px;
+            flex-direction: column;
+            background-color: #092143;
+            width: 80%;
+            max-width: 300px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .nav-links.active {
+            right: 0;
+        }
+
+        .nav-links li {
+            margin: 2.5rem 0;
+        }
+
+        .nav-links a {
+            font-size: 1.1rem;
+        }
+
+        .navbar .subcontainer {
+            width: auto;
+        }
+        
+        #darkModeToggle {
+            margin: 0 auto;
+        }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    margin-right: 20px;
+}
+
+#darkModeToggle {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: row-reverse;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: #092143;
+        width: 80%;
+        max-width: 300px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 20px;
+        border-radius: 10px 0 0 10px;
+        margin-right: 0;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    #darkModeToggle {
+        margin-right: 20px;
+    }
+}
+
 </style>
 </head>
 <body>
@@ -417,13 +538,20 @@ img {
             <img src="images/4.jpeg" alt="Ticket Booking Logo" class="logo-image">
             <div class="logo">Ticket Booking</div>
         </div>
-        <ul class="nav-links">
-            <li><a href="#about"><i class="fas fa-info-circle"></i> About Us</a></li>
-            <li><a href="buy.html"><i class="fas fa-shopping-cart"></i> Buy</a></li>
-            <li><a href="sell.html"><i class="fas fa-tag"></i> Sell</a></li>
-            <li><a href="#sxs"><i class="fas fa-envelope"></i> Contact</a></li>
-        </ul>
-        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+        <div class="nav-container">
+            <div class="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li><a href="buy.html"><i class="fas fa-shopping-cart"></i> Buy</a></li>
+                <li><a href="sell.html"><i class="fas fa-tag"></i> Sell</a></li>
+                <li><a href="#sxs"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+        </div>
     </nav>
     <div class="slider">
         <div class="slide active">
@@ -542,7 +670,31 @@ else{
 }
 // change icon of the dark/light mode
 
-
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+    // Special effect for hamburger icon
+    const bars = menuToggle.querySelectorAll('.bar');
+    bars.forEach((bar, index) => {
+        if (menuToggle.classList.contains('active')) {
+            bar.style.transform = index === 1 ? 'scale(0)' : `rotate(${index === 0 ? '45deg' : '-45deg'})`;
+        } else {
+            bar.style.transform = 'none';
+        }
+    });
+});
+// Close menu when clicking outside
+document.addEventListener('click', (event) => {
+    if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+        menuToggle.querySelectorAll('.bar').forEach(bar => {
+            bar.style.transform = 'none';
+        });
+    }
+});
 
 
 
