@@ -60,8 +60,8 @@ To submit your contributions, follow these steps:
    ```
 
 7. **Submit a Pull Request**: Go to your forked repository on GitHub and submit a pull request. Be sure to provide a detailed description of your changes and why they are necessary.
+```
 
+<h1>Our Valuable Contributors ❤️✨</h1>
 
-
-
-
+[![Contributors](https://contrib.rocks/image?repo=ankit071105/Ticket-Booking)](https://github.com/ankit071105/Ticket-Booking/graphs/contributors)
