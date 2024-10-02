@@ -26,7 +26,22 @@ body {
 h1, h2, h3, p {
     margin-bottom: 20px;
 }
+.nav-links a.login-btn {
+    background-color: #00bfa6;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a.login-btn:hover {
+    background-color: #00a690;
+    color: white;
+}
     
+
+
         .navbar {
             background-color: #092143;
             color: white;
@@ -549,7 +564,10 @@ img {
                 <li><a href="buy.html"><i class="fas fa-shopping-cart"></i> Buy</a></li>
                 <li><a href="sell.html"><i class="fas fa-tag"></i> Sell</a></li>
                 <li><a href="#sxs"><i class="fas fa-envelope"></i> Contact</a></li>
+                <!-- New Login/Signup button -->
+                <li><a href="/client/register.html" class="login-btn"><i class="fas fa-user"></i>Signup</a></li>
             </ul>
+            
             <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
         </div>
     </nav>
