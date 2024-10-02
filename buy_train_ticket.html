@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Tickets</title>
+    <link rel="shortcut icon" href="images/4.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin: 30px;
+        }
+
+        .ticket-section {
+            margin-bottom: 30px;
+        }
+
+        .ticket {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .ticket h3 {
+            margin-top: 0;
+        }
+
+        .ticket p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Ticket Marketplace</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sell.html">Sell Ticket</a></li>
+                <li><a href="buy.html">Buy Ticket</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Buy Tickets</h1>
+        <div>
+            <select id="ticketType" aria-label="Select ticket type">
+                <option value="train">Train</option> <!-- Remove this line there is no need for train details in  -->
+            </select>
+            <br><br>
+            <button id="showTickets" aria-label="Show available tickets">Show Available Tickets</button>
+        </div>
+        <section id="trainTickets" class="ticket-section" aria-labelledby="trainTicketsHeading">
+            <h2 id="trainTicketsHeading">Available Train Tickets</h2>
+            <div id="trainTicketsList" role="list"></div>
+        </section>
+    </main>
+
+    <script>
+        const tickets = JSON.parse(localStorage.getItem('tickets')) || [];
+        document.getElementById('showTickets').addEventListener('click', function () {
+            const ticketType = document.getElementById('ticketType').value;
+            document.getElementById('trainTicketsList').innerHTML = '';
+
+             if (ticketType === 'train') {
+                displayTickets('train');
+            }
+        });
+
+        function displayTickets(type) {
+            const filteredTickets = tickets.filter(ticket => ticket.type === type);
+            const ticketList = type === 'train' ?  document.getElementById('trainTicketsList'):none;
+
+            if (filteredTickets.length === 0) {
+                ticketList.innerHTML = `<p>No ${type} tickets available.</p>`;
+            } else {
+                filteredTickets.forEach(ticket => {
+                    const ticketElement = document.createElement('div');
+                    ticketElement.classList.add('ticket');
+                    ticketElement.innerHTML = `
+            <h3>${type === 'train' ? 'Train Number: ' + ticket.trainNumber: none}</h3>
+            <p><strong>From:</strong> ${ticket.departureLocation} <strong>To:</strong> ${ticket.arrivalLocation}</p>
+            <p><strong>Departure Time:</strong> ${ticket.departureTime} on ${ticket.date}</p>
+            <p><strong>Seat Number:</strong> ${ticket.seatNumber}</p>
+            <p><strong>Price:</strong> ₹${ticket.buyerPrice}</p>
+            <button onclick="buyTicket('${ticket.ticketNumber}', '${type}')" aria-label="Buy ticket">Buy Now</button>
+          `;
+                    ticketList.appendChild(ticketElement);
+                });
+            }
+        }
+
+        function buyTicket(ticketNumber, type) {
+            alert(`You have successfully purchased the ${type} ticket: ${ticketNumber}`);
+        }
+    </script>
+
+    <footer class="footer">
+        <p>&copy; 2024 Ticket Marketplace | All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
