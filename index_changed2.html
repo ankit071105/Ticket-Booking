@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Booking</title>
+    <link rel="shortcut icon" href="images/4.jpeg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #222;
+    background-color: #f0f4f8;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2, h3, p {
+    margin-bottom: 20px;
+}
+        .navbar {
+            background-color: #092143;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+            }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .navbar .logo-container {
+            display: flex;
+            align-items: center;
+            margin-right: 545px;
+            gap: 10px;
+        }
+
+        .navbar .logo-image {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00bfa6;
+        }
+        
+        .nav-links a:hover {
+            color: #00bfa6;
+        }
+
+        #darkModeToggle {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+.caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+.home {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 1200px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+h2 {
+    color: #1f2937;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.btn {
+    background-color: #00bfa6;
+    color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.btn:hover {
+    background-color: #00a690;
+}
+.ticket-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+.ticket-card {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 calc(30% - 20px); 
+    margin: 10px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ticket-card h3 {
+    margin-bottom: 10px;
+    color: #1f2937;
+}
+
+.ticket-card p {
+    margin-bottom: 8px;
+    color: #555;
+    text-align: center; 
+}
+
+.ticket-card button {
+    background-color: #00bfa6;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ticket-card button:hover {
+    background-color: #00a690;
+}
+
+.ticket-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+.containers {
+    padding: 20px;
+    background:aliceblue;
+    text-align: center;
+}
+.map-container {
+    margin: 20px 0;
+    height: 400px;
+    width: 100%;
+}
+iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+.contact-links {
+    margin: 20px 0;
+}
+.contact-links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: white;
+    background-color: #25D366;
+    border-radius: 5px;
+}
+.contact-links a.email-link {
+    background-color: #007BFF;
+}
+.portfolio .portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.about, .contact {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    margin: 20px auto;
+    border-radius: 12px;
+    max-width: 1200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about h2, .contact h2 {
+    text-align: center;
+    color: #1f2937;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about p, .contact p {
+    text-align: center;
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+
+footer {
+    background-color: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    font-size: 1rem;
+}
+
+.social-media a {
+  color: aliceblue;
+  background-color: #000;
+  border-radius: 50%;
+  margin-bottom: 8px;
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  position: relative;
+  animation: water-wave 3s linear infinite;
+}
+
+.social-media a:hover {
+  color: #00a690;
+}
+.footer a {
+    color: #00bfa6;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #00a690;
+}
+
+body.dark-mode {
+    background: linear-gradient(135deg, #007acc, #00cc99);
+    color: #fff;
+}
+
+body.dark-mode .navbar, body.dark-mode footer {
+    background-color: #000;
+}
+body.dark-mode .ticket-card p{
+  color: rgb(197, 208, 218);
+}
+body.dark-mode .ticket-card h3{
+    color: whitesmoke;
+}
+body.dark-mode .ticket-card {
+    background: linear-gradient(135deg, hsl(204, 75%, 50%), #079874);
+    color: #fff;
+}
+
+body.dark-mode .ticket-card button {
+    background-color: #00bfa6;
+}
+
+body.dark-mode .ticket-card button:hover {
+    background-color: #00a690;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .ticket-card {
+        flex: 1 1 calc(45% - 20px); 
+    }
+
+    .navbar .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start; 
+    }
+ 
+}
+
+@media (max-width: 768px) {
+    .ticket-card {
+        flex: 1 1 100%;
+    }
+
+    .hero-slider {
+        height: 50vh; 
+    }
+
+    .caption {
+        font-size: 1.5rem; 
+    }
+
+}
+
+@media (max-width: 500px) {
+    .navbar .logo {
+        font-size: 20px;
+    }
+
+    .btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+
+    .caption {
+        font-size: 1.2rem; 
+    }
+}
+
+.my {
+    margin-top: 20px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.nav-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+button {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 180px;
+
+    height: 80px;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+.slider {
+    position: relative;
+    overflow: hidden; 
+    width: 100%; 
+    height: 300px; 
+}
+
+.slide {
+    display: none;
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+}
+
+.slide.active {
+    display: block; 
+}
+
+img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+}
+
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="images/4.jpeg" alt="Ticket Booking Logo" class="logo-image">
+            <div class="logo">Ticket Booking</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href="buy.html"><i class="fas fa-shopping-cart"></i> Buy</a></li>
+            <li><a href="sell.html"><i class="fas fa-tag"></i> Sell</a></li>
+            <li><a href="#sxs"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+    </nav>
+    <div class="slider">
+        <div class="slide active">
+            <img src="images/6.jpeg" alt="Slide 1">
+        </div>
+        <div class="slide">
+            <img src="images/4.jpeg" alt="Slide 2">
+        </div>
+        <div class="slide">
+            <img src="images/3.jpeg" alt="Slide 3">
+        </div>
+        <div class="slide">
+            <img src="images/2.jpeg" alt="Slide 3">
+        </div>
+        <div class="slide">
+            <img src="images/1.jpeg" alt="Slide 3">
+        </div>
+        <div class="slide">
+            <img src="images/5.jpeg" alt="Slide 3">
+        </div>
+        <div class="slide">
+            <img src="images/7.jpeg" alt="Slide 3">
+        </div>
+    </div>
+        <div class="nav-buttons">
+            <button class="prev" onclick="prevSlide()" style="width: 40px; height: 40px;">&#10094;</button>
+            <button class="next" onclick="nextSlide()" style="width: 40px; height: 40px;">&#10095;</button>
+        </div>
+    </div>
+</div>
+
+
+    <div class="home">
+        <h2>Book Bus or Train Tickets</h2>
+        <div class="ticket-list">
+            <div class="ticket-card">
+                <h3>Bus Tickets</h3>
+                 <p>Find affordable bus tickets for your travel needs. Select your destination and date of travel to get started.</p>
+                 <br>   <a href="buy.html" ><button style="text-align: center;">Buy Bus Tickets</button></a>
+                <br>
+                <p>Looking to sell your bus tickets? Contact us for reselling options!</p>
+                <br>   <a href="bus_sell.html"> <button>Sell Bus Tickets</button></a>
+            </div>
+     
+            <div class="ticket-card">
+                <h3>Train Tickets</h3>
+                <p>Secure train tickets for your journey across the country. Check availability and book now.</p>
+                <br>  <a href="buy.html"><button>Buy Train Tickets</button></a>
+                <br>  <p>Have train tickets to sell? Reach out to us to list your tickets.</p>
+                <br> <a href="train_sell.html"> <button>Sell Train Tickets</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="about" class="about">
+        <h2>About Us</h2>
+        <p>We are dedicated to providing the best ticket booking experience for concerts, theater performances, and sporting events. Our team is passionate about connecting you with the events you love!</p>
+    </div>
+
+
+        <div class="containers" id="sxs">
+            <h1 style="font-size: 3rem; color: rgb(14, 71, 150);">Contact Us</h1>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126915.40242030277!2d85.7892607!3d20.2498709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a7a3b9692fff%3A0x87cd0a356bbc39ce!2sITER%2C%20Siksha%20'O'%20Anusandhan!5e0!3m2!1sen!2sin!4v1689514124518!5m2!1sen!2sin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="contact-links">
+                <a href="mailto:kumarankit11458@gmail.com" class="email-link">Email Us</a>
+                <a href="https://wa.me/919031358194" target="_blank">Chat on WhatsApp</a>
+            </div>
+        </div>
+
+
+    <footer>
+
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://github.com/" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="footer">
+            &copy; 2024 Ticket Booking. All rights reserved. | <a href="#">Privacy Policy</a>
+        </div>
+     </footer>
+<script >
+    let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+            slide.classList.add('active'); 
+        }
+    });
+}
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length; 
+    showSlide(currentSlide);
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length; 
+    showSlide(currentSlide);
+}
+
+setInterval(nextSlide, 5000); 
+showSlide(currentSlide);
+const darkModeToggle = document.getElementById('darkModeToggle');
+const body = document.querySelector('body');
+if (darkModeToggle) { 
+    darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode'); 
+        if (body.classList.contains('dark-mode')) {
+    darkModeToggle.innerHTML = "🔆";
+}
+else{
+    darkModeToggle.innerHTML = "🌙";
+}
+    });
+}
+// change icon of the dark/light mode
+
+
+
+
+
+</script>
+</body>
+</html>
