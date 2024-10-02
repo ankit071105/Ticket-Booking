@@ -1,3 +1,5 @@
+
+
 # GG Extensions
 
 ## ⭐️ Show Your Support!
@@ -22,11 +24,8 @@ This repository serves as a platform for newcomers and seasoned developers alike
 Getting started with GG Extensions is easy! Follow these steps to jump right in:
 
 1. **Explore Project Ideas**: Browse through the existing project ideas or propose your own by opening an issue. We welcome a diverse range of project proposals and aim to match contributors with projects that align with their interests and skill levels.
-
 2. **Join the Community**: Connect with fellow contributors and mentors in our community channels. Whether you have questions, need guidance, or want to share your progress, our community is here to support you every step of the way.
-
 3. **Choose Your Project**: Once you've identified a project that interests you, let us know! We'll assign you the issue and provide any additional resources or information you may need to get started.
-
 4. **Start Contributing**: Dive into the project, work on your assigned tasks, and collaborate with your peers. Don't hesitate to ask for help or feedback along the way—we're all here to learn and grow together.
 
 ## 🛠 How to Contribute?
@@ -46,14 +45,27 @@ To submit your contributions, follow these steps:
 2. **Fork the Repository**: Click the "Fork" button at the top right corner of the repository to create your own copy.
 3. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/Ticket-Booking.git
+   git clone https://github.com/ankit071105/Ticket-Booking.git
+   ```
+4. **Create a Branch**: Create a new branch for your changes:
+   ```bash
+   git checkout -b my-feature
+   ```
+5. **Make Changes**: Make your desired changes to the codebase.
+6. **Commit Changes**: Commit your changes with a descriptive commit message:
+   ```bash
+   git commit -m "Add new feature"
+   ```
+7. **Push Changes**: Push your changes to your forked repository:
+   ```bash
+   git push origin my-feature
+   ```
+8. **Submit a Pull Request**: Go to your forked repository on GitHub and submit a pull request. Be sure to provide a detailed description of your changes and why they are necessary.
 
+---
 
-### Key Changes:
-1. **Support Section**: At the top of the README, there's a request for users to **star the repository** and **follow the project owner's GitHub profile** before contributing.
-2. **Contributor List**: The contributor list section is included, using the **All Contributors bot**.
-3. **Clear Instructions**: Detailed steps for how to contribute, starting with the important request to star the repository.
+## ❤️ Our Valuable Contributors
 
-This should make your project engaging for contributors while promoting support for the repository!
+[![Contributors](https://contrib.rocks/image?repo=ankit071105/Ticket-Booking)](https://github.com/ankit071105/Ticket-Booking/graphs/contributors)
 
-
+---
