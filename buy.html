@@ -90,7 +90,7 @@
           ticketElement.classList.add('ticket');
           ticketElement.innerHTML = `
             <h3>${type === 'bus' ? ticket.busName : 'Train Number: ' + ticket.trainNumber}</h3>
-            <p><strong>From:</strong> ${ticket.departureLocation} <strong>To:</strong> ${ticket.arrivalLocation}</p>
+            <p><strong>From:</strong> ${ticket.departureStation} <strong>To:</strong> ${ticket.arrivalStation}</p>
             <p><strong>Departure Time:</strong> ${ticket.departureTime} on ${ticket.date}</p>
             <p><strong>Seat Number:</strong> ${ticket.seatNumber}</p>
             <p><strong>Price:</strong> ₹${ticket.buyerPrice}</p>

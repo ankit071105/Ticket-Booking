@@ -9,7 +9,7 @@ if (!localStorage.getItem('tickets')) {
 
 // Function to validate form data
 function validateFormData(data) {
-  if (!data.name || !data.phone || !data.email || !data.ticketNumber) {
+  if (!data.name || !data.phone || !data.email || !data.ticketNumber || !data.ticketNumber) {
     alert("Please fill out all required fields.");
     return false;
   }
@@ -26,8 +26,8 @@ function handleTicketSubmission(formId, type) {
     const phone = document.getElementById('phone').value;
     const email = document.getElementById('email').value;
     const ticketNumber = document.getElementById('ticketNumber').value;
-    const departureLocation = document.getElementById('departureLocation').value;
-    const arrivalLocation = document.getElementById('arrivalLocation').value;
+    const departureStation = document.getElementById('departureStation').value;
+    const arrivalStation = document.getElementById('arrivalStation').value;
     const departureTime = document.getElementById('departureTime').value;
     const date = document.getElementById('date').value;
     const seatNumber = document.getElementById('seatNumber').value;
@@ -45,8 +45,8 @@ function handleTicketSubmission(formId, type) {
       additionalDetails.busName = document.getElementById('busName').value;
     } else if (type === 'train') {
       additionalDetails.trainNumber = document.getElementById('trainNumber').value;
-      additionalDetails.coachType = document.getElementById('coachType').value;
-      additionalDetails.acClass = document.getElementById('acClass').value;
+      additionalDetails.category = document.getElementById('category').value;
+      additionalDetails.Class1 = document.getElementById('Class1').value;
     }
 
     // Calculate seller's deduction and buyer's added fee
@@ -59,8 +59,8 @@ function handleTicketSubmission(formId, type) {
       phone,
       email,
       ticketNumber,
-      departureLocation,
-      arrivalLocation,
+      departureStation,
+      arrivalStation,
       departureTime,
       date,
       seatNumber,
@@ -107,12 +107,14 @@ function displayTickets(type) {
       // Common ticket details
       ticketCard.innerHTML = `
         <h3>${type === 'bus' ? 'Bus Ticket' : 'Train Ticket'}</h3>
-        <p><strong>Ticket Number:</strong> ${ticket.ticketNumber}</p>
+        <p><strong>PNR Number:</strong> ${ticket.ticketNumber}</p>
         <p><strong>Seller Name:</strong> ${ticket.name}</p>
         <p><strong>Contact:</strong> ${ticket.phone} | ${ticket.email}</p>
-        <p><strong>Departure:</strong> ${ticket.departureLocation}</p>
-        <p><strong>Arrival:</strong> ${ticket.arrivalLocation}</p>
+        <p><strong>Departure Station:</strong> ${ticket.departureStation}</p>
+        <p><strong>Arrival Station:</strong> ${ticket.arrivalStation}</p>
         <p><strong>Departure Time:</strong> ${ticket.departureTime}</p>
+        <p><strong>Class:</strong> ${ticket.Class1}</p>
+        <p><strong>Category:</strong> ${ticket.category}</p>
         <p><strong>Date:</strong> ${ticket.date}</p>
         <p><strong>Seat Number:</strong> ${ticket.seatNumber}</p>
         <p><strong>Original Price:</strong> ₹${ticket.price}</p>
