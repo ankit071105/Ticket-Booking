@@ -182,7 +182,20 @@ h2 {
 .ticket-card button:hover {
     background-color: #00a690;
 }
-
+.contact-links{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.contact-links-block{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 .ticket-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
@@ -206,14 +219,21 @@ iframe {
 .contact-links {
     margin: 20px 0;
 }
-.contact-links a {
+.contact-links-block{
     display: inline-block;
     margin: 10px;
     padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
     text-decoration: none;
     color: white;
     background-color: #25D366;
     border-radius: 5px;
+}
+.contact-links-block a{
+    color: white;
+    text-decoration: none;
 }
 .contact-links a.email-link {
     background-color: #007BFF;
@@ -421,7 +441,9 @@ img {
         cursor: pointer;
         padding: 10px;
 }
-
+.btm-logo{
+        width: 20px;
+    }
 .menu-toggle .bar {
         width: 25px;
         height: 3px;
@@ -504,6 +526,7 @@ img {
     .nav-container {
         flex-direction: row-reverse;
     }
+    
 
     .nav-links {
         position: fixed;
@@ -621,8 +644,16 @@ img {
                 </iframe>
             </div>
             <div class="contact-links">
-                <a href="mailto:kumarankit11458@gmail.com" class="email-link">Email Us</a>
-                <a href="https://wa.me/919031358194" target="_blank">Chat on WhatsApp</a>
+                <div class="contact-links-block">
+                    <img class="btm-logo" src="./images/gmail.png" alt=""> 
+                <a class="anchor" href="mailto:kumarankit11458@gmail.com" class="email-link"> Email Us</a>
+                </div>
+                
+                <div class="contact-links-block">
+                    <img class="btm-logo" src="./images/whatsapp.png" alt="">
+                <a class="anchor" href="https://wa.me/919031358194" target="_blank">Chat on WhatsApp</a>
+                </div>
+                
             </div>
         </div>
 
