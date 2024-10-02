@@ -21,6 +21,7 @@
       padding: 10px;
       margin-bottom: 10px;
       background-color: #f9f9f9;
+      border-radius: 5px;
     }
     .ticket h3 {
       margin-top: 0;
@@ -31,36 +32,37 @@
   </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="logo">Ticket Marketplace</div>
-    <ul class="nav-links">
+  <header>
+    <nav class="navbar">
+      <div class="logo">Ticket Marketplace</div>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-      <li><a href="sell.html">Sell Ticket</a></li>
-      <li><a href="buy.html">Buy Ticket</a></li>
-    </ul>
-  </nav>
+        <li><a href="sell.html">Sell Ticket</a></li>
+        <li><a href="buy.html">Buy Ticket</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <div class="container">
+  <main class="container">
     <h1>Buy Tickets</h1>
     <div>
       <label for="ticketType">Select Ticket Type:</label>
-      <select id="ticketType">
+      <select id="ticketType" aria-label="Select ticket type">
         <option value="bus">Bus</option>
         <option value="train">Train</option>
       </select>
-       <br>
-       <br>
-      <button id="showTickets">Show Available Tickets</button>
+      <br><br>
+      <button id="showTickets" aria-label="Show available tickets">Show Available Tickets</button>
     </div>
-    <div id="busTickets" class="ticket-section">
-      <h2>Available Bus Tickets</h2>
-      <div id="busTicketsList"></div>
-    </div>
-    <div id="trainTickets" class="ticket-section">
-      <h2>Available Train Tickets</h2>
-      <div id="trainTicketsList"></div>
-    </div>
-  </div>
+    <section id="busTickets" class="ticket-section" aria-labelledby="busTicketsHeading">
+      <h2 id="busTicketsHeading">Available Bus Tickets</h2>
+      <div id="busTicketsList" role="list"></div>
+    </section>
+    <section id="trainTickets" class="ticket-section" aria-labelledby="trainTicketsHeading">
+      <h2 id="trainTicketsHeading">Available Train Tickets</h2>
+      <div id="trainTicketsList" role="list"></div>
+    </section>
+  </main>
 
   <script>
     const tickets = JSON.parse(localStorage.getItem('tickets')) || [];
@@ -75,6 +77,7 @@
         displayTickets('train');
       }
     });
+
     function displayTickets(type) {
       const filteredTickets = tickets.filter(ticket => ticket.type === type);
       const ticketList = type === 'bus' ? document.getElementById('busTicketsList') : document.getElementById('trainTicketsList');
@@ -91,18 +94,20 @@
             <p><strong>Departure Time:</strong> ${ticket.departureTime} on ${ticket.date}</p>
             <p><strong>Seat Number:</strong> ${ticket.seatNumber}</p>
             <p><strong>Price:</strong> ₹${ticket.buyerPrice}</p>
-            <button onclick="buyTicket('${ticket.ticketNumber}', '${type}')">Buy Now</button>
+            <button onclick="buyTicket('${ticket.ticketNumber}', '${type}')" aria-label="Buy ticket">Buy Now</button>
           `;
           ticketList.appendChild(ticketElement);
         });
       }
     }
+
     function buyTicket(ticketNumber, type) {
       alert(`You have successfully purchased the ${type} ticket: ${ticketNumber}`);
     }
   </script>
-    <footer class="footer">
-        <p>&copy; 2024 Ticket Marketplace | All rights reserved.</p>
-      </footer>
+
+  <footer class="footer">
+    <p>&copy; 2024 Ticket Marketplace | All rights reserved.</p>
+  </footer>
 </body>
 </html>
