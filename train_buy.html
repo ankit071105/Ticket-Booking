@@ -12,15 +12,15 @@
   <nav class="navbar">
     <div class="logo">Ticket Marketplace</div>
     <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="sell.html">Sell Ticket</a></li>
       <li><a href="buy.html">Buy Ticket</a></li>
     </ul>
   </nav>
 
-  <!-- Buy Train Tickets Section -->
-  <section class="ticket-list">
-    <h1>Available Train Tickets</h1>
+  <!-- Main Content -->
+  <main class="ticket-list">
+    <h1>Browse Our Available Train Tickets</h1>
 
     <div class="ticket-card">
       <h3>Ticket Number: 54321</h3>
@@ -30,7 +30,7 @@
       <p><strong>Date:</strong> 18/10/2024</p>
       <p><strong>Coach:</strong> AC First Class</p>
       <p><strong>Price:</strong> $120</p>
-      <button class="btn">Buy Ticket</button>
+      <button class="btn" aria-label="Buy Ticket for Ticket Number 54321">Buy Ticket</button>
     </div>
 
     <div class="ticket-card">
@@ -41,16 +41,17 @@
       <p><strong>Date:</strong> 20/10/2024</p>
       <p><strong>Coach:</strong> Sleeper</p>
       <p><strong>Price:</strong> $70</p>
-      <button class="btn">Buy Ticket</button>
+      <button class="btn" aria-label="Buy Ticket for Ticket Number 98765">Buy Ticket</button>
     </div>
 
-    <!-- Add more tickets as needed -->
-
-  </section>
+    <!-- Add more tickets dynamically here -->
+    
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2024 Ticket Marketplace | All rights reserved.</p>
+    <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
   </footer>
 
   <script src="script.js"></script>
