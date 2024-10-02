@@ -32,17 +32,17 @@
       <label for="email">Email:</label>
       <input type="email" id="email" required>
 
-      <label for="ticketNumber">PNR Number:</label>
+      <label for="ticketNumber">Ticket Number:</label>
       <input type="text" id="ticketNumber" required>
 
       <label for="trainNumber">Train Number:</label>
       <input type="text" id="trainNumber" required>
 
-      <label for="departureStation">Departure Station:</label>
-      <input type="text" id="departureStation" required>
+      <label for="departureLocation">Departure Location:</label>
+      <input type="text" id="departureLocation" required>
 
-      <label for="arrivalStation">Arrival Station:</label>
-      <input type="text" id="arrivalStation" required>
+      <label for="arrivalLocation">Arrival Location:</label>
+      <input type="text" id="arrivalLocation" required>
 
       <label for="departureTime">Departure Time:</label>
       <input type="time" id="departureTime" required>
@@ -50,22 +50,20 @@
       <label for="date">Date:</label>
       <input type="date" id="date" required>
 
-      <label for="category">Category :</label>
-      <select id="category" required>
-        <option value="General">General</option>
-        <option value="Ladies">Ladies</option>
-        <option value="Tatkal">Tatkal</option>
-        <option value="Senior Citizen">Senior Citizen</option>
+      <label for="coachType">Coach Type:</label>
+      <select id="coachType" required>
+        <option value="Sleeper">Sleeper</option>
+        <option value="Non-AC">Non-AC</option>
+        <option value="AC">AC</option>
       </select>
 
-      <label for="Class1">Class :</label>
-      <select id="Class1">
-        <option value="Sleeper">Sleeper (SL)</option>
-        <option value="Third AC">Third AC (3A)</option>
-        <option value="Second AC">Second AC (2A)</option>
-        <option value="First AC">First AC (1A)</option>
-        <option value="Executive Class">Executive Class (EC)</option>
-        <option value="Chair Car">Chair Car (CC)</option>
+      <label for="acClass">AC Class (If applicable):</label>
+      <select id="acClass">
+        <option value="">--Select AC Class--</option>
+        <option value="First">First</option>
+        <option value="Second">Second</option>
+        <option value="Third">Third</option>
+        <option value="Economy">Economy</option>
       </select>
 
       <label for="seatNumber">Seat Number:</label>
