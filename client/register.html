@@ -22,7 +22,7 @@
                         Already Have an Account?
                     </p>
                     <br />
-                    <a href="/login"
+                    <a href="/client/login.html"
                        class="md:w-32 bg-orange-700 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg mt-3 transition ease-in-out duration-300">
                         Log in
                     </a>
@@ -109,7 +109,7 @@
 
         if (response.ok) {
             alert('Registration successful!');
-            window.location.href = "client/login.html"; // Use this if needed
+            window.location.href = "/client/login.html"; // Use this if needed
 ; // Redirect to login page after success
         } else {
             document.getElementById('errorMessage').textContent = data.message || 'Registration failed!';
