@@ -6,11 +6,50 @@
   <title>Sell Ticket</title>
   <link rel="shortcut icon" href="images/4.jpeg" type="image/x-icon">
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+  <style>
+    
+/* code for bottom to top nav  */
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color:#1fb899;
+  color: white;
+  cursor: pointer;
+  padding: 10px 6px;
+  border-radius: 4px;
+  width: 40px !important;
+  height: 40px !important;
+}
+
+#myBtn:hover {
+  background-color: #4cc6ad;
+}
+
+ /* code for bottom to top nav  */
+
+  </style>
 </head>
 <body>
   <!-- Navbar -->
+   
+    
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+
+
   <nav class="navbar">
-    <div class="logo">Ticket Marketplace</div>
+    
+    <a href="./index.html" id="logo-href"><div class="logo">Ticket Marketplace</div></a>
     <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
       <li><a href="sell.html">Sell Ticket</a></li>
@@ -31,5 +70,26 @@
   <footer class="footer">
     <p>&copy; 2024 Ticket Marketplace | All rights reserved.</p>
   </footer>
+
+
+  <script>
+  
+let mybutton = document.getElementById("myBtn");
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+  </script>
 </body>
 </html>

@@ -30,7 +30,9 @@
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
-  
+  #logo-href{
+ text-decoration: none;
+  }
   .navbar .logo {
     font-size: 24px;
     font-weight: bold;
