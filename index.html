@@ -87,10 +87,13 @@
 </head>
 <body>
     <nav class="navbar">
+        <a href="#" style="text-decoration: none;">
         <div class="logo-container">
+            
             <img src="images/4.jpeg" alt="Ticket Booking Logo" class="logo-image">
             <div class="logo">Ticket Booking</div>
-        </div>
+        </div> 
+    </a>
         <div class="nav-container">
             <div class="menu-toggle">
                 <span class="bar"></span>
@@ -199,6 +202,52 @@
         </div>
     </div>
 
+    <!--FAQ section-->
+    <section id="faq" class="faq-section">
+        <h1 style="font-size: 3rem; color: rgb(14, 71, 150);">Frequently Asked Questions</h1>
+        <div class="faq-container">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                How can I ensure I get the best possible deal on my ticket?
+            </button>
+            <div class="faq-answer">
+              <p>
+                Our app utilizes dynamic pricing technology to offer you the most competitive fares.
+              </p>
+            </div>
+          </div>
+  
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                What payment methods are accepted?
+            </button>
+            <div class="faq-answer">
+              <p>
+                We accept a variety of payment methods, including credit cards, debit cards, net banking, UPI payments, and digital wallets.
+              </p>
+            </div>
+          </div>
+  
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What is the significance of the name ‘Krishna’?
+            </button>
+            <div class="faq-answer">
+              <p>What if I need to cancel or modify my booking?</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                How can I track my booking status and receive updates?
+            </button>
+            <div class="faq-answer">
+              <p>Our app provides real-time tracking of your booking status and automatic updates.</p>
+            </div>
+          </div>
+          
+        </div>
+      </section>
 
         <div class="containers" id="sxs">
             <h1 style="font-size: 3rem; color: rgb(14, 71, 150);">Contact Us</h1>
@@ -228,6 +277,10 @@
             &copy; 2024 Ticket Booking. All rights reserved. | <a href="#">Privacy Policy</a>
         </div>
     </footer>
+
+    <!-- Move to Top Button -->
+    <button onclick="moveToTop()" id="topBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
 <script >
     let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
@@ -309,6 +362,39 @@ document.addEventListener('click', (event) => {
     }
 });
 
+    // When the user scrolls down 100px from the top, show the button
+    window.onscroll = function() { scrollFunction() };
+
+    function scrollFunction() {
+    const topBtn = document.getElementById("topBtn");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        topBtn.style.display = "block"; // Show button
+    } else {
+        topBtn.style.display = "none"; // Hide button
+    }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function moveToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
+    }
+
+    // script for faq section
+
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const answer = button.nextElementSibling;
+    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+    document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+    document.querySelectorAll('.faq-question').forEach(q => q.setAttribute('aria-expanded', 'false'));
+
+    if (!isExpanded) {
+      answer.style.display = 'block';
+      button.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
 
 
 </script>
