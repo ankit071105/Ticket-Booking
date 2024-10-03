@@ -970,6 +970,7 @@ img {
         display: flex;
     }
 
+
     .nav-links {
         position: fixed;
         right: -100%;
@@ -983,6 +984,46 @@ img {
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
         padding: 20px;
         border-radius: 10px 0 0 10px;
+
+    
+    button {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: none;
+        border-radius: 50%;
+        width: 180px;
+    
+        height: 80px;
+        cursor: pointer;
+        font-size: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    button:hover {
+        background-color: rgba(255, 255, 255, 1);
+    }
+    .slider {
+        position: relative;
+        overflow: hidden; 
+        width: 100%; 
+        height: 725px; 
+    }
+    
+    .slide {
+        display: none;
+        position: absolute; 
+        width: 100%; 
+        height: 100%; 
+    }
+    
+    .slide.active {
+        display: block; 
+    }
+    
+    img {
+        width: 100%; 
+        height: 100%;
+        object-fit: cover; 
+
     }
 
     .nav-links.active {

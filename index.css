@@ -37,7 +37,7 @@ p {
 .navbar .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #00bfa6;
+    color: #12e9cc;
 }
 
 .nav-links {
@@ -350,13 +350,14 @@ body.dark-mode .ticket-card button:hover {
 }
 
 .slide {
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 100%;
     display: none;
     justify-content: center;
     align-items: center;
     text-align: center;
+    
 }
 
 .slide img {
