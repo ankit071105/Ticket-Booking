@@ -9,6 +9,81 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="index.css">
+<style>
+    .close-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px; 
+    width: 25px;
+    height: 25px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    background-color: black;
+    border: 2px solid white; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    box-sizing: border-box; 
+}
+
+.toggle-arrow {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: #1fb899;
+    padding: 5px;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+}
+
+    .social-sidebar {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #1fb899;
+    padding: 8px;
+    border-radius: 0 10px 10px 0;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.social-sidebar a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    transition: background-color 0.6s ease, transform 0.3s ease;
+    border: none;
+    border-bottom: none;
+    border-radius: 5px; 
+}
+
+.social-sidebar a:hover {
+    background-color: #ffffff;
+    border-radius: 50%;
+    color: black;
+    transform: scale(1.1);
+}
+
+.social-sidebar i {
+    display: block;
+    transition: transform 0.3s ease; 
+}
+
+.social-sidebar a:hover i {
+    transform: scale(1);
+}
+
+</style>
 </head>
 <body>
     <nav class="navbar">
@@ -61,6 +136,18 @@
             <button class="next" onclick="nextSlide()" style="width: 40px; height: 40px;">&#10095;</button>
         </div>
     </div>
+</div>
+
+
+<div class="social-sidebar">
+    <div class="close-btn" onclick="toggleSidebar()" title="Close Sidebar">&times;</div>
+    <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-meta"></i></a>
+    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+</div>
+<div class="toggle-arrow" onclick="toggleSidebar()" title="Open Sidebar" style="display: none;">
+    <i class="fas fa-arrow-right"></i>
 </div>
 
 
@@ -161,6 +248,23 @@ function prevSlide() {
     currentSlide = (currentSlide - 1 + slides.length) % slides.length; 
     showSlide(currentSlide);
 }
+
+function toggleSidebar() {
+    const sidebar = document.querySelector('.social-sidebar');
+    const arrow = document.querySelector('.toggle-arrow');
+
+    if (sidebar.style.display === 'none' || !sidebar.style.display) {
+        sidebar.style.display = 'flex'; // Show sidebar
+        arrow.style.display = 'none'; // Hide arrow
+    } else {
+        sidebar.style.display = 'none'; // Hide sidebar
+        arrow.style.display = 'block'; // Show arrow
+    }
+}
+
+// Initialize sidebar to be visible on page load
+document.querySelector('.social-sidebar').style.display = 'flex';
+
 
 setInterval(nextSlide, 5000); 
 showSlide(currentSlide);
