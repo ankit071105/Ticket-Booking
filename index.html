@@ -85,7 +85,6 @@
             transform: scale(1);
         }
     </style>
-=======
     
 <link rel="stylesheet" href="faq.css"> 
 <link rel="stylesheet" href="styles.css"> 
@@ -474,18 +473,8 @@
                     slide.classList.add('active');
                 }
             });
-
- 
-<script >
-    let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        if (i === index) {
-            slide.classList.add('active'); 
-
         }
+
         function nextSlide() {
             currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
@@ -592,7 +581,6 @@ document.querySelectorAll('.faq-question').forEach(button => {
 
 
 
-    </script>
 
 let mybutton = document.getElementById("myBtn");
 window.onscroll = function() {scrollFunction()};
