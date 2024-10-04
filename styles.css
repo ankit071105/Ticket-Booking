@@ -991,7 +991,8 @@ body.dark-mode .ticket-card button:hover {
 }
     }
 .btm-logo{
-        width: 20px;
+        width: 60px;
+        height: 60px;
     }
 .menu-toggle .bar {
         width: 25px;
