@@ -1,0 +1,108 @@
+/* General Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Reduced padding for compactness */
+    background-color: #333; /* Adjust color if necessary */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Logo Section */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    width: 40px; /* Reduced size for logo */
+    height: 40px;
+    margin-right: 10px; /* Space between logo and text */
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem; /* Adjusted font size */
+}
+
+/* Nav Links */
+.nav-links {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+}
+
+.nav-links li {
+    margin-left: 20px; /* Add spacing between links */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem; /* Adjusted font size */
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a i {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+/* Dark Mode Toggle Button */
+#darkModeToggle {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem; /* Slightly larger for clarity */
+}
+
+/* Menu Toggle for Mobile */
+.menu-toggle {
+    display: none; /* Hidden on larger screens */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .nav-container {
+        display: none; /* Hide menu by default on mobile */
+    }
+
+    .menu-toggle {
+        display: flex; /* Show menu toggle on mobile */
+    }
+
+    .navbar.active .nav-container {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background-color: #333;
+        padding: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin-left: 0;
+        padding: 10px 0;
+        text-align: center;
+    }
+}
