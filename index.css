@@ -143,24 +143,6 @@ h2 {
   text-align: center;
 }
 
-.ticket-card button {
-  background-color: #00bfa6;
-  color: white;
-  padding: 10px 30px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.ticket-card button:hover {
-  background-color: #00a690;
-}
-
-.ticket-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
 
 .containers {
   padding: 20px;
@@ -387,6 +369,43 @@ p {
   transform: translateY(-50%);
 }
 
+
+.bbtn {
+    display: inline-block;
+    background: linear-gradient(135deg, #079874, #076887);
+    color: white !important;
+    margin: 0 10px;
+    font-size: 18px;
+    font-weight: bold !important;
+    padding: 15px 40px !important;
+    cursor: pointer !important;
+    border: none !important;
+    border-radius: 50px!important;
+    transition: padding 0.4s ease, margin 0.4s ease, background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease !important;
+    box-shadow: 0 8px 25px rgba(7, 152, 116, 0.5);
+    text-align: center;
+    width: auto;
+    height: auto;
+}
+
+.bbtn:hover {
+    padding-left: 60px !important;
+    padding-right: 60px !important;
+    margin: 0 !important;
+    background: linear-gradient(135deg, #076887, #07A887) !important;
+    color: #fff !important;
+    box-shadow: 0 12px 30px rgba(7, 152, 116, 0.6) !important;
+}
+
+.bbtn:active {
+    transform: translateY(2px) !important;
+    box-shadow: 0 6px 20px rgba(7, 152, 116, 0.5) !important;
+}
+
+.bbtn:focus {
+    outline: none !important;
+    box-shadow: 0 0 10px rgba(7, 152, 116, 0.7), 0 0 20px rgba(7, 152, 116, 0.5) !important;
+
 button {
   background-color: rgba(255, 255, 255, 0.8);
   border: none;
@@ -490,4 +509,5 @@ button:hover {
   .faq-heading {
     font-size: 20px;
   }
+
 }
