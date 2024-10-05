@@ -70,6 +70,10 @@
                         SignIn
                     </button>
                 </form>
+                <button id="googleSignin" class="w-full mt-4 flex items-center justify-center bg-white border border-gray-400 text-gray-800 font-semibold py-3 px-6 rounded-lg transition ease-in-out duration-300 hover:bg-gray-100"></button>
+                    <img src="../images/googleLogo.png" alt="Google Logo" class="w-5 h-5 mr-2">
+                    Continue with Google
+                </button>
             </div>
         </div>
     </div>
@@ -111,6 +115,12 @@
             document.getElementById('errorMessage').textContent = 'An error occurred during login!';
         }
     });
+    
+    document.getElementById('googleSignin').addEventListener('click', function(e) {
+        // TODO: Handle Google Sign-In logic here
+        e.preventDefault();
+        signInWithGoogle(); // Use the same function as in register.html
+    });
 
     document.getElementById('togglePassword').addEventListener('click', function() {
     const passwordInput = document.getElementById('password');
@@ -128,5 +138,8 @@
 
 </script>
 
+    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-auth-compat.js"></script>
+    <script src="../firebase.js"></script>
 </body>
 </html>

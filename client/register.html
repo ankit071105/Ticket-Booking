@@ -90,6 +90,11 @@
                             Register
                         </button>
                     </form>
+                    <!-- Continue with Google Button -->
+                    <button id="googleSignup" class="w-full mt-4 flex items-center justify-center bg-white border border-gray-400 text-gray-800 font-semibold py-3 px-6 rounded-lg transition ease-in-out duration-300 hover:bg-gray-100">
+                        <img src="../images/googleLogo.png" alt="Google Logo" class="w-5 h-5 mr-2">
+                        Continue with Google
+                    </button>
                 </div>
             </div>
         </div>
@@ -125,7 +130,6 @@
         if (response.ok) {
             alert('Registration successful!');
             window.location.href = "/client/login.html"; // Use this if needed
-; // Redirect to login page after success
         } else {
             document.getElementById('errorMessage').textContent = data.message || 'Registration failed!';
         }
@@ -134,7 +138,11 @@
         document.getElementById('errorMessage').textContent = 'An error occurred during registration!';
     }
 });
-
+document.getElementById('googleSignup').addEventListener('click', function(e) {
+        // TODO: Handle Google Sign-In logic here
+        e.preventDefault();
+        signInWithGoogle(); 
+    });
 document.getElementById('togglePassword').addEventListener('click', function() {
     const passwordInput = document.getElementById('password');
     const showIcon = document.getElementById('showIcon');
@@ -149,6 +157,10 @@ document.getElementById('togglePassword').addEventListener('click', function() {
     hideIcon.classList.toggle('hidden');
 });
 </script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-auth-compat.js"></script>
+    <script src="../firebase.js"></script>
 
 </body>
 </html>
