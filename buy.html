@@ -39,7 +39,11 @@
       margin: 5px 0;
     }
 
-
+#showTickets:hover{
+  color: whitesmoke !important; 
+  background: rgb(29, 0, 56);
+  box-shadow:7px 8px 8px 1px rgb(253, 238, 238) !important;
+}
    
     /* code for bottom to top nav  */
     
@@ -64,8 +68,6 @@
     #myBtn:hover {
       background-color: #4cc6ad;
     }
-  
-     /* code for bottom to top nav  */
     
   </style>
 </head>
@@ -97,10 +99,10 @@
       <label for="ticketType">Select Ticket Type:</label>
       <select id="ticketType" aria-label="Select ticket type">
         <option value="bus">Bus</option>
-        <option value="train">Train</option> <!-- Remove this line there is no need for train details in  -->
+        <option value="train">Train</option> 
       </select>
       <br><br>
-      <button id="showTickets" aria-label="Show available tickets">Show Available Tickets</button>
+      <button id="showTickets" aria-label="Show available tickets" style="width: 200px; height: 60px; border-radius: 25px ; color: rgb(14, 2, 61);box-shadow:7px 8px 8px 1px brown">  Tickets</button>
     </div>
     <section id="busTickets" class="ticket-section" aria-labelledby="busTicketsHeading">
       <h2 id="busTicketsHeading">Available Bus Tickets</h2>
@@ -178,6 +180,7 @@ function topFunction() {
 }
 
   </script>
+  <script src="app.js"></script>
 </body>
 
 </html>

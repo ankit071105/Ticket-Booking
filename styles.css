@@ -1,4 +1,4 @@
-/* Global Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -23,8 +23,6 @@ p {
 .logo {
     display: flex;
 }
-
-/* Navbar Styles */
 .navbar {
     background-color: #1f2937;
     color: white;
@@ -522,7 +520,7 @@ iframe {
     gap: 2.5rem;
 }
 
-.about,
+
 .contact {
     padding: 40px 20px;
     background-color: #f9f9f9;
@@ -532,7 +530,7 @@ iframe {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.about footer {
+ footer {
     background-color: #1f2937;
     color: white;
     text-align: center;
@@ -1273,4 +1271,5 @@ img {
     .about-us h2 {
         font-size: 2em;
     }
+}
 }
