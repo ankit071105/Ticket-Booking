@@ -1,7 +1,4 @@
-    
- 
-  
-  .faq-section {
+.faq-section {
     max-width: 760px;
     margin: 0 auto;
     color: #1fb899;
@@ -11,9 +8,11 @@
     margin-bottom: 70px;
     color: #1fb899;
   }
+
   .down-arrow{
-  color: #1fb899;
+    color: #1fb899;
   }
+
   header > p {
     font-size: 22px;
     color: #1fb899;
@@ -21,9 +20,8 @@
   
   h2 {
     font-size: 52px;
-   
     margin-top: 40px;
-  color: black;
+    color: black;
     margin-bottom: 20px;
     font-weight: bold;
   }
@@ -32,28 +30,31 @@
     cursor: pointer;
   
     color: black;
+    width: 100%;
   }
   
   summary:focus-visible {
     outline: 2px solid orange;
     outline-offset: 8px;
     border-radius: 4px;
-  color: #1fb899;
+    color: #1fb899;
   }
   
   h4 {
-    width: 760px;
-   color: black;
+    /* width: 100%; */
+    color: black;
+    flex-grow: 1;
+    margin: 0;
   }
   
   summary {
     font-size: 20px;
-   
     display: flex;
-    justify-item: space-between;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
     color: #1fb899;
+    width: 100%;
   }
   
   summary::marker {
@@ -63,13 +64,14 @@
   }
   
   span {
-    margin-top: 4px;
-    
+    /* margin-top: 4px; */
+    margin-left: 10px;
+    flex-shrink: 0;
     color: #1fb899;
   }
   
   details > p {
-    max-width: 650px;
+    max-width: 100%;
    
     font-size: 18px;
     line-height: 155%;
@@ -84,3 +86,19 @@
     margin-block-end: 30px;
     color: #1fb899;
   }
+
+  /* Code to make the hidden text under the details-summary faq come out with a little animation */
+  details[open] p {
+    display: block; 
+    height: auto;   
+    opacity: 1;     
+    transition: height 0.5s ease, opacity 0.5s ease; /
+}
+
+details p {
+    display: block; 
+    height: 0;      
+    overflow: hidden; 
+    opacity: 0;     
+    transition: height 0.5s ease, opacity 0.5s ease; 
+}
