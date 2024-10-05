@@ -11,79 +11,132 @@
 
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="about.css">
     <style>
         .close-btn {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            width: 25px;
-            height: 25px;
-            font-size: 24px;
-            color: white;
-            cursor: pointer;
-            background-color: black;
-            border: 2px solid white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-sizing: border-box;
-        }
+        position: absolute;
+        top: -10px;
+        right: -10px; 
+        width: 25px;
+        height: 25px;
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+        background-color: #1f2937;
+        border: 2px solid white; 
+        border-radius: 50%; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        box-sizing: border-box; 
+    }
 
-        .toggle-arrow {
-            position: fixed;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            background-color: #1fb899;
-            padding: 5px;
-            border-radius: 0 10px 10px 0;
-            cursor: pointer;
-            color: white;
-            font-size: 24px;
-        }
+    .toggle-arrow {
+        position: fixed;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease-in-out;
+        background-color: #1fb899;
+        padding: 5px;
+        border-radius: 0 10px 10px 0;
+        cursor: pointer;
+        color: white;
+        font-size: 25px;
+        padding: 12px;
+    }
 
-        .social-sidebar {
-            position: fixed;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            background-color: #1fb899;
-            padding: 8px;
-            border-radius: 0 10px 10px 0;
-            border: none;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
+    .social-sidebar {
+        position: fixed;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background-color: #1fb899;
+        padding: 8px;
+        border-radius: 0 10px 10px 0;
+        border: none;
+        transition: background-color 0.3s ease, transform 0.3s ease; 
+        z-index: 1;
+    }
 
-        .social-sidebar a {
-            text-decoration: none;
-            color: white;
-            font-size: 20px;
-            padding: 10px;
-            transition: background-color 0.6s ease, transform 0.3s ease;
-            border: none;
-            border-bottom: none;
-            border-radius: 5px;
-        }
+    .social-sidebar ul{
+        list-style: none;
+        margin: 0;
+    }
 
-        .social-sidebar a:hover {
-            background-color: #ffffff;
-            border-radius: 50%;
-            color: black;
-            transform: scale(1.1);
-        }
+    .social-sidebar li {
+        display: block;    
+        margin: 12px 0;        
+        position: relative;  
+    }
 
-        .social-sidebar i {
-            display: block;
-            transition: transform 0.3s ease;
-        }
+    .social-sidebar a {
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        padding: 10px;
+        transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        border: none;
+        border-bottom: none;
+        border-radius: 50%;
+        display: flex;              
+        justify-content: center;   
+        align-items: center;      
+        width: 40px;   
+        height: 40px; 
+        margin: 0 10px;
+    }
 
         .social-sidebar a:hover i {
             transform: scale(1);
         }
+
+    .social-sidebar li a:hover {
+        background-color: #ffffff;
+        border-radius: 50%;
+        color: #1f2937;
+        transform: scale(1.1);
+    }
+
+    .social-sidebar i {
+        display: inline-block;
+        transition: transform 0.3s ease-in-out; 
+    }
+
+    .social-sidebar a:hover i {
+        transform: scale(1.1);
+    }
+
+
+    /* code for bottom to to nav  */
+
+    #myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color:#1fb899;
+    color: white;
+    cursor: pointer;
+    padding: 10px 6px;
+    border-radius: 4px;
+    width: 40px !important;
+    height: 40px !important;
+    }
+
+    #myBtn:hover {
+    background-color: #4cc6ad;
+    }
+    
+    /* code for bottom to to nav  */
+
     </style>
 
     <link rel="stylesheet" href="faq.css">
@@ -305,41 +358,138 @@
 
     <div class="social-sidebar">
         <div class="close-btn" onclick="toggleSidebar()" title="Close Sidebar">&times;</div>
-        <a href="#" target="_blank"><i class="fa-brands fa-meta"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <ul>
+            <li><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-meta"></i></a></li>
+            <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+        </ul>
+
     </div>
     <div class="toggle-arrow" onclick="toggleSidebar()" title="Open Sidebar" style="display: none;">
         <i class="fas fa-arrow-right"></i>
     </div>
 
 
-    <div class="home">
-        <h2>Book Bus or Train Tickets</h2>
-        <div class="ticket-list">
-            <div class="ticket-card">
-                <h3>Bus Tickets</h3>
-                <p>Find affordable bus tickets for your travel needs. Select your destination and date of travel to get
-                    started.</p>
-                <br> <a href="buy.html"><button style="text-align: center; width: auto; height: auto;">Buy Bus
-                        Tickets</button></a>
-                <br>
-                <p>Looking to sell your bus tickets? Contact us for reselling options!</p>
-                <br> <a href="bus_sell.html"> <button style="width: auto; height: auto;">Sell Bus Tickets</button></a>
-            </div>
+<div class="home">
+    <h2>Book Bus or Train Tickets</h2>
+    <div class="ticket-list">
+        <div class="ticket-card">
+            <h3>Bus Tickets</h3>
+            <p>Find affordable bus tickets for your travel needs. Select your destination and date of travel to get started.</p>
+            <br>   
+            <a href="buy.html"><button class="bbtn">Buy Bus Tickets</button></a>
+            <br>
+            <p>Looking to sell your bus tickets? Contact us for reselling options!</p>
+            <br>   
+            <a href="bus_sell.html"><button class="bbtn">Sell Bus Tickets</button></a>
+        </div>
 
-            <div class="ticket-card">
-                <h3>Train Tickets</h3>
-                <p>Secure train tickets for your journey across the country. Check availability and book now.</p>
-                <br> <a href="buy.html"><button style="width: auto; height: auto;">Buy Train Tickets</button></a>
-                <br>
-                <p>Have train tickets to sell? Reach out to us to list your tickets.</p>
-                <br> <a href="train_sell.html"> <button style="width: auto; height: auto;">Sell Train
-                        Tickets</button></a>
-            </div>
+        <div class="ticket-card">
+            <h3>Train Tickets</h3>
+            <p>Secure train tickets for your journey across the country. Check availability and book now.</p>
+            <br>  
+            <a href="buy.html"><button class="bbtn">Buy Train Tickets</button></a>
+            <br>  
+            <p>Have train tickets to sell? Reach out to us to list your tickets.</p>
+            <br> 
+            <a href="train_sell.html"><button class="bbtn">Sell Train Tickets</button></a>
         </div>
     </div>
+</div>
+
+
+    
+<!-- about section -->
+<div class="section__header">
+    <div>
+      <h2 class="section__title">Why book with us?</h2>
+      <p class="section__subtitle">
+        Click on the cards! 
+      </p>
+    </div>
+</div>
+<div class="outer-box">
+    <div class="container">
+      <!-- Panel Start -->
+      <div class="card active">
+        <img src="/images/easy-booking.svg" alt="" class="pic">
+        <div class="hedd">
+            <h4>EASY BOOKING</h4>
+        </div>
+        <div class="info">
+            
+                <h3>Easy Booking</h3>
+            <p>We make bus and train ticket booking simple and hassle-free, offering a streamlined experience so you
+                can plan your journeys effortlessly.</p>
+          </p>
+          
+        </div>
+      </div>
+      <!-- Panel End -->
+
+      <!-- Panel Start -->
+      <div
+        class="card"
+      >
+      <img src="/images/lowest-booking.svg" alt="" class="pic">
+      <div class="hedd">
+        <h4>LOWEST PRICE</h4>
+    </div>
+        <div class="info">
+          
+            <h3>Lowest Price</h3>
+            <p>Find the best deals on bus and train tickets. We guarantee competitive prices to ensure you save more
+                on every trip. </p>
+          
+        </div>
+      </div>
+      <!-- Panel End -->
+
+      <!-- Panel Start -->
+      <div
+        class="card"
+        
+      >
+      <img src="/images/exc-deal.svg" alt="" class="pic"
+      class="pic">
+      <div class="hedd">
+        <h4>DEALS</h4>
+    </div>
+        <div class="info">
+          
+            <h3>Exciting Deals</h3>
+            <p>Unlock special discounts and offers on bus and train bookings, helping you travel for less without
+                compromising on quality.</p>
+        </div>
+      </div>
+      <!-- Panel End -->
+
+      <!-- Panel Start -->
+      <div
+        class="card"
+        
+      >
+      <img src="/images/support.svg" alt="" class="pic"
+      class="pic">
+      <div class="hedd">
+        <h4>SUPPORT</h4>
+    </div>
+        <div class="info">
+          
+            <h3>24/7 Support</h3>
+            <p>Our customer support is available 24/7 to assist with your bus and train booking needs. We're here to
+                help anytime you need us.</p>
+        </div>
+      </div>
+      <!-- Panel End -->
+
+      
+    </div>
+  </div>
+  
+
+<script src="about.js"></script>
 
 
     <div class="containers" id="sxs">
@@ -446,6 +596,7 @@
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
+
         function showSlide(index) {
             slides.forEach((slide, i) => {
                 slide.classList.remove('active');
@@ -484,6 +635,7 @@
 
         setInterval(nextSlide, 5000);
         showSlide(currentSlide);
+
         const darkModeToggle = document.getElementById('darkModeToggle');
         const body = document.querySelector('body');
         if (darkModeToggle) {
@@ -514,6 +666,7 @@
                 }
             });
         });
+
         // Close menu when clicking outside
         document.addEventListener('click', (event) => {
             if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
@@ -526,6 +679,7 @@
         });
 
         // When the user scrolls down 100px from the top, show the button
+
         window.onscroll = function () { scrollFunction() };
 
         function scrollFunction() {
@@ -555,6 +709,43 @@
                 if (!isExpanded) {
                     answer.style.display = 'block';
                     button.setAttribute('aria-expanded', 'true');
+        window.onscroll = function() { 
+            scrollFunction() 
+        };
+
+        function scrollFunction() {
+        const topBtn = document.getElementById("topBtn");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            topBtn.style.display = "block"; // Show button
+        } else {
+            topBtn.style.display = "none"; // Hide button
+        }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function moveToTop() {
+            window.scrollTo({ 
+                top: 0, 
+                behavior: 'smooth' 
+            }); // Smooth scroll to top
+        }
+
+        // script for faq section
+        // Added the sliding animation
+
+        document.querySelectorAll('details').forEach((faq) => {
+            faq.addEventListener('toggle', function() {
+                const content = this.querySelector('p');
+                if (this.open) {
+                    content.style.height = '0px';
+                    content.style.transition = 'height 0.5s ease-out';
+                    content.style.height = content.scrollHeight + 'px'; // Sets the height based on the actual content
+                } else {
+                    content.style.height = content.scrollHeight + 'px'; // Height is set to the current scrollHeight
+                    setTimeout(() => {
+                        content.style.height = '0px'; // Collapses after the content has been shown
+                    }, 10); // Delay to allow height to adjust first
+
                 }
             });
         });
@@ -563,7 +754,12 @@
 
 
         let mybutton = document.getElementById("myBtn");
+
         window.onscroll = function () { scrollFunction() };
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
 
         function scrollFunction() {
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -577,6 +773,12 @@
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         }
+
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
 
     </script>
     <script src="app.js"></script>
