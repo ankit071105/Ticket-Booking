@@ -128,8 +128,8 @@
 
 
 h4{
-    color: whitesmoke !important;
-    max-width: 80px;
+    /* color: whitesmoke !important; */
+    /* max-width: 80px; */
 }
 
   .card.active .hedd{
@@ -168,16 +168,19 @@ h4{
 
     .card h3 {
         font-size: 20px; /* Reduced font size for medium screens */
+        text-align: center;
     }
 
     .card p {
         font-size: 14px; /* Reduced font size for medium screens */
+        text-align: center;
     }
     h4{
-        writing-mode: sideways-lr;
+        /* writing-mode: sideways-lr;
         text-orientation: sideways-right;
         rotate: -90deg;
-        text-align: center;
+        text-align: center; */
+
     }
 
     

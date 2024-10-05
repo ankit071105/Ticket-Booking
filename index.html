@@ -414,6 +414,7 @@
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
+
         function showSlide(index) {
             slides.forEach((slide, i) => {
                 slide.classList.remove('active');
@@ -452,6 +453,7 @@
 
         setInterval(nextSlide, 5000);
         showSlide(currentSlide);
+
         const darkModeToggle = document.getElementById('darkModeToggle');
         const body = document.querySelector('body');
         if (darkModeToggle) {
@@ -482,6 +484,7 @@
                 }
             });
         });
+
         // Close menu when clicking outside
         document.addEventListener('click', (event) => {
             if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
@@ -493,61 +496,70 @@
             }
         });
 
-    // When the user scrolls down 100px from the top, show the button
-    window.onscroll = function() { scrollFunction() };
+        // When the user scrolls down 100px from the top, show the button
+        window.onscroll = function() { 
+            scrollFunction() 
+        };
 
-    function scrollFunction() {
-    const topBtn = document.getElementById("topBtn");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        topBtn.style.display = "block"; // Show button
-    } else {
-        topBtn.style.display = "none"; // Hide button
+        function scrollFunction() {
+        const topBtn = document.getElementById("topBtn");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            topBtn.style.display = "block"; // Show button
+        } else {
+            topBtn.style.display = "none"; // Hide button
+        }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function moveToTop() {
+            window.scrollTo({ 
+                top: 0, 
+                behavior: 'smooth' 
+            }); // Smooth scroll to top
+        }
+
+        // script for faq section
+        // Added the sliding animation
+
+        document.querySelectorAll('details').forEach((faq) => {
+            faq.addEventListener('toggle', function() {
+                const content = this.querySelector('p');
+                if (this.open) {
+                    content.style.height = '0px';
+                    content.style.transition = 'height 0.5s ease-out';
+                    content.style.height = content.scrollHeight + 'px'; // Sets the height based on the actual content
+                } else {
+                    content.style.height = content.scrollHeight + 'px'; // Height is set to the current scrollHeight
+                    setTimeout(() => {
+                        content.style.height = '0px'; // Collapses after the content has been shown
+                    }, 10); // Delay to allow height to adjust first
+                }
+            });
+        });
+
+
+
+
+        let mybutton = document.getElementById("myBtn");
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
     }
-    }
 
-    // When the user clicks on the button, scroll to the top of the document
-    function moveToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
-    }
-
-    // script for faq section
-
-document.querySelectorAll('.faq-question').forEach(button => {
-  button.addEventListener('click', () => {
-    const answer = button.nextElementSibling;
-    const isExpanded = button.getAttribute('aria-expanded') === 'true';
-
-    document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
-    document.querySelectorAll('.faq-question').forEach(q => q.setAttribute('aria-expanded', 'false'));
-
-    if (!isExpanded) {
-      answer.style.display = 'block';
-      button.setAttribute('aria-expanded', 'true');
-    }
-  });
-});
-
-
-
-
-let mybutton = document.getElementById("myBtn");
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-
-</script>
-<script src="app.js"></script>
+    </script>
+    <script src="app.js"></script>
 </body>
 
 </html>
