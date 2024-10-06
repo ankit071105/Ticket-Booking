@@ -1,11 +1,11 @@
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_ID,
-  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
+    apiKey: "AIzaSyDMIOxJSByLu96mGV6kAhwMVVVo7sebBdM",
+    authDomain: "ticket-booking-4e35f.firebaseapp.com",
+    projectId: "ticket-booking-4e35f",
+    storageBucket: "ticket-booking-4e35f.appspot.com",
+    messagingSenderId: "735303265369",
+    appId: "1:735303265369:web:07e050aae870d80987d548",
+    measurementId: "G-VNMJ68NQTD"
 };
 
 // Initialize Firebase
@@ -31,3 +31,15 @@ function signInWithGoogle() {
       console.log("Error during sign-in:", error);
     });
 }
+
+document.getElementById('googleSignup').addEventListener('click', function(e) {
+  // TODO: Handle Google Sign-In logic here
+  e.preventDefault();
+  signInWithGoogle(); 
+});
+
+document.getElementById('googleSignin').addEventListener('click', function(e) {
+  // TODO: Handle Google Sign-In logic here
+  e.preventDefault();
+  signInWithGoogle(); // Use the same function as in register.html
+});
