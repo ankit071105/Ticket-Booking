@@ -12,90 +12,256 @@
 
 
   <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #003366;
+      padding: 20px;
+      color: white;
+      font-size: 18px;
+    }
+
+    .navbar .logo-image {
+      height: 40px;
+      width: 40px;
+      margin-right: 10px;
+    }
+
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+
+    .nav-links li {
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #1fb899;
+    }
+
+    /* Add login/signup button */
+    .auth-links a {
+      margin-left: 20px;
+      color: white;
+      padding: 8px 16px;
+      background-color: #1fb899;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .auth-links a:hover {
+      background-color: #4cc6ad;
+    }
+
+    /* Sell Ticket Section */
+    .sell-ticket {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+    }
+
+    .sell-ticket h1 {
+      font-size: 36px;
+      color: #003366;
+      font-weight: 600;
+    }
+
+    .sell-ticket img {
+      max-width: 230px;
+      margin-top: 20px;
+    }
+
     
-/* code for bottom to top nav  */
 
-#myBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  background-color:#1fb899;
-  color: white;
-  cursor: pointer;
-  padding: 10px 6px;
-  border-radius: 4px;
-  width: 40px !important;
-  height: 40px !important;
-}
+    .sell-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
 
-#myBtn:hover {
-  background-color: #4cc6ad;
-}
+    .sell-buttons .btn {
+      background-color: #1fb899;
+      color: white;
+      padding: 15px 30px;
+      margin: 0 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
 
- /* code for bottom to top nav  */
+    .sell-buttons .btn:hover {
+      background-color: #4cc6ad;
+    }
 
+    /* Middle Section */
+    .middle-content {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+    }
+
+    .middle-content h2 {
+      font-size: 30px;
+      color: #003366;
+      font-weight: 600;
+    }
+
+    .middle-content p {
+      font-size: 18px;
+      color: #666;
+      margin: 10px 0;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .footer .social-icons {
+      margin: 10px 0;
+    }
+
+    .footer .social-icons a {
+      margin: 0 10px;
+      color: white;
+      font-size: 24px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer .social-icons a:hover {
+      color: #1fb899;
+    }
+
+    .footer p {
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    /* Back to Top Button */
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: #1fb899;
+      color: white;
+      cursor: pointer;
+      padding: 10px 6px;
+      border-radius: 4px;
+      width: 40px;
+      height: 40px;
+    }
+
+    #myBtn:hover {
+      background-color: #4cc6ad;
+    }
   </style>
 </head>
 
 <body>
+  <!-- Back to Top Button -->
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+
   <!-- Navbar -->
-   
-    
-<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
-
-
   <nav class="navbar">
-
     <div class="logo"><img src="images/4.jpeg" alt="Ticket Booking Logo" class="logo-image">Ticket Marketplace</div>
-
-    
-    <a href="./index.html" id="logo-href"><div class="logo">Ticket Marketplace</div></a>
 
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="sell.html">Sell Ticket</a></li>
       <li><a href="buy.html">Buy Ticket</a></li>
     </ul>
+
+    <!-- Add Login/Signup links -->
+    <div class="auth-links">
+      <a href="login.html">Login</a>
+      <a href="signup.html">Signup</a>
+    </div>
   </nav>
 
   <!-- Sell Ticket Section -->
   <section class="sell-ticket">
     <h1>Sell Your Ticket</h1>
+    <!-- Adding an image in the middle of the page -->
+    <img src="images\sale.png" alt="Sell Ticket Icon">
+
     <div class="sell-buttons">
       <a href="bus_sell.html" class="btn">Sell Bus Ticket</a>
       <a href="train_sell.html" class="btn">Sell Train Ticket</a>
     </div>
   </section>
 
+  <!-- Middle Content Section -->
+  <section class="middle-content">
+    <h2>Why Choose Us?</h2>
+    <p>Sell your bus or train tickets easily and quickly with our marketplace. Enjoy a fast, secure, and reliable platform to find buyers and sell your tickets hassle-free.</p>
+    <p>Benefits include: no hidden fees, instant payments, and a user-friendly platform. Join thousands of satisfied users today!</p>
+  </section>
+
   <!-- Footer -->
   <footer class="footer">
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
     <p>&copy; 2024 Ticket Marketplace | All rights reserved.</p>
+    <p>Contact us: support@ticketmarketplace.com | Phone: +123-456-7890</p>
   </footer>
 
-
+  <!-- Scroll to Top Script -->
   <script>
-  
-let mybutton = document.getElementById("myBtn");
-window.onscroll = function() {scrollFunction()};
+    let mybutton = document.getElementById("myBtn");
+    window.onscroll = function () { scrollFunction() };
 
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
 
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
   </script>
 </body>
 
