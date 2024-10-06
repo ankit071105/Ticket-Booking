@@ -69,6 +69,87 @@
       background-color: #4cc6ad;
     }
     
+
+
+
+
+    /* code for ticket booking form  */
+    .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100vh; */
+    flex-wrap: wrap;
+    margin-top: 10px;
+  
+}
+
+.left-section, .right-section {
+    flex: 1;
+    padding: 20px;
+    height: 100%;
+}
+
+.left-section {
+   min-width: 400px;
+   max-width: 600px;
+}
+
+
+.image-placeholder {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+.right-section {
+  
+    min-width: 400px;
+    background-color: #1fb899;
+    padding: 40px;
+    border-radius: 5px;
+    max-width: 600px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-btn {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 7px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    height: 60px;
+}
+
+.submit-btn:hover {
+    background-color: #e33e3e;
+}
   </style>
 </head>
 
@@ -93,26 +174,43 @@
     </nav>
   </header>
 
-  <main class="container">
-    <h1>Buy Tickets</h1>
-    <div>
-      <label for="ticketType">Select Ticket Type:</label>
-      <select id="ticketType" aria-label="Select ticket type">
-        <option value="bus">Bus</option>
-        <option value="train">Train</option> 
-      </select>
-      <br><br>
-      <button id="showTickets" aria-label="Show available tickets" style="width: 200px; height: 60px; border-radius: 25px ; color: rgb(14, 2, 61);box-shadow:7px 8px 8px 1px brown">  Tickets</button>
+
+
+  <body>
+    <div class="container">
+        <div class="left-section">
+            <img src="./images/bus.avif" class="bus-img" alt="">
+        </div>
+        <div class="right-section">
+            <h2>Book Your ticket</h2>
+            <form id="ticketForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="ticketType">Select ticket type</label>
+                    <select id="ticketType" name="ticketType" required>
+                        <option value="">Select Ticket Type</option>
+                        <option value="Bus">Bus ticket</option>
+                        <option value="Train">Train ticket</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ticketCount">Ticket</label>
+                    <select id="ticketCount" name="ticketCount" required>
+                        <option value="">Select How Many Tickets You Want</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Check Availability</button>
+            </form>
+        </div>
     </div>
-    <section id="busTickets" class="ticket-section" aria-labelledby="busTicketsHeading">
-      <h2 id="busTicketsHeading">Available Bus Tickets</h2>
-      <div id="busTicketsList" role="list"></div>
-    </section>
-    <section id="trainTickets" class="ticket-section" aria-labelledby="trainTicketsHeading">
-      <h2 id="trainTicketsHeading">Available Train Tickets</h2>
-      <div id="trainTicketsList" role="list"></div>
-    </section>
-  </main>
+    
 
   <script>
     const tickets = JSON.parse(localStorage.getItem('tickets')) || [];
