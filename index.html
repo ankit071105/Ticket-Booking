@@ -525,55 +525,47 @@
             <h2>FAQs</h2>
             <p>Answers to the most frequently asked questions.</p>
         </header>
-
+    
         <details>
             <summary>
                 <h4>Why is Raycast free for personal use?</h4>
                 <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
             </summary>
-            <p>We think of Raycast as a productivity layer that everybody should use to get work done faster. To make it
-                accessible, we don't charge for the individual plan. The plan covers all built-in extensions, such as
-                Clipboard History, Calendar or Window Management and provides access to all public extensions built by
-                our community.</p>
+            <p>We think of Raycast as a productivity layer that everybody should use to get work done faster. To make it accessible, we don't charge for the individual plan. The plan covers all built-in extensions, such as Clipboard History, Calendar or Window Management and provides access to all public extensions built by our community.</p>
         </details>
-
+    
         <hr>
-
+    
         <details>
             <summary>
                 <h4>When is Raycast for teams available?</h4>
                 <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
             </summary>
-            <p>We don't have an exact date right now, but we will launch Raycast for Teams in 2022. You can sign up to
-                get early access above, and be the first to hear when we're launching it.</p>
+            <p>We don't have an exact date right now, but we will launch Raycast for Teams in 2022. You can sign up to get early access above, and be the first to hear when we're launching it.</p>
         </details>
-
+    
         <hr>
-
+    
         <details>
             <summary>
                 <h4>How many seats do I get in a Team plan?</h4>
                 <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
             </summary>
-            <p>We don't have an exact date right now, but we will launch Raycast for Teams in 2022. You can sign up to
-                get early access above, and be the first to hear when we're launching it.</p>
+            <p>Each Team plan comes with a minimum of 5 seats, but you can add more as needed.</p>
         </details>
-
+    
         <hr>
-
+    
         <details>
             <summary>
                 <h4>Can I have personal Extensions and Team Extensions?</h4>
                 <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
             </summary>
-            <p>Yes, you can create personal Extensions that are personalized to you, and speed up your productivity, and
-                have team Extensions that can be shared around in your organization for everyone to use. Team Extensions
-                will be available in the Store command, behind a filter for your Team. This is where all of your Team
-                Extensions will live, and where you can install them.</p>
+            <p>Yes, you can create personal Extensions that are personalized to you, and speed up your productivity, and have team Extensions that can be shared around in your organization for everyone to use. Team Extensions will be available in the Store command, behind a filter for your Team. This is where all of your Team Extensions will live, and where you can install them.</p>
         </details>
-
+    
         <hr>
-
+    
         <details>
             <summary>
                 <h4>How much will Team features cost?</h4>
@@ -581,8 +573,57 @@
             </summary>
             <p>Team features will cost $10 per user, per month.</p>
         </details>
-
+    
+        <hr>
+    
+        <details>
+            <summary>
+                <h4>Is there a mobile app for Raycast?</h4>
+                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
+            </summary>
+            <p>Currently, Raycast is only available for MacOS. We are looking into expanding to other platforms, including mobile, in the future.</p>
+        </details>
+    
+        <hr>
+    
+        <details>
+            <summary>
+                <h4>Can I import my settings from another productivity tool?</h4>
+                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
+            </summary>
+            <p>Yes, Raycast allows you to import settings from popular productivity tools like Alfred and Spotlight, making the transition seamless.</p>
+        </details>
+    
+        <hr>
+    
+        <details>
+            <summary>
+                <h4>How can I contact support for Raycast?</h4>
+                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
+            </summary>
+            <p>You can reach our support team through the Help section within the app or by emailing support@raycast.com.</p>
+        </details>
+    
+        <hr>
     </div>
+    
+
+    <script>
+        document.querySelectorAll('details').forEach(detail => {
+            detail.addEventListener('toggle', () => {
+                const arrow = detail.querySelector('.arrow i');
+                if (detail.open) {
+                    arrow.classList.remove('fa-angle-down');
+                    arrow.classList.add('fa-angle-up');
+                } else {
+                    arrow.classList.remove('fa-angle-up');
+                    arrow.classList.add('fa-angle-down');
+                }
+            });
+        });
+        
+    </script>
+    
 
 
 
