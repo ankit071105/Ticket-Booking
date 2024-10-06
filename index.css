@@ -43,6 +43,16 @@ p {
   list-style: none;
   display: flex;
   gap: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items:center;
+  justify-content: space-evenly;
+  margin-top: 5px;
+}
+
+.nav-container{
+  width: 1500px;
 }
 
 .nav-links a {
