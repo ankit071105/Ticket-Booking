@@ -874,12 +874,14 @@
                 if (!isExpanded) {
                     answer.style.display = 'block';
                     button.setAttribute('aria-expanded', 'true');
-                }
-            })
-        })
+
+                }    
+            })       
+        });
+
         window.onscroll = function() { 
-            scrollFunction() 
-        };
+           scrollFunction() 
+         };
 
         function scrollFunction() {
         const topBtn = document.getElementById("topBtn");
@@ -942,10 +944,10 @@
             document.documentElement.scrollTop = 0;
         }
 
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
 
     // toggle chatbot function
     function toggleChatbot() {
@@ -954,6 +956,7 @@
     }
 
     </script>
+
     <script src="app.js"></script>
     <script src="chatbot.js"></script>
 </body>
