@@ -25,7 +25,7 @@ function signInWithGoogle() {
       console.log("User signed in:", user);
 
       // Redirect to dashboard or any page after successful login
-      window.location.href = "dashboard.html";
+      window.location.href = "../../index.html";
     })
     .catch((error) => {
       console.log("Error during sign-in:", error);
