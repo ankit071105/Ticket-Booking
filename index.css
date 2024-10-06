@@ -405,6 +405,7 @@ p {
 .bbtn:focus {
     outline: none !important;
     box-shadow: 0 0 10px rgba(7, 152, 116, 0.7), 0 0 20px rgba(7, 152, 116, 0.5) !important;
+}   
 
 button {
   background-color: rgba(255, 255, 255, 0.8);
