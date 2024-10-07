@@ -647,17 +647,17 @@ h1 {
 }
  
       
-/* @media only screen and (max-width: 690px) {
+@media only screen and (max-width: 770px) {
   .navbar {
    
-    flex-direction: row;
+    flex-direction: row !important;
      
   }
  .containers{
     padding: 15px;
  }
  
-} */
+}
 
         @media (max-width: 768px) {
             .contact-info, .map-container {
@@ -665,9 +665,14 @@ h1 {
                 margin-right: 0; /* Remove margin on smaller screens */
             }
         }
+
+        .bbtn{
+            border-radius: 8px !important;
+            margin:10px;
+        } 
     </style>
 
-
+  
 </head>
 <body>
 
@@ -706,9 +711,9 @@ h1 {
                 <li><a href="sell.html"><i class="fas fa-tag"></i> Sell</a></li>
                 <li><a href="#sxs"><i class="fas fa-envelope"></i> Contact</a></li>
                 <li><a href="/client/register.html" class="login-btn"><i class="fas fa-user"></i>Signup</a></li>
-                
+                <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+           
             </ul>
-            <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
            
         </div>
     </nav>
@@ -766,18 +771,24 @@ h1 {
             <p>Find affordable bus tickets for your travel needs. Select your destination and date of travel to get started.</p>
             <br>   
             <a href="buy.html"><button class="bbtn">Buy Bus Tickets</button></a>
-            <br>
-            <p>Looking to sell your bus tickets? Contact us for reselling options!</p>
+        </div>
+        <div class="ticket-card">
+            <h3>Sell Bus Tickets</h3>
+           
+            <p>Looking to sell your bus tickets? Contact us 24*7 for best price of your bus ticket without any hussle</p>
             <br>   
             <a href="bus_sell.html"><button class="bbtn">Sell Bus Tickets</button></a>
         </div>
 
         <div class="ticket-card">
             <h3>Train Tickets</h3>
-            <p>Secure train tickets for your journey across the country. Check availability and book now.</p>
+            <p>Secure train tickets for your journey across the country. Check availability and book now with trusted plaform.</p>
             <br>  
             <a href="buy.html"><button class="bbtn">Buy Train Tickets</button></a>
-            <br>  
+           </div>
+        <div class="ticket-card">
+            <h3>Sell Train Tickets</h3>
+             
             <p>Have train tickets to sell? Reach out to us to list your tickets.</p>
             <br> 
             <a href="train_sell.html"><button class="bbtn">Sell Train Tickets</button></a>
