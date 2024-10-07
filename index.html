@@ -8,10 +8,11 @@
     <link rel="shortcut icon" href="images/4.jpeg" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="footer.css">
     <style>
         .close-btn {
         position: absolute;
@@ -161,6 +162,11 @@
             align-items: center;
             justify-content: center;
             box-sizing: border-box;
+
+        }
+
+        .toggle-arrow {
+
         }
 
         .toggle-arrow {
@@ -168,6 +174,20 @@
             top: 50%;
             left: 0;
             transform: translateY(-50%);
+            background-color: #1fb899;
+            padding: 5px;
+            border-radius: 0 10px 10px 0;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+        }
+
+        .social-sidebar {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+
             background-color: #1fb899;
             padding: 5px;
             border-radius: 0 10px 10px 0;
@@ -277,11 +297,482 @@
             border: none; /* Remove default border */
             border-radius: 8px;
         }
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background-color: #1fb899;
+            padding: 8px;
+            border-radius: 0 10px 10px 0;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
 
+        .social-sidebar a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+            transition: background-color 0.6s ease, transform 0.3s ease;
+            border: none;
+            border-bottom: none;
+            border-radius: 5px;
+        }
+
+        .social-sidebar a:hover {
+            background-color: #ffffff;
+            border-radius: 50%;
+            color: black;
+            transform: scale(1.1);
+        }
+
+        .social-sidebar i {
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .social-sidebar a:hover i {
+            transform: scale(1);
+        }
+
+
+        /* code for bottom to to nav  */
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 10px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #1fb899;
+            color: white;
+            cursor: pointer;
+            padding: 10px 6px;
+            border-radius: 4px;
+            width: 40px !important;
+            height: 40px !important;
+        }
+
+        #myBtn:hover {
+            background-color: #4cc6ad;
+        }
+
+        /* code for bottom to to nav  */
+
+        /* code for chatbot button */
+        #chatbotBtn {
+            position: fixed;
+            bottom: 65px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            /* background-color: #1fb899; */
+            background-image: url('./images/bot.jpg');
+            background-size: cover;
+            background-position: center;
+            border: none;
+            padding: 0;
+            color: white;
+            cursor: pointer;
+            /* padding: 10px 6px; */
+            width: 50px !important;
+            height: 50px !important;
+            border-radius: 100%;
+        }
         
-      
+        .chatbot-container {
+            display: none;
+            width: 370px;
+            max-width: 100%;
+            position: fixed;
+            bottom: 75px;
+            right: 30px;
+            margin: 50px auto;
+            padding: 20px;
+            z-index: 1001;
+            border-radius: 10px;
+            box-shadow: #64646f33 0px 7px 29px 0px;
+            background: #31363F;
+        }
 
-       
+        .chatbot-container.chatbot-show {
+            display: block;
+        }
+
+        .chatbot-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #edf1f3;
+        }
+
+        .chatbot-chat {
+            height: 250px;
+            overflow-y: scroll;
+            margin: 20px 0;
+            padding: 10px;
+            border: 2px solid #545250;
+            border-radius: 5px;
+            background: #222831;
+        }
+
+        .chatbot-message {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .chatbot-user {
+            justify-content: flex-end;
+        }
+
+        .chatbot-bot {
+            justify-content: flex-start;
+        }
+
+        .chatbot-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 0 10px;
+        }
+
+        .chatbot-user .chatbot-avatar {
+            order: 2;
+            background: url("./images/avatar.jpg");
+            background-size: cover;
+        }
+
+        .chatbot-bot .chatbot-avatar {
+            order: 1;
+            background: url("./images/bot.jpg");
+            background-size: cover;
+        }
+
+        .chatbot-text {
+            max-width: 70%;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 12px;
+            color: white;
+        }
+
+        .chatbot-user .chatbot-text {
+            background: #4a4d52;
+        }
+
+        .chatbot-bot .chatbot-text {
+            background: #8c8c8e;
+        }
+
+        .chatbot-input {
+            position: relative;
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #cbcbce;
+            border-radius: 5px;
+            outline: none;
+            font-size: 15px;
+        
+        }
+
+        .chatbot-input:focus {
+            border-color: #8296d0;
+            color: #1e1f1f;
+        }
+
+        .chatbot-button {
+            position: absolute;
+            width: 80px;
+            border: none;
+            border-radius: 0%;
+            padding: 1px;
+            background: #31363F;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: -1.02rem;
+            margin-left: -4.1rem;
+            outline: none;
+            border-radius: 100%;
+        }
+        .chatbot-button i{
+        font-size: 3rem;
+        }
+        .chatbot-button:hover {
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .chatbot-chat::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .chatbot-chat::-webkit-scrollbar-thumb {
+            background: #bcbdc0;
+            border-radius: 10px;
+        }
+        /* chatbot css end */
+
+        /* map code  */
+        .containers {
+            /* background-color: red; */
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            padding: 20px 100px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .contact-info {
+            background-color: #00bfa6;
+            width: 40%; /* Set width for contact info */
+            padding: 30px;
+            /* margin:4px; */
+            text-align: left;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
+        }
+
+        .map-container {
+            width: 55%; /* Set width for the map container */
+        }
+
+        .map-container iframe {
+            width: 100%; /* Make iframe responsive */
+            height: 400px; /* Set a fixed height for the map */
+            border: none; /* Remove default border */
+            border-radius: 8px;
+        }
+
+       /* testimonial code  */
+       @import url("https://fonts.googleapis.com/css2?family=Shippori+Antique&display=swap");
+
+button,
+input,
+select {
+	font-family: inherit;
+	font-size: 100%;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 12px;
+}
+
+
+
+.content-wrapper {
+	height: 100%;
+	width: 70%;
+	max-width: 100rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 5rem;
+    margin: 0 auto;
+}
+
+h1 {
+	margin-bottom: calc(0.7rem + 0.5vmin);
+	font-size: calc(2.3rem + 1vmin);
+}
+
+.blue-line {
+	height: 0.3rem;
+	width: 6rem;
+	background-color: rgb(79, 143, 226);
+	margin-bottom: calc(3rem + 2vmin);
+}
+
+.wrapper-for-arrows {
+	position: relative;
+	width: 70%;
+	border-radius: 2rem;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	overflow: hidden;
+	display: grid;
+	place-items: center;
+}
+
+.review-wrap {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: calc(2rem + 1vmin);
+	width: 100%;
+}
+
+#imgDiv {
+	border-radius: 50%;
+	width: calc(6rem + 4vmin);
+	height: calc(6rem + 4vmin);
+	position: relative;
+	box-shadow: 5px -3px rgb(79, 143, 226);
+	background-size: cover;
+	margin-bottom: calc(0.7rem + 0.5vmin);
+}
+
+.chicken {
+	background-image: url("https://media0.giphy.com/media/A8Cdznswn5vnG/200w.gif?cid=790b7611e8c5980ee7141bc18ec12c49962b871eb404ba5b&rid=200w.gif&ct=s");
+	width: 200px;
+	height: 250px;
+	position: absolute;
+	top: 12%;
+}
+
+#imgDiv::after {
+	content: "''";
+	font-size: calc(2rem + 2vmin);
+	font-family: sans-serif;
+	line-height: 150%;
+	color: #fff;
+	display: grid;
+	place-items: center;
+	border-radius: 50%;
+	background-color: rgb(79, 143, 226);
+	position: absolute;
+	top: 10%;
+	left: -10%;
+	width: calc(2rem + 2vmin);
+	height: calc(2rem + 2vmin);
+}
+
+#personName {
+	margin-bottom: calc(0.7rem + 0.5vmin);
+	font-size: calc(1rem + 0.5vmin);
+	letter-spacing: calc(0.1rem + 0.1vmin);
+	font-weight: bold;
+}
+
+#profession {
+	font-size: calc(0.8rem + 0.3vmin);
+	margin-bottom: calc(0.7rem + 0.5vmin);
+	color: rgb(79, 143, 226);
+}
+
+#description {
+	font-size: calc(0.8rem + 0.3vmin);
+	width: 70%;
+	max-width: 40rem;
+	text-align: center;
+	margin-bottom: calc(1.4rem + 1vmin);
+	color: rgb(92, 92, 92);
+	line-height: 2rem;
+}
+
+.arrow-wrap {
+	position: absolute;
+	top: 50%;
+}
+
+.arrow {
+	width: calc(1.4rem + 0.6vmin);
+	height: calc(1.4rem + 0.6vmin);
+	border: solid rgb(79, 143, 226);
+	border-width: 0 calc(0.5rem + 0.2vmin) calc(0.5rem + 0.2vmin) 0;
+	cursor: pointer;
+	transition: transform 0.3s;
+}
+
+.arrow:hover {
+	transition: 0.3s;
+	transform: scale(1.15);
+}
+
+.left-arrow-wrap {
+	left: 5%;
+	transform: rotate(135deg);
+	-webkit-transform: rotate(135deg);
+}
+
+.right-arrow-wrap {
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	right: 5%;
+}
+
+.surprise-me-btn {
+	border: 2px solid rgb(79, 143, 226);
+	background-color: rgb(224, 238, 255);
+	color: rgb(79, 143, 226);
+	border-radius: 2rem;
+	padding: calc(0.5rem + 0.2vmin) 0;
+	width: calc(7rem + 5vmin);
+	text-align: center;
+	transition: background-color 0.3s, transform 0.3s;
+	cursor: pointer;
+	margin-bottom: calc(1.4rem + 1vmin);
+}
+
+.surprise-me-btn:hover {
+	transition: background-color 0.3s, transform 0.3s;
+	background-color: rgb(255, 255, 255);
+	transform: rotate(5deg);
+}
+
+.move-head {
+	animation: moveHead 1.55s infinite;
+	animation-delay: -0.8s;
+}
+
+.hide-chicken-btn {
+	border: 2px solid rgb(226, 89, 79);
+	background-color: rgb(255, 224, 224);
+	color: rgb(226, 79, 79);
+	border-radius: 2rem;
+	padding: calc(0.5rem + 0.2vmin) 0;
+	width: calc(10rem + 5vmin);
+	text-align: center;
+	transition: background-color 0.3s, transform 0.3s;
+	cursor: pointer;
+	margin-bottom: calc(1.4rem + 1vmin);
+}
+
+.hide-chicken-btn:hover {
+	transition: background-color 0.3s, transform 0.3s;
+	background-color: rgb(255, 255, 255);
+	transform: rotate(5deg);
+}
+
+@keyframes moveHead {
+	0% {
+	}
+	25% {
+		transform: translate(0.5rem, 1rem) rotate(5deg);
+	}
+	100% {
+		transform: translate(0, 0) rotate(-5deg);
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.content-wrapper {
+		width: 100%;
+	}
+}
+ 
+      
+/* @media only screen and (max-width: 690px) {
+  .navbar {
+   
+    flex-direction: row;
+     
+  }
+ .containers{
+    padding: 15px;
+ }
+ 
+} */
+
 
         @media (max-width: 768px) {
             .contact-info, .map-container {
@@ -298,8 +789,15 @@
 
     <button onclick="moveToTop()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"
             aria-hidden="true"></i></button>
-
-
+    <!--chat bot-->
+    <button onclick="toggleChatbot()" id="chatbotBtn" title="chat bot"></button>
+    
+    <div class="chatbot-container" id="chatbot-container">
+        <div class="chatbot-title">Ticket Bot</div>
+        <div class="chatbot-chat" id="chatbot-chat"></div>
+        <input type="text" class="chatbot-input" id="chatbot-input" placeholder="Type your message here...." />
+        <button class="chatbot-button" id="chatbot-button"><i class="fa-brands fa-telegram"></i></button>
+      </div>
     <nav class="navbar">
         <a href="./index.html" id="logo-href">
             <div class="logo-container">
@@ -314,14 +812,24 @@
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
+
             <ul class="nav-links">
                 <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+
+            <ul class="nav-links" style="align-items: center;">
+                <li><a href="#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+
                 <li><a href="buy.html"><i class="fas fa-shopping-cart"></i> Buy</a></li>
                 <li><a href="sell.html"><i class="fas fa-tag"></i> Sell</a></li>
                 <li><a href="#sxs"><i class="fas fa-envelope"></i> Contact</a></li>
                 <li><a href="/client/register.html" class="login-btn"><i class="fas fa-user"></i>Signup</a></li>
+
             </ul>
 
+            <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+
+                
+            </ul>
             <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
         </div>
     </nav>
@@ -405,7 +913,11 @@
     <div>
       <h2 class="section__title">Why book with us?</h2>
       <p class="section__subtitle">
+
         Click on the Panel cards! 
+
+        Click on the cards! 
+
       </p>
     </div>
 </div>
@@ -423,7 +935,7 @@
             <p>We make bus and train ticket booking simple and hassle-free, offering a streamlined experience so you
                 can plan your journeys effortlessly.</p>
           </p>
-          
+   
         </div>
       </div>
       <!-- Panel End -->
@@ -431,6 +943,36 @@
       <!-- Panel Start -->
       <div
         class="card"
+      >
+      <img src="/images/lowest-booking.svg" alt="" class="pic">
+      <div class="hedd">
+        <h4>LOWEST PRICE</h4>
+    </div>
+        <div class="info">
+          
+            <h3>Lowest Price</h3>
+            <p>Find the best deals on bus and train tickets. We guarantee competitive prices to ensure you save more
+                on every trip. </p>
+
+        </div>
+      </div>
+      <!-- Panel End -->
+
+      <!-- Panel Start -->
+      <div
+        class="card"
+
+        
+      >
+      <img src="/images/exc-deal.svg" alt="" class="pic"
+      class="pic">
+      <div class="hedd">
+        <h4> THRILL DEALS</h4>
+    </div>
+        <div class="info">
+          
+            <h3>Thrill Deals</h3>
+
       >
       <img src="/images/lowest-booking.svg" alt="" class="pic">
       <div class="hedd">
@@ -454,11 +996,12 @@
       <img src="/images/exc-deal.svg" alt="" class="pic"
       class="pic">
       <div class="hedd">
-        <h4> THRILL DEALS</h4>
+        <h4>DEALS</h4>
     </div>
         <div class="info">
           
-            <h3>Thrill Deals</h3>
+            <h3>Exciting Deals</h3>
+
             <p>Unlock special discounts and offers on bus and train bookings, helping you travel for less without
                 compromising on quality.</p>
         </div>
@@ -581,17 +1124,208 @@
             </summary>
             <p>Team features will cost $10 per user, per month.</p>
         </details>
+    </div>
+  </div>
 
+  <div class="content-wrapper">
+    <h1>Our Reviews</h1>
+    <div class="blue-line"></div>
+    <div class="wrapper-for-arrows">
+        <div style="opacity: 0;" class="chicken"></div>
+        <div id="reviewWrap" class="review-wrap">
+            <div id="imgDiv" class="">
+            </div>
+            <div id="personName"></div>
+            <div id="profession"></div>
+            <div id="description">
+            </div>
+        </div>
+        <div id="surpriseMeBtn" class="surprise-me-btn">Surprise me</div>
+        <div class="left-arrow-wrap arrow-wrap">
+            <div class="arrow" id="leftArrow"></div>
+        </div>
+        <div class="right-arrow-wrap arrow-wrap">
+            <div class="arrow" id="rightArrow"></div>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="main.js"></script>
+ 
+<script src="about.js"></script>
+
+
+    <div class="containers" id="sxs">
+        <div class="contact-info">
+            <h2 style="text-align:left">Contact Us</h2>
+            <p style="color: white;font-size: 16px;">We value your feedback! We'd love to hear from you! For inquiries, feedback, or support, please reach out. Your insights help us improve your experience.</p>
+            
+            <h4>Localisation</h4>
+            <p style="color: white;font-size: 16px;">ABC colony, Bangalore Pin: 76896</p>
+    
+            <h4>Phone No</h4>
+            <p  style="color: white;font-size: 16px;">+91 9685478526</p>
+        </div>
+
+    </footer>
+
+
+    
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126915.40242030277!2d85.7892607!3d20.2498709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a7a3b9692fff%3A0x87cd0a356bbc39ce!2sITER%2C%20Siksha%20'O'%20Anusandhan!5e0!3m2!1sen!2sin!4v1689514124518!5m2!1sen!2sin"
+                allowfullscreen>
+            </iframe>
+        </div> 
     </div>
 
 
 
 
-    <footer>
-        <div class="footer">
-            &copy; 2024 Ticket Booking. All rights reserved. | <a href="#">Privacy Policy</a>
+
+    <br>
+
+
+
+    <div class="faq-section">
+        <header>
+            <h2>FAQs</h2>
+            <h3><center> Answers to the most frequently asked questions.</center></h3>
+        </header>
+
+        <details>
+            <summary>
+                <h4>Why is Raycast free for personal use?</h4>
+                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
+            </summary>
+            <p>We think of Raycast as a productivity layer that everybody should use to get work done faster. To make it
+                accessible, we don't charge for the individual plan. The plan covers all built-in extensions, such as
+                Clipboard History, Calendar or Window Management and provides access to all public extensions built by
+                our community.</p>
+        </details>
+
+        <hr>
+
+        <details>
+            <summary>
+                <h4>When is Raycast for teams available?</h4>
+                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
+            </summary>
+            <p>We don't have an exact date right now, but we will launch Raycast for Teams in 2022. You can sign up to
+                get early access above, and be the first to hear when we're launching it.</p>
+        </details>
+
+        <hr>
+
+        <details>
+            <summary>
+                <h4>How many seats do I get in a Team plan?</h4>
+                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
+            </summary>
+            <p>We don't have an exact date right now, but we will launch Raycast for Teams in 2022. You can sign up to
+                get early access above, and be the first to hear when we're launching it.</p>
+        </details>
+
+        <hr>
+
+        <details>
+            <summary>
+                <h4>Can I have personal Extensions and Team Extensions?</h4>
+                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
+            </summary>
+            <p>Yes, you can create personal Extensions that are personalized to you, and speed up your productivity, and
+                have team Extensions that can be shared around in your organization for everyone to use. Team Extensions
+                will be available in the Store command, behind a filter for your Team. This is where all of your Team
+                Extensions will live, and where you can install them.</p>
+        </details>
+
+        <hr>
+
+        <details>
+            <summary>
+                <h4>How much will Team features cost?</h4>
+                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
+            </summary>
+            <p>Team features will cost $10 per user, per month.</p>
+        </details>
+
+    </div>
+
+
+<!-- footer -->
+
+<footer class="footer-container">
+    <div class="footer-top">
+      <!-- Logo and Tagline -->
+      <div class="footer-logo-section">
+        <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo">
+        <p style="color: #b5fdf4;" >Affordable adventures, unforgettable memories—explore with ease.</p>
+        <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
-    </footer>
+      </div>
+  
+      <!-- Links Sections -->
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>HELPFUL LINKS</h4>
+          <ul>
+            <li><a href="#">Help Centre</a></li>
+            <li><a href="#">Special Assistance</a></li>
+            <li><a href="#">Download The App</a></li>
+            <li><a href="#">Booking Conditions</a></li>
+          </ul>
+        </div>
+  
+        <div class="footer-column">
+          <h4>ABOUT US</h4>
+          <ul>
+            <li><a href="#">Media Center</a></li>
+            <li><a href="#">Investors</a></li>
+            <li><a href="#">Modern Slavery Act</a></li>
+            <li><a href="#">Terms Of Use</a></li>
+          </ul>
+        </div>
+  
+        <div class="footer-column">
+          <h4>KEEPING SAFE</h4>
+          <ul>
+            <li><a href="#">ATOL Protected</a></li>
+            <li><a href="#">Travel Aware</a></li>
+            <li><a href="#">FCDO Travel Advice</a></li>
+            <li><a href="#">ABTA</a></li>
+          </ul>
+        </div>
+  
+        <div class="footer-column">
+          <h4>FIND US</h4>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Group Cookie Notice</a></li>
+            <li><a href="#">Privacy And Policy</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Additional Links Section -->
+    <div class="footer-bottom">
+      <ul>
+        <li><a href="#">Holiday Type</a></li>
+        <li><a href="#">Holiday Deals</a></li>
+        <li><a href="#">Popular Counters</a></li>
+        <!-- <li><a href="#">Flight Only</a></li> -->
+        <li><a href="#">Top Hotels</a></li>
+      </ul>
+    </div>
+  </footer>
 
     <script>
         let currentSlide = 0;
@@ -783,10 +1517,23 @@
             document.documentElement.scrollTop = 0;
         }
 
+    // toggle chatbot function
+    function toggleChatbot() {
+        const chatbotContainer = document.getElementById("chatbot-container");
+        chatbotContainer.classList.toggle("chatbot-show");
+    }
+
 
     </script>
 
     <script src="app.js"></script>
+
 </body>
 
 </html>
+
+    <script src="chatbot.js"></script>
+</body>
+
+</html>
+

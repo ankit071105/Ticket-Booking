@@ -1,0 +1,316 @@
+* {
+    box-sizing: border-box;
+  }
+  .section__header{
+    text-align: center;
+  }
+  
+  .outer-box {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    
+  }
+  
+  .container {
+    display: flex;
+    width: 60vw;
+    gap: 30px;
+    margin-top: 0;
+}
+  
+
+  .card {
+    background-color: #366675;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 7%, rgba(255, 255, 255, 0) 30%);
+    height: 50vh;
+    border-radius: 35px 35px;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    border: 2px solid rgb(87, 159, 147);
+}
+
+.card .pic {
+    width: 30%; /* Adjust this percentage as needed */
+    height: auto; /* Maintain aspect ratio */
+    visibility: hidden; /* Hide initially; show on active */
+    display: block; /* Ensure it's treated as a block element */
+    margin: 0 auto; /* Center horizontally */
+    transform: translateY(-50px); /* Move upwards (adjust the value as needed) */
+}
+
+
+  
+  
+  .info {
+    position: absolute;
+    bottom: 20px;
+    left: 20%;
+    visibility: hidden;
+    background: rgba(221, 206, 216, 0.462);
+    backdrop-filter:blur(4px);
+    width: 400px;
+    border: 2px solid goldenrod;
+    border-radius: 15px 15px;
+    padding-left: 15px;
+  }
+  
+  .card h3 {
+    font-size: 24px;
+    opacity: 0;
+    color: black !important;
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    font-weight: bolder;
+    
+  }
+  
+  .card p {
+    font-size: 16px;
+    opacity: 0;
+    color:black !important;
+    margin-top: 10px;
+    font-weight: 500;
+    
+  }
+  
+  .card.active {
+    flex: 6;
+    
+  }
+  
+  .card.active h3 {
+    opacity: 1;
+    transition: opacity 0.5s ease-in 0.8s;
+  }
+  
+  .card.active p {
+    opacity: 1;
+    transition: opacity 0.5s ease-in 0.8s;
+  }
+  
+  .card.active .info {
+    visibility: visible;
+  }
+  .card.active .pic{
+    visibility: visible;
+    
+  }
+  
+
+.hedd {
+    
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: block;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    transform: translate(-98%, -50%);
+    white-space: nowrap;
+    visibility: visible;
+    
+    z-index: 1; /* Ensure it appears above the card */
+}
+
+
+h4{
+    /* color: whitesmoke !important; */
+    /* max-width: 80px; */
+}
+
+  .card.active .hedd{
+    visibility: hidden;
+  }
+
+
+
+
+ /* Media Queries */
+ @media (max-width: 1230px) {
+    .outer-box {
+        margin-top: 0;
+        padding-top: 0;
+        height: auto; /* Set auto height to fit content */
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column; /* Stack cards vertically for medium screens */
+        gap: 20px; /* Adjusted gap */
+        margin-top: 0;
+    }
+
+    .card {
+        width: 80%; /* Adjusted width */
+        height: 15vh; /* Adjusted height for cards */
+        margin: 10px auto; /* Center the cards horizontally */
+        padding: 10px;
+    }
+
+    .card.active {
+        height: 35vh; /* Increased height for active card */
+    }
+
+    .info {
+        left: 10%; /* Adjusted left positioning */
+        width: 80%; /* Adjust width for medium screens */
+        bottom: 20px;
+    }
+
+    .card h3 {
+        font-size: 22px; /* Slightly increased font size */
+        text-align: center;
+    }
+
+    .card p {
+        font-size: 14px; /* Keep same font size */
+        text-align: center;
+    }
+
+    .hedd {
+        font-size: 1.2rem; /* Adjusted font size */
+        writing-mode: horizontal-tb; /* Make text horizontal for medium screens */
+        margin-bottom: 10px; /* Add some spacing */
+    }
+}
+
+@media (max-width: 620px) {
+    .container {
+        height: auto; /* Allow height to adjust dynamically */
+        flex-direction: column; /* Align cards in a row for smaller screens */
+        justify-content: center; /* Center items */
+    }
+
+    .card {
+        width: 90%; /* Make cards take full width on small screens */
+        height: auto; /* Allow dynamic height */
+        margin: 10px auto; /* Center the cards horizontally */
+    }
+
+    .card .pic {
+        width: 50%; /* Adjusted image size for better fit */
+    }
+
+    .info {
+        width: 90%; /* Adjust info width for small screens */
+        left: 5%; /* Center the info box */
+        padding: 15px;
+    }
+
+    .info p {
+        font-size: 12px; /* Reduced font size */
+    }
+
+    .hedd {
+        font-size: 1rem; 
+        writing-mode: horizontal-tb; /* Keep text horizontal */
+        text-align: center;
+        margin-bottom: 10px; /* Spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        flex-direction: column;
+        align-items: center; /* Center align the cards within the container */
+        width: 100vw; /* Ensure container takes full viewport width */
+        padding: 0; /* Remove any extra padding */
+    }
+
+    .card {
+        width: 90vw; /* Set card width to 90% of the viewport */
+        margin: 10px auto; /* Center the cards horizontally */
+        height: auto; /* Allow dynamic height */
+        padding: 15px; /* Internal padding */
+        box-sizing: border-box; /* Ensure padding is included in width */
+    }
+
+    .card.active {
+        height: auto; /* Dynamic height for active cards */
+        padding: 20px; /* Extra padding for active card */
+    }
+
+    .info {
+        width: 85vw; /* Set width of info box */
+        padding: 15px; /* Internal padding */
+        bottom: 10px; /* Adjust bottom positioning */
+        left: 0; /* Remove left positioning */
+        right: 0; /* Center the info box */
+        margin: 0 auto; /* Center align the info box */
+        height: auto; /* Dynamic height */
+        text-align: center; /* Center align text */
+        overflow: hidden; /* Prevent overflow */
+    }
+
+    .info p {
+        font-size: 12px; /* Adjusted font size for smaller screens */
+        margin: 5px 0; /* Reduce margins */
+    }
+
+    .card h3 {
+        font-size: 20px; /* Larger font size for headings */
+        margin-bottom: 10px; /* Add spacing below headings */
+    }
+
+    .card p {
+        font-size: 14px; /* Adjusted font size for descriptions */
+    }
+
+    .hedd {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+        text-align: center; /* Center align text */
+        margin: 10px 0; /* Add spacing */
+    }
+
+    /* Ensure images are centered and visible */
+    .card .pic {
+        width: 50%; /* Adjust image width */
+        margin: 10px auto; /* Center the image */
+        display: block; /* Ensure image displays as block */
+    }
+
+    .outer-box {
+        width: 100vw; /* Ensure outer container takes full width */
+        overflow-x: hidden; /* Prevent horizontal overflow */
+    }
+}
+
+
+
+@media (max-width: 280px) {
+    .container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .card {
+        width: 100%; /* Full width for very small screens */
+        margin: 5px 0;
+    }
+
+    .info {
+        width: 100%; /* Full width */
+        left: 0; /* Remove left positioning */
+        padding: 5px;
+    }
+
+    .hedd {
+        font-size: 0.8rem; /* Further reduce font size */
+        writing-mode: horizontal-tb; /* Keep text horizontal */
+    }
+}
+  

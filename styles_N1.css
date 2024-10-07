@@ -135,7 +135,7 @@
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
   }
 /* Footer Styles */
-  footer {
+  /* footer {
     background-color: #1f2937;
     color: white;
     text-align: center;
@@ -154,7 +154,7 @@
   .footer a:hover {
     color: #00a690;
   }
-  
+   */
   /* Form Section */
   form {
     display: flex;

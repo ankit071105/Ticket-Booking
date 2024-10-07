@@ -1,114 +1,95 @@
+// Constants for price calculations
+const SELLER_DEDUCTION = 50;
+const BUYER_ADDED_FEE = 100;
+
 // Initialize empty ticket array in localStorage if not already set
 if (!localStorage.getItem('tickets')) {
   localStorage.setItem('tickets', JSON.stringify([]));
 }
 
-// Handle bus ticket submission
-document.getElementById('busTicketForm')?.addEventListener('submit', function (e) {
-  e.preventDefault();
+// Function to validate form data
+function validateFormData(data) {
+  if (!data.name || !data.phone || !data.email || !data.ticketNumber || !data.ticketNumber) {
+    alert("Please fill out all required fields.");
+    return false;
+  }
+  return true;
+}
 
-  // Collect form data
-  const name = document.getElementById('name').value;
-  const phone = document.getElementById('phone').value;
-  const email = document.getElementById('email').value;
-  const ticketNumber = document.getElementById('ticketNumber').value;
-  const busName = document.getElementById('busName').value;
-  const departureLocation = document.getElementById('departureLocation').value;
-  const arrivalLocation = document.getElementById('arrivalLocation').value;
-  const departureTime = document.getElementById('departureTime').value;
-  const date = document.getElementById('date').value;
-  const seatNumber = document.getElementById('seatNumber').value;
-  const price = parseFloat(document.getElementById('price').value);
+// Common ticket submission handler
+function handleTicketSubmission(formId, type) {
+  document.getElementById(formId)?.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-  // Calculate seller's deduction and buyer's added fee
-  const sellerAmount = price - 50;  // ₹50 deduction for seller
-  const buyerPrice = price + 100;   // ₹100 added for buyer
+    // Collect form data
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
+    const ticketNumber = document.getElementById('ticketNumber').value;
+    const departureStation = document.getElementById('departureStation').value;
+    const arrivalStation = document.getElementById('arrivalStation').value;
+    const departureTime = document.getElementById('departureTime').value;
+    const date = document.getElementById('date').value;
+    const seatNumber = document.getElementById('seatNumber').value;
+    const price = parseFloat(document.getElementById('price').value);
 
-  // Create ticket object
-  const ticket = {
-    name,
-    phone,
-    email,
-    ticketNumber,
-    busName,
-    departureLocation,
-    arrivalLocation,
-    departureTime,
-    date,
-    seatNumber,
-    price,
-    sellerAmount,
-    buyerPrice,
-    type: 'bus',
-  };
+    // Validate form data
+    if (!validateFormData({ name, phone, email, ticketNumber })) {
+      return;
+    }
 
-  // Store the ticket in localStorage
-  const tickets = JSON.parse(localStorage.getItem('tickets'));
-  tickets.push(ticket);
-  localStorage.setItem('tickets', JSON.stringify(tickets));
+    let additionalDetails = {};
 
-  // Show confirmation message to seller
-  document.getElementById('sellerMessage').textContent = `Your bus ticket is listed! You will receive ₹${sellerAmount} after sale.`;
-  document.getElementById('busTicketForm').reset();
-});
+    // Specific data for train or bus
+    if (type === 'bus') {
+      additionalDetails.busName = document.getElementById('busName').value;
+    } else if (type === 'train') {
+      additionalDetails.trainNumber = document.getElementById('trainNumber').value;
+      additionalDetails.category = document.getElementById('category').value;
+      additionalDetails.Class1 = document.getElementById('Class1').value;
+    }
 
-// Handle train ticket submission
-document.getElementById('trainTicketForm')?.addEventListener('submit', function (e) {
-  e.preventDefault();
+    // Calculate seller's deduction and buyer's added fee
+    const sellerAmount = price - SELLER_DEDUCTION;
+    const buyerPrice = price + BUYER_ADDED_FEE;
 
-  // Collect form data
-  const name = document.getElementById('name').value;
-  const phone = document.getElementById('phone').value;
-  const email = document.getElementById('email').value;
-  const ticketNumber = document.getElementById('ticketNumber').value;
-  const trainNumber = document.getElementById('trainNumber').value;
-  const departureLocation = document.getElementById('departureLocation').value;
-  const arrivalLocation = document.getElementById('arrivalLocation').value;
-  const departureTime = document.getElementById('departureTime').value;
-  const date = document.getElementById('date').value;
-  const coachType = document.getElementById('coachType').value;
-  const acClass = document.getElementById('acClass').value;
-  const seatNumber = document.getElementById('seatNumber').value;
-  const price = parseFloat(document.getElementById('price').value);
+    // Create ticket object
+    const ticket = {
+      name,
+      phone,
+      email,
+      ticketNumber,
+      departureStation,
+      arrivalStation,
+      departureTime,
+      date,
+      seatNumber,
+      price,
+      sellerAmount,
+      buyerPrice,
+      type,
+      ...additionalDetails,
+    };
 
-  // Calculate seller's deduction and buyer's added fee
-  const sellerAmount = price - 50;  // ₹50 deduction for seller
-  const buyerPrice = price + 100;   // ₹100 added for buyer
+    // Store the ticket in localStorage
+    const tickets = JSON.parse(localStorage.getItem('tickets'));
+    tickets.push(ticket);
+    localStorage.setItem('tickets', JSON.stringify(tickets));
 
-  // Create ticket object
-  const ticket = {
-    name,
-    phone,
-    email,
-    ticketNumber,
-    trainNumber,
-    departureLocation,
-    arrivalLocation,
-    departureTime,
-    date,
-    coachType,
-    acClass,
-    seatNumber,
-    price,
-    sellerAmount,
-    buyerPrice,
-    type: 'train',
-  };
+    // Show confirmation message
+    document.getElementById('sellerMessage').textContent = `Your ${type} ticket is listed! You will receive ₹${sellerAmount} after sale.`;
+    document.getElementById(formId).reset();
+  });
+}
 
-  // Store the ticket in localStorage
-  const tickets = JSON.parse(localStorage.getItem('tickets'));
-  tickets.push(ticket);
-  localStorage.setItem('tickets', JSON.stringify(tickets));
-
-  // Show confirmation message to seller
-  document.getElementById('sellerMessage').textContent = `Your train ticket is listed! You will receive ₹${sellerAmount} after sale.`;
-  document.getElementById('trainTicketForm').reset();
-});
+// Initialize the event listeners
+handleTicketSubmission('busTicketForm', 'bus');
+handleTicketSubmission('trainTicketForm', 'train');
 
 // Display tickets in the buy.html page
 function displayTickets(type) {
   const ticketContainer = document.getElementById('ticketContainer');
-  ticketContainer.innerHTML = '';  // Clear previous tickets
+  ticketContainer.innerHTML = ''; // Clear previous tickets
 
   // Retrieve tickets from localStorage
   const tickets = JSON.parse(localStorage.getItem('tickets')) || [];
@@ -126,12 +107,14 @@ function displayTickets(type) {
       // Common ticket details
       ticketCard.innerHTML = `
         <h3>${type === 'bus' ? 'Bus Ticket' : 'Train Ticket'}</h3>
-        <p><strong>Ticket Number:</strong> ${ticket.ticketNumber}</p>
+        <p><strong>PNR Number:</strong> ${ticket.ticketNumber}</p>
         <p><strong>Seller Name:</strong> ${ticket.name}</p>
         <p><strong>Contact:</strong> ${ticket.phone} | ${ticket.email}</p>
-        <p><strong>Departure:</strong> ${ticket.departureLocation}</p>
-        <p><strong>Arrival:</strong> ${ticket.arrivalLocation}</p>
+        <p><strong>Departure Station:</strong> ${ticket.departureStation}</p>
+        <p><strong>Arrival Station:</strong> ${ticket.arrivalStation}</p>
         <p><strong>Departure Time:</strong> ${ticket.departureTime}</p>
+        <p><strong>Class:</strong> ${ticket.Class1}</p>
+        <p><strong>Category:</strong> ${ticket.category}</p>
         <p><strong>Date:</strong> ${ticket.date}</p>
         <p><strong>Seat Number:</strong> ${ticket.seatNumber}</p>
         <p><strong>Original Price:</strong> ₹${ticket.price}</p>
