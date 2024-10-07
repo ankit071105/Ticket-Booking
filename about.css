@@ -144,7 +144,7 @@ h4{
     .outer-box{
         margin-top: 0;
         padding-top: 0;
-        height: 150vh;
+        /* height: 150vh; */
     }
     .container {
         display: flex;
