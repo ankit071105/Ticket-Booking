@@ -31,3 +31,15 @@ function signInWithGoogle() {
       console.log("Error during sign-in:", error);
     });
 }
+
+document.getElementById('googleSignup').addEventListener('click', function(e) {
+  // TODO: Handle Google Sign-In logic here
+  e.preventDefault();
+  signInWithGoogle(); 
+});
+
+document.getElementById('googleSignin').addEventListener('click', function(e) {
+  // TODO: Handle Google Sign-In logic here
+  e.preventDefault();
+  signInWithGoogle(); // Use the same function as in register.html
+});
