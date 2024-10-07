@@ -29,6 +29,36 @@ Getting started with GG Extensions is easy! Follow these steps to jump right in:
 3. **Choose Your Project**: Once you've identified a project that interests you, let us know! We'll assign you the issue and provide any additional resources or information you may need to get started.
 4. **Start Contributing**: Dive into the project, work on your assigned tasks, and collaborate with your peers. Don't hesitate to ask for help or feedback along the way—we're all here to learn and grow together.
 
+## 🛠 Installation and Usage
+To set up the project locally, follow these steps:
+
+## 1. Clone the Repository
+git clone https://github.com/ankit071105/Ticket-Booking.git
+
+## 2. Frontend Setup
+The frontend of the project is located in the Ticket-booking folder.<br>
+Open the project in VS Code and click Go Live to run the frontend.
+
+## 3. Backend Setup
+Navigate to the server folder.<br>
+Install the required dependencies:<br>
+```bash
+cd server
+npm install
+```
+### Set up environment variables by creating a .env file in the server folder with the following variables:
+```bash
+DB_URI=your_mongoDB_connection_URI<br>
+DB_NAME=your_database_name<br>
+```
+### Run the backend server using:
+```bash
+npm run dev
+```
+## 4. Running the Project
+Once both the frontend and backend are set up, the project will be accessible on the defined local port.
+
+
 ## 🛠 How to Contribute?
 
 Contributing to GG Extensions is a rewarding experience that allows you to sharpen your skills, gain practical experience, and make meaningful contributions to real-world projects. Here's how you can get involved:
