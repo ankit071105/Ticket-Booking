@@ -44,25 +44,38 @@ To submit your contributions, follow these steps:
 
 1. **Star the repository**: Don't forget to show your support by starring this repository!
 2. **Fork the Repository**: Click the "Fork" button at the top right corner of the repository to create your own copy.
-3. **Clone the repository**:
-   ```bash
+3. 📥**Clone the repository**:
+```bash
    git clone https://github.com/ankit071105/Ticket-Booking.git
    ```
-4. **Create a Branch**: Create a new branch for your changes:
-   ```bash
+4. 📂 **Change the working directory**: 
+```bash
+   cd Ticket-Booking
+   ```
+5. 🔗 **Add a reference to the original repository**.
+```bash
+   git remote add upstream https://github.com/ankit071105/Ticket-Booking.git
+   ```
+6. ⬇️ **Always take a pull from the upstream repository to your main branch to keep it up-to-date with the main project (updated repository)**.
+```bash
+   git pull upstream main
+   ```
+4. 🌿 **Create a Branch**: Create a new branch for your changes:
+```bash
    git checkout -b my-feature
    ```
 5. **Make Changes**: Make your desired changes to the codebase.
-6. **Commit Changes**: Commit your changes with a descriptive commit message:
-   ```bash
+6. 📥 **Commit Changes**: Commit your changes with a descriptive commit message:
+```bash
    git commit -m "Add new feature"
    ```
-7. **Push Changes**: Push your changes to your forked repository:
-   ```bash
+7. ⬇️ **Push Changes**: Push your changes to your forked repository:
+```bash
    git push origin my-feature
    ```
 8. **Submit a Pull Request**: Go to your forked repository on GitHub and submit a pull request. Be sure to provide a detailed description of your changes and why they are necessary.
 
+🎉 Voila! You have made a PR to the Ticket-Booking project. Sit back patiently and relax while the project maintainers review your PR.
 ---
 
 ## ❤️ Our Valuable Contributors
