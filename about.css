@@ -16,13 +16,13 @@
     
   }
   
-  .container {
+  /* .container {
     display: flex;
     width: 60vw;
     gap: 30px;
     margin-top: 0;
 }
-  
+   */
 
   .card {
     background-color: #366675;
@@ -147,11 +147,12 @@ h4{
         /* height: 150vh; */
     }
     .container {
-        display: flex;
-        flex-direction: column; /* Stack cards vertically for medium screens */
-        height: 150px; /* Allow dynamic height */
-        gap: 20px; /* Adjusted gap */
-        margin-top: 0;
+        /* display: flex; */
+        /* flex-direction: column; Stack cards vertically for medium screens */
+        /* height: 150px; Allow dynamic height */
+        /* gap: 20px; Adjusted gap */
+        /* margin-top: 0;
+        border:2px solid red; */
     }
 .card{
     height: 10vh ;
@@ -221,9 +222,7 @@ h4{
 }
 
 @media (max-width: 480px) {
-    .container{
-        flex-direction: column;
-    }
+   
     .card {
         
         width: 70vw;
