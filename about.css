@@ -108,23 +108,23 @@
     
   }
   
-
-.hedd {
-    
-    font-size: 1.2rem;
-    font-weight: 600;
-    display: block;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    position: absolute;
-    top: 50%;
-    left: 90%;
-    transform: translate(-98%, -50%);
-    white-space: nowrap;
-    visibility: visible;
-    
-    z-index: 1; /* Ensure it appears above the card */
-}
+@media (min-width: 1240px) {
+    .hedd {
+      font-size: 1.2rem;
+      font-weight: 600;
+      display: block;
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      position: absolute;
+      top: 50%;
+      left: 90%;
+      transform: translate(-98%, -50%);
+      white-space: nowrap;
+      visibility: visible;
+      z-index: 1; /* Ensure it appears above the card */
+    }
+  }
+  
 
 
 h4{
