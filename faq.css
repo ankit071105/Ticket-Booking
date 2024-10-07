@@ -10,11 +10,17 @@
   }
 
   .down-arrow{
+    color: black;
+  }
+  .down-arrow:hover{
     color: #1fb899;
   }
 
-  header > p {
+  header > h3 {
     font-size: 22px;
+    color: black;
+  }
+  header > h3:hover{
     color: #1fb899;
   }
   
@@ -24,6 +30,9 @@
     color: black;
     margin-bottom: 20px;
     font-weight: bold;
+  }
+  h2:hover{
+    color: #1fb899
   }
   
   details {
@@ -45,6 +54,9 @@
     color: black;
     flex-grow: 1;
     margin: 0;
+  }
+  h4:hover{
+    color: #1fb899
   }
   
   summary {
