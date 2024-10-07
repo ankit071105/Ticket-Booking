@@ -215,7 +215,7 @@ iframe {
   line-height: 1.6;
 }
 
-footer {
+/* footer {
   background-color: #1f2937;
   color: white;
   text-align: center;
@@ -234,15 +234,14 @@ footer {
 
 .footer a:hover {
   color: #00a690;
-}
+} */
 
 body.dark-mode {
   background: linear-gradient(135deg, #007acc, #00cc99);
   color: #fff;
 }
 
-body.dark-mode .navbar,
-body.dark-mode footer {
+body.dark-mode .navbar {
   background-color: #000;
 }
 body.dark-mode .ticket-card p {
@@ -405,6 +404,7 @@ p {
 .bbtn:focus {
     outline: none !important;
     box-shadow: 0 0 10px rgba(7, 152, 116, 0.7), 0 0 20px rgba(7, 152, 116, 0.5) !important;
+}   
 
 button {
   background-color: rgba(255, 255, 255, 0.8);
