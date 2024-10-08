@@ -29,7 +29,7 @@ p {
   align-items: center;
   position: sticky;
   top: 0;
-  z-index: 1000;
+ 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -215,26 +215,6 @@ iframe {
   line-height: 1.6;
 }
 
-/* footer {
-  background-color: #1f2937;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 50px;
-  position: relative;
-  width: 100%;
-  bottom: 0;
-  font-size: 1rem;
-}
-
-.footer a {
-  color: #00bfa6;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  color: #00a690;
-} */
 
 body.dark-mode {
   background: linear-gradient(135deg, #007acc, #00cc99);
