@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy Train Ticket</title>
+  <link rel="shortcut icon" href="images/logoNw.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    
+    /* code for bottom to top nav  */
+    
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color:#1fb899;
+      color: white;
+      cursor: pointer;
+      padding: 10px 6px;
+      border-radius: 4px;
+      width: 40px !important;
+      height: 40px !important;
+    }
+    
+    #myBtn:hover {
+      background-color: #4cc6ad;
+    }
+   
+     /* code for bottom to top nav  */
+    
+      </style>
+</head>
+
+<body>
+  
+    
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+
+
+  <!-- Navbar -->
+  <nav class="navbar">
+
+    <div class="logo"><img src="images/log2.jpg" alt="Ticket Booking Logo" class="logo-image"></div>
+
+    <a href="./index.html" id="logo-href"><div class="logo">Ticket Marketplace</div></a>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="sell.html">Sell Ticket</a></li>
+      <li><a href="buy.html">Buy Ticket</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="ticket-list">
+    <h1>Browse Our Available Train Tickets</h1>
+
+    <div class="ticket-card">
+      <h3>Ticket Number: 54321</h3>
+      <p><strong>Seat:</strong> S1 10</p>
+      <p><strong>From:</strong> Boston</p>
+      <p><strong>To:</strong> Chicago</p>
+      <p><strong>Date:</strong> 18/10/2024</p>
+      <p><strong>Coach:</strong> AC First Class</p>
+      <p><strong>Price:</strong> $120</p>
+      <button class="btn" aria-label="Buy Ticket for Ticket Number 54321">Buy Ticket</button>
+    </div>
+
+    <div class="ticket-card">
+      <h3>Ticket Number: 98765</h3>
+      <p><strong>Seat:</strong> S2 3</p>
+      <p><strong>From:</strong> Miami</p>
+      <p><strong>To:</strong> Orlando</p>
+      <p><strong>Date:</strong> 20/10/2024</p>
+      <p><strong>Coach:</strong> Sleeper</p>
+      <p><strong>Price:</strong> $70</p>
+      <button class="btn" aria-label="Buy Ticket for Ticket Number 98765">Buy Ticket</button>
+    </div>
+
+    <!-- Add more tickets dynamically here -->
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Ticket Marketplace | All rights reserved.</p>
+    <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    let mybutton = document.getElementById("myBtn");
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
+      <script src="app.js"></script>
+</body>
+
+</html>

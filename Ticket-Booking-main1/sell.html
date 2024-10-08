@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sell Ticket</title>
+  <link rel="shortcut icon" href="images/logoNw.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+  <style>
+    
+/* code for bottom to top nav  */
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color:#1fb899;
+  color: white;
+  cursor: pointer;
+  padding: 10px 6px;
+  border-radius: 4px;
+  width: 40px !important;
+  height: 40px !important;
+}
+
+#myBtn:hover {
+  background-color: #4cc6ad;
+}
+
+ /* code for bottom to top nav  */
+
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+   
+    
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+
+
+  <nav class="navbar">
+
+    <div class="logo1"><img src="images/logoNw.png" alt="Ticket Booking Logo" class="logo-image"></div>
+
+    
+    <a href="./index.html" id="logo-href"><div class="write">Ticket Marketplace</div></a>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="sell.html">Sell Ticket</a></li>
+      <li><a href="buy.html">Buy Ticket</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sell Ticket Section -->
+  <section class="sell-ticket">
+    <h1>Sell Your Ticket</h1>
+    <div class="sell-buttons">
+      <a href="bus_sell.html" class="btn">Sell Bus Ticket</a>
+      <a href="train_sell.html" class="btn">Sell Train Ticket</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Ticket Marketplace | All rights reserved.</p>
+  </footer>
+
+
+  <script>
+  
+let mybutton = document.getElementById("myBtn");
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+  </script>
+</body>
+
+</html>
