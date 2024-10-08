@@ -43,6 +43,7 @@ p {
   list-style: none;
   display: flex;
   gap: 30px;
+  align-items: center;
 }
 
 .nav-links a {
@@ -50,6 +51,7 @@ p {
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
+  padding: 5px;
 }
 
 .nav-links a:hover {
@@ -272,8 +274,8 @@ body.dark-mode .ticket-card button:hover {
 
   .navbar .nav-links {
     flex-direction: row;
-    gap: 15px;
-    align-items: flex-start;
+    gap: 20px;
+    align-items: center;
   }
 }
 

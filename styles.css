@@ -1175,10 +1175,9 @@ img {
     flex-direction: column;
     background-color: #092143;
     width: 80%;
-    max-width: 300px;
-
+    max-width: 295px;
     text-align: center;
-    padding: 50px 20px;
+    padding: 32px 19px;
 }
 
 .about h2 {
