@@ -418,6 +418,7 @@
             width: 40%; /* Set width for contact info */
             padding: 30px;
             /* margin:4px; */
+            /* min-width: 400px; */
             text-align: left;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
@@ -650,8 +651,11 @@ h1 {
     flex-direction: row !important;
      
   }
+  .navbar .nav-links {
+    flex-direction: column;
+  }
  .containers{
-    padding: 15px;
+    padding: 15px 30px;
  }
  
 }
@@ -838,7 +842,7 @@ h1 {
 
 
     <div class="containers" id="sxs">
-        <div class="contact-info">
+        <div class="contact-info" style="padding-left: 30px;">
             <h2 style="text-align:left">Contact Us</h2>
             <p style="color: white;font-size: 16px;">We value your feedback! We'd love to hear from you! For inquiries, feedback, or support, please reach out. Your insights help us improve your experience.</p>
             
