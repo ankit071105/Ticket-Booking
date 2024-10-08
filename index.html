@@ -9,11 +9,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="about.css">
-    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="footer.css"> 
+    <link rel="stylesheet" href="faq.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="why-us.css">
     <style>
+        @import url("https://fonts.googleapis.com/css2?family=Shippori+Antique&display=swap");
+
         .close-btn {
         position: absolute;
         top: -10px;
@@ -138,14 +145,6 @@
     
     /* code for bottom to to nav  */
 
-    </style>
-
-    <link rel="stylesheet" href="faq.css">
-    <link rel="stylesheet" href="styles.css">
-
-    <link rel="stylesheet" href="index.css">
-
-    <style>
         .close-btn {
             position: absolute;
             top: -10px;
@@ -533,6 +532,7 @@
             width: 40%; /* Set width for contact info */
             padding: 30px;
             /* margin:4px; */
+            /* min-width: 400px; */
             text-align: left;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
@@ -549,9 +549,7 @@
             border-radius: 8px;
         }
 
-       /* testimonial code  */
-       @import url("https://fonts.googleapis.com/css2?family=Shippori+Antique&display=swap");
-
+   
 button,
 input,
 select {
@@ -774,17 +772,20 @@ h1 {
 }
  
       
-/* @media only screen and (max-width: 690px) {
+@media only screen and (max-width: 770px) {
   .navbar {
    
-    flex-direction: row;
+    flex-direction: row !important;
      
   }
+  .navbar .nav-links {
+    flex-direction: column;
+  }
  .containers{
-    padding: 15px;
+    padding: 15px 30px;
  }
  
-} */
+}
 
 
         @media (max-width: 768px) {
@@ -793,9 +794,14 @@ h1 {
                 margin-right: 0; /* Remove margin on smaller screens */
             }
         }
+
+        .bbtn{
+            border-radius: 8px !important;
+            margin:10px;
+        } 
     </style>
 
-
+  
 </head>
 <body>
 
@@ -837,6 +843,12 @@ h1 {
                 <li><a href="#sxs"><i class="fas fa-envelope"></i> Contact</a></li>
                 <li><a href="/client/register.html" class="login-btn"><i class="fas fa-user"></i>Signup</a></li>
 
+                <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+           
+            </ul>
+           
+
+
             </ul>
 
             <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
@@ -844,6 +856,7 @@ h1 {
                 
             </ul>
             <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+
         </div>
     </nav>
     <div class="slider">
@@ -900,18 +913,24 @@ h1 {
             <p>Find affordable bus tickets for your travel needs. Select your destination and date of travel to get started.</p>
             <br>   
             <a href="buy.html"><button class="bbtn">Buy Bus Tickets</button></a>
-            <br>
-            <p>Looking to sell your bus tickets? Contact us for reselling options!</p>
+        </div>
+        <div class="ticket-card">
+            <h3>Sell Bus Tickets</h3>
+           
+            <p>Looking to sell your bus tickets? Contact us 24*7 for best price of your bus ticket without any hussle</p>
             <br>   
             <a href="bus_sell.html"><button class="bbtn">Sell Bus Tickets</button></a>
         </div>
 
         <div class="ticket-card">
             <h3>Train Tickets</h3>
-            <p>Secure train tickets for your journey across the country. Check availability and book now.</p>
+            <p>Secure train tickets for your journey across the country. Check availability and book now with trusted plaform.</p>
             <br>  
             <a href="buy.html"><button class="bbtn">Buy Train Tickets</button></a>
-            <br>  
+           </div>
+        <div class="ticket-card">
+            <h3>Sell Train Tickets</h3>
+             
             <p>Have train tickets to sell? Reach out to us to list your tickets.</p>
             <br> 
             <a href="train_sell.html"><button class="bbtn">Sell Train Tickets</button></a>
@@ -919,8 +938,6 @@ h1 {
     </div>
 </div>
 
-
-    
 <!-- about section -->
 <div class="section__header">
     <div>
@@ -1040,11 +1057,6 @@ h1 {
       </div>
       <!-- Panel End -->
 
-      
-    </div>
-  </div>
-  
-
 <script src="about.js"></script>
 
 
@@ -1153,7 +1165,7 @@ h1 {
             <div id="description">
             </div>
         </div>
-        <div id="surpriseMeBtn" class="surprise-me-btn">Surprise me</div>
+        <div class="surprise-me-btn">Surprise me</div>
         <div class="left-arrow-wrap arrow-wrap">
             <div class="arrow" id="leftArrow"></div>
         </div>
@@ -1169,7 +1181,7 @@ h1 {
 
 
     <div class="containers" id="sxs">
-        <div class="contact-info">
+        <div class="contact-info" style="padding-left: 30px;">
             <h2 style="text-align:left">Contact Us</h2>
             <p style="color: white;font-size: 16px;">We value your feedback! We'd love to hear from you! For inquiries, feedback, or support, please reach out. Your insights help us improve your experience.</p>
             

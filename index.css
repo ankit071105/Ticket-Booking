@@ -271,8 +271,8 @@ body.dark-mode .ticket-card button:hover {
   }
 
   .navbar .nav-links {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    gap: 15px;
     align-items: flex-start;
   }
 }
