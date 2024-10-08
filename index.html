@@ -743,6 +743,19 @@ h1 {
 	transform: rotate(5deg);
 }
 
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%; 
+    flex: none;
+    margin-bottom: 20px;
+  }
+}
+
 @keyframes moveHead {
 	0% {
 	}
