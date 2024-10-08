@@ -141,116 +141,189 @@ h4{
 
  /* Media Queries */
  @media (max-width: 1230px) {
-    .outer-box{
+    .outer-box {
         margin-top: 0;
         padding-top: 0;
-        /* height: 150vh; */
+        height: auto; /* Set auto height to fit content */
     }
+
     .container {
+<<<<<<< HEAD
         /* display: flex; */
         /* flex-direction: column; Stack cards vertically for medium screens */
         /* height: 150px; Allow dynamic height */
         /* gap: 20px; Adjusted gap */
         /* margin-top: 0;
         border:2px solid red; */
+=======
+        display: flex;
+        flex-direction: column; /* Stack cards vertically for medium screens */
+        gap: 20px; /* Adjusted gap */
+        margin-top: 0;
+>>>>>>> af2f5ff27be34f3259bb1e955dbed7d4224c8234
     }
-.card{
-    height: 10vh ;
-    margin-top: 0;
-    padding-top: 0;
-}
-.card.active{
-    height: 30vh;
-}
+
+    .card {
+        width: 80%; /* Adjusted width */
+        height: 15vh; /* Adjusted height for cards */
+        margin: 10px auto; /* Center the cards horizontally */
+        padding: 10px;
+    }
+
+    .card.active {
+        height: 35vh; /* Increased height for active card */
+    }
+
     .info {
-        left: 5%; /* Adjusted left positioning */
-        width: 50%; /* Adjust width for medium screens */
+        left: 10%; /* Adjusted left positioning */
+        width: 80%; /* Adjust width for medium screens */
+        bottom: 20px;
     }
 
     .card h3 {
-        font-size: 20px; /* Reduced font size for medium screens */
+        font-size: 22px; /* Slightly increased font size */
         text-align: center;
     }
 
     .card p {
-        font-size: 14px; /* Reduced font size for medium screens */
+        font-size: 14px; /* Keep same font size */
         text-align: center;
     }
-    h4{
-        /* writing-mode: sideways-lr;
-        text-orientation: sideways-right;
-        rotate: -90deg;
-        text-align: center; */
 
+    .hedd {
+        font-size: 1.2rem; /* Adjusted font size */
+        writing-mode: horizontal-tb; /* Make text horizontal for medium screens */
+        margin-bottom: 10px; /* Add some spacing */
     }
-
-    
 }
 
 @media (max-width: 620px) {
     .container {
-        height: 200px;
+        height: auto; /* Allow height to adjust dynamically */
         flex-direction: column; /* Align cards in a row for smaller screens */
         justify-content: center; /* Center items */
-        
     }
 
     .card {
         width: 90%; /* Make cards take full width on small screens */
         height: auto; /* Allow dynamic height */
+        margin: 10px auto; /* Center the cards horizontally */
     }
 
     .card .pic {
-        width: 40%; /* Reduced image size for smaller screens */
+        width: 50%; /* Adjusted image size for better fit */
     }
 
     .info {
         width: 90%; /* Adjust info width for small screens */
-        height: 100%;
-        left: 5%; /* Adjust left positioning for smaller screens */
-        height: 90%;
-    }
-    .info p{
-        font-size: 10px;
-        margin-bottom: 5px;
+        left: 5%; /* Center the info box */
+        padding: 15px;
     }
 
-    h4 {
+    .info p {
+        font-size: 12px; /* Reduced font size */
+    }
+
+    .hedd {
         font-size: 1rem; 
-        writing-mode: sideways-lr;
+        writing-mode: horizontal-tb; /* Keep text horizontal */
+        text-align: center;
+        margin-bottom: 10px; /* Spacing */
     }
 }
 
 @media (max-width: 480px) {
+<<<<<<< HEAD
    
+=======
+    .container {
+        flex-direction: column;
+        align-items: center; /* Center align the cards within the container */
+        width: 100vw; /* Ensure container takes full viewport width */
+        padding: 0; /* Remove any extra padding */
+    }
+
+>>>>>>> af2f5ff27be34f3259bb1e955dbed7d4224c8234
     .card {
-        
-        width: 70vw;
+        width: 90vw; /* Set card width to 90% of the viewport */
+        margin: 10px auto; /* Center the cards horizontally */
+        height: auto; /* Allow dynamic height */
+        padding: 15px; /* Internal padding */
+        box-sizing: border-box; /* Ensure padding is included in width */
+    }
+
+    .card.active {
+        height: auto; /* Dynamic height for active cards */
+        padding: 20px; /* Extra padding for active card */
     }
 
     .info {
-        bottom: 10px; /* Adjusted bottom positioning */
+        width: 85vw; /* Set width of info box */
+        padding: 15px; /* Internal padding */
+        bottom: 10px; /* Adjust bottom positioning */
+        left: 0; /* Remove left positioning */
+        right: 0; /* Center the info box */
+        margin: 0 auto; /* Center align the info box */
+        height: auto; /* Dynamic height */
+        text-align: center; /* Center align text */
+        overflow: hidden; /* Prevent overflow */
+    }
+
+    .info p {
+        font-size: 12px; /* Adjusted font size for smaller screens */
+        margin: 5px 0; /* Reduce margins */
     }
 
     .card h3 {
-        font-size: 16px; /* Further reduced font size */
+        font-size: 20px; /* Larger font size for headings */
+        margin-bottom: 10px; /* Add spacing below headings */
     }
 
     .card p {
-        font-size: 8px; /* Further reduced font size */
+        font-size: 14px; /* Adjusted font size for descriptions */
     }
 
     .hedd {
-        font-size: 0.1rem; /* Adjusted size for very small screens */
-        top: 0; /* Align to the top */
-        writing-mode: sideways-lr;
+        font-size: 1rem; /* Adjust font size for smaller screens */
+        text-align: center; /* Center align text */
+        margin: 10px 0; /* Add spacing */
+    }
+
+    /* Ensure images are centered and visible */
+    .card .pic {
+        width: 50%; /* Adjust image width */
+        margin: 10px auto; /* Center the image */
+        display: block; /* Ensure image displays as block */
+    }
+
+    .outer-box {
+        width: 100vw; /* Ensure outer container takes full width */
+        overflow-x: hidden; /* Prevent horizontal overflow */
     }
 }
 
+
+
 @media (max-width: 280px) {
+    .container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .card {
+        width: 100%; /* Full width for very small screens */
+        margin: 5px 0;
+    }
+
     .info {
-        width: 80px; /* Adjusted width for very small screens */
-        left: 0px; /* Adjusted left positioning */
+        width: 100%; /* Full width */
+        left: 0; /* Remove left positioning */
+        padding: 5px;
+    }
+
+    .hedd {
+        font-size: 0.8rem; /* Further reduce font size */
+        writing-mode: horizontal-tb; /* Keep text horizontal */
     }
 }
   
