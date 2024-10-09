@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sell Bus Ticket</title>
+  <link rel="shortcut icon" href="images/logoNw.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    
+    
+    /* code for bottom to top nav  */
+    
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color:#1fb899;
+      color: white;
+      cursor: pointer;
+      padding: 10px 6px;
+      border-radius: 4px;
+      width: 40px !important;
+      height: 40px !important;
+    }
+    
+    #myBtn:hover {
+      background-color: #4cc6ad;
+    }
+  
+     /* code for bottom to top nav  */
+    
+  </style>
+
+
+</head>
+<body>
+  
+    
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+
+
+  <nav class="navbar">
+
+    <div class="logo"><img src="images/logoNw.png" alt="Ticket Booking Logo" class="logo-image"></div>
+
+    <a href="./index.html" id="logo-href"><div class="logo5">Ticket Marketplace</div></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="bus_sell.html">Sell Bus Ticket</a></li>
+      <li><a href="train_sell.html">Sell Train Ticket</a></li>
+      <li><a href="buy.html">Buy Ticket</a></li>
+    </ul>
+  </nav>
+  <section class="sell-ticket">
+    <h1>Sell Bus Ticket</h1>
+    <form id="busTicketForm">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+
+      <label for="ticketNumber">Ticket Number:</label>
+      <input type="text" id="ticketNumber" required>
+
+      <label for="busName">Bus Name:</label>
+      <input type="text" id="busName" required>
+
+      <label for="departureLocation">Departure Location:</label>
+      <input type="text" id="departureLocation" required>
+
+      <label for="arrivalLocation">Arrival Location:</label>
+      <input type="text" id="arrivalLocation" required>
+
+      <label for="departureTime">Departure Time:</label>
+      <input type="time" id="departureTime" required>
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" required>
+
+      <label for="seatNumber">Seat Number:</label>
+      <input type="text" id="seatNumber" required>
+
+      <label for="price">Original Price:</label>
+      <input type="number" id="price" required>
+
+      <button type="submit" class="btn">Submit Ticket</button>
+    </form>
+
+    <p id="sellerMessage"></p>
+  </section>
+  <footer class="footer">
+    <p>&copy; 2024 Ticket Marketplace | All rights reserved.</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+      
+
+let mybutton = document.getElementById("myBtn");
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+  
+  </script>
+    <script src="app.js"></script>
+</body>
+</html>
