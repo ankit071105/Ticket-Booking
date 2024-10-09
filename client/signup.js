@@ -57,7 +57,6 @@ document.getElementById('signupForm').addEventListener('submit', async function(
 });
 
 document.getElementById('loginForm').addEventListener('submit', async function(event) {
-    console.log('hellooooooooooo');
     event.preventDefault(); // Prevent the form from submitting the default way
     console.log('Form submitted!');
     

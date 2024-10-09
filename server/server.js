@@ -6,7 +6,7 @@ dotenv.config();
 
 connect_db()
   .then(() => {
-    const PORT = process.env.PORT || 7865; // Use environment variable or default to 7865
+    const PORT = process.env.PORT; // Use environment variable or default to 7865
 
     app.listen(PORT, () => {
       console.log(`App is up and running on port ${PORT}`);

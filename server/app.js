@@ -4,6 +4,9 @@ import cors from "cors";
 import helmet from "helmet";
 import auth_route from "./routes/auth.js"; // Importing authentication routes
 import protect from "./middleware/protectRoute.js";
+import dotenv from "dotenv";
+dotenv.config();
+
 
 const app = express();
 

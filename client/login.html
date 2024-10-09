@@ -91,60 +91,57 @@
         e.preventDefault();
         signInWithGoogle(); // Use the same function as in register.html
     });
-
-   
 </script>
-<script>
-        
-    document.getElementById('loginForm').addEventListener('submit', async function(event) {
-        console.log('hellooooooooooo');
-        event.preventDefault(); // Prevent the form from submitting the default way
-        console.log('Form submitted!');
-        
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-    
-        if (!email || !password) {
-            document.getElementById('errorMessage').textContent = 'Email and password are required!';
-            return;
-        }
-    
-        try {
-            console.log('Sending login request...');
-            const response = await fetch('http://localhost:7865/api/v1/auth/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    email: email,
-                    password: password
-                })
-            });
-    
-            const data = await response.json();
-            console.log('Response:', data);
-    
-            if (response.ok) {
-                alert('Login successful!');
-                localStorage.setItem('authToken', data.token);
-                console.log('Redirecting to dashboard...');
-                window.location.href = '../sell.html'; // Update this with your actual dashboard path
-            } else {
-                console.log('Login failed:', data.message);
-                document.getElementById('errorMessage').textContent = data.message || 'Login failed!';
-            }
-        } catch (error) {
-            console.error('Login error:', error);
-            document.getElementById('errorMessage').textContent = 'An error occurred during login!';
-        }
-    });
-    
-        </script>
-    
     <script src="signup.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-auth-compat.js"></script>
     <script src="../firebase.js"></script>
+    <script>
+        
+        document.getElementById('loginForm').addEventListener('submit', async function(event) {
+            console.log('hellooooooooooo');
+            event.preventDefault(); // Prevent the form from submitting the default way
+            console.log('Form submitted!');
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+        
+            if (!email || !password) {
+                document.getElementById('errorMessage').textContent = 'Email and password are required!';
+                return;
+            }
+        
+            try {
+                console.log('Sending login request...');
+                const response = await fetch('http://localhost:7865/api/v1/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        password: password
+                    })
+                });
+        
+                const data = await response.json();
+                console.log('Response:', data);
+        
+                if (response.ok) {
+                    alert('Login successful!');
+                    localStorage.setItem('authToken', data.token);
+                    console.log('Redirecting to dashboard...');
+                    window.location.href = '../sell.html'; // Update this with your actual dashboard path
+                } else {
+                    console.log('Login failed:', data.message);
+                    document.getElementById('errorMessage').textContent = data.message || 'Login failed!';
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                document.getElementById('errorMessage').textContent = 'An error occurred during login!';
+            }
+        });
+        
+      </script>
 </body>
 </html>
