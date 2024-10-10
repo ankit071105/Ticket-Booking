@@ -127,9 +127,31 @@
         const data = await response.json();
         console.log(data); // Log the API response
 
+        const data = await response.json();
+        console.log(data); // Log the API response
+
         if (response.ok) {
             alert('Registration successful!');
-            window.location.href = "/client/login.html"; // Use this if needed
+            window.location.href = "..//profile.html"; // Redirect to the profile page
+        } else {
+            document.getElementById('errorMessage').textContent = data.message || 'Registration failed!';
+        }
+        } catch (error) {
+            console.error('Error:', error); // Log any network or server error
+            document.getElementById('errorMessage').textContent = 'An error occurred during registration!';
+        }
+
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordInput = document.getElementById('password');
+            const showIcon = document.getElementById('showIcon');
+            const hideIcon = document.getElementById('hideIcon');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                showIcon.classList.add('hidden');
+                hideIcon.classList.remove('hidden');
+            }
+        });
+
         } else {
             document.getElementById('errorMessage').textContent = data.message || 'Registration failed!';
         }
