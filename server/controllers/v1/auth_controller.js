@@ -7,10 +7,11 @@ import { ApiResponse } from '../../utils/ApiResponse.js';
 // Register
 export const register = asyncHandler(async (req, res) => {
   const { email, password, name, mobileNum } = req.body;
+  console.log(req.body);
   if (
     [name, email, mobileNum, password].some(
       (field) => field == null || field.trim() === ""
-    )
+    ) 
   ) {
     throw new ApiError(400, "All fields are compulsory or required!!");
   }
@@ -18,6 +19,7 @@ export const register = asyncHandler(async (req, res) => {
   const existingUser = await User.findOne({
     $or: [{ email },{ mobileNum }],
   });
+
   if (existingUser) {
     throw new ApiError(
       409,
@@ -42,7 +44,7 @@ export const register = asyncHandler(async (req, res) => {
       "Something went Wrong while registering the User !"
     );
   }
-  return resp
+  return res
     .status(201)
     .json(new ApiResponse(200, createdUser, "User Registered Succesfully !"));
 });
@@ -68,6 +70,7 @@ export const login = asyncHandler(async (req, res) => {
   }
 
   const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '6h' });
+  console.log(token)
 
   // Getting details of the logged-in User
   const loggedInUser=await User.findById(user._id).select(
@@ -79,7 +82,7 @@ export const login = asyncHandler(async (req, res) => {
     maxAge: 6 * 60 * 60 * 1000, // 6 hours
   };
 
-  return resp
+  return res
     .status(200)
     .cookie("token", token, options)
     .json(

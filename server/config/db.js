@@ -12,6 +12,14 @@ export default async function connect_db() {
 
   const uri = process.env.DB_URI
   const dbName = process.env.DB_NAME
+  console.log(uri);
+  console.log(dbName);
+
+  if (!uri || !dbName) {
+    console.error("DB_URI or DB_NAME is missing!");
+    throw new Error("MongoDB URI or Database Name is not defined in environment variables.");
+  }
+
 
   try {
     const connection = await mongoose.connect(uri, { dbName })
