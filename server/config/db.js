@@ -13,9 +13,8 @@ export default async function connect_db() {
   console.info("No connection found! Creating a new one.");
 
   const uri =
-    "mongodb+srv://asharma7588:Ayush1234@cluster0.8ysl0ky.mongodb.net";
-  //  process.env.DB_URI
-  const dbName = "Ayush";
+      process.env.DB_URI
+  const dbName = process.env.DB_NAME;
   if (!uri || !dbName) {
     console.error("DB_URI and DB_NAME must be set in environment variables");
     throw new Error("Database configuration error");
