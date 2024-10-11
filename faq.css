@@ -34,6 +34,13 @@
   h2:hover{
     color: #1fb899
   }
+  .contact-info h2:hover{
+    color: black
+  }
+  .contact-info h4:hover{
+    color: black
+  }
+  
   
   details {
     cursor: pointer;
