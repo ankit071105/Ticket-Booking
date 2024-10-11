@@ -7,22 +7,21 @@ import protect from "./middleware/protectRoute.js";
 import dotenv from "dotenv";
 dotenv.config();
 
-
 const app = express();
 
 app.use(express.json()); // Parses incoming JSON requests
 
 // CORS Configuration
 const corsOptions = {
-    origin: process.env.FRONTEND_URL,
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true, 
-    allowedHeaders: ['Content-Type', 'Authorization'],
+  origin: process.env.FRONTEND_URL,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization"],
 };
-  
-  app.use(cors(corsOptions));
-  
-app.use(cookieParser()); 
+
+app.use(cors(corsOptions));
+
+app.use(cookieParser());
 
 // Logging Middleware
 app.use((req, res, next) => {
@@ -42,12 +41,11 @@ app.use((err, req, res, next) => {
   });
 });
 
-process.on('SIGTERM', () => {
-    console.log('SIGTERM signal received: closing HTTP server');
-    server.close(() => {
-      console.log('HTTP server closed');
-    });
+process.on("SIGTERM", () => {
+  console.log("SIGTERM signal received: closing HTTP server");
+  server.close(() => {
+    console.log("HTTP server closed");
+  });
 });
-
 
 export default app; // Exports the app for use in server.js

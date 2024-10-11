@@ -30,7 +30,9 @@
         justify-content: center; 
         box-sizing: border-box; 
     }
-
+.btn{
+    width: 100% !important;
+}
     .toggle-arrow {
         position: fixed;
         top: 50%;
@@ -495,14 +497,28 @@
     <div class="containers" id="sxs">
         <div class="contact-info">
             <h2 style="text-align:left">Contact Us</h2>
-            <p style="color: white;font-size: 16px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa veniam sunt alias. Non, soluta voluptatem quasi aspernatur quod voluptate voluptatibus.</p>
+            <p style="color: white;font-size: 16px;">We value your feedback! We'd love to hear from you! For inquiries, feedback, or support, please reach out. Your insights help us improve your experience.</p>
             
-            <h4>Localisation</h4>
-            <p style="color: white;font-size: 16px;">ABC colony, Bangalore Pin: 76896</p>
-    
-            <h4>Phone No</h4>
-            <p  style="color: white;font-size: 16px;">+91 9685478526</p>
+          
+            <!-- Contact Form -->
+           
+            <form style="color: white; font-size: 16px ;" onsubmit="sendEmail(event)">
+                <div>  <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" placeholder="Your Name" style="width:100%" required><br></div>
+              
+        <div><label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="Your Email" style="width:100%;" required><br></div>
+                
+        
+                <div><label for="message">Message:</label><br>
+                <textarea id="message" name="message" placeholder="Your Message" style="width:100%;" rows="5" required></textarea><br>
+            </div>
+                <button type="submit" style="background-color:#4CAF50; color:white;  border:none; cursor:pointer; " class="btn">
+                    Send Message
+                </button>
+            </form>
         </div>
+        
     
         <div class="map-container">
             <iframe
@@ -787,6 +803,34 @@
     </script>
 
     <script src="app.js"></script>
+    <script>
+        async function sendEmail(event) {
+            event.preventDefault(); // Prevent default form submission
+    
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+    
+            try {
+                const response = await fetch('http://localhost:8000/api/v1/auth/email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ Name: name, Email: email, Message: message }),
+                });
+    
+                if (response.ok) {
+                    alert('Email sent successfully!');
+                } else {
+                    alert('Error sending email. Please try again later.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error sending email. Please check the console for details.');
+            }
+        }
+    </script>
 </body>
 
 </html>

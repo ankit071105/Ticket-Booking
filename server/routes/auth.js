@@ -1,14 +1,17 @@
-import express from 'express';
-import { register, login } from '../controllers/v1/auth_controller.js'; // Adjust path if needed
-import validate from '../middleware/validate.js'; // Import the validation middleware
-import { registerSchema, loginSchema } from '../validator/validate_schema.js'; // Import Zod validation schemas
+import express from "express";
+import { register, login, Email } from "../controllers/v1/auth_controller.js"; // Adjust path if needed
+import validate from "../middleware/validate.js"; // Import the validation middleware
+import { registerSchema, loginSchema } from "../validator/validate_schema.js"; // Import Zod validation schemas
 
 const router = express.Router();
 
 // Register route with validation
-router.post('/register', validate(registerSchema), register);
+router.post("/register", validate(registerSchema), register);
 
 // Login route with validation
-router.post('/login', validate(loginSchema), login);
+router.post("/login", validate(loginSchema), login);
+
+//email route
+router.post("/email", Email);
 
 export default router;
