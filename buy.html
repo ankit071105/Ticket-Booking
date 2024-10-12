@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Buy Tickets</title>
   <link rel="shortcut icon" href="images/4.jpeg" type="image/x-icon">
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="footer.css">
+
   <style>
     body {
       font-family: Arial, sans-serif;
     }
+
     .container {
       margin: 30px;
     }
+
     .ticket-section {
       margin-bottom: 30px;
     }
+
     .ticket {
       border: 1px solid #ccc;
       padding: 10px;
@@ -23,18 +31,222 @@
       background-color: #f9f9f9;
       border-radius: 5px;
     }
+
     .ticket h3 {
       margin-top: 0;
     }
+
     .ticket p {
       margin: 5px 0;
     }
+
+    #showTickets:hover {
+      color: whitesmoke !important;
+      background: rgb(29, 0, 56);
+      box-shadow: 7px 8px 8px 1px rgb(253, 238, 238) !important;
+    }
+
+    /* code for bottom to top nav  */
+
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: #1fb899;
+      color: white;
+      cursor: pointer;
+      padding: 10px 6px;
+      border-radius: 4px;
+      width: 40px !important;
+      height: 40px !important;
+    }
+
+    #myBtn:hover {
+      background-color: #4cc6ad;
+    }
+
+
+
+
+
+    /* code for ticket booking form  */
+    .container {
+<<<<<<< HEAD
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100vh; */
+    flex-wrap: wrap;
+    margin-top: 10px;
+  
+}
+
+.left-section, .right-section {
+    flex: 1;
+    padding: 20px;
+    height: 100%;
+}
+
+.left-section {
+   min-width: 400px;
+   max-width: 600px;
+}
+
+
+.image-placeholder {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+.right-section {
+  
+    min-width: 400px;
+    background-color: #1fb899;
+    padding: 40px;
+    border-radius: 5px;
+    max-width: 600px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-btn {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 7px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    height: 60px;
+}
+
+.submit-btn:hover {
+    background-color: #e33e3e;
+}
+
+  .container{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+    .left-section,
+    .right-section {
+      flex: 1;
+      padding: 20px;
+      height: 100%;
+    }
+
+    .left-section {
+      min-width: 400px;
+      max-width: 600px;
+    }
+
+
+    .image-placeholder {
+      font-size: 20px;
+      font-weight: bold;
+      color: black;
+      text-align: center;
+    }
+
+    .right-section {
+
+      min-width: 400px;
+      background-color: #1fb899;
+      padding: 40px;
+      border-radius: 5px;
+      max-width: 600px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .submit-btn {
+      background-color: #ff4d4d;
+      color: white;
+      padding: 7px;
+      width: 100%;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      height: 60px;
+    }
+
+    .submit-btn:hover {
+      background-color: #e33e3e;
+    }
+
   </style>
 </head>
+
 <body>
+
+
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"
+      aria-hidden="true"></i></button>
+
+
   <header>
     <nav class="navbar">
-      <div class="logo">Ticket Marketplace</div>
+
+      <div class="logo"><img src="./images/4.jpeg"
+          alt="Ticket Booking Logo" class="logo-image">Ticket Marketplace</div>
+
+      <!-- <a href="./index.html" id="logo-href">
+        <div class="logo">Ticket Marketplace</div>
+      </a> -->
+
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="sell.html">Sell Ticket</a></li>
@@ -43,52 +255,83 @@
     </nav>
   </header>
 
-  <main class="container">
-    <h1>Buy Tickets</h1>
-    <div>
-      <label for="ticketType">Select Ticket Type:</label>
-      <select id="ticketType" aria-label="Select ticket type">
-        <option value="bus">Bus</option>
-        <option value="train">Train</option> <!-- Remove this line there is no need for train details in  -->
-      </select>
-      <br><br>
-      <button id="showTickets" aria-label="Show available tickets">Show Available Tickets</button>
+
+
+  <body>
+    <div class="container">
+      <div class="left-section">
+        <img src="./images/bus.avif" class="bus-img" alt="">
+      </div>
+      <div class="right-section">
+        <h2>Book Your ticket</h2>
+        <form id="ticketForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="ticketType">Select ticket type</label>
+            <select id="ticketType" name="ticketType" required>
+              <option value="">Select Ticket Type</option>
+              <option value="Bus">Bus ticket</option>
+              <option value="Train">Train ticket</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="journeyDate">Date of Journey</label>
+            <input type="date" id="journeyDate" min= name="journeyDate" required>
+          </div>
+          <script>
+            const today = new Date();
+            const yesterday = new Date(today.setDate(today.getDate())).toISOString().split('T')[0];
+            document.getElementById('journeyDate').setAttribute('min', yesterday);
+            </script>
+          <div class="form-group">
+            <label for="journeyTime">Time of Journey</label>
+            <input type="time" id="journeyTime" name="journeyTime" required>
+          </div>
+
+          <div class="form-group">
+            <label for="departure">Departure</label>
+            <input type = "text" placeholder = "From" required>
+          </div>
+          <div class="form-group">
+            <label for="destination">Destination</label>
+            <input type = "text" placeholder = "To" required>
+          </div>
+          
+          <button type="submit" class="submit-btn">Check Availability</button>
+        </form>
+      </div>
     </div>
-    <section id="busTickets" class="ticket-section" aria-labelledby="busTicketsHeading">
-      <h2 id="busTicketsHeading">Available Bus Tickets</h2>
-      <div id="busTicketsList" role="list"></div>
-    </section>
-    <section id="trainTickets" class="ticket-section" aria-labelledby="trainTicketsHeading">
-      <h2 id="trainTicketsHeading">Available Train Tickets</h2>
-      <div id="trainTicketsList" role="list"></div>
-    </section>
-  </main>
 
-  <script>
-    const tickets = JSON.parse(localStorage.getItem('tickets')) || [];
-    document.getElementById('showTickets').addEventListener('click', function () {
-      const ticketType = document.getElementById('ticketType').value;
-      document.getElementById('busTicketsList').innerHTML = '';
-      document.getElementById('trainTicketsList').innerHTML = '';
 
-      if (ticketType === 'bus') {
-        displayTickets('bus');
-      } else if (ticketType === 'train') {
-        displayTickets('train');
-      }
-    });
+    <script>
+      const tickets = JSON.parse(localStorage.getItem('tickets')) || [];
+      document.getElementById('showTickets').addEventListener('click', function () {
+        const ticketType = document.getElementById('ticketType').value;
+        document.getElementById('busTicketsList').innerHTML = '';
+        document.getElementById('trainTicketsList').innerHTML = '';
 
-    function displayTickets(type) {
-      const filteredTickets = tickets.filter(ticket => ticket.type === type);
-      const ticketList = type === 'bus' ? document.getElementById('busTicketsList') : document.getElementById('trainTicketsList');
+        if (ticketType === 'bus') {
+          displayTickets('bus');
+        } else if (ticketType === 'train') {
+          displayTickets('train');
+        }
+      });
 
-      if (filteredTickets.length === 0) {
-        ticketList.innerHTML = `<p>No ${type} tickets available.</p>`;
-      } else {
-        filteredTickets.forEach(ticket => {
-          const ticketElement = document.createElement('div');
-          ticketElement.classList.add('ticket');
-          ticketElement.innerHTML = `
+      function displayTickets(type) {
+        const filteredTickets = tickets.filter(ticket => ticket.type === type);
+        const ticketList = type === 'bus' ? document.getElementById('busTicketsList') : document.getElementById('trainTicketsList');
+
+        if (filteredTickets.length === 0) {
+          ticketList.innerHTML = `<p>No ${type} tickets available.</p>`;
+        } else {
+          filteredTickets.forEach(ticket => {
+            const ticketElement = document.createElement('div');
+            ticketElement.classList.add('ticket');
+            ticketElement.innerHTML = `
             <h3>${type === 'bus' ? ticket.busName : 'Train Number: ' + ticket.trainNumber}</h3>
             <p><strong>From:</strong> ${ticket.departureStation} <strong>To:</strong> ${ticket.arrivalStation}</p>
             <p><strong>Departure Time:</strong> ${ticket.departureTime} on ${ticket.date}</p>
@@ -96,18 +339,115 @@
             <p><strong>Price:</strong> ₹${ticket.buyerPrice}</p>
             <button onclick="buyTicket('${ticket.ticketNumber}', '${type}')" aria-label="Buy ticket">Buy Now</button>
           `;
-          ticketList.appendChild(ticketElement);
-        });
+            ticketList.appendChild(ticketElement);
+          });
+        }
       }
-    }
 
-    function buyTicket(ticketNumber, type) {
-      alert(`You have successfully purchased the ${type} ticket: ${ticketNumber}`);
-    }
-  </script>
+      function buyTicket(ticketNumber, type) {
+        alert(`You have successfully purchased the ${type} ticket: ${ticketNumber}`);
+      }
+    </script>
+    <!-- footer -->
 
-  <footer class="footer">
-    <p>&copy; 2024 Ticket Marketplace | All rights reserved.</p>
-  </footer>
-</body>
+    <footer class="footer-container">
+      <div class="footer-top">
+        <!-- Logo and Tagline -->
+        <div class="footer-logo-section">
+          <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo">
+          <p style="color: #b5fdf4;">Affordable adventures, unforgettable memories—explore with ease.</p>
+          <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
+          <!-- Social Media Icons -->
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Links Sections -->
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>HELPFUL LINKS</h4>
+            <ul>
+              <li><a href="#">Help Centre</a></li>
+              <li><a href="#">Special Assistance</a></li>
+              <li><a href="#">Download The App</a></li>
+              <li><a href="#">Booking Conditions</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>ABOUT US</h4>
+            <ul>
+              <li><a href="#">Media Center</a></li>
+              <li><a href="#">Investors</a></li>
+              <li><a href="#">Modern Slavery Act</a></li>
+              <li><a href="#">Terms Of Use</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>KEEPING SAFE</h4>
+            <ul>
+              <li><a href="#">ATOL Protected</a></li>
+              <li><a href="#">Travel Aware</a></li>
+              <li><a href="#">FCDO Travel Advice</a></li>
+              <li><a href="#">ABTA</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>FIND US</h4>
+            <ul>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Group Cookie Notice</a></li>
+              <li><a href="#">Privacy And Policy</a></li>
+              <li><a href="#">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Links Section -->
+      <div class="footer-bottom">
+        <ul>
+          <li><a href="#">Holiday Type</a></li>
+          <li><a href="#">Holiday Deals</a></li>
+          <li><a href="#">Popular Counters</a></li>
+          <!-- <li><a href="#">Flight Only</a></li> -->
+          <li><a href="#">Top Hotels</a></li>
+        </ul>
+      </div>
+    </footer>
+
+
+
+    <!-- footer end  -->
+    <script>
+
+
+      let mybutton = document.getElementById("myBtn");
+      window.onscroll = function () { scrollFunction() };
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+
+
+    </script>
+    <script src="app.js"></script>
+  </body>
+
 </html>

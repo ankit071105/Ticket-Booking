@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Booking</title>
+    <link rel="shortcut icon" href="images/logoNw.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="about.css">
+    <style>
+        .close-btn {
+        position: absolute;
+        top: -10px;
+        right: -10px; 
+        width: 25px;
+        height: 25px;
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+        background-color: #1f2937;
+        border: 2px solid white; 
+        border-radius: 50%; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        box-sizing: border-box; 
+    }
+
+    .toggle-arrow {
+        position: fixed;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease-in-out;
+        background-color: #1fb899;
+        padding: 5px;
+        border-radius: 0 10px 10px 0;
+        cursor: pointer;
+        color: white;
+        font-size: 25px;
+        padding: 12px;
+    }
+
+    .social-sidebar {
+        position: fixed;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background-color: #1fb899;
+        padding: 8px;
+        border-radius: 0 10px 10px 0;
+        border: none;
+        transition: background-color 0.3s ease, transform 0.3s ease; 
+        z-index: 1;
+    }
+
+    .social-sidebar ul{
+        list-style: none;
+        margin: 0;
+    }
+
+    .social-sidebar li {
+        display: block;    
+        margin: 12px 0;        
+        position: relative;  
+    }
+
+    .social-sidebar a {
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        padding: 10px;
+        transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        border: none;
+        border-bottom: none;
+        border-radius: 50%;
+        display: flex;              
+        justify-content: center;   
+        align-items: center;      
+        width: 40px;   
+        height: 40px; 
+        margin: 0 10px;
+    }
+
+        .social-sidebar a:hover i {
+            transform: scale(1);
+        }
+
+    .social-sidebar li a:hover {
+        background-color: #ffffff;
+        border-radius: 50%;
+        color: #1f2937;
+        transform: scale(1.1);
+    }
+
+    .social-sidebar i {
+        display: inline-block;
+        transition: transform 0.3s ease-in-out; 
+    }
+
+    .social-sidebar a:hover i {
+        transform: scale(1.1);
+    }
+
+
+    /* code for bottom to to nav  */
+
+    #myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color:#1fb899;
+    color: white;
+    cursor: pointer;
+    padding: 10px 6px;
+    border-radius: 4px;
+    width: 40px !important;
+    height: 40px !important;
+    }
+
+    #myBtn:hover {
+    background-color: #4cc6ad;
+    }
+    
+    /* code for bottom to to nav  */
+
+    </style>
+
+    <link rel="stylesheet" href="faq.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="index.css">
+
+    <style>
+        .close-btn {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 25px;
+            height: 25px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            background-color: black;
+            border: 2px solid white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .toggle-arrow {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background-color: #1fb899;
+            padding: 5px;
+            border-radius: 0 10px 10px 0;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+        }
+
+        .social-sidebar {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background-color: #1fb899;
+            padding: 8px;
+            border-radius: 0 10px 10px 0;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-sidebar a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+            transition: background-color 0.6s ease, transform 0.3s ease;
+            border: none;
+            border-bottom: none;
+            border-radius: 5px;
+        }
+
+        .social-sidebar a:hover {
+            background-color: #ffffff;
+            border-radius: 50%;
+            color: black;
+            transform: scale(1.1);
+        }
+
+        .social-sidebar i {
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .social-sidebar a:hover i {
+            transform: scale(1);
+        }
+
+
+        /* code for bottom to to nav  */
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #1fb899;
+            color: white;
+            cursor: pointer;
+            padding: 10px 6px;
+            border-radius: 4px;
+            width: 40px !important;
+            height: 40px !important;
+        }
+
+        #myBtn:hover {
+            background-color: #4cc6ad;
+        }
+
+        /* code for bottom to to nav  */
+
+
+        /* map code  */
+        .containers {
+            /* background-color: red; */
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            padding: 20px 100px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .contact-info {
+            background-color: #00bfa6;
+            width: 40%; /* Set width for contact info */
+            padding: 30px;
+            /* margin:4px; */
+            text-align: left;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
+        }
+
+        .map-container {
+            width: 55%; /* Set width for the map container */
+        }
+
+        .map-container iframe {
+            width: 100%; /* Make iframe responsive */
+            height: 400px; /* Set a fixed height for the map */
+            border: none; /* Remove default border */
+            border-radius: 8px;
+        }
+
+        
+      
+
+       
+
+        @media (max-width: 768px) {
+            .contact-info, .map-container {
+                width: 100%; /* Stack elements on smaller screens */
+                margin-right: 0; /* Remove margin on smaller screens */
+            }
+        }
+    </style>
+
+
+</head>
+<body>
+
+
+    <button onclick="moveToTop()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"
+            aria-hidden="true"></i></button>
+
+
+    <nav class="navbar">
+        <a href="./index.html" id="logo-href">
+            <div class="logo-container">
+                <img src="images/logoNw.png" alt="Ticket Booking Logo" class="logo-image">
+                <div class="logo">Ticket Booking</div>
+            </div>
+        </a>
+
+        <div class="nav-container">
+            <div class="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li><a href="buy.html"><i class="fas fa-shopping-cart"></i> Buy</a></li>
+                <li><a href="sell.html"><i class="fas fa-tag"></i> Sell</a></li>
+                <li><a href="#sxs"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="/client/register.html" class="login-btn"><i class="fas fa-user"></i>Signup</a></li>
+            </ul>
+
+            <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+        </div>
+    </nav>
+    <div class="slider">
+        <div class="slide active">
+            <img src="images/6.jpeg" alt="Slide 1">
+        </div>
+        <div class="slide">
+            <img src="images/4.jpeg" alt="Slide 2">
+        </div>
+        <div class="slide">
+            <img src="images/3.jpeg" alt="Slide 3">
+        </div>
+        <div class="slide">
+            <img src="images/2.jpeg" alt="Slide 3">
+        </div>
+        <div class="slide">
+            <img src="images/1.jpeg" alt="Slide 3">
+        </div>
+        <div class="slide">
+            <img src="images/5.jpeg" alt="Slide 3">
+        </div>
+        <div class="slide">
+            <img src="images/7.jpeg" alt="Slide 3">
+        </div>
+    </div>
+    <div class="nav-buttons">
+        <button class="prev" onclick="prevSlide()" style="width: 40px; height: 40px;">&#10094;</button>
+        <button class="next" onclick="nextSlide()" style="width: 40px; height: 40px;">&#10095;</button>
+    </div>
+    </div>
+    </div>
+
+
+    <div class="social-sidebar">
+        <div class="close-btn" onclick="toggleSidebar()" title="Close Sidebar">&times;</div>
+        <ul>
+            <li><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-meta"></i></a></li>
+            <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+        </ul>
+
+    </div>
+    <div class="toggle-arrow" onclick="toggleSidebar()" title="Open Sidebar" style="display: none;">
+        <i class="fas fa-arrow-right"></i>
+    </div>
+
+
+<div class="home">
+    <h2>Book Bus or Train Tickets</h2>
+    <div class="ticket-list">
+        <div class="ticket-card">
+            <h3>Bus Tickets</h3>
+            <p>Find affordable bus tickets for your travel needs. Select your destination and date of travel to get started.</p>
+            <br>   
+            <a href="buy.html"><button class="bbtn">Buy Bus Tickets</button></a>
+            <br>
+            <p>Looking to sell your bus tickets? Contact us for reselling options!</p>
+            <br>   
+            <a href="bus_sell.html"><button class="bbtn">Sell Bus Tickets</button></a>
+        </div>
+
+        <div class="ticket-card">
+            <h3>Train Tickets</h3>
+            <p>Secure train tickets for your journey across the country. Check availability and book now.</p>
+            <br>  
+            <a href="buy.html"><button class="bbtn">Buy Train Tickets</button></a>
+            <br>  
+            <p>Have train tickets to sell? Reach out to us to list your tickets.</p>
+            <br> 
+            <a href="train_sell.html"><button class="bbtn">Sell Train Tickets</button></a>
+        </div>
+    </div>
+</div>
+
+
+    
+<!-- about section -->
+<div class="section__header">
+    <div>
+      <h2 class="section__title">Why book with us?</h2>
+      <p class="section__subtitle">
+        Click on the Panel cards! 
+      </p>
+    </div>
+</div>
+<div class="outer-box">
+    <div class="container">
+      <!-- Panel Start -->
+      <div class="card active">
+        <img src="/images/easy-booking.svg" alt="" class="pic">
+        <div class="hedd">
+            <h4>EASY BOOKING</h4>
+        </div>
+        <div class="info">
+            
+                <h3>Easy Booking</h3>
+            <p>We make bus and train ticket booking simple and hassle-free, offering a streamlined experience so you
+                can plan your journeys effortlessly.</p>
+          </p>
+          
+        </div>
+      </div>
+      <!-- Panel End -->
+
+      <!-- Panel Start -->
+      <div
+        class="card"
+      >
+      <img src="/images/lowest-booking.svg" alt="" class="pic">
+      <div class="hedd">
+        <h4>LOWEST PRICE</h4>
+    </div>
+        <div class="info">
+          
+            <h3>Lowest Price</h3>
+            <p>Find the best deals on bus and train tickets. We guarantee competitive prices to ensure you save more
+                on every trip. </p>
+          
+        </div>
+      </div>
+      <!-- Panel End -->
+
+      <!-- Panel Start -->
+      <div
+        class="card"
+        
+      >
+      <img src="/images/exc-deal.svg" alt="" class="pic"
+      class="pic">
+      <div class="hedd">
+        <h4> THRILL DEALS</h4>
+    </div>
+        <div class="info">
+          
+            <h3>Thrill Deals</h3>
+            <p>Unlock special discounts and offers on bus and train bookings, helping you travel for less without
+                compromising on quality.</p>
+        </div>
+      </div>
+      <!-- Panel End -->
+
+      <!-- Panel Start -->
+      <div
+        class="card"
+        
+      >
+      <img src="/images/support.svg" alt="" class="pic"
+      class="pic">
+      <div class="hedd">
+        <h4>SUPPORT</h4>
+    </div>
+        <div class="info">
+          
+            <h3>24/7 Support</h3>
+            <p>Our customer support is available 24/7 to assist with your bus and train booking needs. We're here to
+                help anytime you need us.</p>
+        </div>
+      </div>
+      <!-- Panel End -->
+
+      
+    </div>
+  </div>
+  
+
+<script src="about.js"></script>
+
+
+    <div class="containers" id="sxs">
+        <div class="contact-info">
+            <h2 style="text-align:left">Contact Us</h2>
+            <p style="color: white;font-size: 16px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa veniam sunt alias. Non, soluta voluptatem quasi aspernatur quod voluptate voluptatibus.</p>
+            
+            <h4>Localisation</h4>
+            <p style="color: white;font-size: 16px;">ABC colony, Bangalore Pin: 76896</p>
+    
+            <h4>Phone No</h4>
+            <p  style="color: white;font-size: 16px;">+91 9685478526</p>
+        </div>
+    
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126915.40242030277!2d85.7892607!3d20.2498709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a7a3b9692fff%3A0x87cd0a356bbc39ce!2sITER%2C%20Siksha%20'O'%20Anusandhan!5e0!3m2!1sen!2sin!4v1689514124518!5m2!1sen!2sin"
+                allowfullscreen>
+            </iframe>
+        </div> 
+    </div>
+
+
+
+
+
+    <br>
+
+
+
+    <div class="faq-section">
+        <header>
+            <h2>FAQs</h2>
+            <p>Answers to the most frequently asked questions.</p>
+        </header>
+
+        <details>
+            <summary>
+                <h4>Why is Raycast free for personal use?</h4>
+                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
+            </summary>
+            <p>We think of Raycast as a productivity layer that everybody should use to get work done faster. To make it
+                accessible, we don't charge for the individual plan. The plan covers all built-in extensions, such as
+                Clipboard History, Calendar or Window Management and provides access to all public extensions built by
+                our community.</p>
+        </details>
+
+        <hr>
+
+        <details>
+            <summary>
+                <h4>When is Raycast for teams available?</h4>
+                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
+            </summary>
+            <p>We don't have an exact date right now, but we will launch Raycast for Teams in 2022. You can sign up to
+                get early access above, and be the first to hear when we're launching it.</p>
+        </details>
+
+        <hr>
+
+        <details>
+            <summary>
+                <h4>How many seats do I get in a Team plan?</h4>
+                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
+            </summary>
+            <p>We don't have an exact date right now, but we will launch Raycast for Teams in 2022. You can sign up to
+                get early access above, and be the first to hear when we're launching it.</p>
+        </details>
+
+        <hr>
+
+        <details>
+            <summary>
+                <h4>Can I have personal Extensions and Team Extensions?</h4>
+                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
+            </summary>
+            <p>Yes, you can create personal Extensions that are personalized to you, and speed up your productivity, and
+                have team Extensions that can be shared around in your organization for everyone to use. Team Extensions
+                will be available in the Store command, behind a filter for your Team. This is where all of your Team
+                Extensions will live, and where you can install them.</p>
+        </details>
+
+        <hr>
+
+        <details>
+            <summary>
+                <h4>How much will Team features cost?</h4>
+                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
+            </summary>
+            <p>Team features will cost $10 per user, per month.</p>
+        </details>
+
+    </div>
+
+
+
+
+    <footer>
+        <div class="footer">
+            &copy; 2024 Ticket Booking. All rights reserved. | <a href="#">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.social-sidebar');
+            const arrow = document.querySelector('.toggle-arrow');
+
+            if (sidebar.style.display === 'none' || !sidebar.style.display) {
+                sidebar.style.display = 'flex'; // Show sidebar
+                arrow.style.display = 'none'; // Hide arrow
+            } else {
+                sidebar.style.display = 'none'; // Hide sidebar
+                arrow.style.display = 'block'; // Show arrow
+            }
+        }
+
+        // Initialize sidebar to be visible on page load
+        document.querySelector('.social-sidebar').style.display = 'flex';
+
+
+        setInterval(nextSlide, 5000);
+        showSlide(currentSlide);
+
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.querySelector('body');
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                if (body.classList.contains('dark-mode')) {
+                    darkModeToggle.innerHTML = "🔆";
+                }
+                else {
+                    darkModeToggle.innerHTML = "🌙";
+                }
+            });
+        }
+        // change icon of the dark/light mode
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            // Special effect for hamburger icon
+            const bars = menuToggle.querySelectorAll('.bar');
+            bars.forEach((bar, index) => {
+                if (menuToggle.classList.contains('active')) {
+                    bar.style.transform = index === 1 ? 'scale(0)' : `rotate(${index === 0 ? '45deg' : '-45deg'})`;
+                } else {
+                    bar.style.transform = 'none';
+                }
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+                menuToggle.querySelectorAll('.bar').forEach(bar => {
+                    bar.style.transform = 'none';
+                });
+            }
+        });
+
+        // When the user scrolls down 100px from the top, show the button
+
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            const topBtn = document.getElementById("topBtn");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                topBtn.style.display = "block"; // Show button
+            } else {
+                topBtn.style.display = "none"; // Hide button
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function moveToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
+        }
+
+        // script for faq section
+
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+                document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+                document.querySelectorAll('.faq-question').forEach(q => q.setAttribute('aria-expanded', 'false'));
+
+                if (!isExpanded) {
+                    answer.style.display = 'block';
+                    button.setAttribute('aria-expanded', 'true');
+                }    
+            })       
+        });
+
+        window.onscroll = function() { 
+           scrollFunction() 
+         };
+
+        function scrollFunction() {
+        const topBtn = document.getElementById("topBtn");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            topBtn.style.display = "block"; // Show button
+        } else {
+            topBtn.style.display = "none"; // Hide button
+        }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function moveToTop() {
+            window.scrollTo({ 
+                top: 0, 
+                behavior: 'smooth' 
+            }); // Smooth scroll to top
+        }
+
+        // script for faq section
+        // Added the sliding animation
+
+        document.querySelectorAll('details').forEach((faq) => {
+            faq.addEventListener('toggle', function() {
+                const content = this.querySelector('p');
+                if (this.open) {
+                    content.style.height = '0px';
+                    content.style.transition = 'height 0.5s ease-out';
+                    content.style.height = content.scrollHeight + 'px'; // Sets the height based on the actual content
+                } else {
+                    content.style.height = content.scrollHeight + 'px'; // Height is set to the current scrollHeight
+                    setTimeout(() => {
+                        content.style.height = '0px'; // Collapses after the content has been shown
+                    }, 10); // Delay to allow height to adjust first
+
+                }
+            });
+        });
+
+
+
+
+        let mybutton = document.getElementById("myBtn");
+
+        window.onscroll = function () { scrollFunction() };
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+
+    </script>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

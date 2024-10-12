@@ -8,6 +8,7 @@ Before you get started, please:
 
 1. **Star this repository** by clicking the "Star" button at the top right corner.
 2. **Follow** the GitHub profile of the project owner: [ankit071105](https://github.com/ankit071105).
+3. **JOIN US** Whatsapp Group:- [Open Source Community](https://chat.whatsapp.com/JWfNTvpbNTfDp0zWsgNGWi).
 
 By doing this, you support the project and help grow our community!
 
@@ -28,6 +29,36 @@ Getting started with GG Extensions is easy! Follow these steps to jump right in:
 3. **Choose Your Project**: Once you've identified a project that interests you, let us know! We'll assign you the issue and provide any additional resources or information you may need to get started.
 4. **Start Contributing**: Dive into the project, work on your assigned tasks, and collaborate with your peers. Don't hesitate to ask for help or feedback along the way—we're all here to learn and grow together.
 
+## 🛠 Installation and Usage
+To set up the project locally, follow these steps:
+
+## 1. Clone the Repository
+git clone https://github.com/ankit071105/Ticket-Booking.git
+
+## 2. Frontend Setup
+The frontend of the project is located in the Ticket-booking folder.<br>
+Open the project in VS Code and click Go Live to run the frontend.
+
+## 3. Backend Setup
+Navigate to the server folder.<br>
+Install the required dependencies:<br>
+```bash
+cd server
+npm install
+```
+### Set up environment variables by creating a .env file in the server folder with the following variables:
+```bash
+DB_URI=your_mongoDB_connection_URI<br>
+DB_NAME=your_database_name<br>
+```
+### Run the backend server using:
+```bash
+npm run dev
+```
+## 4. Running the Project
+Once both the frontend and backend are set up, the project will be accessible on the defined local port.
+
+
 ## 🛠 How to Contribute?
 
 Contributing to GG Extensions is a rewarding experience that allows you to sharpen your skills, gain practical experience, and make meaningful contributions to real-world projects. Here's how you can get involved:
@@ -43,29 +74,49 @@ To submit your contributions, follow these steps:
 
 1. **Star the repository**: Don't forget to show your support by starring this repository!
 2. **Fork the Repository**: Click the "Fork" button at the top right corner of the repository to create your own copy.
-3. **Clone the repository**:
-   ```bash
+3. 📥**Clone the repository**:
+```bash
    git clone https://github.com/ankit071105/Ticket-Booking.git
    ```
-4. **Create a Branch**: Create a new branch for your changes:
-   ```bash
+4. 📂 **Change the working directory**: 
+```bash
+   cd Ticket-Booking
+   ```
+5. 🔗 **Add a reference to the original repository**.
+```bash
+   git remote add upstream https://github.com/ankit071105/Ticket-Booking.git
+   ```
+6. ⬇️ **Always take a pull from the upstream repository to your main branch to keep it up-to-date with the main project (updated repository)**.
+```bash
+   git pull upstream main
+   ```
+4. 🌿 **Create a Branch**: Create a new branch for your changes:
+```bash
    git checkout -b my-feature
    ```
 5. **Make Changes**: Make your desired changes to the codebase.
-6. **Commit Changes**: Commit your changes with a descriptive commit message:
-   ```bash
+6. 📥 **Commit Changes**: Commit your changes with a descriptive commit message:
+```bash
    git commit -m "Add new feature"
    ```
-7. **Push Changes**: Push your changes to your forked repository:
-   ```bash
+7. ⬇️ **Push Changes**: Push your changes to your forked repository:
+```bash
    git push origin my-feature
    ```
 8. **Submit a Pull Request**: Go to your forked repository on GitHub and submit a pull request. Be sure to provide a detailed description of your changes and why they are necessary.
 
+🎉 Voila! You have made a PR to the Ticket-Booking project. Sit back patiently and relax while the project maintainers review your PR.
 ---
 
 ## ❤️ Our Valuable Contributors
 
-[![Contributors](https://contrib.rocks/image?repo=ankit071105/Ticket-Booking)](https://github.com/ankit071105/Ticket-Booking/graphs/contributors)
+- We extend our heartfelt gratitude for your invaluable contribution to our project! Your efforts play a pivotal role in elevating this project to greater heights.
+- Make sure you show some love by giving ⭐ to our repository.
+
+<div align="center">
+  <a href="https://github.com/samyakmaitre/eventmint">
+    <img src="https://contrib.rocks/image?repo=ankit071105/Ticket-Booking&&max=100" />
+  </a>
+</div>
 
 ---
