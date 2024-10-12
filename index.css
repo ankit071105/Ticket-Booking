@@ -270,6 +270,25 @@ body.dark-mode .ticket-card button:hover {
   background-color: #00a690;
 }
 
+body.dark-mode .faq-section{
+  background-color: #070E11;
+  color: white;
+  
+  box-shadow: 0 4px 10px #101618;
+}
+
+body.dark-mode .faq-section details summary h4{
+  color: white;
+}
+
+body.dark-mode .faq-section details span i{
+  color: #4F8FE2;
+}
+body.dark-mode .faq-section details span i:hover{
+  color: white;
+}
+
+
 /* Responsive Styles */
 @media (max-width: 1200px) {
   .ticket-card {
