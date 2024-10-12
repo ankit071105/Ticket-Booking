@@ -7,7 +7,6 @@ import { ApiResponse } from '../../utils/ApiResponse.js';
 // Register
 export const register = asyncHandler(async (req, res) => {
   const { email, password, name, mobileNum } = req.body;
-  console.log(req.body);
   if (
     [name, email, mobileNum, password].some(
       (field) => field == null || field.trim() === ""
