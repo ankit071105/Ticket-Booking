@@ -9,8 +9,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="index.css">
+<style>
+    .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background: #4caf50; /* You can change this color */
+    width: 0;
+    transition: width 0.1s ease-in-out;
+    z-index: 9999; /* Make sure it's above other content */
+}
+
+</style>
 </head>
 <body>
+    <div id="scrollProgressBar" class="progress-bar"></div>
     <nav class="navbar">
         <div class="logo-container">
             <img src="images/4.jpeg" alt="Ticket Booking Logo" class="logo-image">
@@ -206,6 +220,12 @@ document.addEventListener('click', (event) => {
 });
 
 
+window.addEventListener('scroll', () => {
+    const scrollProgressBar = document.getElementById('scrollProgressBar');
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progressHeight = (window.scrollY / totalHeight) * 100;
+    scrollProgressBar.style.width = progressHeight + '%';
+});
 
 </script>
 </body>
