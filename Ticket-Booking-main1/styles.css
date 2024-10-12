@@ -104,7 +104,7 @@ p {
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
-    
+
 }
 
 .nav-links a:hover {
@@ -1015,6 +1015,10 @@ img {
     transition: 0.4s;
 }
 
+.mb-5 {
+    margin-bottom: 5px;
+}
+
 @media(max-width: 768px) {
     .menu-toggle {
         display: flex;
@@ -1035,44 +1039,44 @@ img {
         padding: 20px;
         border-radius: 10px 0 0 10px;
 
-    
+
     button {
         background-color: rgba(255, 255, 255, 0.8);
         border: none;
         border-radius: 50%;
         width: 180px;
-    
+
         height: 80px;
         cursor: pointer;
         font-size: 20px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     }
-    
+
     button:hover {
         background-color: rgba(255, 255, 255, 1);
     }
     .slider {
         position: relative;
-        overflow: hidden; 
-        width: 100%; 
-        height: 725px; 
+        overflow: hidden;
+        width: 100%;
+        height: 725px;
     }
-    
+
     .slide {
         display: none;
-        position: absolute; 
-        width: 100%; 
-        height: 100%; 
-    }
-    
-    .slide.active {
-        display: block; 
-    }
-    
-    img {
-        width: 100%; 
+        position: absolute;
+        width: 100%;
         height: 100%;
-        object-fit: cover; 
+    }
+
+    .slide.active {
+        display: block;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
 
     }
 
