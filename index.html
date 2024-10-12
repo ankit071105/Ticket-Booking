@@ -38,6 +38,16 @@
         justify-content: center; 
         box-sizing: border-box; 
     }
+    .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background: #1fb899; /* You can change this color */
+    width: 0;
+    transition: width 0.1s ease-in-out;
+    z-index: 9999; /* Make sure it's above other content */
+}
 
     .toggle-arrow {
         position: fixed;
@@ -793,7 +803,11 @@ h1 {
   
 </head>
 <body>
-
+    <body>
+        <div id="scrollProgressBar" class="progress-bar"></div>
+        <!-- Your existing content goes here -->
+    </body>
+    
 
     <button onclick="moveToTop()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"
             aria-hidden="true"></i></button>
@@ -1308,6 +1322,12 @@ h1 {
         chatbotContainer.classList.toggle("chatbot-show");
     }
 
+    window.addEventListener('scroll', () => {
+    const scrollProgressBar = document.getElementById('scrollProgressBar');
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progressHeight = (window.scrollY / totalHeight) * 100;
+    scrollProgressBar.style.width = progressHeight + '%';
+});
 
     </script>
 
