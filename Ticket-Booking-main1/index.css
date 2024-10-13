@@ -199,22 +199,6 @@ iframe {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.about h2,
-.contact h2 {
-  text-align: center;
-  color: #1f2937;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.about p,
-.contact p {
-  text-align: center;
-  color: #555;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
 footer {
   background-color: #1f2937;
   color: white;
