@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #8697C4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            display: flex; 
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(152, 188, 216, 0.9); 
+            background-image: url('bg.png');
+            background-size: cover; 
+            background-position: center; 
+            background-blend-mode: overlay;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            position: relative; 
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .profile-pic {
+            text-align: center; 
+            margin-bottom: 20px; 
+            position: relative; 
+            display: inline-block;
+        }
+
+        .change-pic-container {
+            display: none;
+            position: absolute; 
+            bottom: 10px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+        }
+
+        .profile-pic:hover .change-pic-container {
+            display: block;
+        }
+
+        .profile-pic img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%; 
+            object-fit: cover;
+            border: 5px solid #fff; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        }
+
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .form-group {
+            width: 48%;
+            margin-bottom: 15px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+            transform: translateX(-20px); 
+        }
+
+        .save-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 65px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .save-btn:hover {
+            background-color: #218838;
+        }
+
+        .cancel-btn {
+            background-color: #dc3545;
+            color: white;
+            padding: 15px 60px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .cancel-btn:hover {
+            background-color: #c82333;
+        }
+
+        .connect {
+            margin-top: 20px;
+        }
+
+        .connect label {
+            font-weight: bold;
+        }
+
+        .social-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .social-button {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 10px;
+            flex: 1 1 calc(33% - 10px);
+            margin: 5px;
+            text-align: center;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-button img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        /* Individual button colors */
+        .google { background-color: #de675c; }
+        .facebook { background-color: #3b5998; }
+        .instagram { background-color: #e4405f; }
+
+        /* Button hover effects */
+        .social-button:hover {
+            opacity: 0.9;
+        }
+        
+        .bookings-section {
+            margin-top: 30px;
+            background-color: #c8ecfd;
+            border-radius: 5px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .bookings-section h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .booking-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #fdfdfd;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .booking-item div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .booking-item button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .booking-item button:hover {
+            background-color: #0056b3;
+        }
+
+        .account-options {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .logout-btn, .delete-btn {
+            background-color: #000000;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .logout-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .delete-btn {
+            background-color: #dc3545;
+        }
+
+        .delete-btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Profile</h2>
+        <div class="profile-pic">
+            <img src="profilepic.png" alt="Profile Picture" id="profile-image">
+            <input type="file" id="upload" accept="image/*" style="display: none;">
+            <div class="change-pic-container">
+                <button type="button" class="change-pic-btn" onclick="document.getElementById('upload').click();">Change Picture</button>
+            </div>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" placeholder="First Name">
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="user@example.com">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="123-456-7890">
+            </div>
+            <div class="form-group">
+                <label for="address">Billing Address</label>
+                <input type="text" id="address" placeholder="Home Address">
+            </div>
+            
+            <!-- Booking History Dropdown -->
+            <div class="form-group">
+                <label for="booking-history">Booking History</label>
+                <select id="booking-history">
+                    <option value="booking1">Booking #1: 15th Sept 2024</option>
+                    <option value="booking2">Booking #2: 10th Aug 2024</option>
+                    <option value="booking3">Booking #3: 5th July 2024</option>
+                    <option value="booking4">Booking #4: 25th June 2024</option>
+                    <option value="booking5">Booking #5: 14th May 2024</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob">
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="connect">
+                <label>Connect with:</label><br>
+                <div class="social-buttons">
+                    <div class="social-button google" onclick="window.open('https://accounts.google.com/signin')">
+                        <img src="google.png" alt="Google"> Sign in with Google
+                    </div>
+                    <div class="social-button facebook" onclick="window.open('https://www.facebook.com/')">
+                        <img src="facebook.png" alt="Facebook"> Sign in with Facebook
+                    </div>
+                    <div class="social-button instagram" onclick="window.open('https://www.instagram.com/accounts/login/')">
+                        <img src="instagram.png" alt="Instagram"> Sign in with Instagram
+                    </div>
+                </div>
+
+            </div>
+            <div class="buttons">
+                <button type="submit" class="save-btn">Save</button>
+                <button type="button" class="cancel-btn">Cancel</button>
+            </div>
+        </form>
+        
+        <div class="bookings-section">
+            <!-- Upcoming Bookings -->
+            <div class="upcoming-bookings">
+                <h3>Upcoming Bookings</h3>
+                <ul id="upcoming-list">
+                    <!-- Upcoming booking items will be inserted here -->
+                </ul>
+            </div>
+        
+            
+        </div>
+
+        <div class="account-options">
+            <button class="logout-btn">Logout</button>
+            <button class="delete-btn">Delete Account</button>
+        </div>
+    </div>
+    <script src="profile.js"></script>
+</body>
+</html>

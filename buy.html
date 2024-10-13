@@ -76,14 +76,87 @@
 
     /* code for ticket booking form  */
     .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      /* min-height: 100vh; */
-      flex-wrap: wrap;
-      margin-top: 10px;
+<<<<<<< HEAD
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100vh; */
+    flex-wrap: wrap;
+    margin-top: 10px;
+  
+}
 
-    }
+.left-section, .right-section {
+    flex: 1;
+    padding: 20px;
+    height: 100%;
+}
+
+.left-section {
+   min-width: 400px;
+   max-width: 600px;
+}
+
+
+.image-placeholder {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+.right-section {
+  
+    min-width: 400px;
+    background-color: #1fb899;
+    padding: 40px;
+    border-radius: 5px;
+    max-width: 600px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-btn {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 7px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    height: 60px;
+}
+
+.submit-btn:hover {
+    background-color: #e33e3e;
+}
+
+  .container{
+    display: flex;
+    flex-wrap: wrap;
+  }
 
     .left-section,
     .right-section {
@@ -153,6 +226,7 @@
     .submit-btn:hover {
       background-color: #e33e3e;
     }
+
   </style>
 </head>
 
@@ -166,12 +240,12 @@
   <header>
     <nav class="navbar">
 
-      <div class="logo"><img src="C:\Users\Ananya\OneDrive\Documents\GitHub\Ticket-Booking\images\imagelogo.png"
+      <div class="logo"><img src="./images/4.jpeg"
           alt="Ticket Booking Logo" class="logo-image">Ticket Marketplace</div>
 
-      <a href="./index.html" id="logo-href">
+      <!-- <a href="./index.html" id="logo-href">
         <div class="logo">Ticket Marketplace</div>
-      </a>
+      </a> -->
 
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -203,16 +277,30 @@
               <option value="Train">Train ticket</option>
             </select>
           </div>
+
           <div class="form-group">
-            <label for="ticketCount">Ticket</label>
-            <select id="ticketCount" name="ticketCount" required>
-              <option value="">Select How Many Tickets You Want</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
+            <label for="journeyDate">Date of Journey</label>
+            <input type="date" id="journeyDate" min= name="journeyDate" required>
           </div>
+          <script>
+            const today = new Date();
+            const yesterday = new Date(today.setDate(today.getDate())).toISOString().split('T')[0];
+            document.getElementById('journeyDate').setAttribute('min', yesterday);
+            </script>
+          <div class="form-group">
+            <label for="journeyTime">Time of Journey</label>
+            <input type="time" id="journeyTime" name="journeyTime" required>
+          </div>
+
+          <div class="form-group">
+            <label for="departure">Departure</label>
+            <input type = "text" placeholder = "From" required>
+          </div>
+          <div class="form-group">
+            <label for="destination">Destination</label>
+            <input type = "text" placeholder = "To" required>
+          </div>
+          
           <button type="submit" class="submit-btn">Check Availability</button>
         </form>
       </div>
