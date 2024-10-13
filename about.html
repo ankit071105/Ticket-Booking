@@ -1,95 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/4.jpeg" type="image/x-icon">
-
     <title>About Us</title>
     <style>
-
-body {
+        body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f4f8;
+            display: flex; /* Use flexbox for the body */
+            height: 100vh; /* Full viewport height */
+            color: #fff; /* Text color */
         }
 
-        .feed {
-            max-width: 800px;
-            margin: 50px auto;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-            overflow: hidden;
-            padding: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-
+        .background {
+            flex: 1; /* Left column takes 50% of the width */
+            background: url("images/4.jpeg") no-repeat center center; 
+            background-size: cover; /* Cover the left column */
         }
 
-        .feed h2 {
+        .content {
+            flex: 1; /* Right column takes 50% of the width */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            background-color: rgba(18, 6, 61, 0.8); /* Darkened background */
+            padding: 60px; /* Padding around content */
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Soft shadow */
+            transition: transform 0.3s ease; /* Hover effect */
+        }
+
+        .content:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+        }
+
+        .content h2 {
             text-align: center;
-            color: #1f2937;
-            font-size: 35px;
-            text-decoration:underline;
+            color: #35e196; /* Header color */
+            font-size: 36px;
+            text-decoration: underline;
+            margin-bottom: 20px;
         }
 
-        .feed p {
-            font-size: 16px;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .feed p:last-child {
-            margin-bottom: 0;
+        .content p {
+            font-size: 18px;
+            color: #f0f0f0; /* Light text color */
+            line-height: 1.8; /* Increased line height for readability */
+            margin-bottom: 15px;
+            padding: 0 20px; /* More padding for better spacing */
+            text-align: justify; /* Justify text for cleaner look */
         }
 
         .button-container {
             text-align: center;
-            margin-top: -20px;
+            margin-top: 30px;
         }
 
         .button-container a {
-            margin-bottom: 20px;
+            margin: 10px;
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #00bfa6;
-            color: white;
+            padding: 12px 25px;
+            background-color: #35e196; /* Button color */
+            color: #333; /* Button text color */
             text-decoration: none;
             border-radius: 5px;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
+            font-size: 18px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow */
         }
 
         .button-container a:hover {
-            background-color: #00a690;
+            background-color: #35e196; /* Darken button on hover */
+            transform: scale(1.05);
         }
 
         @media (max-width: 768px) {
-            .feed {
-                padding: 15px;
+            body {
+                flex-direction: column; /* Stack elements vertically */
+                height: auto; /* Adjust height for small screens */
+            }
+
+            .content {
+                padding: 20px; /* Adjust padding */
+            }
+
+            .content h2 {
+                font-size: 30px; /* Smaller header font */
+            }
+
+            .content p {
+                font-size: 16px; /* Smaller paragraph font */
             }
         }
-    
     </style>
-
-
 </head>
+
 <body>
-    <section class="feed">
-        <h2><img src="https://cdn-icons-png.flaticon.com/128/108/108153.png" alt="icon" style="width: 40px; height: 40px ;margin-bottom:-9px ; margin-right: 10px;">About Us</h2>
-
-        <p>Welcome to <strong>Ticket-Booking</strong>, your trusted partner for hassle-free experience ticket booking experiences. Seamlessly booking for Bus or Train we make it easy and convenient to book your tickets in just a few clicks.</p>
-        <p>Founded with ensolving the ambiguities and uncertainity everyone faces while a booking a Bus or Train. Our user-friendly interface, secure payment gateway, and real-time availability ensure a hassle-free experience every time.</p>
-        <p>At <strong>Ticket-Booking</strong>, we believe in making your journey from booking to enjoyment as smooth as possible. Our dedicated customer support team is always ready to assist you, ensuring that your ticketing experience is nothing short of exceptional.</p>
-        <p>Thank you for choosing <strong>Ticket-Booking</strong> we are always here to server before you. Let's make memories together one ticket at a time!</p>
-
-
-    </section>
-
-    <div class="button-container">
-        <a href="index.html">Back to Home</a>
-    </div>
+    <div class="background"></div>
+    <div class="content">
     
+        <h2>About Us</h2>
+
+        <p>Welcome to <strong>Ticket-Booking</strong>, your trusted partner for hassle-free ticket booking experiences. Seamlessly book your Bus or Train tickets in just a few clicks.</p>
+
+        <p>Founded to resolve the ambiguities and uncertainties everyone faces while booking, our user-friendly interface, secure payment gateway, and real-time availability ensure a hassle-free experience every time.</p>
+        
+        <p>At <strong>Ticket-Booking</strong>, we believe in making your journey from booking to enjoyment as smooth as possible. Our dedicated customer support team is always ready to assist you, ensuring your ticketing experience is nothing short of exceptional.</p>
+        
+        <p>Thank you for choosing <strong>Ticket-Booking</strong>; we are always here to serve you. Let's make memories together, one ticket at a time!</p>
+
+        <div class="button-container">
+            <a href="index.html">Back to Home</a>
+        </div>
+    </div>
 </body>
+
 </html>
