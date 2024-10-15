@@ -19,6 +19,26 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="why-us.css">
     <style>
+           /* cursor */
+           body{
+  cursor: none;
+}
+
+
+.circle {
+  height: 24px;
+  width: 24px;
+  border-radius: 24px;
+  background-color: black;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999999; /* so that it stays on top of all other elements */
+}
+
+/* cursor */
+        
         @import url("https://fonts.googleapis.com/css2?family=Shippori+Antique&display=swap");
 
         .close-btn {
@@ -307,14 +327,6 @@
         }
 
 
-	.contact-info h2:hover,
-        .contact-info h4:hover {
-	    color: #fff; /* Change text color to white on hover */
-	    text-shadow: 0 0 10px #00bfa6, 0 0 20px #00bfa6, 0 0 30px #00bfa6; 
-	    transform: scale(1.05); /* Slight size increase */
-	    transition:  all 0.3s ease; /* Smooth transition for color, shadow, and size */
-	}
-	    
         .social-sidebar a {
             text-decoration: none;
             color: white;
@@ -860,11 +872,43 @@ h1 {
   
 </head>
 <body>
+    
+    <!-- cursor -->
+    
+    <div class="cursor"></div>
+    <div class="cursor-trail"></div>
+
+    
+
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <!-- cursor -->
+
     <body>
         <div id="scrollProgressBar" class="progress-bar"></div>
         <!-- Your existing content goes here -->
     </body>
-    
+
 
     <button onclick="moveToTop()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"
             aria-hidden="true"></i></button>
@@ -893,7 +937,7 @@ h1 {
             </div>
     
             <ul class="nav-links">
-                <li><a href="#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
                 <li><a href="buy.html"><i class="fas fa-shopping-cart"></i> Buy</a></li>
                 <li><a href="sell.html"><i class="fas fa-tag"></i> Sell</a></li>
                 <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
@@ -983,23 +1027,10 @@ h1 {
     </div>
 </div>
 
-<!-- About -->
-<section class="about" id="about">
-    <h1><span>About</span> Us</h1>
-    <div class="box-container about-box">
-        <div class="video-container">
-            <video width="600" controls autoplay loop muted>
-                <source src="images/about-us.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="text">
-            <h1>Welcome to Ticket-Booking!</h1>
-            <p>We are your trusted partner for hassle-free ticket booking experiences. Seamlessly book your Bus or Train tickets in just a few clicks. Founded to resolve the ambiguities and uncertainties everyone faces while booking, our user-friendly interface, secure payment gateway, and real-time availability ensure a hassle-free experience every time.<br><br> At Ticket-Booking, we believe in making your journey from booking to enjoyment as smooth as possible. Our dedicated customer support team is always ready to assist you, ensuring your ticketing experience is nothing short of exceptional. Thank you for choosing Ticket-Booking; we are always here to serve you. Let's make memories together, one ticket at a time!</p>
-            
-        </div>
-    </div>
-</section>
+
+
+<script src="about.js"></script>
+  </div>
 
   <div class="content-wrapper">
     <h1>Our Reviews</h1>
@@ -1069,59 +1100,127 @@ h1 {
 
         <details>
             <summary>
-                <h4>Why is Raycast free for personal use?</h4>
+                <h4>How do I book a bus or train ticket on Ticket-Booking?</h4>
                 <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
             </summary>
-            <p>We think of Raycast as a productivity layer that everybody should use to get work done faster. To make it
-                accessible, we don't charge for the individual plan. The plan covers all built-in extensions, such as
-                Clipboard History, Calendar or Window Management and provides access to all public extensions built by
-                our community.</p>
+            <p>Booking a ticket is easy! Simply visit our website, select your preferred mode of travel (Bus or Train), enter your travel details (destination, date, and time), and proceed with booking. You'll receive real-time availability and secure payment options to complete your booking in just a few clicks.
+
+            </p>
         </details>
 
         <hr>
 
         <details>
             <summary>
-                <h4>When is Raycast for teams available?</h4>
+                <h4>Can I sell my bus or train tickets on Ticket-Booking?</h4>
                 <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
             </summary>
-            <p>We don't have an exact date right now, but we will launch Raycast for Teams in 2022. You can sign up to
-                get early access above, and be the first to hear when we're launching it.</p>
+            <p>Yes! If you have bus or train tickets you no longer need, you can sell them through Ticket-Booking. Contact our 24/7 customer support team to get the best price for your tickets without any hassle.
+
+            </p>
         </details>
 
         <hr>
 
         <details>
             <summary>
-                <h4>How many seats do I get in a Team plan?</h4>
+                <h4>Is it safe to make payments on Ticket-Booking?</h4>
                 <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
             </summary>
-            <p>We don't have an exact date right now, but we will launch Raycast for Teams in 2022. You can sign up to
-                get early access above, and be the first to hear when we're launching it.</p>
+            <p>Absolutely! We prioritize the security of our users. Our platform uses secure payment gateways to ensure that your transactions are safe and encrypted, providing you with peace of mind during your booking process.
+
+                </p>
         </details>
 
         <hr>
 
         <details>
             <summary>
-                <h4>Can I have personal Extensions and Team Extensions?</h4>
+                <h4>How do I check the availability of tickets?</h4>
                 <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
             </summary>
-            <p>Yes, you can create personal Extensions that are personalized to you, and speed up your productivity, and
-                have team Extensions that can be shared around in your organization for everyone to use. Team Extensions
-                will be available in the Store command, behind a filter for your Team. This is where all of your Team
-                Extensions will live, and where you can install them.</p>
+            <p>You can check real-time availability by selecting your travel date and destination on our platform. Our system will show you all available options, allowing you to choose the best one for your journey.
+
+            </p>
         </details>
 
         <hr>
 
         <details>
             <summary>
-                <h4>How much will Team features cost?</h4>
+                <h4>What happens if I need to cancel or modify my booking?</h4>
                 <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
             </summary>
-            <p>Team features will cost $10 per user, per month.</p>
+            <p>If you need to cancel or modify your booking, please contact our customer support team. Cancellation and modification policies vary depending on the bus or train operator, so we’ll guide you through the process based on the terms and conditions of your specific booking.
+
+            </p>
         </details>
+
+        <hr>
+
+        <details>
+            <summary>
+                <h4>What payment methods do you accept?</h4>
+                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
+            </summary>
+            <p>We accept a variety of payment methods, including credit/debit cards, net banking, and popular digital wallets, ensuring that you can pay using the option that suits you best.
+
+
+
+            </p>
+        </details>
+
+        <hr>
+
+        <!-- <details>
+            <summary>
+                <h4>Can I book tickets for international bus or train routes?</h4>
+                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
+            </summary>
+            <p>Currently, Ticket-Booking specializes in domestic bus and train routes. However, we are constantly expanding, so stay tuned for updates regarding international routes.
+
+
+            </p>
+        </details>
+
+        <hr>
+
+        <details>
+            <summary>
+                <h4>What should I do if I face issues during the booking process?</h4>
+                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
+            </summary>
+            <p>If you encounter any issues while booking a ticket, our dedicated customer support team is available 24/7 to assist you. Reach out to us via phone, email, or live chat, and we’ll help resolve any problems as quickly as possible.
+
+
+            </p>
+        </details>
+
+        <hr>
+
+        <details>
+            <summary>
+                <h4>Do I need to create an account to book tickets?</h4>
+                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
+            </summary>
+            <p>Creating an account is not mandatory, but we highly recommend it. Having an account allows you to easily manage your bookings, view past purchases, and receive updates on promotions and offers.
+
+
+            </p>
+        </details>
+
+        <hr>
+
+        <details>
+            <summary>
+                <h4>Can I get a refund if I cancel my ticket?</h4>
+                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
+            </summary>
+            <p>Refund policies depend on the bus or train operator’s terms and conditions. In most cases, refunds are possible if the cancellation is made within the stipulated time frame. Please check the operator’s cancellation policy during the booking process or contact our support team for assistance.
+
+
+            </p>
+        </details> -->
 
     </div>
 
@@ -1202,6 +1301,75 @@ h1 {
   </footer>
 
     <script>
+        // cursor
+
+        const coords = { x: 0, y: 0 };
+const circles = document.querySelectorAll(".circle");
+
+const colors = [
+
+  "#BCE954",
+  "#98FF98",
+  "#9CB071",
+  "#90C209",
+  "#B2C248",
+  "#85BB65",
+  "#99C68E",
+  "#6CBB3C",
+  "#3ea055",
+  "#41a317",
+  "#4AA02C",
+  "#6AA121",
+  "#347C2C",
+  "#387C44",
+  "#437C17",
+  "#306754",
+  "#254117",
+  "#667C26",
+  "#728C00",
+  "#008000"
+
+];
+
+circles.forEach(function (circle, index) {
+  circle.x = 0;
+  circle.y = 0;
+  circle.style.backgroundColor = colors[index % colors.length];
+});
+
+window.addEventListener("mousemove", function(e){
+  coords.x = e.clientX;
+  coords.y = e.clientY;
+  
+});
+
+function animateCircles() {
+  
+  let x = coords.x;
+  let y = coords.y;
+  
+  circles.forEach(function (circle, index) {
+    circle.style.left = x - 12 + "px";
+    circle.style.top = y - 12 + "px";
+    
+    circle.style.scale = (circles.length - index) / circles.length;
+    
+    circle.x = x;
+    circle.y = y;
+
+    const nextCircle = circles[index + 1] || circles[0];
+    x += (nextCircle.x - x) * 0.3;
+    y += (nextCircle.y - y) * 0.6;
+  });
+ 
+  requestAnimationFrame(animateCircles);
+}
+
+animateCircles();
+        
+        
+        
+
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
 
@@ -1345,7 +1513,7 @@ h1 {
                 const content = this.querySelector('p');
                 if (this.open) {
                     content.style.height = '0px';
-                    content.style.transition = 'height 0.5s ease-out';
+                    content.style.transition = 'height 0.2s ease-out';
                     content.style.height = content.scrollHeight + 'px'; // Sets the height based on the actual content
                 } else {
                     content.style.height = content.scrollHeight + 'px'; // Height is set to the current scrollHeight
