@@ -13,6 +13,26 @@
   <style>
     
     /* code for bottom to top nav  */
+    /* cursor */
+
+    body{
+  cursor: none;
+}
+
+
+.circle {
+  height: 24px;
+  width: 24px;
+  border-radius: 24px;
+  background-color: black;
+  position: fixed; 
+  top: 10;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999999; /* so that it stays on top of all other elements */
+}
+
+/* cursor */
     
     #myBtn {
       display: none;
@@ -44,7 +64,36 @@
 </head>
 
 <body>
+  <!-- cursor -->
+
+  <div class="cursor"></div>
+  <div class="cursor-trail"></div>
+
   
+
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  
+  <!-- cursor -->
     
 <button onclick="topFunction()" width="40px" height="40px" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
 
@@ -202,9 +251,79 @@
 
 
 <!-- footer end  -->
+ 
 
   <script src="app.js"> </script>
   <script>
+     <!-- cursor -->
+
+    const coords = { x: 0, y: 0 };
+ const circles = document.querySelectorAll(".circle");
+ 
+ const colors = [
+
+ 
+   "#BCE954",
+   "#98FF98",
+   "#9CB071",
+   "#90C209",
+   "#B2C248",
+   "#85BB65",
+   "#99C68E",
+   "#6CBB3C",
+   "#3ea055",
+   "#41a317",
+   "#4AA02C",
+   "#6AA121",
+   "#347C2C",
+   "#387C44",
+   "#437C17",
+   "#306754",
+   "#254117",
+   "#667C26",
+   "#728C00",
+   "#008000"
+ 
+ ];
+ 
+ circles.forEach(function (circle, index) {
+   circle.x = 0;
+   circle.y = 0;
+   circle.style.backgroundColor = colors[index % colors.length];
+ });
+ 
+ window.addEventListener("mousemove", function(e){
+   coords.x = e.clientX;
+   coords.y = e.clientY;
+   
+ });
+ 
+ function animateCircles() {
+   
+   let x = coords.x;
+   let y = coords.y;
+   
+   circles.forEach(function (circle, index) {
+     circle.style.left = x - 12 + "px";
+     circle.style.top = y - 12 + "px";
+     
+     circle.style.scale = (circles.length - index) / circles.length;
+     
+     circle.x = x;
+     circle.y = y;
+ 
+     const nextCircle = circles[index + 1] || circles[0];
+     x += (nextCircle.x - x) * 0.3;
+     y += (nextCircle.y - y) * 0.6;
+   });
+  
+   requestAnimationFrame(animateCircles);
+ }
+ 
+ animateCircles();
+
+//  cursor
+ 
     
 let mybutton = document.getElementById("myBtn");
 window.onscroll = function() {scrollFunction()};
