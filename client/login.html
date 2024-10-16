@@ -8,7 +8,6 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
 <body class="bg-white">
     <div class="relative flex items-top justify-center min-h-[700px] bg-white sm:items-center sm:pt-0">
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
@@ -76,6 +75,73 @@
                             Continue with Google
                         </button>
                     </div>
+=======
+<div class="relative flex items-top justify-center min-h-[700px] bg-white sm:items-center sm:pt-0">
+    <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+        <div class="mt-8 overflow-hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="p-6 mr-2 bg-gray-100 sm:rounded-lg">
+                    <h1 class="text-3xl sm:text-4xl text-gray-800 font-extrabold tracking-tight">
+                        Welcome! Back
+                    </h1>
+                    <br /><br />
+                    <p class="text-normal text-lg sm:text-xl font-medium text-gray-600 mt-2">
+                        Don't Have an Account ?
+                    </p><br />
+                    <a href="/client/register.html"
+                       class="md:w-32 bg-orange-700 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg mt-3 transition ease-in-out duration-300">
+                        Register
+                    </a>
+                </div>
+                <div style="
+    border-radiius: 0.5px;
+    border: solid 1px #d7d9de;
+    f6; */
+;
+    border-radius: 0.5rem;
+">
+                    <form id="loginForm" class="p-6 flex flex-col justify-center">
+                        <h2 class="text-3xl sm:text-4xl text-gray-800 font-extrabold tracking-tight">
+                            Log in
+                        </h2>
+                        <br>
+                        <input type="email" name="email" id="email" placeholder="Email" class="w-full mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none" required="" fdprocessedid="jsiqzl">
+                        <div class="relative flex items-center ">
+                            <input type="password" name="password" id="password" placeholder="Password" class="w-full mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none" required="" fdprocessedid="lywf2e">
+                            <button type="button" id="togglePassword" class="absolute right-3 top-5 text-black-500 hover:text-orange-700" fdprocessedid="9fb90m">
+                                <!-- Eye SVG (visible by default) -->
+                                <svg id="showIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 w-6 h-6">
+                                    <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"></path>
+                                    <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z" clip-rule="evenodd"></path>
+                                </svg>
+                                <!-- Eye Slash SVG (hidden by default) -->
+                                <svg id="hideIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 w-6 h-6 hidden">
+                                    <path d="M3.53 2.47a.75.75 0 0 0-1.06 1.06l18 18a.75.75 0 1 0 1.06-1.06l-18-18ZM22.676 12.553a11.249 11.249 0 0 1-2.631 4.31l-3.099-3.099a5.25 5.25 0 0 0-6.71-6.71L7.759 4.577a11.217 11.217 0 0 1 4.242-.827c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113Z"></path>
+                                    <path d="M15.75 12c0 .18-.013.357-.037.53l-4.244-4.243A3.75 3.75 0 0 1 15.75 12ZM12.53 15.713l-4.243-4.244a3.75 3.75 0 0 0 4.244 4.243Z"></path>
+                                    <path d="M6.75 12c0-.619.107-1.213.304-1.764l-3.1-3.1a11.25 11.25 0 0 0-2.63 4.31c-.12.362-.12.752 0 1.114 1.489 4.467 5.704 7.69 10.675 7.69 1.5 0 2.933-.294 4.242-.827l-2.477-2.477A5.25 5.25 0 0 1 6.75 12Z"></path>
+                                </svg>
+                            </button>
+
+                        </div>
+                        <p id="errorMessage" class="text-red-500 mt-2"></p>
+                        <button type="submit" class="md:w-32 bg-orange-700 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg mt-3 transition ease-in-out duration-300" fdprocessedid="0xucyq">
+                            SignIn
+                        </button>
+                    </form>
+                    <a href="/client/forgot_password.html" class="text-orange-700 ml-7  hover:underline mt-0">Forgot Password?</a>
+                    <button id="googleSignin" class="w-full mt-2 flex items-center justify-center bg-white border border-gray-400 text-gray-800 font-semibold py-3 px-6 rounded-lg transition ease-in-out duration-300 hover:bg-gray-100" fdprocessedid="qat19b" style="
+    width: 270px;
+    /* align-items: center; */
+    margin-left: 23px;
+    /* bottom: auto; */
+    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+">
+                        <img src="../images/googleLogo.png" alt="Google Logo" class="w-5 h-5 mr-2">
+                        Continue with Google
+                    </button>
+
                 </div>
             </div>
         </div>
