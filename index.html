@@ -212,6 +212,69 @@
             color: white;
             font-size: 24px;
         }
+        
+      /* Slider Container */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Set a fixed height for the slider */
+    overflow: hidden; /* Hide overflow to maintain size */
+}
+
+/* Slide */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Initially hide the slides */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity */
+}
+
+.slide.active {
+    opacity: 1; /* Show the active slide */
+}
+
+/* Image */
+.slide img {
+    width: 100%; /* Make the image take the full width */
+    height: 100%; /* Make the image take the full height */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10; /* Make sure buttons are above other elements */
+}
+
+.prev, .next {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 1); /* Solid background on hover */
+}
+
+/* Optional: Responsive design */
+@media (max-width: 768px) {
+    .slider {
+        height: 250px; /* Adjust height for smaller screens */
+    }
+}
+
 
         .social-sidebar {
             position: fixed;
