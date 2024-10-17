@@ -1228,18 +1228,349 @@ h1 {
         </details>
 
     </div>
+    <!DOCTYPE html>
+
+<body>
+  
+  <section id="feedback-form">
+    <div class="container">
+      <h2>We Value Your Feedback!</h2>
+      <p>Your input helps us improve our services. Please share your thoughts with us below.</p>
+      <form>
+        
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+
+        
+        <div class="form-group">
+          <label for="rating">Rating</label>
+          <select id="rating" name="rating" required>
+            <option value="5">Excellent - 5 Stars</option>
+            <option value="4">Very Good - 4 Stars</option>
+            <option value="3">Good - 3 Stars</option>
+            <option value="2">Fair - 2 Stars</option>
+            <option value="1">Poor - 1 Star</option>
+          </select>
+        </div>
+
+        
+        <div class="form-group">
+          <label for="feedback">Your Feedback</label>
+          <textarea id="feedback" name="feedback" rows="5" placeholder="Tell us about your experience..." required></textarea>
+        </div>
+
+        
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </div>
+  </section>
+</body>
 
 
-<!-- footer -->
+<style>
+    /* General Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Feedback Form Section */
+#feedback-form {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+}
+
+#feedback-form h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#feedback-form p {
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Form Container */
+.container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container h2, .container p {
+  color: #333;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #333;
+  display: block;
+}
+/* General Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+/* Feedback Form Section */
+#feedback-form {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+}
+
+#feedback-form h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+#feedback-form p {
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+}
+
+/* Form Container */
+.container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+.container h2, .container p {
+  color: #333;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Input and Textarea Styles */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover and Focus States */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+  outline: none;
+}
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+  border-color: #6a11cb;
+}
+
+/* Submit Button Styles */
+button[type="submit"] {
+  background-color: #2575fc;
+  color: #fff;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #6a11cb;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  #feedback-form h2 {
+    font-size: 1.5rem;
+  }
+
+  #feedback-form p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #feedback-form {
+    padding: 30px 10px;
+  }
+
+  #feedback-form h2 {
+    font-size: 1.3rem;
+  }
+
+  #feedback-form p {
+    font-size: 0.9rem;
+  }
+
+  button[type="submit"] {
+    padding: 12px 15px;
+  }
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+  outline: none;
+}
+button[type="submit"]:hover {
+  background-color: #6a11cb;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+button[type="submit"] {
+  background-color: #2575fc;    
+  color: #fff;                 
+  padding: 15px 25px;           
+  font-size: 1rem;           
+  border: none;             
+  border-radius: 50px;          
+  cursor: pointer;              
+  transition: all 0.3s ease;    
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);  
+  display: inline-block;        
+  text-transform: uppercase;    
+  letter-spacing: 1px;          
+  font-weight: bold;          
+}
+
+/* Hover Effect */
+button[type="submit"]:hover {
+  background-color: #6a11cb;    /* Change Color on Hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);  /* Increased Shadow on Hover */
+  transform: translateY(-3px);  /* Lift Button Slightly on Hover */
+}
+
+
+button[type="submit"]:focus {
+  outline: none;                
+  box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.4);  
+}
+
+
+button[type="submit"]:active {
+  transform: translateY(2px);   
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  
+}
+
+
+button[type="submit"]::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
+  transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+button[type="submit"]:hover::before {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+
+@media (max-width: 768px) {
+  button[type="submit"] {
+    padding: 12px 20px;         
+    font-size: 0.9rem;         
+  }
+}
+
+@media (max-width: 480px) {
+  button[type="submit"] {
+    padding: 10px 18px;         
+    font-size: 0.8rem;          
+  }
+}
+
+
+</style>
+
+
 
 <footer class="footer-container">
     <div class="footer-top">
-      <!-- Logo and Tagline -->
+      
       <div class="footer-logo-section">
         <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo">
         <p style="color: #b5fdf4;" >Affordable adventures, unforgettable memories—explore with ease.</p>
         <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
-        <!-- Social Media Icons -->
+        
         <div class="social-icons">
           <a href="#"><i class="fab fa-facebook"></i></a>
           <a href="#"><i class="fab fa-instagram"></i></a>
@@ -1249,7 +1580,7 @@ h1 {
         </div>
       </div>
   
-      <!-- Links Sections -->
+      
       <div class="footer-links">
         <div class="footer-column">
           <h4>HELPFUL LINKS</h4>
@@ -1293,7 +1624,7 @@ h1 {
       </div>
     </div>
   
-    <!-- Additional Links Section -->
+    
     <div class="footer-bottom">
       <ul>
         <li><a href="#">Holiday Type</a></li>
