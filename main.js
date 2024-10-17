@@ -14,38 +14,34 @@ let people = [
 	{
 		photo:
 			'url("https://cdn.pixabay.com/photo/2018/03/06/22/57/portrait-3204843_960_720.jpg")',
-		name: "Susan Smith",
-		profession: "WEB DEVELOPER",
+		name: "Stefina hussein",
+		profession: "Delhi",
 		description:
-			"Cheese and biscuits chalk and cheese fromage frais. Cheeseburger caerphilly cheese slices chalk and cheese cheeseburger mascarpone danish fontina rubber cheese. Squirty cheese say cheese manchego jarlsberg lancashire taleggio cheese and wine squirty cheese. Babybel pecorino feta macaroni cheese brie queso everyone loves gouda. Cheese and biscuits camembert de normandie fromage fromage macaroni cheese"
-	},
+             "Booking train tickets used to be a hassle for me, but not anymore! Ticket-Booking has made it so easy and convenient to secure my tickets. The real-time availability feature helped me plan my journey without any worries. Highly recommend it for stress-free bookings."	},
 
 	{
 		photo:
 			"url('https://cdn.pixabay.com/photo/2019/02/11/20/20/woman-3990680_960_720.jpg')",
-		name: "Anna Grey",
-		profession: "UFC FIGHTER",
+		name: "Celina Cassandra",
+		profession: "Allepi",
 		description:
-			"I'm baby migas cornhole hell of etsy tofu, pickled af cardigan pabst. Man braid deep v pour-over, blue bottle art party thundercats vape. Yr waistcoat whatever yuccie, farm-to-table next level PBR&B. Banh mi pinterest palo santo, aesthetic chambray leggings activated charcoal cred hammock kitsch humblebrag typewriter neutra knausgaard. Pabst succulents lo-fi microdosing portland gastropub Banh mi pinterest palo santo"
-	},
+"I had to sell my bus ticket last minute, and Ticket-Booking’s platform made it incredibly easy. Within minutes, I had an offer, and the transaction was smooth. The customer service was very responsive, and I felt confident using the service. This platform is a lifesaver!"	},
 
 	{
 		photo:
 			"url('https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg')",
-		name: "Branson Cook",
-		profession: "ACTOR",
+		name: "Gellaso Giano",
+		profession: "Goa",
 		description:
-			"Radio telescope something incredible is waiting to be known billions upon billions Jean-François Champollion hearts of the stars tingling of the spine. Encyclopaedia galactica not a sunrise but a galaxyrise concept of the number one encyclopaedia galactica from which we spring bits of moving fluff. Vastness is bearable only through love paroxysm of global death concept"
-	},
+"Ticket-Booking has taken all the stress out of booking tickets. Whether it's for a quick bus trip or a cross-country train ride, this platform has me covered. Real-time availability is such a game changer!"	},
 
 	{
 		photo:
 			"url('https://cdn.pixabay.com/photo/2014/10/30/17/32/boy-509488_960_720.jpg')",
-		name: "Julius Grohn",
-		profession: "PROFESSIONAL CHILD",
+		name: "Afzal Khan",
+		profession: "Hyderabad",
 		description:
-			"Biscuit chocolate pastry topping lollipop pie. Sugar plum brownie halvah dessert tiramisu tiramisu gummi bears icing cookie. Gummies gummi bears pie apple pie sugar plum jujubes. Oat cake croissant bear claw tootsie roll caramels. Powder ice cream caramels candy tiramisu shortbread macaroon chocolate bar. Sugar plum jelly-o chocolate dragée tart chocolate marzipan cupcake gingerbread."
-	}
+"I’ve been using Ticket-Booking for both bus and train tickets for the past few months, and it has always been a fantastic experience. The website is fast, reliable, and super easy to use. I also appreciate the helpful customer support team who resolved my issue within minutes."	}
 ];
 
 imgDiv.style.backgroundImage = people[0].photo;
@@ -84,19 +80,19 @@ function slide(whichSide, personNumber) {
 
 	setTimeout(() => {
 		imgDiv.style.backgroundImage = people[personNumber].photo;
-	}, 400);
+	}, 300);
 	setTimeout(() => {
 		description.style.height = descriptionHeight;
-	}, 400);
+	}, 300);
 	setTimeout(() => {
 		personName.innerText = people[personNumber].name;
-	}, 400);
+	}, 300);
 	setTimeout(() => {
 		profession.innerText = people[personNumber].profession;
-	}, 400);
+	}, 300);
 	setTimeout(() => {
 		description.innerText = people[personNumber].description;
-	}, 400);
+	}, 300);
 
 	tl.to(reviewWrap, {
 		duration: 0.4,
