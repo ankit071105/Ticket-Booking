@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="index.css">
 <!-- this is for twitter icons -->
 <script src="https://kit.fontawesome.com/3d20c433e1.js" crossorigin="anonymous"></script>
   <style>
@@ -227,6 +228,7 @@
       <li><a href="bus_sell.html">Sell Bus Ticket</a></li>
       <li><a href="train_sell.html">Sell Train Ticket</a></li>
       <li><a href="buy.html">Buy Ticket</a></li>
+      <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
     </ul>
   </nav>
 
@@ -371,6 +373,21 @@
 
   <script src="app.js"> </script>
   <script>
+const darkModeToggle = document.getElementById('darkModeToggle');
+const body = document.querySelector('body');
+if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        if (body.classList.contains('dark-mode')) {
+            darkModeToggle.innerHTML = "🔆";
+        }
+        else {
+            darkModeToggle.innerHTML = "🌙";
+        }
+    });
+}
+// change icon of the dark/light mode
+
     
 let mybutton = document.getElementById("myBtn");
 window.onscroll = function() {scrollFunction()};
