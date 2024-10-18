@@ -32,7 +32,6 @@ body {
   .contributor-card {
     width: 220px;
     position: relative;
-    max-width: calc(25% - 16px);
     display: flex;
     flex-direction: column;
     align-items: center;

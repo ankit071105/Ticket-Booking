@@ -1083,7 +1083,8 @@ img {
     }
 
     .nav-links.active {
-        right: 0;
+        left: 75px;
+        top: 100px;
     }
 
     #darkModeToggle {
