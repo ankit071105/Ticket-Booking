@@ -1,0 +1,15 @@
+#review-section {
+    margin: 20px;
+  }
+  #review-list {
+    list-style-type: none;
+  }
+  #review-list li {
+    margin: 10px 0;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  #review-form {
+    margin-top: 20px;
+  }
+  
