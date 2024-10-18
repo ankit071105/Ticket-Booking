@@ -212,6 +212,69 @@
             color: white;
             font-size: 24px;
         }
+        
+      /* Slider Container */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Set a fixed height for the slider */
+    overflow: hidden; /* Hide overflow to maintain size */
+}
+
+/* Slide */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Initially hide the slides */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity */
+}
+
+.slide.active {
+    opacity: 1; /* Show the active slide */
+}
+
+/* Image */
+.slide img {
+    width: 100%; /* Make the image take the full width */
+    height: 100%; /* Make the image take the full height */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10; /* Make sure buttons are above other elements */
+}
+
+.prev, .next {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 1); /* Solid background on hover */
+}
+
+/* Optional: Responsive design */
+@media (max-width: 768px) {
+    .slider {
+        height: 250px; /* Adjust height for smaller screens */
+    }
+}
+
 
         .social-sidebar {
             position: fixed;
@@ -298,36 +361,36 @@
 
 
         /* map code  */
+        
         .containers {
-            /* background-color: red; */
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-            padding: 20px 100px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping to next line */
+    justify-content: space-around;
+    padding: 20px 100px;
+    align-items: flex-start; /* Align items to top */
+}
 
-        .contact-info {
-            background-color: #00bfa6;
-            width: 40%; /* Set width for contact info */
-            padding: 30px;
-            /* margin:4px; */
-            text-align: left;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
-        }
+.contact-info {
+    background-color: #00bfa6;
+    width: 40%;
+    padding: 30px;
+    text-align: left;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
 
-        .map-container {
-            width: 55%; /* Set width for the map container */
-        }
+.map-container {
+    width: 55%;
+}
 
-        .map-container iframe {
-            width: 100%; /* Make iframe responsive */
-            height: 400px; /* Set a fixed height for the map */
-            border: none; /* Remove default border */
-            border-radius: 8px;
-        }
+.map-container iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 8px;
+}
+
+
 
 
         .social-sidebar a {
@@ -911,7 +974,9 @@ h1 {
         <div id="scrollProgressBar" class="progress-bar"></div>
         <!-- Your existing content goes here -->
     </body>
-
+    <div class="gtranslate_wrapper"></div>
+    <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
     <button onclick="moveToTop()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"
             aria-hidden="true"></i></button>
@@ -999,7 +1064,7 @@ h1 {
     </div>
 
 
-<div class="home">
+<div class="bus">
     <h2>Book Bus or Train Tickets</h2>
     <div class="ticket-list">
         <div class="ticket-card">
@@ -1066,17 +1131,18 @@ h1 {
 
 
     <div class="containers" id="sxs">
-        <div class="contact-info" style="padding-left: 30px;">
-            <h2 style="text-align:left">Contact Us</h2>
-            <p style="color: white;font-size: 16px;">We value your feedback! We'd love to hear from you! For inquiries, feedback, or support, please reach out. Your insights help us improve your experience.</p>
-            
-            <h4>Localisation</h4>
-            <p style="color: white;font-size: 16px;">ABC colony, Bangalore Pin: 76896</p>
-    
-            <h4>Phone No</h4>
-            <p  style="color: white;font-size: 16px;">+91 9685478526</p>
+        <div id="contact" class="contact-info" >
+            <div style="padding-left: 30px;">
+                <h2 style="text-align:left">Contact Us</h2>
+                <p style="color: white;font-size: 16px;">We value your feedback! We'd love to hear from you! For inquiries, feedback, or support, please reach out. Your insights help us improve your experience.</p>
+                
+                <h4>Localisation</h4>
+                <p style="color: white;font-size: 16px;">ABC colony, Bangalore Pin: 76896</p>
+        
+                <h4>Phone No</h4>
+                <p  style="color: white;font-size: 16px;">+91 9685478526</p>
+            </div>    
         </div>
-
     </footer>
 
 
@@ -1240,7 +1306,9 @@ h1 {
         
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" required>
+          <input type="text" id="name" name="name" placeholder="Your Name" required pattern="[a-zA-Z ]+"
+                                oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
+                                oninput="this.setCustomValidity('')">
         </div>
 
         
