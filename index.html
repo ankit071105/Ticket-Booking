@@ -1164,141 +1164,196 @@ h1 {
 
 
 
-    <div class="faq-section">
-        <header>
-            <h2>FAQs</h2>
-            <h3><center> Answers to the most frequently asked questions.</center></h3>
-        </header>
+   
 
-        <details>
-            <summary>
-                <h4>How do I book a bus or train ticket on Ticket-Booking?</h4>
-                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
-            </summary>
-            <p>Booking a ticket is easy! Simply visit our website, select your preferred mode of travel (Bus or Train), enter your travel details (destination, date, and time), and proceed with booking. You'll receive real-time availability and secure payment options to complete your booking in just a few clicks.
+    
 
-            </p>
-        </details>
-
-        <hr>
-
-        <details>
-            <summary>
-                <h4>Can I sell my bus or train tickets on Ticket-Booking?</h4>
-                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
-            </summary>
-            <p>Yes! If you have bus or train tickets you no longer need, you can sell them through Ticket-Booking. Contact our 24/7 customer support team to get the best price for your tickets without any hassle.
-
-            </p>
-        </details>
-
-        <hr>
-
-        <details>
-            <summary>
-                <h4>Is it safe to make payments on Ticket-Booking?</h4>
-                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
-            </summary>
-            <p>Absolutely! We prioritize the security of our users. Our platform uses secure payment gateways to ensure that your transactions are safe and encrypted, providing you with peace of mind during your booking process.
-
-                </p>
-        </details>
-
-        <hr>
-
-        <details>
-            <summary>
-                <h4>How do I check the availability of tickets?</h4>
-                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
-            </summary>
-            <p>You can check real-time availability by selecting your travel date and destination on our platform. Our system will show you all available options, allowing you to choose the best one for your journey.
-
-            </p>
-        </details>
-
-        <hr>
-
-        <details>
-            <summary>
-                <h4>What happens if I need to cancel or modify my booking?</h4>
-                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
-            </summary>
-            <p>If you need to cancel or modify your booking, please contact our customer support team. Cancellation and modification policies vary depending on the bus or train operator, so we’ll guide you through the process based on the terms and conditions of your specific booking.
-
-            </p>
-        </details>
-
-        <hr>
-
-        <details>
-            <summary>
-                <h4>What payment methods do you accept?</h4>
-                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
-            </summary>
-            <p>We accept a variety of payment methods, including credit/debit cards, net banking, and popular digital wallets, ensuring that you can pay using the option that suits you best.
-
-
-
-            </p>
-        </details>
-
-        <hr>
-
-        <details>
-            <summary>
-                <h4>Can I book tickets for international bus or train routes?</h4>
-                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
-            </summary>
-            <p>Currently, Ticket-Booking specializes in domestic bus and train routes. However, we are constantly expanding, so stay tuned for updates regarding international routes.
-
-
-            </p>
-        </details>
-
-        <hr>
-
-        <details>
-            <summary>
-                <h4>What should I do if I face issues during the booking process?</h4>
-                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
-            </summary>
-            <p>If you encounter any issues while booking a ticket, our dedicated customer support team is available 24/7 to assist you. Reach out to us via phone, email, or live chat, and we’ll help resolve any problems as quickly as possible.
-
-
-            </p>
-        </details>
-
-        <hr>
-
-        <details>
-            <summary>
-                <h4>Do I need to create an account to book tickets?</h4>
-                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
-            </summary>
-            <p>Creating an account is not mandatory, but we highly recommend it. Having an account allows you to easily manage your bookings, view past purchases, and receive updates on promotions and offers.
-
-
-            </p>
-        </details>
-
-        <hr>
-
-        <details>
-            <summary>
-                <h4>Can I get a refund if I cancel my ticket?</h4>
-                <span class="material-symbols-outlined"><i class="fa fa-angle-down down-arrow"></i></span>
-            </summary>
-            <p>Refund policies depend on the bus or train operator’s terms and conditions. In most cases, refunds are possible if the cancellation is made within the stipulated time frame. Please check the operator’s cancellation policy during the booking process or contact our support team for assistance.
-
-
-            </p>
-        </details>
-
-    </div>
-    <!DOCTYPE html>
 
 <body>
   
+    <style>
+  
+        @keyframes slideUp {
+          from {
+              opacity: 0;
+              transform: translateY(100px); /* Start 100px below */
+          }
+          to {
+              opacity: 1;
+              transform: translateY(0); /* Move to its original position */
+          }
+      }
+      
+      .faq-container {
+          max-width: 1000px;
+          margin: 40px auto;
+          padding: 20px;
+          background-color: rgb(203, 203, 220);
+          border: 1px solid #ddd;
+          border-radius: 10px;
+          box-shadow: 2px 10px 8px rgba(255, 254, 254, 0.1);
+      }
+      
+      .faq-title {
+          text-align: center;
+          font-size: 1.8em;
+          color: #040404;
+          margin-bottom: 20px;
+      }
+      
+      .faq {
+          margin-bottom: 15px;
+          opacity: 0; /* Start hidden */
+          transform: translateY(100px); /* Positioned below initially */
+          transition: all 0.5s ease;
+      }
+      
+      .faq.visible {
+          opacity: 1;
+          transform: translateY(0); /* Move up into position */
+          animation: slideUp 0.6s ease-in-out; /* Apply the slide-up effect */
+      }
+      
+      .faq input[type="checkbox"] {
+          display: none;
+      }
+      
+      .faq-question {
+          padding: 15px;
+          font-size: 1.2em;
+          background-color: #07b797;
+          color: #0c0c0c;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+      
+      .faq-question:hover {
+          background-color: #07b797;
+          transform: scale(1.02);
+      }
+      
+      .faq-answer {
+          max-height: 0;
+          overflow: hidden;
+          padding: 0 15px;
+          background-color: #f3f1ef;
+          color: #333;
+          border-left: 4px solid #0f0f10;
+          transition: max-height 0.6s ease, padding 0.6s ease, background-color 0.3s ease;
+      }
+      
+      .faq input[type="checkbox"]:checked ~ .faq-answer {
+          max-height: 150px;
+          padding: 15px;
+          background-color: #e7e6e3;
+      }
+      
+      .arrow {
+          margin-top: -3px;
+          display: inline-block;
+          width: 12px;
+          height: 12px;
+          border-right: 2px solid #fff;
+          border-bottom: 2px solid #fff;
+          transform: rotate(45deg);
+          transition: transform 0.3s ease;
+      }
+      
+      .faq input[type="checkbox"]:checked + label .arrow {
+          transform: rotate(225deg);
+      }
+      
+      
+      </style>
+
+
+  <!-- FAQ Section -->
+  <!-- FAQ Section -->
+<section id="faq">          
+    <div class="faq-container">
+        <h1 class="faq-title" data-aos="fade-right">Frequently Asked Questions</h1>  
+        
+        <div class="faq" data-aos="fade-right">
+            <input type="checkbox" id="faq1">
+            <label for="faq1" class="faq-question">1. What is your cancellation policy? <span class="arrow"></span></label>
+            <div class="faq-answer">
+                We offer a flexible cancellation policy that allows you to cancel your booking up to 48 hours before your scheduled departure for a full refund.
+            </div>
+        </div>
+
+        <div class="faq" data-aos="fade-right">
+            <input type="checkbox" id="faq2">
+            <label for="faq2" class="faq-question">2. How do I make changes to my booking? <span class="arrow"></span></label>
+            <div class="faq-answer">
+                You can make changes to your booking by logging into your account and accessing your booking details. For major changes, please contact our support team directly.
+            </div>
+        </div>
+
+        <div class="faq" data-aos="fade-right">
+            <input type="checkbox" id="faq3">
+            <label for="faq3" class="faq-question">3. What payment methods do you accept? <span class="arrow"></span></label>
+            <div class="faq-answer">
+                We accept various payment methods including credit/debit cards, PayPal, and bank transfers. All transactions are secure and encrypted.
+            </div>
+        </div>
+
+        <div class="faq" data-aos="fade-right">
+            <input type="checkbox" id="faq4">
+            <label for="faq4" class="faq-question">4. Do you offer travel insurance? <span class="arrow"></span></label>
+            <div class="faq-answer">
+                Yes, we offer travel insurance options during the booking process to protect your trip against unforeseen circumstances.
+            </div>
+        </div>
+
+        <div class="faq" data-aos="fade-right">
+            <input type="checkbox" id="faq5">
+            <label for="faq5" class="faq-question">5. Can I book multiple destinations in one trip? <span class="arrow"></span></label>
+            <div class="faq-answer">
+                Absolutely! Our platform allows you to plan multi-destination trips seamlessly. Simply select your desired locations during the booking process.
+            </div>
+        </div>
+
+        <div class="faq" data-aos="fade-right">
+            <input type="checkbox" id="faq6">
+            <label for="faq6" class="faq-question">6. How can I contact customer support? <span class="arrow"></span></label>
+            <div class="faq-answer">
+                You can reach our customer support team via email or live chat on our website. We’re available 24/7 to assist you with any inquiries.
+            </div>
+        </div>
+
+        <div class="faq" data-aos="fade-right">
+            <input type="checkbox" id="faq7">
+            <label for="faq7" class="faq-question">7. What should I do if I encounter an issue with my booking? <span class="arrow"></span></label>
+            <div class="faq-answer">
+                If you experience any issues with your booking, please contact our support team immediately. We will work to resolve your issue as quickly as possible.
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const faqs = document.querySelectorAll('.faq');
+
+      // Loop through each FAQ and apply the slide-up animation with delay
+      faqs.forEach((faq, index) => {
+          setTimeout(() => {
+              faq.classList.add('visible'); // Add 'visible' class to trigger animation
+          }, index * 200); // Delay each FAQ animation by 200ms
+      });
+  });
+</script>
+
+
+
+
+
+
   <section id="feedback-form">
     <div class="container">
       <h2>We Value Your Feedback!</h2>
