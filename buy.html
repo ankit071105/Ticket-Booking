@@ -132,11 +132,14 @@ label {
 }
 
 input[type="text"], select {
-    width: 100%;
     padding: 8px;
     margin: 5px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+.form-group select{
+  width: 60%;
 }
 
 .submit-btn {
@@ -179,14 +182,20 @@ input[type="text"], select {
       color: black;
       text-align: center;
     }
+    .form-group input,select{
+      margin: 0 21%;
+    }
 
     .right-section {
-
       min-width: 400px;
-      background-color: #1fb899;
+      background: linear-gradient(135deg,#ead6ee,#a0f1ea);
       padding: 40px;
       border-radius: 5px;
       max-width: 600px;
+      transform: scale(0.85);
+    }
+    .form-group input{
+      width: 60%;
     }
 
     h2 {
@@ -199,16 +208,16 @@ input[type="text"], select {
     }
 
     label {
-      display: block;
+      display: flex;
       margin-bottom: 5px;
       font-weight: bold;
+      justify-content: center;
     }
 
     input[type="text"],
     select {
-      width: 100%;
       padding: 8px;
-      margin: 5px 0;
+      margin: 5px 21%;
       border: 1px solid #ccc;
       border-radius: 4px;
     }
@@ -217,12 +226,14 @@ input[type="text"], select {
       background-color: #ff4d4d;
       color: white;
       padding: 7px;
-      width: 100%;
+      width: 60%;
       border: none;
       border-radius: 4px;
       cursor: pointer;
       font-size: 16px;
       height: 60px;
+      margin: auto;
+      scale: 0.78;
     }
 
     .submit-btn:hover {
