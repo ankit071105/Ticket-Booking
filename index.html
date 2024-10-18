@@ -361,36 +361,36 @@
 
 
         /* map code  */
+        
         .containers {
-            /* background-color: red; */
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-            padding: 20px 100px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping to next line */
+    justify-content: space-around;
+    padding: 20px 100px;
+    align-items: flex-start; /* Align items to top */
+}
 
-        .contact-info {
-            background-color: #00bfa6;
-            width: 40%; /* Set width for contact info */
-            padding: 30px;
-            /* margin:4px; */
-            text-align: left;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
-        }
+.contact-info {
+    background-color: #00bfa6;
+    width: 40%;
+    padding: 30px;
+    text-align: left;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
 
-        .map-container {
-            width: 55%; /* Set width for the map container */
-        }
+.map-container {
+    width: 55%;
+}
 
-        .map-container iframe {
-            width: 100%; /* Make iframe responsive */
-            height: 400px; /* Set a fixed height for the map */
-            border: none; /* Remove default border */
-            border-radius: 8px;
-        }
+.map-container iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 8px;
+}
+
+
 
 
         .social-sidebar a {
@@ -1129,17 +1129,18 @@ h1 {
 
 
     <div class="containers" id="sxs">
-        <div class="contact-info" style="padding-left: 30px;">
-            <h2 style="text-align:left">Contact Us</h2>
-            <p style="color: white;font-size: 16px;">We value your feedback! We'd love to hear from you! For inquiries, feedback, or support, please reach out. Your insights help us improve your experience.</p>
-            
-            <h4>Localisation</h4>
-            <p style="color: white;font-size: 16px;">ABC colony, Bangalore Pin: 76896</p>
-    
-            <h4>Phone No</h4>
-            <p  style="color: white;font-size: 16px;">+91 9685478526</p>
+        <div id="contact" class="contact-info" >
+            <div style="padding-left: 30px;">
+                <h2 style="text-align:left">Contact Us</h2>
+                <p style="color: white;font-size: 16px;">We value your feedback! We'd love to hear from you! For inquiries, feedback, or support, please reach out. Your insights help us improve your experience.</p>
+                
+                <h4>Localisation</h4>
+                <p style="color: white;font-size: 16px;">ABC colony, Bangalore Pin: 76896</p>
+        
+                <h4>Phone No</h4>
+                <p  style="color: white;font-size: 16px;">+91 9685478526</p>
+            </div>    
         </div>
-
     </footer>
 
 
