@@ -216,6 +216,7 @@
       /* Slider Container */
 .slider {
     position: relative;
+    margin-top: 3px;
     width: 100%;
     height: 400px; /* Set a fixed height for the slider */
     overflow: hidden; /* Hide overflow to maintain size */
@@ -240,7 +241,8 @@
 .slide img {
     width: 100%; /* Make the image take the full width */
     height: 100%; /* Make the image take the full height */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
+    object-fit: fill; /* Ensure the entire image is visible without distortion */
+    object-position: center;
 }
 
 /* Navigation Buttons */
