@@ -400,7 +400,7 @@ body.dark-mode .ticket-card button:hover {
 .hero-slider {
   position: relative;
   width: 80%;
-  height: 60vh;
+  height: 100vh;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
