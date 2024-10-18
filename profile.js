@@ -13,6 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
     uploadInput.addEventListener("change", function () {
         const file = uploadInput.files[0];
         if (file) {
+            // Ensure the uploaded file is an image
+            if (!file.type.startsWith('image/')) {
+                alert("Please upload a valid image file.");
+                return;
+            }
+
             const reader = new FileReader();
             reader.onload = function (e) {
                 profileImage.src = e.target.result;
@@ -21,14 +27,42 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Form Submission Handler (You can replace this with your server-side form handling)
+    // Form Submission Handler with Validation
     const form = document.querySelector("form");
     form.addEventListener("submit", function (e) {
         e.preventDefault();
+
+        // Simple form validation
+        const emailInput = document.getElementById("email");
+        const phoneInput = document.getElementById("phone");
+        const firstName = document.getElementById("first-name");
+
+        if (!emailInput.value.includes('@') || !emailInput.value.includes('.')) {
+            alert("Please enter a valid email.");
+            return;
+        }
+
+        if (!/^\d{3}-\d{3}-\d{4}$/.test(phoneInput.value)) {
+            alert("Please enter a valid phone number (123-456-7890).");
+            return;
+        }
+
+        if (firstName.value.trim() === "") {
+            alert("First name is required.");
+            return;
+        }
+
+        // Form data collection
         const formData = new FormData(form);
-        console.log("Form Submitted with Data:", Object.fromEntries(formData.entries()));
-        alert("Profile Saved!");
-        // Add AJAX call here to send data to the server if needed
+
+        // Simulate AJAX call
+        fetch('/saveProfile', {
+            method: 'POST',
+            body: formData
+        }).then(response => response.json())
+          .then(data => alert("Profile saved successfully!"))
+          .catch(error => alert("Error saving profile"));
+
     });
 
     // Cancel button: clear form fields and reset profile picture
@@ -42,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const logoutButton = document.querySelector(".logout-btn");
     logoutButton.addEventListener("click", function () {
         alert("Logging out...");
-        window.location.href = "index.html"; // Redirect to logout page
+        window.location.href = "/logout"; // Simulating redirect to logout page
     });
 
     // Delete Account button handler
@@ -52,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (confirmDelete) {
             alert("Account Deleted!");
             // Add AJAX call here to handle account deletion if needed
-            window.location.href = "index.html"; // Redirect after deletion
+            window.location.href = "/accountDeleted"; // Redirect after deletion
         }
     });
 
@@ -73,9 +107,9 @@ document.addEventListener("DOMContentLoaded", function () {
         { trip: 'Bus to Mumbai', date: '15th Oct 2024', departure: 'City Terminal', seat: 'A12' },
         { trip: 'Train to Delhi', date: '25th Oct 2024', departure: 'Central Station', seat: 'B34' }
     ];
-    
+
     const upcomingList = document.getElementById("upcoming-list");
-    
+
     // Populate Upcoming Bookings
     upcomingBookings.forEach(booking => {
         const li = document.createElement("li");
@@ -86,15 +120,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 <span>Date: ${booking.date}</span>
                 <span>Departure: ${booking.departure}</span>
                 <span>Seat: ${booking.seat}</span>
-                <button onclick="downloadTicket('${booking.trip}')">Download Ticket</button>
+                <button aria-label="Download ticket for ${booking.trip}" onclick="downloadTicket('${booking.trip}')">Download Ticket</button>
             </div>
         `;
         upcomingList.appendChild(li);
     });
-    
 
 });
 
+// Simulate downloading ticket by alert
 function downloadTicket(trip) {
     alert(`Downloading ticket for ${trip}`);
+    // You can replace this with actual download logic
+    // window.location.href = `/downloadTicket?trip=${encodeURIComponent(trip)}`;
 }
