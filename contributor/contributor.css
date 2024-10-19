@@ -74,13 +74,17 @@ body {
   background-color: #f0f0f0;
 }
 
+
+
+
 .contributor-btn-secondary {
-  background-color: #333;
+ 
+  background-color: #00c2a8;
   color: #fff;
 }
 
 .contributor-btn-secondary:hover {
-  background-color: #444;
+  background-color: #07a893;
 }
 
 /* Stats Section */
@@ -233,6 +237,7 @@ body {
 }
 
 .contributor-cta h2 {
+  color:#07a893 ;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
@@ -253,7 +258,8 @@ body {
   padding: 0.8rem;
   font-size: 1rem;
   border: none;
-  border-radius: 5px;
+ 
+  border-radius: 0.75rem;
   width: 300px;
 }
 
@@ -289,3 +295,48 @@ body {
       max-width: 300px;
   }
 }
+
+
+
+.contributor-footer-link{
+  display: grid;
+  grid-template-columns: repeat(4 ,1fr);
+  place-items: center;
+  margin-top: 4rem;
+  
+}
+
+.footer-row {
+  text-align: start;
+  min-width: 135px;
+}
+
+.footer-row h3{
+  color: #07a893;
+}
+
+.footer-row ul li{
+  list-style-type: none;
+}
+
+.footer-row ul li a{
+
+  color: white;
+  text-decoration: none;
+ }
+
+ .footer-row ul li a:hover{
+  text-decoration: underline;
+  }
+
+
+ .icon:hover{
+  transform: scale(1.2);
+   color: #12e9cc;
+ }
+
+ @media (max-width:600px) {
+  .contributor-footer-link{
+    grid-template-columns: repeat(2 ,1fr);
+  }
+ }
