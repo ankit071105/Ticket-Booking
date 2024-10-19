@@ -22,7 +22,20 @@ body {
   h2 {
     margin-bottom: 20px;
     font-size: 2rem;
-    color: #333;
+    color: orangered;
+  }
+
+  h2:hover{
+    color: blue;
+  }
+
+  h4{
+    color: gold;
+  }
+
+  h4:hover{
+    color: yellow;
+
   }
   
   .reviews-slider {
@@ -140,7 +153,7 @@ p {
 
 h1,
 h2 {
-    color: #1f2937;
+   
     font-size: 2.5rem;
 }
 
@@ -457,7 +470,7 @@ p {
 }
 
 h2 {
-    color: #1f2937;
+    color: orangered;
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 40px;
@@ -685,10 +698,12 @@ body.dark-mode .ticket-card button:hover {
 }
 
 h2 {
-    color: #1f2937;
+    color: orangered;
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 40px;
+    font-size: 2.5em;
+    
 }
 
 .btn {
@@ -902,11 +917,6 @@ body.dark-mode .ticket-card button:hover {
 }
 
 
-
-h2 {
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
-}
 
 p {
     font-size: 1.2em;
