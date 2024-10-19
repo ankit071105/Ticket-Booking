@@ -13,6 +13,63 @@ body {
     font-size: 16px;
 }
 
+.review-section {
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .reviews-slider {
+    display: flex;
+  }
+  
+  .review-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    outline: none; /* Fixes slick carousel focus issue */
+    width: 100%;
+    text-align: center;
+  }
+  
+  .review-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .review-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .review-card p {
+    color: #555;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  
+  /* Custom styles for slick */
+  .slick-prev:before, .slick-next:before {
+    color: #333;
+  }
+  
+  .slick-dots li button:before {
+    color: #333;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    opacity: 0.75;
+    color: #000;
+  }
+  
 h1,
 h2,
 h3,
