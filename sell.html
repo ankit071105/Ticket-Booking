@@ -196,6 +196,16 @@
             background: #bcbdc0;
             border-radius: 10px;
         }
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 5px;
+            background: #1fb899; /* You can change this color */
+            width: 0;
+            transition: width 0.1s ease-in-out;
+            z-index: 9999; /* Make sure it's above other content */
+        }
         /* chatbot css end */
 
   </style>
@@ -204,7 +214,7 @@
 <body>
   <!-- Navbar -->
    
-    
+  <div id="scrollProgressBar" class="progress-bar"></div>
 <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
 <!--chat bot-->
 <button onclick="toggleChatbot()" id="chatbotBtn" title="chat bot"></button>
@@ -361,7 +371,12 @@ function topFunction() {
         const chatbotContainer = document.getElementById("chatbot-container");
         chatbotContainer.classList.toggle("chatbot-show");
     }
-
+    window.addEventListener('scroll', () => {
+    const scrollProgressBar = document.getElementById('scrollProgressBar');
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progressHeight = (window.scrollY / totalHeight) * 100;
+    scrollProgressBar.style.width = progressHeight + '%';
+    })
   </script>
  <div class="gtranslate_wrapper"></div>
  <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>

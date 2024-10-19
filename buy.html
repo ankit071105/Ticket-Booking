@@ -395,6 +395,16 @@ input[type="text"], select {
             background: #bcbdc0;
             border-radius: 10px;
         }
+        .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background: #1fb899; /* You can change this color */
+    width: 0;
+    transition: width 0.1s ease-in-out;
+    z-index: 9999; /* Make sure it's above other content */
+}
         /* chatbot css end */
 
   </style>
@@ -402,7 +412,7 @@ input[type="text"], select {
 
 <body>
 
-
+  <div id="scrollProgressBar" class="progress-bar"></div>
   <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"
       aria-hidden="true"></i></button>
   <!--chat bot-->
@@ -645,8 +655,12 @@ if (darkModeToggle) {
         const chatbotContainer = document.getElementById("chatbot-container");
         chatbotContainer.classList.toggle("chatbot-show");
     }
-
-
+    window.addEventListener('scroll', () => {
+    const scrollProgressBar = document.getElementById('scrollProgressBar');
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progressHeight = (window.scrollY / totalHeight) * 100;
+    scrollProgressBar.style.width = progressHeight + '%';
+});
     </script>
     <script src="app.js"></script>
     <div class="gtranslate_wrapper"></div>
