@@ -169,7 +169,7 @@ p {
 }
 
 h2 {
-  color: #1f2937;
+  color: orangered;
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 40px;
@@ -283,7 +283,7 @@ iframe {
 .about h2,
 .contact h2 {
   text-align: center;
-  color: #1f2937;
+  color: black;
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
