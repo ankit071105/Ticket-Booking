@@ -20,7 +20,8 @@ body {
   background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2850&q=80');
   background-size: cover;
   background-position: center;
-  height: 70vh;
+  
+  height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,11 +46,14 @@ body {
 }
 
 .contributor-hero h1 {
+  color: #008876;
   font-size: 3.5rem;
   margin-bottom: 1rem;
 }
 
 .contributor-hero p {
+  opacity: 0.8;
+  color:#b7d5cc ;
   font-size: 1.5rem;
   margin-bottom: 2rem;
 }
@@ -66,7 +70,8 @@ body {
 }
 
 .contributor-btn-primary {
-  background-color: #fff;
+ font-weight: 600;
+  background-color: #009a73;
   color: #333;
 }
 
@@ -84,7 +89,9 @@ body {
 }
 
 .contributor-btn-secondary:hover {
-  background-color: #07a893;
+ 
+  transform: scale(1.025);
+    background-color: #006b50;
 }
 
 /* Stats Section */
