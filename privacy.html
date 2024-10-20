@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy - Ticket Booking</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      .nav-container {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="./index.html" id="logo-href">
+        <div class="logo-container">
+          <img
+            src="images/4.jpeg"
+            alt="Ticket Booking Logo"
+            class="logo-image"
+          />
+          <div class="logo">Ticket Booking</div>
+        </div>
+      </a>
+
+      <div class="nav-container">
+        <div class="menu-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+
+        <ul class="nav-links">
+          <li>
+            <a href="index.html" class="home-button"
+              ><i class="fas fa-home"></i>HOME</a
+            >
+          </li>
+          <li>
+            <a href="buy.html"><i class="fas fa-shopping-cart"></i> Buy</a>
+          </li>
+          <li>
+            <a href="sell.html"><i class="fas fa-tag"></i> Sell</a>
+          </li>
+          <li>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+          </li>
+          <li>
+            <a href="contributors.html"
+              ><i class="fas fa-users"></i> Our Contributors</a
+            >
+          </li>
+
+          <li>
+            <a href="/client/register.html" class="login-btn"
+              ><i class="fas fa-user"></i
+            ></a>
+          </li>
+        </ul>
+
+        <button id="darkModeToggle" style="width: 40px; height: 40px">
+          🌙
+        </button>
+      </div>
+    </nav>
+    <script>
+      const darkModeToggle = document.getElementById("darkModeToggle");
+      const body = document.querySelector("body");
+      if (darkModeToggle) {
+        darkModeToggle.addEventListener("click", () => {
+          document.body.classList.toggle("dark-mode");
+          if (body.classList.contains("dark-mode")) {
+            darkModeToggle.innerHTML = "🔆";
+          } else {
+            darkModeToggle.innerHTML = "🌙";
+          }
+        });
+      }
+      // change icon of the dark/light mode
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+        // Special effect for hamburger icon
+        const bars = menuToggle.querySelectorAll(".bar");
+        bars.forEach((bar, index) => {
+          if (menuToggle.classList.contains("active")) {
+            bar.style.transform =
+              index === 1
+                ? "scale(0)"
+                : `rotate(${index === 0 ? "45deg" : "-45deg"})`;
+          } else {
+            bar.style.transform = "none";
+          }
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", (event) => {
+        if (
+          !navLinks.contains(event.target) &&
+          !menuToggle.contains(event.target)
+        ) {
+          navLinks.classList.remove("active");
+          menuToggle.classList.remove("active");
+          menuToggle.querySelectorAll(".bar").forEach((bar) => {
+            bar.style.transform = "none";
+          });
+        }
+      });
+    </script>
+    <section id="about-us">
+      <div class="about-container">
+        <h1>Privacy Policy</h1>
+        <p>
+          Welcome to ticket booking! Your one-stop solution for booking bus and
+          train tickets with ease. Our platform offers a seamless experience for
+          travelers, providing access to various transportation options. We
+          strive to make your journey hassle-free, whether you're planning a
+          short trip or a long adventure. With 24/7 customer support and
+          real-time updates, we ensure that you're always informed and
+          comfortable on the go.
+        </p>
+        <p>
+          At Ticket Booking, we are committed to protecting your privacy. This
+          policy outlines how we collect, use, and safeguard your personal
+          information when you visit our website to book tickets. We collect
+          data such as your name, email address, and payment information solely
+          for processing your bookings and providing you with a seamless
+          experience. Your information is stored securely and is only accessible
+          to authorized personnel. We do not sell or share your data with third
+          parties without your consent, except as required by law or to fulfill
+          your requests. By using our website, you agree to the collection and
+          use of your information in accordance with this policy. If you have
+          any questions or concerns about our privacy practices, please contact
+          us at +91 9685478526.
+        </p>
+      </div>
+    </section>
+    <div class="gtranslate_wrapper"></div>
+    <script>
+      window.gtranslateSettings = {
+        default_language: "en",
+        detect_browser_language: true,
+        wrapper_selector: ".gtranslate_wrapper",
+      };
+    </script>
+    <script
+      src="https://cdn.gtranslate.net/widgets/latest/float.js"
+      defer
+    ></script>
+  </body>
+</html>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+  }
+
+  #about-us {
+    background-image: url("your-background-image.jpg");
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+  }
+
+  #about-us h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #f0a500;
+  }
+
+  #about-us p {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 768px) {
+    #about-us h1 {
+      font-size: 2.5rem;
+    }
+
+    #about-us p {
+      font-size: 1rem;
+    }
+  }
+</style>
