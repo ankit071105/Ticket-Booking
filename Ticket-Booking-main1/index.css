@@ -346,7 +346,7 @@ p {
 
 .nav-buttons {
   position: absolute;
-  top: 50%;
+  top: 35%;
   width: 100%;
   display: flex;
   justify-content: space-between;
