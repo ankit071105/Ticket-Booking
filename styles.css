@@ -171,6 +171,7 @@ p {
     border-radius: 5px;
     font-size: 1rem;
     transition: background-color 0.3s ease;
+    width: auto;
 }
 
 .btn:hover {
@@ -714,7 +715,7 @@ h2 {
     border-radius: 5px;
     font-size: 1rem;
     transition: background-color 0.3s ease;
-    display: block;
+    /* display: block; */
     text-align: center;
     margin: 0 auto;
 }
