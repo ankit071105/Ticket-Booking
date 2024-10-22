@@ -447,6 +447,15 @@ p {
   justify-content: space-between;
   transform: translateY(-50%);
 }
+/* Position of .nav-buttons within the 550px screen width */
+@media (max-width:550px)
+{
+  .nav-buttons {
+  
+  top: 30%;
+  
+}
+}
 
 .bbtn {
   display: inline-block;
