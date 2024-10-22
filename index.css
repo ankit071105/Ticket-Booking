@@ -175,7 +175,7 @@ h2 {
   margin-bottom: 40px;
 }
 
-.btn {
+/* .btn {
   background-color: #00bfa6;
   color: white;
   padding: 10px 30px;
@@ -190,7 +190,7 @@ h2 {
 
 .btn:hover {
   background-color: #00a690;
-}
+} */
 
 .ticket-list {
   display: flex;
@@ -490,7 +490,7 @@ button {
   background-color: rgba(255, 255, 255, 0.8);
   border: none;
   border-radius: 50%;
-  width: 40px;
+  /* width: 40px; */
   height: 40px;
   cursor: pointer;
   font-size: 20px;

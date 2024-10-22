@@ -17,32 +17,32 @@ body {
     width: 80%;
     margin: 50px auto;
     text-align: center;
-  }
+}
   
-  h2 {
+h2 {
     margin-bottom: 20px;
     font-size: 2rem;
     color: orangered;
-  }
+}
 
-  h2:hover{
+h2:hover{
     color: blue;
-  }
+}
 
-  h4{
+h4{
     color: gold;
-  }
+}
 
-  h4:hover{
+h4:hover{
     color: yellow;
 
-  }
+}
   
-  .reviews-slider {
+.reviews-slider {
     display: flex;
-  }
+}
   
-  .review-card {
+.review-card {
     background-color: #f9f9f9;
     padding: 20px;
     margin: 10px;
@@ -52,22 +52,22 @@ body {
     outline: none; /* Fixes slick carousel focus issue */
     width: 100%;
     text-align: center;
-  }
+}
   
-  .review-card:hover {
+.review-card:hover {
     transform: scale(1.05);
-  }
+}
   
-  .review-card h3 {
+.review-card h3 {
     font-size: 1.5rem;
     color: #333;
-  }
+}
   
-  .review-card p {
+.review-card p {
     color: #555;
     font-size: 1rem;
     margin-top: 10px;
-  }
+}
   
   /* Custom styles for slick */
   .slick-prev:before, .slick-next:before {
@@ -107,14 +107,11 @@ p {
 
 }
 
+#logo-href{
+    text-decoration: none;
+}
+
 .navbar .logo {
-
-  }
-  #logo-href{
- text-decoration: none;
-  }
-  .navbar .logo {
-
     font-size: 24px;
     font-weight: bold;
     color: #00bfa6;
@@ -166,11 +163,16 @@ p {
 .btn {
     background-color: #00bfa6;
     color: white;
-    padding: 10px 30px;
-    text-decoration: none;
-    border-radius: 5px;
+    padding: 10px 10px;
     font-size: 1rem;
+    border: none;
+    text-decoration: none;
+    border-radius: 8px;
     transition: background-color 0.3s ease;
+    display: grid;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .btn:hover {
@@ -346,10 +348,8 @@ p {
     color: white;
 }
 
-
-
 .navbar {
-    background-color: #092143;
+    background-color: #1f2937;
     color: white;
     padding: 15px 20px;
     display: flex;
@@ -358,12 +358,10 @@ p {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -379,19 +377,6 @@ h2,
 h3,
 p {
     margin-bottom: 20px;
-}
-
-.navbar {
-    background-color: #092143;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .nav-links {
@@ -476,7 +461,7 @@ h2 {
     margin-bottom: 40px;
 }
 
-.btn {
+/* .btn {
     background-color: #00bfa6;
     color: white;
     padding: 10px 30px;
@@ -491,7 +476,7 @@ h2 {
 
 .btn:hover {
     background-color: #00a690;
-}
+} */
 
 .ticket-list {
     display: flex;
@@ -709,12 +694,14 @@ h2 {
 .btn {
     background-color: #00bfa6;
     color: white;
-    padding: 10px 30px;
-    text-decoration: none;
-    border-radius: 5px;
+    padding: 10px 10px;
     font-size: 1rem;
+    border: none;
+    text-decoration: none;
+    border-radius: 8px;
     transition: background-color 0.3s ease;
-    display: block;
+    display: grid;
+    letter-spacing: 1px;
     text-align: center;
     margin: 0 auto;
 }
@@ -935,9 +922,8 @@ button {
     background-color: rgba(255, 255, 255, 0.8);
     border: none;
     border-radius: 50%;
-    width: 180px;
 
-    height: 80px;
+    height: 40px;
     cursor: pointer;
     font-size: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
@@ -1206,9 +1192,6 @@ img {
         color: #666;
     }
 }
-
-
-.about {}
 
 .nav-links {
     position: fixed;
