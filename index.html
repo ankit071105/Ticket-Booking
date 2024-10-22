@@ -356,81 +356,145 @@
 
 
 <body>
-  
-<section id="faq">          
-    <div class="faq-container">
-        <h1 class="faq-title" data-aos="fade-right">Frequently Asked Questions</h1>  
+    <style>
         
-        <div class="faq" data-aos="fade-right">
-            <input type="checkbox" id="faq1">
-            <label for="faq1" class="faq-question">1. What is your cancellation policy? <span class="arrow"></span></label>
-            <div class="faq-answer">
-                We offer a flexible cancellation policy that allows you to cancel your booking up to 48 hours before your scheduled departure for a full refund.
-            </div>
-        </div>
+    </style>
 
-        <div class="faq" data-aos="fade-right">
-            <input type="checkbox" id="faq2">
-            <label for="faq2" class="faq-question">2. How do I make changes to my booking? <span class="arrow"></span></label>
-            <div class="faq-answer">
-                You can make changes to your booking by logging into your account and accessing your booking details. For major changes, please contact our support team directly.
-            </div>
-        </div>
 
-        <div class="faq" data-aos="fade-right">
-            <input type="checkbox" id="faq3">
-            <label for="faq3" class="faq-question">3. What payment methods do you accept? <span class="arrow"></span></label>
-            <div class="faq-answer">
-                We accept various payment methods including credit/debit cards, PayPal, and bank transfers. All transactions are secure and encrypted.
+    
+   
+<section id="faq">
+    <div class="faq-container">
+        <h1 class="faq-title" data-aos="fade-right">Frequently Asked Questions</h1>
+        <div id="FAQ">
+            
+            <div class="accordion">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">What is your cancellation policy?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content"> <!-- Initially hidden -->
+                        <p>We offer a flexible cancellation policy that allows you to cancel your booking up to 48 hours before your scheduled departure for a full refund.</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items can be added here in the same format -->
             </div>
-        </div>
 
-        <div class="faq" data-aos="fade-right">
-            <input type="checkbox" id="faq4">
-            <label for="faq4" class="faq-question">4. Do you offer travel insurance? <span class="arrow"></span></label>
-            <div class="faq-answer">
-                Yes, we offer travel insurance options during the booking process to protect your trip against unforeseen circumstances.
+            <div class="accordion">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">How do I make changes to my booking?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content"> <!-- Initially hidden -->
+                        <p>You can make changes to your booking by logging into your account and accessing your booking details. For major changes, please contact our support team directly.</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items can be added here in the same format -->
             </div>
-        </div>
 
-        <div class="faq" data-aos="fade-right">
-            <input type="checkbox" id="faq5">
-            <label for="faq5" class="faq-question">5. Can I book multiple destinations in one trip? <span class="arrow"></span></label>
-            <div class="faq-answer">
-                Absolutely! Our platform allows you to plan multi-destination trips seamlessly. Simply select your desired locations during the booking process.
+            <div class="accordion">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">What payment methods do you accept?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content"> <!-- Initially hidden -->
+                        <p>We accept various payment methods including credit/debit cards, PayPal, and bank transfers. All transactions are secure and encrypted..</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items can be added here in the same format -->
             </div>
-        </div>
 
-        <div class="faq" data-aos="fade-right">
-            <input type="checkbox" id="faq6">
-            <label for="faq6" class="faq-question">6. How can I contact customer support? <span class="arrow"></span></label>
-            <div class="faq-answer">
-                You can reach our customer support team via email or live chat on our website. We’re available 24/7 to assist you with any inquiries.
+            <div class="accordion">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">Do you offer travel insurance?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content"> <!-- Initially hidden -->
+                        <p>Yes, we offer travel insurance options during the booking process to protect your trip against unforeseen circumstances.</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items can be added here in the same format -->
             </div>
-        </div>
 
-        <div class="faq" data-aos="fade-right">
-            <input type="checkbox" id="faq7">
-            <label for="faq7" class="faq-question">7. What should I do if I encounter an issue with my booking? <span class="arrow"></span></label>
-            <div class="faq-answer">
-                If you experience any issues with your booking, please contact our support team immediately. We will work to resolve your issue as quickly as possible.
+            <div class="accordion">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">Can I book multiple destinations in one trip?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content"> <!-- Initially hidden -->
+                        <p>Absolutely! Our platform allows you to plan multi-destination trips seamlessly. Simply select your desired locations during the booking process. For major changes, please contact our support team directly.</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items can be added here in the same format -->
+            </div>
+
+            <div class="accordion">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">How can I contact customer support?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content"> <!-- Initially hidden -->
+                        <p>You can reach our customer support team via email or live chat on our website. We’re available 24/7 to assist you with any inquiries. For major changes, please contact our support team directly.</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items can be added here in the same format -->
+            </div>
+
+            <div class="accordion">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">What should I do if I encounter an issue with my booking?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content"> <!-- Initially hidden -->
+                        <p>If you experience any issues with your booking, please contact our support team immediately. We will work to resolve your issue as quickly as possible.</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items can be added here in the same format -->
+            </div>
+
+            <div class="accordion">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">How do I make changes to my booking?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content"> <!-- Initially hidden -->
+                        <p>You can make changes to your booking by logging into your account and accessing your booking details. For major changes, please contact our support team directly.</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items can be added here in the same format -->
             </div>
         </div>
     </div>
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-      const faqs = document.querySelectorAll('.faq');
+    function toggleFAQ(element) {
+        const content = element.nextElementSibling; // Get the FAQ content
+        const toggleSymbol = element.querySelector('.expandToggle'); // Get the toggle symbol
 
-      // Loop through each FAQ and apply the slide-up animation with delay
-      faqs.forEach((faq, index) => {
-          setTimeout(() => {
-              faq.classList.add('visible'); // Add 'visible' class to trigger animation
-          }, index * 200); // Delay each FAQ animation by 200ms
-      });
-  });
+        // Check if content is visible
+        if (content.style.display === "block") {
+            content.style.display = "none"; // Hide content
+            toggleSymbol.textContent = "+"; // Change toggle symbol to "+"
+        } else {
+            content.style.display = "block"; // Show content
+            toggleSymbol.textContent = "-"; // Change toggle symbol to "-"
+        }
+    }
 </script>
+    
+
+        
+
+
 
 <!-- feedback form -->
   <section id="feedback-form">
@@ -726,20 +790,7 @@ animateCircles();
 
         // script for faq section
 
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const answer = button.nextElementSibling;
-                const isExpanded = button.getAttribute('aria-expanded') === 'true';
-
-                document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
-                document.querySelectorAll('.faq-question').forEach(q => q.setAttribute('aria-expanded', 'false'));
-
-                if (!isExpanded) {
-                    answer.style.display = 'block';
-                    button.setAttribute('aria-expanded', 'true');
-                }    
-            })       
-        });
+        
 
         window.onscroll = function() { 
            scrollFunction() 
@@ -822,6 +873,7 @@ animateCircles();
     </script>
 
     <script src="app.js"></script>
+    <script src="faq.js"></script>
 
 </body>
 
