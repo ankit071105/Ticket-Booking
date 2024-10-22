@@ -55,7 +55,110 @@
 
     <!-- cursor -->
 
-    <body>
+   
+         <!-- Preloader -->
+      <div id="preloader">
+        <div class="loader-wrapper">
+          <img src="Ticket booking.png" alt="Travel Website Logo" id="logo">
+          <div class="loader-globe"></div>
+        </div>
+        <div id="loading-text">Ready to Explore the World...</div>
+      </div>
+    <style>
+      /* Preloader Container */
+      #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.988);
+    z-index: 1000;
+  }
+  
+  /* Wrapper for the logo and loader */
+  .loader-wrapper {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Logo Styling */
+  #logo {
+    width: 140px;
+    position: relative;
+    z-index: 10; /* Ensures logo stays above the loader */
+    animation: pulse 2s infinite ease-in-out;
+  }
+  
+  /* Circular Loader surrounding the logo */
+  .loader-globe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 8px solid transparent;
+    border-left-color: rgb(248, 172, 21);
+    border-right-color: rgb(8, 82, 230);
+    animation: spin 2s linear infinite;
+  }
+  
+  /* Loading Text */
+  #loading-text {
+    margin-top: 20px;
+    font-size: 20px;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+    animation: textGlow 2s ease-in-out infinite;
+  }
+  
+  /* Keyframes Animations */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @keyframes textGlow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+</style>
+<script>
+        // Function to hide preloader and show content once the page has fully loaded
+    window.addEventListener('load', function() {
+        const preloader = document.getElementById('preloader');
+        const content = document.getElementById('content');
+    
+        // Set a small timeout for better user experience
+        setTimeout(function() {
+            // Hide preloader
+            preloader.style.opacity = '0';
+            preloader.style.transition = 'opacity 1s ease-in-out';
+    
+            // Show content after preloader fades out
+            setTimeout(function() {
+                preloader.style.display = 'none';
+                content.style.display = 'block';
+                content.classList.add('show');  // Trigger fade-in transition
+            }, 1000); // Match the transition duration
+        }, 2000);  // Adjust to the length of your spinner animation
+    });
+    
+      </script>
         <div id="scrollProgressBar" class="progress-bar"></div>
         <!-- Your existing content goes here -->
     </body>
@@ -90,12 +193,12 @@
             </div>
     
             <ul class="nav-links">
-                <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-                <li><a href="buy.html"><i class="fas fa-shopping-cart"></i> Buy</a></li>
-                <li><a href="sell.html"><i class="fas fa-tag"></i> Sell</a></li>
-                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-                <li><a href="./contributor/contributor.html"><i class="fas fa-users"></i> Our Contributors</a></li>
-
+                <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="buy.html">Buy Ticket</a></li>
+        <li><a href="sell.html"><i class="fas fa-tag"></i> Sell</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="contributor.html"><i class="fas fa-users"></i> Our Contributors</a></li>
                 <li><a href="/client/register.html" class="login-btn"><i class="fas fa-user"></i></a></li>
 
 		      <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
@@ -139,7 +242,7 @@
         </div>
     </div>
     <div class="nav-buttons">
-        <button class="prev" onclick="prevSlide()" style="width: 40px; height: 40px;">&#10094;</button>
+        <button class="prev" onclick="prevSlide()" style="width: 40px; height: 50px;">&#10094;</button>
         <button class="next" onclick="nextSlide()" style="width: 40px; height: 40px;">&#10095;</button>
     </div>
     
@@ -148,19 +251,18 @@
     </div>
     </div>
 	<div class="social-sidebar">
-		<div class="close-btn" onclick="toggleSidebar()" title="Close Sidebar">&times;</div>
-		<ul>
-			<li><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
-			<li><a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-			<li><a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-			<li><a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
-		</ul>
-	</div>
-	
-	<div class="toggle-arrow" onclick="toggleSidebar()" title="Open Sidebar" style="display: none;">
-        <i class="fas fa-arrow-right"></i>
-	</div>
+        <div class="close-btn" onclick="toggleSidebar()" title="Close Sidebar">&times;</div>
+        <ul>
+            <li><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-meta"></i></a></li>
+            <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+        </ul>
 
+    </div>
+    <div class="toggle-arrow" onclick="toggleSidebar()" title="Open Sidebar" style="display: none;">
+        <i class="fas fa-arrow-right"></i>
+    </div>
 
 <div class="bus">
     <h2>Book Bus or Train Tickets</h2>
@@ -267,83 +369,147 @@
 
 
 <body>
-  
-<section id="faq">          
-    <div class="faq-container">
-        <h1 class="faq-title" data-aos="fade-right">Frequently Asked Questions</h1>  
+    <style>
         
-        <div class="faq" data-aos="fade-right">
-            <input type="checkbox" id="faq1">
-            <label for="faq1" class="faq-question">1. What is your cancellation policy? <span class="arrow"></span></label>
-            <div class="faq-answer">
-                We offer a flexible cancellation policy that allows you to cancel your booking up to 48 hours before your scheduled departure for a full refund.
-            </div>
-        </div>
+    </style>
 
-        <div class="faq" data-aos="fade-right">
-            <input type="checkbox" id="faq2">
-            <label for="faq2" class="faq-question">2. How do I make changes to my booking? <span class="arrow"></span></label>
-            <div class="faq-answer">
-                You can make changes to your booking by logging into your account and accessing your booking details. For major changes, please contact our support team directly.
-            </div>
-        </div>
 
-        <div class="faq" data-aos="fade-right">
-            <input type="checkbox" id="faq3">
-            <label for="faq3" class="faq-question">3. What payment methods do you accept? <span class="arrow"></span></label>
-            <div class="faq-answer">
-                We accept various payment methods including credit/debit cards, PayPal, and bank transfers. All transactions are secure and encrypted.
+    
+   
+<section id="faq">
+    <div class="faq-container">
+        <h1 class="faq-title" data-aos="fade-right">Frequently Asked Questions</h1>
+        <div id="FAQ">
+            
+            <div class="accordion">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">What is your cancellation policy?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content"> <!-- Initially hidden -->
+                        <p>We offer a flexible cancellation policy that allows you to cancel your booking up to 48 hours before your scheduled departure for a full refund.</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items can be added here in the same format -->
             </div>
-        </div>
 
-        <div class="faq" data-aos="fade-right">
-            <input type="checkbox" id="faq4">
-            <label for="faq4" class="faq-question">4. Do you offer travel insurance? <span class="arrow"></span></label>
-            <div class="faq-answer">
-                Yes, we offer travel insurance options during the booking process to protect your trip against unforeseen circumstances.
+            <div class="accordion">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">How do I make changes to my booking?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content"> <!-- Initially hidden -->
+                        <p>You can make changes to your booking by logging into your account and accessing your booking details. For major changes, please contact our support team directly.</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items can be added here in the same format -->
             </div>
-        </div>
 
-        <div class="faq" data-aos="fade-right">
-            <input type="checkbox" id="faq5">
-            <label for="faq5" class="faq-question">5. Can I book multiple destinations in one trip? <span class="arrow"></span></label>
-            <div class="faq-answer">
-                Absolutely! Our platform allows you to plan multi-destination trips seamlessly. Simply select your desired locations during the booking process.
+            <div class="accordion">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">What payment methods do you accept?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content"> <!-- Initially hidden -->
+                        <p>We accept various payment methods including credit/debit cards, PayPal, and bank transfers. All transactions are secure and encrypted..</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items can be added here in the same format -->
             </div>
-        </div>
 
-        <div class="faq" data-aos="fade-right">
-            <input type="checkbox" id="faq6">
-            <label for="faq6" class="faq-question">6. How can I contact customer support? <span class="arrow"></span></label>
-            <div class="faq-answer">
-                You can reach our customer support team via email or live chat on our website. We’re available 24/7 to assist you with any inquiries.
+            <div class="accordion">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">Do you offer travel insurance?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content"> <!-- Initially hidden -->
+                        <p>Yes, we offer travel insurance options during the booking process to protect your trip against unforeseen circumstances.</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items can be added here in the same format -->
             </div>
-        </div>
 
-        <div class="faq" data-aos="fade-right">
-            <input type="checkbox" id="faq7">
-            <label for="faq7" class="faq-question">7. What should I do if I encounter an issue with my booking? <span class="arrow"></span></label>
-            <div class="faq-answer">
-                If you experience any issues with your booking, please contact our support team immediately. We will work to resolve your issue as quickly as possible.
+            <div class="accordion">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">Can I book multiple destinations in one trip?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content"> <!-- Initially hidden -->
+                        <p>Absolutely! Our platform allows you to plan multi-destination trips seamlessly. Simply select your desired locations during the booking process. For major changes, please contact our support team directly.</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items can be added here in the same format -->
+            </div>
+
+            <div class="accordion">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">How can I contact customer support?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content"> <!-- Initially hidden -->
+                        <p>You can reach our customer support team via email or live chat on our website. We’re available 24/7 to assist you with any inquiries. For major changes, please contact our support team directly.</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items can be added here in the same format -->
+            </div>
+
+            <div class="accordion">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">What should I do if I encounter an issue with my booking?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content"> <!-- Initially hidden -->
+                        <p>If you experience any issues with your booking, please contact our support team immediately. We will work to resolve your issue as quickly as possible.</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items can be added here in the same format -->
+            </div>
+
+            <div class="accordion">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">How do I make changes to my booking?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content"> <!-- Initially hidden -->
+                        <p>You can make changes to your booking by logging into your account and accessing your booking details. For major changes, please contact our support team directly.</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items can be added here in the same format -->
             </div>
         </div>
     </div>
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-      const faqs = document.querySelectorAll('.faq');
+    function toggleFAQ(element) {
+        const content = element.nextElementSibling; // Get the FAQ content
+        const toggleSymbol = element.querySelector('.expandToggle'); // Get the toggle symbol
 
-      // Loop through each FAQ and apply the slide-up animation with delay
-      faqs.forEach((faq, index) => {
-          setTimeout(() => {
-              faq.classList.add('visible'); // Add 'visible' class to trigger animation
-          }, index * 200); // Delay each FAQ animation by 200ms
-      });
-  });
+        // Check if content is visible
+        if (content.style.display === "block") {
+            content.style.display = "none"; // Hide content
+            toggleSymbol.textContent = "+"; // Change toggle symbol to "+"
+        } else {
+            content.style.display = "block"; // Show content
+            toggleSymbol.textContent = "-"; // Change toggle symbol to "-"
+        }
+    }
 </script>
+    
+
+        
 
 
+
+<!-- feedback form -->
   <section id="feedback-form">
     <div class="container">
       <h2>We Value Your Feedback!</h2>
@@ -395,10 +561,9 @@
     <div class="footer-top">
       
       <div class="footer-logo-section">
-        <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo">
+        <a href="#"> <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo"></a>
         <p style="color: #b5fdf4;" >Affordable adventures, unforgettable memories—explore with ease.</p>
         <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
-        
         <div class="social-icons">
           <a href="#"><i class="fab fa-facebook"></i></a>
           <a href="#"><i class="fab fa-instagram"></i></a>
@@ -426,7 +591,7 @@
             <li><a href="#">Media Center</a></li>
             <li><a href="#">Investors</a></li>
             <li><a href="#">Modern Slavery Act</a></li>
-            <li><a href="#">Terms Of Use</a></li>
+            <li><a href="terms.html">Terms Of Use</a></li>
           </ul>
         </div>
   
@@ -649,20 +814,7 @@ animateCircles();
 
         // script for faq section
 
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const answer = button.nextElementSibling;
-                const isExpanded = button.getAttribute('aria-expanded') === 'true';
-
-                document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
-                document.querySelectorAll('.faq-question').forEach(q => q.setAttribute('aria-expanded', 'false'));
-
-                if (!isExpanded) {
-                    answer.style.display = 'block';
-                    button.setAttribute('aria-expanded', 'true');
-                }    
-            })       
-        });
+        
 
         window.onscroll = function() { 
            scrollFunction() 
@@ -745,6 +897,7 @@ animateCircles();
     </script>
 
     <script src="app.js"></script>
+    <script src="faq.js"></script>
 
 </body>
 

@@ -999,7 +999,8 @@ padding: 15px 30px;
   
   /* Form Container */
   .container {
-    background: #fff;
+    font-weight: bold;
+    background-color:#00bfa6;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -1060,6 +1061,8 @@ padding: 15px 30px;
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    display: block;
+    margin: 0 auto; /* Center horizontally */
   }
   
   button[type="submit"]:hover {
