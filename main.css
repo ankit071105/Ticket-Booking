@@ -234,8 +234,8 @@ z-index: 10; /* Make sure buttons are above other elements */
 }
 
 .prev, .next {
-background-color: #07b797; /*background according to theme */ 
-border: none;
+background-color: black; 
+border: 2px solid #07b797;
 border-radius: 50%;
 cursor: pointer;
 outline: none;
@@ -245,7 +245,7 @@ padding:0px 0px;
 }
 
 .prev:hover, .next:hover {
-background-color: black; /* Solid background on hover */
+background-color: #07b797; /* Solid background on hover */
 }
 
 /* Optional: Responsive design */
