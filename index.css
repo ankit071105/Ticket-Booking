@@ -11,6 +11,7 @@ body {
   background-color: #f0f4f8;
   font-size: 16px;
   transition: background-color 0.3s, color 0.3s;
+  overflow-x: hidden;
 }
 
 h1,
@@ -225,6 +226,8 @@ h2 {
   color: #555;
   text-align: center;
 }
+
+
 
 .containers {
   padding: 20px;
@@ -590,3 +593,4 @@ button:hover {
     font-size: 20px;
   }
 }
+
