@@ -527,57 +527,13 @@ button:hover {
   background-color: #000;
 }
 
-/* faq section */
-.faq-section {
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+/* FAQ Section */
 
-.faq-container {
-  width: 100%;
-}
 
-.faq-item {
-  margin-bottom: 15px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
-}
 
-.faq-question {
-  width: 100%;
-  padding: 15px;
-  text-align: left;
-  background-color: #f7f7f7;
-  border: none;
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-  cursor: pointer;
-  outline: none;
-  border-radius: 0%;
-  transition: background-color 0.3s ease;
-  line-height: 15px;
-}
 
-.faq-question:hover {
-  background-color: #e6e6e6;
-}
 
-.faq-answer {
-  display: none;
-  padding: 10px 15px;
-  font-size: 16px;
-  color: #555;
-}
 
-.faq-answer p {
-  color: #4b4b4b;
-  line-height: 1.6;
-}
 
 /* Responsive Design */
 @media (max-width: 600px) {

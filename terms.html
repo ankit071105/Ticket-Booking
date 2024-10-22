@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms Of Use - Ticket Booking</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      .nav-container {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="./index.html" id="logo-href">
+        <div class="logo-container">
+          <img
+            src="images/4.jpeg"
+            alt="Ticket Booking Logo"
+            class="logo-image"
+          />
+          <div class="logo">Ticket Booking</div>
+        </div>
+      </a>
+
+      <div class="nav-container">
+        <div class="menu-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+
+        <ul class="nav-links">
+          <li>
+            <a href="index.html" class="home-button"
+              ><i class="fas fa-home"></i>HOME</a
+            >
+          </li>
+          <li>
+            <a href="buy.html"><i class="fas fa-shopping-cart"></i> Buy</a>
+          </li>
+          <li>
+            <a href="sell.html"><i class="fas fa-tag"></i> Sell</a>
+          </li>
+          <li>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+          </li>
+          <li>
+            <a href="contributors.html"
+              ><i class="fas fa-users"></i> Our Contributors</a
+            >
+          </li>
+
+          <li>
+            <a href="/client/register.html" class="login-btn"
+              ><i class="fas fa-user"></i
+            ></a>
+          </li>
+        </ul>
+
+        <button id="darkModeToggle" style="width: 40px; height: 40px">
+          🌙
+        </button>
+      </div>
+    </nav>
+    <script>
+      const darkModeToggle = document.getElementById("darkModeToggle");
+      const body = document.querySelector("body");
+      if (darkModeToggle) {
+        darkModeToggle.addEventListener("click", () => {
+          document.body.classList.toggle("dark-mode");
+          if (body.classList.contains("dark-mode")) {
+            darkModeToggle.innerHTML = "🔆";
+          } else {
+            darkModeToggle.innerHTML = "🌙";
+          }
+        });
+      }
+      // change icon of the dark/light mode
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+        // Special effect for hamburger icon
+        const bars = menuToggle.querySelectorAll(".bar");
+        bars.forEach((bar, index) => {
+          if (menuToggle.classList.contains("active")) {
+            bar.style.transform =
+              index === 1
+                ? "scale(0)"
+                : `rotate(${index === 0 ? "45deg" : "-45deg"})`;
+          } else {
+            bar.style.transform = "none";
+          }
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", (event) => {
+        if (
+          !navLinks.contains(event.target) &&
+          !menuToggle.contains(event.target)
+        ) {
+          navLinks.classList.remove("active");
+          menuToggle.classList.remove("active");
+          menuToggle.querySelectorAll(".bar").forEach((bar) => {
+            bar.style.transform = "none";
+          });
+        }
+      });
+    </script>
+    <section id="about-us">
+      <div class="about-container">
+        <h1>Terms Of Use</h1>
+        <p>
+            <h2>Last Updated On: 22/10/2024</h2>
+          Welcome to ticket booking! Your one-stop solution for booking bus and
+          train tickets with ease. Our platform offers a seamless experience for
+          travelers, providing access to various transportation options. We
+          strive to make your journey hassle-free, whether you're planning a
+          short trip or a long adventure. With 24/7 customer support and
+          real-time updates, we ensure that you're always informed and
+          comfortable on the go.
+          By accessing and using our website for train and bus bookings, you
+          agree to comply with these terms and conditions. You must be at least
+          18 years old or have the consent of a parent or guardian to use this
+          service. All information provided by you during the booking process
+          must be accurate and complete. We reserve the right to cancel or
+          refuse any bookings that we suspect to be fraudulent or in violation
+          of these terms. Our website may contain links to third-party sites; we
+          are not responsible for the content or practices of those sites.
+          Prices and availability of services are subject to change without
+          notice. By completing a booking, you acknowledge that you have read
+          and agree to our cancellation and refund policies.
+        </p>
+      </div>
+    </section>
+    <div class="gtranslate_wrapper"></div>
+    <script>
+      window.gtranslateSettings = {
+        default_language: "en",
+        detect_browser_language: true,
+        wrapper_selector: ".gtranslate_wrapper",
+      };
+    </script>
+    <script
+      src="https://cdn.gtranslate.net/widgets/latest/float.js"
+      defer
+    ></script>
+  </body>
+</html>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+  }
+
+  #about-us {
+    background-image: url("your-background-image.jpg");
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+  }
+
+  #about-us h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #f0a500;
+  }
+
+  #about-us p {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 768px) {
+    #about-us h1 {
+      font-size: 2.5rem;
+    }
+
+    #about-us p {
+      font-size: 1rem;
+    }
+  }
+</style>

@@ -10,7 +10,81 @@ body {
   color: #333;
   background-color: #f5f5f5;
 }
+.navbar {
+  background-color: #1f2937;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+.nav-container {
+  display: flex;
+  align-items: center; /* Vertically center items */
+  justify-content: space-between; /* Space between logo and nav items */
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #12e9cc;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00bfa6;
+}
+
+#darkModeToggle {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  .navbar .logo {
+    font-size: 20px;
+  }
+
+  .btn {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+
+  .caption {
+    font-size: 1.2rem;
+  }
+}
 .contributor-container {
   margin: 0 auto;
 }
@@ -160,11 +234,15 @@ body {
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 2px 2px 10px rgb(172, 140, 140);
 }
 
 .contributor-contributor-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  
+  background-color: aqua;
+  box-shadow: 1px 1px 12px 4px blue;
+  border-radius: 10px ;
 }
 
 .contributor-contributor-card img {
@@ -270,6 +348,14 @@ body {
   width: 300px;
 }
 
+.contributor-contributor-card:hover {
+  transform: translateY(-5px);
+  
+  background-color: aqua;
+  box-shadow: 1px 1px 12px 4px blue;
+  border-radius: 10px ;
+}
+
 .contributor-notification {
   background-color: #4CAF50;
   color: white;
@@ -305,45 +391,112 @@ body {
 
 
 
-.contributor-footer-link{
-  display: grid;
-  grid-template-columns: repeat(4 ,1fr);
-  place-items: center;
-  margin-top: 4rem;
-  
+
+
+
+/* General Footer Styling */
+.footer-container {
+  background-color: #1f2937;
+  color: #ffffff;
+  padding: 40px 0;
+  font-family: Arial, sans-serif;
 }
 
-.footer-row {
-  text-align: start;
-  min-width: 135px;
+/* Logo and Tagline */
+.footer-logo-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.footer-logo {
+  max-width: 150px;
+  margin-bottom: 10px;
+  border-radius: 50px;
+}
+.footer-logo-section p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+.follow-us {
+  margin-top: 10px;
+  font-weight: bold;
 }
 
-.footer-row h3{
-  color: #07a893;
-}
-
-.footer-row ul li{
-  list-style-type: none;
-}
-
-.footer-row ul li a{
-
-  color: white;
+/* Social Media Icons */
+.social-icons a {
+  display: inline-block;
+  margin: 0 10px;
+  color: #12e9cc;
+  font-size: 1.5rem;
   text-decoration: none;
- }
+}
+.social-icons a:hover {
+  color: #76b2ab;
+}
 
- .footer-row ul li a:hover{
+/* Footer Link Sections */
+.footer-links {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px 100px;
+}
+.footer-column {
+  flex-basis: 20%;
+  margin-bottom: 10px;
+}
+.footer-column h4 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #12e9cc;
+}
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+.footer-column ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.footer-column ul li a:hover {
   text-decoration: underline;
+}
+
+/* Footer Bottom Links */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+.footer-bottom ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-bottom ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+.footer-bottom ul li a {
+  color: #12e9cc;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.footer-bottom ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
   }
-
-
- .icon:hover{
-  transform: scale(1.2);
-   color: #12e9cc;
- }
-
- @media (max-width:600px) {
-  .contributor-footer-link{
-    grid-template-columns: repeat(2 ,1fr);
+  .footer-column {
+    flex-basis: 100%;
+    text-align: center;
   }
- }
+}

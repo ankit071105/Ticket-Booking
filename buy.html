@@ -439,8 +439,13 @@ input[type="text"], select {
 
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="sell.html">Sell Ticket</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="buy.html">Buy Ticket</a></li>
+        <li><a href="sell.html"><i class="fas fa-tag"></i> Sell</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="contributor.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                <li><a href="/client/register.html" class="login-btn"><i class="fas fa-user"></i></a></li>
+
         <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
       </ul>
     </nav>
@@ -449,53 +454,236 @@ input[type="text"], select {
 
 
   <body>
-    <div class="container">
-      <div class="left-section">
-        <img src="./images/bus.avif" class="bus-img" alt="">
-      </div>
-      <div class="right-section">
-        <h2>Book Your ticket</h2>
-        <form id="ticketForm">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required>
-          </div>
-          <div class="form-group">
-            <label for="ticketType">Select ticket type</label>
-            <select id="ticketType" name="ticketType" required>
-              <option value="">Select Ticket Type</option>
-              <option value="Bus">Bus ticket</option>
-              <option value="Train">Train ticket</option>
-            </select>
-          </div>
+    <!DOCTYPE html>
+<html lang="en">
 
-          <div class="form-group">
-            <label for="journeyDate">Date of Journey</label>
-            <input type="date" id="journeyDate" min= name="journeyDate" required>
-          </div>
-          <script>
-            const today = new Date();
-            const yesterday = new Date(today.setDate(today.getDate())).toISOString().split('T')[0];
-            document.getElementById('journeyDate').setAttribute('min', yesterday);
-            </script>
-          <div class="form-group">
-            <label for="journeyTime">Time of Journey</label>
-            <input type="time" id="journeyTime" name="journeyTime" required>
-          </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy Tickets</title>
+  <link rel="shortcut icon" href="images/4.jpeg" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="index.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
 
-          <div class="form-group">
-            <label for="departure">Departure</label>
-            <input type = "text" placeholder = "From" required>
-          </div>
-          <div class="form-group">
-            <label for="destination">Destination</label>
-            <input type = "text" placeholder = "To" required>
-          </div>
-          
-          <button type="submit" class="submit-btn">Check Availability</button>
-        </form>
-      </div>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      padding: 20px;
+    }
+
+    .left-section,
+    .right-section {
+      flex: 1;
+      padding: 20px;
+      height: 100%;
+    }
+
+    /* Bus animation */
+    .bus-img {
+      width: 100%;
+      max-width: 600px;
+      display: block;
+      animation: busMove 5s linear infinite;
+    }
+
+    @keyframes busMove {
+      0% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    .right-section {
+      background: linear-gradient(135deg, #ead6ee, #a0f1ea);
+      padding: 40px;
+      border-radius: 5px;
+      max-width: 600px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+
+    label {
+      font-weight: bold;
+      width: 30%;
+      text-align: left;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="time"],
+    select {
+      width: 65%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .submit-btn {
+      background-color: #ff4d4d;
+      color: white;
+      padding: 7px;
+      width: 100%;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      height: 50px;
+      margin-top: 20px;
+    }
+
+    .submit-btn:hover {
+      background-color: #e33e3e;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="left-section">
+      <img src="https://media.baamboozle.com/uploads/images/69685/1649835621_1981612_gif-url.gif" class="bus-img" alt="Moving Bus">
     </div>
+    <div class="right-section">
+      <h2>Book Your Ticket</h2>
+      <form id="ticketForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+          <label for="ticketType">Select ticket type</label>
+          <select id="ticketType" name="ticketType" required>
+            <option value="">Select Ticket Type</option>
+            <option value="Bus">Bus ticket</option>
+            <option value="Train">Train ticket</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="journeyDate">Date of Journey</label>
+          <input type="date" id="journeyDate" name="journeyDate" required>
+        </div>
+        <div class="form-group">
+          <label for="journeyTime">Time of Journey</label>
+          <input type="time" id="journeyTime" name="journeyTime" required>
+        </div>
+        <div class="form-group">
+          <label for="departure">Departure</label>
+          <input type="text" id="departure" name="departure" placeholder="From" required>
+        </div>
+        <div class="form-group">
+          <label for="destination">Destination</label>
+          <input type="text" id="destination" name="destination" placeholder="To" required>
+        </div>
+        <button type="submit" class="submit-btn">Check Availability</button>
+      </form>
+    </div>
+  </div>
+<style>
+  .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      padding: 20px;
+    }
+
+    .left-section,
+    .right-section {
+      flex: 1;
+      padding: 20px;
+      height: 100%;
+    }
+
+    /* Bus animation */
+    .bus-img {
+      width: 100%;
+      max-width: 500px;
+      display: block;
+      animation: busMove 5s linear infinite;
+    }
+
+    .right-section {
+      background: linear-gradient(135deg, #ead6ee, #a0f1ea);
+      padding: 40px;
+      border-radius: 5px;
+      width: 1000px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+
+    label {
+      font-weight: bold;
+      width: 40%;
+      text-align: center;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="time"],
+    select {
+      width: 75%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .submit-btn {
+      background-color: #ff4d4d;
+      color: white;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 30px;
+      height: 50px;
+      margin-top: 20px;
+    }
+
+    .submit-btn:hover {
+      background-color: #e33e3e;
+    }
+</style>
+  <script>
+    const today = new Date();
+    const formattedDate = today.toISOString().split('T')[0];
+    document.getElementById('journeyDate').setAttribute('min', formattedDate);
+  </script>
+</body>
 
 
     <script>
