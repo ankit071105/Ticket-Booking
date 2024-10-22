@@ -234,17 +234,18 @@ z-index: 10; /* Make sure buttons are above other elements */
 }
 
 .prev, .next {
-background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
-border: none;
+background-color: black; 
+border: 2px solid #07b797;
 border-radius: 50%;
 cursor: pointer;
 outline: none;
 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 transition: background-color 0.3s;
+padding:0px 0px;
 }
 
 .prev:hover, .next:hover {
-background-color: rgba(255, 255, 255, 1); /* Solid background on hover */
+background-color: #07b797; /* Solid background on hover */
 }
 
 /* Optional: Responsive design */
@@ -997,7 +998,8 @@ padding: 15px 30px;
   
   /* Form Container */
   .container {
-    background: #fff;
+    font-weight: bold;
+    background-color:#00bfa6;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -1058,6 +1060,8 @@ padding: 15px 30px;
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    display: block;
+    margin: 0 auto; /* Center horizontally */
   }
   
   button[type="submit"]:hover {
@@ -1277,8 +1281,8 @@ padding: 15px 30px;
     display: inline-block;
     width: 12px;
     height: 12px;
-    border-right: 2px solid #fff;
-    border-bottom: 2px solid #fff;
+    border-right: 2px solid #040404;
+    border-bottom: 2px solid #040404;
     transform: rotate(45deg);
     transition: transform 0.3s ease;
 }
