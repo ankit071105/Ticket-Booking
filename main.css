@@ -246,6 +246,18 @@ z-index: 10; /* Make sure buttons are above other elements */
 
 .prev:hover, .next:hover {
 background-color: #060606; /* Solid background on hover */
+background-color: black; 
+border: 2px solid #07b797;
+border-radius: 50%;
+cursor: pointer;
+outline: none;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+transition: background-color 0.3s;
+padding:0px 0px;
+}
+
+.prev:hover, .next:hover {
+background-color: #07b797; /* Solid background on hover */
 }
 
 /* Optional: Responsive design */
@@ -1282,8 +1294,8 @@ padding: 15px 30px;
     display: inline-block;
     width: 12px;
     height: 12px;
-    border-right: 2px solid #fff;
-    border-bottom: 2px solid #fff;
+    border-right: 2px solid #040404;
+    border-bottom: 2px solid #040404;
     transform: rotate(45deg);
     transition: transform 0.3s ease;
 }
