@@ -218,22 +218,36 @@
             <img src="images/3.jpeg" alt="Slide 3">
         </div>
         <div class="slide">
-            <img src="images/2.jpeg" alt="Slide 3">
+            <img src="images/2.jpeg" alt="Slide 4">
         </div>
         <div class="slide">
-            <img src="images/1.jpeg" alt="Slide 3">
+            <img src="images/1.jpeg" alt="Slide 5">
         </div>
         <div class="slide">
-            <img src="images/5.jpeg" alt="Slide 3">
+            <img src="images/5.jpeg" alt="Slide 6">
         </div>
         <div class="slide">
-            <img src="images/7.jpeg" alt="Slide 3">
+            <img src="images/7.jpeg" alt="Slide 7">
+        </div>
+
+        <!-- The dots/circles -->
+        <div class="slider-dots"  style="text-align:center">
+        <span class="dot" onclick="clickThumbs(0)"></span>
+        <span class="dot" onclick="clickThumbs(1)"></span>
+        <span class="dot" onclick="clickThumbs(2)"></span>
+        <span class="dot" onclick="clickThumbs(3)"></span>
+        <span class="dot" onclick="clickThumbs(4)"></span>
+        <span class="dot" onclick="clickThumbs(5)"></span>
+        <span class="dot" onclick="clickThumbs(6)"></span>
         </div>
     </div>
     <div class="nav-buttons">
         <button class="prev" onclick="prevSlide()" style="width: 45px; height: 45px;">&#10094;</button>
         <button class="next" onclick="nextSlide()" style="width: 45px; height: 45px;">&#10095;</button>
     </div>
+    
+ 
+
     </div>
     </div>
 	<div class="social-sidebar">
@@ -687,15 +701,26 @@ animateCircles();
 
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
+        const slider_dots = document.querySelectorAll(".dot");
 
         function showSlide(index) {
             slides.forEach((slide, i) => {
                 slide.classList.remove('active');
+                slider_dots[i].classList.remove('slider-dot-active');
                 if (i === index) {
                     slide.classList.add('active');
+                    slider_dots[i].classList.add('slider-dot-active');
                 }
             });
         }
+
+        function clickThumbs(index)
+        {
+            currentSlide=index;
+            showSlide(currentSlide);
+        }
+
+
 
         function nextSlide() {
             currentSlide = (currentSlide + 1) % slides.length;
