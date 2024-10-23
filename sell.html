@@ -192,11 +192,49 @@
       text-decoration: none;
       border-radius: 5px;
       transition: background 0.3s ease;
-    }
 
-    .btn:hover {
-      background: #17a085;
-    }
+        /* Sell tickets css */
+        .sell-ticket {
+    text-align: center;
+    padding: 20px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px; /* Increased space between cards */
+}
+
+.card {
+    border: 1px solid #ccc; /* Card border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px;
+    width: 250px; /* Card width */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.card-image {
+    width: 100%; /* Responsive image */
+    height: auto;
+    border-radius: 8px; /* Rounded image corners */
+}
+
+.btn {
+    background-color: #00bfa6; /* Original button color */
+    color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Ensure button behaves correctly */
+    margin-top: 10px; /* Space above button */
+}
+
+.btn:hover {
+    background-color: #00a690; /* Darker button color on hover */
+}
   </style>
 </head>
 
@@ -237,6 +275,37 @@
 
   <!-- Sell Ticket Section -->
   <section class="sell-ticket">
+
+    <h1>Sell Your Ticket</h1>
+    <div class="card-container">
+        <div class="card">
+            <img src="./images/bus.avif" alt="Bus" class="card-image">
+            <a href="bus_sell.html" class="btn">Sell Bus Ticket</a>
+        </div>
+        <div class="card">
+            <img src="./images/train-img.jpeg" alt="Train" class="card-image">
+            <a href="train_sell.html" class="btn">Sell Train Ticket</a>
+        </div>
+    </div>
+  </section>
+
+<!-- footer -->
+
+<footer class="footer-container">
+  <div class="footer-top">
+    <!-- Logo and Tagline -->
+    <div class="footer-logo-section">
+      <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo">
+      <p style="color: #b5fdf4;" >Affordable adventures, unforgettable memories—explore with ease.</p>
+      <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
+      <!-- Social Media Icons -->
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        
     <div class="container">
       <h1>Sell Your Tickets Easily</h1>
       <p>Welcome to our marketplace where you can easily sell your unused tickets. Whether it's for a concert, sports
@@ -267,6 +336,7 @@
           <div class="card-description">Sell your sports tickets to a wide audience of fans.</div>
           <a href="sports_sell.html" class="btn">Sell Sports Ticket</a>
         </div>
+
       </div>
     </div>
   </section>
