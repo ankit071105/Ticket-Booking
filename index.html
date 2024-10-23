@@ -23,7 +23,7 @@
     <script src="https://kit.fontawesome.com/3d20c433e1.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+     
     <!-- cursor -->
     
     <div class="cursor"></div>
@@ -332,15 +332,40 @@
 
     <div class="containers" id="sxs">
         <div id="contact" class="contact-info" >
-            <div style="padding-left: 30px;">
-                <h2 style="text-align:left">Contact Us</h2>
-                <p style="color: white;font-size: 16px;">We value your feedback! We'd love to hear from you! For inquiries, feedback, or support, please reach out. Your insights help us improve your experience.</p>
+           <div style="display: flex;">
+                <div class="flex">
+                    <h2 style="text-align:left">Contact Us</h2>
+                <p style="color: white;font-size: 16px; width: 40%; margin-top: 20px;">We value your feedback! We'd love to hear from you! For inquiries, feedback, or support, please reach out. Your insights help us improve your experience.</p>
                 
-                <h4>Localisation</h4>
-                <p style="color: white;font-size: 16px;">ABC colony, Bangalore Pin: 76896</p>
-        
-                <h4>Phone No</h4>
-                <p  style="color: white;font-size: 16px;">+91 9685478526</p>
+                <span class="boxes">
+                    <div class="box">
+                        <img src="location.png" style="height:100px; width:100px;" alt="">
+                        <h4>Localisation</h4>
+                    <p style="font-size: 16px;">ABC colony, Bangalore Pin: 76896</p>
+                    </div>
+            
+                    <div class="box">
+    
+                        <img src="call.png"  style="height: 130px; width: 125px;"   alt="">
+    
+                        <h4>Phone No</h4>
+                    <p  style="font-size: 16px;">+91 9685478526</p>
+                    </div>
+                </span>
+                </div>
+
+                <div class="flex">
+                    <form action="/action_page.php" class="forms" method="post">
+                        <label for="name">Name:</label>
+                        <input type="text" class="input" id="name" name="name"placeholder="Enter your name" style="font-size: 16px;  border: 3px solid green;" required>
+                        <label for="email">Email:</label>
+                        <input type="email" class="input" id="email" name="email" placeholder="Enter your email" style="font-size: 16px;border: 3px solid green;" required>
+                        <label for="message">Message:</label>
+                        <textarea id="message" class="input" name="message" style="padding: 40px;" required></textarea>
+                        <input type="submit" value="Submit">
+                      </form>
+                      </div>
+                </div>
             </div>    
         </div>
     </footer>
