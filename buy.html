@@ -583,8 +583,9 @@ input[type="text"], select {
         </div>
         <div class="form-group">
           <label for="journeyDate">Date of Journey</label>
-          <input type="date" id="journeyDate" name="journeyDate" required>
-        </div>
+          <input type="date" id="journeyDate" name="journeyDate" required max="9999-12-31">
+      </div>
+      
         <div class="form-group">
           <label for="journeyTime">Time of Journey</label>
           <input type="time" id="journeyTime" name="journeyTime" required>
@@ -849,7 +850,32 @@ if (darkModeToggle) {
     const progressHeight = (window.scrollY / totalHeight) * 100;
     scrollProgressBar.style.width = progressHeight + '%';
 });
+
+
+
+
+
+
     </script>
+
+
+<script>
+  // Restrict the input to only valid dates (YYYY-MM-DD)
+  document.getElementById('journeyDate').addEventListener('input', function() {
+      // Enforce a strict date pattern of YYYY-MM-DD
+      const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+      if (!datePattern.test(this.value)) {
+          // Remove any invalid characters from the input
+          this.value = this.value.slice(0, 10);
+      }
+  });
+</script>
+
+
+
+
+
+
     <script src="app.js"></script>
     <div class="gtranslate_wrapper"></div>
     <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
