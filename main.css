@@ -193,7 +193,6 @@ background-color: #4cc6ad;
 /* Slider Container */
 .slider {
 position: relative;
-margin-top: 3px;
 width: 100%;
 height: 400px; /* Set a fixed height for the slider */
 overflow: hidden; /* Hide overflow to maintain size */
@@ -234,25 +233,40 @@ z-index: 10; /* Make sure buttons are above other elements */
 }
 
 .prev, .next {
-background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
-border: none;
+  background-color: rgb(53 48 48 / 80%);/* Semi-transparent background */
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  padding:0;
+  font-size: 23px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s;
+}
+
+.prev:hover, .next:hover {
+background-color: #060606; /* Solid background on hover */
+background-color: black; 
+border: 2px solid #07b797;
 border-radius: 50%;
 cursor: pointer;
 outline: none;
 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 transition: background-color 0.3s;
+padding:0px 0px;
 }
 
 .prev:hover, .next:hover {
-background-color: rgba(255, 255, 255, 1); /* Solid background on hover */
+background-color: #07b797; /* Solid background on hover */
 }
 
 /* Optional: Responsive design */
-@media (max-width: 768px) {
-.slider {
-height: 250px; /* Adjust height for smaller screens */
-}
-}
+/* @media (max-width: 768px) { */
+/* .slider { */
+  /* Adjust height for smaller screens */
+/* height: 250px; */
+/* } */
+/* } */
 
 
 .social-sidebar {
@@ -349,14 +363,6 @@ padding: 20px 100px;
 align-items: flex-start; /* Align items to top */
 }
 
-.contact-info {
-background-color: #00bfa6;
-width: 40%;
-padding: 30px;
-text-align: left;
-border-radius: 8px;
-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
 
 .map-container {
 width: 55%;
@@ -642,14 +648,81 @@ font-size: 3rem;
 
 .contact-info {
  background-color: #00bfa6;
- width: 40%; /* Set width for contact info */
- padding: 30px;
+ width: 80vw; /* Set width for contact info */
+ padding: 55px;
+ height: 60vh;
  /* margin:4px; */
  /* min-width: 400px; */
  text-align: left;
  border-radius: 8px;
  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
 }
+
+.box{
+  /* padding: 10px; */
+  width: 30%;
+  height: 80%;
+  background-color: white;
+  color: black;
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 40px;
+  
+}
+
+.boxes{
+  display: flex;
+  flex-direction: row;
+}
+
+.forms {
+  /* width: 50%; */
+  width: 40vw;
+  margin: 0;
+  height: 50vh;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.input{
+  border: 3px solid green;
+}
+
+label {
+  display: block;
+  }
+
+input[type="text"], input[type="email"], textarea {
+  width: 100%;
+  
+  
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 120px;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+textarea{
+  row-gap: 5;
+
+}
+
 
 .map-container {
  width: 55%; /* Set width for the map container */
@@ -1193,7 +1266,7 @@ padding: 15px 30px;
       font-size: 0.8rem;          
     }
   }
-  <style>
+  
   
   @keyframes slideUp {
     from {
@@ -1280,8 +1353,8 @@ padding: 15px 30px;
     display: inline-block;
     width: 12px;
     height: 12px;
-    border-right: 2px solid #fff;
-    border-bottom: 2px solid #fff;
+    border-right: 2px solid #040404;
+    border-bottom: 2px solid #040404;
     transform: rotate(45deg);
     transition: transform 0.3s ease;
 }

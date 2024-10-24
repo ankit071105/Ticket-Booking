@@ -1,6 +1,27 @@
 
 
 # GG Extensions
+<table align="center">
+    <thead align="center">
+        <tr border: 2px;>
+            <td><b>🌟 Stars</b></td>
+            <td><b>🍴 Forks</b></td>
+            <td><b>🐛 Issues</b></td>
+            <td><b>🔔 Open PRs</b></td>
+            <td><b>🔕 Close PRs</b></td>
+        </tr>
+     </thead>
+    <tbody>
+         <tr>
+            <td><img alt="Stars" src="https://img.shields.io/github/stars/ankit071105/Ticket-Booking?style=flat&logo=github"/></td>
+             <td><img alt="Forks" src="https://img.shields.io/github/forks/ankit071105/Ticket-Booking?style=flat&logo=github"/></td>
+            <td><img alt="Issues" src="https://img.shields.io/github/issues/ankit071105/Ticket-Booking?style=flat&logo=github"/></td>
+            <td><img alt="Open Pull Requests" src="https://img.shields.io/github/issues-pr/ankit071105/Ticket-Booking?style=flat&logo=github"/></td>
+           <td><img alt="Close Pull Requests" src="https://img.shields.io/github/issues-pr-closed/ankit071105/Ticket-Booking?style=flat&color=critical&logo=github"/></td>
+        </tr>
+    </tbody>
+</table>
+
 
 ## ⭐️ Show Your Support!
 
@@ -15,6 +36,8 @@ By doing this, you support the project and help grow our community!
 ---
 
 ## 🎉 Accepted for GirlScript Summer of Code 2024
+
+  ![image](https://github.com/user-attachments/assets/5263dc32-ce09-4835-b964-7f996e970eb5)
 
 Congratulations! GG Extensions has been selected for participation in GirlScript Summer of Code 2024. We're excited to have you on board to contribute and learn together!
 
@@ -106,7 +129,18 @@ To submit your contributions, follow these steps:
 8. **Submit a Pull Request**: Go to your forked repository on GitHub and submit a pull request. Be sure to provide a detailed description of your changes and why they are necessary.
 
 🎉 Voila! You have made a PR to the Ticket-Booking project. Sit back patiently and relax while the project maintainers review your PR.
----
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+* Tip : Complete this process in GitHub ](in your browser)
+[![](https://mermaid.ink/img/pako:eNpFUMtywjAM_BWNzvADOfRQWk5th0mPCQfhKI_iB1XsYRjg35EdpvVBlrQrraQrmtAxVtjbcDYjSYSPuvWgbxvk2GQDcWQ4SfhhE_ewXr_AQcibsdkIU2Qg-OIzvJbcfqldCIX73k2xyQb6yfITL3FGTXBO8U35ipAO4Qeen8QFz9TbdvJk7eUGpsju6n_9XbIWav5NPEctxBU6FkdTp4tdc6MWtbXjFit1O5Jji62_K49SDN8Xb7CKkniFEtIwYtWTnTVKp04F3iYahNxflnX4IJ_L3cr57g_ewG4o?type=png)](https://mermaid.live/edit#pako:eNpFUMtywjAM_BWNzvADOfRQWk5th0mPCQfhKI_iB1XsYRjg35EdpvVBlrQrraQrmtAxVtjbcDYjSYSPuvWgbxvk2GQDcWQ4SfhhE_ewXr_AQcibsdkIU2Qg-OIzvJbcfqldCIX73k2xyQb6yfITL3FGTXBO8U35ipAO4Qeen8QFz9TbdvJk7eUGpsju6n_9XbIWav5NPEctxBU6FkdTp4tdc6MWtbXjFit1O5Jji62_K49SDN8Xb7CKkniFEtIwYtWTnTVKp04F3iYahNxflnX4IJ_L3cr57g_ewG4o)
+
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+
+
+
+
 
 ## ❤️ Our Valuable Contributors
 

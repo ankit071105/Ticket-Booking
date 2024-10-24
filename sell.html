@@ -12,6 +12,15 @@
   <link rel="stylesheet" href="footer.css">
   <link rel="stylesheet" href="index.css">
   <script src="https://kit.fontawesome.com/3d20c433e1.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="footer.css"> 
+    <link rel="stylesheet" href="faq.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="why-us.css">
+    <script src="https://kit.fontawesome.com/3d20c433e1.js" crossorigin="anonymous"></script>
 
   <style>
     /* code for bottom to top nav  */
@@ -183,11 +192,49 @@
       text-decoration: none;
       border-radius: 5px;
       transition: background 0.3s ease;
-    }
 
-    .btn:hover {
-      background: #17a085;
-    }
+        /* Sell tickets css */
+        .sell-ticket {
+    text-align: center;
+    padding: 20px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px; /* Increased space between cards */
+}
+
+.card {
+    border: 1px solid #ccc; /* Card border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px;
+    width: 250px; /* Card width */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.card-image {
+    width: 100%; /* Responsive image */
+    height: auto;
+    border-radius: 8px; /* Rounded image corners */
+}
+
+.btn {
+    background-color: #00bfa6; /* Original button color */
+    color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Ensure button behaves correctly */
+    margin-top: 10px; /* Space above button */
+}
+
+.btn:hover {
+    background-color: #00a690; /* Darker button color on hover */
+}
   </style>
 </head>
 
@@ -216,14 +263,49 @@
 
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="sell.html">Sell Ticket</a></li>
-      <li><a href="buy.html">Buy Ticket</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="buy.html">Buy Ticket</a></li>
+        <li><a href="sell.html"><i class="fas fa-tag"></i> Sell</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="contributor.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                <li><a href="/client/register.html" class="login-btn"><i class="fas fa-user"></i></a></li>
       <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
     </ul>
   </nav>
 
   <!-- Sell Ticket Section -->
   <section class="sell-ticket">
+
+    <h1>Sell Your Ticket</h1>
+    <div class="card-container">
+        <div class="card">
+            <img src="./images/bus.avif" alt="Bus" class="card-image">
+            <a href="bus_sell.html" class="btn">Sell Bus Ticket</a>
+        </div>
+        <div class="card">
+            <img src="./images/train-img.jpeg" alt="Train" class="card-image">
+            <a href="train_sell.html" class="btn">Sell Train Ticket</a>
+        </div>
+    </div>
+  </section>
+
+<!-- footer -->
+
+<footer class="footer-container">
+  <div class="footer-top">
+    <!-- Logo and Tagline -->
+    <div class="footer-logo-section">
+      <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo">
+      <p style="color: #b5fdf4;" >Affordable adventures, unforgettable memories—explore with ease.</p>
+      <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
+      <!-- Social Media Icons -->
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        
     <div class="container">
       <h1>Sell Your Tickets Easily</h1>
       <p>Welcome to our marketplace where you can easily sell your unused tickets. Whether it's for a concert, sports
@@ -254,6 +336,7 @@
           <div class="card-description">Sell your sports tickets to a wide audience of fans.</div>
           <a href="sports_sell.html" class="btn">Sell Sports Ticket</a>
         </div>
+
       </div>
     </div>
   </section>
@@ -262,14 +345,14 @@
   <footer class="footer-container">
     <div class="footer-top">
       <div class="footer-logo-section">
-        <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo">
+        <img src="images/3.jpeg" alt="easyJet holidays logo" class="footer-logo">
         <p style="color: #b5fdf4;">Affordable adventures, unforgettable memories—explore with ease.</p>
         <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
         <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.twitter.com" ><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
           <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
@@ -321,54 +404,6 @@
       </ul>
     </div>
   </footer>
-
-  <script>
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const body = document.querySelector('body');
-    if (darkModeToggle) {
-      darkModeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        if (body.classList.contains('dark-mode')) {
-          darkModeToggle.innerHTML = "🔆";
-        } else {
-          darkModeToggle.innerHTML = "🌙";
-        }
-      });
-    }
-
-    let mybutton = document.getElementById("myBtn");
-    window.onscroll = function () { scrollFunction() };
-
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-      } else {
-        mybutton.style.display = "none";
-      }
-    }
-
-    function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
-
-    function toggleChatbot() {
-      const chatbotContainer = document.getElementById("chatbot-container");
-      chatbotContainer.classList.toggle("chatbot-show");
-    }
-
-    window.addEventListener('scroll', () => {
-      const scrollProgressBar = document.getElementById('scrollProgressBar');
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progressHeight = (window.scrollY / totalHeight) * 100;
-      scrollProgressBar.style.width = progressHeight + '%';
-    })
-  </script>
-  <div class="gtranslate_wrapper"></div>
-  <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
-  <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-  <script src="chatbot.js"></script>
-  <script src="script1.js"></script>
 </body>
 
 </html>
