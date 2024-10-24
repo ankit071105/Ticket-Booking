@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PNR Status</title>
+  <link rel="shortcut icon" href="images/4.jpeg" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://kit.fontawesome.com/3d20c433e1.js" crossorigin="anonymous"></script>
+
+  <style>
+    /* Styling for PNR section */
+    .pnr-container {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .toggle-btns {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .btn1 {
+        width: 80px;
+
+      padding: 0.2rem 1rem;
+      background: #1fb899;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: background 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn1:hover {
+      background: #17a085;
+    }
+
+    .btn2 {
+      width: 80px;
+      padding: 0.2rem 1rem;
+      background: #1fb899;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: background 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn2:hover {
+      background: #17a085;
+    }
+
+
+
+    .pnr-input {
+      padding: 10px;
+      font-size: 1rem;
+      width: 60%;
+      border: 2px solid #cbcbce;
+      border-radius: 5px;
+      margin: 1.5rem 0;
+      outline: none;
+
+    }
+
+    .card {
+      background: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      margin: 1.5rem auto;
+      width: 100%;
+      max-width: 1000px;
+      text-align: left;
+    }
+
+    .card-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    .card-description {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .faq {
+      text-align: left;
+    }
+
+    .faq h3 {
+      font-size: 1.3rem;
+      margin: 1.5rem 0;
+    }
+
+    .faq p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="./index.html" id="logo-href">
+      <div class="logo-container">
+        <img src="images/4.jpeg" alt="Ticket Booking Logo" class="logo-image">
+        <div class="logo">Ticket Marketplace</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="buy.html">Buy Ticket</a></li>
+      <li><a href="sell.html">Sell Ticket</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="contributor.html">Our Contributors</a></li>
+      <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+    </ul>
+  </nav>
+
+  <!-- PNR Status Section -->
+  <section class="pnr-container">
+    <h1>PNR Status Checker</h1>
+
+    <!-- Toggle buttons for bus and train -->
+    <div class="toggle-btns">
+      <button class="btn1" id="bus-btn">Bus</button>
+      <button class="btn2" id="train-btn">Train</button>
+    </div>
+
+    
+
+    <!-- Input box for PNR status -->
+
+    <input type="text" class="pnr-input" id="pnr-input" placeholder="Enter your PNR number here...">
+
+    <div class="card">
+        <div class="card-title">Why Check PNR Status with Ticket-Booking?</div>
+        <div class="card-description">
+          Ticket-Booking offers 24x7 customer support, hassle-free cancellation, live train status updates, and the PNR prediction feature, helping you make smarter travel decisions.
+        </div>
+      </div>
+
+
+      <!-- Card: Types of PNR Status -->
+    <div class="card">
+        <div class="card-title">Types of IRCTC PNR Status</div>
+        <div class="card-description">
+          <strong>CNF:</strong> Seat confirmed.<br>
+          <strong>RAC:</strong> Reservation Against Cancellation.<br>
+          <strong>WL:</strong> Waitlisted ticket.<br>
+          <strong>GNWL:</strong> General Waiting List.<br>
+          <strong>RLWL:</strong> Remote Location Waiting List.<br>
+          <!-- More statuses can be added as needed -->
+        </div>
+      </div>
+    <!-- PNR Description Card -->
+    <div class="card">
+      <div class="card-title">What is a PNR Number?</div>
+      <div class="card-description">
+        A PNR number is a 10-digit number which stands for ‘Passenger Name Record’. It is a unique number assigned to every booked train ticket on the Indian Railways.
+        It contains records such as the passenger's name, age, sex, and berth preference. It also includes ticket details, such as the train number, date of journey, origin station, destination, and more.
+      </div>
+    </div>
+
+    <!-- PNR Confirmation Probability Card -->
+    <div class="card">
+      <div class="card-title">PNR Confirmation Probability and Prediction</div>
+      <div class="card-description">
+        PNR confirmation probability indicates the chances of your waitlisted train ticket getting confirmed. Factors such as weekends, festivals, and cancellations influence this. You can check confirmation chances using the PNR prediction feature on Ticket-Booking website.
+      </div>
+    </div>
+
+    <!-- FAQs Card -->
+    <div class="card faq">
+      <h3>Frequently Asked Questions (FAQs)</h3>
+      <p><b>Q. Where is the PNR number printed on a train ticket?</b><br>
+        A: It is printed on the upper-left-hand side of a train ticket.
+      </p>
+      <p><b>Q. What are the benefits of a PNR Number?</b><br>
+        A: You can order food to your seat, book rooms at railway stations, and more using your PNR number.
+      </p>
+      <p><b>Q. How many days can we check the PNR status?</b><br>
+        A: The PNR is valid for 9 months.
+      </p>
+      <p><b>Q. What happens if my PNR remains waitlisted?</b><br>
+        A: You will receive a refund if your ticket is still waitlisted after chart preparation.
+      </p>
+      <p><b>Q. How can I check my PNR status from my mobile?</b><br>
+        A: Send an SMS with "PNR (10-digit PNR)" to 139 or 5676747 to check.
+      </p>
+      <p><b>Q. Can I check the status of a waitlisted ticket?</b><br>
+        A: Yes, use the Ticket-Booking website
+      </p>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="footer-container">
+    <div class="footer-top">
+      <!-- Add footer content here -->
+      <div class="footer-logo-section">
+        <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo">
+        <p style="color: #b5fdf4;">Affordable adventures, unforgettable memories—explore with ease.</p>
+        <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Links Sections -->
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>HELPFUL LINKS</h4>
+          <ul>
+            <li><a href="#">Help Centre</a></li>
+            <li><a href="#">Special Assistance</a></li>
+            <li><a href="#">Download The App</a></li>
+            <li><a href="#">Booking Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>ABOUT US</h4>
+          <ul>
+            <li><a href="#">Media Center</a></li>
+            <li><a href="#">Investors</a></li>
+            <li><a href="#">Modern Slavery Act</a></li>
+            <li><a href="#">Terms Of Use</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>KEEPING SAFE</h4>
+          <ul>
+            <li><a href="#">ATOL Protected</a></li>
+            <li><a href="#">Travel Aware</a></li>
+            <li><a href="#">FCDO Travel Advice</a></li>
+            <li><a href="#">ABTA</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>FIND US</h4>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Group Cookie Notice</a></li>
+            <li><a href="#">Privacy And Policy</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Links Section -->
+    <div class="footer-bottom">
+      <ul>
+        <li><a href="#">Holiday Type</a></li>
+        <li><a href="#">Holiday Deals</a></li>
+        <li><a href="#">Popular Counters</a></li>
+        <!-- <li><a href="#">Flight Only</a></li> -->
+        <li><a href="tophotels.html">Top Hotels</a></li>
+      </ul>
+    </div>
+
+    </div>
+  </footer>
+</body>
+
+</html>

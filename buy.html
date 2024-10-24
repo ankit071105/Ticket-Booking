@@ -558,109 +558,110 @@ input[type="text"], select {
       background-color: #e33e3e;
     }
 
-    .modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 1000;
-}
+ .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
 
-.modal-content {
-    background-color: white;
-    margin: 5% auto;
-    padding: 20px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 600px;
-    position: relative;
-}
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+        }
 
-.close-modal {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-size: 24px;
-    cursor: pointer;
-    color: #333;
-}
+        .close-modal {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+        }
 
-/* Seat selection styles */
-.seat-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 20px;
-}
+        /* Seat selection styles */
+        .seat-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
 
-.seat-row {
-    display: flex;
-    gap: 10px;
-}
+        .seat-row {
+            display: flex;
+            gap: 10px;
+        }
 
-.seat-group {
-    display: flex;
-    gap: 10px;
-}
+        .seat-group {
+            display: flex;
+            gap: 10px;
+        }
 
-.seat-group:first-child {
-    margin-right: 20px;
-}
+        .seat-group:first-child {
+            margin-right: 20px;
+        }
 
-.seat {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-}
+        .seat {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
 
-.seat.available {
-    background-color: #ccc;
-}
+        .seat.available {
+            background-color: #ccc;
+        }
 
-.seat.selected {
-    background-color: #4CAF50;
-    color: white;
-}
+        .seat.selected {
+            background-color: #4CAF50;
+            color: white;
+        }
 
-.seat.reserved {
-    background-color: #2196F3;
-    color: white;
-    cursor: not-allowed;
-}
+        .seat.reserved {
+            background-color: #2196F3;
+            color: white;
+            cursor: not-allowed;
+        }
 
-.seat.booked {
-    background-color: #f44336;
-    color: white;
-    cursor: not-allowed;
-}
+        .seat.booked {
+            background-color: #f44336;
+            color: white;
+            cursor: not-allowed;
+        }
 
-.legend {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
 
-.legend-item {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
 
-.legend-color {
-    width: 20px;
-    height: 20px;
-    border-radius: 3px;
-}
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+        }
+    
   </style>
 </head>
 
@@ -668,83 +669,71 @@ input[type="text"], select {
   <div class="container">
     <div class="left-section">
       <img src="https://media.baamboozle.com/uploads/images/69685/1649835621_1981612_gif-url.gif" class="bus-img" alt="Moving Bus">
-    </div>
-    <div class="right-section">
-      <h2>Book Your Ticket</h2>
-      <form id="ticketForm">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Enter your name" required>
         </div>
-        <div class="form-group">
-          <label for="ticketType">Select ticket type</label>
-          <select id="ticketType" name="ticketType" required>
-            <option value="">Select Ticket Type</option>
-            <option value="Bus">Bus ticket</option>
-            <option value="Train">Train ticket</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="journeyDate">Date of Journey</label>
-          <input type="date" id="journeyDate" name="journeyDate" required>
-        </div>
-        <div class="form-group">
-          <label for="journeyTime">Time of Journey</label>
-          <input type="time" id="journeyTime" name="journeyTime" required>
-        </div>
-        <div class="form-group">
-          <label for="departure">Departure</label>
-          <input type="text" id="departure" name="departure" placeholder="From" required>
-        </div>
-        <div class="form-group">
-          <label for="destination">Destination</label>
-          <input type="text" id="destination" name="destination" placeholder="To" required>
-        </div>
-        <!-- Add this before the submit button 
-    <div class="form-group">
-  <label for="seats">Seat Selection</label>
-  <button type="button" id="selectSeatsBtn" style="width: 75%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; background-color: #fff; cursor: pointer;">Select Seats</button>
-</div> --> 
-
-<!-- Add this script at the end of your body tag -->
-
-       <!-- <button onclick="window.location.href='//127.0.0.1:5500/seatselect.html'" class="submit-btn" >
-          Select your seat
-          </button>
-     
-      <a href="seatselect.html" class="submit-btn" style="text-align:center;text-decoration:"none >select your seat</a> -->
-      <button type="button" id="selectSeatsBtn" class="submit-btn" style="margin-bottom: 10px;">Select Seats</button>
-        <button type="submit" class="submit-btn">Check Availability</button>
- 
-      </form>
-      <div id="seatModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2 style="text-align: center;">Select Your Seat</h2>
-            <div class="seat-container" id="seatContainer">
-                <!-- Seats will be generated here by JavaScript -->
-            </div>
-            <button class="submit-btn" id="confirmSeatsBtn">Confirm Seats</button>
-            <div class="legend">
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: #ccc;"></div>
-                    Available
+        <div class="right-section">
+            <h2>Book Your Ticket</h2>
+            <form id="ticketForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
                 </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: #4CAF50;"></div>
-                    Selected
+                <div class="form-group">
+                    <label for="ticketType">Select ticket type</label>
+                    <select id="ticketType" name="ticketType" required>
+                        <option value="">Select Ticket Type</option>
+                        <option value="Bus">Bus ticket</option>
+                        <option value="Train">Train ticket</option>
+                    </select>
                 </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: #2196F3;"></div>
-                    Reserved
+                <div class="form-group">
+                    <label for="journeyDate">Date of Journey</label>
+                    <input type="date" id="journeyDate" name="journeyDate" required>
                 </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: #f44336;"></div>
-                    Booked
+                <div class="form-group">
+                    <label for="journeyTime">Time of Journey</label>
+                    <input type="time" id="journeyTime" name="journeyTime" required>
+                </div>
+                <div class="form-group">
+                    <label for="departure">Departure</label>
+                    <input type="text" id="departure" name="departure" placeholder="From" required>
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <input type="text" id="destination" name="destination" placeholder="To" required>
+                </div>
+                <button type="button" id="selectSeatsBtn" class="submit-btn" style="margin-bottom: 10px;">Select Seats</button>
+                <button type="submit" class="submit-btn">Check Availability</button>
+            </form>
+            
+            <!-- Seat Selection Modal -->
+            <div id="seatModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h2 style="text-align: center;">Select Your Seat</h2>
+                    <div class="seat-container" id="seatContainer">
+                        <!-- Seats will be generated here by JavaScript -->
+                    </div>
+                    <button class="submit-btn" id="confirmSeatsBtn">Confirm Seats</button>
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: #ccc;"></div>
+                            Available
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: #4CAF50;"></div>
+                            Selected
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: #2196F3;"></div>
+                            Reserved
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: #f44336;"></div>
+                            Booked
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div> 
     </div>
   </div>
 <style>
@@ -1001,102 +990,101 @@ if (darkModeToggle) {
     <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
     <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
     <script src="chatbot.js"></script>
-    <script>
-      // Modal functionality
-      const modal = document.getElementById('seatModal');
-      const selectSeatsBtn = document.getElementById('selectSeatsBtn');
-      const closeModal = document.querySelector('.close-modal');
-      const confirmSeatsBtn = document.getElementById('confirmSeatsBtn');
-      const seatContainer = document.getElementById('seatContainer');
-      let selectedSeats = [];
-      
-      // Show modal when Select Seats button is clicked
-      selectSeatsBtn.onclick = function() {
-          modal.style.display = 'block';
-      }
-      
-      // Close modal when X is clicked
-      closeModal.onclick = function() {
-          modal.style.display = 'none';
-      }
-      
-      // Close modal when clicking outside
-      window.onclick = function(event) {
-          if (event.target == modal) {
-              modal.style.display = 'none';
-          }
-      }
-      
-      // Seat selection functionality
-      const rows = 5;
-      const seatsPerRow = 4;
-      const reservedSeats = ['1B', '3C', '4A'];
-      const bookedSeats = ['2D', '3A', '5B'];
-      
-      function generateSeats() {
-          seatContainer.innerHTML = ''; // Clear existing seats
-          for (let i = 0; i < rows; i++) {
-              const row = document.createElement('div');
-              row.className = 'seat-row';
-              
-              const group1 = document.createElement('div');
-              group1.className = 'seat-group';
-              const group2 = document.createElement('div');
-              group2.className = 'seat-group';
-      
-              for (let j = 0; j < seatsPerRow; j++) {
-                  const seat = document.createElement('div');
-                  const seatNumber = `${i + 1}${String.fromCharCode(65 + j)}`;
-                  seat.textContent = seatNumber;
-      
-                  if (reservedSeats.includes(seatNumber)) {
-                      seat.className = 'seat reserved';
-                  } else if (bookedSeats.includes(seatNumber)) {
-                      seat.className = 'seat booked';
-                  } else {
-                      seat.className = 'seat available';
-                      seat.addEventListener('click', () => toggleSeat(seat, seatNumber));
-                  }
-      
-                  if (j < 2) {
-                      group1.appendChild(seat);
-                  } else {
-                      group2.appendChild(seat);
-                  }
-              }
-      
-              row.appendChild(group1);
-              row.appendChild(group2);
-              seatContainer.appendChild(row);
-          }
-      }
-      
-      function toggleSeat(seat, seatNumber) {
-          if (seat.classList.contains('available')) {
-              seat.classList.remove('available');
-              seat.classList.add('selected');
-              selectedSeats.push(seatNumber);
-          } else if (seat.classList.contains('selected')) {
-              seat.classList.remove('selected');
-              seat.classList.add('available');
-              selectedSeats = selectedSeats.filter(s => s !== seatNumber);
-          }
-      }
-      
-      // Initialize seats when modal opens
-      selectSeatsBtn.addEventListener('click', generateSeats);
-      
-      // Handle seat confirmation
-      confirmSeatsBtn.addEventListener('click', () => {
-          if (selectedSeats.length > 0) {
-              alert(`You have selected seats: ${selectedSeats.join(', ')}\nYour seats are confirmed!`);
-              modal.style.display = 'none'; // Close modal after confirmation
-              selectedSeats = []; // Reset selected seats
-          } else {
-              alert('Please select at least one seat before confirming.');
-          }
-      });
-      </script>
+  <script>
+  const modal = document.getElementById('seatModal');
+        const selectSeatsBtn = document.getElementById('selectSeatsBtn');
+        const closeModal = document.querySelector('.close-modal');
+        const confirmSeatsBtn = document.getElementById('confirmSeatsBtn');
+        const seatContainer = document.getElementById('seatContainer');
+        let selectedSeats = [];
+        
+        // Show modal when Select Seats button is clicked
+        selectSeatsBtn.onclick = function() {
+            modal.style.display = 'block';
+        }
+        
+        // Close modal when X is clicked
+        closeModal.onclick = function() {
+            modal.style.display = 'none';
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+        
+        // Seat selection functionality
+        const rows = 5;
+        const seatsPerRow = 4;
+        const reservedSeats = ['1B', '3C', '4A'];
+        const bookedSeats = ['2D', '3A', '5B'];
+        
+        function generateSeats() {
+            seatContainer.innerHTML = ''; // Clear existing seats
+            for (let i = 0; i < rows; i++) {
+                const row = document.createElement('div');
+                row.className = 'seat-row';
+                
+                const group1 = document.createElement('div');
+                group1.className = 'seat-group';
+                const group2 = document.createElement('div');
+                group2.className = 'seat-group';
+        
+                for (let j = 0; j < seatsPerRow; j++) {
+                    const seat = document.createElement('div');
+                    const seatNumber = `${i + 1}${String.fromCharCode(65 + j)}`;
+                    seat.textContent = seatNumber;
+        
+                    if (reservedSeats.includes(seatNumber)) {
+                        seat.className = 'seat reserved';
+                    } else if (bookedSeats.includes(seatNumber)) {
+                        seat.className = 'seat booked';
+                    } else {
+                        seat.className = 'seat available';
+                        seat.addEventListener('click', () => toggleSeat(seat, seatNumber));
+                    }
+        
+                    if (j < 2) {
+                        group1.appendChild(seat);
+                    } else {
+                        group2.appendChild(seat);
+                    }
+                }
+        
+                row.appendChild(group1);
+                row.appendChild(group2);
+                seatContainer.appendChild(row);
+            }
+        }
+        
+        function toggleSeat(seat, seatNumber) {
+            if (seat.classList.contains('available')) {
+                seat.classList.remove('available');
+                seat.classList.add('selected');
+                selectedSeats.push(seatNumber);
+            } else if (seat.classList.contains('selected')) {
+                seat.classList.remove('selected');
+                seat.classList.add('available');
+                selectedSeats = selectedSeats.filter(s => s !== seatNumber);
+            }
+        }
+        
+        // Initialize seats when modal opens
+        selectSeatsBtn.addEventListener('click', generateSeats);
+        
+        // Handle seat confirmation
+        confirmSeatsBtn.addEventListener('click', () => {
+            if (selectedSeats.length > 0) {
+                alert(`You have selected seats: ${selectedSeats.join(', ')}\nYour seats are confirmed!`);
+                modal.style.display = 'none'; // Close modal after confirmation
+                selectedSeats = []; // Reset selected seats
+            } else {
+                alert('Please select at least one seat before confirming.');
+            }
+        });
+  </script>
   </body>
 
 </html>

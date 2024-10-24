@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Booking</title>
+    <link rel="shortcut icon" href="images/4.jpeg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="footer.css"> 
+    <link rel="stylesheet" href="faq.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="why-us.css">
+   <!-- this is for twitter icons -->
+    <script src="https://kit.fontawesome.com/3d20c433e1.js" crossorigin="anonymous"></script>
+
+    <style>
+           /* cursor */
+           body{
+  cursor: none;
+}
+
+
+.circle {
+  height: 24px;
+  width: 24px;
+  border-radius: 24px;
+  background-color: black;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999999; /* so that it stays on top of all other elements */
+}
+
+/* cursor */
+        
+        @import url("https://fonts.googleapis.com/css2?family=Shippori+Antique&display=swap");
+
+        .close-btn {
+        position: absolute;
+        top: -10px;
+        right: -10px; 
+        width: 25px;
+        height: 25px;
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+        background-color: #1f2937;
+        border: 2px solid white; 
+        border-radius: 50%; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        box-sizing: border-box; 
+    }
+    .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background: #1fb899; /* You can change this color */
+    width: 0;
+    transition: width 0.1s ease-in-out;
+    z-index: 9999; /* Make sure it's above other content */
+}
+
+    .toggle-arrow {
+        position: fixed;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease-in-out;
+        background-color: #1fb899;
+        padding: 5px;
+        border-radius: 0 10px 10px 0;
+        cursor: pointer;
+        color: white;
+        font-size: 25px;
+        padding: 12px;
+    }
+
+    .social-sidebar {
+        position: fixed;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background-color: #1fb899;
+        padding: 8px;
+        border-radius: 0 10px 10px 0;
+        border: none;
+        transition: background-color 0.3s ease, transform 0.3s ease; 
+        z-index: 1;
+    }
+
+    .social-sidebar ul{
+        list-style: none;
+        margin: 0;
+    }
+
+    .social-sidebar li {
+        display: block;    
+        margin: 12px 0;        
+        position: relative;  
+    }
+
+    .social-sidebar a {
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        padding: 10px;
+        transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        border: none;
+        border-bottom: none;
+        border-radius: 50%;
+        display: flex;              
+        justify-content: center;   
+        align-items: center;      
+        width: 40px;   
+        height: 40px; 
+        margin: 0 10px;
+    }
+
+        .social-sidebar a:hover i {
+            transform: scale(1);
+        }
+
+    .social-sidebar li a:hover {
+        background-color: #ffffff;
+        border-radius: 50%;
+        color: #1f2937;
+        transform: scale(1.1);
+    }
+
+    .social-sidebar i {
+        display: inline-block;
+        transition: transform 0.3s ease-in-out; 
+    }
+
+    .social-sidebar a:hover i {
+        transform: scale(1.1);
+    }
+
+    .ticket-list{
+        size: 2px;
+    }
+    /* code for bottom to to nav  */
+
+    #myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color:#1fb899;
+    color: white;
+    cursor: pointer;
+    padding: 10px 6px;
+    border-radius: 4px;
+    width: 40px !important;
+    height: 40px !important;
+    }
+
+    #myBtn:hover {
+    background-color: #4cc6ad;
+    }
+    
+    /* code for bottom to to nav  */
+
+        .close-btn {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 25px;
+            height: 25px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            background-color: black;
+            border: 2px solid white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+
+        }
+
+        
+        .toggle-arrow {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background-color: #1fb899;
+            padding: 5px;
+            border-radius: 0 10px 10px 0;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+        }
+        
+
+/* Navigation Buttons */
+.nav-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10; /* Make sure buttons are above other elements */
+}
+
+.prev, .next {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 1); /* Solid background on hover */
+}
+
+/* Optional: Responsive design */
+@media (max-width: 768px) {
+    .slider {
+        height: 250px; /* Adjust height for smaller screens */
+    }
+}
+
+
+        .social-sidebar {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+
+            background-color: #1fb899;
+            padding: 5px;
+            border-radius: 0 10px 10px 0;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+        }
+
+        .social-sidebar {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background-color: #1fb899;
+            padding: 8px;
+            border-radius: 0 10px 10px 0;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-sidebar a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+            transition: background-color 0.6s ease, transform 0.3s ease;
+            border: none;
+            border-bottom: none;
+            border-radius: 5px;
+        }
+
+        .social-sidebar a:hover {
+            background-color: #ffffff;
+            border-radius: 50%;
+            color: black;
+            transform: scale(1.1);
+        }
+
+        .social-sidebar i {
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .social-sidebar a:hover i {
+            transform: scale(1);
+        }
+
+
+        /* code for bottom to to nav  */
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #1fb899;
+            color: white;
+            cursor: pointer;
+            padding: 10px 6px;
+            border-radius: 4px;
+            width: 40px !important;
+            height: 40px !important;
+        }
+
+        #myBtn:hover {
+            background-color: #4cc6ad;
+        }
+
+        /* code for bottom to to nav  */
+
+        .home {
+      text-align: center;
+  }
+
+
+        /* code for chatbot button */
+        #chatbotBtn {
+            position: fixed;
+            bottom: 65px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            /* background-color: #1fb899; */
+            background-image: url('./images/bot.jpg');
+            background-size: cover;
+            background-position: center;
+            border: none;
+            padding: 0;
+            color: white;
+            cursor: pointer;
+            /* padding: 10px 6px; */
+            width: 50px !important;
+            height: 50px !important;
+            border-radius: 100%;
+        }
+        
+        .chatbot-container {
+            display: none;
+            width: 370px;
+            max-width: 100%;
+            position: fixed;
+            bottom: 75px;
+            right: 30px;
+            margin: 50px auto;
+            padding: 20px;
+            z-index: 1001;
+            border-radius: 10px;
+            box-shadow: #64646f33 0px 7px 29px 0px;
+            background: #31363F;
+        }
+
+        .chatbot-container.chatbot-show {
+            display: block;
+        }
+
+        .chatbot-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #edf1f3;
+        }
+
+        .chatbot-chat {
+            height: 250px;
+            overflow-y: scroll;
+            margin: 20px 0;
+            padding: 10px;
+            border: 2px solid #545250;
+            border-radius: 5px;
+            background: #222831;
+        }
+
+        .chatbot-message {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .chatbot-user {
+            justify-content: flex-end;
+        }
+
+        .chatbot-bot {
+            justify-content: flex-start;
+        }
+
+        .chatbot-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 0 10px;
+        }
+
+        .chatbot-user .chatbot-avatar {
+            order: 2;
+            background: url("./images/avatar.jpg");
+            background-size: cover;
+        }
+
+        .chatbot-bot .chatbot-avatar {
+            order: 1;
+            background: url("./images/bot.jpg");
+            background-size: cover;
+        }
+
+        .chatbot-text {
+            max-width: 70%;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 12px;
+            color: white;
+        }
+
+        .chatbot-user .chatbot-text {
+            background: #4a4d52;
+        }
+
+        .chatbot-bot .chatbot-text {
+            background: #8c8c8e;
+        }
+
+        .chatbot-input {
+            position: relative;
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #cbcbce;
+            border-radius: 5px;
+            outline: none;
+            font-size: 15px;
+        
+        }
+
+        .chatbot-input:focus {
+            border-color: #8296d0;
+            color: #1e1f1f;
+        }
+
+        .chatbot-button {
+            position: absolute;
+            width: 80px;
+            border: none;
+            border-radius: 0%;
+            padding: 1px;
+            background: #31363F;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: -1.02rem;
+            margin-left: -4.1rem;
+            outline: none;
+            border-radius: 100%;
+        }
+        .chatbot-button i{
+        font-size: 3rem;
+        }
+        .chatbot-button:hover {
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .chatbot-chat::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .chatbot-chat::-webkit-scrollbar-thumb {
+            background: #bcbdc0;
+            border-radius: 10px;
+        }
+        /* chatbot css end */
+
+    
+    </style>
+
+  
+</head>
+<body>
+    
+    <!-- cursor -->
+    
+    <div class="cursor"></div>
+    <div class="cursor-trail"></div>
+
+    
+
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <!-- cursor -->
+
+    <body>
+        <div id="scrollProgressBar" class="progress-bar"></div>
+        <!-- Your existing content goes here -->
+    </body>
+    <div class="gtranslate_wrapper"></div>
+    <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
+    <button onclick="moveToTop()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"
+            aria-hidden="true"></i></button>
+    <!--chat bot-->
+    <button onclick="toggleChatbot()" id="chatbotBtn" title="chat bot"></button>
+    
+    <div class="chatbot-container" id="chatbot-container">
+        <div class="chatbot-title">Ticket Bot</div>
+        <div class="chatbot-chat" id="chatbot-chat"></div>
+        <input type="text" class="chatbot-input" id="chatbot-input" placeholder="Type your message here...." />
+        <button class="chatbot-button" id="chatbot-button"><i class="fa-brands fa-telegram"></i></button>
+      </div>
+      <nav class="navbar">
+        <a href="./index.html" id="logo-href">
+            <div class="logo-container">
+                <img src="images/4.jpeg" alt="Ticket Booking Logo" class="logo-image">
+                <div class="logo">Ticket Booking</div>
+            </div>
+        </a>
+    
+        <div class="nav-container">
+            <div class="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+    
+            <ul class="nav-links">
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li><a href="buy.html"><i class="fas fa-shopping-cart"></i> Buy</a></li>
+                <li><a href="sell.html"><i class="fas fa-tag"></i> Sell</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="./contributor/contributor.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+
+                <li><a href="/client/register.html" class="login-btn"><i class="fas fa-user"></i></a></li>
+
+		      <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+            </ul>
+    
+        </div>
+    </nav>
+
+    <div class="social-sidebar">
+        <div class="close-btn" onclick="toggleSidebar()" title="Close Sidebar">&times;</div>
+        <ul>
+            <li><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-meta"></i></a></li>
+            <li><a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
+            <li><a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+        </ul>
+
+    </div>
+    <div class="toggle-arrow" onclick="toggleSidebar()" title="Open Sidebar" style="display: none;">
+        <i class="fas fa-arrow-right"></i>
+    </div>
+
+    <div class="container">
+        <h1 class="main-heading">Top Hotels</h1>
+        <h2 class="sub-heading">Explore Our Exclusive Selections</h2>
+
+        <div class="hotel-container">
+            <div class="hotel-card">
+                <a href="https://www.google.com/maps/place/The+Leela+Palace,+New+Delhi/@28.5798662,76.6125484,10z/data=!4m17!1m5!2m4!1s4+and+5+star+hotel+in+india!5m2!5m1!1s2024-11-02!3m10!1s0x390d1d606f974797:0xa39df204f5d2d7f7!5m3!1s2024-11-02!4m1!1i2!8m2!3d28.5798662!4d77.1893306!15sChs0IGFuZCA1IHN0YXIgaG90ZWwgaW4gaW5kaWFaHSIbNCBhbmQgNSBzdGFyIGhvdGVsIGluIGluZGlhkgEFaG90ZWyaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVTm9NSE5EYVc5blJSQULgAQA!16s%2Fg%2F11bc745z_5?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                    <img src="https://lh5.googleusercontent.com/p/AF1QipNWtGI-mHhuiaEGEjv0RyBBJI9kteedg7CYDrVw=w408-h279-k-no" alt="hotel 1">
+                    <p class="title">The Leela Palace</p>
+                    <div class="rating-container">
+                        <span class="rating-label">Rating:</span>
+                        <span class="rating">★★★★☆</span>
+                    </div>
+                </a>
+                <div class="ribbon">New Delhi</div>
+            </div>
+            <div class="hotel-card">
+                <a href="https://www.google.com/maps/place/The+Oberoi+Udaivilas,+Udaipur/@24.5773827,73.095659,10z/data=!4m17!1m5!2m4!1s4+and+5+star+hotel+in+india!5m2!5m1!1s2024-11-02!3m10!1s0x396ccf804ea9e2f3:0x21eb806bf9fc7e9a!5m3!1s2024-11-02!4m1!1i2!8m2!3d24.5773827!4d73.6724412!15sChs0IGFuZCA1IHN0YXIgaG90ZWwgaW4gaW5kaWFaHSIbNCBhbmQgNSBzdGFyIGhvdGVsIGluIGluZGlhkgEMcmVzb3J0X2hvdGVs4AEA!16s%2Fg%2F11cs5rwk93?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                    <img src="https://lh5.googleusercontent.com/p/AF1QipMuXeRSEy6AIfsfaADUJ0WavsP_oJVDRIvrFraH=w408-h271-k-no" alt="hotel 2">
+                    <p class="title">The Oberoi Udaivilas</p>
+                    <div class="rating-container">
+                        <span class="rating-label">Rating:</span>
+                        <span class="rating">★★★★★</span>
+                    </div>
+                </a>
+                <div class="ribbon">Udaipur</div>
+            </div>
+            <div class="hotel-card">
+                <a href="https://www.google.com/maps/place/Fortune+Inn+Riviera+Jammu/@32.724139,74.7170965,12z/data=!4m17!1m5!2m4!1s+hotels+in+jammu!5m2!5m1!1s2024-11-02!3m10!1s0x391e84bf178afa2b:0xcb86a72fb612b894!5m3!1s2024-11-02!4m1!1i2!8m2!3d32.724139!4d74.8612921!15sCg9ob3RlbHMgaW4gamFtbXWSAQVob3RlbOABAA!16s%2Fg%2F11b6d82y9j?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                    <img src="https://lh5.googleusercontent.com/p/AF1QipOmC6c5-7l4LNK9vIWzL6848wB0thyq3d9XDKlA=w408-h272-k-no" alt="hotel 3">
+                    <p class="title">Fortune Inn Riviera</p>
+                    <div class="rating-container">
+                        <span class="rating-label">Rating:</span>
+                        <span class="rating">★★★★☆</span>
+                    </div>
+                </a>
+                <div class="ribbon">Jammu</div>
+            </div>
+            <div class="hotel-card">
+                <a href="https://www.google.com/maps/place/The+Fern+Residency,+Haridwar/@29.5342499,74.5861836,7z/data=!4m17!1m5!2m4!1s+hotels+in+uttarakhand!5m2!5m1!1s2024-11-02!3m10!1s0x390946fd903fe79b:0x98fd85e52549fd33!5m3!1s2024-11-02!4m1!1i2!8m2!3d29.9987657!4d78.1899051!15sChVob3RlbHMgaW4gdXR0YXJha2hhbmSSAQVob3RlbOABAA!16s%2Fg%2F11b63crs9y?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                    <img src="https://lh5.googleusercontent.com/p/AF1QipMJ2TdhHxCMRE5KxDKRskZapSViedcBiutYaOS1=w427-h240-k-no" alt="hotel 4">
+                    <p class="title">The Fern Residency</p>
+                    <div class="rating-container">
+                        <span class="rating-label">Rating:</span>
+                        <span class="rating">★★★★☆</span>
+                    </div>
+                </a>
+                <div class="ribbon">Haridwar</div>
+            </div>
+            <div class="hotel-card">
+                <a href="https://www.google.com/maps/place/The+Fern+Habitat,+Candolim,+Goa/@15.5475942,72.6065253,9z/data=!4m17!1m5!2m4!1s+hotels+in+goa!5m2!5m1!1s2024-11-02!3m10!1s0x3bbfc17b48526885:0x2c4480d2aead4bfe!5m3!1s2024-11-02!4m1!1i2!8m2!3d15.5244146!4d73.7681676!15sCg1ob3RlbHMgaW4gZ29hkgEMcmVzb3J0X2hvdGVs4AEA!16s%2Fg%2F11scgdchwf?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                    <img src="https://lh5.googleusercontent.com/p/AF1QipP9hETuU503Soy1OTdpv4tQWfXTOtGcCi4cal8=w408-h272-k-no" alt="hotel 5">
+                    <p class="title">The Fern Habitat</p>
+                    <div class="rating-container">
+                        <span class="rating-label">Rating:</span>
+                        <span class="rating">★★★★★</span>
+                    </div>
+                </a>
+                <div class="ribbon">Goa</div>
+            </div>
+            <div class="hotel-card">
+                <a href="https://www.google.com/maps/place/Ramada+by+Wyndham+Kochi/@10.3608615,73.4041298,7z/data=!4m17!1m5!2m4!1s+hotels+in+kerala!5m2!5m1!1s2024-11-02!3m10!1s0x3b08722aa8eb0245:0xa76954cc3b5f3f31!5m3!1s2024-11-02!4m1!1i2!8m2!3d9.8883299!4d76.3166286!15sChBob3RlbHMgaW4ga2VyYWxhkgEMcmVzb3J0X2hvdGVs4AEA!16s%2Fg%2F1tjys11m?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                    <img src="https://lh5.googleusercontent.com/p/AF1QipMoF0Pcfgad5q86HhY-AzYalehVyj0CKmCyqeAN=w408-h272-k-no" alt="hotel 6">
+                    <p class="title">Ramada</p>
+                    <div class="rating-container">
+                        <span class="rating-label">Rating:</span>
+                        <span class="rating">★★★★☆</span>
+                    </div>
+                </a>
+                <div class="ribbon">Kerala</div>
+            </div>
+            <div class="hotel-card">
+                <a href="https://www.google.com/maps/place/ITC+Maratha,+a+Luxury+Collection+Hotel,+Mumbai/@19.0674785,70.5619123,8z/data=!3m1!5s0x3be7c847bf2e03d5:0x8c4af0f70670d12b!4m17!1m5!2m4!1shotels+in+Maharashtra!5m2!5m1!1s2024-11-02!3m10!1s0x3be7c8412eabd40d:0x24090700409101ee!5m3!1s2024-11-02!4m1!1i2!8m2!3d19.1039375!4d72.8696875!15sChVob3RlbHMgaW4gTWFoYXJhc2h0cmFaFyIVaG90ZWxzIGluIG1haGFyYXNodHJhkgEFaG90ZWzgAQA!16s%2Fg%2F1thvfdj8?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                    <img src="https://lh3.googleusercontent.com/gps-proxy/ALd4DhEFK_B7S71dFqGNIFdwqaUhWDxO9Ubf9kE41PeZl-TvIh49m5eUYXmrUmWOvqVK5glAaC3OXiEHf1ZczN6WaC7DUJurqyVFjkjQDu3aDnghBTS9IsDEoA5HDLlVrAgwvE9juwF5etWS9MLQvt0JR29XDOZSfs1LNYl4cxblrVc7GUZTPTPtsq5s=w507-h240-k-no" alt="hotel 7">
+                    <p class="title">ITC Maratha</p>
+                    <div class="rating-container">
+                        <span class="rating-label">Rating:</span>
+                        <span class="rating">★★★★★</span>
+                    </div>
+                </a>
+                <div class="ribbon">Mumbai</div>
+            </div>
+            <div class="hotel-card">
+                <a href="https://www.google.com/maps/place/Summit+Namnang+Courtyard+%26+Spa,+Gangtok/@27.2563642,88.35354,11z/data=!4m17!1m5!2m4!1shotels+in+sikkim!5m2!5m1!1s2024-11-02!3m10!1s0x39e6a512230caaa7:0x9f26c98b0c9778e0!5m3!1s2024-11-02!4m1!1i2!8m2!3d27.3213131!4d88.6100784!15sChBob3RlbHMgaW4gc2lra2ltkgEFaG90ZWzgAQA!16s%2Fg%2F11clgwlht9?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                    <img src="https://lh3.googleusercontent.com/gps-proxy/ALd4DhEZIR_h-EDUk5FUQAl3OIJSD6bkKuH7zrQrCjTtkwN6h2QT3P_srP2CB8ePohR7EK8cOD4YtAs5R1vcaaESVvm3KUfFN2Xe-UspFN2KbVbuoEyHOTouA5sVvFcLf1aPS4ZabmlITXiU5ZDLc8Gyn1fuz_9R4NlTjuUhcJTwq9aE9dTqNEtqj5WZ=w408-h272-k-no" alt="hotel 8">
+                    <p class="title">Summit Namnang</p>
+                    <div class="rating-container">
+                        <span class="rating-label">Rating:</span>
+                        <span class="rating">★★★★☆</span>
+                    </div>
+                </a>
+                <div class="ribbon">Gangtok</div>
+            </div>
+            <div class="hotel-card">
+                <a href="https://google.com/maps/place/Taj+Exotica+Resort+%26+Spa,+Andamans/@11.8211064,92.4840287,10z/data=!4m17!1m5!2m4!1shotels+in+andaman!5m2!5m1!1s2024-11-02!3m10!1s0x3088d214eadb1bad:0x1daa82ff8dbdd64!5m3!1s2024-11-02!4m1!1i2!8m2!3d11.9839802!4d92.9557078!15sChFob3RlbHMgaW4gYW5kYW1hbloTIhFob3RlbHMgaW4gYW5kYW1hbpIBBWhvdGVs4AEA!16s%2Fg%2F11dxdjbs5t?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                    <img src="https://lh5.googleusercontent.com/p/AF1QipO9ZDrvDI4A8NydGmDJUKMfmHryxByrNB88zDp_=w408-h303-k-no" alt="hotel 9">
+                    <p class="title">Taj Exotica Resort</p>
+                    <div class="rating-container">
+                        <span class="rating-label">Rating:</span>
+                        <span class="rating">★★★★★</span>
+                    </div>
+                </a>
+                <div class="ribbon">Andaman</div>
+            </div>
+            <div class="hotel-card">
+                <a href="https://www.google.com/maps/place/Hyatt+Ahmedabad/@26.3085203,60.8586866,5z/data=!4m17!1m5!2m4!1shotels+in+gujrat!5m2!5m1!1s2024-11-02!3m10!1s0x395e848ac8a8047b:0xb41fbacdf2139ecb!5m3!1s2024-11-02!4m1!1i2!8m2!3d23.0394636!4d72.5305022!15sChBob3RlbHMgaW4gZ3VqcmF0WhIiEGhvdGVscyBpbiBndWpyYXSSAQVob3RlbOABAA!16s%2Fg%2F124ypglyf?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                    <img src="https://lh5.googleusercontent.com/p/AF1QipPfqAsTP2d-LJYjJgiMYvMWZI8kTGVUoILrRfrp=w408-h272-k-no" alt="hotel 10">
+                    <p class="title">Hyatt</p>
+                    <div class="rating-container">
+                        <span class="rating-label">Rating:</span>
+                        <span class="rating">★★★★★</span>
+                    </div>
+                </a>
+                <div class="ribbon">Ahmedabad</div>
+            </div>
+            <div class="hotel-card">
+                <a href="https://www.google.com/maps/place/Hotel+Maurya/@25.6156899,82.8351145,8z/data=!4m17!1m5!2m4!1shotels+in+bihar!5m2!5m1!1s2024-11-02!3m10!1s0x39ed5857d6555555:0xa5e87a1f3059ceb5!5m3!1s2024-11-02!4m1!1i2!8m2!3d25.6156899!4d85.1422434!15sCg9ob3RlbHMgaW4gYmloYXKSAQVob3RlbOABAA!16s%2Fg%2F1tqtw932?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                    <img src="https://lh5.googleusercontent.com/p/AF1QipOvV2MobtDTvtYXKIR1q8MkgANnQ4kc5EyEC7Gq=w408-h271-k-no" alt="hotel 11">
+                    <p class="title">Hotel Maurya</p>
+                    <div class="rating-container">
+                        <span class="rating-label">Rating:</span>
+                        <span class="rating">★★★★☆</span>
+                    </div>
+                </a>
+                <div class="ribbon">Bihar</div>
+            </div>
+            <div class="hotel-card">
+                <a href="https://www.google.com/maps/place/The+Taj+Crown+Hotel+Agra/@27.157492,78.0375259,15z/data=!4m17!1m5!2m4!1sHotel+in+Agra!5m2!5m1!1s2024-11-02!3m10!1s0x39747153701498a7:0x44540c3255398df6!5m3!1s2024-11-02!4m1!1i2!8m2!3d27.157492!4d78.0555503!15sCg1Ib3RlbCBpbiBBZ3JhkgEFaG90ZWzgAQA!16s%2Fg%2F11pkfnjrfz?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                    <img src="https://lh3.googleusercontent.com/gps-proxy/ALd4DhHmdTBVAO8ln6tJEAW4DHLWzR-gHME2nnwPH5liX5PR04KhkNfgs9kC6kYepsZjmO9zI7xqTw9aK74FfOkQTETnFTrLSxuQuqNj6AFHj0vTZUvAVPeePPvLWL7MUXc0gF8HKOwWeV4K26r6W6OrMroP8BHjwXL29iUEbMV5dHjiOhrPjxSVrY-W=w408-h300-k-no" alt="hotel 12">
+                    <p class="title">The Taj Crown Hotel </p>
+                    <div class="rating-container">
+                        <span class="rating-label">Rating:</span>
+                        <span class="rating">★★★★★</span>
+                    </div>
+                </a>
+                <div class="ribbon">Agra</div>
+            </div>
+    
+    </div>        
+
+    <style>
+         body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        .main-heading {
+            text-align: center;
+            font-size: 42px;
+            margin-top: 40px;
+        }
+        .sub-heading{
+            width: 100%; /* Make the subheading full width */
+            text-align: center;
+            margin-top: 0.01px;
+            margin-bottom: 30px; /* Space below the subheading */
+            font-size: 1.2em; /* Subheading font size */
+            color: #666; /* Subheading color */
+        }
+        
+        .rating-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 3px;
+        }
+
+        .rating-label {
+            font-size: 16px;
+            color: #2a9d8f;
+            margin-right: 1px;
+        }
+
+        .rating {
+            font-size: 16px;
+            color: #2a9d8f;
+        }
+
+        .hotel-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ensures responsiveness */
+            gap: 30px;
+            padding: 30px;
+            justify-items: center; /* Centers the cards horizontally */
+        }
+
+        .hotel-card {
+            width: 280px;
+            height: 350px;
+            background-color: #ffedd8;
+            border-radius: 20px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s, box-shadow 0.4s;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hotel-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hotel-card img {
+            width: 100%;
+            height: 257px;
+            object-fit: cover;
+            border-bottom: 5px solid #ffcad4;
+            transition: transform 0.4s ease;
+        }
+
+        .hotel-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .hotel-card p {
+            font-size: 22px;
+            margin: 10px 0 5px;
+            color: #3f3e3e;
+            font-weight: bold;
+        }
+
+        .hotel-card a {
+            text-decoration: none;
+            color: #3f3e3e;
+            display: block;
+            height: 100%;
+        }
+
+        .hotel-card a:hover p {
+            color: brown;
+        }
+
+        .ribbon {
+            position: absolute;
+            top: 15px;
+            left: -27px;
+            width: 120px;
+            height: 30px;
+            background-color: #092143;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            font-size: 14px;
+            font-weight: bold;
+            transform: rotate(-45deg);
+        }
+
+        .hotel-card:hover .ribbon {
+            background-color: brown;
+            transition: background-color 0.4s;
+        }
+
+        .title {
+            margin-top: 60px;
+        }
+
+    </style> 
+
+    <footer class="footer-container">
+        <div class="footer-top">
+          
+          <div class="footer-logo-section">
+            <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo">
+            <p style="color: #b5fdf4;" >Affordable adventures, unforgettable memories—explore with ease.</p>
+            <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
+            
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#" ><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+      
+          
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>HELPFUL LINKS</h4>
+              <ul>
+                <li><a href="#">Help Centre</a></li>
+                <li><a href="#">Special Assistance</a></li>
+                <li><a href="#">Download The App</a></li>
+                <li><a href="#">Booking Conditions</a></li>
+              </ul>
+            </div>
+      
+            <div class="footer-column">
+              <h4>ABOUT US</h4>
+              <ul>
+                <li><a href="#">Media Center</a></li>
+                <li><a href="#">Investors</a></li>
+                <li><a href="#">Modern Slavery Act</a></li>
+                <li><a href="#">Terms Of Use</a></li>
+              </ul>
+            </div>
+      
+            <div class="footer-column">
+              <h4>KEEPING SAFE</h4>
+              <ul>
+                <li><a href="#">ATOL Protected</a></li>
+                <li><a href="#">Travel Aware</a></li>
+                <li><a href="#">FCDO Travel Advice</a></li>
+                <li><a href="#">ABTA</a></li>
+              </ul>
+            </div>
+      
+            <div class="footer-column">
+              <h4>FIND US</h4>
+              <ul>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Group Cookie Notice</a></li>
+                <li><a href="#">Privacy And Policy</a></li>
+                <li><a href="#">Sitemap</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      
+        
+        <div class="footer-bottom">
+          <ul>
+            <li><a href="#">Holiday Type</a></li>
+            <li><a href="#">Holiday Deals</a></li>
+            <li><a href="#">Popular Counters</a></li>
+            <!-- <li><a href="#">Flight Only</a></li> -->
+            <li><a href="tophotels.html">Top Hotels</a></li>
+          </ul>
+        </div>
+      </footer>
+    
+        <script>
+            // cursor
+    
+            const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
+    
+    const colors = [
+    
+      "#BCE954",
+      "#98FF98",
+      "#9CB071",
+      "#90C209",
+      "#B2C248",
+      "#85BB65",
+      "#99C68E",
+      "#6CBB3C",
+      "#3ea055",
+      "#41a317",
+      "#4AA02C",
+      "#6AA121",
+      "#347C2C",
+      "#387C44",
+      "#437C17",
+      "#306754",
+      "#254117",
+      "#667C26",
+      "#728C00",
+      "#008000"
+    
+    ];
+    
+    circles.forEach(function (circle, index) {
+      circle.x = 0;
+      circle.y = 0;
+      circle.style.backgroundColor = colors[index % colors.length];
+    });
+    
+    window.addEventListener("mousemove", function(e){
+      coords.x = e.clientX;
+      coords.y = e.clientY;
+      
+    });
+    
+    function animateCircles() {
+      
+      let x = coords.x;
+      let y = coords.y;
+      
+      circles.forEach(function (circle, index) {
+        circle.style.left = x - 12 + "px";
+        circle.style.top = y - 12 + "px";
+        
+        circle.style.scale = (circles.length - index) / circles.length;
+        
+        circle.x = x;
+        circle.y = y;
+    
+        const nextCircle = circles[index + 1] || circles[0];
+        x += (nextCircle.x - x) * 0.3;
+        y += (nextCircle.y - y) * 0.6;
+      });
+     
+      requestAnimationFrame(animateCircles);
+    }
+    
+    animateCircles();
+            
+            
+            
+    
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.slide');
+    
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (i === index) {
+                        slide.classList.add('active');
+                    }
+                });
+            }
+    
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+    
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+    
+            function toggleSidebar() {
+                const sidebar = document.querySelector('.social-sidebar');
+                const arrow = document.querySelector('.toggle-arrow');
+    
+                if (sidebar.style.display === 'none' || !sidebar.style.display) {
+                    sidebar.style.display = 'flex'; // Show sidebar
+                    arrow.style.display = 'none'; // Hide arrow
+                } else {
+                    sidebar.style.display = 'none'; // Hide sidebar
+                    arrow.style.display = 'block'; // Show arrow
+                }
+            }
+    
+            // Initialize sidebar to be visible on page load
+            document.querySelector('.social-sidebar').style.display = 'flex';
+    
+    
+            setInterval(nextSlide, 5000);
+            showSlide(currentSlide);
+    
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const body = document.querySelector('body');
+            if (darkModeToggle) {
+                darkModeToggle.addEventListener('click', () => {
+                    document.body.classList.toggle('dark-mode');
+                    if (body.classList.contains('dark-mode')) {
+                        darkModeToggle.innerHTML = "🔆";
+                    }
+                    else {
+                        darkModeToggle.innerHTML = "🌙";
+                    }
+                });
+            }
+            // change icon of the dark/light mode
+    
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+                // Special effect for hamburger icon
+                const bars = menuToggle.querySelectorAll('.bar');
+                bars.forEach((bar, index) => {
+                    if (menuToggle.classList.contains('active')) {
+                        bar.style.transform = index === 1 ? 'scale(0)' : `rotate(${index === 0 ? '45deg' : '-45deg'})`;
+                    } else {
+                        bar.style.transform = 'none';
+                    }
+                });
+            });
+    
+            // Close menu when clicking outside
+            document.addEventListener('click', (event) => {
+                if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+                    navLinks.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    menuToggle.querySelectorAll('.bar').forEach(bar => {
+                        bar.style.transform = 'none';
+                    });
+                }
+            });
+    
+            // When the user scrolls down 100px from the top, show the button
+    
+            window.onscroll = function () { scrollFunction() };
+    
+            function scrollFunction() {
+                const topBtn = document.getElementById("topBtn");
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    topBtn.style.display = "block"; // Show button
+                } else {
+                    topBtn.style.display = "none"; // Hide button
+                }
+            }
+    
+            // When the user clicks on the button, scroll to the top of the document
+            function moveToTop() {
+                window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
+            }
+    
+            // script for faq section
+    
+            document.querySelectorAll('.faq-question').forEach(button => {
+                button.addEventListener('click', () => {
+                    const answer = button.nextElementSibling;
+                    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+    
+                    document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+                    document.querySelectorAll('.faq-question').forEach(q => q.setAttribute('aria-expanded', 'false'));
+    
+                    if (!isExpanded) {
+                        answer.style.display = 'block';
+                        button.setAttribute('aria-expanded', 'true');
+                    }    
+                })       
+            });
+    
+            window.onscroll = function() { 
+               scrollFunction() 
+             };
+    
+            function scrollFunction() {
+            const topBtn = document.getElementById("topBtn");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                topBtn.style.display = "block"; // Show button
+            } else {
+                topBtn.style.display = "none"; // Hide button
+            }
+            }
+               function moveToTop() {
+                window.scrollTo({ 
+                    top: 0, 
+                    behavior: 'smooth' 
+                }); 
+            }
+    
+            document.querySelectorAll('details').forEach((faq) => {
+                faq.addEventListener('toggle', function() {
+                    const content = this.querySelector('p');
+                    if (this.open) {
+                        content.style.height = '0px';
+                        content.style.transition = 'height 0.2s ease-out';
+                        content.style.height = content.scrollHeight + 'px'; // Sets the height based on the actual content
+                    } else {
+                        content.style.height = content.scrollHeight + 'px'; // Height is set to the current scrollHeight
+                        setTimeout(() => {
+                            content.style.height = '0px'; // Collapses after the content has been shown
+                        }, 10); // Delay to allow height to adjust first
+    
+                    }
+                });
+            });
+    
+    
+    
+    
+            let mybutton = document.getElementById("myBtn");
+    
+            window.onscroll = function () { scrollFunction() };
+            window.onscroll = function() {
+                scrollFunction()
+            };
+    
+    
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+    
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+    
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+    
+        // toggle chatbot function
+        function toggleChatbot() {
+            const chatbotContainer = document.getElementById("chatbot-container");
+            chatbotContainer.classList.toggle("chatbot-show");
+        }
+    
+        window.addEventListener('scroll', () => {
+        const scrollProgressBar = document.getElementById('scrollProgressBar');
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progressHeight = (window.scrollY / totalHeight) * 100;
+        scrollProgressBar.style.width = progressHeight + '%';
+    });
+    
+        </script>
+    
+        <script src="app.js"></script>
+    
+    </body>
+    
+    </html>
+    
+        <script src="chatbot.js"></script>
+    </body>
+    
+    </html>

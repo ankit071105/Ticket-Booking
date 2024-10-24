@@ -26,7 +26,6 @@
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            position: relative; 
         }
 
         h2 {
@@ -38,7 +37,6 @@
             text-align: center; 
             margin-bottom: 20px; 
             position: relative; 
-            display: inline-block;
         }
 
         .change-pic-container {
@@ -61,7 +59,6 @@
             border: 5px solid #fff; 
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
         }
-
 
         form {
             display: flex;
@@ -87,16 +84,15 @@
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
-            color: #000000;
+            color: #000;
         }
 
         .buttons {
             text-align: center;
             margin-top: 20px;
-            transform: translateX(-20px); 
         }
 
-        .save-btn {
+        button {
             background-color: #28a745;
             color: white;
             padding: 15px 65px;
@@ -106,18 +102,12 @@
             cursor: pointer;
         }
 
-        .save-btn:hover {
+        button:hover {
             background-color: #218838;
         }
 
         .cancel-btn {
             background-color: #dc3545;
-            color: white;
-            padding: 15px 60px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
         }
 
         .cancel-btn:hover {
@@ -167,11 +157,10 @@
         .facebook { background-color: #3b5998; }
         .instagram { background-color: #e4405f; }
 
-        /* Button hover effects */
         .social-button:hover {
             opacity: 0.9;
         }
-        
+
         .bookings-section {
             margin-top: 30px;
             background-color: #c8ecfd;
@@ -245,102 +234,95 @@
         .delete-btn:hover {
             background-color: #c82333;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .form-group {
+                width: 100%;
+            }
+
+            .buttons button {
+                width: 100%;
+                padding: 15px 0;
+            }
+
+            .social-button {
+                flex: 1 1 100%;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Profile</h2>
         <div class="profile-pic">
-            <img src="profilepic.png" alt="Profile Picture" id="profile-image">
-            <input type="file" id="upload" accept="image/*" style="display: none;">
+            <img src="profilepic.png" alt="User's Profile Picture" id="profile-image">
+            <input type="file" id="upload" accept="image/*" style="display: none;" aria-label="Upload Profile Picture">
             <div class="change-pic-container">
                 <button type="button" class="change-pic-btn" onclick="document.getElementById('upload').click();">Change Picture</button>
             </div>
         </div>
         <form>
             <div class="form-group">
-                <label for="first-name">First Name</label>
-                <input type="text" id="first-name" placeholder="First Name">
+                <label for="first-name">First Name <span>*</span></label>
+                <input type="text" id="first-name" placeholder="John" required aria-label="First Name">
             </div>
             <div class="form-group">
                 <label for="last-name">Last Name</label>
-                <input type="text" id="last-name" placeholder="Last Name">
+                <input type="text" id="last-name" placeholder="Doe" aria-label="Last Name">
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="user@example.com">
+                <label for="email">Email <span>*</span></label>
+                <input type="email" id="email" placeholder="user@example.com" required aria-label="Email">
             </div>
             <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" placeholder="123-456-7890">
+                <label for="phone">Phone Number <span>*</span></label>
+                <input type="tel" id="phone" placeholder="123-456-7890" required pattern="\d{3}-\d{3}-\d{4}" aria-label="Phone Number">
             </div>
             <div class="form-group">
                 <label for="address">Billing Address</label>
-                <input type="text" id="address" placeholder="Home Address">
-            </div>
-            
-            <!-- Booking History Dropdown -->
-            <div class="form-group">
-                <label for="booking-history">Booking History</label>
-                <select id="booking-history">
-                    <option value="booking1">Booking #1: 15th Sept 2024</option>
-                    <option value="booking2">Booking #2: 10th Aug 2024</option>
-                    <option value="booking3">Booking #3: 5th July 2024</option>
-                    <option value="booking4">Booking #4: 25th June 2024</option>
-                    <option value="booking5">Booking #5: 14th May 2024</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="dob">Date of Birth</label>
-                <input type="date" id="dob">
-            </div>
-            <div class="form-group">
-                <label for="gender">Gender</label>
-                <select id="gender">
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-            <div class="connect">
-                <label>Connect with:</label><br>
-                <div class="social-buttons">
-                    <div class="social-button google" onclick="window.open('https://accounts.google.com/signin')">
-                        <img src="google.png" alt="Google"> Sign in with Google
-                    </div>
-                    <div class="social-button facebook" onclick="window.open('https://www.facebook.com/')">
-                        <img src="facebook.png" alt="Facebook"> Sign in with Facebook
-                    </div>
-                    <div class="social-button instagram" onclick="window.open('https://www.instagram.com/accounts/login/')">
-                        <img src="instagram.png" alt="Instagram"> Sign in with Instagram
-                    </div>
-                </div>
-
+                <input type="text" id="address" placeholder="1234 Main St" aria-label="Billing Address">
             </div>
             <div class="buttons">
-                <button type="submit" class="save-btn">Save</button>
+                <button type="submit">Save Profile</button>
                 <button type="button" class="cancel-btn">Cancel</button>
             </div>
         </form>
-        
-        <div class="bookings-section">
-            <!-- Upcoming Bookings -->
-            <div class="upcoming-bookings">
-                <h3>Upcoming Bookings</h3>
-                <ul id="upcoming-list">
-                    <!-- Upcoming booking items will be inserted here -->
-                </ul>
+
+        <div class="connect">
+            <label>Connect with:</label>
+            <div class="social-buttons">
+                <div class="social-button google">
+                    <img src="google.png" alt="Google Icon"> Google
+                </div>
+                <div class="social-button facebook">
+                    <img src="facebook.png" alt="Facebook Icon"> Facebook
+                </div>
+                <div class="social-button instagram">
+                    <img src="instagram.png" alt="Instagram Icon"> Instagram
+                </div>
             </div>
-        
-            
+        </div>
+
+        <div class="bookings-section">
+            <h3>Upcoming Bookings</h3>
+            <ul id="upcoming-list"></ul>
         </div>
 
         <div class="account-options">
-            <button class="logout-btn">Logout</button>
-            <button class="delete-btn">Delete Account</button>
+            <button class="logout-btn" aria-label="Log Out">Log Out</button>
+            <button class="delete-btn" aria-label="Delete Account">Delete Account</button>
         </div>
     </div>
-    <script src="profile.js"></script>
+<div class="gtranslate_wrapper"></div>
+<script>
+    window.gtranslateSettings = {
+        "default_language": "en",
+        "detect_browser_language": true,
+        "wrapper_selector": ".gtranslate_wrapper"
+    };
+</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+<script src="profile.js"></script>
 </body>
 </html>

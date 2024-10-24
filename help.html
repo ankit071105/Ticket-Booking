@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help Centre - Ticket Booking</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      .nav-container {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="./index.html" id="logo-href">
+        <div class="logo-container">
+          <img
+            src="images/4.jpeg"
+            alt="Ticket Booking Logo"
+            class="logo-image"
+          />
+          <div class="logo">Ticket Booking</div>
+        </div>
+      </a>
+
+      <div class="nav-container">
+        <div class="menu-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+
+        <ul class="nav-links">
+          <li>
+            <a href="index.html" class="home-button"
+              ><i class="fas fa-home"></i>HOME</a
+            >
+          </li>
+          <li>
+            <a href="buy.html"><i class="fas fa-shopping-cart"></i> Buy</a>
+          </li>
+          <li>
+            <a href="sell.html"><i class="fas fa-tag"></i> Sell</a>
+          </li>
+          <li>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+          </li>
+          <li>
+            <a href="contributors.html"
+              ><i class="fas fa-users"></i> Our Contributors</a
+            >
+          </li>
+
+          <li>
+            <a href="/client/register.html" class="login-btn"
+              ><i class="fas fa-user"></i
+            ></a>
+          </li>
+        </ul>
+
+        <button id="darkModeToggle" style="width: 40px; height: 40px">
+          🌙
+        </button>
+      </div>
+    </nav>
+    <script>
+      const darkModeToggle = document.getElementById("darkModeToggle");
+      const body = document.querySelector("body");
+      if (darkModeToggle) {
+        darkModeToggle.addEventListener("click", () => {
+          document.body.classList.toggle("dark-mode");
+          if (body.classList.contains("dark-mode")) {
+            darkModeToggle.innerHTML = "🔆";
+          } else {
+            darkModeToggle.innerHTML = "🌙";
+          }
+        });
+      }
+      // change icon of the dark/light mode
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+        // Special effect for hamburger icon
+        const bars = menuToggle.querySelectorAll(".bar");
+        bars.forEach((bar, index) => {
+          if (menuToggle.classList.contains("active")) {
+            bar.style.transform =
+              index === 1
+                ? "scale(0)"
+                : `rotate(${index === 0 ? "45deg" : "-45deg"})`;
+          } else {
+            bar.style.transform = "none";
+          }
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", (event) => {
+        if (
+          !navLinks.contains(event.target) &&
+          !menuToggle.contains(event.target)
+        ) {
+          navLinks.classList.remove("active");
+          menuToggle.classList.remove("active");
+          menuToggle.querySelectorAll(".bar").forEach((bar) => {
+            bar.style.transform = "none";
+          });
+        }
+      });
+    </script>
+    <div class="helpcontainer">
+        <div id="helpservice-section">
+            <h2>Help Center</h2>
+            <p id="para">
+                Here's a compilation of all the travel queries you may have.
+                 We're pretty sure the answer to your question will be here. 
+                 Just in case you don't see it, please use contact us option 
+                 mentioned above and we will get back to you for resolution.
+            </p>
+            <div class="cards">
+                <div class="card">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <div class="content">
+                       <h3>What are your terms of use and privacy policy? Where can I read more about it?</h3>
+                        <p>We take the privacy of our users very seriously!</p>
+                        <p>You can view our <a href="privacy.html">Privacy Policy</a> & <a href="terms.html">Terms Of Use</a></p>
+                        
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-compass"></i>
+                    <div class="content">
+                       <h3>Why is Ticket Booking different from other travel booking platforms?</h3>
+                        <p>At Ticket booking, we believe in providing the best travel experience. We partner with multiple travel providers to offer a wide range of routes, schedules, and prices, making travel accessible to everyone. Our team is dedicated to innovation and constantly improving our platform to serve you better.</p>
+                        
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-question"></i>
+                    <div class="content">
+                       <h3>What if I cannot find my question on this list?</h3>
+                        <p>In case you have a specific question not addressed in this section then, please reach out to us by clicking here: <a href="#contact">contact us</a></p>
+                        
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-money-bill"></i>
+                    <div class="content">
+                       <h3>How do I buy my ticket on ixigo?</h3>
+                        <p>You can visit the Ticket <a href="buy.html">buy</a> section to buy your tickets</p>
+                        
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-address-book"></i>
+                    <div class="content">
+                       <h3>How do I Sell my ticket on ixigo?</h3>
+                        <p>you can easily sell your unused tickets. Whether it's for a concert, sports event, or travel, we've got you covered. Simply visit the <a href="sell.html">sell</a> section</p> 
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-gear"></i>
+                    <div class="content">
+                       <h3>Update mobile number/email ID.</h3>
+                        <p>Log in to the website, click on Profile and select Edit/View Profile. You will be able to update your contact details from there.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="gtranslate_wrapper"></div>
+    <script>
+      window.gtranslateSettings = {
+        default_language: "en",
+        detect_browser_language: true,
+        wrapper_selector: ".gtranslate_wrapper",
+      };
+    </script>
+    <script
+      src="https://cdn.gtranslate.net/widgets/latest/float.js"
+      defer
+    ></script>
+  </body>
+</html>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+  }
+  :root{
+    --primery-color:#092143;
+    --secondary-color:#00bfa6;
+  }
+  #helpservice-section{
+    min-height: 740px ;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 2rem;
+  }
+  #helpservice-section h2 {
+    color: #f0a500;
+    font-size: 3.5rem;
+    position: relative;
+    text-transform: uppercase;
+  }
+    #para{
+    width: 60%;
+    font-size:1rem ;
+    text-align: center;
+    line-height: 1.5rem;
+    white-space: 1px;
+    margin-bottom: 40px;
+  }
+  .cards{
+    display: grid ;
+    grid-template-columns: repeat(3,1fr);
+    gap: 35px;
+    z-index: 9;
+    margin-top: 20px;
+  }
+  .cards .card{
+    height: 400px;
+    width: 380px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 2% 8%;
+    background-color: #00bfa6;
+    position: relative;
+    border-radius: 10px;
+  }
+  .cards .card::before{
+    position: absolute;
+    content: " ";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    transition: .6s;
+    z-index: -1;
+    background-color: var(--primery-color);
+  }
+  .cards .card:hover.card::before{
+     transform: rotate(10deg);
+  }
+  .cards .card i{
+    font-size:1.5rem ;
+    color: var(--primery-color);
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .cards .card h3{
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 10px;
+  }
+  .cards .card .content p{
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
+  }
+  @media(max-width:1100px){
+    #helpservice-section h2{
+        margin-top: 30px;
+    }
+    .cards{
+        grid-template-columns: repeat(1,1fr);
+    }
+    #helpservice-section #para{
+        width: 50%;
+    }
+  }
+  /* @media (max-width: 900px) {
+    .cards .card{
+        height: 200px;
+        width: 300px;
+        margin: 20px 0 ;
+    }
+  } */
+</style>

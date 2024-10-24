@@ -11,6 +11,7 @@ body {
   background-color: #f0f4f8;
   font-size: 16px;
   transition: background-color 0.3s, color 0.3s;
+  overflow-x: hidden;
 }
 
 h1,
@@ -169,7 +170,7 @@ p {
 }
 
 h2 {
-  color: #1f2937;
+  color: orangered;
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 40px;
@@ -192,39 +193,62 @@ h2 {
   background-color: #00a690;
 }
 
-.ticket-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+/* General styling for the container */
+.bus {
   padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  text-align: center;
 }
 
-.ticket-card {
-  background-color: #fff;
+.bus h2 {
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Ticket list container */
+.ticket-list {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
   padding: 20px;
-  margin-bottom: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 20px; /* Adds space between the cards */
+}
+
+/* Individual ticket cards */
+.ticket-card1 {
+  background-color: #fff;
+  max-width: 470px;
+  padding: 50px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex: 1 1 calc(30% - 20px);
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+.ticket-card2 {
+  background-color: #fff;
+  max-width: 470px;
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.ticket-card3 {
+  background-color: #fff;
+  max-width: 470px;
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.ticket-card4 {
+  background-color: #fff;
+  max-width: 470px;
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.ticket-card h3 {
-  margin-bottom: 10px;
-  color: #1f2937;
-}
-
-.ticket-card p {
-  margin-bottom: 8px;
-  color: #555;
-  text-align: center;
-}
 
 .containers {
   padding: 20px;
@@ -283,7 +307,7 @@ iframe {
 .about h2,
 .contact h2 {
   text-align: center;
-  color: #1f2937;
+  color: black;
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
@@ -400,7 +424,7 @@ body.dark-mode .ticket-card button:hover {
 .hero-slider {
   position: relative;
   width: 80%;
-  height: 60vh;
+  height: 100vh;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -418,6 +442,8 @@ body.dark-mode .ticket-card button:hover {
 .slide img {
   width: 100%;
   height: 100%;
+  object-fit: fill; /* Ensure the entire image is visible without distortion */
+  object-position: center;
 }
 
 .overlay {
@@ -441,12 +467,34 @@ p {
 
 .nav-buttons {
   position: absolute;
-  top: 50%;
+
+  top: 35%;
+
+  top: 25%;
+
   width: 100%;
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
+  z-index: 10; /* Make sure buttons are above other elements */
 }
+/* Position of .nav-buttons within the 550px screen width */
+@media (max-width: 550px) {
+  .nav-buttons {
+    top: 30%;
+  }
+}
+
+/* Position of .nav-buttons within the 550px screen width */
+@media (max-width:550px)
+{
+  .nav-buttons {
+  
+  top: 30%;
+  
+}
+}
+
 
 .bbtn {
   display: inline-block;
@@ -524,57 +572,7 @@ button:hover {
   background-color: #000;
 }
 
-/* faq section */
-.faq-section {
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.faq-container {
-  width: 100%;
-}
-
-.faq-item {
-  margin-bottom: 15px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
-}
-
-.faq-question {
-  width: 100%;
-  padding: 15px;
-  text-align: left;
-  background-color: #f7f7f7;
-  border: none;
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-  cursor: pointer;
-  outline: none;
-  border-radius: 0%;
-  transition: background-color 0.3s ease;
-  line-height: 15px;
-}
-
-.faq-question:hover {
-  background-color: #e6e6e6;
-}
-
-.faq-answer {
-  display: none;
-  padding: 10px 15px;
-  font-size: 16px;
-  color: #555;
-}
-
-.faq-answer p {
-  color: #4b4b4b;
-  line-height: 1.6;
-}
+/* FAQ Section */
 
 /* Responsive Design */
 @media (max-width: 600px) {
@@ -590,3 +588,4 @@ button:hover {
     font-size: 20px;
   }
 }
+
