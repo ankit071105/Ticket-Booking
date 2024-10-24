@@ -9,66 +9,283 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://kit.fontawesome.com/3d20c433e1.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="footer.css"> 
+    <link rel="stylesheet" href="faq.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="why-us.css">
+    <script src="https://kit.fontawesome.com/3d20c433e1.js" crossorigin="anonymous"></script>
 
   <style>
-    
-/* code for bottom to top nav  */
+    /* code for bottom to top nav  */
 
-#myBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  background-color:#1fb899;
-  color: white;
-  cursor: pointer;
-  padding: 10px 6px;
-  border-radius: 4px;
-  width: 40px !important;
-  height: 40px !important;
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: #1fb899;
+      color: white;
+      cursor: pointer;
+      padding: 10px 6px;
+      border-radius: 4px;
+      width: 40px !important;
+      height: 40px !important;
+    }
+
+    #myBtn:hover {
+      background-color: #4cc6ad;
+    }
+
+    /* code for chatbot button */
+    #chatbotBtn {
+      position: fixed;
+      bottom: 65px;
+      right: 30px;
+      z-index: 99;
+      border: none;
+      outline: none;
+      background-image: url('./images/bot.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 0;
+      width: 50px !important;
+      height: 50px !important;
+      border-radius: 100%;
+    }
+
+    .chatbot-container {
+      display: none;
+      width: 370px;
+      max-width: 100%;
+      position: fixed;
+      bottom: 75px;
+      right: 30px;
+      margin: 50px auto;
+      padding: 20px;
+      z-index: 1001;
+      border-radius: 10px;
+      box-shadow: #64646f33 0px 7px 29px 0px;
+      background: #31363F;
+    }
+
+    .chatbot-container.chatbot-show {
+      display: block;
+    }
+
+    .chatbot-title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #edf1f3;
+    }
+
+    .chatbot-chat {
+      height: 250px;
+      overflow-y: scroll;
+      margin: 20px 0;
+      padding: 10px;
+      border: 2px solid #545250;
+      border-radius: 5px;
+      background: #222831;
+    }
+
+    .chatbot-input {
+      position: relative;
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #cbcbce;
+      border-radius: 5px;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .chatbot-button {
+      position: absolute;
+      width: 80px;
+      border: none;
+      padding: 1px;
+      background: #31363F;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: -1.02rem;
+      margin-left: -4.1rem;
+      outline: none;
+      border-radius: 100%;
+    }
+
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 5px;
+      background: #1fb899;
+      width: 0;
+      transition: width 0.1s ease-in-out;
+      z-index: 9999;
+    }
+
+    /* Card styling */
+    .sell-ticket {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .sell-options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      width: 250px;
+      position: relative;
+      text-align: left;
+    }
+
+    .badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #ff6347;
+      color: #fff;
+      padding: 0.3rem 0.8rem;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-description {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #1fb899;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+
+        /* Sell tickets css */
+        .sell-ticket {
+    text-align: center;
+    padding: 20px;
 }
 
-#myBtn:hover {
-  background-color: #4cc6ad;
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px; /* Increased space between cards */
 }
 
- /* code for bottom to top nav  */
+.card {
+    border: 1px solid #ccc; /* Card border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px;
+    width: 250px; /* Card width */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
 
+.card-image {
+    width: 100%; /* Responsive image */
+    height: auto;
+    border-radius: 8px; /* Rounded image corners */
+}
+
+.btn {
+    background-color: #00bfa6; /* Original button color */
+    color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Ensure button behaves correctly */
+    margin-top: 10px; /* Space above button */
+}
+
+.btn:hover {
+    background-color: #00a690; /* Darker button color on hover */
+}
   </style>
 </head>
 
 <body>
   <!-- Navbar -->
-   
-    
-<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+  <div id="scrollProgressBar" class="progress-bar"></div>
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"
+      aria-hidden="true"></i></button>
+  <!-- Chatbot -->
+  <button onclick="toggleChatbot()" id="chatbotBtn" title="chat bot"></button>
 
+  <div class="chatbot-container" id="chatbot-container">
+    <div class="chatbot-title">Ticket Bot</div>
+    <div class="chatbot-chat" id="chatbot-chat"></div>
+    <input type="text" class="chatbot-input" id="chatbot-input" placeholder="Type your message here...." />
+    <button class="chatbot-button" id="chatbot-button"><i class="fa-brands fa-telegram"></i></button>
+  </div>
 
   <nav class="navbar">
-
-    <div class="logo"><img src="images/4.jpeg" alt="Ticket Booking Logo" class="logo-image">Ticket Marketplace</div>
-
-    
-    <a href="./index.html" id="logo-href"><div class="logo">Ticket Marketplace</div></a>
+    <a href="./index.html" id="logo-href">
+      <div class="logo-container">
+        <img src="images/4.jpeg" alt="Ticket Booking Logo" class="logo-image">
+        <div class="logo">Ticket Marketplace</div>
+      </div>
+    </a>
 
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="sell.html">Sell Ticket</a></li>
-      <li><a href="buy.html">Buy Ticket</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="buy.html">Buy Ticket</a></li>
+        <li><a href="sell.html"><i class="fas fa-tag"></i> Sell</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="contributor.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                <li><a href="/client/register.html" class="login-btn"><i class="fas fa-user"></i></a></li>
+      <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
     </ul>
   </nav>
 
   <!-- Sell Ticket Section -->
   <section class="sell-ticket">
+
     <h1>Sell Your Ticket</h1>
-    <div class="sell-buttons">
-      <a href="bus_sell.html" class="btn">Sell Bus Ticket</a>
-      <a href="train_sell.html" class="btn">Sell Train Ticket</a>
+    <div class="card-container">
+        <div class="card">
+            <img src="./images/bus.avif" alt="Bus" class="card-image">
+            <a href="bus_sell.html" class="btn">Sell Bus Ticket</a>
+        </div>
+        <div class="card">
+            <img src="./images/train-img.jpeg" alt="Train" class="card-image">
+            <a href="train_sell.html" class="btn">Sell Train Ticket</a>
+        </div>
     </div>
   </section>
 
@@ -85,91 +302,108 @@
       <div class="social-icons">
         <a href="#"><i class="fab fa-facebook"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
         <a href="#"><i class="fab fa-linkedin"></i></a>
         <a href="#"><i class="fab fa-youtube"></i></a>
+        
+    <div class="container">
+      <h1>Sell Your Tickets Easily</h1>
+      <p>Welcome to our marketplace where you can easily sell your unused tickets. Whether it's for a concert, sports
+        event, or travel, we've got you covered. Simply choose the type of ticket you want to sell and follow the steps
+        to post your listing.</p>
+      <div class="sell-options">
+        <div class="card">
+          <div class="badge">Popular</div>
+          <div class="card-title">Bus Ticket</div>
+          <div class="card-description">Sell your bus tickets quickly and easily through our platform.</div>
+          <a href="bus_sell.html" class="btn">Sell Bus Ticket</a>
+        </div>
+        <div class="card">
+          <div class="badge">New</div>
+          <div class="card-title">Train Ticket</div>
+          <div class="card-description">Get a great deal when selling your train tickets with us.</div>
+          <a href="train_sell.html" class="btn">Sell Train Ticket</a>
+        </div>
+        <div class="card">
+          <div class="badge">Limited Offer</div>
+          <div class="card-title">Concert Ticket</div>
+          <div class="card-description">Sell concert tickets effortlessly and reach interested buyers.</div>
+          <a href="concert_sell.html" class="btn">Sell Concert Ticket</a>
+        </div>
+        <div class="card">
+          <div class="badge">Hot</div>
+          <div class="card-title">Sports Ticket</div>
+          <div class="card-description">Sell your sports tickets to a wide audience of fans.</div>
+          <a href="sports_sell.html" class="btn">Sell Sports Ticket</a>
+        </div>
+
       </div>
     </div>
+  </section>
 
-    <!-- Links Sections -->
-    <div class="footer-links">
-      <div class="footer-column">
-        <h4>HELPFUL LINKS</h4>
-        <ul>
-          <li><a href="#">Help Centre</a></li>
-          <li><a href="#">Special Assistance</a></li>
-          <li><a href="#">Download The App</a></li>
-          <li><a href="#">Booking Conditions</a></li>
-        </ul>
+  <!-- footer -->
+  <footer class="footer-container">
+    <div class="footer-top">
+      <div class="footer-logo-section">
+        <img src="images/3.jpeg" alt="easyJet holidays logo" class="footer-logo">
+        <p style="color: #b5fdf4;">Affordable adventures, unforgettable memories—explore with ease.</p>
+        <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.twitter.com" ><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
       </div>
-
-      <div class="footer-column">
-        <h4>ABOUT US</h4>
-        <ul>
-          <li><a href="#">Media Center</a></li>
-          <li><a href="#">Investors</a></li>
-          <li><a href="#">Modern Slavery Act</a></li>
-          <li><a href="#">Terms Of Use</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-column">
-        <h4>KEEPING SAFE</h4>
-        <ul>
-          <li><a href="#">ATOL Protected</a></li>
-          <li><a href="#">Travel Aware</a></li>
-          <li><a href="#">FCDO Travel Advice</a></li>
-          <li><a href="#">ABTA</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-column">
-        <h4>FIND US</h4>
-        <ul>
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="#">Group Cookie Notice</a></li>
-          <li><a href="#">Privacy And Policy</a></li>
-          <li><a href="#">Sitemap</a></li>
-        </ul>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>HELPFUL LINKS</h4>
+          <ul>
+            <li><a href="#">Help Centre</a></li>
+            <li><a href="#">Special Assistance</a></li>
+            <li><a href="#">Download The App</a></li>
+            <li><a href="#">Booking Conditions</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>ABOUT US</h4>
+          <ul>
+            <li><a href="#">Media Center</a></li>
+            <li><a href="#">Investors</a></li>
+            <li><a href="#">Modern Slavery Act</a></li>
+            <li><a href="#">Terms Of Use</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>KEEPING SAFE</h4>
+          <ul>
+            <li><a href="#">ATOL Protected</a></li>
+            <li><a href="#">Travel Aware</a></li>
+            <li><a href="#">FCDO Travel Advice</a></li>
+            <li><a href="#">ABTA</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>FIND US</h4>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Group Cookie Notice</a></li>
+            <li><a href="#">Privacy And Policy</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-
-  <!-- Additional Links Section -->
-  <div class="footer-bottom">
-    <ul>
-      <li><a href="#">Holiday Type</a></li>
-      <li><a href="#">Holiday Deals</a></li>
-      <li><a href="#">Popular Counters</a></li>
-      <!-- <li><a href="#">Flight Only</a></li> -->
-      <li><a href="#">Top Hotels</a></li>
-    </ul>
-  </div>
-</footer>
-
-
-
-<!-- footer end  -->
-
-  <script>
-  
-let mybutton = document.getElementById("myBtn");
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-
-  </script>
+    <div class="footer-bottom">
+      <ul>
+        <li><a href="#">Holiday Type</a></li>
+        <li><a href="#">Holiday Deals</a></li>
+        <li><a href="#">Popular Counters</a></li>
+        <li><a href="tophotels.html">Top Hotels</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 
 </html>

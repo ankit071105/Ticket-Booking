@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="index.css">
@@ -19,11 +20,13 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="why-us.css">
-   <!-- this is for twitter icons -->
+
+    <script src="https://cdn.jsdelivr.net/npm/daisyui"></script>
+
     <script src="https://kit.fontawesome.com/3d20c433e1.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+     
     <!-- cursor -->
     
     <div class="cursor"></div>
@@ -242,8 +245,13 @@
         </div>
     </div>
     <div class="nav-buttons">
+
         <button class="prev" onclick="prevSlide()" style="width: 45px; height: 45px;">&#10094;</button>
         <button class="next" onclick="nextSlide()" style="width: 45px; height: 45px;">&#10095;</button>
+
+        <button class="prev" onclick="prevSlide()" style="width: 55px; height: 60px;">&#10094;</button>
+        <button class="next" onclick="nextSlide()" style="width: 55px; height: 60px;">&#10095;</button>
+
     </div>
     
  
@@ -265,6 +273,7 @@
     </div>
 
 <div class="bus">
+
     <div class="bus">
         <h2>Book Bus or Train Tickets</h2>
         <div class="ticket-list">
@@ -291,6 +300,36 @@
                 <p>Have train tickets to sell? Reach out to us to list your tickets and get great deals.</p>
                 <a href="train_sell.html"><button class="bbtn">Sell Train Tickets</button></a>
             </div>
+
+    <h2>Book Bus or Train Tickets</h2>
+    <div class="ticket-list">
+        <div class="ticket-card">
+            <h3>Bus Tickets</h3>
+            <p>Find affordable bus tickets for your travel needs. Select your destination and date of travel to get started.</p>
+            <br>   
+            <a href="buy.html"><button class="bbtn">Buy Bus Tickets</button></a>
+        </div>
+        <div class="ticket-card">
+            <h3>Sell Bus Tickets</h3>
+           
+            <p>Looking to sell your bus tickets? Contact us 24*7 for best price of your bus ticket without any hussle</p>
+            <br>   
+            <a href="sell.html"><button class="bbtn">Sell Bus Tickets</button></a>
+        </div>
+
+        <div class="ticket-card">
+            <h3>Train Tickets</h3>
+            <p>Secure train tickets for your journey across the country. Check availability and book now with trusted plaform.</p>
+            <br>  
+            <a href="buy.html"><button class="bbtn">Buy Train Tickets</button></a>
+           </div>
+        <div class="ticket-card">
+            <h3>Sell Train Tickets</h3>
+             
+            <p>Have train tickets to sell? Reach out to us to list your tickets.</p>
+            <br> 
+            <a href="train_sell.html"><button class="bbtn">Sell Train Tickets</button></a>
+
         </div>
     </div>
     
@@ -332,6 +371,7 @@
 
     <div class="containers" id="sxs">
         <div id="contact" class="contact-info" >
+
             <div style="padding-left: 30px;">
                 <h2 style="text-align:left">Contact Us</h2>
                 <p style="color: white;font-size: 16px;">We value your feedback! We'd love to hear from you! For inquiries, feedback, or support, please reach out. Your insights help us improve your experience.</p>
@@ -341,6 +381,42 @@
         
                 <h4>Phone No</h4>
                 <p  style="color: white;font-size: 16px;">+91 9685478526</p>
+
+           <div style="display: flex;">
+                <div class="flex">
+                    <h2 style="text-align:left">Contact Us</h2>
+                <p style="color: white;font-size: 16px; width: 40%; margin-top: 20px;">We value your feedback! We'd love to hear from you! For inquiries, feedback, or support, please reach out. Your insights help us improve your experience.</p>
+                
+                <span class="boxes">
+                    <div class="box">
+                        <img src="location.png" style="height:100px; width:100px;" alt="">
+                        <h4>Localisation</h4>
+                    <p style="font-size: 16px;">ABC colony, Bangalore Pin: 76896</p>
+                    </div>
+            
+                    <div class="box">
+    
+                        <img src="call.png"  style="height: 130px; width: 125px;"   alt="">
+    
+                        <h4>Phone No</h4>
+                    <p  style="font-size: 16px;">+91 9685478526</p>
+                    </div>
+                </span>
+                </div>
+
+                <div class="flex">
+                    <form action="/action_page.php" class="forms" method="post">
+                        <label for="name">Name:</label>
+                        <input type="text" class="input" id="name" name="name"placeholder="Enter your name" style="font-size: 16px;  border: 3px solid green;" required>
+                        <label for="email">Email:</label>
+                        <input type="email" class="input" id="email" name="email" placeholder="Enter your email" style="font-size: 16px;border: 3px solid green;" required>
+                        <label for="message">Message:</label>
+                        <textarea id="message" class="input" name="message" style="padding: 40px;" required></textarea>
+                        <input type="submit" value="Submit">
+                      </form>
+                      </div>
+                </div>
+
             </div>    
         </div>
     </footer>
@@ -368,6 +444,142 @@
     
 
 
+<body>
+    <style>
+        
+    </style>
+
+
+    
+   
+<section id="faq">
+    <div class="faq-container">
+        <h1 class="faq-title" data-aos="fade-right">Frequently Asked Questions</h1>
+        <div id="FAQ">
+            
+            <div class="accordion">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">What is your cancellation policy?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content"> <!-- Initially hidden -->
+                        <p>We offer a flexible cancellation policy that allows you to cancel your booking up to 48 hours before your scheduled departure for a full refund.</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items can be added here in the same format -->
+            </div>
+
+            <div class="accordion">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">How do I make changes to my booking?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content"> <!-- Initially hidden -->
+                        <p>You can make changes to your booking by logging into your account and accessing your booking details. For major changes, please contact our support team directly.</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items can be added here in the same format -->
+            </div>
+
+            <div class="accordion">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">What payment methods do you accept?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content"> <!-- Initially hidden -->
+                        <p>We accept various payment methods including credit/debit cards, PayPal, and bank transfers. All transactions are secure and encrypted..</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items can be added here in the same format -->
+            </div>
+
+            <div class="accordion">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">Do you offer travel insurance?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content"> <!-- Initially hidden -->
+                        <p>Yes, we offer travel insurance options during the booking process to protect your trip against unforeseen circumstances.</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items can be added here in the same format -->
+            </div>
+
+            <div class="accordion">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">Can I book multiple destinations in one trip?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content"> <!-- Initially hidden -->
+                        <p>Absolutely! Our platform allows you to plan multi-destination trips seamlessly. Simply select your desired locations during the booking process. For major changes, please contact our support team directly.</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items can be added here in the same format -->
+            </div>
+
+            <div class="accordion">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">How can I contact customer support?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content"> <!-- Initially hidden -->
+                        <p>You can reach our customer support team via email or live chat on our website. We’re available 24/7 to assist you with any inquiries. For major changes, please contact our support team directly.</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items can be added here in the same format -->
+            </div>
+
+            <div class="accordion">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">What should I do if I encounter an issue with my booking?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content"> <!-- Initially hidden -->
+                        <p>If you experience any issues with your booking, please contact our support team immediately. We will work to resolve your issue as quickly as possible.</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items can be added here in the same format -->
+            </div>
+
+            <div class="accordion">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">How do I make changes to my booking?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content"> <!-- Initially hidden -->
+                        <p>You can make changes to your booking by logging into your account and accessing your booking details. For major changes, please contact our support team directly.</p>
+                    </div>
+                </div>
+                <!-- Additional FAQ items can be added here in the same format -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function toggleFAQ(element) {
+        const content = element.nextElementSibling; // Get the FAQ content
+        const toggleSymbol = element.querySelector('.expandToggle'); // Get the toggle symbol
+
+        // Check if content is visible
+        if (content.style.display === "block") {
+            content.style.display = "none"; // Hide content
+            toggleSymbol.textContent = "+"; // Change toggle symbol to "+"
+        } else {
+            content.style.display = "block"; // Show content
+            toggleSymbol.textContent = "-"; // Change toggle symbol to "-"
+        }
+    }
+</script>
+    
 <body>
     <style>
         
@@ -485,8 +697,71 @@
 </script>
     
 
-        
+ <style>
+  /* Styles for radial progress bar */
+  .radial-progress {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: conic-gradient(#4caf50 calc(var(--value) * 1%), #ddd 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
 
+  /* Hidden initially */
+  #progress-bar {
+    display: none;
+  }
+</style>
+  <section id="feedback-form">
+  <div class="container text-black">
+    <h2>We Value Your Feedback!</h2>
+    <p>Your input helps us improve our services. Please share your thoughts with us below.</p>
+    <form id="feedback-form-element">
+      
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required pattern="[a-zA-Z ]+"
+              oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
+              oninput="this.setCustomValidity('')">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="rating">Rating</label>
+        <select id="rating" name="rating" required>
+          <option value="5">Excellent - 5 Stars</option>
+          <option value="4">Very Good - 4 Stars</option>
+          <option value="3">Good - 3 Stars</option>
+          <option value="2">Fair - 2 Stars</option>
+          <option value="1">Poor - 1 Star</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="feedback">Your Feedback</label>
+        <textarea id="feedback"name="feedback" rows="5" placeholder="Tell us about your experience..." required></textarea>
+      </div>
+
+      <div class="flex items-center">
+        <button id="submit-btn" type="submit" style="width: 150px; height: 70px;">Submit Feedback</button>
+        <div id="progress-bar" class="radial-progress" style="--value:0;width: 50px; height: 50px;" role="progressbar">
+      0%
+    </div>
+      </div>
+    </form>
+
+
+  </div>
+</section>
 
 
 <!-- feedback form -->
@@ -534,6 +809,43 @@
   </section>
 </body>
 
+<script>
+    document.getElementById('feedback-form-element').addEventListener('submit', function(event) {
+      event.preventDefault();  // Prevent actual form submission
+
+      let progressBar = document.getElementById('progress-bar');
+      let submitBtn = document.getElementById('submit-btn');
+
+      // Disable the submit button and show the progress bar
+      submitBtn.disabled = true;
+      progressBar.style.display = 'flex';  // Show the progress bar
+
+      let progress = 0;
+      
+      // Simulate a form submission process with a fake progress bar
+      let progressInterval = setInterval(() => {
+        if (progress < 100) {
+          progress += 10;
+          progressBar.style.setProperty('--value', progress);
+          progressBar.textContent = progress + '%';
+        } else {
+          clearInterval(progressInterval);
+          
+          // Simulate completion of form submission
+          location.reload();  // Refresh the page after form submission
+          
+          // Reset form and progress bar
+          progressBar.style.setProperty('--value', 0);
+          progressBar.textContent = '0%';
+          progressBar.style.display = 'none';
+          submitBtn.disabled = false;
+        }
+      }, 100);  // Adjust the interval time as per the desired simulation speed
+    });
+</script>
+
+</body>
+
 
 
 
@@ -545,11 +857,19 @@
         <p style="color: #b5fdf4;" >Affordable adventures, unforgettable memories—explore with ease.</p>
         <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
         <div class="social-icons">
+
           <a href="#"><i class="fab fa-facebook"></i></a>
           <a href="#"><i class="fab fa-instagram"></i></a>
           <a href="#" ><i class="fa-brands fa-x-twitter"></i></a>
           <a href="#"><i class="fab fa-linkedin"></i></a>
           <a href="#"><i class="fab fa-youtube"></i></a>
+
+            <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.twitter.com" ><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+
         </div>
       </div>
   
@@ -558,10 +878,10 @@
         <div class="footer-column">
           <h4>HELPFUL LINKS</h4>
           <ul>
-            <li><a href="#">Help Centre</a></li>
+            <li><a href="help.html">Help Centre</a></li>
             <li><a href="#">Special Assistance</a></li>
             <li><a href="#">Download The App</a></li>
-            <li><a href="#">Booking Conditions</a></li>
+            <li><a href="./book_condition.html">Booking Conditions</a></li>
           </ul>
         </div>
   
@@ -570,7 +890,11 @@
           <ul>
             <li><a href="#">Media Center</a></li>
             <li><a href="#">Investors</a></li>
+
             <li><a href="#">Modern Slavery Act</a></li>
+
+            <li><a href="ModernSlaveryAct.html">Modern Slavery Act</a></li>
+
             <li><a href="terms.html">Terms Of Use</a></li>
           </ul>
         </div>
@@ -579,7 +903,7 @@
           <h4>KEEPING SAFE</h4>
           <ul>
             <li><a href="#">ATOL Protected</a></li>
-            <li><a href="#">Travel Aware</a></li>
+            <li><a href="travelAware.html">Travel Aware</a></li>
             <li><a href="#">FCDO Travel Advice</a></li>
             <li><a href="#">ABTA</a></li>
           </ul>

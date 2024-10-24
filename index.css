@@ -250,8 +250,6 @@ h2 {
 }
 
 
-
-
 .containers {
   padding: 20px;
   background: aliceblue;
@@ -444,6 +442,8 @@ body.dark-mode .ticket-card button:hover {
 .slide img {
   width: 100%;
   height: 100%;
+  object-fit: fill; /* Ensure the entire image is visible without distortion */
+  object-position: center;
 }
 
 .overlay {
@@ -467,12 +467,24 @@ p {
 
 .nav-buttons {
   position: absolute;
+
   top: 35%;
+
+  top: 25%;
+
   width: 100%;
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
+  z-index: 10; /* Make sure buttons are above other elements */
 }
+/* Position of .nav-buttons within the 550px screen width */
+@media (max-width: 550px) {
+  .nav-buttons {
+    top: 30%;
+  }
+}
+
 /* Position of .nav-buttons within the 550px screen width */
 @media (max-width:550px)
 {
@@ -482,6 +494,7 @@ p {
   
 }
 }
+
 
 .bbtn {
   display: inline-block;
@@ -560,12 +573,6 @@ button:hover {
 }
 
 /* FAQ Section */
-
-
-
-
-
-
 
 /* Responsive Design */
 @media (max-width: 600px) {

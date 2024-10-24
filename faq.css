@@ -1,4 +1,4 @@
-/* General container styling */
+
 .faq-container {
   padding: 50px;
   max-width: 800px;
@@ -70,4 +70,23 @@
   font-size: 1rem;
   line-height: 1.6;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+=======
+.FAQ-content {
+  display: none; /* Ensure FAQ content is hidden by default */
+}
+.expandToggle {
+  cursor: pointer; /* Change cursor to pointer for toggle */
+}
+
+.accordion{
+  background-color: aliceblue;
+
+}
+.expandToggle{
+  background-color: #1fb899;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  display: inline-block;
 }

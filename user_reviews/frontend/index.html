@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Reviews</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="review-section">
+        <h2>Event Reviews</h2>
+        <div id="average-rating"></div>
+        <ul id="review-list"></ul>
+    </div>
+
+    <div id="review-form">
+        <h3>Leave a Review</h3>
+        <form id="new-review">
+            <input type="hidden" id="event-id" value="event123" />
+            <label for="rating">Rating (1-5):</label>
+            <input type="number" id="rating" min="1" max="5" required />
+            <label for="comment">Comment:</label>
+            <textarea id="comment" required></textarea>
+            <button type="submit">Submit Review</button>
+        </form>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
