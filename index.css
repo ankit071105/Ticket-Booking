@@ -227,8 +227,6 @@ h2 {
   text-align: center;
 }
 
-
-
 .containers {
   padding: 20px;
   background: aliceblue;
@@ -449,15 +447,13 @@ p {
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
+  z-index: 10; /* Make sure buttons are above other elements */
 }
 /* Position of .nav-buttons within the 550px screen width */
-@media (max-width:550px)
-{
+@media (max-width: 550px) {
   .nav-buttons {
-  
-  top: 30%;
-  
-}
+    top: 30%;
+  }
 }
 
 .bbtn {
@@ -538,12 +534,6 @@ button:hover {
 
 /* FAQ Section */
 
-
-
-
-
-
-
 /* Responsive Design */
 @media (max-width: 600px) {
   .faq-question {
@@ -558,4 +548,3 @@ button:hover {
     font-size: 20px;
   }
 }
-
