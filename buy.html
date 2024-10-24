@@ -456,13 +456,37 @@ h2:hover{
   }
 
   .form-group {
+    flex-direction: row;
+  }
+  .form-group input,
+  .form-group select {
+    width: 65%;
+  }
+}
+@media (max-width: 580px){
+  .container {
     flex-direction: column;
   }
 
+  .right-section {
+    width: 100vw;
+  }
+
+  .form-group {
+    flex-direction: column;
+    justify-content: left;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom:10px;
+  }
   .form-group label,
   .form-group input,
   .form-group select {
     width: 100%;
+    padding: 10px 0px;
+  }
+  .form-group select{
+    cursor: pointer;
   }
 }
 
