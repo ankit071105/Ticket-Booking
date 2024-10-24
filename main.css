@@ -1099,6 +1099,7 @@ padding: 15px 30px;
   .form-group textarea {
     width: 100%;
     padding: 12px;
+    resize: none;
     font-size: 1rem;
     border: 2px solid #ccc;
     border-radius: 5px;
