@@ -1048,8 +1048,51 @@ button[type="submit"]:active {
   #feedback-form p {
     font-size: 0.9rem;
   }
-
-  button[type="submit"] {
+< main
+  
+  /* Form Group */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* Input and Textarea Styles */
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    resize: none;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover and Focus States */
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: #2575fc;
+    box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+    outline: none;
+  }
+  
+  .form-group input:hover,
+  .form-group select:hover,
+  .form-group textarea:hover {
+    border-color: #6a11cb;
+  }
+  
+  /* Submit Button Styles */
+  main
+ button[type="submit"] {
     padding: 12px 15px;
   }
 }
