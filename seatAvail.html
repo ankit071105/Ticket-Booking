@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check Train Seat Availability</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="images/4.jpeg" type="image/x-icon">
+
+<style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar styling */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1f2937;
+      padding: 15px;
+      color: white;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+      font-weight: 600;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .search-container0 {
+      display: flex;
+      justify-content: center;
+      /* align-items: center; */
+      padding: 20px;
+      background-color: #fff;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+
+    /* Search box styling */
+    .search-container {
+      display: flex;
+      border-radius:50px ;
+      justify-content: center;
+      width: 1200px;
+
+      align-items: center;
+      padding: 20px;
+      margin-left: 40px;
+
+      background-color: #fff;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-container input[type="text"] {
+      padding: 10px;
+      width: 300px;
+      height: 75px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      font-size: 16px;
+    }
+
+    .search-container button {
+      padding: 0.5rem 1rem;
+      background-color: #1fb899;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      margin-left: 10px;
+      font-size: 16px;
+      cursor:pointer ;
+    }
+
+    .search-container button:hover {
+      background-color: #17a085;
+    }
+
+    /* Card container styling */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      width: 48%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .card h3 {
+      color: #1fb899;
+      margin-bottom: 15px;
+      font-size: 35px;
+      text-align: center;
+    }
+
+    .card p {
+      margin-bottom: 10px;
+    }
+
+    .card ol {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+
+    /* Full-width card for FAQs */
+    .card-full {
+      width: 100%;
+    }
+
+    /* Footer styling */
+    footer {
+      background-color: #1f2937;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    .footer-logo {
+      margin-bottom: 15px;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      color: white;
+      margin: 0 10px;
+      font-size: 20px;
+    }
+
+    .social-icons a:hover {
+      color: #ddd;
+    }
+
+    /* Heading styling */
+    .main-heading {
+      text-align: center;
+      color: #1fb899;
+      font-size: 48px;
+      margin: 40px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
+    <div class="logo" style="margin-right: 355px;">Ticket Marketplace</div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="buy.html">Buy Ticket</a>
+      <a href="sell.html">Sell</a>
+      <a href="#contact">Contact</a>
+      <a href="contributor.html">Contributors</a>
+      <a href="register.html">Login</a>
+    </div>
+  </nav>
+
+  <!-- Main Heading -->
+   <div class="search-container0">
+  <h1 class="main-heading">Check Seat Availability</h1>
+   </div>
+  <!-- Search Container -->
+  <div class="search-container">
+    <input type="text" placeholder="Enter train number or name..." id="train-search">
+    <button onclick="searchTrain()">Search</button>
+  </div>
+
+  <!-- Card Section -->
+  <div class="card-container">
+    <!-- New Card for Train Seat Availability Info -->
+    <div class="card card-full">
+      <h3>Train And Bus Seat Availability</h3>
+      <p>Whenever it’s travel time, everyone seems to go in overdrive for finding out train seat availability. So beat the crowd and book your ticket as early as possible. However, booking tickets in advance is a good option only if you are sure about your travel plans. For many travellers, this is often not the case.</p>
+    </div>
+
+    <!-- Card for Check Train Seat Availability Online -->
+    <div class="card">
+      <h3>Check Train And Bus Seat Availability Online</h3>
+      <p>To check train seat availability, follow the steps mentioned below:</p>
+      <ol>
+        <li>Enter your Source and destination station.</li>
+        <li>Choose the date of journey. You can also opt for Tatkal ticket booking.</li>
+        <li>Search for trains, running dates, and seat availability.</li>
+        <li>Choose your train and preferred class to complete your booking.</li>
+      </ol>
+      <p>Train seat availability may differ based on the booking quota you select.</p>
+    </div>
+
+    <!-- Card for Train Seat Availability Search on App -->
+    <div class="card">
+      <h3>Train And Bus Seat Availability Search on IRCTC</h3>
+      <p>One of the biggest concerns of train travellers is knowing about seat availability. With the train seat availability feature of Indian Railways on IRCTC website, one can easily check for any train and book tickets online.</p>
+      <p>Plan your trip 120 days in advance to get the best seat. For last-minute booking, Tatkal tickets are the best option.</p>
+    </div>
+
+    <!-- Card for FAQs (Full width) -->
+    <div class="card card-full">
+      <h3>Frequently Asked Questions (FAQs)</h3>
+      <p><strong>Q. How do I check my seat number on a train?</strong></p>
+      <p>A: To check information about your seat, check your PNR status. This includes whether your ticket is confirmed, waitlisted (WL), or under reservation against cancellation (RAC).</p>
+
+      <p><strong>Q. What does current seat availability mean?</strong></p>
+      <p>A: It is the fastest way to find real-time booking information. Enter your From & To Station Name/Code along with travel dates and class to check.</p>
+
+      <p><strong>Q. What are the chances of my ticket getting confirmed?</strong></p>
+      <p>A: Waitlist prediction tools help you predict the chances of a waitlisted or RAC ticket getting confirmed based on trends.</p>
+
+      <p><strong>Q. Can train seat availability change at the last minute?</strong></p>
+      <p>A: Yes, availability can change. Chart preparation is done 4 hours before departure and again 30 minutes before departure, allowing seats to be freed up.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">Ticket Marketplace</div>
+    <p>&copy; 2024 Ticket Marketplace. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+    </div>
+  </footer>
+
+  <!-- JavaScript for search button functionality -->
+  <script>
+    function searchTrain() {
+      var train = document.getElementById('train-search').value;
+      alert('Searching for train: ' + train);
+      // You can add your logic here to process the train number or name entered
+    }
+  </script>
+</body>
+
+</html>
