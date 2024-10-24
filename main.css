@@ -1,6 +1,6 @@
 /* cursor */
 body {
-  cursor: none;
+  cursor: default;
 }
 
 .circle {
