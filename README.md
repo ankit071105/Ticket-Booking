@@ -153,4 +153,28 @@ To submit your contributions, follow these steps:
   </a>
 </div>
 
----
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+
+## Stargazers ❤️
+
+<div align='left'>
+
+
+[![Stargazers repo roster for @ankit071105/Ticket-Booking](https://reporoster.com/stars/dark/ankit071105/Ticket-Booking)](https://github.com/ankit071105/Ticket-Booking/stargazers)
+
+
+</div>
+
+## Forkers ❤️
+
+[![Forkers repo roster for @ankit071105/Ticket-Booking](https://reporoster.com/forks/dark/ankit071105/Ticket-Booking)](https://github.com/ankit071105/Ticket-Booking/network/members)
+
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+
+
+
+
+
