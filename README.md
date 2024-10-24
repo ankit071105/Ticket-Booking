@@ -106,7 +106,29 @@ To submit your contributions, follow these steps:
 8. **Submit a Pull Request**: Go to your forked repository on GitHub and submit a pull request. Be sure to provide a detailed description of your changes and why they are necessary.
 
 🎉 Voila! You have made a PR to the Ticket-Booking project. Sit back patiently and relax while the project maintainers review your PR.
----
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+
+
+
+## This project is now OFFICIALLY accepted for 
+
+<div align="center">
+  <img src="https://github.com/amiya-cyber/banner/blob/main/329829127-e79eb6de-81b1-4ffb-b6ed-f018bb977e88.png" alt="GSSoC 2024 Extd" width="60%">
+</div>
+
+<div align="center">
+  <img src="https://github.com/amiya-cyber/banner/blob/main/hacktober.png" alt="Hacktober fest 2024" width="60%">
+</div>
+
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+
+
+
+
 
 ## ❤️ Our Valuable Contributors
 
