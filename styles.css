@@ -114,7 +114,7 @@ p {
 .navbar .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #00bfa6;
+    color: #12e9cc;
 }
 
 .nav-links {
@@ -124,6 +124,7 @@ p {
 }
 
 .nav-links a {
+    padding-top: 10px;
     color: #fff;
     text-decoration: none;
     font-weight: bold;
@@ -132,6 +133,19 @@ p {
 
 .nav-links a:hover {
     color: #00bfa6;
+}
+
+#darkModeToggle {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Main Content Styles */
@@ -279,6 +293,8 @@ button:hover {
     background-color: #00a690;
 }
 
+
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     .navbar {
@@ -335,6 +351,7 @@ p {
 }
 
 .nav-links a.login-btn {
+    padding-top: 10px;
     background-color: #00bfa6;
     color: white;
     padding: 8px 20px;
@@ -461,22 +478,6 @@ h2 {
     margin-bottom: 40px;
 }
 
-/* .btn {
-    background-color: #00bfa6;
-    color: white;
-    padding: 10px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-    display: block;
-    text-align: center;
-    margin: 0 auto;
-}
-
-.btn:hover {
-    background-color: #00a690;
-} */
 
 .ticket-list {
     display: flex;

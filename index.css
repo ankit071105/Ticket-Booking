@@ -129,6 +129,7 @@ p {
 }
 
 .nav-links a {
+  padding-top: 10px;
   color: #fff;
   text-decoration: none;
   font-weight: bold;

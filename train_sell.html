@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sell Train Ticket</title>
   <link rel="shortcut icon" href="images/4.jpeg" type="image/x-icon">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" type="text/css" href="footer.css">
 <!-- this is for twitter icons -->
 <script src="https://kit.fontawesome.com/3d20c433e1.js" crossorigin="anonymous"></script>
   <style>
@@ -218,15 +218,15 @@
   <!-- Navbar -->
   <nav class="navbar">
 
-    <div class="logo"><img src="images/4.jpeg" alt="Ticket Booking Logo" class="logo-image">Ticket Marketplace</div>
+    <div class="logo"><img src="images/4.jpeg" alt="Ticket Booking Logo" class="logo-image"> Ticket Marketplace</div>
 
-    <a href="./index.html" id="logo-href"><div class="logo">Ticket Marketplace</div></a>
+    <a href="./index.html" id="logo-href"><div class="logo"></div></a>
 
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="bus_sell.html">Sell Bus Ticket</a></li>
-      <li><a href="train_sell.html">Sell Train Ticket</a></li>
-      <li><a href="buy.html">Buy Ticket</a></li>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+      <li><a href="bus_sell.html"><i class="fas fa-tag"></i>Sell Bus Ticket</a></li>
+      <li><a href="train_sell.html"><i class="fas fa-tag"></i>Sell Train Ticket</a></li>
+      <li><a href="buy.html"><i class="fas fa-shopping-cart"></i>Buy Ticket</a></li>
       <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
     </ul>
   </nav>
@@ -370,8 +370,9 @@
 
 <!-- footer end  -->
 
-  <script src="app.js"> </script>
-  <script>
+<script src="app.js"> </script>
+
+<script>
 const darkModeToggle = document.getElementById('darkModeToggle');
 const body = document.querySelector('body');
 if (darkModeToggle) {
@@ -405,18 +406,19 @@ function topFunction() {
 }
 
 
-     // toggle chatbot function
-     function toggleChatbot() {
-        const chatbotContainer = document.getElementById("chatbot-container");
-        chatbotContainer.classList.toggle("chatbot-show");
-    }
+// toggle chatbot function
+function toggleChatbot() {
+  const chatbotContainer = document.getElementById("chatbot-container");
+  chatbotContainer.classList.toggle("chatbot-show");
+}
 
-  </script>
-    <script src="app.js"></script>
-    <div class="gtranslate_wrapper"></div>
-    <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
-    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-    <script src="chatbot.js"></script>
+</script>
+
+<script src="app.js" type="text/javascript"></script>
+<div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+<script src="chatbot.js"></script>
 
 </body>
 </html>
