@@ -477,18 +477,6 @@ h2 {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-.containers {
-  padding: 20px;
-  background: aliceblue;
-  text-align: center;
-}
-
-.map-container {
-  margin: 20px 0;
-  height: 400px;
-  width: 100%;
-}
-
 iframe {
   border: none;
   width: 100%;
@@ -715,18 +703,6 @@ h2 {
 .ticket-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-
-.containers {
-  padding: 20px;
-  background: aliceblue;
-  text-align: center;
-}
-
-.map-container {
-  margin: 20px 0;
-  height: 400px;
-  width: 100%;
 }
 
 iframe {
@@ -1052,11 +1028,6 @@ button:hover {
     transition: 0.4s;
   }
 
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: flex;
-    }
-
     .nav-links {
       position: fixed;
       right: -100%;
@@ -1208,4 +1179,4 @@ button:hover {
       font-size: 2em;
     }
   }
-}
+

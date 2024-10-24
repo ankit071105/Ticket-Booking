@@ -19,23 +19,7 @@ body {
 
 @import url("https://fonts.googleapis.com/css2?family=Shippori+Antique&display=swap");
 
-.close-btn {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  width: 25px;
-  height: 25px;
-  font-size: 20px;
-  color: white;
-  cursor: pointer;
-  background-color: #1f2937;
-  border: 2px solid white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-}
+
 .progress-bar {
   position: fixed;
   top: 0;
@@ -45,37 +29,6 @@ body {
   width: 0;
   transition: width 0.1s ease-in-out;
   z-index: 9999; /* Make sure it's above other content */
-}
-
-.toggle-arrow {
-  position: fixed;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  transition: transform 0.3s ease-in-out;
-  background-color: #1fb899;
-  padding: 5px;
-  border-radius: 0 10px 10px 0;
-  cursor: pointer;
-  color: white;
-  font-size: 25px;
-  padding: 12px;
-}
-
-.social-sidebar {
-  position: fixed;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  background-color: #1fb899;
-  padding: 8px;
-  border-radius: 0 10px 10px 0;
-  border: none;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  z-index: 1;
 }
 
 .social-sidebar ul {
@@ -178,6 +131,7 @@ body {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+  transition: transform 0.3s ease-in-out;
   background-color: #1fb899;
   padding: 5px;
   border-radius: 0 10px 10px 0;
@@ -196,14 +150,6 @@ body {
 
 .slide.active {
   opacity: 1; /* Show the active slide */
-}
-
-/* Image */
-.slide img {
-  width: 100%; /* Make the image take the full width */
-  height: 100%; /* Make the image take the full height */
-  object-fit: fill; /* Ensure the entire image is visible without distortion */
-  object-position: center;
 }
 
 .prev,
@@ -242,20 +188,6 @@ body {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-
-  background-color: #1fb899;
-  padding: 5px;
-  border-radius: 0 10px 10px 0;
-  cursor: pointer;
-  color: white;
-  font-size: 24px;
-}
-
-.social-sidebar {
-  position: fixed;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -264,6 +196,11 @@ body {
   border-radius: 0 10px 10px 0;
   border: none;
   transition: background-color 0.3s ease, transform 0.3s ease;
+
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  z-index: 1;
 }
 
 .social-sidebar a {
@@ -317,21 +254,8 @@ body {
   background-color: #4cc6ad;
 }
 
-/* code for bottom to to nav  */
 
 /* map code  */
-
-.containers {
-  display: flex;
-  flex-wrap: nowrap; /* Prevent wrapping to next line */
-  justify-content: space-around;
-  padding: 20px 100px;
-  align-items: flex-start; /* Align items to top */
-}
-
-.map-container {
-  width: 55%;
-}
 
 .map-container iframe {
   width: 100%;
@@ -597,11 +521,9 @@ body {
 
 /* map code  */
 .containers {
-  /* background-color: red; */
   width: 100%;
   display: flex;
   justify-content: space-around;
-  padding: 20px 100px;
   flex-wrap: wrap;
   align-items: center;
 }
