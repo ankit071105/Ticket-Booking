@@ -126,32 +126,50 @@
     </script>
     <section id="about-us">
       <div class="about-container">
-        <h1>Privacy Policy</h1>
-        <p>
-          Welcome to ticket booking! Your one-stop solution for booking bus and
-          train tickets with ease. Our platform offers a seamless experience for
-          travelers, providing access to various transportation options. We
-          strive to make your journey hassle-free, whether you're planning a
-          short trip or a long adventure. With 24/7 customer support and
-          real-time updates, we ensure that you're always informed and
-          comfortable on the go.
-        </p>
-        <p>
-          At Ticket Booking, we are committed to protecting your privacy. This
-          policy outlines how we collect, use, and safeguard your personal
-          information when you visit our website to book tickets. We collect
-          data such as your name, email address, and payment information solely
-          for processing your bookings and providing you with a seamless
-          experience. Your information is stored securely and is only accessible
-          to authorized personnel. We do not sell or share your data with third
-          parties without your consent, except as required by law or to fulfill
-          your requests. By using our website, you agree to the collection and
-          use of your information in accordance with this policy. If you have
-          any questions or concerns about our privacy practices, please contact
-          us at +91 9685478526.
-        </p>
+          <h1>Privacy Policy</h1>
+  
+          <div class="policy-section">
+              <h2>Welcome to Ticket Booking!</h2>
+              <p>
+                  Your one-stop solution for booking bus and train tickets with ease. 
+                  Our platform offers a seamless experience for travelers, providing access 
+                  to various transportation options. We strive to make your journey hassle-free, 
+                  whether you're planning a short trip or a long adventure. With 24/7 customer 
+                  support and real-time updates, we ensure that you're always informed and 
+                  comfortable on the go.
+              </p>
+          </div>
+  
+          <div class="policy-section">
+              <h2>Commitment to Privacy</h2>
+              <p>
+                  At Ticket Booking, we are committed to protecting your privacy. This 
+                  policy outlines how we collect, use, and safeguard your personal 
+                  information when you visit our website to book tickets. We collect 
+                  data such as your name, email address, and payment information solely 
+                  for processing your bookings and providing you with a seamless 
+                  experience.
+              </p>
+              <p>
+                  Your information is stored securely and is only accessible to authorized 
+                  personnel. We do not sell or share your data with third parties without 
+                  your consent, except as required by law or to fulfill your requests. 
+                  By using our website, you agree to the collection and use of your 
+                  information in accordance with this policy.
+              </p>
+          </div>
+  
+          <div class="contact-info">
+              <h2>Contact Us</h2>
+              <p>
+                  If you have any questions or concerns about our privacy practices, please 
+                  contact us at: 
+                  <a href="tel:+919685478526">+91 9685478526</a>
+              </p>
+          </div>
       </div>
-    </section>
+  </section>
+  
 
     <footer class="footer-container">
       <div class="footer-top">
@@ -256,51 +274,86 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
 
-  body {
+body {
     font-family: "Arial", sans-serif;
     line-height: 1.6;
-  }
+    background-color: #f0f0f0; /* Light background for contrast */
+}
 
-  #about-us {
+#about-us {
     background-image: url("your-background-image.jpg");
     background-size: cover;
     background-position: center;
     color: #fff;
     padding: 80px 0;
     text-align: center;
-  }
+}
 
-  .about-container {
+.about-container {
     max-width: 800px;
     margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(255, 255, 255, 0.9); /* Light container for contrast */
+    color: #333; /* Darker text for readability */
     padding: 40px;
-    border-radius: 10px;
-  }
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+    transition: transform 0.3s; /* Smooth hover effect */
+}
 
-  #about-us h1 {
-    font-size: 3rem;
+.about-container:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+#about-us h1 {
+    font-size: 2.8rem; /* Slightly smaller, balanced size */
     margin-bottom: 20px;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #f0a500;
-  }
+    letter-spacing: 2px; /* Reduced letter spacing */
+    color: #007bff; /* Vibrant accent color */
+}
 
-  #about-us p {
-    color: #fff;
-    font-size: 1.2rem;
+#about-us h2{
+  color: #007bff;
+}
+#about-us p {
+    color: #333; /* Dark text for better readability */
+    font-size: 1.1rem;
     margin-bottom: 20px;
-  }
+    line-height: 1.8; /* Increased line height for readability */
+}
 
-  @media (max-width: 768px) {
+.contact-info {
+    margin-top: 30px; /* More space for emphasis */
+    font-size: 1.1rem; /* Consistent text size */
+    color: #007bff; /* Matching accent color */
+}
+
+.contact-info a {
+  color: #007bff;/* Consistent link color */
+    text-decoration: none; /* Clean appearance */
+    font-weight: bold; /* Bold for emphasis */
+    transition: color 0.3s, text-decoration 0.3s; /* Smooth transition */
+}
+
+.contact-info a:hover {
+  color: #007bff;/* Darker accent on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+@media (max-width: 768px) {
     #about-us h1 {
-      font-size: 2.5rem;
+        font-size: 2.2rem; /* Responsive heading size */
     }
 
     #about-us p {
-      font-size: 1rem;
+        font-size: 1rem; /* Responsive paragraph size */
     }
-  }
+
+    .contact-info {
+        font-size: 1rem; /* Responsive size for contact info */
+    }
+}
+
 </style>

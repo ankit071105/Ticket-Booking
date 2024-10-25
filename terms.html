@@ -5,159 +5,218 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Terms of Use - BuddyTrail</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="footer.css"> 
     <style>
-        /* Resetting margin and padding */
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* Body styling */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-        }
+/* Body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4; /* Light background for contrast */
+    color: #333;
+    line-height: 1.6;
+}
 
-        /* Full-width container for page */
-        .container {
-            display: flex;
-            width: 100%;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
+/* Full-width container for page */
+.container {
+    display: flex;
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+}
 
-        /* Table of contents styling */
-        .toc {
-            flex-basis: 25%;
-            background-color: #e9ecef;
-            padding: 20px;
-            border-radius: 8px;
-            margin-right: 20px;
-            height: fit-content;
-            position: sticky;
-            top: 20px;
-        }
+.container:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
 
-        .toc h2 {
-            font-size: 1.5rem;
-            color: #004085;
-        }
+/* Table of contents styling */
+.toc {
+    flex-basis: 25%;
+    background-color: #e9ecef;
+    padding: 20px;
+    border-radius: 8px;
+    margin-right: 20px;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Shadow for TOC */
+}
 
-        .toc ul {
-            list-style: none;
-            padding: 0;
-        }
+.toc h2 {
+    font-size: 1.5rem;
+    color: #004085;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #007bff; /* Underline effect */
+    padding-bottom: 5px;
+}
 
-        .toc ul li {
-            margin-bottom: 10px;
-        }
+/* TOC links */
+.toc ul {
+    list-style: none;
+    padding: 0;
+}
 
-        .toc ul li a {
-            text-decoration: none;
-            color: #007bff;
-            font-weight: bold;
-        }
+.toc ul li {
+    margin-bottom: 10px;
+}
 
-        .toc ul li a:hover {
-            text-decoration: underline;
-        }
+.toc ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s ease, padding-left 0.2s ease; /* Transition for hover effects */
+    padding-left: 5px;
+}
 
-        /* Main content styling */
-        .main-content {
-            flex-basis: 75%;
-        }
+.toc ul li a:hover {
+    color: #0056b3; /* Darker blue on hover */
+    padding-left: 10px; /* Indent effect on hover */
+    font-weight: bold; /* Keep bold on hover */
+}
 
-        h1, h2 {
-            color: #004085;
-        }
+/* Main content styling */
+.main-content {
+    flex-basis: 75%;
+}
 
-        h1 {
-            font-size: 2.2rem;
-            text-align: center;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #004085;
-            padding-bottom: 10px;
-        }
+h1, h2 {
+    color: #004085;
+}
 
-        h2 {
-            font-size: 1.8rem;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-        }
+h1 {
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #007bff; /* Enhanced underline */
+    padding-bottom: 10px;
+}
 
-        p {
-            font-size: 1rem;
-            color: #555;
-            margin-bottom: 20px;
-        }
+h2 {
+    font-size: 1.8rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd; /* Thicker border for separation */
+    padding-bottom: 10px;
+    position: relative;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
 
-        ul {
-            margin-left: 20px;
-            padding-left: 20px;
-            list-style: disc;
-        }
+h2:hover {
+    color: #0056b3; /* Change color on hover */
+}
 
-        li {
-            margin-bottom: 10px;
-        }
+/* Paragraph styling */
+p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
 
-        /* Button styling for links */
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
+p:hover {
+    color: #333; /* Darker color on hover */
+}
 
-        a:hover {
-            text-decoration: underline;
-        }
+/* List styling */
+ul {
+    margin-left: 20px;
+    padding-left: 20px;
+    list-style: disc;
+}
 
-        /* Smooth scrolling for anchor links */
-        html {
-            scroll-behavior: smooth;
-        }
+li {
+    margin-bottom: 10px;
+}
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
+/* Button styling for links */
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
 
-            .toc {
-                margin-bottom: 20px;
-                margin-right: 0;
-                width: 100%;
-                position: relative; /* Changed to relative to make TOC non-sticky */
-            }
+a:hover {
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: underline; /* Underline on hover */
+}
 
-            .main-content {
-                width: 100%;
-            }
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
 
-            h1 {
-                font-size: 1.8rem;
-            }
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
 
-            h2 {
-                font-size: 1.4rem;
-            }
+    .toc {
+        margin-bottom: 20px;
+        margin-right: 0;
+        width: 100%;
+        position: relative;
+    }
 
-            p {
-                font-size: 0.95rem;
-            }
-        }
+    .main-content {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+}
+
     </style>
 </head>
 <body>
+    <nav class="navbar">
+        <a href="./index.html" id="logo-href">
+            <div class="logo-container">
+                <img src="images/4.jpeg" alt="Ticket Booking Logo" class="logo-image">
+                <div class="logo">Ticket Booking</div>
+            </div>
+        </a>
+    
+        <div class="nav-container">
+            <div class="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+    
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="buy.html">Buy Ticket</a></li>
+        <li><a href="sell.html"><i class="fas fa-tag"></i> Sell</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="contributor.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                <li><a href="/client/register.html" class="login-btn"><i class="fas fa-user"></i></a></li>
 
+		      <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+            </ul>
+    
+        </div>
+        
+    </nav>
     <div class="container">
         
         <!-- Table of contents on the left side -->
