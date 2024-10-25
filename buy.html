@@ -19,6 +19,7 @@
       font-family: Arial, sans-serif;
     }
 
+
     /* cursor */
     .circle {
   height: 24px;
@@ -37,6 +38,7 @@
     .container {
       margin: 30px;
     }
+
 
     .ticket-section {
       margin-bottom: 30px;
@@ -92,169 +94,7 @@
 
 
 
-    /* code for ticket booking form  */
-    .container {
-/* <<<<<<< HEAD */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* min-height: 100vh; */
-    flex-wrap: wrap;
-    margin-top: 10px;
   
-}
-
-.left-section, .right-section {
-    flex: 1;
-    padding: 20px;
-    height: 100%;
-}
-
-.left-section {
-   min-width: 400px;
-   max-width: 600px;
-}
-
-
-.image-placeholder {
-    font-size: 20px;
-    font-weight: bold;
-    color: black;
-    text-align: center;
-}
-
-.right-section {
-  
-    min-width: 400px;
-    background-color: #1fb899;
-    padding: 40px;
-    border-radius: 5px;
-    max-width: 600px;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-input[type="text"], select {
-    padding: 8px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.form-group select{
-  width: 60%;
-}
-
-.submit-btn {
-    background-color: #ff4d4d;
-    color: white;
-    padding: 7px;
-    width: 100%;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    height: 60px;
-}
-
-.submit-btn:hover {
-    background-color: #e33e3e;
-}
-
-  .container{
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-    .left-section,
-    .right-section {
-      flex: 1;
-      padding: 20px;
-      height: 100%;
-    }
-
-    .left-section {
-      min-width: 400px;
-      max-width: 600px;
-    }
-
-
-    .image-placeholder {
-      font-size: 20px;
-      font-weight: bold;
-      color: black;
-      text-align: center;
-    }
-    .form-group input,select{
-      margin: 0 21%;
-    }
-
-    .right-section {
-      min-width: 400px;
-      background: linear-gradient(135deg,#ead6ee,#a0f1ea);
-      padding: 40px;
-      border-radius: 5px;
-      max-width: 600px;
-      transform: scale(0.85);
-    }
-    .form-group input{
-      width: 60%;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .form-group {
-      margin-bottom: 15px;
-    }
-
-    label {
-      display: flex;
-      margin-bottom: 5px;
-      font-weight: bold;
-      justify-content: center;
-    }
-
-    input[type="text"],
-    select {
-      padding: 8px;
-      margin: 5px 21%;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    .submit-btn {
-      background-color: #ff4d4d;
-      color: white;
-      padding: 7px;
-      width: 60%;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-      height: 60px;
-      margin: auto;
-      scale: 0.78;
-    }
-
-    .submit-btn:hover {
-      background-color: #e33e3e;
-    }
 
          /* code for chatbot button */
          #chatbotBtn {
@@ -472,6 +312,7 @@ input[type="text"], select {
 
 
   <header>
+
       
       <nav class="navbar">
             <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
@@ -490,6 +331,31 @@ input[type="text"], select {
         
           </nav>
               
+
+    <nav class="navbar">
+
+       <a href="index.html" style="text-decoration: none;">
+        <div class="logo"><img src="./images/4.jpeg"
+          alt="Ticket Booking Logo" class="logo-image">Ticket Marketplace</div>
+       </a>
+
+      <!-- <a href="./index.html" id="logo-href">
+        <div class="logo">Ticket Marketplace</div>
+      </a> -->
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="buy.html">Buy Ticket</a></li>
+        <li><a href="sell.html"><i class="fas fa-tag"></i> Sell</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="contributor.html"><i class="fas fa-users"></i> Our Contributors</a></li>
+                <li><a href="/client/register.html" class="login-btn"><i class="fas fa-user"></i></a></li>
+
+        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+      </ul>
+    </nav>
+
   </header>
 
 
@@ -511,92 +377,6 @@ input[type="text"], select {
   <style>
     body {
       font-family: Arial, sans-serif;
-    }
-
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 20px;
-      padding: 20px;
-    }
-
-    .left-section,
-    .right-section {
-      flex: 1;
-      padding: 20px;
-      height: 100%;
-    }
-
-    /* Bus animation */
-    .bus-img {
-      width: 100%;
-      max-width: 600px;
-      display: block;
-      animation: busMove 5s linear infinite;
-    }
-
-    @keyframes busMove {
-      0% {
-        transform: translateX(-100%);
-      }
-
-      100% {
-        transform: translateX(100%);
-      }
-    }
-
-    .right-section {
-      background: linear-gradient(135deg, #ead6ee, #a0f1ea);
-      padding: 40px;
-      border-radius: 5px;
-      max-width: 600px;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .form-group {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 15px;
-      flex-wrap: wrap;
-    }
-
-    label {
-      font-weight: bold;
-      width: 30%;
-      text-align: left;
-    }
-
-    input[type="text"],
-    input[type="date"],
-    input[type="time"],
-    select {
-      width: 65%;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    .submit-btn {
-      background-color: #ff4d4d;
-      color: white;
-      padding: 7px;
-      width: 100%;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-      height: 50px;
-      margin-top: 20px;
-    }
-
-    .submit-btn:hover {
-      background-color: #e33e3e;
     }
 
   </style>
@@ -624,8 +404,9 @@ input[type="text"], select {
         </div>
         <div class="form-group">
           <label for="journeyDate">Date of Journey</label>
-          <input type="date" id="journeyDate" name="journeyDate" required>
-        </div>
+          <input type="date" id="journeyDate" name="journeyDate" required max="9999-12-31">
+      </div>
+      
         <div class="form-group">
           <label for="journeyTime">Time of Journey</label>
           <input type="time" id="journeyTime" name="journeyTime" required>
@@ -644,80 +425,143 @@ input[type="text"], select {
   </div>
 <style>
   .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 20px;
-      padding: 20px;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-    .left-section,
-    .right-section {
-      flex: 1;
-      padding: 20px;
-      height: 100%;
-    }
+.left-section,
+.right-section {
+  flex: 1;
+}
+.left-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    /* Bus animation */
-    .bus-img {
-      width: 100%;
-      max-width: 500px;
-      display: block;
-      animation: busMove 5s linear infinite;
-    }
+.right-section {
+  height: auto;
+  background: linear-gradient(135deg, #ead6ee, #a0f1ea);
+  padding: 40px;
+}
 
-    .right-section {
-      background: linear-gradient(135deg, #ead6ee, #a0f1ea);
-      padding: 40px;
-      border-radius: 5px;
-      width: 1000px;
-    }
+h2 {
+  text-align: center;
+  font-size: 2.5rem; /* Bigger typography */
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #ff4d4d;
+  cursor: default;
+}
+h2:hover{
+  color: #ff4d4d;
+}
 
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
+.form-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
 
-    .form-group {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 15px;
-      flex-wrap: wrap;
-    }
+.form-group label {
+  font-weight: bold;
+  align-self: center;
+  font-size: 1rem;
+}
 
-    label {
-      font-weight: bold;
-      width: 40%;
-      text-align: center;
-    }
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group select {
+  width: 65%;
+  padding: 10px 10px;
+  border-radius: 0px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background-color: transparent;
+  font-size: 1rem;
+  transition: 0.3s all;
+}
+.form-group input[type="text"]:focus,
+.form-group input[type="date"]:focus,
+.form-group input[type="time"]:focus,
+.form-group select:focus {
+  outline: none; /* Remove the default outline */
+  border-bottom: 2px solid #ff4d4d; /* White bottom border on focus */
+}
 
-    input[type="text"],
-    input[type="date"],
-    input[type="time"],
-    select {
-      width: 75%;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
 
-    .submit-btn {
-      background-color: #ff4d4d;
-      color: white;
-      padding: 10px;
-      width: 100%;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 30px;
-      height: 50px;
-      margin-top: 20px;
-    }
 
-    .submit-btn:hover {
-      background-color: #e33e3e;
-    }
+.submit-btn {
+  background-color: #ff4d4d;
+  border: 2px solid #ff4d4d;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  padding: 25px;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  margin-top: 30px;
+}
+
+.submit-btn:hover {
+  background-color: transparent;
+  color: #ff4d4d;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .right-section {
+    width: 100vw;
+  }
+
+  .form-group {
+    flex-direction: row;
+  }
+  .form-group input,
+  .form-group select {
+    width: 65%;
+  }
+}
+@media (max-width: 580px){
+  .container {
+    flex-direction: column;
+  }
+
+  .right-section {
+    width: 100vw;
+  }
+
+  .form-group {
+    flex-direction: column;
+    justify-content: left;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom:10px;
+  }
+  .form-group label,
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 10px 0px;
+  }
+  .form-group select{
+    cursor: pointer;
+  }
+}
+
 </style>
 <!-- cursor -->
 <script>
@@ -960,7 +804,32 @@ if (darkModeToggle) {
     const progressHeight = (window.scrollY / totalHeight) * 100;
     scrollProgressBar.style.width = progressHeight + '%';
 });
+
+
+
+
+
+
     </script>
+
+
+<script>
+  // Restrict the input to only valid dates (YYYY-MM-DD)
+  document.getElementById('journeyDate').addEventListener('input', function() {
+      // Enforce a strict date pattern of YYYY-MM-DD
+      const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+      if (!datePattern.test(this.value)) {
+          // Remove any invalid characters from the input
+          this.value = this.value.slice(0, 10);
+      }
+  });
+</script>
+
+
+
+
+
+
     <script src="app.js"></script>
     <div class="gtranslate_wrapper"></div>
     <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>

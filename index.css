@@ -1,3 +1,5 @@
+
+
 * {
   margin: 0;
   padding: 0;
@@ -103,9 +105,79 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   background-color: #1f2937;
   padding: 15px;
   color: white;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+/* Navbar container */
+.navbar {
+  background-color: #333;
+  padding: 10px 20px;
+}
+
+/* Navbar list styling */
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Navbar list items styling */
+.navbar ul li {
+  position: relative;
+}
+
+/* Navbar links styling */
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1.1em;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+/* Hover effect with underline and color change */
+.navbar ul li a:hover {
+  color: #FFD700; /* Golden color on hover */
+  background-color: #444;
+  transform: scale(1.05);
+}
+
+/* Optional: Adding a subtle underline effect */
+.navbar ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 2px;
+  background-color: #FFD700; /* Underline color */
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.navbar ul li a:hover::after {
+  transform: scaleX(1);
+}
+
+}
+
+.nav-container {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+
 }
 
 .navbar a {

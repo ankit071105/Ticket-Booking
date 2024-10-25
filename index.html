@@ -112,6 +112,139 @@
       50% { transform: scale(1.05); }
       100% { transform: scale(1); }
     }
+
+    @import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@400;700&display=swap');
+
+    .feedback-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px;
+        margin:0 100px 0;
+    }
+    .contact-info, .contact-form {
+        background-color: #00bfa5;
+        padding: 20px;
+        color: white;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+
+    .contact-info {
+        flex: 1 1 40%;
+        min-width: 300px;
+        border-radius: 10px 0 0 10px;
+    }
+    .contact-info h2 {
+        color: #ffeb3b;
+        font-size: 36px;
+        margin: 0;
+    }
+    .contact-info p {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+    .info-box-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .info-box {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 10px;
+        margin: 10px;
+        flex: 1;
+    }
+    .info-box i {
+        font-size: 40px;
+        flex-shrink: 0;
+        margin-right: 10px;
+        color:lightgreen;
+    }
+    .info-box p {
+        margin: 10px;
+        font-size: 16px;
+    }
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1 1 50%;
+        min-width: 300px;
+        border-radius: 0 10px 10px 0;
+    }
+    .contact-form label {
+        display: block;
+        margin: 10px 0 5px;
+        font-size: 18px;
+    }
+    .contact-form input, .contact-form textarea {
+        display:block;
+        width: 75%;
+        padding: 10px;
+        margin: 10px  auto;
+        border: 1px solid #00bfa5;
+        border-radius: 10px;
+        background-color: #ffffff;
+        color: white;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        transition: all 0.3s ease;
+    }
+
+    .contact-form input:focus, .contact-form textarea:focus {
+        border-color: #ffeb3b;
+        outline: none;
+        color: black;
+    }
+    .contact-form textarea {
+        resize: none;
+    }
+    .contact-form button {
+        background-color: #ffeb3b;
+        color: rgb(80, 74, 74);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        display: block; 
+        width: 20%; 
+        box-sizing: border-box; 
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-align: center;
+    }
+    .contact-form button:hover {
+        background-color: #c4b320;
+    }
+    @media (max-width: 768px) {
+        .feedback-container {
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .contact-info, .contact-form {
+            width: 100%;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .info-box-container {
+            flex-direction: row;
+            align-items: center;
+        }
+        .info-box{
+            flex: 1;
+            flex-direction: column;
+        }
+        .contact-form button {
+            width: auto;
+            padding: 10px 20px;
+        }
+    }
   </style>
     <script src="https://kit.fontawesome.com/3d20c433e1.js" crossorigin="anonymous"></script>
 </head>
@@ -153,12 +286,21 @@
         <div id="loading-text">Ready to Explore the World...</div>
       </div>
     <nav class="navbar">
-        <a href="./index.html" id="logo-href">
+        <a href="./index.html" id="logo-href" >
             <div class="logo-container">
                 <img src="images/4.jpeg" alt="Ticket Booking Logo" class="logo-image">
                 <div class="logo">Ticket Booking</div>
             </div>
         </a>
+        <nav class="navbar">
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#reviews">Reviews</a></li>
+              <li><a href="#queries">Queries</a></li>
+            </ul>
+          </nav>
+          
+          
     
         <div class="nav-container">
             <div class="menu-toggle">
@@ -270,16 +412,7 @@
 
     </div>
     </div>
-	<div class="social-sidebar">
-        <div class="close-btn" onclick="toggleSidebar()" title="Close Sidebar">&times;</div>
-        <ul>
-            <li><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-meta"></i></a></li>
-            <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
-        </ul>
-
-    </div>
+	
     <div class="toggle-arrow" onclick="toggleSidebar()" title="Open Sidebar" style="display: none;">
         <i class="fas fa-arrow-right"></i>
     </div>
@@ -310,14 +443,8 @@
                 <h3>Sell Train Tickets</h3>
                 <p>Have train tickets to sell? Reach out to us to list your tickets and get great deals.</p>
                 <a href="train_sell.html"><button class="bbtn">Sell Train Tickets</button></a>
-            </div>
-
-  
-    
-    
+            </div>  
 </div>
-
-
 
 <script src="about.js"></script>
   </div>
@@ -348,6 +475,52 @@
 <script src="main.js"></script>
  
 <script src="about.js"></script>
+
+<section >
+    <div class="feedback-container">
+        <div class="contact-info">
+         <h2>
+          Your Feedback Matters!
+         </h2>
+         <p>
+          We value your feedback! We'd love to hear from you! For inquiries, feedback, or support, please reach out. Your insights help us improve your experience.
+         </p>
+         <div class="info-box-container">
+          <div class="info-box">
+             <i class="fa-solid fa-location-dot"></i>
+           <p>
+            <strong>
+             Location
+            </strong>
+            <br/>
+           ITER ,ordissa
+            <br/>
+            Pin: 76896
+           </p>
+          </div>
+         
+         </div>
+        </div>
+        <div class="contact-form">
+         <label for="name">
+          Name:
+         </label>
+         <input id="name" name="name" placeholder="Enter your name" type="text"/>
+         <label for="email">
+          Email:
+         </label>
+         <input id="email" name="email" placeholder="Enter your email" type="email"/>
+         <label for="message">
+          Message:
+         </label>
+         <textarea id="message" name="message" placeholder="Enter your message" rows="3"></textarea>
+         <button type="submit">
+          Submit
+         </button>
+        </div>
+       </div>
+</section>
+
 <section id="faq">
     <div class="faq-container">
         <h1 class="faq-title" data-aos="fade-right">Frequently Asked Questions</h1>
@@ -490,52 +663,6 @@
         }
     }
 </script>
-    
-  <section id="feedback-form">
-  <div class="container text-black">
-    <h2>We Value Your Feedback!</h2>
-    <p>Your input helps us improve our services. Please share your thoughts with us below.</p>
-    <form id="feedback-form-element">
-      
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your Name" required pattern="[a-zA-Z ]+"
-              oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
-              oninput="this.setCustomValidity('')">
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Your Email" required>
-      </div>
-
-      <div class="form-group">
-        <label for="rating">Rating</label>
-        <select id="rating" name="rating" required>
-          <option value="5">Excellent - 5 Stars</option>
-          <option value="4">Very Good - 4 Stars</option>
-          <option value="3">Good - 3 Stars</option>
-          <option value="2">Fair - 2 Stars</option>
-          <option value="1">Poor - 1 Star</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="feedback">Your Feedback</label>
-        <textarea id="feedback"name="feedback" rows="5" placeholder="Tell us about your experience..." required></textarea>
-      </div>
-
-      <div class="flex items-center">
-        <button id="submit-btn" type="submit" style="width: 150px; height: 70px;">Submit Feedback</button>
-        <div id="progress-bar" class="radial-progress" style="--value:0;width: 50px; height: 50px;" role="progressbar">
-      0%
-    </div>
-      </div>
-    </form>
-
-
-  </div>
-</section>
 
 <script>
     document.getElementById('feedback-form-element').addEventListener('submit', function(event) {
@@ -579,12 +706,6 @@
         <p style="color: #b5fdf4;" >Affordable adventures, unforgettable memories—explore with ease.</p>
         <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
         <div class="social-icons">
-
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#" ><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
 
             <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
             <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
@@ -926,6 +1047,19 @@ animateCircles();
     <script src="faq.js"></script>
 
     <script src="chatbot.js"></script>
+
+    <br /><br />
+    <link rel="stylesheet" href="visi.css">
+    <!-- ############### Footer ############### -->
+    <div class="visitor-counter">
+      <div>Visitor</div>
+      <div class="website-counter"></div>
+    </div>
+    <script src="path/to/visitorCounter.js"></script>
+    <script src="./assets/css/visitors.css"></script>
+
+      <script src="visi.js"></script>
+      
 </body>
 
 </html>
