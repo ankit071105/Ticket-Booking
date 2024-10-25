@@ -112,12 +112,13 @@ p {
   z-index: 1000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   
+/* Navbar container */
 .navbar {
   background-color: #333;
   padding: 10px 20px;
 }
 
-
+/* Navbar list styling */
 .navbar ul {
   list-style: none;
   margin: 0;
@@ -127,12 +128,12 @@ p {
   gap: 30px;
 }
 
-
+/* Navbar list items styling */
 .navbar ul li {
   position: relative;
 }
 
-
+/* Navbar links styling */
 .navbar ul li a {
   text-decoration: none;
   color: white;
@@ -143,13 +144,14 @@ p {
   border-radius: 5px;
 }
 
+/* Hover effect with underline and color change */
 .navbar ul li a:hover {
-  color: #FFD700; 
+  color: #FFD700; /* Golden color on hover */
   background-color: #444;
   transform: scale(1.05);
 }
 
-
+/* Optional: Adding a subtle underline effect */
 .navbar ul li a::after {
   content: '';
   position: absolute;
@@ -157,7 +159,7 @@ p {
   right: 0;
   bottom: -5px;
   height: 2px;
-  background-color: #FFD700; 
+  background-color: #FFD700; /* Underline color */
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
