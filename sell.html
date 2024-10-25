@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -204,7 +205,7 @@
       text-decoration: none;
       border-radius: 5px;
       transition: background 0.3s ease;
-
+    }
         /* Sell tickets css */
         .sell-ticket {
     text-align: center;
@@ -224,6 +225,7 @@
     width: 250px; /* Card width */
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    transition-duration: 0.5s;
 }
 
 .card-image {
@@ -247,6 +249,63 @@
 .btn:hover {
     background-color: #00a690; /* Darker button color on hover */
 }
+
+.card:hover{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sell_card{
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.sell_card {
+  position: relative;
+  width: 300px; /* Set width as needed */
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.badge {
+  position: absolute;
+  top: 10px; /* Adjust the spacing from the top */
+  left: 10px; /* Adjust spacing from the left */
+  background-color: #ff5722; /* Badge background color */
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.card-title {
+  margin-top: 40px; /* Add top margin to prevent overlap with the badge */
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card-description {
+  margin-top: 10px;
+  color: #666;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
   </style>
 </head>
 
@@ -312,60 +371,42 @@
   <section class="sell-ticket">
 
     <h1>Sell Your Ticket</h1>
-    <div class="card-container">
+    <div class="card-container" >
         <div class="card">
-            <img src="./images/bus.avif" alt="Bus" class="card-image">
-            <a href="bus_sell.html" class="btn">Sell Bus Ticket</a>
+            <img src="./images/bus.avif" alt="Bus" class="card-image"  >
+            <a href="bus_sell.html" class="btn " >Sell Bus Ticket</a>
         </div>
         <div class="card">
             <img src="./images/train-img.jpeg" alt="Train" class="card-image">
             <a href="train_sell.html" class="btn">Sell Train Ticket</a>
         </div>
     </div>
-  </section>
-
-<!-- footer -->
-
-<footer class="footer-container">
-  <div class="footer-top">
-    <!-- Logo and Tagline -->
-    <div class="footer-logo-section">
-      <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo">
-      <p style="color: #b5fdf4;" >Affordable adventures, unforgettable memories—explore with ease.</p>
-      <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
-      <!-- Social Media Icons -->
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-        
+    <br>
     <div class="container">
       <h1>Sell Your Tickets Easily</h1>
       <p>Welcome to our marketplace where you can easily sell your unused tickets. Whether it's for a concert, sports
         event, or travel, we've got you covered. Simply choose the type of ticket you want to sell and follow the steps
         to post your listing.</p>
       <div class="sell-options">
-        <div class="card">
+        <div class="card sell_card">
           <div class="badge">Popular</div>
           <div class="card-title">Bus Ticket</div>
           <div class="card-description">Sell your bus tickets quickly and easily through our platform.</div>
           <a href="bus_sell.html" class="btn">Sell Bus Ticket</a>
         </div>
-        <div class="card">
+        <div class="card sell_card">
           <div class="badge">New</div>
           <div class="card-title">Train Ticket</div>
           <div class="card-description">Get a great deal when selling your train tickets with us.</div>
           <a href="train_sell.html" class="btn">Sell Train Ticket</a>
         </div>
-        <div class="card">
+        <div class="card sell_card">
           <div class="badge">Limited Offer</div>
           <div class="card-title">Concert Ticket</div>
           <div class="card-description">Sell concert tickets effortlessly and reach interested buyers.</div>
           <a href="concert_sell.html" class="btn">Sell Concert Ticket</a>
         </div>
-        <div class="card">
+        <div class="card sell_card">
           <div class="badge">Hot</div>
           <div class="card-title">Sports Ticket</div>
           <div class="card-description">Sell your sports tickets to a wide audience of fans.</div>
