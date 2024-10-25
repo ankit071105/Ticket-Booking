@@ -24,6 +24,33 @@
     <script src="https://cdn.jsdelivr.net/npm/daisyui"></script>
 
     <style>
+        /* For Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+  width: 10px;
+  /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the track */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scrollbar handle */
+  border-radius: 10px;
+  border: 1px solid #f1f1f1; /* Adds space around handle */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Darkens on hover */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin; /* Thin scrollbar */
+  scrollbar-color:  #1f2937 #888; /* Handle and track color */
+}
+
         /* Preloader Container */
         #preloader {
       position: fixed;
