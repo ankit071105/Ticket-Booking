@@ -129,7 +129,9 @@
         box-sizing: border-box;
         margin-bottom: 20px;
     }
-
+    .feedback-desc{
+        padding-left: 35px;
+    }
     .contact-info {
         flex: 1 1 40%;
         min-width: 300px;
@@ -148,6 +150,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        gap: 10px;
     }
     .info-box {
         display: flex;
@@ -174,6 +177,7 @@
         flex: 1 1 50%;
         min-width: 300px;
         border-radius: 0 10px 10px 0;
+        padding: 20px;
     }
     .contact-form label {
         display: block;
@@ -201,11 +205,12 @@
     }
     .contact-form textarea {
         resize: none;
+        height: 120px; 
     }
     .contact-form button {
         background-color: #ffeb3b;
         color: rgb(80, 74, 74);
-        padding: 10px 20px;
+        padding: 1px 20px;
         border: none;
         border-radius: 5px;
         cursor: pointer;
@@ -482,7 +487,7 @@
          <h2>
           Your Feedback Matters!
          </h2>
-         <p>
+         <p class="feedback-desc">
           We value your feedback! We'd love to hear from you! For inquiries, feedback, or support, please reach out. Your insights help us improve your experience.
          </p>
          <div class="info-box-container">
