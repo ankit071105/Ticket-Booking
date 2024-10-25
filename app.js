@@ -1,154 +1,171 @@
-// Constants for price calculations
-const SELLER_DEDUCTION = 50;
-const BUYER_ADDED_FEE = 100;
+// Constants for price calculations and form validation
+const CONSTANTS = {
+  SELLER_DEDUCTION: 50,
+  BUYER_ADDED_FEE: 100,
+  REQUIRED_FIELDS: ['name', 'phone', 'email', 'ticketNumber']
+};
 
-// Initialize empty ticket array in localStorage if not already set
-if (!localStorage.getItem('tickets')) {
-  localStorage.setItem('tickets', JSON.stringify([]));
+// Initialize localStorage with a wrapper class for better error handling
+class StorageManager {
+  static getTickets() {
+    try {
+      return JSON.parse(localStorage.getItem('tickets')) || [];
+    } catch (error) {
+      console.error('Error reading tickets from storage:', error);
+      return [];
+    }
+  }
+
+  static saveTickets(tickets) {
+    try {
+      localStorage.setItem('tickets', JSON.stringify(tickets));
+      return true;
+    } catch (error) {
+      console.error('Error saving tickets to storage:', error);
+      return false;
+    }
+  }
 }
 
-// Function to validate form data
+// Initialize storage on page load
+if (!localStorage.getItem('tickets')) {
+  StorageManager.saveTickets([]);
+}
+
+// Form validation with more detailed error messages
 function validateFormData(data) {
-  if (!data.name || !data.phone || !data.email || !data.ticketNumber || !data.ticketNumber) {
-    alert("Please fill out all required fields.");
+  const missingFields = CONSTANTS.REQUIRED_FIELDS.filter(field => !data[field]);
+  if (missingFields.length > 0) {
+    alert(`Please fill out the following required fields: ${missingFields.join(', ')}`);
     return false;
   }
   return true;
 }
 
-// Common ticket submission handler
-function handleTicketSubmission(formId, type) {
-  document.getElementById(formId)?.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    // Collect form data
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
-    const email = document.getElementById('email').value;
-    const ticketNumber = document.getElementById('ticketNumber').value;
-    const departureStation = document.getElementById('departureStation').value;
-    const arrivalStation = document.getElementById('arrivalStation').value;
-    const departureTime = document.getElementById('departureTime').value;
-    const date = document.getElementById('date').value;
-    const seatNumber = document.getElementById('seatNumber').value;
-    const price = parseFloat(document.getElementById('price').value);
-
-    // Validate form data
-    if (!validateFormData({ name, phone, email, ticketNumber })) {
-      return;
-    }
-
-    let additionalDetails = {};
-
-    // Specific data for train or bus
+// Ticket class for better organization and type checking
+class Ticket {
+  constructor(formData, type) {
+    this.type = type;
+    this.name = formData.name;
+    this.phone = formData.phone;
+    this.email = formData.email;
+    this.ticketNumber = formData.ticketNumber;
+    this.departureStation = formData.departureStation;
+    this.arrivalStation = formData.arrivalStation;
+    this.departureTime = formData.departureTime;
+    this.date = formData.date;
+    this.seatNumber = formData.seatNumber;
+    this.price = parseFloat(formData.price);
+    this.sellerAmount = this.price - CONSTANTS.SELLER_DEDUCTION;
+    this.buyerPrice = this.price + CONSTANTS.BUYER_ADDED_FEE;
+    
+    // Add type-specific details
     if (type === 'bus') {
-      additionalDetails.busName = document.getElementById('busName').value;
+      this.busName = formData.busName;
     } else if (type === 'train') {
-      additionalDetails.trainNumber = document.getElementById('trainNumber').value;
-      additionalDetails.category = document.getElementById('category').value;
-      additionalDetails.Class1 = document.getElementById('Class1').value;
+      this.trainNumber = formData.trainNumber;
+      this.category = formData.category;
+      this.Class1 = formData.Class1;
     }
-
-    // Calculate seller's deduction and buyer's added fee
-    const sellerAmount = price - SELLER_DEDUCTION;
-    const buyerPrice = price + BUYER_ADDED_FEE;
-
-    // Create ticket object
-    const ticket = {
-      name,
-      phone,
-      email,
-      ticketNumber,
-      departureStation,
-      arrivalStation,
-      departureTime,
-      date,
-      seatNumber,
-      price,
-      sellerAmount,
-      buyerPrice,
-      type,
-      ...additionalDetails,
-    };
-
-    // Store the ticket in localStorage
-    const tickets = JSON.parse(localStorage.getItem('tickets'));
-    tickets.push(ticket);
-    localStorage.setItem('tickets', JSON.stringify(tickets));
-
-    // Show confirmation message
-    document.getElementById('sellerMessage').textContent = `Your ${type} ticket is listed! You will receive ₹${sellerAmount} after sale.`;
-    document.getElementById(formId).reset();
-  });
-}
-
-// Initialize the event listeners
-handleTicketSubmission('busTicketForm', 'bus');
-handleTicketSubmission('trainTicketForm', 'train');
-
-// Display tickets in the buy.html page
-function displayTickets(type) {
-  const ticketContainer = document.getElementById('ticketContainer');
-  ticketContainer.innerHTML = ''; // Clear previous tickets
-
-  // Retrieve tickets from localStorage
-  const tickets = JSON.parse(localStorage.getItem('tickets')) || [];
-
-  // Filter tickets by type (bus or train)
-  const filteredTickets = tickets.filter(ticket => ticket.type === type);
-
-  if (filteredTickets.length === 0) {
-    ticketContainer.innerHTML = `<p>No ${type} tickets available.</p>`;
-  } else {
-    filteredTickets.forEach(ticket => {
-      const ticketCard = document.createElement('div');
-      ticketCard.classList.add('ticket-card');
-
-      // Common ticket details
-      ticketCard.innerHTML = `
-        <h3>${type === 'bus' ? 'Bus Ticket' : 'Train Ticket'}</h3>
-        <p><strong>PNR Number:</strong> ${ticket.ticketNumber}</p>
-        <p><strong>Seller Name:</strong> ${ticket.name}</p>
-        <p><strong>Contact:</strong> ${ticket.phone} | ${ticket.email}</p>
-        <p><strong>Departure Station:</strong> ${ticket.departureStation}</p>
-        <p><strong>Arrival Station:</strong> ${ticket.arrivalStation}</p>
-        <p><strong>Departure Time:</strong> ${ticket.departureTime}</p>
-        <p><strong>Class:</strong> ${ticket.Class1}</p>
-        <p><strong>Category:</strong> ${ticket.category}</p>
-        <p><strong>Date:</strong> ${ticket.date}</p>
-        <p><strong>Seat Number:</strong> ${ticket.seatNumber}</p>
-        <p><strong>Original Price:</strong> ₹${ticket.price}</p>
-        <p><strong>Price for Buyer:</strong> ₹${ticket.buyerPrice}</p>
-      `;
-
-      // Add additional info specific to bus or train
-      if (type === 'bus') {
-        ticketCard.innerHTML += `<p><strong>Bus Name:</strong> ${ticket.busName}</p>`;
-      } else if (type === 'train') {
-        ticketCard.innerHTML += `
-          <p><strong>Train Number:</strong> ${ticket.trainNumber}</p>
-          <p><strong>Coach Type:</strong> ${ticket.coachType}</p>
-          ${ticket.acClass ? `<p><strong>AC Class:</strong> ${ticket.acClass}</p>` : ''}
-        `;
-      }
-
-      ticketContainer.appendChild(ticketCard);
-    });
   }
 }
 
-// Event listeners for the filter buttons in buy.html
-document.getElementById('showBusTickets')?.addEventListener('click', () => {
-  document.getElementById('ticketTypeHeader').textContent = 'Available Bus Tickets';
-  displayTickets('bus');
-});
+// Form handling with improved error handling and validation
+function handleTicketSubmission(formId, type) {
+  const form = document.getElementById(formId);
+  if (!form) return;
 
-document.getElementById('showTrainTickets')?.addEventListener('click', () => {
-  document.getElementById('ticketTypeHeader').textContent = 'Available Train Tickets';
-  displayTickets('train');
-});
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const formData = Object.fromEntries(new FormData(form));
+    
+    if (!validateFormData(formData)) return;
+
+    const ticket = new Ticket(formData, type);
+    const tickets = StorageManager.getTickets();
+    tickets.push(ticket);
+
+    if (StorageManager.saveTickets(tickets)) {
+      const sellerMessage = document.getElementById('sellerMessage');
+      if (sellerMessage) {
+        sellerMessage.textContent = `Your ${type} ticket is listed! You will receive ₹${ticket.sellerAmount} after sale.`;
+      }
+      form.reset();
+    } else {
+      alert('Error saving ticket. Please try again.');
+    }
+  });
+}
+
+// Improved ticket display with template literal function
+function createTicketHTML(ticket) {
+  const commonHTML = `
+    <h3>${ticket.type === 'bus' ? 'Bus Ticket' : 'Train Ticket'}</h3>
+    <p><strong>PNR Number:</strong> ${ticket.ticketNumber}</p>
+    <p><strong>Seller Name:</strong> ${ticket.name}</p>
+    <p><strong>Contact:</strong> ${ticket.phone} | ${ticket.email}</p>
+    <p><strong>Departure Station:</strong> ${ticket.departureStation}</p>
+    <p><strong>Arrival Station:</strong> ${ticket.arrivalStation}</p>
+    <p><strong>Departure Time:</strong> ${ticket.departureTime}</p>
+    <p><strong>Date:</strong> ${ticket.date}</p>
+    <p><strong>Seat Number:</strong> ${ticket.seatNumber}</p>
+    <p><strong>Original Price:</strong> ₹${ticket.price}</p>
+    <p><strong>Price for Buyer:</strong> ₹${ticket.buyerPrice}</p>
+  `;
+
+  const typeSpecificHTML = ticket.type === 'bus'
+    ? `<p><strong>Bus Name:</strong> ${ticket.busName}</p>`
+    : `
+      <p><strong>Train Number:</strong> ${ticket.trainNumber}</p>
+      <p><strong>Category:</strong> ${ticket.category}</p>
+      <p><strong>Class:</strong> ${ticket.Class1}</p>
+    `;
+
+  return commonHTML + typeSpecificHTML;
+}
+
+function displayTickets(type) {
+  const ticketContainer = document.getElementById('ticketContainer');
+  if (!ticketContainer) return;
+
+  ticketContainer.innerHTML = '';
+  const tickets = StorageManager.getTickets().filter(ticket => ticket.type === type);
+
+  if (tickets.length === 0) {
+    ticketContainer.innerHTML = `<p>No ${type} tickets available.</p>`;
+    return;
+  }
+
+  tickets.forEach(ticket => {
+    const ticketCard = document.createElement('div');
+    ticketCard.classList.add('ticket-card');
+    ticketCard.innerHTML = createTicketHTML(ticket);
+    ticketContainer.appendChild(ticketCard);
+  });
+}
+
+// Event listeners with null checks
+function initializeEventListeners() {
+  const busButton = document.getElementById('showBusTickets');
+  const trainButton = document.getElementById('showTrainTickets');
+  const ticketTypeHeader = document.getElementById('ticketTypeHeader');
+
+  busButton?.addEventListener('click', () => {
+    if (ticketTypeHeader) ticketTypeHeader.textContent = 'Available Bus Tickets';
+    displayTickets('bus');
+  });
+
+  trainButton?.addEventListener('click', () => {
+    if (ticketTypeHeader) ticketTypeHeader.textContent = 'Available Train Tickets';
+    displayTickets('train');
+  });
+}
+
+// Initialize forms and display
+handleTicketSubmission('busTicketForm', 'bus');
+handleTicketSubmission('trainTicketForm', 'train');
+initializeEventListeners();
 
 // Show bus tickets by default when the buy.html page loads
-window.onload = () => {
-  displayTickets('bus');
-};
+window.addEventListener('load', () => displayTickets('bus'));
