@@ -16,9 +16,8 @@
     <link rel="stylesheet" href="footer.css"> 
     <link rel="stylesheet" href="faq.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="why-us.css">
-    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="NAVBAR updation">
    <!-- this is for twitter icons -->
     <script src="https://kit.fontawesome.com/3d20c433e1.js" crossorigin="anonymous"></script>
 
@@ -56,8 +55,8 @@
   /* Wrapper for the logo and loader */
   .loader-wrapper {
     position: relative;
-    width: 180px;
-    height: 180px;
+    width: 190px;
+    height: 190px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -117,6 +116,7 @@
     <body>
 
         <!-- cursor -->
+  <!-- <div class="circle"></div>
   <div class="circle"></div>
   <div class="circle"></div>
   <div class="circle"></div>
@@ -135,8 +135,7 @@
   <div class="circle"></div>
   <div class="circle"></div>
   <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
+  <div class="circle"></div> -->
 
   <!-- cursor ends -->
 
@@ -161,20 +160,20 @@
 
 
       <nav class="navbar">
-        <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
-        <div class="logo" style="margin-right: 200px; font-size: 20px;">Ticket Marketplace</div>
+        <div style="text-align: center;">
+            <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
+            <div class="logo" style="margin-top: 5px; font-size: 20px;">Ticket Marketplace</div>
+        </div>
         <div>
             <a href="index.html"><i class="fas fa-home"></i> Home</a>
             <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
             <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
             <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
-            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a>
             <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
             <a href="client/login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
-    
           </div>
           <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
-    
       </nav>
      
     
@@ -268,9 +267,7 @@
                 <a href="train_sell.html"><button class="bbtn">Sell Train Tickets</button></a>
             </div>
         </div>
-    </div>
-    
-    
+    </div>   
 </div>
 
 
@@ -291,19 +288,11 @@
             </div>
         </div>
         <div class="surprise-me-btn">Surprise me</div>
-        <div class="left-arrow-wrap arrow-wrap">
-            <div class="arrow" id="leftArrow"></div>
-        </div>
-        <div class="right-arrow-wrap arrow-wrap">
-            <div class="arrow" id="rightArrow"></div>
-        </div>
     </div>
 </div>
 
-
-
-    <div class="containers" id="sxs">
-        <div id="contact" class="contact-info" >
+<div class="containers" id="sxs">
+        <!-- <div id="contact" class="contact-info" >
             <div style="padding-left: 30px;">
                 <h2 style="text-align:left">Contact Us</h2>
                 <p style="color: white;font-size: 16px;">We value your feedback! We'd love to hear from you! For inquiries, feedback, or support, please reach out. Your insights help us improve your experience.</p>
@@ -315,7 +304,7 @@
                 <p  style="color: white;font-size: 16px;">+91 9685478526</p>
             </div>    
         </div>
-    </footer>
+    </footer> -->
 
 
     
@@ -326,9 +315,6 @@
             </iframe>
         </div> 
     </div>
-
-
-
 
 
     <br>
@@ -412,7 +398,7 @@
             <div class="accordion">
                 <div class="item">
                     <div class="FAQ-title" onclick="toggleFAQ(this)">
-                        <p class="faqQuestion">What should I do if I encounter an issue with my booking?</p>
+                        <p class="faqQuestion">What to do after I encounter an issue with booking?</p>
                         <span class="expandToggle">+</span>
                     </div>
                     <div class="FAQ-content">
@@ -425,54 +411,87 @@
     
 </section>
 
-<!-- feedback form -->
-  <section id="feedback-form">
-    <div class="container">
-      <h2>We Value Your Feedback!</h2>
-      <p>Your input helps us improve our services. Please share your thoughts with us below.</p>
-      <form>
-        
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" required pattern="[a-zA-Z ]+"
-                                oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
-                                oninput="this.setCustomValidity('')">
-        </div>
-
-        
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Your Email" required>
-        </div>
-
-        
-        <div class="form-group">
-          <label for="rating">Rating</label>
-          <select id="rating" name="rating" required>
-            <option value="5">Excellent - 5 Stars</option>
-            <option value="4">Very Good - 4 Stars</option>
-            <option value="3">Good - 3 Stars</option>
-            <option value="2">Fair - 2 Stars</option>
-            <option value="1">Poor - 1 Star</option>
-          </select>
-        </div>
-
-        
-        <div class="form-group">
-          <label for="feedback">Your Feedback</label>
-          <textarea id="feedback" name="feedback" rows="5" placeholder="Tell us about your experience..." required></textarea>
-        </div>
-
-        
-        <button type="submit" style="width: 150px; height: 70px;">Submit Feedback</button>
-      </form>
-    </div>
-  </section>
-
+<main>
+    <!-- Feedback Form -->
+    <section id="feedback-form">
+      <div class="container">
+        <header>
+          <h1 class="center-text">We Value Your Feedback!</h1>
+          <p class="center-text">Your feedback helps us improve</p>
+        </header>
+        <form id="feedbackForm" novalidate>
+          <fieldset>
+            <!-- Name Field -->
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your Name"
+                required
+                pattern="[a-zA-Z ]+"
+                aria-describedby="name-desc"
+                aria-live="polite"
+                oninvalid="this.setCustomValidity('Please enter only letters and spaces')"
+                oninput="this.setCustomValidity('')"
+              />
+              <small id="name-desc" class="input-help">Only letters and spaces allowed.</small>
+            </div>
+  
+            <!-- Email Field -->
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Your Email"
+                required
+                aria-describedby="email-desc"
+                aria-live="polite"
+              />
+            </div>
+  
+            <!-- Rating Field -->
+            <div class="form-group">
+              <label for="rating">Rating</label>
+              <select id="rating" name="rating" required aria-label="Rating">
+                <option value="">Rate Us</option>
+                <option value="5">Excellent - 5 Stars</option>
+                <option value="4">Very Good - 4 Stars</option>
+                <option value="3">Good - 3 Stars</option>
+                <option value="2">Fair - 2 Stars</option>
+                <option value="1">Poor - 1 Star</option>
+              </select>
+            </div>
+  
+            <!-- Feedback Field -->
+            <div class="form-group">
+              <label for="feedback">Your Feedback</label>
+              <textarea
+                id="feedback"
+                name="feedback"
+                rows="5"
+                placeholder="Write your feedback..."
+                required
+              ></textarea>
+            </div>
+  
+            <!-- Submit Button -->
+            <div class="button-container">
+              <button type="submit" id="submitBtn">Submit</button>
+            </div>
+  
+            <!-- Success/Error Messages -->
+            <div id="formMessage" aria-live="assertive"></div>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+  </main>
+  
 </body>
-
-
-
 
 <footer class="footer-container">
     <div class="footer-top">
@@ -618,7 +637,7 @@ animateCircles();
       // cursor ends
 //   </script>
 
-//   <script>
+ <script>
     function toggleFAQ(element) {
         const content = element.nextElementSibling; // Get the FAQ content
         const toggleSymbol = element.querySelector('.expandToggle'); // Get the toggle symbol
@@ -874,4 +893,3 @@ animateCircles();
 </body>
 
 </html>
-

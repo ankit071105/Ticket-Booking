@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Trainline</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         /* Basic Reset */
         * {
@@ -26,46 +27,38 @@
             padding: 20px;
         }
 
-        /* Navbar */
+        /* Header */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            padding: 15px 30px;
             background-color: #2e3b4e;
             color: #fff;
-            position: relative;
-            z-index: 1;
         }
 
-        nav .logo-container {
+        .logo-container {
             display: flex;
             align-items: center;
         }
 
-        nav .logo-container img {
-            height: 50px;
+        .logo-container img {
+            height: 40px;
             width: auto;
-            transition: transform 0.3s ease;
-        }
-
-        nav .logo-container img:hover {
-            transform: scale(1.1);
+            margin-right: 10px;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-        }
-
-        nav ul li {
-            margin: 0 15px;
+            gap: 30px;
+            margin-top: 10px;
         }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             transition: color 0.3s;
         }
 
@@ -73,293 +66,294 @@
             color: #ff8c00;
         }
 
-        /* Animated Train Line */
-        .train-line {
-            width: 100%;
-            height: 5px;
-            background-color: #ff8c00;
-            position: absolute;
-            top: 60px;
-            left: 0;
-            overflow: hidden;
-            z-index: 0;
-        }
-
-        .train-line::before {
-            content: "";
-            display: block;
-            width: 50px;
-            height: 5px;
-            background-color: #2e3b4e;
-            position: absolute;
-            top: 0;
-            left: -50px;
-            animation: train-move 2s linear infinite;
-        }
-
-        @keyframes train-move {
-            from {
-                left: -50px;
-            }
-            to {
-                left: 100%;
-            }
-        }
-
-        /* Main Content */
-        .contact-form {
-            background-color: #fff;
-            padding: 40px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            margin-top: 30px;
-            animation: fadeIn 1.2s ease-in-out;
-        }
-
-        .contact-form h2 {
-            margin-bottom: 20px;
-            color: #2e3b4e;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        /* Form Group and Floating Label */
-        .form-group {
-            position: relative;
-            margin-bottom: 25px;
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 16px 12px;
-            font-size: 16px;
-            color: #333;
-            background: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            outline: none;
-            transition: 0.3s border-color ease-in-out;
-        }
-
-        .form-group input:focus, .form-group textarea:focus {
-            border-color: #ff8c00;
-            background-color: #fff;
-        }
-
-        .form-group label {
-            position: absolute;
-            top: 50%;
-            left: 12px;
-            transform: translateY(-50%);
-            color: #aaa;
-            font-size: 16px;
-            transition: 0.3s ease-in-out;
-            pointer-events: none;
-        }
-
-        /* Floating label effect */
-        .form-group input:focus + label,
-        .form-group textarea:focus + label,
-        .form-group input:not(:placeholder-shown) + label,
-        .form-group textarea:not(:placeholder-shown) + label {
-            top: -8px;
-            left: 8px;
-            font-size: 12px;
-            background-color: #fff;
-            color: #ff8c00;
-            padding: 0 5px;
-            border-radius: 3px;
-        }
-
-        /* Submit Button */
-        .submit-btn {
-            background-color: #ff8c00;
-            color: #fff;
-            border: none;
-            padding: 14px 20px;
-            font-size: 18px;
+        /* Hamburger Menu */
+        .hamburger {
+            display: none; /* Hide by default */
+            flex-direction: column;
             cursor: pointer;
-            transition: all 0.3s;
-            width: 100%;
-            border-radius: 5px;
-            font-weight: bold;
+            align-items: center; /* Center items in the hamburger */
+            margin-left: auto; /* Align to the right */
+            height: 30px; /* Set height to center it vertically */
         }
 
-        .submit-btn:hover {
-            background-color: #2e3b4e;
-            color: #ff8c00;
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+            transition: 0.4s;
         }
 
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: row; /* Keep the flex direction in a row */
+                justify-content: space-between; /* Space between logo and menu */
+            }
+
+            nav ul {
+                flex-direction: column; /* Stack items vertically */
+                display: none; /* Hide the menu by default */
+                width: 100%; /* Full width */
+                padding: 10px 0; /* Add some padding */
+            }
+
+            nav ul.active {
+                display: flex; /* Show the menu when active */
+            }
+
+            .hamburger {
+                display: flex; /* Show hamburger icon */
+            }
+        }
+        .contact-form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    color: #2e3b4e;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative; /* For better label positioning */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2e3b4e;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #06ffcd;
+    outline: none;
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing only */
+}
+
+.submit-btn {
+    background-color: #06ffcd;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+    display: block;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #e07b00;
+    transform: translateY(-2px); /* Slight lift effect */
+}
         /* Footer */
         footer {
             background-color: #2e3b4e;
             color: #fff;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            position: relative;
-            z-index: 1;
+            padding: 40px 30px;
         }
 
-        footer p {
-            font-size: 14px;
-        }
-
-        footer ul {
-            list-style: none;
+        .footer-container {
             display: flex;
-            justify-content: center;
-            margin-top: 10px;
+            flex-direction: column;
+            align-items: center;
         }
 
-        footer ul li {
-            margin: 0 10px;
+        .footer-logo-section {
+            text-align: center;
+            margin-bottom: 20px;
         }
 
-        footer ul li a {
+        .footer-logo {
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .social-icons a {
             color: #ff8c00;
-            text-decoration: none;
-            font-size: 18px;
+            margin: 0 10px;
+            font-size: 20px;
             transition: color 0.3s;
         }
 
-        footer ul li a:hover {
+        .social-icons a:hover {
             color: #fff;
         }
 
-        /* Animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        .footer-links {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .footer-column {
+            margin: 10px 20px;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #b5fdf4;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin: 8px 0;
+        }
+
+        .footer-column ul li a {
+            color: #dcfffa;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #ff8c00;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #b5fdf4;
         }
     </style>
-    <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="faq.css">
 </head>
 <body>
 
-    <!-- Navigation -->
+    <!-- Header -->
     <nav>
-        <div class="container">
-            <a href="./index.html" id="logo-href">
-                <div class="logo-container">
-                    <img src="images/3.jpeg" alt="Trainline Logo" class="logo-image">
-                </div>
-            </a>
-            
-            
+        <div class="logo-container">
+            <img src="images/3.jpeg" alt="Trainline Logo">
+            <label style="font-weight: 600;">Trainline</label>
         </div>
-         
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul id="menu">
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a></li>
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="sell.html"><i class="fas fa-tags"></i> Sell</a></li>
+            <li><a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="contributor.html"><i class="fas fa-users"></i> Contributors</a></li>
+            <li><a href="client/login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+        </ul>
     </nav>
-
     <!-- Contact Form Section -->
     <section class="container">
         <div class="contact-form">
             <h2>Contact Us</h2>
             <form>
                 <div class="form-group">
-                    <input type="text" id="name" name="name" required placeholder=" ">
                     <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
                 </div>
                 <div class="form-group">
-                    <input type="email" id="email" name="email" required placeholder=" ">
                     <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="Your Email">
                 </div>
                 <div class="form-group">
-                    <input type="text" id="subject" name="subject" required placeholder=" ">
                     <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required placeholder="Subject of your message">
                 </div>
                 <div class="form-group">
-                    <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
                     <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Type your message here..."></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
         </div>
     </section>
 
+
     <!-- Footer -->
-    <footer class="footer-container">
-        <div class="footer-top">
-          <!-- Logo and Tagline -->
-          <div class="footer-logo-section">
-            <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo">
-            <p style="color: #b5fdf4;">Affordable adventures, unforgettable memories—explore with ease.</p>
-            <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
-            <!-- Social Media Icons -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-section">
+                <img src="images/3.jpeg" alt="Trainline Logo" class="footer-logo">
+                <p>Affordable adventures, unforgettable memories—explore with ease.</p>
+            </div>
+
             <div class="social-icons">
-              <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.twitter.com" ><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
                 <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
                 <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
             </div>
-          </div>
-  
-          <!-- Links Sections -->
-          <div class="footer-links">
-            <div class="footer-column">
-              <h4>HELPFUL LINKS</h4>
-              <ul>
-                <li><a href="#">Help Centre</a></li>
-                <li><a href="#">Special Assistance</a></li>
-                <li><a href="#">Download The App</a></li>
-                <li><a href="#">Booking Conditions</a></li>
-              </ul>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Helpful Links</h4>
+                    <ul>
+                        <li><a href="#">Help Centre</a></li>
+                        <li><a href="#">Special Assistance</a></li>
+                        <li><a href="#">Download The App</a></li>
+                        <li><a href="#">Booking Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="#">Media Center</a></li>
+                        <li><a href="#">Investors</a></li>
+                        <li><a href="#">Modern Slavery Act</a></li>
+                        <li><a href="#">Terms Of Use</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Keeping Safe</h4>
+                    <ul>
+                        <li><a href="#">Safety Measures</a></li>
+                        <li><a href="#">Travel Insurance</a></li>
+                        <li><a href="#">Customer Protection</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
             </div>
-  
-            <div class="footer-column">
-              <h4>ABOUT US</h4>
-              <ul>
-                <li><a href="#">Media Center</a></li>
-                <li><a href="#">Investors</a></li>
-                <li><a href="#">Modern Slavery Act</a></li>
-                <li><a href="#">Terms Of Use</a></li>
-              </ul>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Trainline. All rights reserved.</p>
             </div>
-  
-            <div class="footer-column">
-              <h4>KEEPING SAFE</h4>
-              <ul>
-                <li><a href="#">ATOL Protected</a></li>
-                <li><a href="#">Travel Aware</a></li>
-                <li><a href="#">FCDO Travel Advice</a></li>
-                <li><a href="#">ABTA</a></li>
-              </ul>
-            </div>
-  
-            <div class="footer-column">
-              <h4>FIND US</h4>
-              <ul>
-                <li><a href="contactus.html">Contact Us</a></li>
-                <li><a href="#">Group Cookie Notice</a></li>
-                <li><a href="#">Privacy And Policy</a></li>
-                <li><a href="#">Sitemap</a></li>
-              </ul>
-            </div>
-          </div>
         </div>
-  
-        <!-- Additional Links Section -->
-        <div class="footer-bottom">
-          <ul>
-            <li><a href="#">Holiday Type</a></li>
-            <li><a href="#">Holiday Deals</a></li>
-            <li><a href="#">Popular Counters</a></li>
-            <!-- <li><a href="#">Flight Only</a></li> -->
-            <li><a href="tophotels.html">Top Hotels</a></li>
-          </ul>
-        </div>
-      </footer>
-  
+    </footer>
+
     <script>
-        document.querySelector("form").addEventListener("submit", function(e) {
-            e.preventDefault();
-            alert("Thank you for reaching out! We will get back to you soon.");
+        // JavaScript for hamburger menu
+        document.getElementById('hamburger').addEventListener('click', function() {
+            var menu = document.getElementById('menu');
+            menu.classList.toggle('active');
         });
     </script>
 </body>

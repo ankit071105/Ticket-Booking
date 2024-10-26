@@ -350,7 +350,7 @@ iframe {
   border-radius: 20px;
 }
 
-.contact-links {
+/* .contact-links {
   margin: 20px 0;
 }
 
@@ -360,13 +360,13 @@ iframe {
   padding: 15px 30px;
   text-decoration: none;
   color: white;
-  background-color: #25d366;
+  background-color: #00ff5e;
   border-radius: 5px;
 }
 
 .contact-links a.email-link {
   background-color: #007bff;
-}
+} */
 
 .portfolio .portfolio-container {
   display: grid;
@@ -637,14 +637,6 @@ button:hover {
 #topBtn:hover {
   background-color: #000;
 }
-
-/* FAQ Section */
-
-
-
-
-
-
 
 /* Responsive Design */
 @media (max-width: 600px) {
