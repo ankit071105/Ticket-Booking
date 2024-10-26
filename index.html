@@ -14,155 +14,179 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="footer.css"> 
+    <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="faq.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="why-us.css">
     <link rel="stylesheet" href="navbar.css">
-   <!-- this is for twitter icons -->
+    <!-- this is for twitter icons -->
     <script src="https://kit.fontawesome.com/3d20c433e1.js" crossorigin="anonymous"></script>
 
     <style>
-   /* cursor */
-.circle {
-  height: 24px;
-  width: 24px;
-  border-radius: 24px;
-  background-color: black;
-  position: fixed; 
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 99999999; /* so that it stays on top of all other elements */
-}
+        /* cursor */
+        .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 24px;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            /* so that it stays on top of all other elements */
+        }
 
-/* cursor */
+        /* cursor */
 
 
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.988);
-    z-index: 1000;
-  }
-  
-  /* Wrapper for the logo and loader */
-  .loader-wrapper {
-    position: relative;
-    width: 180px;
-    height: 180px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Logo Styling */
-  #logo {
-    width: 140px;
-    position: relative;
-    z-index: 10; /* Ensures logo stays above the loader */
-    animation: pulse 2s infinite ease-in-out;
-  }
-  
-  /* Circular Loader surrounding the logo */
-  .loader-globe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 8px solid transparent;
-    border-left-color: rgb(248, 172, 21);
-    border-right-color: rgb(8, 82, 230);
-    animation: spin 2s linear infinite;
-  }
-  
-  /* Loading Text */
-  #loading-text {
-    margin-top: 20px;
-    font-size: 20px;
-    color: white;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-    letter-spacing: 1px;
-    animation: textGlow 2s ease-in-out infinite;
-  }
-  
-  /* Keyframes Animations */
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-  @keyframes textGlow {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-  }
-  
-  @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-  }
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.988);
+            z-index: 1000;
+        }
+
+        /* Wrapper for the logo and loader */
+        .loader-wrapper {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Logo Styling */
+        #logo {
+            width: 140px;
+            position: relative;
+            z-index: 10;
+            /* Ensures logo stays above the loader */
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        /* Circular Loader surrounding the logo */
+        .loader-globe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 8px solid transparent;
+            border-left-color: rgb(248, 172, 21);
+            border-right-color: rgb(8, 82, 230);
+            animation: spin 2s linear infinite;
+        }
+
+        /* Loading Text */
+        #loading-text {
+            margin-top: 20px;
+            font-size: 20px;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+            animation: textGlow 2s ease-in-out infinite;
+        }
+
+        /* Keyframes Animations */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes textGlow {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
 
         /* cursor ends */
     </style>
 </head>
-      
-    <body>
 
-        <!-- cursor -->
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
+<body>
 
-  <!-- cursor ends -->
+    <!-- cursor -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
 
-        <div id="scrollProgressBar" class="progress-bar"></div>
-        <!-- Your existing content goes here -->
+    <!-- cursor ends -->
+
+    <div id="scrollProgressBar" class="progress-bar"></div>
+    <!-- Your existing content goes here -->
 
     <div class="gtranslate_wrapper"></div>
-    <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+    <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
     <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
     <button onclick="moveToTop()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"
             aria-hidden="true"></i></button>
     <!--chat bot-->
-    <button onclick="toggleChatbot()" id="chatbotBtn" title="chat bot"></button>
-    
+    <button onclick="document.getElementById('chatbot-container').classList.toggle('chatbot-show')" id="chatbotBtn"
+        title="chat bot"></button>
+
     <div class="chatbot-container" id="chatbot-container">
         <div class="chatbot-title">Ticket Bot</div>
         <div class="chatbot-chat" id="chatbot-chat"></div>
         <input type="text" class="chatbot-input" id="chatbot-input" placeholder="Type your message here...." />
         <button class="chatbot-button" id="chatbot-button"><i class="fa-brands fa-telegram"></i></button>
-      </div>
+    </div>
 
 
-      <nav class="navbar">
-        <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
+    <nav class="navbar">
+        <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt=""
+            style="border-radius: 50%; height: 35px; width: 35px;">
         <div class="logo" style="margin-right: 200px; font-size: 20px;">Ticket Marketplace</div>
         <div>
             <a href="index.html"><i class="fas fa-home"></i> Home</a>
@@ -172,16 +196,16 @@
             <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
             <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
             <a href="client/login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
-    
-          </div>
-          <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
-    
-      </nav>
-     
-    
 
-    
-    
+        </div>
+        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+
+    </nav>
+
+
+
+
+
     <div class="slider">
         <div class="slide active">
             <img src="images/6.jpeg" alt="Slide 1">
@@ -206,14 +230,14 @@
         </div>
 
         <!-- The dots/circles -->
-        <div class="slider-dots"  style="text-align:center">
-        <span class="dot" onclick="clickThumbs(0)"></span>
-        <span class="dot" onclick="clickThumbs(1)"></span>
-        <span class="dot" onclick="clickThumbs(2)"></span>
-        <span class="dot" onclick="clickThumbs(3)"></span>
-        <span class="dot" onclick="clickThumbs(4)"></span>
-        <span class="dot" onclick="clickThumbs(5)"></span>
-        <span class="dot" onclick="clickThumbs(6)"></span>
+        <div class="slider-dots" style="text-align:center">
+            <span class="dot" onclick="clickThumbs(0)"></span>
+            <span class="dot" onclick="clickThumbs(1)"></span>
+            <span class="dot" onclick="clickThumbs(2)"></span>
+            <span class="dot" onclick="clickThumbs(3)"></span>
+            <span class="dot" onclick="clickThumbs(4)"></span>
+            <span class="dot" onclick="clickThumbs(5)"></span>
+            <span class="dot" onclick="clickThumbs(6)"></span>
         </div>
     </div>
 
@@ -222,12 +246,12 @@
         <button class="prev" onclick="prevSlide()" style="width: 45px; height: 45px;">&#10094;</button>
         <button class="next" onclick="nextSlide()" style="width: 45px; height: 45px;">&#10095;</button>
     </div>
-    
- 
+
+
 
     </div>
     </div>
-	<div class="social-sidebar">
+    <div class="social-sidebar">
         <div class="close-btn" onclick="toggleSidebar()" title="Close Sidebar">&times;</div>
         <ul>
             <li><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-meta"></i></a></li>
@@ -241,91 +265,96 @@
         <i class="fas fa-arrow-right"></i>
     </div>
 
-<div class="bus">
     <div class="bus">
-        <h2>Book Bus or Train Tickets</h2>
-        <div class="ticket-list">
-            <div class="ticket-card1">
-                <h3>Bus Tickets</h3>
-                <p>Find affordable bus tickets for your travel needs. Select your destination and date of travel to get started.</p>
-                <a href="buy.html"><button class="bbtn">Buy Bus Tickets</button></a>
+        <div class="bus">
+            <h2>Book Bus or Train Tickets</h2>
+            <div class="ticket-list">
+                <div class="ticket-card1">
+                    <h3>Bus Tickets</h3>
+                    <p>Find affordable bus tickets for your travel needs. Select your destination and date of travel to
+                        get started.</p>
+                    <a href="buy.html"><button class="bbtn">Buy Bus Tickets</button></a>
+                </div>
+
+                <div class="ticket-card2">
+                    <h3>Sell Bus Tickets</h3>
+                    <p>Looking to sell your bus tickets? Contact us 24/7 for the best price of your bus ticket without
+                        any hassle.</p>
+                    <a href="sell.html"><button class="bbtn">Sell Bus Tickets</button></a>
+                </div>
+
+                <div class="ticket-card3">
+                    <h3>Train Tickets</h3>
+                    <p>Secure train tickets for your journey across the country. Check availability and book now with a
+                        trusted platform.</p>
+                    <a href="train_buy.html"><button class="bbtn">Buy Train Tickets</button></a>
+                </div>
+
+                <div class="ticket-card4">
+                    <h3>Sell Train Tickets</h3>
+                    <p>Have train tickets to sell? Reach out to us to list your tickets and get great deals.</p>
+                    <a href="train_sell.html"><button class="bbtn">Sell Train Tickets</button></a>
+                </div>
             </div>
-    
-            <div class="ticket-card2">
-                <h3>Sell Bus Tickets</h3>
-                <p>Looking to sell your bus tickets? Contact us 24/7 for the best price of your bus ticket without any hassle.</p>
-                <a href="sell.html"><button class="bbtn">Sell Bus Tickets</button></a>
+        </div>
+
+
+    </div>
+
+
+
+    </div>
+
+    <div class="content-wrapper">
+        <h1>Our Reviews</h1>
+        <div class="blue-line"></div>
+        <div class="wrapper-for-arrows">
+            <div style="opacity: 0;" class="chicken"></div>
+            <div id="reviewWrap" class="review-wrap">
+                <div id="imgDiv" class="">
+                </div>
+                <div id="personName"></div>
+                <div id="profession"></div>
+                <div id="description">
+                </div>
             </div>
-    
-            <div class="ticket-card3">
-                <h3>Train Tickets</h3>
-                <p>Secure train tickets for your journey across the country. Check availability and book now with a trusted platform.</p>
-                <a href="train_buy.html"><button class="bbtn">Buy Train Tickets</button></a>
+            <div class="surprise-me-btn">Surprise me</div>
+            <div class="left-arrow-wrap arrow-wrap">
+                <div class="arrow" id="leftArrow"></div>
             </div>
-    
-            <div class="ticket-card4">
-                <h3>Sell Train Tickets</h3>
-                <p>Have train tickets to sell? Reach out to us to list your tickets and get great deals.</p>
-                <a href="train_sell.html"><button class="bbtn">Sell Train Tickets</button></a>
+            <div class="right-arrow-wrap arrow-wrap">
+                <div class="arrow" id="rightArrow"></div>
             </div>
         </div>
     </div>
-    
-    
-</div>
-
-
-
-  </div>
-
-  <div class="content-wrapper">
-    <h1>Our Reviews</h1>
-    <div class="blue-line"></div>
-    <div class="wrapper-for-arrows">
-        <div style="opacity: 0;" class="chicken"></div>
-        <div id="reviewWrap" class="review-wrap">
-            <div id="imgDiv" class="">
-            </div>
-            <div id="personName"></div>
-            <div id="profession"></div>
-            <div id="description">
-            </div>
-        </div>
-        <div class="surprise-me-btn">Surprise me</div>
-        <div class="left-arrow-wrap arrow-wrap">
-            <div class="arrow" id="leftArrow"></div>
-        </div>
-        <div class="right-arrow-wrap arrow-wrap">
-            <div class="arrow" id="rightArrow"></div>
-        </div>
-    </div>
-</div>
 
 
 
     <div class="containers" id="sxs">
-        <div id="contact" class="contact-info" >
+        <div id="contact" class="contact-info">
             <div style="padding-left: 30px;">
                 <h2 style="text-align:left">Contact Us</h2>
-                <p style="color: white;font-size: 16px;">We value your feedback! We'd love to hear from you! For inquiries, feedback, or support, please reach out. Your insights help us improve your experience.</p>
-                
+                <p style="color: white;font-size: 16px;">We value your feedback! We'd love to hear from you! For
+                    inquiries, feedback, or support, please reach out. Your insights help us improve your experience.
+                </p>
+
                 <h4>Localisation</h4>
                 <p style="color: white;font-size: 16px;">ABC colony, Bangalore Pin: 76896</p>
-        
+
                 <h4>Phone No</h4>
-                <p  style="color: white;font-size: 16px;">+91 9685478526</p>
-            </div>    
+                <p style="color: white;font-size: 16px;">+91 9685478526</p>
+            </div>
         </div>
-    </footer>
+        </footer>
 
 
-    
+
         <div class="map-container">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126915.40242030277!2d85.7892607!3d20.2498709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a7a3b9692fff%3A0x87cd0a356bbc39ce!2sITER%2C%20Siksha%20'O'%20Anusandhan!5e0!3m2!1sen!2sin!4v1689514124518!5m2!1sen!2sin"
                 allowfullscreen>
             </iframe>
-        </div> 
+        </div>
     </div>
 
 
@@ -334,97 +363,117 @@
 
     <br>
 <body>
-<!-- <section id="faq">
-    <div class="faq-container">
-        <h1 class="faq-title" data-aos="fade-right">Frequently Asked Questions</h1>
-        <div id="FAQ">
-            <div class="accordion">
-                <div class="item">
-                    <div class="FAQ-title" onclick="toggleFAQ(this)">
-                        <p class="faqQuestion">What is your cancellation policy?</p>
-                        <span class="expandToggle">+</span>
+        <!-- feedback form -->
+        <section id="feedback-form">
+            <div class="container">
+                <h2>We Value Your Feedback!</h2>
+                <p>Your input helps us improve our services. Please share your thoughts with us below.</p>
+                <form>
+
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required pattern="[a-zA-Z ]+"
+                            oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
+                            oninput="this.setCustomValidity('')">
                     </div>
-                    <div class="FAQ-content">
-                        <p>We offer a flexible cancellation policy that allows you to cancel your booking up to 48 hours before your scheduled departure for a full refund.</p>
+
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
                     </div>
+
+
+                    <div class="form-group">
+                        <label for="rating">Rating</label>
+                        <select id="rating" name="rating" required>
+                            <option value="5">Excellent - 5 Stars</option>
+                            <option value="4">Very Good - 4 Stars</option>
+                            <option value="3">Good - 3 Stars</option>
+                            <option value="2">Fair - 2 Stars</option>
+                            <option value="1">Poor - 1 Star</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="feedback">Your Feedback</label>
+                        <textarea id="feedback" name="feedback" rows="5" placeholder="Tell us about your experience..."
+                            required></textarea>
+                    </div>
+
+
+                    <button type="submit" style="width: 150px; height: 70px;">Submit Feedback</button>
+                </form>
+            </div>
+        </section>
+
+    </body>
+
+
+
+
+    <footer class="footer-container">
+        <div class="footer-top">
+
+            <div class="footer-logo-section">
+                <a href="#"> <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo"></a>
+                <p style="color: #b5fdf4;">Affordable adventures, unforgettable memories—explore with ease.</p>
+                <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
-    
-            <div class="accordion">
-                <div class="item">
-                    <div class="FAQ-title" onclick="toggleFAQ(this)">
-                        <p class="faqQuestion">How do I make changes to my booking?</p>
-                        <span class="expandToggle">+</span>
-                    </div>
-                    <div class="FAQ-content">
-                        <p>You can make changes to your booking by logging into your account and accessing your booking details. For major changes, please contact our support team directly.</p>
-                    </div>
+
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>HELPFUL LINKS</h4>
+                    <ul>
+                        <li><a href="#">Help Centre</a></li>
+                        <li><a href="#">Special Assistance</a></li>
+                        <li><a href="#">Download The App</a></li>
+                        <li><a href="#">Booking Conditions</a></li>
+                    </ul>
                 </div>
-            </div>
-    
-            <div class="accordion">
-                <div class="item">
-                    <div class="FAQ-title" onclick="toggleFAQ(this)">
-                        <p class="faqQuestion">What payment methods do you accept?</p>
-                        <span class="expandToggle">+</span>
-                    </div>
-                    <div class="FAQ-content">
-                        <p>We accept various payment methods including credit/debit cards, PayPal, and bank transfers. All transactions are secure and encrypted.</p>
-                    </div>
+
+                <div class="footer-column">
+                    <h4>ABOUT US</h4>
+                    <ul>
+                        <li><a href="#">Media Center</a></li>
+                        <li><a href="#">Investors</a></li>
+                        <li><a href="#">Modern Slavery Act</a></li>
+                        <li><a href="terms.html">Terms Of Use</a></li>
+                    </ul>
                 </div>
-            </div>
-    
-            <div class="accordion">
-                <div class="item">
-                    <div class="FAQ-title" onclick="toggleFAQ(this)">
-                        <p class="faqQuestion">Do you offer travel insurance?</p>
-                        <span class="expandToggle">+</span>
-                    </div>
-                    <div class="FAQ-content">
-                        <p>Yes, we offer travel insurance options during the booking process to protect your trip against unforeseen circumstances.</p>
-                    </div>
+
+                <div class="footer-column">
+                    <h4>KEEPING SAFE</h4>
+                    <ul>
+                        <li><a href="#">ATOL Protected</a></li>
+                        <li><a href="#">Travel Aware</a></li>
+                        <li><a href="#">FCDO Travel Advice</a></li>
+                        <li><a href="#">ABTA</a></li>
+                    </ul>
                 </div>
-            </div>
-    
-            <div class="accordion">
-                <div class="item">
-                    <div class="FAQ-title" onclick="toggleFAQ(this)">
-                        <p class="faqQuestion">Can I book multiple destinations in one trip?</p>
-                        <span class="expandToggle">+</span>
-                    </div>
-                    <div class="FAQ-content">
-                        <p>Absolutely! Our platform allows you to plan multi-destination trips seamlessly. Simply select your desired locations during the booking process.</p>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="accordion">
-                <div class="item">
-                    <div class="FAQ-title" onclick="toggleFAQ(this)">
-                        <p class="faqQuestion">How can I contact customer support?</p>
-                        <span class="expandToggle">+</span>
-                    </div>
-                    <div class="FAQ-content">
-                        <p>You can reach our customer support team via email or live chat on our website. We’re available 24/7 to assist you with any inquiries.</p>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="accordion">
-                <div class="item">
-                    <div class="FAQ-title" onclick="toggleFAQ(this)">
-                        <p class="faqQuestion">What should I do if I encounter an issue with my booking?</p>
-                        <span class="expandToggle">+</span>
-                    </div>
-                    <div class="FAQ-content">
-                        <p>If you experience any issues with your booking, please contact our support team immediately. We will work to resolve your issue as quickly as possible.</p>
-                    </div>
+
+                <div class="footer-column">
+                    <h4>FIND US</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Group Cookie Notice</a></li>
+                        <li><a href="privacy.html">Privacy And Policy</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-    
-</section> -->
+
 
     <section id="faq">
         <div class="faq-container" data-aos="fade-up" data-aos-duration="1000">
@@ -521,246 +570,138 @@
     </section>
     
 
-<!-- feedback form -->
-  <section id="feedback-form">
-    <div class="container">
-      <h2>We Value Your Feedback!</h2>
-      <p>Your input helps us improve our services. Please share your thoughts with us below.</p>
-      <form>
-        
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" required pattern="[a-zA-Z ]+"
-                                oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
-                                oninput="this.setCustomValidity('')">
+
+        <div class="footer-bottom">
+            <ul>
+                <li><a href="#">Holiday Type</a></li>
+                <li><a href="#">Holiday Deals</a></li>
+                <li><a href="#">Popular Counters</a></li>
+                <!-- <li><a href="#">Flight Only</a></li> -->
+                <li><a href="#">Top Hotels</a></li>
+            </ul>
         </div>
-
-        
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Your Email" required>
-        </div>
-
-        
-        <div class="form-group">
-          <label for="rating">Rating</label>
-          <select id="rating" name="rating" required>
-            <option value="5">Excellent - 5 Stars</option>
-            <option value="4">Very Good - 4 Stars</option>
-            <option value="3">Good - 3 Stars</option>
-            <option value="2">Fair - 2 Stars</option>
-            <option value="1">Poor - 1 Star</option>
-          </select>
-        </div>
-
-        
-        <div class="form-group">
-          <label for="feedback">Your Feedback</label>
-          <textarea id="feedback" name="feedback" rows="5" placeholder="Tell us about your experience..." required></textarea>
-        </div>
-
-        
-        <button type="submit" style="width: 150px; height: 70px;">Submit Feedback</button>
-      </form>
-    </div>
-  </section>
-
-</body>
+    </footer>
 
 
-
-
-<footer class="footer-container">
-    <div class="footer-top">
-      
-      <div class="footer-logo-section">
-        <a href="#"> <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo"></a>
-        <p style="color: #b5fdf4;" >Affordable adventures, unforgettable memories—explore with ease.</p>
-        <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#" ><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-      </div>
-  
-      
-      <div class="footer-links">
-        <div class="footer-column">
-          <h4>HELPFUL LINKS</h4>
-          <ul>
-            <li><a href="#">Help Centre</a></li>
-            <li><a href="#">Special Assistance</a></li>
-            <li><a href="#">Download The App</a></li>
-            <li><a href="#">Booking Conditions</a></li>
-          </ul>
-        </div>
-  
-        <div class="footer-column">
-          <h4>ABOUT US</h4>
-          <ul>
-            <li><a href="#">Media Center</a></li>
-            <li><a href="#">Investors</a></li>
-            <li><a href="#">Modern Slavery Act</a></li>
-            <li><a href="terms.html">Terms Of Use</a></li>
-          </ul>
-        </div>
-  
-        <div class="footer-column">
-          <h4>KEEPING SAFE</h4>
-          <ul>
-            <li><a href="#">ATOL Protected</a></li>
-            <li><a href="#">Travel Aware</a></li>
-            <li><a href="#">FCDO Travel Advice</a></li>
-            <li><a href="#">ABTA</a></li>
-          </ul>
-        </div>
-  
-        <div class="footer-column">
-          <h4>FIND US</h4>
-          <ul>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Group Cookie Notice</a></li>
-            <li><a href="privacy.html">Privacy And Policy</a></li>
-            <li><a href="#">Sitemap</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-    
-    <div class="footer-bottom">
-      <ul>
-        <li><a href="#">Holiday Type</a></li>
-        <li><a href="#">Holiday Deals</a></li>
-        <li><a href="#">Popular Counters</a></li>
-        <!-- <li><a href="#">Flight Only</a></li> -->
-        <li><a href="#">Top Hotels</a></li>
-      </ul>
-    </div>
-  </footer>
-
-
-  <script>
+    <script>
         // cursor 
 
         const coords = { x: 0, y: 0 };
-const circles = document.querySelectorAll(".circle");
+        const circles = document.querySelectorAll(".circle");
 
-const colors = [
+        const colors = [
 
-"#BCE954",
-"#98FF98",
-"#9CB071",
-"#90C209",
-"#B2C248",
-"#85BB65",
-"#99C68E",
-"#6CBB3C",
-"#3ea055",
-"#41a317",
-"#4AA02C",
-"#6AA121",
-"#347C2C",
-"#387C44",
-"#437C17",
-"#306754",
-"#254117",
-"#667C26",
-"#728C00",
-"#008000"
+            "#BCE954",
+            "#98FF98",
+            "#9CB071",
+            "#90C209",
+            "#B2C248",
+            "#85BB65",
+            "#99C68E",
+            "#6CBB3C",
+            "#3ea055",
+            "#41a317",
+            "#4AA02C",
+            "#6AA121",
+            "#347C2C",
+            "#387C44",
+            "#437C17",
+            "#306754",
+            "#254117",
+            "#667C26",
+            "#728C00",
+            "#008000"
 
-];
+        ];
 
-circles.forEach(function (circle, index) {
-circle.x = 0;
-circle.y = 0;
-circle.style.backgroundColor = colors[index % colors.length];
-});
+        circles.forEach(function (circle, index) {
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];
+        });
 
-window.addEventListener("mousemove", function(e){
-coords.x = e.clientX;
-coords.y = e.clientY;
+        window.addEventListener("mousemove", function (e) {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
 
-});
+        });
 
-function animateCircles() {
+        function animateCircles() {
 
-let x = coords.x;
-let y = coords.y;
+            let x = coords.x;
+            let y = coords.y;
 
-circles.forEach(function (circle, index) {
-  circle.style.left = x - 12 + "px";
-  circle.style.top = y - 12 + "px";
-  
-  circle.style.scale = (circles.length - index) / circles.length;
-  
-  circle.x = x;
-  circle.y = y;
+            circles.forEach(function (circle, index) {
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
 
-  const nextCircle = circles[index + 1] || circles[0];
-  x += (nextCircle.x - x) * 0.3;
-  y += (nextCircle.y - y) * 0.6;
-});
+                circle.style.scale = (circles.length - index) / circles.length;
 
-requestAnimationFrame(animateCircles);
-}
+                circle.x = x;
+                circle.y = y;
 
-animateCircles();
-      
-      
-      // cursor ends
-//   </script>
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.6;
+            });
 
-//   <script>
-    function toggleFAQ(element) {
-        const content = element.nextElementSibling; // Get the FAQ content
-        const toggleSymbol = element.querySelector('.expandToggle'); // Get the toggle symbol
-
-        // Check if content is visible
-        if (content.style.display === "block") {
-            content.style.display = "none"; // Hide content
-            toggleSymbol.textContent = "+"; // Change toggle symbol to "+"
-        } else {
-            content.style.display = "block"; // Show content
-            toggleSymbol.textContent = "-"; // Change toggle symbol to "-"
+            requestAnimationFrame(animateCircles);
         }
-    }
+
+        animateCircles();
+
+
+        // cursor ends
+        //   </script>
+
+    //
+    <script>
+        function toggleFAQ(element) {
+            const content = element.nextElementSibling; // Get the FAQ content
+            const toggleSymbol = element.querySelector('.expandToggle'); // Get the toggle symbol
+
+            // Check if content is visible
+            if (content.style.display === "block") {
+                content.style.display = "none"; // Hide content
+                toggleSymbol.textContent = "+"; // Change toggle symbol to "+"
+            } else {
+                content.style.display = "block"; // Show content
+                toggleSymbol.textContent = "-"; // Change toggle symbol to "-"
+            }
+        }
     </script>
     <script src="about.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="main.js"></script>
- 
+
     <script src="about.js"></script>
     <script>
 
-           // Function to hide preloader and show content once the page has fully loaded
-           window.addEventListener('load', function() {
-        const preloader = document.getElementById('preloader');
-        const content = document.getElementById('content');
-    
-        // Set a small timeout for better user experience
-        setTimeout(function() {
-            // Hide preloader
-            preloader.style.opacity = '0';
-            preloader.style.transition = 'opacity 1s ease-in-out';
-    
-            // Show content after preloader fades out
-            setTimeout(function() {
-                preloader.style.display = 'none';
-                content.style.display = 'block';
-                content.classList.add('show');  // Trigger fade-in transition
-            }, 100); // Match the transition duration
-        }, 200);  // Adjust to the length of your spinner animation
-    });
+        // Function to hide preloader and show content once the page has fully loaded
+        window.addEventListener('load', function () {
+            const preloader = document.getElementById('preloader');
+            const content = document.getElementById('content');
 
-        
-   
-        
-        
-        
+            // Set a small timeout for better user experience
+            setTimeout(function () {
+                // Hide preloader
+                preloader.style.opacity = '0';
+                preloader.style.transition = 'opacity 1s ease-in-out';
+
+                // Show content after preloader fades out
+                setTimeout(function () {
+                    preloader.style.display = 'none';
+                    content.style.display = 'block';
+                    content.classList.add('show');  // Trigger fade-in transition
+                }, 100); // Match the transition duration
+            }, 200);  // Adjust to the length of your spinner animation
+        });
+
+
+
+
+
+
 
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
@@ -777,9 +718,8 @@ animateCircles();
             });
         }
 
-        function clickThumbs(index)
-        {
-            currentSlide=index;
+        function clickThumbs(index) {
+            currentSlide = index;
             showSlide(currentSlide);
         }
 
@@ -877,29 +817,29 @@ animateCircles();
 
         // script for faq section
 
-        
 
-        window.onscroll = function() { 
-           scrollFunction() 
-         };
+
+        window.onscroll = function () {
+            scrollFunction()
+        };
 
         function scrollFunction() {
-        const topBtn = document.getElementById("topBtn");
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            topBtn.style.display = "block"; // Show button
-        } else {
-            topBtn.style.display = "none"; // Hide button
+            const topBtn = document.getElementById("topBtn");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                topBtn.style.display = "block"; // Show button
+            } else {
+                topBtn.style.display = "none"; // Hide button
+            }
         }
-        }
-           function moveToTop() {
-            window.scrollTo({ 
-                top: 0, 
-                behavior: 'smooth' 
-            }); 
+        function moveToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         }
 
         document.querySelectorAll('details').forEach((faq) => {
-            faq.addEventListener('toggle', function() {
+            faq.addEventListener('toggle', function () {
                 const content = this.querySelector('p');
                 if (this.open) {
                     content.style.height = '0px';
@@ -921,7 +861,7 @@ animateCircles();
         let mybutton = document.getElementById("myBtn");
 
         window.onscroll = function () { scrollFunction() };
-        window.onscroll = function() {
+        window.onscroll = function () {
             scrollFunction()
         };
 
@@ -944,18 +884,12 @@ animateCircles();
             document.documentElement.scrollTop = 0;
         }
 
-    // toggle chatbot function
-    function toggleChatbot() {
-        const chatbotContainer = document.getElementById("chatbot-container");
-        chatbotContainer.classList.toggle("chatbot-show");
-    }
-
-    window.addEventListener('scroll', () => {
-    const scrollProgressBar = document.getElementById('scrollProgressBar');
-    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progressHeight = (window.scrollY / totalHeight) * 100;
-    scrollProgressBar.style.width = progressHeight + '%';
-});
+        window.addEventListener('scroll', () => {
+            const scrollProgressBar = document.getElementById('scrollProgressBar');
+            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progressHeight = (window.scrollY / totalHeight) * 100;
+            scrollProgressBar.style.width = progressHeight + '%';
+        });
 
     </script>
 
@@ -971,8 +905,7 @@ animateCircles();
 
 </html>
 
-    <script src="chatbot.js"></script>
+<script src="chatbot.js"></script>
 </body>
 
 </html>
-
