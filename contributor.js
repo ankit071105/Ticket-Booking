@@ -99,10 +99,12 @@ document.getElementById('subscribeForm').addEventListener('submit', function(e) 
   }, 5000);
 });
 
+
 // Scroll to contribute section
 function scrollToContribute() {
   document.getElementById('contribute').scrollIntoView({ behavior: 'smooth' });
 }
+
 
 // Initialize the page when the DOM is loaded
 document.addEventListener('DOMContentLoaded', init);
