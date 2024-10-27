@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="index.css">
@@ -361,107 +362,7 @@
 
 
     <br>
-
-    <body>
-        <section id="faq">
-            <div class="faq-container">
-                <h1 class="faq-title" data-aos="fade-right">Frequently Asked Questions</h1>
-                <div id="FAQ">
-                    <div class="accordion">
-                        <div class="item">
-                            <div class="FAQ-title" onclick="toggleFAQ(this)">
-                                <p class="faqQuestion">What is your cancellation policy?</p>
-                                <span class="expandToggle">+</span>
-                            </div>
-                            <div class="FAQ-content">
-                                <p>We offer a flexible cancellation policy that allows you to cancel your booking up to
-                                    48 hours before your scheduled departure for a full refund.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion">
-                        <div class="item">
-                            <div class="FAQ-title" onclick="toggleFAQ(this)">
-                                <p class="faqQuestion">How do I make changes to my booking?</p>
-                                <span class="expandToggle">+</span>
-                            </div>
-                            <div class="FAQ-content">
-                                <p>You can make changes to your booking by logging into your account and accessing your
-                                    booking details. For major changes, please contact our support team directly.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion">
-                        <div class="item">
-                            <div class="FAQ-title" onclick="toggleFAQ(this)">
-                                <p class="faqQuestion">What payment methods do you accept?</p>
-                                <span class="expandToggle">+</span>
-                            </div>
-                            <div class="FAQ-content">
-                                <p>We accept various payment methods including credit/debit cards, PayPal, and bank
-                                    transfers. All transactions are secure and encrypted.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion">
-                        <div class="item">
-                            <div class="FAQ-title" onclick="toggleFAQ(this)">
-                                <p class="faqQuestion">Do you offer travel insurance?</p>
-                                <span class="expandToggle">+</span>
-                            </div>
-                            <div class="FAQ-content">
-                                <p>Yes, we offer travel insurance options during the booking process to protect your
-                                    trip against unforeseen circumstances.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion">
-                        <div class="item">
-                            <div class="FAQ-title" onclick="toggleFAQ(this)">
-                                <p class="faqQuestion">Can I book multiple destinations in one trip?</p>
-                                <span class="expandToggle">+</span>
-                            </div>
-                            <div class="FAQ-content">
-                                <p>Absolutely! Our platform allows you to plan multi-destination trips seamlessly.
-                                    Simply select your desired locations during the booking process.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion">
-                        <div class="item">
-                            <div class="FAQ-title" onclick="toggleFAQ(this)">
-                                <p class="faqQuestion">How can I contact customer support?</p>
-                                <span class="expandToggle">+</span>
-                            </div>
-                            <div class="FAQ-content">
-                                <p>You can reach our customer support team via email or live chat on our website. We’re
-                                    available 24/7 to assist you with any inquiries.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion">
-                        <div class="item">
-                            <div class="FAQ-title" onclick="toggleFAQ(this)">
-                                <p class="faqQuestion">What should I do if I encounter an issue with my booking?</p>
-                                <span class="expandToggle">+</span>
-                            </div>
-                            <div class="FAQ-content">
-                                <p>If you experience any issues with your booking, please contact our support team
-                                    immediately. We will work to resolve your issue as quickly as possible.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
+<body>
         <!-- feedback form -->
         <section id="feedback-form">
             <div class="container">
@@ -504,6 +405,100 @@
 
                     <button type="submit" style="width: 150px; height: 70px;">Submit Feedback</button>
                 </form>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="faq-container" data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="faq-title" data-aos="fade-right" data-aos-duration="800">Frequently Asked Questions</h1>
+                <div id="FAQ">
+                    <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="30">
+                        <div class="item">
+                            <div class="FAQ-title" onclick="toggleFAQ(this)">
+                                <p class="faqQuestion">What is your cancellation policy?</p>
+                                <span class="expandToggle">+</span>
+                            </div>
+                            <div class="FAQ-content">
+                                <p>We offer a flexible cancellation policy that allows you to cancel your booking up to 48 hours before your scheduled departure for a full refund.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Add similar items for other FAQ entries, each with slight delays -->
+                    <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="60">
+                        <div class="item">
+                            <div class="FAQ-title" onclick="toggleFAQ(this)">
+                                <p class="faqQuestion">How do I make changes to my booking?</p>
+                                <span class="expandToggle">+</span>
+                            </div>
+                            <div class="FAQ-content">
+                                <p>You can make changes to your booking by logging into your account and accessing your booking details. For major changes, please contact our support team directly.</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="90">
+                        <div class="item">
+                            <div class="FAQ-title" onclick="toggleFAQ(this)">
+                                <p class="faqQuestion">What payment methods do you accept?</p>
+                                <span class="expandToggle">+</span>
+                            </div>
+                            <div class="FAQ-content">
+                                <p>We accept various payment methods including credit/debit cards, PayPal, and bank transfers. All transactions are secure and encrypted.</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="120">
+                        <div class="item">
+                            <div class="FAQ-title" onclick="toggleFAQ(this)">
+                                <p class="faqQuestion">Do you offer travel insurance?</p>
+                                <span class="expandToggle">+</span>
+                            </div>
+                            <div class="FAQ-content">
+                                <p>Yes, we offer travel insurance options during the booking process to protect your trip against unforeseen circumstances.</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
+                        <div class="item">
+                            <div class="FAQ-title" onclick="toggleFAQ(this)">
+                                <p class="faqQuestion">Can I book multiple destinations in one trip?</p>
+                                <span class="expandToggle">+</span>
+                            </div>
+                            <div class="FAQ-content">
+                                <p>Absolutely! Our platform allows you to plan multi-destination trips seamlessly. Simply select your desired locations during the booking process.
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="180">
+                        <div class="item">
+                            <div class="FAQ-title" onclick="toggleFAQ(this)">
+                                <p class="faqQuestion">How can I contact customer support?</p>
+                                <span class="expandToggle">+</span>
+                            </div>
+                            <div class="FAQ-content">
+                                <p>You can reach our customer support team via email or live chat on our website. We’re available 24/7 to assist you with any inquiries.</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="210">
+                        <div class="item">
+                            <div class="FAQ-title" onclick="toggleFAQ(this)">
+                                <p class="faqQuestion">What should I do if I encounter an issue with my booking?</p>
+                                <span class="expandToggle">+</span>
+                            </div>
+                            <div class="FAQ-content">
+                                <p>If you experience any issues with your booking, please contact our support team immediately. We will work to resolve your issue as quickly as possible.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Repeat for each FAQ item, incrementing data-aos-delay by 100ms for staggered animation -->
+                </div>
             </div>
         </section>
 
@@ -571,6 +566,7 @@
                 </div>
             </div>
         </div>
+    </div>
 
 
         <div class="footer-bottom">
@@ -897,6 +893,11 @@
 
     <script src="app.js"></script>
     <script src="faq.js"></script>
+    <!-- AOS Library & Initialization Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
 </body>
 
