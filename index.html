@@ -340,7 +340,7 @@
             <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
             <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
             <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
-            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a>
             <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
             <a href="client/login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
         </div>
@@ -599,11 +599,11 @@
                     <div class="form-group">
                         <label for="rating">Rating</label>
                         <select id="rating" name="rating" required>
-                            <option value="5">Excellent - 5 Stars</option>
-                            <option value="4">Very Good - 4 Stars</option>
-                            <option value="3">Good - 3 Stars</option>
-                            <option value="2">Fair - 2 Stars</option>
-                            <option value="1">Poor - 1 Star</option>
+                            <option value="5">⭐⭐⭐⭐⭐</option>
+                            <option value="4">⭐⭐⭐⭐</option>
+                            <option value="3">⭐⭐⭐</option>
+                            <option value="2">⭐⭐</option>
+                            <option value="1">⭐</option>
                         </select>
                     </div>
 
@@ -619,6 +619,106 @@
                 </form>
             </div>
         </section>
+
+        <style>
+            /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Section Styling */
+#feedback-form {
+    background: linear-gradient(135deg, #b29ee3, #05ffcd); /* Gradient green background */
+    padding: 50px 20px;
+    font-family: Arial, sans-serif;
+}
+
+#feedback-form h2 {
+    color: #0d0d0d; /* Dark green for headings */
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+#feedback-form p {
+    color: #07fbd6; /* Medium green for description */
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* Container */
+.container {
+    
+    border: 5px solid green;
+    max-width: 800px;
+    margin: auto;
+    background-color: white; /* White background */
+    border-radius: 6%;
+    padding: 40px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: medium;
+    color: #2b472b; /* Dark green for labels */
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    border: 2px solid #a8d8a8; /* Light green border */
+    border-radius: 5px;
+    background-color: #757675; /* Light background */
+    transition: border 0.3s ease;
+    color: #2b472b; /* Dark green for input text */
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #fafbfa; /* Medium green for placeholder text */
+    font-size: medium;
+    font-weight: bolder;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #4d994d; /* Dark green on focus */
+    outline: none;
+}
+
+/* Button Styling */
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #4d994d; /* Dark green */
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #367836; /* Darker green on hover */
+}
+
+        </style>
 
         <section id="faq">
             <div class="faq-container" data-aos="fade-up" data-aos-duration="1000">
@@ -752,7 +852,7 @@
                     <ul>
                         <li><a href="#">Media Center</a></li>
                         <li><a href="#">Investors</a></li>
-                        <li><a href="#">Modern Slavery Act</a></li>
+                        <li><a href="ModernSlaveryAct.html">Modern Slavery Act</a></li>
                         <li><a href="terms.html">Terms Of Use</a></li>
                     </ul>
                 </div>
@@ -762,7 +862,7 @@
                     <ul>
                         <li><a href="#">ATOL Protected</a></li>
                         <li><a href="./travelawares.html">Travel Aware</a></li>
-                        <li><a href="#">FCDO Travel Advice</a></li>
+                        <li><a href="fcdoTravel.html">FCDO Travel Advice</a></li>
                         <li><a href="#">ABTA</a></li>
                     </ul>
                 </div>
@@ -770,9 +870,10 @@
                 <div class="footer-column">
                     <h4>FIND US</h4>
                     <ul>
-                        <li><a href="#">Contact Us</a></li>
+ 
+                        <li><a href="contactus.html">Contact 
                         <li><a href="GroupCookieNotice.html">Group Cookie Notice</a></li>
-                        <li><a href="privacy.html">Privacy And Policy</a></li>
+                       <li><a href="privacy.html">Privacy And Policy</a></li>
                         <li><a href="sitemap.html">Sitemap</a></li>
                     </ul>
                 </div>
