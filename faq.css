@@ -1,4 +1,9 @@
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
 
+/* FAQ Container styling */
 .faq-container {
   padding: 50px;
   max-width: 800px;
@@ -21,7 +26,6 @@
   margin-bottom: 15px;
 }
 
-
 .FAQ-title {
   display: flex;
   justify-content: space-between;
@@ -37,7 +41,7 @@
   background-color: #17a38b;
 }
 
-.faqQuestion{
+.faqQuestion {
   margin-top: 20px;
 }
 
@@ -45,48 +49,30 @@
 .expandToggle {
   background-color: #fff;
   color: #1fb899;
-  padding: 0.0175rem 2.0rem;
+  padding: 0.0175rem 2rem;
   border-radius: 50%;
   font-weight: bold;
   font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .expandToggle:hover {
   background-color: #f7f7f7;
+  transform: rotate(90deg);
 }
 
-/* FAQ content hidden by default */
+/* FAQ content styling for smooth expansion */
 .FAQ-content {
-  display: none;
-  background-color: #e7f8f3;
-  padding: 15px 20px;
-  border-radius: 5px;
-  margin-top: 10px;
-  color: #333;
-  font-size: 1rem;
-  line-height: 1.6;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-=======
-.FAQ-content {
-  display: none; /* Ensure FAQ content is hidden by default */
-}
-.expandToggle {
-  cursor: pointer; /* Change cursor to pointer for toggle */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
 }
 
-.accordion{
-  background-color: aliceblue;
-
-}
-.expandToggle{
-  background-color: #1fb899;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  margin-top: 10px;
-  display: inline-block;
+.FAQ-content.open {
+  max-height: 500px; /* Adjust this if needed */
+  opacity: 1;
 }

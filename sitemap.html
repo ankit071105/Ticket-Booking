@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Travel Aware - Ticket Booking</title>
-    <link rel="stylesheet" href="footer.css"> 
+    <title>Site Map - Ticket Booking</title>
     <link rel="stylesheet" href="styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
@@ -14,6 +13,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="footer.css"> 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -23,211 +23,6 @@
         display: flex;
       }
     </style>
-    <style>
-      /* Resetting margin and padding */
-           /* Resetting margin and padding */
-   * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body styling */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
-    line-height: 1.6;
-}
-
-/* Full-width container for page */
-.container {
-
-    display: flex;
-    width: 100%;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-/* Table of contents styling */
-.toc {
-    flex-basis: 25%;
-    background-color: #e9ecef;
-    padding:70px 20px;
-    border-radius: 8px;
-    margin-right: 20px;
-    height: fit-content;
-    position: sticky;
-    top: 20px;
-}
-
-.toc h2 {
-    font-size: 1.5rem;
-    color: #004085;
-}
-
-.toc ul {
-    list-style: none;
-    padding: 0;
-}
-
-.toc ul li {
-    margin-bottom: 10px;
-}
-
-.toc ul li a {
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-}
-
-.toc ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Main content styling */
-.main-content {
-    flex-basis: 75%;
-}
-
-h1, h2 {
-    color: #004085;
-}
-
-h1 {
-    font-size: 2.2rem;
-    text-align: center;
-    margin: 53px 0;
-    border-bottom: 2px solid #004085;
-    padding-bottom: 10px;
-}
-
-h2 {
-    font-size: 1.8rem;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-}
-
-p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-ul {
-    margin-left: 20px;
-    padding-left: 20px;
-    list-style: disc;
-}
-
-li {
-    margin-bottom: 10px;
-}
-
-/* Button styling for links */
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Smooth scrolling for anchor links */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .toc {
-        margin-bottom: 20px;
-        margin-right: 0;
-        width: 100%;
-        position: relative; /* Changed to relative to make TOC non-sticky */
-    }
-
-    .main-content {
-        width: 100%;
-    }
-
-    h1 {
-        font-size: 1.8rem;
-    }
-
-    h2 {
-        font-size: 1.4rem;
-    }
-
-    p {
-        font-size: 0.95rem;
-    }
-}
-:root {
-  --bg-color: #fff;
-  --text-color: #333;
-  --toc-bg: #e9ecef;
-  --link-color: #007bff;
-}
-
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-
-a {
-  color: var(--link-color);
-}
-
-/* Dark Mode Variables */
-body.dark-mode {
-  --bg-color: #000;
-  --text-color: #fff;
-  --toc-bg: #333;
-  --link-color: #90caf9;
-}
-
-.dark-mode .container {
-  background-color: var(--bg-color);
-}
-
-.dark-mode-toc {
-  background-color: var(--toc-bg);
-}
-
-.dark-mode-toc ul li a,
-.dark-mode h1,
-.dark-mode h2,
-.dark-mode p,
-.dark-mode ul li {
-  color: var(--text-color);
-}
-.dark-mode toc{
-  background-color: #000;
-  color: #ddd;
- 
-}
-.dark-mode-content {
-  background-color: var(--bg-color);
-}
-
-.dark-mode-content h1,
-.dark-mode-content h2,
-.dark-mode-content p,
-.dark-mode-content li {
-  color: var(--text-color);
-}
-  </style>
   </head>
   <body>
     <nav class="navbar">
@@ -277,10 +72,9 @@ body.dark-mode {
           </li>
         </ul>
 
-        <button id="darkModeToggle" style="width: 30px; height: 40px">
+        <button id="darkModeToggle" style="width: 40px; height: 40px">
           🌙
         </button>
-        
       </div>
     </nav>
     <script>
@@ -330,78 +124,55 @@ body.dark-mode {
         }
       });
     </script>
-    <div class="container mt-5">
-        
-      <!-- Table of contents on the left side -->
-      <div class="toc">
-          <h2>Table of Contents</h2>
-          <ul>
-              <li><a href="#section1">1. Health & Safety</a></li>
-              <li><a href="#section2">2. Travel Documentation</a></li>
-              <li><a href="#section3">3. Emergency Contacts</a></li>
-              <li><a href="#section4">4. Local Laws & Customs</a></li>
-              <li><a href="#section5">5. Insurance</a></li>
-              <li><a href="#section6">6. Communication Tips</a></li>
-              <li><a href="#section7">7. Feedback & Assistance</a></li>
-          </ul>
+    <section id="about-us">
+      <div class="about-container">
+          <h1>Site Map</h1>
+  
+          <div class="policy-section">
+              <h2><a href="index.html">Home</a></h2>
+              <ul>
+                <li><a href="buy.html">Bus Tickets</a></li>
+                <li><a href="sell.html">Sell Bus Tickets</a></li>
+                <li><a href="train_buy.html">Train Tickets</a></li>
+                <li><a href="train_sell.html">Sell Train Tickets</a></li>
+              </ul>
+              <h2><a href="about.html">About Us</a></h2>
+              <h2><a href="#contact">Contact Us</a></h2>
+              <h2><a href="#faq">FAQ</a></h2>
+
+              <h2>HELPFUL LINKS</h2>
+            <ul>
+              <li><a href="help.html">Help Centre</a></li>
+              <li><a href="#">Special Assistance</a></li>
+              <li><a href="#">Download The App</a></li>
+              <li><a href="./book_condition.html">Booking Conditions</a></li>
+              <li><a href="#">Media Center</a></li>
+              <li><a href="#">Investors</a></li>
+              <li><a href="ModernSlaveryAct.html">Modern Slavery Act</a></li>
+              <li><a href="terms.html">Terms Of Use</a></li>
+            </ul>
+            <h2>KEEPING SAFE</h2>
+            <ul>
+                <li><a href="#">ATOL Protected</a></li>
+                <li><a href="travelAware.html">Travel Aware</a></li>
+                <li><a href="#">FCDO Travel Advice</a></li>
+                <li><a href="#">ABTA</a></li>
+            </ul>
+            <h2><a href="login.html">Login/Sign-Up</a></h2>
+            <h2><a href="contributor.html">Contributors</a></h2>
+              
+          <div class="contact-info">
+              <h2>Contact Us</h2>
+              <p>
+                  If you have any questions or concerns about our privacy practices, please 
+                  contact us at: 
+                  <a href="tel:+919685478526">+91 9685478526</a>
+              </p>
+          </div>
       </div>
+  </section>
+  
 
-      <!-- Main content on the right side -->
-      <div class="main-content">
-          <h1>Travel Aware - Safety Guide</h1>
-
-          <!-- Travel Awareness sections -->
-          <h2 id="section1">1. Health & Safety</h2>
-          <p>When traveling, ensure you’re up-to-date on vaccinations, and be aware of local health advisories.</p>
-          <ul>
-              <li>Consult with a healthcare provider for destination-specific health recommendations.</li>
-              <li>Carry any necessary prescription medications and a basic first aid kit.</li>
-              <li>Stay informed on any outbreaks or health warnings specific to your destination.</li>
-          </ul>
-
-          <h2 id="section2">2. Travel Documentation</h2>
-          <p>Ensure all travel documents are valid and accessible.</p>
-          <ul>
-              <li>Carry your passport, visa, and any necessary permits.</li>
-              <li>Keep digital copies of important documents in case of loss or theft.</li>
-          </ul>
-
-          <h2 id="section3">3. Emergency Contacts</h2>
-          <p>Keep a list of emergency contacts readily accessible.</p>
-          <ul>
-              <li>Store local emergency numbers, including healthcare and law enforcement.</li>
-              <li>Maintain contact information for your country’s embassy or consulate.</li>
-          </ul>
-
-          <h2 id="section4">4. Local Laws & Customs</h2>
-          <p>Familiarize yourself with the local laws and customs of your travel destination.</p>
-          <ul>
-              <li>Respect the cultural norms and legal restrictions of the area.</li>
-              <li>Be cautious about behaviors that might be legal at home but prohibited abroad.</li>
-          </ul>
-
-          <h2 id="section5">5. Insurance</h2>
-          <p>Ensure you have appropriate travel insurance to cover potential health and travel-related incidents.</p>
-          <ul>
-              <li>Review your policy for coverage details specific to your destination and activities.</li>
-              <li>Consider additional coverage for high-risk activities or extended stays.</li>
-          </ul>
-
-          <h2 id="section6">6. Communication Tips</h2>
-          <p>Prepare for communication while traveling abroad.</p>
-          <ul>
-              <li>Consider purchasing a local SIM card or international roaming plan for connectivity.</li>
-              <li>Use translation apps to facilitate conversations in local languages.</li>
-          </ul>
-
-          <h2 id="section7">7. Feedback & Assistance</h2>
-          <p>If you need help or have feedback, reach out to us anytime:</p>
-          <p>Email: <a href="mailto:support@travelaware.com">support@travelaware.com</a></p>
-          <p>Phone: <a href="tel:+1234567890" style="color: rgb(117, 114, 206); text-decoration: none;">+123 456 7890</a></p>
-   
-      </div>
-  </div>
-    </section>
     <footer class="footer-container">
       <div class="footer-top">
         
@@ -443,9 +214,6 @@ body.dark-mode {
             <ul>
               <li><a href="#">Media Center</a></li>
               <li><a href="#">Investors</a></li>
-  
-              <li><a href="#">Modern Slavery Act</a></li>
-  
               <li><a href="ModernSlaveryAct.html">Modern Slavery Act</a></li>
   
               <li><a href="terms.html">Terms Of Use</a></li>
@@ -466,9 +234,9 @@ body.dark-mode {
             <h4>FIND US</h4>
             <ul>
               <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Group Cookie Notice</a></li>
+              <li><a href="GroupCookieNotice.html">Group Cookie Notice</a></li>
               <li><a href="privacy.html">Privacy And Policy</a></li>
-              <li><a href="#">Sitemap</a></li>
+              <li><a href="sitemap.html">Sitemap</a></li>
             </ul>
           </div>
         </div>
@@ -485,6 +253,7 @@ body.dark-mode {
         </ul>
       </div>
     </footer>
+  
     <div class="gtranslate_wrapper"></div>
     <script>
       window.gtranslateSettings = {
@@ -504,55 +273,89 @@ body.dark-mode {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
 
-  body {
+body {
     font-family: "Arial", sans-serif;
     line-height: 1.6;
-  }
+    background-color: #f0f0f0; /* Light background for contrast */
+}
 
-  #aware-us {
+
+#about-us {
     background-image: url("your-background-image.jpg");
     background-size: cover;
     background-position: center;
     color: #fff;
     padding: 80px 0;
     text-align: center;
-  }
+}
 
-  .aware-container {
+.about-container {
     max-width: 800px;
     margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(255, 255, 255, 0.9); /* Light container for contrast */
+    color: #333; /* Darker text for readability */
     padding: 40px;
-    border-radius: 10px;
-  }
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+    transition: transform 0.3s; /* Smooth hover effect */
+}
+.about-container li{
+    list-style: none;
+}
+.about-container:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
 
-  #aware-us h1 {
-    font-size: 3rem;
+#about-us h1 {
+    font-size: 2.8rem; /* Slightly smaller, balanced size */
     margin-bottom: 20px;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #f0a500;
-  }
+    letter-spacing: 2px; /* Reduced letter spacing */
+    color: #007bff; /* Vibrant accent color */
+}
 
-  #aware-us p {
-    color: #fff;
-    font-size: 1.2rem;
+#about-us h2{
+  color: #007bff;
+}
+#about-us p {
+    color: #333; /* Dark text for better readability */
+    font-size: 1.1rem;
     margin-bottom: 20px;
-  }
-  #aware-us li{
-    margin-top: 10px;
-    
-  }
+    line-height: 1.8; /* Increased line height for readability */
+}
 
-  @media (max-width: 768px) {
-    #aware-us h1 {
-      font-size: 2.5rem;
+.contact-info {
+    margin-top: 30px; /* More space for emphasis */
+    font-size: 1.1rem; /* Consistent text size */
+    color: #007bff; /* Matching accent color */
+}
+
+.contact-info a {
+  color: #007bff;/* Consistent link color */
+    text-decoration: none; /* Clean appearance */
+    font-weight: bold; /* Bold for emphasis */
+    transition: color 0.3s, text-decoration 0.3s; /* Smooth transition */
+}
+
+.contact-info a:hover {
+  color: #007bff;/* Darker accent on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+@media (max-width: 768px) {
+    #about-us h1 {
+        font-size: 2.2rem; /* Responsive heading size */
     }
 
-    #aware-us p {
-      font-size: 1rem;
+    #about-us p {
+        font-size: 1rem; /* Responsive paragraph size */
     }
-  }
+
+    .contact-info {
+        font-size: 1rem; /* Responsive size for contact info */
+    }
+}
+
 </style>
