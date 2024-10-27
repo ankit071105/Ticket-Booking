@@ -282,6 +282,9 @@
 </head>
 
 <body>
+    <div class="Wrapper">
+        <div class="loader"></div>
+    </div>  
 
     <!-- cursor -->
     <div class="circle"></div>
@@ -1280,6 +1283,17 @@ button[type="submit"]:hover {
         });
 
     </script>
+        <script>
+            const fadeOut = () => {
+         const loaderWrapper = document.querySelector('.Wrapper');
+         setTimeout(() => {
+             loaderWrapper.classList.add('fade');
+         }, 2000); // 2 seconds delay
+     };
+     
+     window.addEventListener('load', fadeOut);
+     
+        </script>
 
     <script src="app.js"></script>
     <script src="faq.js"></script>
