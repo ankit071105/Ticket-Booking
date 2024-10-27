@@ -381,27 +381,167 @@
 
 <body>
 
-    <!-- cursor -->
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
+<!-- cursor -->
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<!-- cursor ends -->
+
+<!-- Navbar with scroll-to-top button and chatbot -->
+<div id="scrollProgressBar" class="progress-bar"></div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">
+    <i class="fa fa-arrow-up" aria-hidden="true"></i>
+</button>
+<button id="scrollToTopBtn" class="scroll-to-top" title="Go to top">
+    &#8593; <!-- This is the up arrow -->
+</button>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .scroll-to-top {
+        position: fixed;
+        bottom: 120px;
+        right: 35px;
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        cursor: pointer;
+        display: none; /* Initially hidden */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .scroll-to-top:hover {
+        background-color: darkred; /* Darker red on hover */
+    }
+
+    .chatbot-container {
+        display: none; /* Hide initially, toggle this with JavaScript */
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        width: 300px;
+        height: 400px;
+        background-color: #f1f1f1;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        padding: 10px;
+    }
+
+    .chatbot-title {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .chatbot-input {
+        width: calc(100% - 40px);
+        margin: 10px 0;
+    }
+
+    .chatbot-button {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        background-color: #333;
+        padding: 10px;
+    }
+
+    .navbar a {
+        color: white;
+        padding: 8px;
+        text-decoration: none;
+    }
+</style>
+
+<script>
+    // Get the button
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+    // Show the button when scrolling down 20px from the top
+    window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollToTopBtn.style.display = "flex";
+        } else {
+            scrollToTopBtn.style.display = "none";
+        }
+    };
+
+    // Scroll to top function
+    scrollToTopBtn.onclick = function() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth" // Smooth scroll effect
+        });
+    };
+
+    // Toggle chatbot function
+    function toggleChatbot() {
+        const chatbotContainer = document.getElementById("chatbot-container");
+        chatbotContainer.style.display = chatbotContainer.style.display === "none" ? "block" : "none";
+    }
+</script>
+
+<!-- Chatbot -->
+<button onclick="toggleChatbot()" id="chatbotBtn" title="Chat bot"></button>
+
+<div class="chatbot-container" id="chatbot-container">
+    <div class="chatbot-title">Ticket Bot</div>
+    <div class="chatbot-chat" id="chatbot-chat"></div>
+    <input type="text" class="chatbot-input" id="chatbot-input" placeholder="Type your message here..." />
+    <button class="chatbot-button" id="chatbot-button"><i class="fa-brands fa-telegram"></i></button>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
+    <div class="logo" style="margin-right: 200px; font-size: 20px;">Ticket Marketplace</div>
+    <div>
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+        <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
+        <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
+        <a href="register.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+    </div>
+</nav>
+
 
     <!-- cursor ends -->
 
