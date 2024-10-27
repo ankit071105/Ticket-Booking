@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCDO Travel Advice</title>
+    <style>
+        /* CSS Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f5f9;
+    color: #333;
+}
+.container {
+    max-width: 700px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.6s ease-in-out;
+}
+h1 {
+    color: #1d4ed8;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+h1:hover {
+    color: #1e40af;
+}
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #475569;
+    font-size: 1.2rem;
+}
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+select:focus {
+    border-color: #1d4ed8;
+    box-shadow: 0 0 10px rgba(29, 78, 216, 0.3);
+}
+.btn {
+    display: inline-block;
+    background: #1d4ed8;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn:hover {
+    background: #1e3a8a;
+    transform: translateY(-2px);
+}
+.advice-box {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: #e0f2fe;
+    border: 1px solid #7dd3fc;
+    border-radius: 10px;
+    animation: fadeIn 0.8s ease forwards;
+}
+.advice-box h3 {
+    color: #0c4a6e;
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+}
+.advice-box p {
+    color: #334155;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0.5rem 0;
+}
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+    </style>
+
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+              <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
+              <div class="logo" style="margin-right: 200px; font-size: 20px;">Ticket Marketplace</div>
+              <div>
+                  <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                  <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+                  <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
+                  <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
+                  <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+                  <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
+                  <a href="register.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+          
+                </div>
+                <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+          
+            </nav>
+                
+  
+    </header>
+  
+
+
+<div class="container">
+    <h1>FCDO Travel Advice</h1>
+    <div class="form-group">
+        <label for="city">Select City</label>
+        <select id="city">
+            <option value="Mumbai">Mumbai</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Bengaluru">Bengaluru</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Pune">Pune</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Jaipur">Jaipur</option>
+            <option value="Lucknow">Lucknow</option>
+            <option value="Goa">Goa</option>
+            <option value="Chandigarh">Chandigarh</option>
+            <option value="Shimla">Shimla</option>
+            <option value="Udaipur">Udaipur</option>
+            <option value="Agra">Agra</option>
+            <option value="Varanasi">Varanasi</option>
+            <option value="Mysuru">Mysuru</option>
+            <option value="Amritsar">Amritsar</option>
+            <option value="Rishikesh">Rishikesh</option>
+            <option value="Bhopal">Bhopal</option>
+        </select>
+    </div>
+    <button class="btn" onclick="getTravelAdvice()">Get Travel Advice</button>
+    <div class="advice-box" id="adviceBox" style="display:none;">
+        <h3 id="adviceTitle"></h3>
+        <p id="adviceGeneral"></p>
+        <p><strong>Weather Considerations:</strong> <span id="adviceWeather"></span></p>
+        <p><strong>What to Pack:</strong> <span id="advicePacking"></span></p>
+        <p><strong>Local Tips:</strong> <span id="adviceLocal"></span></p>
+    </div>
+</div>
+
+
+<footer class="footer-container">
+    <div class="footer-top">
+      <!-- Logo and Tagline -->
+      <div class="footer-logo-section">
+        <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo">
+        <p style="color: #b5fdf4;">Affordable adventures, unforgettable memories—explore with ease.</p>
+        <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+          <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.twitter.com" ><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Links Sections -->
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>HELPFUL LINKS</h4>
+          <ul>
+            <li><a href="#">Help Centre</a></li>
+            <li><a href="#">Special Assistance</a></li>
+            <li><a href="#">Download The App</a></li>
+            <li><a href="#">Booking Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>ABOUT US</h4>
+          <ul>
+            <li><a href="#">Media Center</a></li>
+            <li><a href="#">Investors</a></li>
+            <li><a href="#">Modern Slavery Act</a></li>
+            <li><a href="#">Terms Of Use</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>KEEPING SAFE</h4>
+          <ul>
+            <li><a href="#">ATOL Protected</a></li>
+            <li><a href="#">Travel Aware</a></li>
+            <li><a href="fcdoTravel.html">FCDO Travel Advice</a></li>
+            <li><a href="#">ABTA</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>FIND US</h4>
+          <ul>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="#">Group Cookie Notice</a></li>
+            <li><a href="#">Privacy And Policy</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Links Section -->
+    <div class="footer-bottom">
+      <ul>
+        <li><a href="#">Holiday Type</a></li>
+        <li><a href="#">Holiday Deals</a></li>
+        <li><a href="#">Popular Counters</a></li>
+        <!-- <li><a href="#">Flight Only</a></li> -->
+        <li><a href="tophotels.html">Top Hotels</a></li>
+      </ul>
+    </div>
+  </footer>
+
+
+
+
+<script>
+    // JavaScript for fetching travel advice
+// JavaScript for fetching travel advice
+const adviceData = {
+    "Mumbai": {
+        general: "Heavy monsoon rains may cause disruptions. Avoid low-lying areas during peak rains.",
+        weather: "Hot and humid year-round, with intense rains from June to September.",
+        packing: "Raincoat, umbrella, comfortable shoes, light and breathable clothing.",
+        local: "Use local trains or metro for faster commute during peak hours."
+    },
+    "Delhi": {
+        general: "Air quality may be poor, especially in winter. Masks and air purifiers are recommended.",
+        weather: "Hot summers, chilly winters. Air pollution spikes in November and December.",
+        packing: "Mask, light clothing for summer, jackets for winter, comfortable shoes.",
+        local: "Avoid peak traffic times; use the metro for faster travel."
+    },
+    "Varanasi": {
+        general: "Be mindful of crowds around the Ganges, especially during festivals.",
+        weather: "Hot in summer, mild in winter, with a wet monsoon season.",
+        packing: "Comfortable walking shoes, light clothes, and a water bottle.",
+        local: "Experience the Ganga Aarti ceremony at Dashashwamedh Ghat."
+    },
+    "Mysuru": {
+        general: "Best visited during Dasara when the city comes alive with festivities.",
+        weather: "Warm year-round, with a slightly cooler winter season.",
+        packing: "Comfortable clothing, sunscreen, and a hat for sunny days.",
+        local: "Visit the Mysore Palace and Chamundi Hill for scenic views."
+    },
+    "Amritsar": {
+        general: "Golden Temple can be crowded, especially during weekends.",
+        weather: "Hot summers, cold winters, mild monsoon.",
+        packing: "Modest clothing for temple visits, comfortable shoes.",
+        local: "Do not miss the Wagah Border ceremony nearby."
+    },
+    "Rishikesh": {
+        general: "Popular for yoga retreats and adventure sports.",
+        weather: "Cooler in winter; hot and humid during summer.",
+        packing: "Activewear for trekking or rafting, yoga mats if needed.",
+        local: "Visit the iconic Laxman Jhula and Ram Jhula bridges."
+    },
+    "Bhopal": {
+        general: "Known as the city of lakes with rich Mughal history.",
+        weather: "Hot summers, cooler winters, mild rains.",
+        packing: "Comfortable walking shoes, light clothing.",
+        local: "Explore both upper and lower lakes, and the tribal museum."
+    }
+};
+
+function getTravelAdvice() {
+    const citySelect = document.getElementById("city");
+    const selectedCity = citySelect.value;
+    const adviceBox = document.getElementById("adviceBox");
+    const adviceTitle = document.getElementById("adviceTitle");
+    const adviceGeneral = document.getElementById("adviceGeneral");
+    const adviceWeather = document.getElementById("adviceWeather");
+    const advicePacking = document.getElementById("advicePacking");
+    const adviceLocal = document.getElementById("adviceLocal");
+
+    // Check if selected city exists in the adviceData
+    if (adviceData[selectedCity]) {
+        const cityAdvice = adviceData[selectedCity];
+
+        // Update advice content
+        adviceTitle.innerText = `Travel Advice for ${selectedCity}`;
+        adviceGeneral.innerText = cityAdvice.general;
+        adviceWeather.innerText = cityAdvice.weather;
+        advicePacking.innerText = cityAdvice.packing;
+        adviceLocal.innerText = cityAdvice.local;
+
+        // Display the advice box
+        adviceBox.style.display = "block";
+    } else {
+        adviceTitle.innerText = "No advice available for this city.";
+        adviceGeneral.innerText = "";
+        adviceWeather.innerText = "";
+        advicePacking.innerText = "";
+        adviceLocal.innerText = "";
+    }
+}
+
+
+</script>
+</body>
+</html>
