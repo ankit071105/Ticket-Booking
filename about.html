@@ -183,7 +183,7 @@ animateCircles();
             const bars = menuToggle.querySelectorAll('.bar');
             bars.forEach((bar, index) => {
                 if (menuToggle.classList.contains('active')) {
-                    bar.style.transform = index === 1 ? 'scale(0)' : `rotate(${index === 0 ? '45deg' : '-45deg'})`;
+                    bar.style.transform = index === 1 ? 'scale(0)' : rotate(${index === 0 ? '45deg' : '-45deg'});
                 } else {
                     bar.style.transform = 'none';
                 }

@@ -1,12 +1,16 @@
 function toggleFAQ(element) {
-  const content = element.nextElementSibling; // Get the FAQ content
-  const toggleSymbol = element.querySelector('.expandToggle');
+  const content = element.nextElementSibling;
+  const toggleIcon = element.querySelector(".expandToggle");
 
-  if (content.style.display === "block") {
-      content.style.display = "none"; // Hide content
-      toggleSymbol.textContent = "+"; // Change toggle symbol to "+"
+  if (content.classList.contains("open")) {
+    // Collapse content
+    content.style.maxHeight = null;
+    content.classList.remove("open");
+    toggleIcon.textContent = "+";
   } else {
-      content.style.display = "block"; // Show content
-      toggleSymbol.textContent = "-"; // Change toggle symbol to "-"
+    // Expand content smoothly without scrolling the page
+    content.classList.add("open");
+    content.style.maxHeight = content.scrollHeight + "px";
+    toggleIcon.textContent = "–";
   }
 }
