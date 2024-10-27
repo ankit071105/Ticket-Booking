@@ -10,6 +10,24 @@ body {
   color: #333;
   background-color: #f5f5f5;
 }
+#scrollBackBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #005842;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+#scrollBackBtn:hover {
+    background-color: #007B5F; /* Darker shade on hover */
+}
+
 .navbar {
   background-color: #1f2937;
   color: white;

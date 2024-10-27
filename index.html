@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="index.css">
@@ -39,7 +40,7 @@
 
         /* cursor */
 
-
+        
         #preloader {
             position: fixed;
             top: 0;
@@ -133,6 +134,150 @@
         }
 
         /* cursor ends */
+        /* our Review section internal css */
+        .slider {
+            position: relative;
+            margin-top: 100px;
+            width: 100%;
+            height: 550px;
+            /* Increased height */
+            overflow: hidden;
+        }
+
+        @media (prefers-color-scheme: dark) {
+
+
+            .slider p,
+            .slider h2,
+            .slider .job-title,
+            .slider .location {
+                color: #000000;
+                /* Ensure all text is light */
+            }
+
+            .slider .stars {
+                color: #ffd700;
+                /* Bright gold color for stars */
+            }
+        }
+
+
+        .item {
+            position: absolute;
+            width: 350px;
+            /* Increased width */
+            height: 400px;
+            /* Increased height */
+            text-align: justify;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            transition: 0.5s;
+            left: calc(50% - 175px);
+            /* Adjusted for new width */
+            top: 0;
+            margin-bottom: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        #next,
+        #prev {
+            position: absolute;
+            top: 26%;
+            color: #000;
+            background: none;
+            border: none;
+            font-size: xxx-large;
+            font-family: monospace;
+            font-weight: bold;
+            opacity: 0.5;
+            transition: opacity 0.5s;
+            z-index: 10;
+            /* Ensure buttons are above slides */
+            box-shadow: none;
+        }
+
+        #next {
+            right: 230px;
+        }
+
+        #prev {
+            left: 230px;
+        }
+
+        #prev:hover,
+        #next:hover {
+            opacity: 8;
+        }
+
+        /* css for mouse cursor trail effect */
+        .circle {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            pointer-events: none;
+            background: radial-gradient(circle, rgba(70, 130, 180, 0.3), skyblue, rgba(0, 0, 50, 0.3), white);
+            transition: transform 0.1s, left 0.1s, top 0.1s;
+        }
+
+        .circle-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            /* removed the non-breaking space (&nbsp;) */
+        }
+
+        .item img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .item img:hover {
+            transform: scale(1.1);
+        }
+
+        .item h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+        }
+
+
+        .item p {
+            text-align: justify;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 1.6em;
+            margin-top: auto;
+        }
+
+        .item .job-title {
+            color: #007BFF;
+            font-weight: bold;
+            margin: 0 0 5px 0;
+        }
+
+        .item .location {
+            color: #000408;
+            font-style: italic;
+            margin: 0 0 15px 0;
+        }
     </style>
 </head>
 
@@ -172,8 +317,7 @@
     <button onclick="moveToTop()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"
             aria-hidden="true"></i></button>
     <!--chat bot-->
-    <button onclick="document.getElementById('chatbot-container').classList.toggle('chatbot-show')" id="chatbotBtn"
-        title="chat bot"></button>
+    <button onclick="toggleChatbot()" id="chatbotBtn" title="chat bot"></button>
 
     <div class="chatbot-container" id="chatbot-container">
         <div class="chatbot-title">Ticket Bot</div>
@@ -184,10 +328,14 @@
 
 
     <nav class="navbar">
-        <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt=""
-            style="border-radius: 50%; height: 35px; width: 35px;">
-        <div class="logo" style="margin-right: 200px; font-size: 20px;">Ticket Marketplace</div>
-        <div>
+        <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
+        <div class="logo" style="font-size: 20px;">Ticket Marketplace</div>
+
+        <!-- Toggle Button (Visible on Small Screens) -->
+        <button id="navToggle">☰</button>
+
+        <!-- Navbar Links -->
+        <div id="navLinks">
             <a href="index.html"><i class="fas fa-home"></i> Home</a>
             <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
             <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
@@ -195,10 +343,10 @@
             <a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a>
             <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
             <a href="client/login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
-
         </div>
-        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
 
+        <!-- Dark Mode Button -->
+        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
     </nav>
 
 
@@ -254,7 +402,7 @@
         <div class="close-btn" onclick="toggleSidebar()" title="Close Sidebar">&times;</div>
         <ul>
             <li><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-meta"></i></a></li>
-            <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
             <li><a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
             <li><a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
         </ul>
@@ -269,28 +417,28 @@
             <h2>Book Bus or Train Tickets</h2>
             <div class="ticket-list">
                 <div class="ticket-card1">
-                    <h3>Bus Tickets</h3>
+                    <h3 style="color: black;">Bus Tickets</h3>
                     <p>Find affordable bus tickets for your travel needs. Select your destination and date of travel to
                         get started.</p>
                     <a href="buy.html"><button class="bbtn">Buy Bus Tickets</button></a>
                 </div>
 
                 <div class="ticket-card2">
-                    <h3>Sell Bus Tickets</h3>
+                    <h3 style="color: black;">Sell Bus Tickets</h3>
                     <p>Looking to sell your bus tickets? Contact us 24/7 for the best price of your bus ticket without
                         any hassle.</p>
                     <a href="sell.html"><button class="bbtn">Sell Bus Tickets</button></a>
                 </div>
 
                 <div class="ticket-card3">
-                    <h3>Train Tickets</h3>
+                    <h3 style="color: black;">Train Tickets</h3>
                     <p>Secure train tickets for your journey across the country. Check availability and book now with a
                         trusted platform.</p>
                     <a href="train_buy.html"><button class="bbtn">Buy Train Tickets</button></a>
                 </div>
 
                 <div class="ticket-card4">
-                    <h3>Sell Train Tickets</h3>
+                    <h3 style="color: black;">Sell Train Tickets</h3>
                     <p>Have train tickets to sell? Reach out to us to list your tickets and get great deals.</p>
                     <a href="train_sell.html"><button class="bbtn">Sell Train Tickets</button></a>
                 </div>
@@ -304,28 +452,93 @@
 
     </div>
 
-    <div class="content-wrapper">
-        <h1>Our Reviews</h1>
-        <div class="blue-line"></div>
-        <div class="wrapper-for-arrows">
-            <div style="opacity: 0;" class="chicken"></div>
-            <div id="reviewWrap" class="review-wrap">
-                <div id="imgDiv" class="">
-                </div>
-                <div id="personName"></div>
-                <div id="profession"></div>
-                <div id="description">
-                </div>
-            </div>
-            <div class="surprise-me-btn">Surprise me</div>
-            <div class="left-arrow-wrap arrow-wrap">
-                <div class="arrow" id="leftArrow"></div>
-            </div>
-            <div class="right-arrow-wrap arrow-wrap">
-                <div class="arrow" id="rightArrow"></div>
-            </div>
-        </div>
+    <div>
+        <h1 style="text-align: center;">See , what our customer say's about us</h1>
     </div>
+    <div class="slider">
+        <div class="item">
+            <img src="https://i.pravatar.cc/250?u=mail@ashallendesign.co.uk" alt="User">
+            <div class="stars">★★★★★</div>
+            <p>"Booking my bus tickets was a breeze! The platform is super easy to use, and I found affordable options
+                quickly. It’s my go-to for all travel bookings now."</p>
+            <h2>- Priya Mehra</h2>
+        </div>
+
+        <div class="item">
+            <img src="https://img.freepik.com/free-vector/profile-picture-template-design_742173-22027.jpg?ga=GA1.1.713761379.1679213202&semt=ais_hybrid"
+                alt="User">
+            <div class="stars">★★★★★</div>
+            <p>"I needed to sell my bus ticket last minute, and this platform made the process so smooth. I got a great
+                price without any hassle. Highly recommended!"</p>
+            <h2>- Rahul Singh</h2>
+        </div>
+
+        <div class="item">
+            <img src="https://img.freepik.com/free-vector/gradient-professional-sarah-smith-linkedin-personal-profile-picture_742173-13011.jpg?ga=GA1.1.713761379.1679213202&semt=ais_hybrid"
+                alt="User">
+            <div class="stars">★★★★</div>
+            <p>"Finding train tickets was fast and convenient. I was able to check availability and book my seats in no
+                time. I’ll definitely use this service again!"</p>
+            <h2>- Aditi Sharma</h2>
+        </div>
+
+        <div class="item">
+            <img src="https://img.freepik.com/free-vector/illustration-user-avatar-icon_53876-5907.jpg?ga=GA1.1.713761379.1679213202&semt=ais_hybrid"
+                alt="User">
+            <div class="stars">★★★★★</div>
+            <p>"I was able to sell my train ticket with ease! The platform connected me with a buyer quickly, and the
+                process was smooth from start to finish."</p>
+            <h2>- Karan Patel</h2>
+        </div>
+
+        <div class="item">
+            <img src="https://i.pravatar.cc/250?u=mail@ashallendesign.co.uk" alt="User">
+            <div class="stars">★★★★</div>
+            <p>"I found affordable bus tickets for my trip, and the booking process was seamless. Definitely a reliable
+                platform for anyone looking to travel without stress!"</p>
+            <h2>- Sneha Desai</h2>
+        </div>
+        <div class="item">
+            <img src="https://img.freepik.com/free-vector/profile-picture-template-design_742173-22027.jpg?ga=GA1.1.713761379.1679213202&semt=ais_hybrid"
+                alt="User">
+            <div class="stars">★★★★★</div>
+            <p>"I used this platform to book train tickets for my family vacation. The entire process was smooth, and I
+                got confirmation within minutes. Absolutely hassle-free!"</p>
+            <h2>- Rohan Kapoor</h2>
+        </div>
+
+        <div class="item">
+            <img src="https://img.freepik.com/free-vector/gradient-professional-sarah-smith-linkedin-personal-profile-picture_742173-13011.jpg?ga=GA1.1.713761379.1679213202&semt=ais_hybrid"
+                alt="User">
+            <div class="stars">★★★★</div>
+            <p>"I had some bus tickets to sell last minute, and I was able to list them quickly. The platform made it
+                easy, and I got a fair price. Very satisfied!"</p>
+            <h2>- Anjali Nair</h2>
+        </div>
+
+        <div class="item">
+            <img src="https://img.freepik.com/free-vector/profile-picture-template-design_742173-22027.jpg?ga=GA1.1.713761379.1679213202&semt=ais_hybrid"
+                alt="User">
+            <div class="stars">★★★★★</div>
+            <p>"Booking my bus tickets was so easy! The customer service was excellent too, and they answered all my
+                questions in no time. I’ll definitely use this service again."</p>
+            <h2>- Varun Joshi</h2>
+        </div>
+
+        <div class="item">
+            <img src="https://img.freepik.com/free-vector/illustration-user-avatar-icon_53876-5907.jpg?ga=GA1.1.713761379.1679213202&semt=ais_hybrid"
+                alt="User">
+            <div class="stars">★★★★</div>
+            <p>"I needed to sell my train tickets and was worried about the process, but this platform made it super
+                simple. Got a buyer quickly, and the transaction was smooth."</p>
+            <h2>- Neha Rajput</h2>
+        </div>
+
+
+        <button id="next">Next</button>
+        <button id="prev">Prev</button>
+    </div>
+
 
 
 
@@ -361,107 +574,7 @@
 
 
     <br>
-
-    <body>
-        <section id="faq">
-            <div class="faq-container">
-                <h1 class="faq-title" data-aos="fade-right">Frequently Asked Questions</h1>
-                <div id="FAQ">
-                    <div class="accordion">
-                        <div class="item">
-                            <div class="FAQ-title" onclick="toggleFAQ(this)">
-                                <p class="faqQuestion">What is your cancellation policy?</p>
-                                <span class="expandToggle">+</span>
-                            </div>
-                            <div class="FAQ-content">
-                                <p>We offer a flexible cancellation policy that allows you to cancel your booking up to
-                                    48 hours before your scheduled departure for a full refund.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion">
-                        <div class="item">
-                            <div class="FAQ-title" onclick="toggleFAQ(this)">
-                                <p class="faqQuestion">How do I make changes to my booking?</p>
-                                <span class="expandToggle">+</span>
-                            </div>
-                            <div class="FAQ-content">
-                                <p>You can make changes to your booking by logging into your account and accessing your
-                                    booking details. For major changes, please contact our support team directly.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion">
-                        <div class="item">
-                            <div class="FAQ-title" onclick="toggleFAQ(this)">
-                                <p class="faqQuestion">What payment methods do you accept?</p>
-                                <span class="expandToggle">+</span>
-                            </div>
-                            <div class="FAQ-content">
-                                <p>We accept various payment methods including credit/debit cards, PayPal, and bank
-                                    transfers. All transactions are secure and encrypted.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion">
-                        <div class="item">
-                            <div class="FAQ-title" onclick="toggleFAQ(this)">
-                                <p class="faqQuestion">Do you offer travel insurance?</p>
-                                <span class="expandToggle">+</span>
-                            </div>
-                            <div class="FAQ-content">
-                                <p>Yes, we offer travel insurance options during the booking process to protect your
-                                    trip against unforeseen circumstances.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion">
-                        <div class="item">
-                            <div class="FAQ-title" onclick="toggleFAQ(this)">
-                                <p class="faqQuestion">Can I book multiple destinations in one trip?</p>
-                                <span class="expandToggle">+</span>
-                            </div>
-                            <div class="FAQ-content">
-                                <p>Absolutely! Our platform allows you to plan multi-destination trips seamlessly.
-                                    Simply select your desired locations during the booking process.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion">
-                        <div class="item">
-                            <div class="FAQ-title" onclick="toggleFAQ(this)">
-                                <p class="faqQuestion">How can I contact customer support?</p>
-                                <span class="expandToggle">+</span>
-                            </div>
-                            <div class="FAQ-content">
-                                <p>You can reach our customer support team via email or live chat on our website. We’re
-                                    available 24/7 to assist you with any inquiries.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion">
-                        <div class="item">
-                            <div class="FAQ-title" onclick="toggleFAQ(this)">
-                                <p class="faqQuestion">What should I do if I encounter an issue with my booking?</p>
-                                <span class="expandToggle">+</span>
-                            </div>
-                            <div class="FAQ-content">
-                                <p>If you experience any issues with your booking, please contact our support team
-                                    immediately. We will work to resolve your issue as quickly as possible.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
+<body>
         <!-- feedback form -->
         <section id="feedback-form">
             <div class="container">
@@ -504,6 +617,100 @@
 
                     <button type="submit" style="width: 150px; height: 70px;">Submit Feedback</button>
                 </form>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="faq-container" data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="faq-title" data-aos="fade-right" data-aos-duration="800">Frequently Asked Questions</h1>
+                <div id="FAQ">
+                    <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="30">
+                        <div class="item">
+                            <div class="FAQ-title" onclick="toggleFAQ(this)">
+                                <p class="faqQuestion">What is your cancellation policy?</p>
+                                <span class="expandToggle">+</span>
+                            </div>
+                            <div class="FAQ-content">
+                                <p>We offer a flexible cancellation policy that allows you to cancel your booking up to 48 hours before your scheduled departure for a full refund.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Add similar items for other FAQ entries, each with slight delays -->
+                    <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="60">
+                        <div class="item">
+                            <div class="FAQ-title" onclick="toggleFAQ(this)">
+                                <p class="faqQuestion">How do I make changes to my booking?</p>
+                                <span class="expandToggle">+</span>
+                            </div>
+                            <div class="FAQ-content">
+                                <p>You can make changes to your booking by logging into your account and accessing your booking details. For major changes, please contact our support team directly.</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="90">
+                        <div class="item">
+                            <div class="FAQ-title" onclick="toggleFAQ(this)">
+                                <p class="faqQuestion">What payment methods do you accept?</p>
+                                <span class="expandToggle">+</span>
+                            </div>
+                            <div class="FAQ-content">
+                                <p>We accept various payment methods including credit/debit cards, PayPal, and bank transfers. All transactions are secure and encrypted.</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="120">
+                        <div class="item">
+                            <div class="FAQ-title" onclick="toggleFAQ(this)">
+                                <p class="faqQuestion">Do you offer travel insurance?</p>
+                                <span class="expandToggle">+</span>
+                            </div>
+                            <div class="FAQ-content">
+                                <p>Yes, we offer travel insurance options during the booking process to protect your trip against unforeseen circumstances.</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
+                        <div class="item">
+                            <div class="FAQ-title" onclick="toggleFAQ(this)">
+                                <p class="faqQuestion">Can I book multiple destinations in one trip?</p>
+                                <span class="expandToggle">+</span>
+                            </div>
+                            <div class="FAQ-content">
+                                <p>Absolutely! Our platform allows you to plan multi-destination trips seamlessly. Simply select your desired locations during the booking process.
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="180">
+                        <div class="item">
+                            <div class="FAQ-title" onclick="toggleFAQ(this)">
+                                <p class="faqQuestion">How can I contact customer support?</p>
+                                <span class="expandToggle">+</span>
+                            </div>
+                            <div class="FAQ-content">
+                                <p>You can reach our customer support team via email or live chat on our website. We’re available 24/7 to assist you with any inquiries.</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="210">
+                        <div class="item">
+                            <div class="FAQ-title" onclick="toggleFAQ(this)">
+                                <p class="faqQuestion">What should I do if I encounter an issue with my booking?</p>
+                                <span class="expandToggle">+</span>
+                            </div>
+                            <div class="FAQ-content">
+                                <p>If you experience any issues with your booking, please contact our support team immediately. We will work to resolve your issue as quickly as possible.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Repeat for each FAQ item, incrementing data-aos-delay by 100ms for staggered animation -->
+                </div>
             </div>
         </section>
 
@@ -554,7 +761,7 @@
                     <h4>KEEPING SAFE</h4>
                     <ul>
                         <li><a href="#">ATOL Protected</a></li>
-                        <li><a href="#">Travel Aware</a></li>
+                        <li><a href="./travelawares.html">Travel Aware</a></li>
                         <li><a href="#">FCDO Travel Advice</a></li>
                         <li><a href="#">ABTA</a></li>
                     </ul>
@@ -563,14 +770,16 @@
                 <div class="footer-column">
                     <h4>FIND US</h4>
                     <ul>
-                        <li><a href="contactus.html">Contact Us</a></li>
-                        <li><a href="#">Group Cookie Notice</a></li>
-                        <li><a href="privacy.html">Privacy And Policy</a></li>
+ 
+                        <li><a href="contactus.html">Contact 
+                        <li><a href="GroupCookieNotice.html">Group Cookie Notice</a></li>
+                       <li><a href="privacy.html">Privacy And Policy</a></li>
                         <li><a href="sitemap.html">Sitemap</a></li>
                     </ul>
                 </div>
             </div>
         </div>
+    </div>
 
 
         <div class="footer-bottom">
@@ -655,8 +864,6 @@
 
         // cursor ends
         //   </script>
-
-    //
     <script>
         function toggleFAQ(element) {
             const content = element.nextElementSibling; // Get the FAQ content
@@ -671,12 +878,85 @@
                 toggleSymbol.textContent = "-"; // Change toggle symbol to "-"
             }
         }
+
+
+
+
+        let items = document.querySelectorAll('.slider .item');
+        let active = 3;
+
+        function loadShow() {
+            items[active].style.transform = `none`;
+            items[active].style.zIndex = 1;
+            items[active].style.filter = 'none';
+            items[active].style.opacity = 1;
+            // show after
+            let stt = 0;
+            for (var i = active + 1; i < items.length; i++) {
+                stt++;
+                items[i].style.transform = `translateX(${120 * stt}px) scale(${1 - 0.2 * stt}) perspective(16px) rotateY(-1deg)`;
+                items[i].style.zIndex = -stt;
+                items[i].style.filter = 'blur(5px)';
+                items[i].style.opacity = stt > 2 ? 0 : 0.6;
+            }
+            stt = 0;
+            for (var i = (active - 1); i >= 0; i--) {
+                stt++;
+                items[i].style.transform = `translateX(${-120 * stt}px) scale(${1 - 0.2 * stt}) perspective(16px) rotateY(1deg)`;
+                items[i].style.zIndex = -stt;
+                items[i].style.filter = 'blur(5px)';
+                items[i].style.opacity = stt > 2 ? 0 : 0.6;
+            }
+        }
+        setInterval(() => {
+            active = (active + 1) % items.length;
+            loadShow();
+        }, 3000);
+        let next = document.getElementById('next');
+        let prev = document.getElementById('prev');
+        next.style.display = 'block';
+        prev.style.display = 'block';
+        next.onclick = function () {
+            active = (active + 1) % items.length;
+            loadShow();
+        }
+
+        prev.onclick = function () {
+            active = (active - 1 + items.length) % items.length;
+            loadShow();
+        }
+
     </script>
     <script src="about.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="main.js"></script>
 
     <script src="about.js"></script>
+    <script>
+        // Toggle Navbar Links
+        const navToggle = document.getElementById('navToggle');
+        const navlinks = document.getElementById('navLinks');
+
+        navToggle.addEventListener('click', () => {
+            navlinks.style.display = navlinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Ensure navbar links are visible on large screens
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navlinks.style.display = 'flex'; // Show links on large screens
+            } else {
+                navlinks.style.display = 'none'; // Hide links on small screens
+            }
+        });
+
+        // Set initial state based on the current window size
+        if (window.innerWidth > 768) {
+            navlinks.style.display = 'flex'; // Show links if starting on a large screen
+        } else {
+            navlinks.style.display = 'none'; // Hide links if starting on a small screen
+        }
+    </script>
     <script>
 
         // Function to hide preloader and show content once the page has fully loaded
@@ -886,6 +1166,12 @@
             document.documentElement.scrollTop = 0;
         }
 
+        // toggle chatbot function
+        function toggleChatbot() {
+            const chatbotContainer = document.getElementById("chatbot-container");
+            chatbotContainer.classList.toggle("chatbot-show");
+        }
+
         window.addEventListener('scroll', () => {
             const scrollProgressBar = document.getElementById('scrollProgressBar');
             const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -897,6 +1183,11 @@
 
     <script src="app.js"></script>
     <script src="faq.js"></script>
+    <!-- AOS Library & Initialization Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
 </body>
 
