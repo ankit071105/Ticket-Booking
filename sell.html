@@ -24,6 +24,18 @@
 
   <style>
     /* code for bottom to top nav  */
+    /* cursor */
+.circle {
+  height: 24px;
+  width: 24px;
+  border-radius: 24px;
+  background-color: black;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999999; /* so that it stays on top of all other elements */
+}
 
     #myBtn {
       display: none;
@@ -192,7 +204,7 @@
       text-decoration: none;
       border-radius: 5px;
       transition: background 0.3s ease;
-
+    }
         /* Sell tickets css */
         .sell-ticket {
     text-align: center;
@@ -239,6 +251,32 @@
 </head>
 
 <body>
+
+   <!-- cursor -->
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+   <div class="circle"></div>
+ 
+   <!-- cursor ends -->
+
+
   <!-- Navbar -->
   <div id="scrollProgressBar" class="progress-bar"></div>
   <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"
@@ -254,94 +292,105 @@
   </div>
 
   <nav class="navbar">
-    <a href="./index.html" id="logo-href">
-      <div class="logo-container">
-        <img src="images/4.jpeg" alt="Ticket Booking Logo" class="logo-image">
-        <div class="logo">Ticket Marketplace</div>
-      </div>
-    </a>
+    <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
+    <div class="logo" style="margin-right: 200px; font-size: 20px;">Ticket Marketplace</div>
+    <div>
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+        <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
+        <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
+        <a href="register.html"><i class="fas fa-sign-in-alt"></i> Login</a>
 
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="buy.html">Buy Ticket</a></li>
-        <li><a href="sell.html"><i class="fas fa-tag"></i> Sell</a></li>
-        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-        <li><a href="contributor.html"><i class="fas fa-users"></i> Our Contributors</a></li>
-                <li><a href="/client/register.html" class="login-btn"><i class="fas fa-user"></i></a></li>
+      </div>
       <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
-    </ul>
+
   </nav>
 
   <!-- Sell Ticket Section -->
   <section class="sell-ticket">
-
     <h1>Sell Your Ticket</h1>
-    <div class="card-container">
-        <div class="card">
-            <img src="./images/bus.avif" alt="Bus" class="card-image">
-            <a href="bus_sell.html" class="btn">Sell Bus Ticket</a>
-        </div>
-        <div class="card">
-            <img src="./images/train-img.jpeg" alt="Train" class="card-image">
-            <a href="train_sell.html" class="btn">Sell Train Ticket</a>
-        </div>
-    </div>
-  </section>
-
-<!-- footer -->
-
-<footer class="footer-container">
-  <div class="footer-top">
-    <!-- Logo and Tagline -->
-    <div class="footer-logo-section">
-      <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo">
-      <p style="color: #b5fdf4;" >Affordable adventures, unforgettable memories—explore with ease.</p>
-      <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
-      <!-- Social Media Icons -->
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-        
-    <div class="container">
-      <h1>Sell Your Tickets Easily</h1>
-      <p>Welcome to our marketplace where you can easily sell your unused tickets. Whether it's for a concert, sports
-        event, or travel, we've got you covered. Simply choose the type of ticket you want to sell and follow the steps
-        to post your listing.</p>
-      <div class="sell-options">
-        <div class="card">
-          <div class="badge">Popular</div>
-          <div class="card-title">Bus Ticket</div>
-          <div class="card-description">Sell your bus tickets quickly and easily through our platform.</div>
+    <div class="content-wrapper">
+      <div class="card-container">
+        <div class="card" style="height:500px; width: 500px;">
+          <img src="./images/bus.avif" alt="Bus" class="card-image" style="height: 400px; width: 400px;">
           <a href="bus_sell.html" class="btn">Sell Bus Ticket</a>
         </div>
-        <div class="card">
-          <div class="badge">New</div>
-          <div class="card-title">Train Ticket</div>
-          <div class="card-description">Get a great deal when selling your train tickets with us.</div>
+        <div class="card" style="height:500px; width: 500px;">
+          <img src="./images/train-img.jpeg" alt="Train" class="card-image" style="height:400px; width: 400px;">
           <a href="train_sell.html" class="btn">Sell Train Ticket</a>
         </div>
-        <div class="card">
-          <div class="badge">Limited Offer</div>
-          <div class="card-title">Concert Ticket</div>
-          <div class="card-description">Sell concert tickets effortlessly and reach interested buyers.</div>
-          <a href="concert_sell.html" class="btn">Sell Concert Ticket</a>
+      </div>
+  
+      <div class="container">
+        <h1>Sell Your Tickets Easily</h1>
+        <p>Welcome to our marketplace where you can easily sell your unused tickets. Whether it's for a concert, sports
+          event, or travel, we've got you covered. Simply choose the type of ticket you want to sell and follow the steps
+          to post your listing.</p>
+        <div class="sell-options">
+          <div class="card">
+            <div class="badge">Popular</div>
+            <div class="card-title">Bus Ticket</div>
+            <div class="card-description">Sell your bus tickets quickly and easily through our platform.</div>
+            <a href="bus_sell.html" class="btn">Sell Bus Ticket</a>
+          </div>
+          <div class="card">
+            <div class="badge">New</div>
+            <div class="card-title">Train Ticket</div>
+            <div class="card-description">Get a great deal when selling your train tickets with us.</div>
+            <a href="train_sell.html" class="btn">Sell Train Ticket</a>
+          </div>
+          <div class="card">
+            <div class="badge">Limited Offer</div>
+            <div class="card-title">Concert Ticket</div>
+            <div class="card-description">Sell concert tickets effortlessly and reach interested buyers.</div>
+            <a href="concert_sell.html" class="btn">Sell Concert Ticket</a>
+          </div>
+          <div class="card">
+            <div class="badge">Hot</div>
+            <div class="card-title">Sports Ticket</div>
+            <div class="card-description">Sell your sports tickets to a wide audience of fans.</div>
+            <a href="sports_sell.html" class="btn">Sell Sports Ticket</a>
+          </div>
         </div>
-        <div class="card">
-          <div class="badge">Hot</div>
-          <div class="card-title">Sports Ticket</div>
-          <div class="card-description">Sell your sports tickets to a wide audience of fans.</div>
-          <a href="sports_sell.html" class="btn">Sell Sports Ticket</a>
-        </div>
-
       </div>
     </div>
   </section>
+  <style>
+    .sell-ticket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-wrapper {
+  display: flex;
+  gap: 20px; /* Adjust the spacing between the two sections */
+}
+
+.card-container,
+.container {
+  flex: 1;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.container {
+  max-width: 600px;
+}
+
+  </style>  
 
   <!-- footer -->
+  <footer class="footer-container">
+    <div class="footer-top">
+        <!-- Social Media Icons -->   
   <footer class="footer-container">
     <div class="footer-top">
       <div class="footer-logo-section">
@@ -404,6 +453,76 @@
       </ul>
     </div>
   </footer>
+  <script>
+    // cursor 
+
+    const coords = { x: 0, y: 0 };
+const circles = document.querySelectorAll(".circle");
+
+const colors = [
+
+"#BCE954",
+"#98FF98",
+"#9CB071",
+"#90C209",
+"#B2C248",
+"#85BB65",
+"#99C68E",
+"#6CBB3C",
+"#3ea055",
+"#41a317",
+"#4AA02C",
+"#6AA121",
+"#347C2C",
+"#387C44",
+"#437C17",
+"#306754",
+"#254117",
+"#667C26",
+"#728C00",
+"#008000"
+
+];
+
+circles.forEach(function (circle, index) {
+circle.x = 0;
+circle.y = 0;
+circle.style.backgroundColor = colors[index % colors.length];
+});
+
+window.addEventListener("mousemove", function(e){
+coords.x = e.clientX;
+coords.y = e.clientY;
+
+});
+
+function animateCircles() {
+
+let x = coords.x;
+let y = coords.y;
+
+circles.forEach(function (circle, index) {
+  circle.style.left = x - 12 + "px";
+  circle.style.top = y - 12 + "px";
+  
+  circle.style.scale = (circles.length - index) / circles.length;
+  
+  circle.x = x;
+  circle.y = y;
+
+  const nextCircle = circles[index + 1] || circles[0];
+  x += (nextCircle.x - x) * 0.3;
+  y += (nextCircle.y - y) * 0.6;
+});
+
+requestAnimationFrame(animateCircles);
+}
+
+animateCircles();
+      
+      
+      // cursor ends
+  </script>
 </body>
 
 </html>

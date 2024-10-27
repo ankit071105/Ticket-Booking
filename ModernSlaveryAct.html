@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modern Slavery Act - Ticket Booking</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="footer.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
@@ -172,6 +173,89 @@
         </p>
       </div>
     </section>
+    <footer class="footer-container">
+      <div class="footer-top">
+        
+        <div class="footer-logo-section">
+          <a href="#"> <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo"></a>
+          <p style="color: #b5fdf4;" >Affordable adventures, unforgettable memories—explore with ease.</p>
+          <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
+          <div class="social-icons">
+  
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#" ><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+  
+              <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.twitter.com" ><i class="fab fa-x-twitter"></i></a>
+              <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+              <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+  
+          </div>
+        </div>
+    
+        
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>HELPFUL LINKS</h4>
+            <ul>
+              <li><a href="help.html">Help Centre</a></li>
+              <li><a href="#">Special Assistance</a></li>
+              <li><a href="#">Download The App</a></li>
+              <li><a href="./book_condition.html">Booking Conditions</a></li>
+            </ul>
+          </div>
+    
+          <div class="footer-column">
+            <h4>ABOUT US</h4>
+            <ul>
+              <li><a href="#">Media Center</a></li>
+              <li><a href="#">Investors</a></li>
+  
+              <li><a href="#">Modern Slavery Act</a></li>
+  
+              <li><a href="ModernSlaveryAct.html">Modern Slavery Act</a></li>
+  
+              <li><a href="terms.html">Terms Of Use</a></li>
+            </ul>
+          </div>
+    
+          <div class="footer-column">
+            <h4>KEEPING SAFE</h4>
+            <ul>
+              <li><a href="#">ATOL Protected</a></li>
+              <li><a href="travelAware.html">Travel Aware</a></li>
+              <li><a href="#">FCDO Travel Advice</a></li>
+              <li><a href="#">ABTA</a></li>
+            </ul>
+          </div>
+    
+          <div class="footer-column">
+            <h4>FIND US</h4>
+            <ul>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Group Cookie Notice</a></li>
+              <li><a href="privacy.html">Privacy And Policy</a></li>
+              <li><a href="#">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+      
+      <div class="footer-bottom">
+        <ul>
+          <li><a href="#">Holiday Type</a></li>
+          <li><a href="#">Holiday Deals</a></li>
+          <li><a href="#">Popular Counters</a></li>
+          <!-- <li><a href="#">Flight Only</a></li> -->
+          <li><a href="#">Top Hotels</a></li>
+        </ul>
+      </div>
+    </footer>
     <div class="gtranslate_wrapper"></div>
     <script>
       window.gtranslateSettings = {
@@ -191,55 +275,75 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
 
-  body {
+body {
     font-family: "Arial", sans-serif;
     line-height: 1.6;
-  }
+}
 
-  #Slavery-us {
-    background-image: url("your-background-image.jpg");
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    padding: 80px 0;
+/* Section Styling */
+#Slavery-us {
+    background-color: #f0f4f8; /* Soft background color */
+    padding: 60px 20px; /* Spacing around the section */
     text-align: center;
-  }
+}
 
-  .Slavery-container {
+/* Container Styling */
+.Slavery-container {
     max-width: 800px;
     margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #ffffff; /* White background for contrast */
     padding: 40px;
-    border-radius: 10px;
-  }
+    border-radius: 12px; /* More pronounced rounded corners */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Stronger shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
 
-  #Slavery-us h1 {
-    font-size: 3rem;
+.Slavery-container:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Heading Styling */
+#Slavery-us h1 {
+    font-size: 2.5rem; /* Large heading */
     margin-bottom: 20px;
+    color: #2c3e50; /* Darker color for better readability */
     text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #f0a500;
-  }
+    letter-spacing: 2px; /* Slightly reduced letter spacing */
+    border-bottom: 2px solid #007bff; /* Bottom border for emphasis */
+    padding-bottom: 10px; /* Space below the border */
+}
 
-  #Slavery-us p {
-    color: #fff;
-    font-size: 1.2rem;
+/* Paragraph Styling */
+#Slavery-us p {
+    color: #34495e; /* Dark gray for better contrast */
+    font-size: 1.1rem; /* Adjusted font size */
     margin-bottom: 20px;
-  }
-  #Slavery-us li{
-    margin-top: 10px;
-    
-  }
+    line-height: 1.8; /* Increased line height for readability */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
 
-  @media (max-width: 768px) {
+#Slavery-us p:hover {
+    color: #007bff; /* Change color on hover for interaction */
+}
+
+/* List Item Styling */
+#Slavery-us li {
+    margin-top: 10px;
+    color: #34495e; /* Consistent color for list items */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
     #Slavery-us h1 {
-      font-size: 2.5rem;
+        font-size: 2rem; /* Smaller heading for mobile */
     }
 
     #Slavery-us p {
-      font-size: 1rem;
+        font-size: 1rem; /* Smaller paragraph for mobile */
     }
-  }
+}
+
 </style>

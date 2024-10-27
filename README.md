@@ -9,6 +9,9 @@
             <td><b>🐛 Issues</b></td>
             <td><b>🔔 Open PRs</b></td>
             <td><b>🔕 Close PRs</b></td>
+            <td><b>🌐Contributors</b></td>
+            <td><b>📂 Repo Size</b></td>
+            <td><b>📑 Top Language</b></td>
         </tr>
      </thead>
     <tbody>
@@ -18,6 +21,9 @@
             <td><img alt="Issues" src="https://img.shields.io/github/issues/ankit071105/Ticket-Booking?style=flat&logo=github"/></td>
             <td><img alt="Open Pull Requests" src="https://img.shields.io/github/issues-pr/ankit071105/Ticket-Booking?style=flat&logo=github"/></td>
            <td><img alt="Close Pull Requests" src="https://img.shields.io/github/issues-pr-closed/ankit071105/Ticket-Booking?style=flat&color=critical&logo=github"/></td>
+             <td><img alt="Contributors" src="https://img.shields.io/github/contributors/ankit071105/Ticket-Booking?style=flat&logo=github"/></td>             
+           <td><img alt="Repo Size" src="https://img.shields.io/github/repo-size/ankit071105/Ticket-Booking?style=flat&logo=github"/></td>           
+           <td><img alt="Top Language" src="https://img.shields.io/github/languages/top/ankit071105/Ticket-Booking?style=flat&logo=github"/></td>
         </tr>
     </tbody>
 </table>
@@ -35,13 +41,36 @@ By doing this, you support the project and help grow our community!
 
 ---
 
-## 🎉 Accepted for GirlScript Summer of Code 2024
+## 🎉 Accepted for GirlScript Summer of Code 2024 and Hactoberfest
 
   ![image](https://github.com/user-attachments/assets/5263dc32-ce09-4835-b964-7f996e970eb5)
+  <img src="https://github.com/neeru24/Connect_icons/blob/main/hacktober.png" width="1100" height="300" loading="lazy" alt="Hacktober Image">
 
+  
 Congratulations! GG Extensions has been selected for participation in GirlScript Summer of Code 2024. We're excited to have you on board to contribute and learn together!
 
 This repository serves as a platform for newcomers and seasoned developers alike to enhance their knowledge and skills by working on small to large web projects. Whether you're diving into web development for the first time or looking to expand your portfolio, GG Extensions offers a supportive community and a variety of opportunities to grow.
+
+## 🛠Tech Stack
+
+<table align="center">
+    <thead align="center">
+        <tr border: 2px;>
+            <td><b>HTML</b></td>
+            <td><b>CSS</b></td>
+            <td><b>Javascript</b></td>
+            <td><b>Docker</b></td>
+        </tr>
+     </thead>
+    <tbody>
+         <tr>
+            <td><img src="https://skillicons.dev/icons?i=html&theme=dark" /></td>
+            <td><img src="https://skillicons.dev/icons?i=css&theme=dark" /></td>
+            <td><img src="https://skillicons.dev/icons?i=javascript&theme=dark" /></td>
+             <td><img src="https://skillicons.dev/icons?i=docker&theme=dark" /></td>
+        </tr>
+    </tbody>
+</table>
 
 ## 🚀 How to Get Started?
 

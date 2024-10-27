@@ -182,8 +182,64 @@
     <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
     <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
-    <button onclick="moveToTop()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"
-            aria-hidden="true"></i></button>
+    <button id="scrollToTopBtn" class="scroll-to-top" title="Go to top">
+      &#8593; <!-- This is the up arrow -->
+    </button>
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    padding: 20px;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 120px;
+    right: 35px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Initially hidden */
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-to-top:hover {
+    background-color: darkred; /* Darker red on hover */
+}
+
+    </style>
+    <script>
+      // Get the button
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+// Show the button when scrolling down 20px from the top
+window.onscroll = function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopBtn.style.display = "flex";
+    } else {
+        scrollToTopBtn.style.display = "none";
+    }
+};
+
+// Scroll to top function
+scrollToTopBtn.onclick = function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Smooth scroll effect
+    });
+};
+
+    </script>
     <!--chat bot-->
     <button onclick="toggleChatbot()" id="chatbotBtn" title="chat bot"></button>
     
@@ -194,38 +250,23 @@
         <button class="chatbot-button" id="chatbot-button"><i class="fa-brands fa-telegram"></i></button>
       </div>
       <nav class="navbar">
-        <a href="./index.html" id="logo-href">
-            <div class="logo-container">
-                <img src="images/4.jpeg" alt="Ticket Booking Logo" class="logo-image">
-                <div class="logo">Ticket Booking</div>
-            </div>
-        </a>
+        <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
+        <div class="logo" style="margin-right: 200px; font-size: 20px;">Ticket Marketplace</div>
+        <div>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+            <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
+            <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
+            <a href="register.html"><i class="fas fa-sign-in-alt"></i> Login</a>
     
-        <div class="nav-container">
-            <div class="menu-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+          </div>
+          <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
     
-            <ul class="nav-links">
-              <li><a href="index.html">Home</a></li>
-        <li><a href="sell.html">Sell Ticket</a></li>
-        <li><a href="buy.html">Buy Ticket</a></li>
-        <li><a href="sell.html"><i class="fas fa-tag"></i> Sell</a></li>
-        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-        <li><a href="contributor.html"><i class="fas fa-users"></i> Our Contributors</a></li>
-                <li><a href="/client/register.html" class="login-btn"><i class="fas fa-user"></i></a></li>
-
-		      <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
-            </ul>
+        </nav>
     
-        </div>
-    </nav>
-    
-    
-   
-    </div>
+      </div>
     </div>
 	<div class="social-sidebar">
 		<div class="close-btn" onclick="toggleSidebar()" title="Close Sidebar">&times;</div>
@@ -306,8 +347,7 @@
           <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
-  
-      
+    
       <div class="footer-links">
         <div class="footer-column">
           <h4>HELPFUL LINKS</h4>
@@ -342,7 +382,7 @@
         <div class="footer-column">
           <h4>FIND US</h4>
           <ul>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
             <li><a href="#">Group Cookie Notice</a></li>
             <li><a href="privacy.html">Privacy And Policy</a></li>
             <li><a href="#">Sitemap</a></li>

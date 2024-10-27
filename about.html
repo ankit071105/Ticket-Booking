@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Ticket Booking</title>
+    <link rel="shortcut icon" href="images/4.jpeg" type="image/x-icon">
+
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -21,38 +23,143 @@
         .nav-container{
       display: flex;
 }
+
+/* cursor */
+.circle {
+  height: 24px;
+  width: 24px;
+  border-radius: 24px;
+  background-color: black;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999999; /* so that it stays on top of all other elements */
+}
+
+/* cursor */
     </style>
 </head>
+
+
 <body>
-    <nav class="navbar">
-        <a href="./index.html" id="logo-href">
-            <div class="logo-container">
-                <img src="images/4.jpeg" alt="Ticket Booking Logo" class="logo-image">
-                <div class="logo">Ticket Booking</div>
-            </div>
-        </a>
+
+  <!-- cursor -->
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+
+  <!-- cursor ends -->
+
+  <nav class="navbar">
+    <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
+    <div class="logo" style="margin-right: 200px; font-size: 20px;">Ticket Marketplace</div>
+    <div>
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+        <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
+        <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
+        <a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
+        <a href="register.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+
+      </div>
+      <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+
+  </nav>
     
-        <div class="nav-container">
-            <div class="menu-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+       
     
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="buy.html">Buy Ticket</a></li>
-        <li><a href="sell.html"><i class="fas fa-tag"></i> Sell</a></li>
-        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-        <li><a href="contributor.html"><i class="fas fa-users"></i> Our Contributors</a></li>
-                <li><a href="/client/register.html" class="login-btn"><i class="fas fa-user"></i></a></li>
-            </ul>
-    
-            <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
         </div>
     </nav>
     <script>
+
+    // cursor 
+
+    const coords = { x: 0, y: 0 };
+const circles = document.querySelectorAll(".circle");
+
+const colors = [
+
+"#BCE954",
+"#98FF98",
+"#9CB071",
+"#90C209",
+"#B2C248",
+"#85BB65",
+"#99C68E",
+"#6CBB3C",
+"#3ea055",
+"#41a317",
+"#4AA02C",
+"#6AA121",
+"#347C2C",
+"#387C44",
+"#437C17",
+"#306754",
+"#254117",
+"#667C26",
+"#728C00",
+"#008000"
+
+];
+
+circles.forEach(function (circle, index) {
+circle.x = 0;
+circle.y = 0;
+circle.style.backgroundColor = colors[index % colors.length];
+});
+
+window.addEventListener("mousemove", function(e){
+coords.x = e.clientX;
+coords.y = e.clientY;
+
+});
+
+function animateCircles() {
+
+let x = coords.x;
+let y = coords.y;
+
+circles.forEach(function (circle, index) {
+  circle.style.left = x - 12 + "px";
+  circle.style.top = y - 12 + "px";
+  
+  circle.style.scale = (circles.length - index) / circles.length;
+  
+  circle.x = x;
+  circle.y = y;
+
+  const nextCircle = circles[index + 1] || circles[0];
+  x += (nextCircle.x - x) * 0.3;
+  y += (nextCircle.y - y) * 0.6;
+});
+
+requestAnimationFrame(animateCircles);
+}
+
+animateCircles();
+      
+      
+      // cursor ends
+
               const darkModeToggle = document.getElementById('darkModeToggle');
         const body = document.querySelector('body');
         if (darkModeToggle) {
@@ -76,7 +183,7 @@
             const bars = menuToggle.querySelectorAll('.bar');
             bars.forEach((bar, index) => {
                 if (menuToggle.classList.contains('active')) {
-                    bar.style.transform = index === 1 ? 'scale(0)' : `rotate(${index === 0 ? '45deg' : '-45deg'})`;
+                    bar.style.transform = index === 1 ? 'scale(0)' : rotate(${index === 0 ? '45deg' : '-45deg'});
                 } else {
                     bar.style.transform = 'none';
                 }
@@ -95,22 +202,81 @@
         });
     </script>
     <section id="about-us">
-        <div class="about-container">
-            <h1>About Us</h1>
-            <p>
-                Welcome to ticket booking! Your one-stop solution for booking bus and train tickets with ease. Our platform offers
-                a seamless experience for travelers, providing access to various transportation options. We strive to make your
-                journey hassle-free, whether you're planning a short trip or a long adventure. With 24/7 customer support and
-                real-time updates, we ensure that you're always informed and comfortable on the go.
-            </p>
-            <p>
-                At Ticket booking, we believe in providing the best travel experience. We partner with multiple travel providers to
-                offer a wide range of routes, schedules, and prices, making travel accessible to everyone. Our team is dedicated
-                to innovation and constantly improving our platform to serve you better.
-            </p>
-        </div>
-        
-    </section>
+      <div class="about-container">
+          <h1>About Us 🚀</h1>
+          <p style="color: #333;">
+              Welcome to Ticket Booking! 🎟️ Your one-stop solution for booking bus and train tickets with ease. Our platform offers
+              a seamless experience for travelers, providing access to various transportation options. We strive to make your
+              journey hassle-free, whether you're planning a short trip or a long adventure. With 24/7 customer support and
+              real-time updates, we ensure that you're always informed and comfortable on the go. 🚌💨
+          </p>
+          <p style="color: #333;">
+              At Ticket Booking, we believe in providing the best travel experience. 🌍 We partner with multiple travel providers to
+              offer a wide range of routes, schedules, and prices, making travel accessible to everyone. Our team is dedicated
+              to innovation and constantly improving our platform to serve you better. 💡✨
+          </p>
+      </div>
+  </section>
+  
+    <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(135deg,#cf9aff,#95c0ff); /* Light blue-gray background */
+        color: #333; /* Dark text for contrast */
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+    }
+
+    #about-us {
+        padding: 50px 20px ; /* Spacious padding */
+        background: linear-gradient(135deg,#d3cbdc,#a9bfdf);
+        border-radius: 12px; /* Rounded corners */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        max-width: 1200px; /* Limit width */
+        margin: 50px auto; /* Centered with margin */
+        transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+    }
+
+    #about-us:hover {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+    }
+
+    .about-container h1 {
+        font-size:  10em; /* Clear, large heading */
+        color: #3498db; /* Bright blue for emphasis */
+        text-align: center; /* Center the heading */
+        margin-bottom: 20px; /* Space below the heading */
+        text-transform: uppercase; /* Uppercase for impact */
+        letter-spacing: 1px; /* Slight spacing */
+    }
+
+    .about-container p {
+        font-size: 1.5em; /* Comfortable reading size */
+        margin: 15px 0; /* Space between paragraphs */
+        padding: 20px; /* Padding for text */
+        background-color: #ecf6fd; /* Light blue background for paragraphs */
+        border-left: 5px solid #3498db; /* Left border for visual interest */
+        border-radius: 8px; /* Rounded corners */
+        transition: background-color 0.3s ease; /* Transition for hover effect */
+    }
+
+    .about-container p:hover {
+        background-color: #d1e9fd; /* Slightly darker background on hover */
+    }
+
+    @media (max-width: 600px) {
+        .about-container h1 {
+            font-size: 2em; /* Smaller font size for smaller screens */
+        }
+
+        .about-container p {
+            font-size: 1em; /* Adjust paragraph size */
+        }
+    }
+</style>
+
+  </style>
     <div class="gtranslate_wrapper"></div>
     <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
     <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
@@ -150,7 +316,7 @@
                 <li><a href="#">Media Center</a></li>
                 <li><a href="#">Investors</a></li>
                 <li><a href="#">Modern Slavery Act</a></li>
-<li><a href="terms.html">Terms Of Use</a></li>
+                <li><a href="terms.html">Terms Of Use</a></li>
 
               </ul>
             </div>
