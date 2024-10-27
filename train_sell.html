@@ -9,10 +9,17 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <link rel="stylesheet" href="footer.css">
   <link rel="stylesheet" href="index.css">
   <!-- this is for twitter icons -->
   <script src="https://kit.fontawesome.com/3d20c433e1.js" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="footer.css">
+ 
+<!-- this is for twitter icons -->
+<script src="https://kit.fontawesome.com/3d20c433e1.js" crossorigin="anonymous"></script>
+
   <style>
 
 
@@ -173,6 +180,7 @@
       outline: none;
       font-size: 15px;
 
+
     }
 
     .chatbot-input:focus {
@@ -313,7 +321,171 @@
         /* Stack items on smaller screens */
       }
     }
-  </style>
+ 
+
+        .chatbot-chat::-webkit-scrollbar-thumb {
+            background: #bcbdc0;
+            border-radius: 10px;
+        }
+        /* chatbot css end */
+        /* Container styling */
+ 
+        .navbarr11 {
+    width: 100%;
+    background-color: #2d2d2d;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+
+
+.navbar12 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    color: #00ffd5;
+    font-weight: 500;
+    margin-right: 200px;
+    font-size: 20px;
+}
+
+.navbar12 img {
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    margin-right: 15px;
+}
+
+.navbar12 div {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.navbar12 a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+
+.navbar12 a:hover {
+    color: #00ffd5;
+}
+
+.navbar12 i {
+    font-size: 16px;
+}
+
+#darkModeToggle {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: auto;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+#darkModeToggle:hover {
+    opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .logo {
+        margin-right: 100px;
+    }
+    
+    .navbar12 div {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar12 {
+        flex-wrap: wrap;
+    }
+    
+    .logo {
+        margin-right: 50px;
+    }
+    
+    .navbar12 div {
+        gap: 10px;
+    }
+}
+          
+/* Add these styles to your existing CSS */
+
+/* Default light mode styles */
+.sell-ticket label {
+    color: #000;
+}
+
+.sell-ticket input,
+.sell-ticket select {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+}
+
+/* Dark mode styles */
+body.dark-mode .sell-ticket label {
+    color: #fff;  /* Makes labels visible in dark mode */
+}
+
+body.dark-mode .sell-ticket input,
+body.dark-mode .sell-ticket select {
+    background-color: #333;  /* Darker background for inputs */
+    color: #fff;  /* Light text color */
+    border: 1px solid #555;
+}
+
+body.dark-mode .sell-ticket input::placeholder {
+    color: #aaa;  /* Lighter placeholder text */
+}
+
+/* If you want to style the form section background in dark mode */
+body.dark-mode .sell-ticket {
+    background-color: #1a1a1a;  /* Dark background */
+    color: #fff;  /* Light text */
+}
+
+/* Style for the form heading in dark mode */
+body.dark-mode .sell-ticket h1 {
+    color: #fff;
+}
+
+/* Focus states for better visibility in dark mode */
+body.dark-mode .sell-ticket input:focus,
+body.dark-mode .sell-ticket select:focus {
+    border-color: #00ffd5;  /* Matches your theme color */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 255, 213, 0.3);
+}
+
+
+
+
+
+      </style>
+
 </head>
 
 <body>
@@ -356,27 +528,29 @@
 
   <nav class="navbar">
 
-     <a href="index.html" style="text-decoration: none;">
-      <div class="logo"><img src="images/4.jpeg" alt="Ticket Booking Logo" class="logo-image">Ticket Marketplace</div>
-     </a>
+     
 
 
-  <nav class="navbar">
-    <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
-    <div class="logo" style="margin-right: 200px; font-size: 20px;">Ticket Marketplace</div>
-    <div>
-        <a href="index.html"><i class="fas fa-home"></i> Home</a>
-        <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
-        <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
-        <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
-        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-        <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
-        <a href="register.html"><i class="fas fa-sign-in-alt"></i> Login</a>
-
-      </div>
-      <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
-
-  </nav>
+   <div class="navbarr11">
+    <nav class="navbar12">
+      <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
+       <a href="index.html" style="text-decoration: none;">
+        <div class="logo" style="margin-right: 200px; font-size: 20px;">Ticket Marketplace</div>
+       </a>
+      <div>
+          <a href="index.html"><i class="fas fa-home"></i> Home</a>
+          <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+          <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
+          <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
+          <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+          <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
+          <a href="register.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+  
+        </div>
+        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+  
+    </nav>
+   </div>
     
        
 
