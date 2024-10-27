@@ -19,7 +19,26 @@
       font-family: Arial, sans-serif;
     }
 
-    
+
+    /* cursor */
+    .circle {
+  height: 24px;
+  width: 24px;
+  border-radius: 24px;
+  background-color: black;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999999; /* so that it stays on top of all other elements */
+}
+
+/* cursor */
+
+    .container {
+      margin: 30px;
+    }
+
 
     .ticket-section {
       margin-bottom: 30px;
@@ -242,11 +261,39 @@
     z-index: 9999; /* Make sure it's above other content */
 }
         /* chatbot css end */
-
   </style>
 </head>
 
 <body>
+
+  <!-- cursor -->
+
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+
+
+
+
+   <!-- cursor ends -->
 
   <div id="scrollProgressBar" class="progress-bar"></div>
   <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"
@@ -264,27 +311,24 @@
 
 
   <header>
-    <nav class="navbar">
+      <nav class="navbar">
+            <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
+            <div class="logo" style="margin-right: 200px; font-size: 20px;">Ticket Marketplace</div>
+            <div>
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+                <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
+                <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
+                <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
+                <a href="register.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+        
+              </div>
+              <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+        
+          </nav>
+              
 
-      <div class="logo"><img src="./images/4.jpeg"
-          alt="Ticket Booking Logo" class="logo-image">Ticket Marketplace</div>
-
-      <!-- <a href="./index.html" id="logo-href">
-        <div class="logo">Ticket Marketplace</div>
-      </a> -->
-
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="buy.html">Buy Ticket</a></li>
-        <li><a href="sell.html"><i class="fas fa-tag"></i> Sell</a></li>
-        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-        <li><a href="contributor.html"><i class="fas fa-users"></i> Our Contributors</a></li>
-                <li><a href="/client/register.html" class="login-btn"><i class="fas fa-user"></i></a></li>
-
-        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
-      </ul>
-    </nav>
   </header>
 
 
@@ -333,8 +377,9 @@
         </div>
         <div class="form-group">
           <label for="journeyDate">Date of Journey</label>
-          <input type="date" id="journeyDate" name="journeyDate" required>
-        </div>
+          <input type="date" id="journeyDate" name="journeyDate" required max="9999-12-31">
+      </div>
+      
         <div class="form-group">
           <label for="journeyTime">Time of Journey</label>
           <input type="time" id="journeyTime" name="journeyTime" required>
@@ -450,13 +495,18 @@ h2:hover{
   .container {
     flex-direction: column;
   }
-
+  .bus-img{
+    width: 80%;
+  }
   .right-section {
-    width: 100vw;
+    width: 90%;
+    margin-left: -25px;
+    padding: 20px;
   }
 
   .form-group {
     flex-direction: row;
+    width: 80%;
   }
   .form-group input,
   .form-group select {
@@ -491,6 +541,76 @@ h2:hover{
 }
 
 </style>
+<!-- cursor -->
+<script>
+
+const coords = { x: 0, y: 0 };
+const circles = document.querySelectorAll(".circle");
+
+const colors = [
+
+"#BCE954",
+"#98FF98",
+"#9CB071",
+"#90C209",
+"#B2C248",
+"#85BB65",
+"#99C68E",
+"#6CBB3C",
+"#3ea055",
+"#41a317",
+"#4AA02C",
+"#6AA121",
+"#347C2C",
+"#387C44",
+"#437C17",
+"#306754",
+"#254117",
+"#667C26",
+"#728C00",
+"#008000"
+
+];
+
+circles.forEach(function (circle, index) {
+circle.x = 0;
+circle.y = 0;
+circle.style.backgroundColor = colors[index % colors.length];
+});
+
+window.addEventListener("mousemove", function(e){
+coords.x = e.clientX;
+coords.y = e.clientY;
+
+});
+
+function animateCircles() {
+
+let x = coords.x;
+let y = coords.y;
+
+circles.forEach(function (circle, index) {
+  circle.style.left = x - 12 + "px";
+  circle.style.top = y - 12 + "px";
+  
+  circle.style.scale = (circles.length - index) / circles.length;
+  
+  circle.x = x;
+  circle.y = y;
+
+  const nextCircle = circles[index + 1] || circles[0];
+  x += (nextCircle.x - x) * 0.3;
+  y += (nextCircle.y - y) * 0.6;
+});
+
+requestAnimationFrame(animateCircles);
+}
+
+animateCircles();
+
+
+</script>
+<!-- cursor -->
   <script>
     const today = new Date();
     const formattedDate = today.toISOString().split('T')[0];
@@ -594,7 +714,7 @@ h2:hover{
           <div class="footer-column">
             <h4>FIND US</h4>
             <ul>
-              <li><a href="#">Contact Us</a></li>
+              <li><a href="contactus.html">Contact Us</a></li>
               <li><a href="#">Group Cookie Notice</a></li>
               <li><a href="#">Privacy And Policy</a></li>
               <li><a href="#">Sitemap</a></li>
@@ -662,7 +782,32 @@ if (darkModeToggle) {
     const progressHeight = (window.scrollY / totalHeight) * 100;
     scrollProgressBar.style.width = progressHeight + '%';
 });
+
+
+
+
+
+
     </script>
+
+
+<script>
+  // Restrict the input to only valid dates (YYYY-MM-DD)
+  document.getElementById('journeyDate').addEventListener('input', function() {
+      // Enforce a strict date pattern of YYYY-MM-DD
+      const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+      if (!datePattern.test(this.value)) {
+          // Remove any invalid characters from the input
+          this.value = this.value.slice(0, 10);
+      }
+  });
+</script>
+
+
+
+
+
+
     <script src="app.js"></script>
     <div class="gtranslate_wrapper"></div>
     <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>

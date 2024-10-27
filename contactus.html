@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Trainline</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and Wrapper */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e0e5ec;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #2e3b4e;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+
+        nav .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .logo-container img {
+            height: 50px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        nav .logo-container img:hover {
+            transform: scale(1.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff8c00;
+        }
+
+        /* Animated Train Line */
+        .train-line {
+            width: 100%;
+            height: 5px;
+            background-color: #ff8c00;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .train-line::before {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 5px;
+            background-color: #2e3b4e;
+            position: absolute;
+            top: 0;
+            left: -50px;
+            animation: train-move 2s linear infinite;
+        }
+
+        @keyframes train-move {
+            from {
+                left: -50px;
+            }
+            to {
+                left: 100%;
+            }
+        }
+
+        /* Main Content */
+        .contact-form {
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin-top: 30px;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .contact-form h2 {
+            margin-bottom: 20px;
+            color: #2e3b4e;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Form Group and Floating Label */
+        .form-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 16px 12px;
+            font-size: 16px;
+            color: #333;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            transition: 0.3s border-color ease-in-out;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #ff8c00;
+            background-color: #fff;
+        }
+
+        .form-group label {
+            position: absolute;
+            top: 50%;
+            left: 12px;
+            transform: translateY(-50%);
+            color: #aaa;
+            font-size: 16px;
+            transition: 0.3s ease-in-out;
+            pointer-events: none;
+        }
+
+        /* Floating label effect */
+        .form-group input:focus + label,
+        .form-group textarea:focus + label,
+        .form-group input:not(:placeholder-shown) + label,
+        .form-group textarea:not(:placeholder-shown) + label {
+            top: -8px;
+            left: 8px;
+            font-size: 12px;
+            background-color: #fff;
+            color: #ff8c00;
+            padding: 0 5px;
+            border-radius: 3px;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background-color: #ff8c00;
+            color: #fff;
+            border: none;
+            padding: 14px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .submit-btn:hover {
+            background-color: #2e3b4e;
+            color: #ff8c00;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2e3b4e;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        footer ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        footer ul li {
+            margin: 0 10px;
+        }
+
+        footer ul li a {
+            color: #ff8c00;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        footer ul li a:hover {
+            color: #fff;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="faq.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
+        <div class="logo" style="margin-right: 200px; font-size: 20px;">Ticket Marketplace</div>
+        <div>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+            <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
+            <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
+            <a href="register.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+    
+          </div>
+          <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+    
+      </nav>
+    <!-- Contact Form Section -->
+    <section class="container">
+        <div class="contact-form">
+            <h2>Contact Us</h2>
+            <form>
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required placeholder=" ">
+                    <label for="name">Full Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required placeholder=" ">
+                    <label for="email">Email Address</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="subject" name="subject" required placeholder=" ">
+                    <label for="subject">Subject</label>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+                    <label for="message">Your Message</label>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-container">
+        <div class="footer-top">
+          
+          <div class="footer-logo-section">
+            <a href="#"> <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo"></a>
+            <p style="color: #b5fdf4;" >Affordable adventures, unforgettable memories—explore with ease.</p>
+            <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
+            <div class="social-icons">
+<a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+<a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+<a href="https://www.twitter.com" ><i class="fa-brands fa-x-twitter"></i></a>
+<a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+<a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+
+            </div>
+          </div>
+      
+          
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>HELPFUL LINKS</h4>
+              <ul>
+                <li><a href="#">Help Centre</a></li>
+                <li><a href="#">Special Assistance</a></li>
+                <li><a href="#">Download The App</a></li>
+                <li><a href="#">Booking Conditions</a></li>
+              </ul>
+            </div>
+      
+            <div class="footer-column">
+              <h4>ABOUT US</h4>
+              <ul>
+                <li><a href="#">Media Center</a></li>
+                <li><a href="#">Investors</a></li>
+                <li><a href="#">Modern Slavery Act</a></li>
+                <li><a href="terms.html">Terms Of Use</a></li>
+
+              </ul>
+            </div>
+      
+            <div class="footer-column">
+              <h4>KEEPING SAFE</h4>
+              <ul>
+                <li><a href="#">ATOL Protected</a></li>
+                <li><a href="#">Travel Aware</a></li>
+                <li><a href="#">FCDO Travel Advice</a></li>
+                <li><a href="#">ABTA</a></li>
+              </ul>
+            </div>
+      
+            <div class="footer-column">
+              <h4>FIND US</h4>
+              <ul>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Group Cookie Notice</a></li>
+                <li><a href="privacy.html">Privacy And Policy</a></li>
+                <li><a href="#">Sitemap</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      
+        
+        <div class="footer-bottom">
+          <ul>
+            <li><a href="#">Holiday Type</a></li>
+            <li><a href="#">Holiday Deals</a></li>
+            <li><a href="#">Popular Counters</a></li>
+            <!-- <li><a href="#">Flight Only</a></li> -->
+            <li><a href="#">Top Hotels</a></li>
+          </ul>
+        </div>
+      </footer>
+<style>
+  /* General Footer Styling */
+  .footer-container {
+    background-color: #1f2937;
+    color: #ffffff;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Logo and Tagline */
+  .footer-logo-section {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .footer-logo {
+    max-width: 150px;
+    margin-bottom: 10px;
+    border-radius: 50px;
+  }
+  .footer-logo-section p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+  }
+  .follow-us {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  /* Social Media Icons */
+  .social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    color: #12e9cc;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+  .social-icons a:hover {
+    color: #76b2ab;
+  }
+
+  /* Footer Link Sections */
+  .footer-links {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 100px;
+  }
+  .footer-column {
+    flex-basis: 20%;
+    margin-bottom: 10px;
+  }
+  .footer-column h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #12e9cc;
+  }
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-column ul li {
+    margin-bottom: 8px;
+  }
+  .footer-column ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+  .footer-column ul li a:hover {
+    text-decoration: underline;
+  }
+
+  /* Footer Bottom Links */
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+  }
+  .footer-bottom ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .footer-bottom ul li {
+    display: inline-block;
+    margin: 0 15px;
+  }
+  .footer-bottom ul li a {
+    color: #12e9cc;
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+  .footer-bottom ul li a:hover {
+    text-decoration: underline;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .footer-links {
+      flex-direction: column;
+      align-items: center;
+    }
+    .footer-column {
+      flex-basis: 100%;
+      text-align: center;
+    }
+  }
+</style>
+
+  
+    <script>
+        document.querySelector("form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("Thank you for reaching out! We will get back to you soon.");
+        });
+    </script>
+</body>
+</html>

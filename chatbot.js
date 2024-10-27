@@ -1,29 +1,33 @@
-// A simple chatbot that responds with some predefined answers
-function chatbot(input) {
-  let output = "";
-  input = input.toLowerCase();
-  if (input.includes("hello") || input.includes("hi")) {
-    output = "Hello, nice to meet you!";
-  } else if (input.includes("how are you")) {
-    output = "I'm doing fine, thank you for asking.";
-  } else if (input.includes("what is your name")) {
-    output = "My name is Ticket bot, I'm a chatbot.";
-  } else if (input.includes("what can you do")) {
-    output = "I can chat with you and answer some simple questions.";
-  } else if (input.includes("tell me a joke")) {
-    output = "Why did the chicken go to the seance? To get to the other side.";
-  } else {
-    output = "Sorry, I don't understand that. Please try something else.";
+// Send user input to the API and get a response
+async function chatbot(input) {
+  try {
+    const response = await fetch("https://ticket-chatbot-final.onrender.com/chatbot", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ question: input }), 
+    });
+
+    if (!response.ok) {
+      throw new Error(`Server responded with status: ${response.status}`);
+    }
+
+    const data = await response.json(); // Parse the JSON response
+    console.log("API Response:", data); // Log the entire response to inspect its structure
+
+    return data.response; // Return the 'response' property from the API
+  } catch (error) {
+    console.error("Error:", error);
+    return "Sorry, I am having trouble connecting to the server.";
   }
-  return output;
 }
 
 // Display the user message on the chat
 function displayUserMessage(message) {
   let chat = document.getElementById("chatbot-chat");
   let userMessage = document.createElement("div");
-  userMessage.classList.add("chatbot-message");
-  userMessage.classList.add("chatbot-user");
+  userMessage.classList.add("chatbot-message", "chatbot-user");
   let userAvatar = document.createElement("div");
   userAvatar.classList.add("chatbot-avatar");
   let userText = document.createElement("div");
@@ -39,8 +43,7 @@ function displayUserMessage(message) {
 function displayBotMessage(message) {
   let chat = document.getElementById("chatbot-chat");
   let botMessage = document.createElement("div");
-  botMessage.classList.add("chatbot-message");
-  botMessage.classList.add("chatbot-bot");
+  botMessage.classList.add("chatbot-message", "chatbot-bot");
   let botAvatar = document.createElement("div");
   botAvatar.classList.add("chatbot-avatar");
   let botText = document.createElement("div");
@@ -53,14 +56,18 @@ function displayBotMessage(message) {
 }
 
 // Send the user message and get the bot response
-function sendMessage() {
+async function sendMessage() {
   let input = document.getElementById("chatbot-input").value;
   if (input) {
     displayUserMessage(input);
-    let output = chatbot(input);
+    
+    // Wait for the chatbot response
+    let output = await chatbot(input); // Ensure this line is awaited
+
     setTimeout(function () {
       displayBotMessage(output);
     }, 1000);
+    
     document.getElementById("chatbot-input").value = "";
   }
 }
