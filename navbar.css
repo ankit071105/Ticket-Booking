@@ -1,0 +1,72 @@
+  .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 10px;
+            color: white;
+        }
+
+        .navbar div a {
+            margin-right: 15px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar img {
+            margin-right: 10px;
+        }
+
+        /* Navbar links (visible on large screens) */
+        #navLinks {
+            display: flex;
+        }
+
+        #navLinks a {
+            margin-right: 20px;
+        }
+
+        /* Toggle Button (hidden on large screens) */
+        #navToggle {
+            display: none;
+        }
+
+        /* Responsive Media Query for Small Screens */
+        @media (max-width: 768px) {
+            /* Hide navbar links */
+            #navLinks {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                padding: 10px;
+            }
+
+            #navLinks a {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            /* Show the toggle button */
+            #navToggle {
+              display: block;
+              background-color: transparent; /* Ensure no background color */
+              color: white; /* Icon color */
+              border: none; /* Remove any border */
+              font-size: 24px; /* Icon size */
+              cursor: pointer;
+              width: 40px;  /* Fixed width */
+              height: 40px; /* Fixed height */
+              text-align: center; /* Horizontally center the icon */
+              line-height: 40px; /* Vertically center the icon */
+              border-radius: 5px; /* Optional: Rounded corners */
+              padding: 0; /* Remove any padding */
+              margin: 0 auto; /* Center the button horizontally in its container */
+              position: absolute;
+              right: 80px;
+          }
+          
+        }
