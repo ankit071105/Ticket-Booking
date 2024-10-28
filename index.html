@@ -702,6 +702,140 @@
 
 /* Container */
 .container {
+<style>
+    /* Container Styling */
+    .faq-container {
+        border: 5px solid green;
+        max-width: 800px;
+        margin: auto;
+        background-color: white; /* White background */
+        border-radius: 6%;
+        padding: 40px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    }
+
+    /* Form Styling */
+    .form-group {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    .form-group label {
+        font-size: medium;
+        color: #2b472b; /* Dark green for labels */
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        font-size: 1em;
+        border: 2px solid #a8d8a8; /* Light green border */
+        border-radius: 5px;
+        background-color: #757675; /* Light background */
+        transition: border 0.3s ease;
+        color: #2b472b; /* Dark green for input text */
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+        color: #fafbfa; /* Medium green for placeholder text */
+        font-size: medium;
+        font-weight: bolder;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        border-color: #4d994d; /* Dark green on focus */
+        outline: none;
+    }
+
+    /* Button Styling */
+    button[type="submit"] {
+        width: 100%;
+        padding: 15px;
+        background-color: #4d994d; /* Dark green */
+        color: white;
+        font-size: 1em;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #367836; /* Darker green on hover */
+    }
+</style>
+
+<section id="faq">
+    <div class="faq-container" data-aos="fade-up" data-aos-duration="1000">
+        <h1 class="faq-title" data-aos="fade-right" data-aos-duration="800">Frequently Asked Questions</h1>
+        <div id="FAQ">
+            <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="30">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">What is your cancellation policy?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content">
+                        <p>We offer a flexible cancellation policy that allows you to cancel your booking up to 48 hours before your scheduled departure for a full refund.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="60">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">How do I make changes to my booking?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content">
+                        <p>You can make changes to your booking by logging into your account and accessing your booking details. For major changes, please contact our support team directly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="90">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">What payment methods do you accept?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content">
+                        <p>We accept various payment methods including credit/debit cards, PayPal, and bank transfers. All transactions are secure and encrypted.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="120">
+                <div class="item">
+                    <div class="FAQ-title" onclick="toggleFAQ(this)">
+                        <p class="faqQuestion">Do you offer travel insurance?</p>
+                        <span class="expandToggle">+</span>
+                    </div>
+                    <div class="FAQ-content">
+                        <p>Yes, we offer travel insurance options during the booking process to protect your trip against unforeseen circumstances.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function toggleFAQ(element) {
+        const content = element.nextElementSibling;
+        content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+</script>
+
     
     border: 5px solid green;
     max-width: 800px;
@@ -773,99 +907,107 @@ button[type="submit"]:hover {
 
         </style>
 
-        <section id="faq">
-            <div class="faq-container" data-aos="fade-up" data-aos-duration="1000">
-                <h1 class="faq-title" data-aos="fade-right" data-aos-duration="800">Frequently Asked Questions</h1>
-                <div id="FAQ">
-                    <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="30">
-                        <div class="item">
-                            <div class="FAQ-title" onclick="toggleFAQ(this)">
-                                <p class="faqQuestion">What is your cancellation policy?</p>
-                                <span class="expandToggle">+</span>
-                            </div>
-                            <div class="FAQ-content">
-                                <p>We offer a flexible cancellation policy that allows you to cancel your booking up to 48 hours before your scheduled departure for a full refund.</p>
-                            </div>
-                        </div>
+<section id="faq" aria-labelledby="faq-title">
+    <div class="faq-container" data-aos="fade-up" data-aos-duration="1000">
+        <h1 id="faq-title" class="faq-title" data-aos="fade-right" data-aos-duration="800">Frequently Asked Questions</h1>
+        
+        <div id="FAQ" role="tablist" aria-multiselectable="true">
+            <!-- FAQ Item Template -->
+            <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="30">
+                <div class="item">
+                    <button class="FAQ-title" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-content-1">
+                        <span class="faqQuestion">What is your cancellation policy?</span>
+                        <span class="expandToggle" aria-hidden="true">+</span>
+                    </button>
+                    <div id="faq-content-1" class="FAQ-content" role="tabpanel" hidden>
+                        <p>We offer a flexible cancellation policy that allows you to cancel your booking up to 48 hours before your scheduled departure for a full refund.</p>
                     </div>
-                    
-                    <!-- Add similar items for other FAQ entries, each with slight delays -->
-                    <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="60">
-                        <div class="item">
-                            <div class="FAQ-title" onclick="toggleFAQ(this)">
-                                <p class="faqQuestion">How do I make changes to my booking?</p>
-                                <span class="expandToggle">+</span>
-                            </div>
-                            <div class="FAQ-content">
-                                <p>You can make changes to your booking by logging into your account and accessing your booking details. For major changes, please contact our support team directly.</p>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="90">
-                        <div class="item">
-                            <div class="FAQ-title" onclick="toggleFAQ(this)">
-                                <p class="faqQuestion">What payment methods do you accept?</p>
-                                <span class="expandToggle">+</span>
-                            </div>
-                            <div class="FAQ-content">
-                                <p>We accept various payment methods including credit/debit cards, PayPal, and bank transfers. All transactions are secure and encrypted.</p>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="120">
-                        <div class="item">
-                            <div class="FAQ-title" onclick="toggleFAQ(this)">
-                                <p class="faqQuestion">Do you offer travel insurance?</p>
-                                <span class="expandToggle">+</span>
-                            </div>
-                            <div class="FAQ-content">
-                                <p>Yes, we offer travel insurance options during the booking process to protect your trip against unforeseen circumstances.</p>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
-                        <div class="item">
-                            <div class="FAQ-title" onclick="toggleFAQ(this)">
-                                <p class="faqQuestion">Can I book multiple destinations in one trip?</p>
-                                <span class="expandToggle">+</span>
-                            </div>
-                            <div class="FAQ-content">
-                                <p>Absolutely! Our platform allows you to plan multi-destination trips seamlessly. Simply select your desired locations during the booking process.
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="180">
-                        <div class="item">
-                            <div class="FAQ-title" onclick="toggleFAQ(this)">
-                                <p class="faqQuestion">How can I contact customer support?</p>
-                                <span class="expandToggle">+</span>
-                            </div>
-                            <div class="FAQ-content">
-                                <p>You can reach our customer support team via email or live chat on our website. We’re available 24/7 to assist you with any inquiries.</p>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="210">
-                        <div class="item">
-                            <div class="FAQ-title" onclick="toggleFAQ(this)">
-                                <p class="faqQuestion">What should I do if I encounter an issue with my booking?</p>
-                                <span class="expandToggle">+</span>
-                            </div>
-                            <div class="FAQ-content">
-                                <p>If you experience any issues with your booking, please contact our support team immediately. We will work to resolve your issue as quickly as possible.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Repeat for each FAQ item, incrementing data-aos-delay by 100ms for staggered animation -->
                 </div>
             </div>
-        </section>
+            
+            <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="60">
+                <div class="item">
+                    <button class="FAQ-title" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-content-2">
+                        <span class="faqQuestion">How do I make changes to my booking?</span>
+                        <span class="expandToggle" aria-hidden="true">+</span>
+                    </button>
+                    <div id="faq-content-2" class="FAQ-content" role="tabpanel" hidden>
+                        <p>You can make changes to your booking by logging into your account and accessing your booking details. For major changes, please contact our support team directly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="90">
+                <div class="item">
+                    <button class="FAQ-title" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-content-3">
+                        <span class="faqQuestion">What payment methods do you accept?</span>
+                        <span class="expandToggle" aria-hidden="true">+</span>
+                    </button>
+                    <div id="faq-content-3" class="FAQ-content" role="tabpanel" hidden>
+                        <p>We accept various payment methods including credit/debit cards, PayPal, and bank transfers. All transactions are secure and encrypted.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat for additional FAQ items, incrementing data-aos-delay by 30ms each time -->
+            
+        </div>
+    </div>
+</section>
+
+<script>
+    function toggleFAQ(element) {
+        const content = element.nextElementSibling;
+        const isExpanded = element.getAttribute("aria-expanded") === "true";
+        element.setAttribute("aria-expanded", !isExpanded);
+        content.hidden = isExpanded;
+        element.querySelector(".expandToggle").textContent = isExpanded ? "+" : "-";
+    }
+</script>
+
+<style>
+    .faq-container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+    }
+    .faq-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 1.5em;
+        color: #333;
+    }
+    .accordion {
+        margin-bottom: 15px;
+    }
+    .FAQ-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f7f7f7;
+        border: 1px solid #ddd;
+        padding: 15px;
+        cursor: pointer;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    .FAQ-title:hover {
+        background-color: #e2e2e2;
+    }
+    .expandToggle {
+        font-size: 1.5rem;
+        transition: transform 0.3s;
+    }
+    .FAQ-content {
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-top: none;
+        border-radius: 0 0 5px 5px;
+        background-color: #fafafa;
+    }
+</style>
+
 
     </body>
 
