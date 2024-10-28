@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Our Apps - Ticket Marketplace</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        :root {
+            --bg-color: #fff;
+            --text-color: #333;
+            --nav-bg: #1a1a1a;
+            --footer-bg: #1f2937;
+            --accent-color: #12e9cc;
+        }
+
+        body.dark-mode {
+            --bg-color: #1a1a1a;
+            --text-color: #fff;
+            --nav-bg: #252525;
+            --footer-bg: #1f2937;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        /* Updated Navigation Styles */
+        .navbar {
+            background-color: var(--nav-bg);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+        }
+
+        .navbar img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .logo {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: auto;
+            margin-left: 1rem;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: var(--accent-color);
+        }
+
+        #darkModeToggle {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2rem;
+            margin-left: 1rem;
+            padding: 0.5rem;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+            text-align: center;
+        }
+
+        .main-content h1 {
+            color: var(--text-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .app-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .app-card {
+            padding: 2rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .app-card img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 1rem;
+        }
+
+        .app-card h2 {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .download-btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Updated Footer Styles */
+        .footer-container {
+            background-color: var(--footer-bg);
+            color: #ffffff;
+            padding: 40px 0;
+        }
+
+        .footer-top {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-logo-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            max-width: 150px;
+            margin-bottom: 10px;
+            border-radius: 50px;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #76b2ab;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 100px;
+        }
+
+        .footer-column {
+            flex-basis: 20%;
+            margin-bottom: 20px;
+        }
+
+        .footer-column h4 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+        }
+
+        .footer-bottom ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-bottom ul li a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom ul li a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem;
+            }
+
+            .navbar div {
+                margin: 1rem 0;
+            }
+
+            .navbar a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+                margin: 20px 0;
+            }
+
+            .footer-column {
+                flex-basis: 100%;
+                text-align: center;
+            }
+
+            .footer-bottom ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="Logo">
+        <div class="logo">Ticket Marketplace</div>
+        <div>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+            <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
+            <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
+            <a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
+            <a href="register.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+        </div>
+        <button id="darkModeToggle">🌙</button>
+    </nav>
+
+    <main class="main-content">
+        <h1>Download Our Apps</h1>
+        <p>Experience seamless ticket booking on the go</p>
+
+        <div class="app-section">
+            <div class="app-card">
+                <img src="images/ios_logo.jpg" alt="iOS App">
+                <h2>iOS App</h2>
+                <p>Available on the App Store</p>
+                <a href="#" class="download-btn">Download for iOS</a>
+            </div>
+            <div class="app-card">
+                <img src="images/playstore_logo.png" alt="Android App">
+                <h2>Android App</h2>
+                <p>Get it on Google Play</p>
+                <a href="#" class="download-btn">Download for Android</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-container">
+        <div class="footer-top">
+            <div class="footer-logo-section">
+                <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="Logo" class="footer-logo">
+                <p style="color: #b5fdf4;">Affordable adventures, unforgettable memories—explore with ease.</p>
+                <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>HELPFUL LINKS</h4>
+                    <ul>
+                        <li><a href="contactus.html">Help Centre</a></li>
+                        <li><a href="#">Special Assistance</a></li>
+                        <li><a href="downloadOurApp.html">Download The App</a></li>
+                        <li><a href="#">Booking Conditions</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>ABOUT US</h4>
+                    <ul>
+                        <li><a href="#">Media Center</a></li>
+                        <li><a href="#">Investors</a></li>
+                        <li><a href="#">Modern Slavery Act</a></li>
+                        <li><a href="terms.html">Terms Of Use</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>KEEPING SAFE</h4>
+                    <ul>
+                        <li><a href="#">ATOL Protected</a></li>
+                        <li><a href="#">Travel Aware</a></li>
+                        <li><a href="#">FCDO Travel Advice</a></li>
+                        <li><a href="#">ABTA</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>FIND US</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Group Cookie Notice</a></li>
+                        <li><a href="privacy.html">Privacy And Policy</a></li>
+                        <li><a href="sitemap.html">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <ul>
+                <li><a href="#">Holiday Type</a></li>
+                <li><a href="#">Holiday Deals</a></li>
+                <li><a href="#">Popular Counters</a></li>
+                <li><a href="#">Top Hotels</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            darkModeToggle.textContent = '☀️';
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            // Update button icon
+            if (body.classList.contains('dark-mode')) {
+                darkModeToggle.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                darkModeToggle.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+</body>
+</html>
