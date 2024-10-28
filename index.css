@@ -146,7 +146,6 @@ p {
   transition: all 0.3s ease;
   border-radius: 5px;
 }
-
 /* Hover effect with underline and color change */
 .navbar ul li a:hover {
   color: #FFD700; /* Golden color on hover */
@@ -512,6 +511,7 @@ body.dark-mode .ticket-card button:hover {
 
 .slide {
   position: relative;
+  margin-top: 0;
   width: 100%;
   height: 100%;
   display: none;
