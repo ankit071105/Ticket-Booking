@@ -4,322 +4,356 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Ticket Booking</title>
+    <link rel="shortcut icon" href="images/4.jpeg" type="image/x-icon">
+
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="footer.css"> 
+    <link rel="stylesheet" href="faq.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="why-us.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        .nav-container{
+      display: flex;
+}
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #cf9aff, #95c0ff);
-            color: #333;
-            transition: background-color 0.3s, color 0.3s;
-        }
+/* cursor */
+.circle {
+  height: 24px;
+  width: 24px;
+  border-radius: 24px;
+  background-color: black;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999999; /* so that it stays on top of all other elements */
+}
 
-        body.dark-mode {
-            background: linear-gradient(135deg, #2c3e50, #34495e);
-            color: #fff;
-        }
+/* cursor */
+    </style>
+</head>
 
-        .navbar {
-            background-color: #ffffff;
-            padding: 1rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
 
-        body.dark-mode .navbar {
-            background-color: #1a1a1a;
-        }
+<body>
 
-        .navbar img {
-            border-radius: 50%;
-            height: 35px;
-            width: 35px;
-        }
+  <!-- cursor -->
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
 
-        .logo {
-            font-size: 20px;
-            font-weight: 600;
-            margin-right: 200px;
-        }
+  <!-- cursor ends -->
 
-        .navbar a {
-            color: #333;
-            text-decoration: none;
-            margin: 0 15px;
-            transition: color 0.3s;
-        }
+  <nav class="navbar">
+    <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
+    <div class="logo" style="margin-right: 200px; font-size: 20px;">Ticket Marketplace</div>
+    <div>
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+        <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
+        <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
+        <a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
+        <a href="register.html"><i class="fas fa-sign-in-alt"></i> Login</a>
 
-        body.dark-mode .navbar a {
-            color: #fff;
-        }
+      </div>
+      <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
 
-        #darkModeToggle {
-            width: 40px;
-            height: 40px;
-            border: none;
-            background: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-        }
+  </nav>
+    
+       
+    
+        </div>
+    </nav>
+    <script>
 
-        #about-us {
-            padding: 50px 20px;
-            max-width: 1200px;
-            margin: 50px auto;
-            background: linear-gradient(135deg, #d3cbdc, #a9bfdf);
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
+    // cursor 
 
-        body.dark-mode #about-us {
-            background: linear-gradient(135deg, #2c3e50, #34495e);
-        }
+    const coords = { x: 0, y: 0 };
+const circles = document.querySelectorAll(".circle");
 
+const colors = [
+
+"#BCE954",
+"#98FF98",
+"#9CB071",
+"#90C209",
+"#B2C248",
+"#85BB65",
+"#99C68E",
+"#6CBB3C",
+"#3ea055",
+"#41a317",
+"#4AA02C",
+"#6AA121",
+"#347C2C",
+"#387C44",
+"#437C17",
+"#306754",
+"#254117",
+"#667C26",
+"#728C00",
+"#008000"
+
+];
+
+circles.forEach(function (circle, index) {
+circle.x = 0;
+circle.y = 0;
+circle.style.backgroundColor = colors[index % colors.length];
+});
+
+window.addEventListener("mousemove", function(e){
+coords.x = e.clientX;
+coords.y = e.clientY;
+
+});
+
+function animateCircles() {
+
+let x = coords.x;
+let y = coords.y;
+
+circles.forEach(function (circle, index) {
+  circle.style.left = x - 12 + "px";
+  circle.style.top = y - 12 + "px";
+  
+  circle.style.scale = (circles.length - index) / circles.length;
+  
+  circle.x = x;
+  circle.y = y;
+
+  const nextCircle = circles[index + 1] || circles[0];
+  x += (nextCircle.x - x) * 0.3;
+  y += (nextCircle.y - y) * 0.6;
+});
+
+requestAnimationFrame(animateCircles);
+}
+
+animateCircles();
+      
+      
+      // cursor ends
+
+              const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.querySelector('body');
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                if (body.classList.contains('dark-mode')) {
+                    darkModeToggle.innerHTML = "🔆";
+                }
+                else {
+                    darkModeToggle.innerHTML = "🌙";
+                }
+            });
+        }
+        // change icon of the dark/light mode
+      const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            // Special effect for hamburger icon
+            const bars = menuToggle.querySelectorAll('.bar');
+            bars.forEach((bar, index) => {
+                if (menuToggle.classList.contains('active')) {
+                    bar.style.transform = index === 1 ? 'scale(0)' : rotate(${index === 0 ? '45deg' : '-45deg'});
+                } else {
+                    bar.style.transform = 'none';
+                }
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+                menuToggle.querySelectorAll('.bar').forEach(bar => {
+                    bar.style.transform = 'none';
+                });
+            }
+        });
+    </script>
+    <section id="about-us">
+      <div class="about-container">
+          <h1>About Us 🚀</h1>
+          <p style="color: #333;">
+              Welcome to Ticket Booking! 🎟️ Your one-stop solution for booking bus and train tickets with ease. Our platform offers
+              a seamless experience for travelers, providing access to various transportation options. We strive to make your
+              journey hassle-free, whether you're planning a short trip or a long adventure. With 24/7 customer support and
+              real-time updates, we ensure that you're always informed and comfortable on the go. 🚌💨
+          </p>
+          <p style="color: #333;">
+              At Ticket Booking, we believe in providing the best travel experience. 🌍 We partner with multiple travel providers to
+              offer a wide range of routes, schedules, and prices, making travel accessible to everyone. Our team is dedicated
+              to innovation and constantly improving our platform to serve you better. 💡✨
+          </p>
+      </div>
+  </section>
+  
+    <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(135deg,#cf9aff,#95c0ff); /* Light blue-gray background */
+        color: #333; /* Dark text for contrast */
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+    }
+
+    #about-us {
+        padding: 50px 20px ; /* Spacious padding */
+        background: linear-gradient(135deg,#d3cbdc,#a9bfdf);
+        border-radius: 12px; /* Rounded corners */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        max-width: 1200px; /* Limit width */
+        margin: 50px auto; /* Centered with margin */
+        transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+    }
+
+    #about-us:hover {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+    }
+
+    .about-container h1 {
+        font-size:  10em; /* Clear, large heading */
+        color: #3498db; /* Bright blue for emphasis */
+        text-align: center; /* Center the heading */
+        margin-bottom: 20px; /* Space below the heading */
+        text-transform: uppercase; /* Uppercase for impact */
+        letter-spacing: 1px; /* Slight spacing */
+    }
+
+    .about-container p {
+        font-size: 1.5em; /* Comfortable reading size */
+        margin: 15px 0; /* Space between paragraphs */
+        padding: 20px; /* Padding for text */
+        background-color: #ecf6fd; /* Light blue background for paragraphs */
+        border-left: 5px solid #3498db; /* Left border for visual interest */
+        border-radius: 8px; /* Rounded corners */
+        transition: background-color 0.3s ease; /* Transition for hover effect */
+    }
+
+    .about-container p:hover {
+        background-color: #d1e9fd; /* Slightly darker background on hover */
+    }
+
+    @media (max-width: 600px) {
         .about-container h1 {
-            font-size: 3em;
-            color: #3498db;
-            text-align: center;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        body.dark-mode .about-container h1 {
-            color: #5dade2;
+            font-size: 2em; /* Smaller font size for smaller screens */
         }
 
         .about-container p {
-            font-size: 1.2em;
-            margin: 15px 0;
-            padding: 20px;
-            background-color: #ecf6fd;
-            border-left: 5px solid #3498db;
-            border-radius: 8px;
-            transition: background-color 0.3s;
+            font-size: 1em; /* Adjust paragraph size */
         }
+    }
+</style>
 
-        body.dark-mode .about-container p {
-            background-color: #2c3e50;
-            border-left: 5px solid #5dade2;
-            color: #fff;
-        }
-
-        .footer-container {
-            background-color: #1f2937;
-            color: #ffffff;
-            padding: 40px 0;
-            margin-top: 50px;
-        }
-
-        .footer-top {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .footer-logo-section {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .social-icons {
-            margin: 20px 0;
-        }
-
-        .social-icons a {
-            color: #12e9cc;
-            font-size: 1.5rem;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin: 20px 0;
-        }
-
-        .footer-column h4 {
-            color: #12e9cc;
-            margin-bottom: 15px;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-column ul li a {
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .logo {
-                margin-right: 0;
-                margin-bottom: 15px;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .footer-column {
-                margin-bottom: 20px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <nav class="navbar">
-        <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="Logo">
-        <div class="logo">Ticket Marketplace</div>
-        <div>
-            <a href="index.html"><i class="fas fa-home"></i> Home</a>
-            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
-            <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
-            <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
-            <a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a>
-            <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
-            <a href="register.html"><i class="fas fa-sign-in-alt"></i> Login</a>
-        </div>
-        <button id="darkModeToggle">🌙</button>
-    </nav>
-
-    <section id="about-us">
-        <div class="about-container">
-            <h1>About Us 🚀</h1>
-            <p>
-                Welcome to Ticket Booking! 🎟️ Your one-stop solution for booking bus and train tickets with ease. Our platform offers
-                a seamless experience for travelers, providing access to various transportation options. We strive to make your
-                journey hassle-free, whether you're planning a short trip or a long adventure. With 24/7 customer support and
-                real-time updates, we ensure that you're always informed and comfortable on the go. 🚌💨
-            </p>
-            <p>
-                At Ticket Booking, we believe in providing the best travel experience. 🌍 We partner with multiple travel providers to
-                offer a wide range of routes, schedules, and prices, making travel accessible to everyone. Our team is dedicated
-                to innovation and constantly improving our platform to serve you better. 💡✨
-            </p>
-        </div>
-    </section>
+  </style>
+    <div class="gtranslate_wrapper"></div>
+    <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
     <footer class="footer-container">
-      <div class="footer-top">
-        
-        <div class="footer-logo-section">
-          <a href="#"> <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo"></a>
-          <p style="color: #b5fdf4;" >Affordable adventures, unforgettable memories—explore with ease.</p>
-          <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
-          <div class="social-icons">
+        <div class="footer-top">
+          
+          <div class="footer-logo-section">
+            <a href="#"> <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo"></a>
+            <p style="color: #b5fdf4;" >Affordable adventures, unforgettable memories—explore with ease.</p>
+            <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
+            <div class="social-icons">
 <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
 <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
 <a href="https://www.twitter.com" ><i class="fa-brands fa-x-twitter"></i></a>
 <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
 <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
 
+            </div>
           </div>
-        </div>
-    
-        
-        <div class="footer-links">
-          <div class="footer-column">
-            <h4>HELPFUL LINKS</h4>
-            <ul>
-              <li><a href="#">Help Centre</a></li>
-              <li><a href="#">Special Assistance</a></li>
-              <li><a href="#">Download The App</a></li>
-              <li><a href="#">Booking Conditions</a></li>
-            </ul>
-          </div>
-    
-          <div class="footer-column">
-            <h4>ABOUT US</h4>
-            <ul>
-              <li><a href="#">Media Center</a></li>
-              <li><a href="#">Investors</a></li>
-              <li><a href="#">Modern Slavery Act</a></li>
-              <li><a href="terms.html">Terms Of Use</a></li>
-
-            </ul>
-          </div>
-    
-          <div class="footer-column">
-            <h4>KEEPING SAFE</h4>
-            <ul>
-              <li><a href="#">ATOL Protected</a></li>
-              <li><a href="#">Travel Aware</a></li>
-              <li><a href="#">FCDO Travel Advice</a></li>
-              <li><a href="#">ABTA</a></li>
-            </ul>
-          </div>
-    
-          <div class="footer-column">
-            <h4>FIND US</h4>
-            <ul>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Group Cookie Notice</a></li>
-              <li><a href="privacy.html">Privacy And Policy</a></li>
-              <li><a href="#">Sitemap</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    
       
-      <div class="footer-bottom">
-        <ul>
-          <li><a href="#">Holiday Type</a></li>
-          <li><a href="#">Holiday Deals</a></li>
-          <li><a href="#">Popular Counters</a></li>
-          <!-- <li><a href="#">Flight Only</a></li> -->
-          <li><a href="#">Top Hotels</a></li>
-        </ul>
-      </div>
-    </footer>
+          
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>HELPFUL LINKS</h4>
+              <ul>
+                <li><a href="#">Help Centre</a></li>
+                <li><a href="#">Special Assistance</a></li>
+                <li><a href="#">Download The App</a></li>
+                <li><a href="#">Booking Conditions</a></li>
+              </ul>
+            </div>
+      
+            <div class="footer-column">
+              <h4>ABOUT US</h4>
+              <ul>
+                <li><a href="#">Media Center</a></li>
+                <li><a href="#">Investors</a></li>
+                <li><a href="#">Modern Slavery Act</a></li>
+                <li><a href="terms.html">Terms Of Use</a></li>
 
-    <script>
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const body = document.body;
-
-        // Check for saved dark mode preference
-        if (localStorage.getItem('darkMode') === 'enabled') {
-            body.classList.add('dark-mode');
-            darkModeToggle.innerHTML = '🔆';
-        }
-
-        darkModeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            
-            // Update button icon
-            if (body.classList.contains('dark-mode')) {
-                darkModeToggle.innerHTML = '🔆';
-                localStorage.setItem('darkMode', 'enabled');
-            } else {
-                darkModeToggle.innerHTML = '🌙';
-                localStorage.setItem('darkMode', 'disabled');
-            }
-        });
-    </script>
-</body>
-</html>
-
+              </ul>
+            </div>
+      
+            <div class="footer-column">
+              <h4>KEEPING SAFE</h4>
+              <ul>
+                <li><a href="#">ATOL Protected</a></li>
+                <li><a href="#">Travel Aware</a></li>
+                <li><a href="#">FCDO Travel Advice</a></li>
+                <li><a href="#">ABTA</a></li>
+              </ul>
+            </div>
+      
+            <div class="footer-column">
+              <h4>FIND US</h4>
+              <ul>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Group Cookie Notice</a></li>
+                <li><a href="privacy.html">Privacy And Policy</a></li>
+                <li><a href="#">Sitemap</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      
+        
+        <div class="footer-bottom">
+          <ul>
+            <li><a href="#">Holiday Type</a></li>
+            <li><a href="#">Holiday Deals</a></li>
+            <li><a href="#">Popular Counters</a></li>
+            <!-- <li><a href="#">Flight Only</a></li> -->
+            <li><a href="#">Top Hotels</a></li>
+          </ul>
+        </div>
+      </footer>
 <style>
   /* General Footer Styling */
   .footer-container {
