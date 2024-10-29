@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Marketplace</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-top: 60px; /* Space for fixed navbar */
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            background-color: #1a1a1a;
+            padding: 0.8rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .navbar-brand img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+
+        .brand-name {
+            color: #00ffcc;
+            font-size: 1.5rem;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #00ffcc;
+        }
+
+        #darkModeToggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        #darkModeToggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* Container Styles */
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            margin: 30px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Sitemap Styles */
+        .sitemap {
+            padding: 20px;
+        }
+
+        .sitemap h2 {
+            text-align: center;
+            font-size: 1.5em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .sitemap ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: space-around;
+        }
+
+        .sitemap ul li {
+            width: 45%;
+            background: #f9fafb;
+            padding: 10px;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        .sitemap ul li:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .sitemap ul li a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            padding: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .sitemap ul li a:hover {
+            color: #0073e6;
+        }
+
+        /* Footer Styles */
+        .footer-container {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 40px 20px;
+            margin-top: 40px;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            flex: 2;
+            justify-content: space-around;
+        }
+
+        .footer-column h4 {
+            color: #00ffcc;
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #00ffcc;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #00ffcc;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+        }
+
+        .footer-bottom ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .footer-bottom ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom ul li a:hover {
+            color: #00ffcc;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        body.dark-mode .container {
+            background-color: #2d2d2d;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode .sitemap ul li {
+            background-color: #333;
+        }
+
+        body.dark-mode .sitemap ul li a {
+            color: #ffffff;
+        }
+
+        body.dark-mode .sitemap h2 {
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .sitemap ul li {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="Logo">
+            <a href="index.html" class="brand-name">Ticket Marketplace</a>
+        </div>
+        
+        <div class="nav-links">
+            <a href="index.html">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Home
+            </a>
+            <a href="about.html">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                About
+            </a>
+            <a href="buy.html">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+                Buy Ticket
+            </a>
+            <a href="sell.html">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                </svg>
+                Sell
+            </a>
+            <a href="#contact">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                Contact
+            </a>
+            <a href="contributor.html">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Contributors
+            </a>
+            <a href="register.html">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                    <polyline points="10 17 15 12 10 7"></polyline>
+                    <line x1="15" y1="12" x2="3" y2="12"></line>
+                </svg>
+                Login
+            </a>
+        </div>
+        
+        <button id="darkModeToggle">🌙</button>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="sitemap">
+            <h2>Explore Our Pages</h2>
+            <ul>
+                <li><a href="https://ticket-booking-blue.vercel.app/">Home</a></li>
+                <li><a href="https://ticket-booking-blue.vercel.app/index.html">Index</a></li>
+                <li><a href="https://ticket-booking-blue.vercel.app/about.html">About</a></li>
+                <li><a href="https://ticket-booking-blue.vercel.app/buy.html">Buy Tickets</a></li>
+                <li><a href="https://ticket-booking-blue.vercel.app/sell.html">Sell Tickets</a></li>
+                <li><a href="https://ticket-booking-blue.vercel.app/contributor.html">Contributors</a></li>
+                <li><a href="https://ticket-booking-blue.vercel.app/client/login.html">Client Login</a></li>
+                <li><a href="https://ticket-booking-blue.vercel.app/train_buy.html">Train Tickets</a></li>
+                <li><a href="https://ticket-booking-blue.vercel.app/train_sell.html">Sell Train Tickets</a></li>
+                <li><a href="https://ticket-booking-blue.vercel.app/terms.html">Terms of Service</a></li>
+                <li><a href="https://ticket-booking-blue.vercel.app/travelawares.html">Travel Aware</a></li>
+                <li><a href="https://ticket-booking-blue.vercel.app/GroupCookieNotice.html">Cookie Notice</a></li>
+                <li><a href="https://ticket-booking-blue.vercel.app/privacy.html">Privacy Policy</a></li>
+                <li><a href="https://ticket-booking-blue.vercel.app/sitemap.html">Sitemap</a></li>
+                <li><a href="https://ticket-booking-blue.vercel.app/contactus.html">Contact Us</a></li>
+                <li><a href="https://ticket-booking-blue.vercel.app/register.html">Register</a></li>
+                <li><a href="https://ticket-booking-blue.vercel.app/tophotels.html">Top Hotels</a></li>
+                <li><a href="https://ticket-booking-blue.vercel.app/client/register.html">Client Register</a></li>
+                <li><a href="https://ticket-booking-blue.vercel.app/client/forgot_password.html">Forgot Password</a></li>
+                <li><a href="https://ticket-booking-blue.vercel.app/help.html">Help</a></li>
+                <li><a href="https://ticket-booking-blue.vercel.app/book_condition.html">Booking Conditions</a></li>
+                <li><a href="https://ticket-booking-blue.vercel.app/ModernSlaveryAct.html">Modern Slavery Act</a></li>
+                <li><a href="https://ticket-booking-blue.vercel.app/travelAware.html">Travel Aware</a></li>
+                <li><a href="https://ticket-booking-blue.vercel.app/login.html">Login</a></li>
+            </ul>
+        </div>
+        
+        <!-- Footer Section -->
+        <footer class="footer-container">
+            <div class="footer-top">
+                <div class="footer-logo-section">
+                    <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo">
+                    <p>Affordable adventures, unforgettable memories—explore with ease.</p>
+                    <p class="follow-us">FOLLOW US:</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>HELPFUL LINKS</h4>
+                        <ul>
+                            <li><a href="#">Help Centre</a></li>
+                            <li><a href="#">Special Assistance</a></li>
+                            <li><a href="#">Download The App</a></li>
+                            <li><a href="#">Booking Conditions</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>ABOUT US</h4>
+                        <ul>
+                            <li><a href="#">Media Center</a></li>
+                            <li><a href="#">Investors</a></li>
+                            <li><a href="#">Modern Slavery Act</a></li>
+                            <li><a href="#">Terms Of Use</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>KEEPING SAFE</h4>
+                        <ul>
+                            <li><a href="#">ATOL Protected</a></li>
+                            <li><a href="#">Travel Aware</a></li>
+                            <li><a href="#">FCDO Travel Advice</a></li>
+                            <li><a href="#">ABTA</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>FIND US</h4>
+                        <ul>
+                            <li><a href="contactus.html">Contact Us</a></li>
+                            <li><a href="#">Group Cookie Notice</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Sitemap</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <ul>
+                    <li><a href="#">Holiday Type</a></li>
+                    <li><a href="#">Holiday Deals</a></li>
+                    <li><a href="#">Popular Countries</a></li>
+                    <li><a href="tophotels.html">Top Hotels</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Google Translate Widget -->
+    <div class="gtranslate_wrapper"></div>
+    <script>
+        window.gtranslateSettings = {
+            default_language: "en",
+            detect_browser_language: true,
+            wrapper_selector: ".gtranslate_wrapper",
+        };
+    </script>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Dark Mode Toggle Script -->
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        // Check for saved user preference, if any, on load of the website
+        const darkMode = localStorage.getItem('darkMode');
+        
+        if (darkMode === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.textContent = '☀️';
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            // If dark mode is enabled, save the preference
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeToggle.textContent = '☀️';
+            } else {
+                localStorage.setItem('darkMode', null);
+                darkModeToggle.textContent = '🌙';
+            }
+        });
+    </script>
+</body>
+</html>

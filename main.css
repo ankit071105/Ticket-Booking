@@ -1125,3 +1125,4 @@ button[type="submit"]:active {
 .faq input[type="checkbox"]:checked + label .arrow {
   transform: rotate(225deg);
 }
+

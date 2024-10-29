@@ -252,7 +252,7 @@ button:hover {
 
   .nav-links {
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
   }
 
   .home,
@@ -1180,3 +1180,8 @@ button:hover {
     }
   }
 
+
+
+
+
+  
