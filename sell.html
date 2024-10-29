@@ -465,6 +465,307 @@
       margin-top: 1rem;
     }
 
+    .card {
+    border: 1px solid #ccc; /* Card border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px;
+    width: 300px; /* Card width */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+}
+  </style>  
+
+
+
+
+    
+    
+
+    <footer class="footer-container">
+        <div class="footer-top">
+
+            <div class="footer-logo-section">
+                <a href="#"> <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo"></a>
+                <p style="color: #b5fdf4;">Affordable adventures, unforgettable memories—explore with ease.</p>
+                <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>HELPFUL LINKS</h4>
+                    <ul>
+                        <li><a href="help.html">Help Centre</a></li>
+                        <li><a href="#">Special Assistance</a></li>
+                        <li><a href="#">Download The App</a></li>
+                        <li><a href="book_condition.html">Booking Conditions</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>ABOUT US</h4>
+                    <ul>
+                        <li><a href="#">Media Center</a></li>
+                        <li><a href="#">Investors</a></li>
+                        <li><a href="ModernSlaveryAct.html">Modern Slavery Act</a></li>
+                        <li><a href="terms.html">Terms Of Use</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>KEEPING SAFE</h4>
+                    <ul>
+                        <li><a href="#">ATOL Protected</a></li>
+                        <li><a href="./travelawares.html">Travel Aware</a></li>
+                        <li><a href="travelAware.html">FCDO Travel Advice</a></li>
+                        <li><a href="#">ABTA</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>FIND US</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="GroupCookieNotice.html">Group Cookie Notice</a></li>
+                        <li><a href="privacy.html">Privacy And Policy</a></li>
+                        <li><a href="sitemap.html">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <div class="footer-bottom">
+            <ul>
+                <li><a href="#">Holiday Type</a></li>
+                <li><a href="#">Holiday Deals</a></li>
+                <li><a href="#">Popular Counters</a></li>
+                <!-- <li><a href="#">Flight Only</a></li> -->
+                <li><a href="#">Top Hotels</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+    <script>
+        // cursor 
+
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+
+        const colors = [
+
+            "#BCE954",
+            "#98FF98",
+            "#9CB071",
+            "#90C209",
+            "#B2C248",
+            "#85BB65",
+            "#99C68E",
+            "#6CBB3C",
+            "#3ea055",
+            "#41a317",
+            "#4AA02C",
+            "#6AA121",
+            "#347C2C",
+            "#387C44",
+            "#437C17",
+            "#306754",
+            "#254117",
+            "#667C26",
+            "#728C00",
+            "#008000"
+
+        ];
+
+        circles.forEach(function (circle, index) {
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];
+        });
+
+        window.addEventListener("mousemove", function (e) {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+
+        });
+
+        function animateCircles() {
+
+            let x = coords.x;
+            let y = coords.y;
+
+            circles.forEach(function (circle, index) {
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+
+                circle.style.scale = (circles.length - index) / circles.length;
+
+                circle.x = x;
+                circle.y = y;
+
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.6;
+            });
+
+            requestAnimationFrame(animateCircles);
+        }
+
+        animateCircles();
+
+
+        // cursor ends
+        //   </script>
+    <script>
+        function toggleFAQ(element) {
+            const content = element.nextElementSibling; // Get the FAQ content
+            const toggleSymbol = element.querySelector('.expandToggle'); // Get the toggle symbol
+
+            // Check if content is visible
+            if (content.style.display === "block") {
+                content.style.display = "none"; // Hide content
+                toggleSymbol.textContent = "+"; // Change toggle symbol to "+"
+            } else {
+                content.style.display = "block"; // Show content
+                toggleSymbol.textContent = "-"; // Change toggle symbol to "-"
+            }
+        }
+
+
+
+
+        let items = document.querySelectorAll('.slider .item');
+        let active = 3;
+
+        function loadShow() {
+            items[active].style.transform = `none`;
+            items[active].style.zIndex = 1;
+            items[active].style.filter = 'none';
+            items[active].style.opacity = 1;
+            // show after
+            let stt = 0;
+            for (var i = active + 1; i < items.length; i++) {
+                stt++;
+                items[i].style.transform = `translateX(${120 * stt}px) scale(${1 - 0.2 * stt}) perspective(16px) rotateY(-1deg)`;
+                items[i].style.zIndex = -stt;
+                items[i].style.filter = 'blur(5px)';
+                items[i].style.opacity = stt > 2 ? 0 : 0.6;
+            }
+            stt = 0;
+            for (var i = (active - 1); i >= 0; i--) {
+                stt++;
+                items[i].style.transform = `translateX(${-120 * stt}px) scale(${1 - 0.2 * stt}) perspective(16px) rotateY(1deg)`;
+                items[i].style.zIndex = -stt;
+                items[i].style.filter = 'blur(5px)';
+                items[i].style.opacity = stt > 2 ? 0 : 0.6;
+            }
+        }
+        setInterval(() => {
+            active = (active + 1) % items.length;
+            loadShow();
+        }, 3000);
+        let next = document.getElementById('next');
+        let prev = document.getElementById('prev');
+        next.style.display = 'block';
+        prev.style.display = 'block';
+        next.onclick = function () {
+            active = (active + 1) % items.length;
+            loadShow();
+        }
+
+        prev.onclick = function () {
+            active = (active - 1 + items.length) % items.length;
+            loadShow();
+        }
+
+    </script>
+    <script src="about.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="main.js"></script>
+
+    <script src="about.js"></script>
+    <script>
+        // Toggle Navbar Links
+        const navToggle = document.getElementById('navToggle');
+        const navlinks = document.getElementById('navLinks');
+
+        navToggle.addEventListener('click', () => {
+            navlinks.style.display = navlinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Ensure navbar links are visible on large screens
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navlinks.style.display = 'flex'; // Show links on large screens
+            } else {
+                navlinks.style.display = 'none'; // Hide links on small screens
+            }
+        });
+
+        // Set initial state based on the current window size
+        if (window.innerWidth > 768) {
+            navlinks.style.display = 'flex'; // Show links if starting on a large screen
+        } else {
+            navlinks.style.display = 'none'; // Hide links if starting on a small screen
+        }
+    </script>
+    <script>
+
+        // Function to hide preloader and show content once the page has fully loaded
+        window.addEventListener('load', function () {
+            const preloader = document.getElementById('preloader');
+            const content = document.getElementById('content');
+
+            // Set a small timeout for better user experience
+            setTimeout(function () {
+                // Hide preloader
+                preloader.style.opacity = '0';
+                preloader.style.transition = 'opacity 1s ease-in-out';
+
+                // Show content after preloader fades out
+                setTimeout(function () {
+                    preloader.style.display = 'none';
+                    content.style.display = 'block';
+                    content.classList.add('show');  // Trigger fade-in transition
+                }, 100); // Match the transition duration
+            }, 200);  // Adjust to the length of your spinner animation
+        });
+
+
+
+
+
+
+
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const slider_dots = document.querySelectorAll(".dot");
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                slider_dots[i].classList.remove('slider-dot-active');
+                if (i === index) {
+                    slide.classList.add('active');
+                    slider_dots[i].classList.add('slider-dot-active');
+                }
+            });
+        }
+
+        function clickThumbs(index) {
+            currentSlide = index;
+            showSlide(currentSlide);
+        }
     @media screen and (max-width: 768px) {
       form {
         grid-template-columns: 1fr;
