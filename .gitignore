@@ -30,3 +30,18 @@ yarn-error.log*
 
 # Coverage reports
 /coverage
+
+# SSH Keys - Prevent SSH keys from being pushed
+*.pem
+*.pub
+id_rsa
+id_rsa.pub
+
+# Private keys
+*.key
+
+# Security-related or sensitive files
+*.crt
+*.cert
+*.p12
+*.pub
