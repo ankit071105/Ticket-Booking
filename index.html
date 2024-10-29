@@ -596,16 +596,66 @@
                     </div>
 
 
+                    <style>
+                        /* Rating Section Styling */
+                        .rating-group {
+                            display: flex;
+                            justify-content: center;
+                            gap: 8px;
+                            font-size: 24px;
+                            cursor: pointer;
+                        }
+                    
+                        /* Individual Star Styling */
+                        .rating-group i {
+                            color: #ccc; /* Default star color */
+                            transition: color 0.3s ease;
+                        }
+                    
+                        /* Hover Effect */
+                        .rating-group i:hover,
+                        .rating-group i:hover ~ i {
+                            color: #f4d03f; /* Highlighted star color on hover */
+                        }
+                    
+                        /* Selected Star Color */
+                        .rating-group .selected,
+                        .rating-group .selected ~ i {
+                            color: #ff8c00; /* Color when star is selected */
+                        }
+                    </style>
+                    
                     <div class="form-group">
                         <label for="rating">Rating</label>
-                        <select id="rating" name="rating" required>
-                            <option value="5">⭐⭐⭐⭐⭐</option>
-                            <option value="4">⭐⭐⭐⭐</option>
-                            <option value="3">⭐⭐⭐</option>
-                            <option value="2">⭐⭐</option>
-                            <option value="1">⭐</option>
-                        </select>
+                        <div class="rating-group" id="rating-group">
+                            <i class="fas fa-star" data-value="1"></i>
+                            <i class="fas fa-star" data-value="2"></i>
+                            <i class="fas fa-star" data-value="3"></i>
+                            <i class="fas fa-star" data-value="4"></i>
+                            <i class="fas fa-star" data-value="5"></i>
+                        </div>
                     </div>
+                    
+                    <script>
+                        const stars = document.querySelectorAll('#rating-group i');
+                    
+                        stars.forEach(star => {
+                            star.addEventListener('click', () => {
+                                // Remove 'selected' class from all stars
+                                stars.forEach(s => s.classList.remove('selected'));
+                                
+                                // Add 'selected' class to clicked star and all previous ones
+                                star.classList.add('selected');
+                                let previousSibling = star.previousElementSibling;
+                                while (previousSibling) {
+                                    previousSibling.classList.add('selected');
+                                    previousSibling = previousSibling.previousElementSibling;
+                                }
+                            });
+                        });
+                    </script>
+                    
+                    
 
 
                     <div class="form-group">
