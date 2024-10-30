@@ -7,8 +7,9 @@
     <link rel="shortcut icon" href="images/4.jpeg" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="index.css">
@@ -278,10 +279,113 @@
             font-style: italic;
             margin: 0 0 15px 0;
         }
+        .fa-telegram{
+            margin-top: 5px;
+            scale: 1.5;
+        }
     </style>
 </head>
 
 <body>
+
+
+    <div class="popup" id="pollPopup">
+        <div class="popup-content">
+            <h2>What type of transportation do you prefer for your travels?</h2>
+            <div id="pollOptions">
+                <button class="poll-button" data-value="Bus">Bus - Convenient for short to medium distances</button>
+                <button class="poll-button" data-value="Train">Train - Comfortable and scenic for long journeys</button>
+                <button class="poll-button" data-value="Flight">Flight - Fastest option for long distances</button>
+            </div>
+            <button id="voteButton" class="vote-button" style="margin-top: 10px;">Vote</button>
+            <p id="result"></p>
+        </div>
+    </div>
+    
+    <script>
+        // Show the poll popup 10 seconds after the page loads, if not already voted
+        window.onload = function() {
+          const hasVoted = sessionStorage.getItem('hasVoted');
+          setTimeout(function() {
+            if (!hasVoted) {
+              document.getElementById('pollPopup').style.display = 'flex';
+            }
+          }, 10000); // 10000 milliseconds = 10 seconds
+        };
+        
+        const pollButtons = document.querySelectorAll('.poll-button[data-value]');
+        let selectedValue = '';
+        
+        pollButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            // Remove selected class from all buttons
+            pollButtons.forEach(btn => btn.classList.remove('selected'));
+            // Add selected class to the clicked button
+            button.classList.add('selected');
+            selectedValue = button.getAttribute('data-value');
+          });
+        });
+        
+        
+        document.getElementById('voteButton').addEventListener('click', function() {
+          if (selectedValue) {
+            document.getElementById('result').innerHTML = `You voted for: ${selectedValue}<br>Thank you!`;
+            // Save voting status in session storage
+            sessionStorage.setItem('hasVoted', 'true');
+            // Hide the popup after voting
+            setTimeout(() => {
+              document.getElementById('pollPopup').style.display = 'none';
+            }, 2000);
+          } else {
+            alert("Please select an option!");
+          }
+        });
+        
+        
+        function initializePoll() {
+          console.log("Poll initialized.");
+        }
+        
+        function clearSelectedButton() {
+          pollButtons.forEach(btn => btn.classList.remove('selected'));
+        }
+        
+        function addEventListenersToButtons() {
+          pollButtons.forEach(button => {
+            button.addEventListener('mouseenter', function() {
+              button.style.backgroundColor = '#3e8e41'; // Change color on hover
+            });
+            button.addEventListener('mouseleave', function() {
+                button.style.backgroundColor = ''; // Reset color on mouse leave
+              });
+            });
+          }
+        
+          function handleVoteSubmission() {
+            if (selectedValue) {
+              console.log("Vote submitted for: " + selectedValue);
+            }
+          }
+        
+        
+          pollButtons.forEach(button => {
+            button.addEventListener('click', function() {
+              logButtonClick(button);
+              handleVoteSubmission();
+            });
+          });
+        
+        
+          for (let i = 0; i < 5; i++) {
+            console.log("Simulating poll process: Step " + (i + 1));
+          }
+        
+        
+        </script>
+
+    <div class="Wrapper">
+        <div class="loader"></div>
+    </div>  
 
     <!-- cursor -->
     <div class="circle"></div>
@@ -305,26 +409,30 @@
     <div class="circle"></div>
     <div class="circle"></div>
 
-    <!-- cursor ends -->
+ 
 
     <div id="scrollProgressBar" class="progress-bar"></div>
-    <!-- Your existing content goes here -->
+  
 
     <div class="gtranslate_wrapper"></div>
     <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
     <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
-    <button onclick="moveToTop()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"
-            aria-hidden="true"></i></button>
-    <!--chat bot-->
-    <button onclick="toggleChatbot()" id="chatbotBtn" title="chat bot"></button>
-
+    
+    
+    
+    <button onclick="document.getElementById('chatbot-container').classList.toggle('chatbot-show')" id="chatbotBtn"
+            title="chat bot"></button>
     <div class="chatbot-container" id="chatbot-container">
-        <div class="chatbot-title">Ticket Bot</div>
+        <div class="chatbot-title">not Bot</div>
         <div class="chatbot-chat" id="chatbot-chat"></div>
         <input type="text" class="chatbot-input" id="chatbot-input" placeholder="Type your message here...." />
         <button class="chatbot-button" id="chatbot-button"><i class="fa-brands fa-telegram"></i></button>
     </div>
+    <button onclick="moveToTop()" id="topBtn" title="Go to top" style="display:flex; position: fixed;  right: 30px; z-index: 100000;">
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
 
 
     <nav class="navbar">
@@ -348,12 +456,7 @@
         <!-- Dark Mode Button -->
         <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
     </nav>
-
-
-
-
-
-    <div class="slider">
+    <!-- <div class="slider"> -->
         <div class="slide active">
             <img src="images/6.jpeg" alt="Slide 1">
         </div>
@@ -386,7 +489,7 @@
             <span class="dot" onclick="clickThumbs(5)"></span>
             <span class="dot" onclick="clickThumbs(6)"></span>
         </div>
-    </div>
+
 
 
     <div class="nav-buttons">
@@ -394,10 +497,6 @@
         <button class="next" onclick="nextSlide()" style="width: 45px; height: 45px;">&#10095;</button>
     </div>
 
-
-
-    </div>
-    </div>
     <div class="social-sidebar">
         <div class="close-btn" onclick="toggleSidebar()" title="Close Sidebar">&times;</div>
         <ul>
@@ -496,7 +595,7 @@
             <div class="stars">★★★★</div>
             <p>"I found affordable bus tickets for my trip, and the booking process was seamless. Definitely a reliable
                 platform for anyone looking to travel without stress!"</p>
-            <h2>- Sneha Desai</h2>
+            <h2>- Ankit Kumar</h2>
         </div>
         <div class="item">
             <img src="https://img.freepik.com/free-vector/profile-picture-template-design_742173-22027.jpg?ga=GA1.1.713761379.1679213202&semt=ais_hybrid"
@@ -504,7 +603,7 @@
             <div class="stars">★★★★★</div>
             <p>"I used this platform to book train tickets for my family vacation. The entire process was smooth, and I
                 got confirmation within minutes. Absolutely hassle-free!"</p>
-            <h2>- Rohan Kapoor</h2>
+            <h2>- Avnish Kumar</h2>
         </div>
 
         <div class="item">
@@ -535,29 +634,121 @@
         </div>
 
 
-        <button id="next">Next</button>
-        <button id="prev">Prev</button>
+        <button id="next" style="display: block; color: rgba(164, 157, 157, 0.8);"> > </button>
+        <button id="prev" style="display: block; color: rgba(164, 157, 157, 0.8);">  </button>
     </div>
 
 
 
 
-    <div class="containers" id="sxs">
-        <div id="contact" class="contact-info">
-            <div style="padding-left: 30px;">
-                <h2 style="text-align:left">Contact Us</h2>
-                <p style="color: white;font-size: 16px;">We value your feedback! We'd love to hear from you! For
-                    inquiries, feedback, or support, please reach out. Your insights help us improve your experience.
-                </p>
+    <div id="sxs"
+        style="display: flex; align-items: center;justify-content: center;flex-direction: column;max-width: 80vw;align-self: center;justify-self:center">
+        <div id="contact2" class="contact2"
+            style=" background-color: white; padding: 20px;display: flex;  margin: auto; border-radius: 10px; overflow: hidden; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); width: auto;">
+            <!-- Left Section -->
+            <div class="contact2-div1"
+                style="max-width: 100%; border-radius: 10px; background: linear-gradient(135deg, hsl(204, 75%, 50%), #079874); padding: 30px; color: white; display: flex; flex-direction: column; justify-content: center;">
+                <h2 style="color: white; text-align: left; font-size: 4rem; margin-bottom: 10px;">Contact Us</h2>
+                <p style="color: white;font-size: 16px; line-height: 1.6; margin-bottom: 20px;">We value your feedback!
+                    Reach out for inquiries, feedback, or support. Your insights help us improve your experience.</p>
 
-                <h4>Localisation</h4>
-                <p style="color: white;font-size: 16px;">ABC colony, Bangalore Pin: 76896</p>
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <!-- Location Icon and Text -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2c-3.866 0-7 3.134-7 7 0 4.506 6.24 11.084 6.532 11.384.197.208.473.316.751.316s.554-.108.75-.316c.292-.3 6.533-6.878 6.533-11.384 0-3.866-3.134-7-7-7zm0 9c-1.104 0-2-.896-2-2s.896-2 2-2 2 .896 2 2-.896 2-2 2z" />
+                    </svg>
+                    <p style="color: white; font-size: 16px;">ABC Colony, Bangalore, Pin: 76896</p>
+                </div>
 
-                <h4>Phone No</h4>
-                <p style="color: white;font-size: 16px;">+91 9685478526</p>
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <!-- Phone Icon and Text -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
+                        <path
+                            d="M6.615 10.193c1.513 3.142 4.05 5.676 7.195 7.193l1.767-1.767c.282-.282.682-.382 1.043-.294 1.149.285 2.37.437 3.64.437.552 0 1 .447 1 1v3.625c0 .552-.448 1-1 1-10.493 0-19-8.507-19-19 0-.553.448-1 1-1h3.625c.552 0 1 .447 1 1 0 1.27.152 2.491.437 3.64.087.361-.012.762-.294 1.043l-1.767 1.767z" />
+                    </svg>
+                    <p style=" color: white; font-size: 16px;">+91 9685478526</p>
+                </div>
+
+
+            </div>
+
+            <!-- Right Section (Contact Form) -->
+            <div class="contact-form" style="display: flex;align-items: center;justify-content: center;width: 100%;">
+                <form style="width: 100%;">
+                    <div style=" display: flex; gap: 30px; margin-bottom: 20px;margin-top: 50px;">
+                        <input type="text" placeholder="Name"
+                            style="flex: 1; padding: 10px; border-bottom: 2px solid #ccc; border-radius: 0px; outline: none; transition: border-color 0.3s;">
+                        <input type="email" placeholder="Email"
+                            style="flex: 1; padding: 10px; border-bottom: 2px solid #ccc; border-radius: 0px; outline: none; transition: border-color 0.3s;">
+                    </div>
+                    <input type="text" placeholder="Subject"
+                        style="width: 100%; padding: 10px; margin-bottom: 20px; border-bottom: 2px solid #ccc; border-radius: 0px; outline: none; transition: border-color 0.3s;">
+                    <textarea placeholder="Message" rows="4"
+                        style="width: 100%; padding: 10px; margin-bottom: 20px;border-bottom: 2px solid #ccc; border-radius: 0px; outline: none; transition: border-color 0.3s;"></textarea>
+                    <button type="submit"
+                        style="width: 100%;margin-bottom: 50px; padding: 10px; background: linear-gradient(135deg, hsl(204, 75%, 50%), #079874); color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Send
+                        Message</button>
+                </form>
             </div>
         </div>
-        </footer>
+        <style>
+            /* Container style for input and textarea */
+            input[type="text"],
+            input[type="email"],
+            textarea {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 15px;
+                border: none;
+                border-bottom: 2px solid #ccc;
+                border-radius: 0;
+                outline: none;
+                transition: border-color 0.3s, box-shadow 0.3s;
+            }
+
+            /* Focus style */
+            input[type="text"]:focus,
+            input[type="email"]:focus,
+            textarea:focus {
+                border-bottom: 2px solid #0077cc;
+            }
+
+            input[type="text"]:hover,
+            input[type="email"]:hover,
+            textarea:hover {
+                border-bottom: 2px solid #0077cc;
+            }
+
+            /* Button styling */
+            button[type="submit"] {
+                width: 100%;
+                padding: 10px;
+                background-color: #b0b0b0;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            /* Button hover effect */
+            button[type="submit"]:hover {
+                background-color: #005fa3;
+
+            }
+
+            @media (max-width: 1000px) {
+                .contact2 {
+                    flex-direction: column;
+                }
+                
+            }
+        </style>
+
+
+
 
 
 
@@ -568,13 +759,6 @@
             </iframe>
         </div>
     </div>
-
-
-
-
-
-    <br>
-<body>
         <!-- feedback form -->
         <section id="feedback-form">
             <div class="container">
@@ -670,6 +854,10 @@
             </div>
         </section>
 
+
+  
+
+
         <style>
             /* Basic Reset */
 * {
@@ -679,13 +867,13 @@
 }
 
 /* Section Styling */
-#feedback-form {
+#feedback-form,#faq {
     background: linear-gradient(135deg, #b29ee3, #05ffcd); /* Gradient green background */
     padding: 50px 20px;
     font-family: Arial, sans-serif;
 }
 
-#feedback-form h2 {
+#feedback-form h2,.faq-title {
     color: #0d0d0d; /* Dark green for headings */
     font-size: 2.5em;
     margin-bottom: 10px;
@@ -696,186 +884,236 @@
     font-size: 1.2em;
     margin-bottom: 30px;
 }
-
-/* Container */
-.container {
-    
-    border: 5px solid green;
-    max-width: 800px;
-    margin: auto;
-    background-color: white; /* White background */
-    border-radius: 6%;
-    padding: 40px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-/* Form Styling */
-.form-group {
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.form-group label {
-    font-size: medium;
-    color: #2b472b; /* Dark green for labels */
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    font-size: 1em;
-    border: 2px solid #a8d8a8; /* Light green border */
-    border-radius: 5px;
-    background-color: #757675; /* Light background */
-    transition: border 0.3s ease;
-    color: #2b472b; /* Dark green for input text */
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: #fafbfa; /* Medium green for placeholder text */
-    font-size: medium;
-    font-weight: bolder;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    border-color: #4d994d; /* Dark green on focus */
-    outline: none;
-}
-
-/* Button Styling */
-button[type="submit"] {
-    width: 100%;
-    padding: 15px;
-    background-color: #4d994d; /* Dark green */
-    color: white;
-    font-size: 1em;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
-    background-color: #367836; /* Darker green on hover */
-}
-
-        </style>
-
-<section id="faq" aria-labelledby="faq-title">
-    <div class="faq-container" data-aos="fade-up" data-aos-duration="1000">
-        <h1 id="faq-title" class="faq-title" data-aos="fade-right" data-aos-duration="800">Frequently Asked Questions</h1>
-        
-        <div id="FAQ" role="tablist" aria-multiselectable="true">
-            <!-- FAQ Item Template -->
-            <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="30">
-                <div class="item">
-                    <button class="FAQ-title" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-content-1">
-                        <span class="faqQuestion">What is your cancellation policy?</span>
-                        <span class="expandToggle" aria-hidden="true">+</span>
-                    </button>
-                    <div id="faq-content-1" class="FAQ-content" role="tabpanel" hidden>
-                        <p>We offer a flexible cancellation policy that allows you to cancel your booking up to 48 hours before your scheduled departure for a full refund.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="60">
-                <div class="item">
-                    <button class="FAQ-title" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-content-2">
-                        <span class="faqQuestion">How do I make changes to my booking?</span>
-                        <span class="expandToggle" aria-hidden="true">+</span>
-                    </button>
-                    <div id="faq-content-2" class="FAQ-content" role="tabpanel" hidden>
-                        <p>You can make changes to your booking by logging into your account and accessing your booking details. For major changes, please contact our support team directly.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="90">
-                <div class="item">
-                    <button class="FAQ-title" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-content-3">
-                        <span class="faqQuestion">What payment methods do you accept?</span>
-                        <span class="expandToggle" aria-hidden="true">+</span>
-                    </button>
-                    <div id="faq-content-3" class="FAQ-content" role="tabpanel" hidden>
-                        <p>We accept various payment methods including credit/debit cards, PayPal, and bank transfers. All transactions are secure and encrypted.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Repeat for additional FAQ items, incrementing data-aos-delay by 30ms each time -->
-            
-        </div>
-    </div>
-</section>
-
-<script>
-    function toggleFAQ(element) {
-        const content = element.nextElementSibling;
-        const isExpanded = element.getAttribute("aria-expanded") === "true";
-        element.setAttribute("aria-expanded", !isExpanded);
-        content.hidden = isExpanded;
-        element.querySelector(".expandToggle").textContent = isExpanded ? "+" : "-";
+    /* Form Styling */
+    .form-group {
+        margin-bottom: 20px;
+        text-align: left;
     }
-</script>
 
-<style>
-    .faq-container {
-        max-width: 800px;
-        margin: auto;
-        padding: 20px;
-    }
-    .faq-title {
-        text-align: center;
-        font-size: 2rem;
-        margin-bottom: 1.5em;
-        color: #333;
-    }
-    .accordion {
-        margin-bottom: 15px;
-    }
-    .FAQ-title {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #f7f7f7;
-        border: 1px solid #ddd;
-        padding: 15px;
-        cursor: pointer;
+    .form-group label {
+        font-size: medium;
+        color: #2b472b; /* Dark green for labels */
         font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        font-size: 1em;
+        border: 2px solid #a8d8a8; /* Light green border */
         border-radius: 5px;
-        transition: background-color 0.3s;
+        background-color: #757675; /* Light background */
+        transition: border 0.3s ease;
+        color: #2b472b; /* Dark green for input text */
     }
-    .FAQ-title:hover {
-        background-color: #e2e2e2;
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+        color: #fafbfa; /* Medium green for placeholder text */
+        font-size: medium;
+        font-weight: bolder;
     }
-    .expandToggle {
-        font-size: 1.5rem;
-        transition: transform 0.3s;
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        border-color: #4d994d; /* Dark green on focus */
+        outline: none;
     }
-    .FAQ-content {
+
+    /* Button Styling */
+    button[type="submit"] {
+        width: 100%;
         padding: 15px;
-        border: 1px solid #ddd;
-        border-top: none;
-        border-radius: 0 0 5px 5px;
-        background-color: #fafafa;
+        background-color: #4d994d; /* Dark green */
+        color: white;
+        font-size: 1em;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
     }
-</style>
+
+    button[type="submit"]:hover {
+        background-color: #367836; /* Darker green on hover */
+    }
+ 
+    /* FAQ container styling */
+    .faq-container {
+      width: 100%;
+      max-width: 500px;
+      height: 600px; /* Fixed height */
+      border: 3px solid #4CAF50;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      box-sizing: border-box;
+      margin-top: 30px;
+    }
+
+    /* FAQ title styling */
+    .faq-title {
+      font-size: 1.8em;
+      text-align: center;
+      color: #4CAF50;
+      font-weight: bold;
+      border-bottom: 2px solid #4CAF50;
+      margin-bottom: 20px;
+    }
+
+    /* FAQ items container */
+    .faq-items {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+      margin-top: 20px;
+    }
+
+    /* Individual FAQ item styling */
+    .faq-item {
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #e0e0e0;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      margin-bottom: 20px; /* Spacing between FAQs */
+    }
+
+    .faq-question {
+      font-size: 1.1em;
+      padding: 12px 15px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s;
+    }
+
+    .faq-question:hover {
+      background-color: #d4d4d4;
+    }
+
+    /* FAQ answer styling */
+    .faq-answer {
+      padding: 0 15px;
+      box-sizing: border-box;
+      max-height: 0;
+      overflow: hidden;
+      background-color: #f9f9f9;
+      color: #333;
+      font-size: 1em;
+      transition: max-height 0.4s ease, padding 0.4s ease; /* Smooth padding transition */
+    }
+
+    /* Circular toggle symbol styling */
+    .toggle-symbol {
+      width: 25px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      color: white;
+      background-color: #4CAF50;
+      border-radius: 50%;
+      transition: transform 0.4s ease;
+    }
+
+    /* Rotate symbol when active */
+    .faq-item.active .toggle-symbol {
+      transform: rotate(45deg);
+    }
+  </style>
 
 
-    </body>
+  <div class="faq-container">
+    <!-- FAQ Title -->
+    <div class="faq-title">Frequently Asked Questions</div>
 
+    <!-- FAQ Items Wrapper -->
+    <div class="faq-items">
+      <!-- FAQ Item 1 -->
+      <div class="faq-item">
+        <div class="faq-question">
+            What is your cancellation policy?
+          <span class="toggle-symbol">+</span>
+        </div>
+        <div class="faq-answer">
+            We offer a flexible cancellation policy that allows you to cancel your booking 
+            up to 48 hours before your scheduled departure for a full refund.
+        </div>
+      </div>
 
+      <!-- FAQ Item 2 -->
+      <div class="faq-item">
+        <div class="faq-question">
+            How do I make changes to my booking?
+          <span class="toggle-symbol">+</span>
+        </div>
+        <div class="faq-answer">
+            You can make changes to your booking by logging into your account 
+            and accessing your booking details
+        </div>
+      </div>
 
+      <!-- FAQ Item 3 -->
+      <div class="faq-item">
+        <div class="faq-question">
+            Can I change the date of my travel after booking?
+          <span class="toggle-symbol">+</span>
+        </div>
+        <div class="faq-answer">
+            Yes, you can change your travel date, but it depends 
+            on the availability and our policy for date changes.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const faqItems = document.querySelectorAll(".faq-item");
+    faqItems.forEach(item => {
+      const question = item.querySelector(".faq-question");
+      const answer = item.querySelector(".faq-answer");
+
+      question.addEventListener("click", () => {
+        const isActive = item.classList.contains("active");
+
+        // Close any open item
+        faqItems.forEach(otherItem => {
+          otherItem.classList.remove("active");
+          otherItem.querySelector(".faq-answer").style.maxHeight = "0";
+          otherItem.querySelector(".faq-answer").style.padding = "0 15px";
+        });
+
+        // Toggle the current item with smooth transition
+        if (!isActive) {
+          item.classList.add("active");
+          answer.style.padding = "10px 15px"; // Add padding
+
+          // Calculate height dynamically and add buffer for extra space
+          const scrollHeight = answer.scrollHeight;
+          answer.style.maxHeight = (scrollHeight + 20) + "px"; // Buffer for extra space
+        } else {
+          // Close the current item smoothly
+          item.classList.remove("active");
+          answer.style.maxHeight = "0";
+          answer.style.padding = "0 15px"; // Collapse padding
+        }
+      });
+    });
+  </script>
 
     <footer class="footer-container">
         <div class="footer-top">
@@ -953,89 +1191,51 @@ button[type="submit"]:hover {
 
 
     <script>
-        // cursor 
+// cursor 
 
-        const coords = { x: 0, y: 0 };
-        const circles = document.querySelectorAll(".circle");
+const coords = { x: 0, y: 0 };
+const circles = document.querySelectorAll(".circle");
 
-        const colors = [
+const colors = [
+    "#BCE954", "#98FF98", "#9CB071", "#90C209", "#B2C248",
+    "#85BB65", "#99C68E", "#6CBB3C", "#3ea055", "#41a317",
+    "#4AA02C", "#6AA121", "#347C2C", "#387C44", "#437C17",
+    "#306754", "#254117", "#667C26", "#728C00", "#008000"
+];
 
-            "#BCE954",
-            "#98FF98",
-            "#9CB071",
-            "#90C209",
-            "#B2C248",
-            "#85BB65",
-            "#99C68E",
-            "#6CBB3C",
-            "#3ea055",
-            "#41a317",
-            "#4AA02C",
-            "#6AA121",
-            "#347C2C",
-            "#387C44",
-            "#437C17",
-            "#306754",
-            "#254117",
-            "#667C26",
-            "#728C00",
-            "#008000"
+circles.forEach(function (circle, index) {
+    circle.x = 0;
+    circle.y = 0;
+    circle.style.backgroundColor = colors[index % colors.length];
+});
 
-        ];
+window.addEventListener("mousemove", function (e) {
+    coords.x = e.clientX;
+    coords.y = e.clientY + window.scrollY; // Add scrollY to the y-coordinate
+});
 
-        circles.forEach(function (circle, index) {
-            circle.x = 0;
-            circle.y = 0;
-            circle.style.backgroundColor = colors[index % colors.length];
-        });
+function animateCircles() {
+    let x = coords.x;
+    let y = coords.y;
 
-        window.addEventListener("mousemove", function (e) {
-            coords.x = e.clientX;
-            coords.y = e.clientY;
+    circles.forEach(function (circle, index) {
+        circle.style.left = x - 12 + "px"; // Center the circle on the cursor
+        circle.style.top = y - 12 + "px"; // Center the circle on the cursor
 
-        });
+        circle.style.scale = (circles.length - index) / circles.length;
 
-        function animateCircles() {
+        circle.x = x;
+        circle.y = y;
 
-            let x = coords.x;
-            let y = coords.y;
+        const nextCircle = circles[index + 1] || circles[0];
+        x += (nextCircle.x - x) * 0.3;
+        y += (nextCircle.y - y) * 0.6;
+    });
 
-            circles.forEach(function (circle, index) {
-                circle.style.left = x - 12 + "px";
-                circle.style.top = y - 12 + "px";
+    requestAnimationFrame(animateCircles);
+}
 
-                circle.style.scale = (circles.length - index) / circles.length;
-
-                circle.x = x;
-                circle.y = y;
-
-                const nextCircle = circles[index + 1] || circles[0];
-                x += (nextCircle.x - x) * 0.3;
-                y += (nextCircle.y - y) * 0.6;
-            });
-
-            requestAnimationFrame(animateCircles);
-        }
-
-        animateCircles();
-
-
-        // cursor ends
-        //   </script>
-    <script>
-        function toggleFAQ(element) {
-            const content = element.nextElementSibling; // Get the FAQ content
-            const toggleSymbol = element.querySelector('.expandToggle'); // Get the toggle symbol
-
-            // Check if content is visible
-            if (content.style.display === "block") {
-                content.style.display = "none"; // Hide content
-                toggleSymbol.textContent = "+"; // Change toggle symbol to "+"
-            } else {
-                content.style.display = "block"; // Show content
-                toggleSymbol.textContent = "-"; // Change toggle symbol to "-"
-            }
-        }
+animateCircles();
 
 
 
@@ -1243,7 +1443,7 @@ button[type="submit"]:hover {
 
         function scrollFunction() {
             const topBtn = document.getElementById("topBtn");
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
                 topBtn.style.display = "block"; // Show button
             } else {
                 topBtn.style.display = "none"; // Hide button
@@ -1255,74 +1455,7 @@ button[type="submit"]:hover {
             window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
         }
 
-        // script for faq section
-
-
-
-        window.onscroll = function () {
-            scrollFunction()
-        };
-
-        function scrollFunction() {
-            const topBtn = document.getElementById("topBtn");
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                topBtn.style.display = "block"; // Show button
-            } else {
-                topBtn.style.display = "none"; // Hide button
-            }
-        }
-        function moveToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        document.querySelectorAll('details').forEach((faq) => {
-            faq.addEventListener('toggle', function () {
-                const content = this.querySelector('p');
-                if (this.open) {
-                    content.style.height = '0px';
-                    content.style.transition = 'height 0.2s ease-out';
-                    content.style.height = content.scrollHeight + 'px'; // Sets the height based on the actual content
-                } else {
-                    content.style.height = content.scrollHeight + 'px'; // Height is set to the current scrollHeight
-                    setTimeout(() => {
-                        content.style.height = '0px'; // Collapses after the content has been shown
-                    }, 10); // Delay to allow height to adjust first
-
-                }
-            });
-        });
-
-
-
-
-        let mybutton = document.getElementById("myBtn");
-
-        window.onscroll = function () { scrollFunction() };
-        window.onscroll = function () {
-            scrollFunction()
-        };
-
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
-        }
-
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
+        
 
         // toggle chatbot function
         function toggleChatbot() {
@@ -1338,6 +1471,42 @@ button[type="submit"]:hover {
         });
 
     </script>
+        <script>
+            const fadeOut = () => {
+         const loaderWrapper = document.querySelector('.Wrapper');
+         setTimeout(() => {
+             loaderWrapper.classList.add('fade');
+         }, 2000); // 2 seconds delay
+     };
+     
+     window.addEventListener('load', fadeOut);
+     
+        </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const faqContainer = document.querySelector('.faq-container');
+            
+                faqContainer.addEventListener('click', function(event) {
+                    // Check if the clicked element is a button with class 'faq-question'
+                    if (event.target.classList.contains('faq-question')) {
+                        const answer = event.target.nextElementSibling; // Get the corresponding answer div
+                        const toggleSymbol = event.target.querySelector('.expand-toggle'); // Get the toggle symbol
+            
+                        // Toggle the answer display and the symbol
+                        if (answer.style.display === 'none' || answer.style.display === '') {
+                            answer.style.display = 'block'; // Show the answer
+                            toggleSymbol.textContent = '-'; // Change symbol to minus
+                        } else {
+                            answer.style.display = 'none'; // Hide the answer
+                            toggleSymbol.textContent = '+'; // Change symbol to plus
+                        }
+                    }
+                });
+            });
+            
+        </script>
+    
 
     <script src="app.js"></script>
     <script src="faq.js"></script>
