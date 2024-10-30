@@ -779,6 +779,75 @@
             </div>
         </section>
 
+
+        <!-- FAQ section -->
+        <section id="faq">
+            <div class="container faq-container">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is your cancellation policy?
+                        <span class="expand-toggle">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none;">
+                        <p>We offer a flexible cancellation policy that allows you to cancel your booking up to 48 hours before your scheduled departure for a full refund.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I make changes to my booking?
+                        <span class="expand-toggle">+</span>
+                    </button>
+                    <div class="faq-answer"style="display: none;">
+                        <p>You can make changes to your booking by logging into your account and accessing your booking details. For major changes, please contact our support team directly.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I change the date of my travel after booking?
+                        <span class="expand-toggle">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Yes, you can change your travel date, but it depends on the availability and our policy for date changes. Some changes may incur additional charges. Please contact our support team for assistance.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Are there any additional fees not included in the booking price?
+                        <span class="expand-toggle">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Our booking price includes most fees. However, depending on your destination, there may be extra charges like city taxes, resort fees, or baggage fees charged by airlines. Please review your booking details carefully or contact us for more information.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What should I do if I miss my flight?
+                        <span class="expand-toggle">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none;">
+                        <p>If you miss your flight, please contact us immediately. We can help you explore options such as rescheduling or booking a new flight, but additional charges may apply based on airline policies.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do you offer travel insurance?
+                        <span class="expand-toggle">+</span>
+                    </button>
+                    <div class="faq-answer"style="display: none;">
+                        <p>Yes, we offer travel insurance options for our customers. Travel insurance can provide coverage for trip cancellations, lost luggage, medical emergencies, and more. You can add insurance to your booking during the checkout process.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
         <style>
             /* Basic Reset */
 * {
@@ -805,313 +874,59 @@
     font-size: 1.2em;
     margin-bottom: 30px;
 }
-</style>
-/* Container */
 
-<style>
-    /* Container Styling */
-    .faq-container {
-        border: 5px solid green;
-        max-width: 800px;
-        margin: auto;
-        background-color: white; /* White background */
-        border-radius: 6%;
-        padding: 40px;
-        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    }
-
-    /* Form Styling */
-    .form-group {
-        margin-bottom: 20px;
-        text-align: left;
-    }
-
-    .form-group label {
-        font-size: medium;
-        color: #2b472b; /* Dark green for labels */
-        font-weight: bold;
-        display: block;
-        margin-bottom: 5px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        width: 100%;
-        padding: 12px;
-        font-size: 1em;
-        border: 2px solid #a8d8a8; /* Light green border */
-        border-radius: 5px;
-        background-color: #757675; /* Light background */
-        transition: border 0.3s ease;
-        color: #2b472b; /* Dark green for input text */
-    }
-
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-        color: #fafbfa; /* Medium green for placeholder text */
-        font-size: medium;
-        font-weight: bolder;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-        border-color: #4d994d; /* Dark green on focus */
-        outline: none;
-    }
-
-    /* Button Styling */
-    button[type="submit"] {
-        width: 100%;
-        padding: 15px;
-        background-color: #4d994d; /* Dark green */
-        color: white;
-        font-size: 1em;
-        font-weight: bold;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    button[type="submit"]:hover {
-        background-color: #367836; /* Darker green on hover */
-    }
-</style>
-
-<section id="faq">
-    <div class="faq-container" data-aos="fade-up" data-aos-duration="1000">
-        <h1 class="faq-title" data-aos="fade-right" data-aos-duration="800">Frequently Asked Questions</h1>
-        <div id="FAQ">
-            <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="30">
-                <div class="item">
-                    <div class="FAQ-title" onclick="toggleFAQ(this)">
-                        <p class="faqQuestion">What is your cancellation policy?</p>
-                        <span class="expandToggle">+</span>
-                    </div>
-                    <div class="FAQ-content">
-                        <p>We offer a flexible cancellation policy that allows you to cancel your booking up to 48 hours before your scheduled departure for a full refund.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="60">
-                <div class="item">
-                    <div class="FAQ-title" onclick="toggleFAQ(this)">
-                        <p class="faqQuestion">How do I make changes to my booking?</p>
-                        <span class="expandToggle">+</span>
-                    </div>
-                    <div class="FAQ-content">
-                        <p>You can make changes to your booking by logging into your account and accessing your booking details. For major changes, please contact our support team directly.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="90">
-                <div class="item">
-                    <div class="FAQ-title" onclick="toggleFAQ(this)">
-                        <p class="faqQuestion">What payment methods do you accept?</p>
-                        <span class="expandToggle">+</span>
-                    </div>
-                    <div class="FAQ-content">
-                        <p>We accept various payment methods including credit/debit cards, PayPal, and bank transfers. All transactions are secure and encrypted.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="120">
-                <div class="item">
-                    <div class="FAQ-title" onclick="toggleFAQ(this)">
-                        <p class="faqQuestion">Do you offer travel insurance?</p>
-                        <span class="expandToggle">+</span>
-                    </div>
-                    <div class="FAQ-content">
-                        <p>Yes, we offer travel insurance options during the booking process to protect your trip against unforeseen circumstances.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<script>
-    function toggleFAQ(element) {
-        const content = element.nextElementSibling;
-        content.style.display = content.style.display === "block" ? "none" : "block";
-    }
-</script>
-
-    
-    border: 5px solid green;
-    max-width: 800px;
-    margin: auto;
-    background-color: white; /* White background */
-    border-radius: 6%;
-    padding: 40px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+#faq
+{
+    background: linear-gradient(135deg, #b29ee3, #05ffcd); /* Gradient green background */
+    padding: 50px 20px;
+    font-family: Arial, sans-serif;
 }
 
-/* Form Styling */
-.form-group {
+.faq-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    margin-bottom: 100px;
+}
+
+h2 {
+    text-align: center;
     margin-bottom: 20px;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #f7f7f7;
+    cursor: pointer;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    width: 100%;
     text-align: left;
 }
 
-.form-group label {
-    font-size: medium;
-    color: #2b472b; /* Dark green for labels */
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
+.faq-answer {
+    display: none; 
+    max-height: 150px; 
+    transition: max-height 0.3s ease, opacity 0.3s ease; 
+    opacity: 1; 
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    font-size: 1em;
-    border: 2px solid #a8d8a8; /* Light green border */
-    border-radius: 5px;
-    background-color: #757675; /* Light background */
-    transition: border 0.3s ease;
-    color: #2b472b; /* Dark green for input text */
+
+.expand-toggle {
+    font-size: 1.5rem;
 }
 
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: #fafbfa; /* Medium green for placeholder text */
-    font-size: medium;
-    font-weight: bolder;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    border-color: #4d994d; /* Dark green on focus */
-    outline: none;
-}
-
-/* Button Styling */
-button[type="submit"] {
-    width: 100%;
-    padding: 15px;
-    background-color: #4d994d; /* Dark green */
-    color: white;
-    font-size: 1em;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
-    background-color: #367836; /* Darker green on hover */
-}
-
-        </style>
-
-<section id="faq" aria-labelledby="faq-title">
-    <div class="faq-container" data-aos="fade-up" data-aos-duration="1000">
-        <h1 id="faq-title" class="faq-title" data-aos="fade-right" data-aos-duration="800">Frequently Asked Questions</h1>
-        
-        <div id="FAQ" role="tablist" aria-multiselectable="true">
-            <!-- FAQ Item Template -->
-            <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="30">
-                <div class="item">
-                    <button class="FAQ-title" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-content-1">
-                        <span class="faqQuestion">What is your cancellation policy?</span>
-                        <span class="expandToggle" aria-hidden="true">+</span>
-                    </button>
-                    <div id="faq-content-1" class="FAQ-content" role="tabpanel" hidden>
-                        <p>We offer a flexible cancellation policy that allows you to cancel your booking up to 48 hours before your scheduled departure for a full refund.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="60">
-                <div class="item">
-                    <button class="FAQ-title" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-content-2">
-                        <span class="faqQuestion">How do I make changes to my booking?</span>
-                        <span class="expandToggle" aria-hidden="true">+</span>
-                    </button>
-                    <div id="faq-content-2" class="FAQ-content" role="tabpanel" hidden>
-                        <p>You can make changes to your booking by logging into your account and accessing your booking details. For major changes, please contact our support team directly.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion" data-aos="fade-up" data-aos-duration="800" data-aos-delay="90">
-                <div class="item">
-                    <button class="FAQ-title" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-content-3">
-                        <span class="faqQuestion">What payment methods do you accept?</span>
-                        <span class="expandToggle" aria-hidden="true">+</span>
-                    </button>
-                    <div id="faq-content-3" class="FAQ-content" role="tabpanel" hidden>
-                        <p>We accept various payment methods including credit/debit cards, PayPal, and bank transfers. All transactions are secure and encrypted.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Repeat for additional FAQ items, incrementing data-aos-delay by 30ms each time -->
-            
-        </div>
-    </div>
-</section>
-
-<script>
-    function toggleFAQ(element) {
-        const content = element.nextElementSibling;
-        const isExpanded = element.getAttribute("aria-expanded") === "true";
-        element.setAttribute("aria-expanded", !isExpanded);
-        content.hidden = isExpanded;
-        element.querySelector(".expandToggle").textContent = isExpanded ? "+" : "-";
-    }
-</script>
-
-<style>
-    .faq-container {
-        max-width: 800px;
-        margin: auto;
-        padding: 20px;
-    }
-    .faq-title {
-        text-align: center;
-        font-size: 2rem;
-        margin-bottom: 1.5em;
-        color: #333;
-    }
-    .accordion {
-        margin-bottom: 15px;
-    }
-    .FAQ-title {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #f7f7f7;
-        border: 1px solid #ddd;
-        padding: 15px;
-        cursor: pointer;
-        font-weight: bold;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-    }
-    .FAQ-title:hover {
-        background-color: #e2e2e2;
-    }
-    .expandToggle {
-        font-size: 1.5rem;
-        transition: transform 0.3s;
-    }
-    .FAQ-content {
-        padding: 15px;
-        border: 1px solid #ddd;
-        border-top: none;
-        border-radius: 0 0 5px 5px;
-        background-color: #fafafa;
-    }
 </style>
 
 
@@ -1262,23 +1077,6 @@ button[type="submit"]:hover {
 
         animateCircles();
 
-
-        // cursor ends
-        //   </script>
-    <script>
-        function toggleFAQ(element) {
-            const content = element.nextElementSibling; // Get the FAQ content
-            const toggleSymbol = element.querySelector('.expandToggle'); // Get the toggle symbol
-
-            // Check if content is visible
-            if (content.style.display === "block") {
-                content.style.display = "none"; // Hide content
-                toggleSymbol.textContent = "+"; // Change toggle symbol to "+"
-            } else {
-                content.style.display = "block"; // Show content
-                toggleSymbol.textContent = "-"; // Change toggle symbol to "-"
-            }
-        }
 
 
 
@@ -1498,25 +1296,7 @@ button[type="submit"]:hover {
             window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
         }
 
-        // script for faq section
-
-        document.querySelectorAll('details').forEach((faq) => {
-            faq.addEventListener('toggle', function () {
-                const content = this.querySelector('p');
-                if (this.open) {
-                    content.style.height = '0px';
-                    content.style.transition = 'height 0.2s ease-out';
-                    content.style.height = content.scrollHeight + 'px'; // Sets the height based on the actual content
-                } else {
-                    content.style.height = content.scrollHeight + 'px'; // Height is set to the current scrollHeight
-                    setTimeout(() => {
-                        content.style.height = '0px'; // Collapses after the content has been shown
-                    }, 10); // Delay to allow height to adjust first
-
-                }
-            });
-        });
-
+        
 
         // toggle chatbot function
         function toggleChatbot() {
@@ -1543,6 +1323,31 @@ button[type="submit"]:hover {
      window.addEventListener('load', fadeOut);
      
         </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const faqContainer = document.querySelector('.faq-container');
+            
+                faqContainer.addEventListener('click', function(event) {
+                    // Check if the clicked element is a button with class 'faq-question'
+                    if (event.target.classList.contains('faq-question')) {
+                        const answer = event.target.nextElementSibling; // Get the corresponding answer div
+                        const toggleSymbol = event.target.querySelector('.expand-toggle'); // Get the toggle symbol
+            
+                        // Toggle the answer display and the symbol
+                        if (answer.style.display === 'none' || answer.style.display === '') {
+                            answer.style.display = 'block'; // Show the answer
+                            toggleSymbol.textContent = '-'; // Change symbol to minus
+                        } else {
+                            answer.style.display = 'none'; // Hide the answer
+                            toggleSymbol.textContent = '+'; // Change symbol to plus
+                        }
+                    }
+                });
+            });
+            
+        </script>
+    
 
     <script src="app.js"></script>
     <script src="faq.js"></script>
