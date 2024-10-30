@@ -288,7 +288,7 @@
       color: #ff4d4d;
     }
 
-<!-- cursor -->
+/* cursor*/
 <div class="circle"></div>
 <div class="circle"></div>
 <div class="circle"></div>
@@ -317,7 +317,7 @@
     <i class="fa fa-arrow-up" aria-hidden="true"></i>
 </button>
 <button id="scrollToTopBtn" class="scroll-to-top" title="Go to top">
-    &#8593; <!-- This is the up arrow -->
+    &#8593; /*This is the up arrow*/
 </button>
 
 <style>
@@ -382,18 +382,35 @@
         right: 10px;
     }
 
-    .navbar {
-        display: flex;
-        align-items: center;
-        background-color: #333;
-        padding: 10px;
-    }
+    .logo {
+  display: flex;
+}
+#logo-href {
+  text-decoration: none;
+}
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00bfa6;
+}
 
-    .navbar a {
-        color: white;
-        padding: 8px;
-        text-decoration: none;
-    }
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00bfa6;
+}
+
 </style>
 
 <script>
@@ -458,102 +475,7 @@
         <button class="chatbot-button" id="chatbot-button"><i class="fa-brands fa-telegram"></i></button>
     </div>
 
-
-    #sellerMessage {
-      text-align: center;
-      color: #4c4c4c;
-      margin-top: 1rem;
-    }
-
-    .card {
-    border: 1px solid #ccc; /* Card border */
-    border-radius: 8px; /* Rounded corners */
-    padding: 10px;
-    width: 300px; /* Card width */
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
-}
-}
   </style>  
-
-
-
-
-    
-    
-
-    <footer class="footer-container">
-        <div class="footer-top">
-
-            <div class="footer-logo-section">
-                <a href="#"> <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo"></a>
-                <p style="color: #b5fdf4;">Affordable adventures, unforgettable memories—explore with ease.</p>
-                <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-
-
-            <div class="footer-links">
-                <div class="footer-column">
-                    <h4>HELPFUL LINKS</h4>
-                    <ul>
-                        <li><a href="help.html">Help Centre</a></li>
-                        <li><a href="#">Special Assistance</a></li>
-                        <li><a href="#">Download The App</a></li>
-                        <li><a href="book_condition.html">Booking Conditions</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h4>ABOUT US</h4>
-                    <ul>
-                        <li><a href="#">Media Center</a></li>
-                        <li><a href="#">Investors</a></li>
-                        <li><a href="ModernSlaveryAct.html">Modern Slavery Act</a></li>
-                        <li><a href="terms.html">Terms Of Use</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h4>KEEPING SAFE</h4>
-                    <ul>
-                        <li><a href="#">ATOL Protected</a></li>
-                        <li><a href="./travelawares.html">Travel Aware</a></li>
-                        <li><a href="travelAware.html">FCDO Travel Advice</a></li>
-                        <li><a href="#">ABTA</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h4>FIND US</h4>
-                    <ul>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="GroupCookieNotice.html">Group Cookie Notice</a></li>
-                        <li><a href="privacy.html">Privacy And Policy</a></li>
-                        <li><a href="sitemap.html">Sitemap</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-        <div class="footer-bottom">
-            <ul>
-                <li><a href="#">Holiday Type</a></li>
-                <li><a href="#">Holiday Deals</a></li>
-                <li><a href="#">Popular Counters</a></li>
-                <!-- <li><a href="#">Flight Only</a></li> -->
-                <li><a href="#">Top Hotels</a></li>
-            </ul>
-        </div>
-    </footer>
 
 
     <script>
@@ -681,9 +603,9 @@
         next.onclick = function () {
             active = (active + 1) % items.length;
             loadShow();
-        }
-
-        prev.onclick = function () {
+          }
+          
+          prev.onclick = function () {
             active = (active - 1 + items.length) % items.length;
             loadShow();
         }
@@ -777,8 +699,155 @@
 
 <body>
 
+  
+  <nav class="navbar">
+        <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
+        <div class="logo" style="font-size: 20px;">Ticket Marketplace</div>
 
-  <button onclick="topFunction()" width="40px" height="40px" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"
+        <!-- Navbar Links -->
+        <div id="navLinks">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+            <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
+            <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
+            <a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
+            <a href="client/login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+        </div>
+
+        <!-- Dark Mode Button -->
+        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+    </nav>
+
+<style>
+    .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #1f2937;
+  padding: 15px;
+  color: white;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  /* Navbar container */
+  .navbar {
+    background-color: #333;
+    padding: 10px 20px;
+  }
+
+  /* Navbar list styling */
+  .navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  /* Navbar links styling */
+  .navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 1.1em;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+  }
+  /* Hover effect with underline and color change */
+  .navbar ul li a:hover {
+    color: #ffd700; /* Golden color on hover */
+    background-color: #444;
+    transform: scale(1.05);
+  }
+
+  /* Hover effect with underline and color change */
+  .navbar ul li a:hover {
+    color: #ffd700; /* Golden color on hover */
+    background-color: #444;
+    transform: scale(1.05);
+  }
+
+  /* Optional: Adding a subtle underline effect */
+  .navbar ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 2px;
+    background-color: #ffd700; /* Underline color */
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .navbar ul li a:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: 600;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#darkModeToggle {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Dark Mode CSS */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode .navbar {
+  background-color: #333;
+}
+
+body.dark-mode .nav-links a {
+  color: #f0f0f0;
+}
+
+body.dark-mode #darkModeToggle i {
+  color: #f0f0f0;
+}
+
+/* Adjustments for preloader and other elements */
+body.dark-mode #preloader {
+  background-color: rgba(0, 0, 0, 0.988);
+}
+
+</style>
+
+
+<button onclick="topFunction()" width="40px" height="40px" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"
       aria-hidden="true"></i></button>
   <!--chat bot-->
   <button onclick="toggleChatbot()" id="chatbotBtn" title="chat bot"></button>
@@ -790,20 +859,6 @@
     <button class="chatbot-button" id="chatbot-button"><i class="fa-brands fa-telegram"></i></button>
   </div>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-
-    <div class="logo"><img src="images/4.jpeg" alt="Ticket Booking Logo" class="logo-image">Ticket Marketplace</div>
-
-
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="bus_sell.html">Sell Bus Ticket</a></li>
-      <li><a href="train_sell.html">Sell Train Ticket</a></li>
-      <li><a href="buy.html">Buy Ticket</a></li>
-      <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
-    </ul>
-  </nav>
 
   <!-- Sell Train Ticket Form -->
   <section class="sell-ticket">
@@ -886,7 +941,6 @@
     <p id="sellerMessage"></p>
   </section>
 
-  <!-- Footer -->
   <!-- footer -->
 
   <footer class="footer-container">
