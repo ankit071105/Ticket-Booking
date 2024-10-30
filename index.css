@@ -1,3 +1,80 @@
+/* Your styles go here */
+body {
+  font-family: Arial, sans-serif;
+}
+/* Popup Styles */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  justify-content: center; /* Center the popup */
+  align-items: center; /* Center the popup */
+  z-index: 1000; /* Sit on top */
+}
+.popup-content {
+  background: linear-gradient(#04ae98, rgb(10 96 78)), url(your-image-url.jpg);
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  max-height: 500px;
+  min-height: 410px;
+  text-align: center;
+}
+/* Set poll options to stack vertically */
+#pollOptions {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  align-items: center; /* Center the buttons */
+}
+.poll-button {
+  display: block; /* Change to block for full-width */
+  margin: 5px 0; /* Add vertical margin */
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(14 64 98 / 40%);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%; /* Full width */
+  height: 70px;
+}
+.poll-button:hover {
+  background-color: #45a049; /* Darker green */
+}
+.poll-button.selected {
+  background-color:#1fb899; /* Blue for selected */
+}
+/* New Vote Button Styles */
+.vote-button {
+  display: block; /* Change to block for full-width */
+  margin: 5px 0; /* Add vertical margin */
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f44336; /* Red */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%; /* Full width */
+}
+.vote-button:hover {
+  background-color: #d32f2f; /* Darker red */
+}
+/* Result Text Styles */
+#result {
+  margin-top: 10px; /* Add space above result text */
+  word-wrap: break-word; /* Allow long text to wrap within the box */
+  overflow: hidden; /* Prevent overflow */
+  
+  color: rgb(255, 255, 255); /* Set text color to white */
+}
+
+
 
 
 * {
@@ -14,6 +91,28 @@ body {
   font-size: 16px;
   transition: background-color 0.3s, color 0.3s;
   overflow-x: hidden;
+}
+.Wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: #b9e6ec;
+  display: grid;
+  place-items: center;
+  transition: opacity 0.25s, visiblity 1s;
+}
+.fade {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader {
+  border: 17px solid #b9e6ec; /* Light grey background */
+  border-top: 17px solid #061824; /* Blue color for top */
+  border-radius: 50%;
+  width: 170px;
+  height: 170px;
+  animation: spin 1s linear infinite;
 }
 
 h1,
@@ -114,69 +213,69 @@ p {
   top: 0;
   z-index: 1000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  
-/* Navbar container */
-.navbar {
-  background-color: #333;
-  padding: 10px 20px;
-}
 
-/* Navbar list styling */
-.navbar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
+  /* Navbar container */
+  .navbar {
+    background-color: #333;
+    padding: 10px 20px;
+  }
 
-/* Navbar list items styling */
-.navbar ul li {
-  position: relative;
-}
+  /* Navbar list styling */
+  .navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
 
-/* Navbar links styling */
-.navbar ul li a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  font-size: 1.1em;
-  padding: 8px 16px;
-  transition: all 0.3s ease;
-  border-radius: 5px;
-}
-/* Hover effect with underline and color change */
-.navbar ul li a:hover {
-  color: #FFD700; /* Golden color on hover */
-  background-color: #444;
-  transform: scale(1.05);
-}
+  /* Navbar links styling */
+  .navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 1.1em;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+  }
+  /* Hover effect with underline and color change */
+  .navbar ul li a:hover {
+    color: #ffd700; /* Golden color on hover */
+    background-color: #444;
+    transform: scale(1.05);
+  }
 
-/* Optional: Adding a subtle underline effect */
-.navbar ul li a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -5px;
-  height: 2px;
-  background-color: #FFD700; /* Underline color */
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
+  /* Hover effect with underline and color change */
+  .navbar ul li a:hover {
+    color: #ffd700; /* Golden color on hover */
+    background-color: #444;
+    transform: scale(1.05);
+  }
 
-.navbar ul li a:hover::after {
-  transform: scaleX(1);
-}
+  /* Optional: Adding a subtle underline effect */
+  .navbar ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 2px;
+    background-color: #ffd700; /* Underline color */
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
 
+  .navbar ul li a:hover::after {
+    transform: scaleX(1);
+  }
 }
 
 .nav-container {
   display: flex;
-  align-items: center; 
-  justify-content: space-between; 
-
+  align-items: center;
+  justify-content: space-between;
 }
 
 .navbar a {
@@ -225,7 +324,6 @@ body.dark-mode #preloader {
   background-color: rgba(0, 0, 0, 0.988);
 }
 
-
 .caption {
   position: absolute;
   top: 50%;
@@ -248,7 +346,7 @@ body.dark-mode #preloader {
 }
 
 h2 {
-  color: orangered;
+  color: #09372e;
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 40px;
@@ -327,9 +425,6 @@ h2 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-
-
 .containers {
   padding: 20px;
   background: aliceblue;
@@ -399,7 +494,9 @@ iframe {
   font-size: 1.1rem;
   line-height: 1.6;
 }
-
+footer{
+  margin-top: 50px;
+}
 /* footer {
   background-color: #1f2937;
   color: white;
@@ -536,7 +633,7 @@ body.dark-mode .ticket-card button:hover {
 }
 
 h2 {
-  font-size: 2.5em;
+  font-size: 20px;
   margin-bottom: 0.5em;
 }
 
@@ -553,13 +650,10 @@ p {
   transform: translateY(-50%);
 }
 /* Position of .nav-buttons within the 550px screen width */
-@media (max-width:550px)
-{
+@media (max-width: 550px) {
   .nav-buttons {
-  
-  top: 30%;
-  
-}
+    top: 30%;
+  }
 }
 
 .bbtn {
@@ -625,13 +719,15 @@ button:hover {
   font-size: 18px;
   border: none;
   outline: none;
-  background-color: #555;
+  background-color: #26c9bb;
   color: white;
   cursor: pointer;
   padding: 15px;
   border-radius: 10px;
   text-align: center;
   line-height: 20px;
+  /* border-top: 10px; */
+  /* padding-top: 20px; */
 }
 
 #topBtn:hover {
@@ -639,12 +735,6 @@ button:hover {
 }
 
 /* FAQ Section */
-
-
-
-
-
-
 
 /* Responsive Design */
 @media (max-width: 600px) {
@@ -660,4 +750,3 @@ button:hover {
     font-size: 20px;
   }
 }
-
