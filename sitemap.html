@@ -1,112 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
- 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ticket Booking Sitemap</title>
-    <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="styles.css">
-
+    <title>Ticket Marketplace</title>
     <style>
         * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* Basic Styling */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f3f4f6;
-  color: #333;
-  line-height: 1.6;
-  display: flex;
-  justify-content: center;
-}
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-top: 60px; /* Space for fixed navbar */
+        }
 
-.container {
-  max-width: 1000px;
-  width: 100%;
-  padding: 20px;
-  background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin: 30px 0;
-}
+        /* Navigation Styles */
+        .navbar {
+            background-color: #1a1a1a;
+            padding: 0.8rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
 
-/* Header */
-header {
-  text-align: center;
-  padding: 20px 0;
-  background-color: #0073e6;
-  color: #fff;
-  border-radius: 8px 8px 0 0;
-}
-header h1 {
-  font-size: 2em;
-  margin-bottom: 5px;
-}
-header p {
-  font-size: 0.9em;
-  color: #e0e0e0;
-}
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
 
-/* Navigation Bar */
-nav ul {
-  list-style-type: none;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  padding: 10px 0;
-}
-nav ul li a {
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-nav ul li a:hover {
-  color: #ffd700;
-}
+        .navbar-brand img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
 
-/* Sitemap Styling */
-.sitemap h2 {
-  text-align: center;
-  font-size: 1.5em;
-  color: #555;
-  margin-bottom: 20px;
-}
-.sitemap ul {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: space-around;
-}
-.sitemap ul li {
-  width: 45%;
-  background: #f9fafb;
-  padding:
+        .brand-name {
+            color: #00ffcc;
+            font-size: 1.5rem;
+            text-decoration: none;
+            font-weight: 500;
+        }
 
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #00ffcc;
+        }
+
+        #darkModeToggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        #darkModeToggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* Container Styles */
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            margin: 30px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Sitemap Styles */
+        .sitemap {
+            padding: 20px;
+        }
+
+        .sitemap h2 {
+            text-align: center;
+            font-size: 1.5em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .sitemap ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: space-around;
+        }
+
+        .sitemap ul li {
+            width: 45%;
+            background: #f9fafb;
+            padding: 10px;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        .sitemap ul li:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .sitemap ul li a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            padding: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .sitemap ul li a:hover {
+            color: #0073e6;
+        }
+
+        /* Footer Styles */
+        .footer-container {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 40px 20px;
+            margin-top: 40px;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            flex: 2;
+            justify-content: space-around;
+        }
+
+        .footer-column h4 {
+            color: #00ffcc;
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #00ffcc;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #00ffcc;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+        }
+
+        .footer-bottom ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .footer-bottom ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom ul li a:hover {
+            color: #00ffcc;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        body.dark-mode .container {
+            background-color: #2d2d2d;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode .sitemap ul li {
+            background-color: #333;
+        }
+
+        body.dark-mode .sitemap ul li a {
+            color: #ffffff;
+        }
+
+        body.dark-mode .sitemap h2 {
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .sitemap ul li {
+                width: 100%;
+            }
+        }
     </style>
-
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="Logo">
+            <a href="index.html" class="brand-name">Ticket Marketplace</a>
+        </div>
+        
+        <div class="nav-links">
+            <a href="index.html">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Home
+            </a>
+            <a href="about.html">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                About
+            </a>
+            <a href="buy.html">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+                Buy Ticket
+            </a>
+            <a href="sell.html">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                </svg>
+                Sell
+            </a>
+            <a href="#contact">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                Contact
+            </a>
+            <a href="contributor.html">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Contributors
+            </a>
+            <a href="register.html">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                    <polyline points="10 17 15 12 10 7"></polyline>
+                    <line x1="15" y1="12" x2="3" y2="12"></line>
+                </svg>
+                Login
+            </a>
+        </div>
+        
+        <button id="darkModeToggle">🌙</button>
+    </nav>
+
+    <!-- Main Content -->
     <div class="container">
-        <header>
-            <h1>Ticket Booking Sitemap</h1>
-            <p>Your guide to all pages on our site</p>
-            <nav>
-                <ul>
-                    <li><a href="./index.html">Home</a></li>
-                     
-                    <li><a href="./contactus.html">Contact Us</a></li>
-                    <li><a href="./help.html">Help</a></li>
-                </ul>
-            </nav>
-        </header>
         <div class="sitemap">
             <h2>Explore Our Pages</h2>
             <ul>
@@ -140,198 +389,82 @@ nav ul li a:hover {
         <!-- Footer Section -->
         <footer class="footer-container">
             <div class="footer-top">
-              <div class="footer-logo-section">
-                <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo">
-                <p>Affordable adventures, unforgettable memories—explore with ease.</p>
-                <p class="follow-us">FOLLOW US:</p>
-                <div class="social-icons">
-                  <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
-                  <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
-                  <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
-                  <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
-                  <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+                <div class="footer-logo-section">
+                    <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo">
+                    <p>Affordable adventures, unforgettable memories—explore with ease.</p>
+                    <p class="follow-us">FOLLOW US:</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
-              </div>
-      
-              <div class="footer-links">
-                <div class="footer-column">
-                  <h4>HELPFUL LINKS</h4>
-                  <ul>
-                    <li><a href="#">Help Centre</a></li>
-                    <li><a href="#">Special Assistance</a></li>
-                    <li><a href="#">Download The App</a></li>
-                    <li><a href="#">Booking Conditions</a></li>
-                  </ul>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>HELPFUL LINKS</h4>
+                        <ul>
+                            <li><a href="#">Help Centre</a></li>
+                            <li><a href="#">Special Assistance</a></li>
+                            <li><a href="#">Download The App</a></li>
+                            <li><a href="#">Booking Conditions</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>ABOUT US</h4>
+                        <ul>
+                            <li><a href="#">Media Center</a></li>
+                            <li><a href="#">Investors</a></li>
+                            <li><a href="#">Modern Slavery Act</a></li>
+                            <li><a href="#">Terms Of Use</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>KEEPING SAFE</h4>
+                        <ul>
+                            <li><a href="#">ATOL Protected</a></li>
+                            <li><a href="#">Travel Aware</a></li>
+                            <li><a href="#">FCDO Travel Advice</a></li>
+                            <li><a href="#">ABTA</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>FIND US</h4>
+                        <ul>
+                            <li><a href="contactus.html">Contact Us</a></li>
+                            <li><a href="#">Group Cookie Notice</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Sitemap</a></li>
+                        </ul>
+                    </div>
                 </div>
-      
-                <div class="footer-column">
-                  <h4>ABOUT US</h4>
-                  <ul>
-                    <li><a href="#">Media Center</a></li>
-                    <li><a href="#">Investors</a></li>
-                    <li><a href="#">Modern Slavery Act</a></li>
-                    <li><a href="#">Terms Of Use</a></li>
-                  </ul>
-                </div>
-      
-                <div class="footer-column">
-                  <h4>KEEPING SAFE</h4>
-                  <ul>
-                    <li><a href="#">ATOL Protected</a></li>
-                    <li><a href="#">Travel Aware</a></li>
-                    <li><a href="#">FCDO Travel Advice</a></li>
-                    <li><a href="#">ABTA</a></li>
-                  </ul>
-                </div>
-      
-                <div class="footer-column">
-                  <h4>FIND US</h4>
-                  <ul>
-                    <li><a href="contactus.html">Contact Us</a></li>
-                    <li><a href="#">Group Cookie Notice</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Sitemap</a></li>
-                  </ul>
-                </div>
-              </div>
             </div>
             <div class="footer-bottom">
-              <ul>
-                <li><a href="#">Holiday Type</a></li>
-                <li><a href="#">Holiday Deals</a></li>
-                <li><a href="#">Popular Countries</a></li>
-                <li><a href="tophotels.html">Top Hotels</a></li>
-              </ul>
+                <ul>
+                    <li><a href="#">Holiday Type</a></li>
+                    <li><a href="#">Holiday Deals</a></li>
+                    <li><a href="#">Popular Countries</a></li>
+                    <li><a href="tophotels.html">Top Hotels</a></li>
+                </ul>
             </div>
-          </footer>
+        </footer>
     </div>
-</body>
-</html>
-=======
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Site Map - Ticket Booking</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="footer.css"> 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <style>
-      .nav-container {
-        display: flex;
-      }
-    </style>
-  </head>
-  <body>
-    <nav class="navbar">
-      <a href="./index.html" id="logo-href">
-        <div class="logo-container">
-          <img
-            src="images/4.jpeg"
-            alt="Ticket Booking Logo"
-            class="logo-image"
-          />
-          <div class="logo">Ticket Booking</div>
-        </div>
-      </a>
 
-      <div class="nav-container">
-        <div class="menu-toggle">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-
-        <ul class="nav-links">
-          <li>
-            <a href="index.html" class="home-button"
-              ><i class="fas fa-home"></i>HOME</a
-            >
-          </li>
-          <li>
-            <a href="buy.html"><i class="fas fa-shopping-cart"></i> Buy</a>
-          </li>
-          <li>
-            <a href="sell.html"><i class="fas fa-tag"></i> Sell</a>
-          </li>
-          <li>
-            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-          </li>
-          <li>
-            <a href="contributors.html"
-              ><i class="fas fa-users"></i> Our Contributors</a
-            >
-          </li>
-
-          <li>
-            <a href="/client/register.html" class="login-btn"
-              ><i class="fas fa-user"></i
-            ></a>
-          </li>
-        </ul>
-
-        <button id="darkModeToggle" style="width: 40px; height: 40px">
-          🌙
-        </button>
-      </div>
-    </nav>
+    <!-- Google Translate Widget -->
+    <div class="gtranslate_wrapper"></div>
     <script>
-      const darkModeToggle = document.getElementById("darkModeToggle");
-      const body = document.querySelector("body");
-      if (darkModeToggle) {
-        darkModeToggle.addEventListener("click", () => {
-          document.body.classList.toggle("dark-mode");
-          if (body.classList.contains("dark-mode")) {
-            darkModeToggle.innerHTML = "🔆";
-          } else {
-            darkModeToggle.innerHTML = "🌙";
-          }
-        });
-      }
-      // change icon of the dark/light mode
-      const menuToggle = document.querySelector(".menu-toggle");
-      const navLinks = document.querySelector(".nav-links");
-      menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-        menuToggle.classList.toggle("active");
-        // Special effect for hamburger icon
-        const bars = menuToggle.querySelectorAll(".bar");
-        bars.forEach((bar, index) => {
-          if (menuToggle.classList.contains("active")) {
-            bar.style.transform =
-              index === 1
-                ? "scale(0)"
-                : `rotate(${index === 0 ? "45deg" : "-45deg"})`;
-          } else {
-            bar.style.transform = "none";
-          }
-        });
-      });
-
-      // Close menu when clicking outside
-      document.addEventListener("click", (event) => {
-        if (
-          !navLinks.contains(event.target) &&
-          !menuToggle.contains(event.target)
-        ) {
-          navLinks.classList.remove("active");
-          menuToggle.classList.remove("active");
-          menuToggle.querySelectorAll(".bar").forEach((bar) => {
-            bar.style.transform = "none";
-          });
-        }
-      });
+        window.gtranslateSettings = {
+            default_language: "en",
+            detect_browser_language: true,
+            wrapper_selector: ".gtranslate_wrapper",
+        };
     </script>
+
     <section id="about-us">
       <div class="about-container">
           <h1>Site Map</h1>
@@ -413,7 +546,7 @@ nav ul li a:hover {
               <li><a href="help.html">Help Centre</a></li>
               <li><a href="#">Special Assistance</a></li>
               <li><a href="#">Download The App</a></li>
-              <li><a href="./book_condition.html">Booking Conditions</a></li>
+              <li><a href="book_condition.html">Booking Conditions</a></li>
             </ul>
           </div>
     
@@ -433,7 +566,7 @@ nav ul li a:hover {
             <ul>
               <li><a href="#">ATOL Protected</a></li>
               <li><a href="travelAware.html">Travel Aware</a></li>
-              <li><a href="#">FCDO Travel Advice</a></li>
+              <li><a href="fcdoTravel.html">FCDO Travel Advice</a></li>
               <li><a href="#">ABTA</a></li>
             </ul>
           </div>
@@ -441,7 +574,7 @@ nav ul li a:hover {
           <div class="footer-column">
             <h4>FIND US</h4>
             <ul>
-              <li><a href="#">Contact Us</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
               <li><a href="GroupCookieNotice.html">Group Cookie Notice</a></li>
               <li><a href="privacy.html">Privacy And Policy</a></li>
               <li><a href="sitemap.html">Sitemap</a></li>
@@ -463,108 +596,35 @@ nav ul li a:hover {
     </footer>
   
     <div class="gtranslate_wrapper"></div>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Dark Mode Toggle Script -->
     <script>
-      window.gtranslateSettings = {
-        default_language: "en",
-        detect_browser_language: true,
-        wrapper_selector: ".gtranslate_wrapper",
-      };
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        // Check for saved user preference, if any, on load of the website
+        const darkMode = localStorage.getItem('darkMode');
+        
+        if (darkMode === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.textContent = '☀️';
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            // If dark mode is enabled, save the preference
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeToggle.textContent = '☀️';
+            } else {
+                localStorage.setItem('darkMode', null);
+                darkModeToggle.textContent = '🌙';
+            }
+        });
     </script>
-    <script
-      src="https://cdn.gtranslate.net/widgets/latest/float.js"
-      defer
-    ></script>
-  </body>
+</body>
 </html>
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: "Arial", sans-serif;
-    line-height: 1.6;
-    background-color: #f0f0f0; /* Light background for contrast */
-}
-
-
-#about-us {
-    background-image: url("your-background-image.jpg");
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    padding: 80px 0;
-    text-align: center;
-}
-
-.about-container {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.9); /* Light container for contrast */
-    color: #333; /* Darker text for readability */
-    padding: 40px;
-    border-radius: 15px; /* More rounded corners */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
-    transition: transform 0.3s; /* Smooth hover effect */
-}
-.about-container li{
-    list-style: none;
-}
-.about-container:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-}
-
-#about-us h1 {
-    font-size: 2.8rem; /* Slightly smaller, balanced size */
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px; /* Reduced letter spacing */
-    color: #007bff; /* Vibrant accent color */
-}
-
-#about-us h2{
-  color: #007bff;
-}
-#about-us p {
-    color: #333; /* Dark text for better readability */
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    line-height: 1.8; /* Increased line height for readability */
-}
-
-.contact-info {
-    margin-top: 30px; /* More space for emphasis */
-    font-size: 1.1rem; /* Consistent text size */
-    color: #007bff; /* Matching accent color */
-}
-
-.contact-info a {
-  color: #007bff;/* Consistent link color */
-    text-decoration: none; /* Clean appearance */
-    font-weight: bold; /* Bold for emphasis */
-    transition: color 0.3s, text-decoration 0.3s; /* Smooth transition */
-}
-
-.contact-info a:hover {
-  color: #007bff;/* Darker accent on hover */
-    text-decoration: underline; /* Underline on hover */
-}
-
-@media (max-width: 768px) {
-    #about-us h1 {
-        font-size: 2.2rem; /* Responsive heading size */
-    }
-
-    #about-us p {
-        font-size: 1rem; /* Responsive paragraph size */
-    }
-
-    .contact-info {
-        font-size: 1rem; /* Responsive size for contact info */
-    }
-}
-
-</style>
- 
