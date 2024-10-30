@@ -5,10 +5,10 @@ html {
 
 /* FAQ Container styling */
 .faq-container {
-  margin-top: 15px ;
+  margin-top: 25px ;
+  margin-bottom: 25px;
   padding: 80px;
   max-width: 800px;
-  margin: 0 auto;
   background-color: #f7f7f7;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
