@@ -729,6 +729,75 @@
             </div>
         </section>
 
+
+        <!-- FAQ section -->
+        <section id="faq">
+            <div class="container faq-container">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is your cancellation policy?
+                        <span class="expand-toggle">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none;">
+                        <p>We offer a flexible cancellation policy that allows you to cancel your booking up to 48 hours before your scheduled departure for a full refund.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I make changes to my booking?
+                        <span class="expand-toggle">+</span>
+                    </button>
+                    <div class="faq-answer"style="display: none;">
+                        <p>You can make changes to your booking by logging into your account and accessing your booking details. For major changes, please contact our support team directly.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I change the date of my travel after booking?
+                        <span class="expand-toggle">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Yes, you can change your travel date, but it depends on the availability and our policy for date changes. Some changes may incur additional charges. Please contact our support team for assistance.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Are there any additional fees not included in the booking price?
+                        <span class="expand-toggle">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Our booking price includes most fees. However, depending on your destination, there may be extra charges like city taxes, resort fees, or baggage fees charged by airlines. Please review your booking details carefully or contact us for more information.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What should I do if I miss my flight?
+                        <span class="expand-toggle">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none;">
+                        <p>If you miss your flight, please contact us immediately. We can help you explore options such as rescheduling or booking a new flight, but additional charges may apply based on airline policies.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do you offer travel insurance?
+                        <span class="expand-toggle">+</span>
+                    </button>
+                    <div class="faq-answer"style="display: none;">
+                        <p>Yes, we offer travel insurance options for our customers. Travel insurance can provide coverage for trip cancellations, lost luggage, medical emergencies, and more. You can add insurance to your booking during the checkout process.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
         <style>
             /* Basic Reset */
 * {
@@ -738,13 +807,13 @@
 }
 
 /* Section Styling */
-#feedback-form {
+#feedback-form,#faq {
     background: linear-gradient(135deg, #b29ee3, #05ffcd); /* Gradient green background */
     padding: 50px 20px;
     font-family: Arial, sans-serif;
 }
 
-#feedback-form h2 {
+#feedback-form h2,.faq-title {
     color: #0d0d0d; /* Dark green for headings */
     font-size: 2.5em;
     margin-bottom: 10px;
@@ -755,11 +824,6 @@
     font-size: 1.2em;
     margin-bottom: 30px;
 }
-</style>
-
-
-
-<style>
     /* Form Styling */
     .form-group {
         margin-bottom: 20px;
@@ -818,12 +882,7 @@
     button[type="submit"]:hover {
         background-color: #367836; /* Darker green on hover */
     }
-</style>
-
-
-<style>
-  
-
+ 
     /* FAQ container styling */
     .faq-container {
       width: 100%;
@@ -964,7 +1023,6 @@
 
   <script>
     const faqItems = document.querySelectorAll(".faq-item");
-
     faqItems.forEach(item => {
       const question = item.querySelector(".faq-question");
       const answer = item.querySelector(".faq-answer");
@@ -1139,23 +1197,6 @@
 
         animateCircles();
 
-
-        // cursor ends
-        //   </script>
-    <script>
-        function toggleFAQ(element) {
-            const content = element.nextElementSibling; // Get the FAQ content
-            const toggleSymbol = element.querySelector('.expandToggle'); // Get the toggle symbol
-
-            // Check if content is visible
-            if (content.style.display === "block") {
-                content.style.display = "none"; // Hide content
-                toggleSymbol.textContent = "+"; // Change toggle symbol to "+"
-            } else {
-                content.style.display = "block"; // Show content
-                toggleSymbol.textContent = "-"; // Change toggle symbol to "-"
-            }
-        }
 
 
 
@@ -1375,25 +1416,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
         }
 
-        // script for faq section
-
-        document.querySelectorAll('details').forEach((faq) => {
-            faq.addEventListener('toggle', function () {
-                const content = this.querySelector('p');
-                if (this.open) {
-                    content.style.height = '0px';
-                    content.style.transition = 'height 0.2s ease-out';
-                    content.style.height = content.scrollHeight + 'px'; // Sets the height based on the actual content
-                } else {
-                    content.style.height = content.scrollHeight + 'px'; // Height is set to the current scrollHeight
-                    setTimeout(() => {
-                        content.style.height = '0px'; // Collapses after the content has been shown
-                    }, 10); // Delay to allow height to adjust first
-
-                }
-            });
-        });
-
+        
 
         // toggle chatbot function
         function toggleChatbot() {
@@ -1420,6 +1443,31 @@
      window.addEventListener('load', fadeOut);
      
         </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const faqContainer = document.querySelector('.faq-container');
+            
+                faqContainer.addEventListener('click', function(event) {
+                    // Check if the clicked element is a button with class 'faq-question'
+                    if (event.target.classList.contains('faq-question')) {
+                        const answer = event.target.nextElementSibling; // Get the corresponding answer div
+                        const toggleSymbol = event.target.querySelector('.expand-toggle'); // Get the toggle symbol
+            
+                        // Toggle the answer display and the symbol
+                        if (answer.style.display === 'none' || answer.style.display === '') {
+                            answer.style.display = 'block'; // Show the answer
+                            toggleSymbol.textContent = '-'; // Change symbol to minus
+                        } else {
+                            answer.style.display = 'none'; // Hide the answer
+                            toggleSymbol.textContent = '+'; // Change symbol to plus
+                        }
+                    }
+                });
+            });
+            
+        </script>
+    
 
     <script src="app.js"></script>
     <script src="faq.js"></script>
