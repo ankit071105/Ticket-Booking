@@ -82,9 +82,23 @@
                                 </button>
                             </div>
                             <span id="passwordError" class="text-red-500"></span>
-
-                             <div>
-
+                            
+                            <script>
+                                const passwordInput = document.getElementById("password");
+                                const togglePasswordButton = document.getElementById("togglePassword");
+                                const showIcon = document.getElementById("showIcon");
+                                const hideIcon = document.getElementById("hideIcon");
+                            
+                                togglePasswordButton.addEventListener("click", function () {
+                                    const isPasswordVisible = passwordInput.getAttribute("type") === "text";
+                                    passwordInput.setAttribute("type", isPasswordVisible ? "password" : "text");
+                                    
+                                    // Toggle the icons
+                                    showIcon.classList.toggle("hidden", !isPasswordVisible);
+                                    hideIcon.classList.toggle("hidden", isPasswordVisible);
+                                });
+                            </script>
+                            
                                  <span id="errorMessage" class="text-red-500"></span>
                                 </div>
                             <button type="submit"

@@ -380,10 +380,16 @@
           <input type="date" id="journeyDate" name="journeyDate" required max="9999-12-31">
       </div>
       
-        <div class="form-group">
-          <label for="journeyTime">Time of Journey</label>
-          <input type="time" id="journeyTime" name="journeyTime" required>
-        </div>
+      <div class="form-group">
+          <label for="timeSlot">Time Slot:</label>
+          <select id="timeSlot" name="timeSlot" required>
+              <option value="" disabled selected>Select a time slot</option>
+              <option value="morning">Morning</option>
+              <option value="afternoon">Afternoon</option>
+              <option value="evening">Evening</option>
+          </select>
+      </div>
+    
         <div class="form-group">
           <label for="departure">Departure</label>
           <input type="text" id="departure" name="departure" placeholder="From" required>
@@ -392,9 +398,11 @@
           <label for="destination">Destination</label>
           <input type="text" id="destination" name="destination" placeholder="To" required>
         </div>
-        <button type="submit" class="submit-btn">Check Availability</button>
-      </form>
-    </div>
+        <a href="check_availability.html">
+            <button type="button" class="submit-btn">Check Availability</button>
+        </a>
+        </form>
+      </div>        
   </div>
 <style>
   .container {

@@ -7,12 +7,23 @@
     <title>Register Page</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 
 <body class="bg-white">
 
     <div class="relative flex items-top justify-center min-h-screen bg-white sm:items-center sm:pt-0">
-        <div class="w-5/6 mx-auto sm:px-6 lg:px-8">
+        
+        <div class="w-5/6 mx-auto sm:px-6 lg:px-8 relative">
+            <!-- Arrow Button -->
+            <div class="absolute -top-6 -left-24">
+                <!-- Left arrow icon with background, positioned at the top left corner -->
+                <a href="../index.html" class="py-3 px-3 bg-gray-200 rounded-full text-gray-700 hover:bg-gray-300 transition duration-300">
+                    <i class="fas fa-arrow-left fa-lg"></i>
+                </a>
+            </div>
+
             <div class="mt-8 overflow-hidden">
                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="hidden lg:block p-6 mr-2 bg-gray-100 sm:rounded-lg">
@@ -102,72 +113,7 @@
         </div>
     </div>
 
-    <script>
-        document.getElementById('signupForm').addEventListener('submit', async function (event) {
-            event.preventDefault();
-
-            document.getElementById('emailError').textContent = '';
-            document.getElementById('usernameError').textContent = '';
-            document.getElementById('mobileError').textContent = '';
-            document.getElementById('passwordError').textContent = '';
-
-            let email = document.getElementById('email').value;
-            let username = document.getElementById('username').value;
-            let mobile = document.getElementById('mobile').value;
-            let password = document.getElementById('password').value;
-            let valid = true;
-
-            if (!/^\S+@\S+\.\S+$/.test(email)) {
-                document.getElementById('emailError').textContent = 'Please enter a valid email.';
-                valid = false;
-            }
-
-            if (username.length < 3) {
-                document.getElementById('usernameError').textContent = 'Username must be at least 3 characters.';
-                valid = false;
-            }
-
-            if (!/^\d{10}$/.test(mobile)) {
-                document.getElementById('mobileError').textContent = 'Please enter a valid 10-digit mobile number.';
-                valid = false;
-            }
-
-            if (password.length < 6) {
-                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters long.';
-                valid = false;
-            }
-
-            if (!valid) {
-                return;
-            }
-
-            try {
-                let response = await fetch('/api/register', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ email, username, mobile, password }),
-                });
-
-                let result = await response.json();
-
-                if (response.ok) {
-                    alert('Registration successful!');
-                } else {
-                    document.getElementById('errorMessage').textContent = result.message || 'Registration failed. Please try again.';
-                }
-            } catch (error) {
-                console.error('Error during registration:', error);
-                document.getElementById('errorMessage').textContent = 'An error occurred. Please try again later.';
-            }
-        });
-    </script>
     <script src="signup.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-auth-compat.js"></script>
-    <script src="../firebase.js"></script>
-
 </body>
 
 </html>
