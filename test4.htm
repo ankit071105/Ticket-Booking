@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Section</title>
+  <style>
+    /* General styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    /* FAQ container styling */
+    .faq-container {
+      width: 100%;
+      max-width: 500px;
+      height: 600px; /* Fixed height */
+      border: 3px solid #4CAF50;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    /* FAQ title styling */
+    .faq-title {
+      font-size: 1.8em;
+      text-align: center;
+      color: #4CAF50;
+      font-weight: bold;
+      border-bottom: 2px solid #4CAF50;
+      margin-bottom: 20px;
+    }
+
+    /* FAQ items container */
+    .faq-items {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* Even spacing */
+      flex-grow: 1; /* Fill available vertical space */
+      margin-top: 20px;
+    }
+
+    /* Individual FAQ item styling */
+    .faq-item {
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #e0e0e0;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .faq-question {
+      font-size: 1.1em;
+      padding: 12px 15px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s;
+    }
+
+    .faq-question:hover {
+      background-color: #d4d4d4;
+    }
+
+    /* FAQ answer styling */
+    .faq-answer {
+      padding: 0 15px;
+      max-height: 0;
+      overflow: hidden;
+      background-color: #f9f9f9;
+      color: #333;
+      font-size: 1em;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+
+    /* Circular toggle symbol styling */
+    .toggle-symbol {
+      width: 25px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      color: white;
+      background-color: #4CAF50;
+      border-radius: 50%;
+      transition: transform 0.4s ease;
+    }
+
+    /* Rotate symbol when active */
+    .faq-item.active .toggle-symbol {
+      transform: rotate(45deg);
+    }
+
+    /* Smooth max-height expansion */
+    .faq-item.active .faq-answer {
+      max-height: 150px; /* Set a reasonable max height for each answer */
+      padding: 10px 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="faq-container">
+    <!-- FAQ Title -->
+    <div class="faq-title">FAQ</div>
+
+    <!-- FAQ Items Wrapper -->
+    <div class="faq-items">
+      <!-- FAQ Item 1 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          What is the purpose of this FAQ section?
+          <span class="toggle-symbol">+</span>
+        </div>
+        <div class="faq-answer">
+          This FAQ section provides answers to commonly asked questions in a visually appealing format.
+        </div>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          How do I toggle the answer?
+          <span class="toggle-symbol">+</span>
+        </div>
+        <div class="faq-answer">
+          Click on the question or the '+' symbol to expand or collapse the answer.
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          Can I add more questions?
+          <span class="toggle-symbol">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes, you can add more questions by duplicating the .faq-item section in the HTML.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(item => {
+      item.addEventListener("click", () => {
+        const isActive = item.classList.contains("active");
+
+        // Close any open item
+        faqItems.forEach(otherItem => {
+          otherItem.classList.remove("active");
+          otherItem.querySelector(".faq-answer").style.maxHeight = "0";
+          otherItem.querySelector(".faq-answer").style.padding = "0 15px";
+        });
+
+        // Toggle the current item
+        if (!isActive) {
+          item.classList.add("active");
+          const answer = item.querySelector(".faq-answer");
+          answer.style.maxHeight = answer.scrollHeight + "px";
+          answer.style.padding = "10px 15px";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
