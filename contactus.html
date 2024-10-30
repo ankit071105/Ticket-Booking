@@ -356,7 +356,7 @@
                     <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
                     <label for="message">Your Message</label>
                 </div>
-                <button type="submit" class="submit-btn">Send Message</button>
+                <button type="submit" class="submit-btn" style="height: 60px;">Send Message</button>
             </form>
         </div>
     </section>
@@ -433,8 +433,95 @@
               <!-- <li><a href="#">Flight Only</a></li> -->
               <li><a href="#">Top Hotels</a></li>
           </ul>
-      </div>
-  </footer>
+</footer>
+
+<style>
+    /* Contact Form Styling */
+    .contact-form {
+        background-color: #f0f4f8; /* Light cool background */
+        padding: 40px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        margin-top: 30px;
+        animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .contact-form h2 {
+        margin-bottom: 20px;
+        color: #3a506b; /* Darker cool color for headings */
+        text-align: center;
+        font-weight: bold;
+    }
+
+    /* Form Group and Floating Label */
+    .form-group {
+        position: relative;
+        margin-bottom: 25px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 16px 12px;
+        font-size: 16px;
+        color: #3a506b; /* Text color */
+        background: #e6f0fa; /* Subtle light blue */
+        border: 1px solid #b3c7d6;
+        border-radius: 5px;
+        outline: none;
+        transition: 0.3s border-color ease-in-out;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        border-color: #5c91ad; /* Accent color */
+        background-color: #ffffff;
+    }
+
+    .form-group label {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
+        color: #6c757d; /* Muted label color */
+        font-size: 16px;
+        transition: 0.3s ease-in-out;
+        pointer-events: none;
+    }
+
+    /* Floating label effect */
+    .form-group input:focus + label,
+    .form-group textarea:focus + label,
+    .form-group input:not(:placeholder-shown) + label,
+    .form-group textarea:not(:placeholder-shown) + label {
+        top: -8px;
+        left: 8px;
+        font-size: 12px;
+        background-color: #f0f4f8;
+        color: #5c91ad;
+        padding: 0 5px;
+        border-radius: 3px;
+    }
+
+    /* Submit Button */
+    .submit-btn {
+        background-color: #3a506b; /* Darker primary color */
+        color: #fff;
+        border: none;
+        padding: 14px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: all 0.3s;
+        width: 100%;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    .submit-btn:hover {
+        background-color: #5c91ad; /* Accent on hover */
+    }
+</style>
+
 <style>
   /* General Footer Styling */
   .footer-container {

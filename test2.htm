@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Section</title>
+  <style>
+    .faq {
+      width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+    }
+
+    .faq-item {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin: 10px 0;
+      padding: 15px;
+      background-color: #f9f9f9;
+    }
+
+    .faq-item h3 {
+      font-size: 18px;
+      margin: 0;
+      display: inline-block;
+      color: #333;
+    }
+
+    .faq-answer {
+      display: none;
+      padding-top: 10px;
+      color: #555;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .faq-button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      font-size: 14px;
+      cursor: pointer;
+      float: right;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .faq-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<div class="faq">
+  <div class="faq-item">
+    <h3>Do you offer insurance for travel?</h3>
+    <button class="faq-button">+</button>
+    <div class="faq-answer">
+      <p>Yes, we offer comprehensive travel insurance packages for all our clients to ensure a safe and secure journey.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <h3>What is the cancellation policy?</h3>
+    <button class="faq-button">+</button>
+    <div class="faq-answer">
+      <p>Our cancellation policy allows for full refunds up to 48 hours before departure. After that, partial refunds are provided.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <h3>Are there group discounts available?</h3>
+    <button class="faq-button">+</button>
+    <div class="faq-answer">
+      <p>Yes, we offer discounts for group bookings of five or more people. Contact us for more details.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Select all FAQ items
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const button = item.querySelector('.faq-button');
+    const answer = item.querySelector('.faq-answer');
+    
+    button.addEventListener('click', () => {
+      // Toggle active state to show/hide answer
+      item.classList.toggle('active');
+      
+      // Update button text with + or - based on the visibility of the answer
+      button.textContent = item.classList.contains('active') ? "-" : "+";
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1227,7 +1227,7 @@ button[type="submit"]:hover::before {
   display: none;
 }
 
-.faq-question {
+.faqQuestion {
   padding: 15px;
   font-size: 1.2em;
   background-color: #07b797;
@@ -1241,7 +1241,7 @@ button[type="submit"]:hover::before {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.faq-question:hover {
+.faqQuestion:hover {
   background-color: #07b797;
   transform: scale(1.02);
 }
