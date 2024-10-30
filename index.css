@@ -415,7 +415,9 @@ iframe {
   font-size: 1.1rem;
   line-height: 1.6;
 }
-
+footer{
+  margin-top: 50px;
+}
 /* footer {
   background-color: #1f2937;
   color: white;
