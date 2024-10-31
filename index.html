@@ -183,7 +183,80 @@
             align-items: center;
             text-align: center;
         }
+        #faq {
+        background-color: #f9f9f9;
+        padding: 3rem 0;
+    }
 
+    .faq-container {
+        max-width: 800px;
+        margin: auto;
+        padding: 2rem;
+        border-radius: 8px;
+    }
+
+    /* Heading styling */
+    #faq h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        color: #333;
+    }
+
+    /* FAQ item styling */
+    .faq-item {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1rem;
+        overflow: hidden;
+    }
+
+    /* Question button styling */
+    .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background-color: #f1f1f1;
+        padding: 1rem;
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: #333;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        transition: background-color 0.3s;
+    }
+
+    .faq-question:hover {
+        background-color: #e1e1e1;
+    }
+
+    /* Answer text styling */
+    .faq-answer {
+        padding: 1rem;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #555;
+        display: none;
+    }
+
+    /* Toggle icon styling */
+    .expand-toggle {
+        font-size: 1.5rem;
+        transition: transform 0.3s;
+    }
+
+    /* Toggle open state */
+    .faq-item.active .expand-toggle {
+        transform: rotate(45deg); /* Rotate the plus to form an "X" */
+    }
+
+    .faq-item.active .faq-answer {
+        display: block;
+    }
         #next,
         #prev {
             position: absolute;
@@ -641,116 +714,96 @@
 
 
 
-    <div id="sxs"
-        style="display: flex; align-items: center;justify-content: center;flex-direction: column;max-width: 80vw;align-self: center;justify-self:center">
-        <div id="contact2" class="contact2"
-            style=" background-color: rgb(0, 0, 0); padding: 20px;display: flex;  margin: auto; border-radius: 10px; overflow: hidden; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); width: auto;">
-            <!-- Left Section -->
-            <div class="contact2-div1"
-                style="max-width: 100%; border-radius: 10px; background: linear-gradient(135deg, hsl(204, 75%, 50%), #079874); padding: 30px; color: white; display: flex; flex-direction: column; justify-content: center;  -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-                color: transparent;">
-                <h2 style="color: white; text-align: left; font-size: 4rem; margin-bottom: 10px;">Contact Us</h2>
-                <p style="color: white;font-size: 16px; line-height: 1.6; margin-bottom: 20px;">We value your feedback!
-                    Reach out for inquiries, feedback, or support. Your insights help us improve your experience.</p>
+<div class="container" id="sxs" style="display: flex; align-items: center; justify-content: center; flex-direction: column; max-width: 80vw; align-self: center; justify-self:center; background: linear-gradient(to right, #4a90e2, #6cb2eb); padding: 40px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+    <div id="contact" class="contact-info" style="background-color: rgb(0, 0, 0); padding: 20px; display: flex; margin: auto; border-radius: 10px; overflow: hidden; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); width: auto;">
+        
+        <!-- Left Section -->
+        <div class="contact2-div1" style="max-width: 100%; background: linear-gradient(135deg, hsl(204, 75%, 50%), #079874); padding: 30px; color: white; display: flex; flex-direction: column; justify-content: center;">
+            <h2 style="color: white; text-align: left; font-size: 2.5rem; margin-bottom: 10px;">Contact Us</h2>
+            <p style="color: white; font-size: 16px; line-height: 1.6; margin-bottom: 20px;">We value your feedback! Reach out for inquiries, feedback, or support. Your insights help us improve your experience.</p>
 
-                <div style="display: flex; gap: 10px; margin-top: 20px;">
-                    <!-- Location Icon and Text -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
-                        <path
-                            d="M12 2c-3.866 0-7 3.134-7 7 0 4.506 6.24 11.084 6.532 11.384.197.208.473.316.751.316s.554-.108.75-.316c.292-.3 6.533-6.878 6.533-11.384 0-3.866-3.134-7-7-7zm0 9c-1.104 0-2-.896-2-2s.896-2 2-2 2 .896 2 2-.896 2-2 2z" />
-                    </svg>
-                    <p style="color: white; font-size: 16px;">ABC Colony, Bangalore, Pin: 76896</p>
-                </div>
-
-                <div style="display: flex; gap: 10px; margin-top: 20px;">
-                    <!-- Phone Icon and Text -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
-                        <path
-                            d="M6.615 10.193c1.513 3.142 4.05 5.676 7.195 7.193l1.767-1.767c.282-.282.682-.382 1.043-.294 1.149.285 2.37.437 3.64.437.552 0 1 .447 1 1v3.625c0 .552-.448 1-1 1-10.493 0-19-8.507-19-19 0-.553.448-1 1-1h3.625c.552 0 1 .447 1 1 0 1.27.152 2.491.437 3.64.087.361-.012.762-.294 1.043l-1.767 1.767z" />
-                    </svg>
-                    <p style=" color: white; font-size: 16px;">+91 9685478526</p>
-                </div>
-
-
+            <div style="display: flex; align-items: center; margin-top: 20px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
+                    <path d="M12 2c-3.866 0-7 3.134-7 7 0 4.506 6.24 11.084 6.532 11.384.197.208.473.316.751.316s.554-.108.75-.316c.292-.3 6.533-6.878 6.533-11.384 0-3.866-3.134-7-7-7zm0 9c-1.104 0-2-.896-2-2s.896-2 2-2 2 .896 2 2-.896 2-2 2z" />
+                </svg>
+                <p style="color: white; font-size: 16px; margin-left: 10px;">ABC Colony, Bangalore, Pin: 76896</p>
             </div>
 
-            <!-- Right Section (Contact Form) -->
-            <div class="contact-form" style="display: flex;align-items: center;justify-content: center;width: 100%;">
-                <form style="width: 100%;">
-                    <div style=" display: flex; gap: 30px; margin-bottom: 20px;margin-top: 50px;">
-                        <input type="text" placeholder="Name"
-                            style="flex: 1; padding: 10px; border-bottom: 2px solid #ccc; border-radius: 10px; outline: none; transition: border-color 0.3s; background-color:#c4c2c2; ">
-                        <input type="email" placeholder="Email"
-                            style="flex: 1; padding: 10px; border-bottom: 2px solid #ccc; border-radius: 10px; outline: none; transition: border-color 0.3s; background-color:#c4c2c2;">
-                    </div>
-                    <input type="text" placeholder="Subject"
-                        style="width: 100%; padding: 10px; margin-bottom: 20px; border-bottom: 2px solid #ccc; border-radius: 10px; outline: none; transition: border-color 0.3s; background-color:#c4c2c2;">
-                    <textarea placeholder="Message" rows="4"
-                        style="width: 100%; padding: 10px; margin-bottom: 20px;border-bottom: 2px solid #ccc; border-radius: 10px; outline: none; transition: border-color 0.3s; background-color:#c4c2c2;"></textarea>
-                    <button type="submit"
-                        style="width: 100%;margin-bottom: 50px; padding: 10px; background: linear-gradient(135deg, hsl(204, 75%, 50%), #079874); color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; ">Send
-                        Message</button>
-                </form>
+            <div style="display: flex; align-items: center; margin-top: 20px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
+                    <path d="M6.615 10.193c1.513 3.142 4.05 5.676 7.195 7.193l1.767-1.767c.282-.282.682-.382 1.043-.294 1.149.285 2.37.437 3.64.437.552 0 1 .447 1 1v3.625c0 .552-.448 1-1 1-10.493 0-19-8.507-19-19 0-.553.448-1 1-1h3.625c.552 0 1 .447 1 1 0 1.27.152 2.491.437 3.64.087.361-.012.762-.294 1.043l-1.767 1.767z" />
+                </svg>
+                <p style="color: white; font-size: 16px; margin-left: 10px;">+91 9685478526</p>
             </div>
         </div>
-        <style>
-            /* Container style for input and textarea */
-            input[type="text"],
-            input[type="email"],
-            textarea {
-                width: 100%;
-                padding: 10px;
-                margin-bottom: 15px;
-                border: none;
-                border-bottom: 2px solid #ccc;
-                border-radius: 0;
-                outline: none;
-                transition: border-color 0.3s, box-shadow 0.3s;
+
+        <!-- Right Section (Contact Form) -->
+        <div class="contact-form" style="display: flex; align-items: center; justify-content: center; width: 100%;">
+            <form style="width: 100%;">
+                <div style="display: flex; gap: 30px; margin-bottom: 20px; margin-top: 50px;">
+                    <input type="text" placeholder="Name" style="flex: 1; padding: 10px; border-bottom: 2px solid #ccc; border-radius: 10px; outline: none; transition: border-color 0.3s; background-color:#c4c2c2;">
+                    <input type="email" placeholder="Email" style="flex: 1; padding: 10px; border-bottom: 2px solid #ccc; border-radius: 10px; outline: none; transition: border-color 0.3s; background-color:#c4c2c2;">
+                </div>
+                <input type="text" placeholder="Subject" style="width: 100%; padding: 10px; margin-bottom: 20px; border-bottom: 2px solid #ccc; border-radius: 10px; outline: none; transition: border-color 0.3s; background-color:#c4c2c2;">
+                <textarea placeholder="Message" rows="4" style="width: 100%; padding: 10px; margin-bottom: 20px; border-bottom: 2px solid #ccc; border-radius: 10px; outline: none; transition: border-color 0.3s; background-color:#c4c2c2;"></textarea>
+                <button type="submit" style="width: 100%; padding: 10px; background: linear-gradient(135deg, hsl(204, 75%, 50%), #079874); color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <style>
+        /* Container style for input and textarea */
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-bottom: 2px solid #ccc;
+            border-radius: 0;
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        /* Focus style */
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            border-bottom: 2px solid #0077cc;
+        }
+
+        input[type="text"]:hover,
+        input[type="email"]:hover,
+        textarea:hover {
+            border-bottom: 2px solid #0077cc;
+        }
+
+        /* Button styling */
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #b0b0b0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* Button hover effect */
+        button[type="submit"]:hover {
+            background-color: #005fa3;
+        }
+
+        @media (max-width: 1000px) {
+            .contact2 {
+                flex-direction: column;
             }
-
-            /* Focus style */
-            input[type="text"]:focus,
-            input[type="email"]:focus,
-            textarea:focus {
-                border-bottom: 2px solid #0077cc;
-            }
-
-            input[type="text"]:hover,
-            input[type="email"]:hover,
-            textarea:hover {
-                border-bottom: 2px solid #0077cc;
-            }
-
-            /* Button styling */
-            button[type="submit"] {
-                width: 100%;
-                padding: 10px;
-                background-color: #b0b0b0;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                font-size: 16px;
-                cursor: pointer;
-                transition: background-color 0.3s;
-            }
-
-            /* Button hover effect */
-            button[type="submit"]:hover {
-                background-color: #005fa3;
-
-            }
-
-            @media (max-width: 1000px) {
-                .contact2 {
-                    flex-direction: column;
-                }
-                
-            }
-        </style>
-
-
+        }
+    </style>
+</div>
 
 
 
@@ -768,22 +821,74 @@
                 <h2>We Value Your Feedback!</h2>
                 <p>Your input helps us improve our services. Please share your thoughts with us below.</p>
                 <form>
-
+        
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="Your Name" required pattern="[a-zA-Z ]+"
                             oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
                             oninput="this.setCustomValidity('')">
                     </div>
-
-
+        
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" placeholder="Your Email" required>
                     </div>
-
-
+        
                     <style>
+                        /* Feedback Form Section Styling */
+                        #feedback-form {
+                            background: linear-gradient(to right, #92b7e1, #ab8cd1);
+                            padding: 40px;
+                            border-radius: 10px;
+                            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                            color: #ffffff; /* Change text color to white */
+                        }
+        
+                        .container {
+                            max-width: 600px;
+                            margin: 0 auto;
+                        }
+        
+                        /* Form Group Styling */
+                        .form-group {
+                            margin-bottom: 20px;
+                        }
+        
+                        .form-group label {
+                            display: block;
+                            margin-bottom: 5px;
+                        }
+        
+                        .form-group input,
+                        .form-group textarea {
+                            width: 100%;
+                            padding: 10px;
+                            border: none;
+                            border-radius: 5px;
+                            font-size: 1rem;
+                        }
+        
+                        /* Textarea specific styling */
+                        .form-group textarea {
+                            resize: none; /* Prevent resizing */
+                        }
+        
+                        /* Submit Button Styling */
+                        button[type="submit"] {
+                            background-color: #ff8c00;
+                            color: #ffffff;
+                            border: none;
+                            border-radius: 5px;
+                            padding: 15px 30px; /* Increased padding for a larger button */
+                            font-size: 1.2rem; /* Increased font size */
+                            cursor: pointer;
+                            transition: background-color 0.3s ease;
+                        }
+        
+                        button[type="submit"]:hover {
+                            background-color: #e07b00; /* Darker shade on hover */
+                        }
+        
                         /* Rating Section Styling */
                         .rating-group {
                             display: flex;
@@ -792,26 +897,26 @@
                             font-size: 24px;
                             cursor: pointer;
                         }
-                    
+        
                         /* Individual Star Styling */
                         .rating-group i {
                             color: #ccc; /* Default star color */
                             transition: color 0.3s ease;
                         }
-                    
+        
                         /* Hover Effect */
                         .rating-group i:hover,
                         .rating-group i:hover ~ i {
                             color: #f4d03f; /* Highlighted star color on hover */
                         }
-                    
+        
                         /* Selected Star Color */
                         .rating-group .selected,
                         .rating-group .selected ~ i {
                             color: #ff8c00; /* Color when star is selected */
                         }
                     </style>
-                    
+        
                     <div class="form-group">
                         <label for="rating">Rating</label>
                         <div class="rating-group" id="rating-group">
@@ -822,15 +927,15 @@
                             <i class="fas fa-star" data-value="5"></i>
                         </div>
                     </div>
-                    
+        
                     <script>
                         const stars = document.querySelectorAll('#rating-group i');
-                    
+        
                         stars.forEach(star => {
                             star.addEventListener('click', () => {
                                 // Remove 'selected' class from all stars
                                 stars.forEach(s => s.classList.remove('selected'));
-                                
+        
                                 // Add 'selected' class to clicked star and all previous ones
                                 star.classList.add('selected');
                                 let previousSibling = star.previousElementSibling;
@@ -841,21 +946,18 @@
                             });
                         });
                     </script>
-                    
-                    
-
-
+        
                     <div class="form-group">
                         <label for="feedback">Your Feedback</label>
                         <textarea id="feedback" name="feedback" rows="5" placeholder="Tell us about your experience..."
                             required></textarea>
                     </div>
-
-
-                    <button type="submit" style="width: 150px; height: 70px;">Submit Feedback</button>
+        
+                    <button type="submit">Submit Feedback</button>
                 </form>
             </div>
         </section>
+
 
 
 
@@ -925,7 +1027,9 @@
                 </div>
             </div>
         </section> -->
-=
+
+
+
 
 
         <style>
