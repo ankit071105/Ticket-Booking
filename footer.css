@@ -27,14 +27,26 @@
 
 /* Social Media Icons */
 .social-icons a {
-  display: inline-block;
-  margin: 0 10px;
-  color: #12e9cc;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: transparent;
+  border: 0.2rem solid #26c9bb;
   font-size: 1.5rem;
+  border-radius: 50%;
+  margin: 3rem 1.5rem 3rem 0;
+  transition: 0.3s ease;
+  color: #26c9bb;
   text-decoration: none;
 }
+
 .social-icons a:hover {
-  color: #76b2ab;
+  color: black;
+  transform: scale(1.3) translateY(-5px);
+  background-color: #26c9bb;
+  box-shadow: 0 0 25px #26c9bb;
 }
 
 /* Footer Link Sections */
