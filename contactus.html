@@ -6,7 +6,6 @@
     <title>Contact Us - Trainline</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-
     <style>
         /* Basic Reset */
         * {
@@ -194,7 +193,6 @@
         }
 
         /* Footer */
-        /* General Footer Styling */
 .footer-container {
   background-color: #1f2937;
   color: #ffffff;
@@ -301,6 +299,25 @@
   }
 }
 
+footer ul li a:hover {
+    color: #fff;
+}
+
+/* Scroll Back Button */
+#scrollToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #ff8c00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    z-index: 1000;
+}
+
 
         /* Animation */
         @keyframes fadeIn {
@@ -330,14 +347,12 @@
             <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
             <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
             <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
-            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="#contact" class="active"><i class="fas fa-envelope"></i> Contact</a>
             <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
             <a href="register.html"><i class="fas fa-sign-in-alt"></i> Login</a>
-    
-          </div>
-          <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
-    
-      </nav>
+        </div>
+        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+    </nav>
     <!-- Contact Form Section -->
     <section class="container">
         <div class="contact-form">
@@ -359,12 +374,12 @@
                     <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
                     <label for="message">Your Message</label>
                 </div>
-                <button type="submit" class="submit-btn" style="height: 60px;">Send Message</button>
+                <button type="submit" class="submit-btn">Send Message</button>
             </form>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer class="footer-container">
       <div class="footer-top">
 <footer>
@@ -433,6 +448,66 @@
         </ul>
     </div>
 </footer>
+
+
+          <div class="footer-links">
+              <div class="footer-column">
+                  <h4>HELPFUL LINKS</h4>
+                  <ul>
+                      <li><a href="#">Help Centre</a></li>
+                      <li><a href="#">Special Assistance</a></li>
+                      <li><a href="#">Download The App</a></li>
+                      <li><a href="#">Booking Conditions</a></li>
+                      <li><a href="Faq.html">FAQ</a></li>
+
+                  </ul>
+              </div>
+
+              <div class="footer-column">
+                  <h4>ABOUT US</h4>
+                  <ul>
+                      <li><a href="#">Media Center</a></li>
+                      <li><a href="#">Investors</a></li>
+                      <li><a href="ModernSlaveryAct.html">Modern Slavery Act</a></li>
+                      <li><a href="terms.html">Terms Of Use</a></li>
+                  </ul>
+              </div>
+
+              <div class="footer-column">
+                  <h4>KEEPING SAFE</h4>
+                  <ul>
+                      <li><a href="#">ATOL Protected</a></li>
+                      <li><a href="./travelawares.html">Travel Aware</a></li>
+                      <li><a href="fcdoTravel.html">FCDO Travel Advice</a></li>
+                      <li><a href="#">ABTA</a></li>
+                  </ul>
+              </div>
+
+              <div class="footer-column">
+                  <h4>FIND US</h4>
+                  <ul>
+
+                      <li><a href="contactus.html">Contact 
+                      <li><a href="GroupCookieNotice.html">Group Cookie Notice</a></li>
+                     <li><a href="privacy.html">Privacy And Policy</a></li>
+                      <li><a href="sitemap.html">Sitemap</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+      <div class="footer-bottom">
+          <ul>
+              <li><a href="#">Holiday Type</a></li>
+              <li><a href="#">Holiday Deals</a></li>
+              <li><a href="#">Popular Counters</a></li>
+              <!-- <li><a href="#">Flight Only</a></li> -->
+              <li><a href="#">Top Hotels</a></li>
+          </ul>
+      </div>
+  </footer>
 
 <style>
     /* Contact Form Styling */
@@ -629,11 +704,43 @@
   }
 }
 </style>
-  
+
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" onclick="scrollToTop()">↑</button>
+
     <script>
-        document.querySelector("form").addEventListener("submit", function(e) {
-            e.preventDefault();
-            alert("Thank you for reaching out! We will get back to you soon.");
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide scroll button based on scroll position
+        window.onscroll = function() {
+            const scrollButton = document.getElementById('scrollToTop');
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                scrollButton.style.display = 'block';
+            } else {
+                scrollButton.style.display = 'none';
+            }
+        };
+
+        // Dark mode toggle functionality
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                darkModeToggle.innerHTML = '🌞'; // Switch to sun icon
+                document.body.style.backgroundColor = '#333';
+                document.body.style.color = '#fff';
+            } else {
+                darkModeToggle.innerHTML = '🌙'; // Switch to moon icon
+                document.body.style.backgroundColor = '#e0e5ec';
+                document.body.style.color = '#333';
+            }
         });
     </script>
 </body>
