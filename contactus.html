@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Trainline</title>
+    
     <style>
         /* Basic Reset */
         * {
@@ -191,7 +192,6 @@
         }
 
         /* Footer */
-        /* General Footer Styling */
 .footer-container {
   background-color: #1f2937;
   color: #ffffff;
@@ -298,6 +298,25 @@
   }
 }
 
+footer ul li a:hover {
+    color: #fff;
+}
+
+/* Scroll Back Button */
+#scrollToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #ff8c00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    z-index: 1000;
+}
+
 
         /* Animation */
         @keyframes fadeIn {
@@ -330,11 +349,9 @@
             <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
             <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
             <a href="register.html"><i class="fas fa-sign-in-alt"></i> Login</a>
-    
-          </div>
-          <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
-    
-      </nav>
+        </div>
+        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+    </nav>
     <!-- Contact Form Section -->
     <section class="container">
         <div class="contact-form">
@@ -356,12 +373,12 @@
                     <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
                     <label for="message">Your Message</label>
                 </div>
-                <button type="submit" class="submit-btn" style="height: 60px;">Send Message</button>
+                <button type="submit" class="submit-btn">Send Message</button>
             </form>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer class="footer-container">
       <div class="footer-top">
 <footer>
@@ -686,11 +703,43 @@
   }
 }
 </style>
-  
+
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" onclick="scrollToTop()">↑</button>
+
     <script>
-        document.querySelector("form").addEventListener("submit", function(e) {
-            e.preventDefault();
-            alert("Thank you for reaching out! We will get back to you soon.");
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide scroll button based on scroll position
+        window.onscroll = function() {
+            const scrollButton = document.getElementById('scrollToTop');
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                scrollButton.style.display = 'block';
+            } else {
+                scrollButton.style.display = 'none';
+            }
+        };
+
+        // Dark mode toggle functionality
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                darkModeToggle.innerHTML = '🌞'; // Switch to sun icon
+                document.body.style.backgroundColor = '#333';
+                document.body.style.color = '#fff';
+            } else {
+                darkModeToggle.innerHTML = '🌙'; // Switch to moon icon
+                document.body.style.backgroundColor = '#e0e5ec';
+                document.body.style.color = '#333';
+            }
         });
     </script>
 </body>
