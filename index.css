@@ -1,3 +1,82 @@
+/* Your styles go here */
+body {
+  font-family: Arial, sans-serif;
+}
+/* Popup Styles */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  justify-content: center; /* Center the popup */
+  align-items: center; /* Center the popup */
+  z-index: 1000; /* Sit on top */
+}
+.popup-content {
+  background: linear-gradient(#04ae98, rgb(10 96 78)), url(your-image-url.jpg);
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  max-height: 500px;
+  min-height: 410px;
+  text-align: center;
+}
+/* Set poll options to stack vertically */
+#pollOptions {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  align-items: center; /* Center the buttons */
+}
+.poll-button {
+  display: block; /* Change to block for full-width */
+  margin: 5px 0; /* Add vertical margin */
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(14 64 98 / 40%);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%; /* Full width */
+  height: 70px;
+}
+.poll-button:hover {
+  background-color: #45a049; /* Darker green */
+}
+.poll-button.selected {
+  background-color:#1fb899; /* Blue for selected */
+}
+/* New Vote Button Styles */
+.vote-button {
+  display: block; /* Change to block for full-width */
+  margin: 5px 0; /* Add vertical margin */
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f44336; /* Red */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%; /* Full width */
+}
+.vote-button:hover {
+  background-color: #d32f2f; /* Darker red */
+}
+/* Result Text Styles */
+#result {
+  margin-top: 10px; /* Add space above result text */
+  word-wrap: break-word; /* Allow long text to wrap within the box */
+  overflow: hidden; /* Prevent overflow */
+  
+  color: rgb(255, 255, 255); /* Set text color to white */
+}
+
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -204,12 +283,39 @@ p {
   text-decoration: none;
   margin-right: 20px;
   font-weight: 600;
+  position: relative; /* Needed for the underline to position correctly */
 }
 
+/* Hover Effect */
 .navbar a:hover {
-  text-decoration: underline;
+  color: #ffd700; /* Change text color on hover */
+  font-weight: bold; /* Optional: make hover link bold */
 }
 
+/* Active Link Styles */
+.navbar a.active {
+  color: #ffd700; 
+  font-weight: bold; 
+}
+
+/* Underline effect for active link */
+.navbar a.active::after,
+.navbar a:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px; 
+  height: 2px; 
+  background-color: #ffd700; 
+  transform: scaleX(1); 
+  transition: transform 0.3s ease; 
+}
+
+/* Optional: Remove underline on hover if you want to keep it only for active */
+.navbar a:hover::after {
+  transform: scaleX(1); /* Keep underline visible on hover */
+}
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
@@ -267,7 +373,7 @@ body.dark-mode #preloader {
 }
 
 h2 {
-  color: orangered;
+  color: #09372e;
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 40px;
@@ -415,7 +521,9 @@ iframe {
   font-size: 1.1rem;
   line-height: 1.6;
 }
-
+footer{
+  margin-top: 50px;
+}
 /* footer {
   background-color: #1f2937;
   color: white;
@@ -552,7 +660,7 @@ body.dark-mode .ticket-card button:hover {
 }
 
 h2 {
-  font-size: 2.5em;
+  font-size: 20px;
   margin-bottom: 0.5em;
 }
 
