@@ -317,7 +317,7 @@
             <div>
                 <a href="index.html"><i class="fas fa-home"></i> Home</a>
                 <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
-                <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
+                <a href="buy.html" class="active"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
                 <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
                 <a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a>
                 <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
@@ -398,7 +398,7 @@
           <label for="destination">Destination</label>
           <input type="text" id="destination" name="destination" placeholder="To" required>
         </div>
-        <a href="check_availability.html">
+        <a href="check_availability.html" class="remove_underline">
             <button type="button" class="submit-btn">Check Availability</button>
         </a>
         </form>
@@ -493,7 +493,9 @@ h2:hover{
   font-size: 1.25rem;
   margin-top: 30px;
 }
-
+.remove_underline{
+  text-decoration: none;
+}
 .submit-btn:hover {
   background-color: transparent;
   color: #ff4d4d;
@@ -696,6 +698,8 @@ animateCircles();
               <li><a href="#">Special Assistance</a></li>
               <li><a href="#">Download The App</a></li>
               <li><a href="book_condition.html">Booking Conditions</a></li>
+              <li><a href="Faq.html">FAQ</a></li>
+
             </ul>
           </div>
 

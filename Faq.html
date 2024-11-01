@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Ticket Booking</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #2e2e2e, #3a8ff0);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #1e1e2f;
+            color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .logo-img {
+            border-radius: 50%;
+            height: 35px;
+            width: 35px;
+            margin-right: 10px;
+        }
+
+        .logo {
+            font-size: 20px;
+            color: #00d1b2;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            font-size: 15px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00d1b2;
+        }
+
+        .dark-mode-toggle {
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 20px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .dark-mode-toggle:hover {
+            color: #00d1b2;
+        }
+
+        /* Toggle Button (for small screens) */
+        .nav-toggle {
+            display: none;
+            font-size: 24px;
+            color: #ffffff;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #1e1e2f;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 200px;
+                padding: 10px;
+                border-radius: 8px;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 80px;
+            width: 80%;
+            max-width: 700px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .faq-section h2 {
+            font-size: 2em;
+            text-align: center;
+            color: #3a8ff0;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .faq-container .faq-item {
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 15px;
+            background-color: #1e1e1e;
+            color: #fff;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .faq-question i {
+            font-size: 1.2em;
+            color: #3a8ff0;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 15px;
+            color: #ddd;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 100px;
+            padding: 15px;
+        }
+
+        .faq-item.open .faq-question i {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" class="logo-img" alt="logo">
+            Ticket Marketplace
+        </div>
+
+        <!-- Toggle Button (Visible on Small Screens) -->
+        <button class="nav-toggle">☰</button>
+
+        <!-- Navbar Links -->
+        <div class="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+            <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
+            <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
+            <a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
+            <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+        </div>
+
+        <!-- Dark Mode Button -->
+        <button class="dark-mode-toggle">🌙</button>
+    </nav>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What is your cancellation policy?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>You can cancel your booking up to 24 hours before the flight for a full refund.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How do I make changes to my booking?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>You can make changes through our app or website by accessing your booking.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I change the date of my travel after booking?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, you can change the travel date up to 48 hours before your flight.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Are there any additional fees not included in the booking price?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Additional fees such as luggage or in-flight services may apply.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What should I do if I miss my flight?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Please contact our support immediately for rebooking or further assistance.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you offer travel insurance?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, you can add travel insurance during the booking process.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    <!-- JavaScript for Navbar Toggle -->
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>
