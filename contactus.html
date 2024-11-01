@@ -356,7 +356,7 @@ footer ul li a:hover {
     <section class="container">
         <div class="contact-form">
             <h2>Contact Us</h2>
-            <form>
+            <form id="contactForm">
                 <div class="form-group">
                     <input type="text" id="name" name="name" required placeholder=" ">
                     <label for="name">Full Name</label>
@@ -709,6 +709,72 @@ footer ul li a:hover {
     <button id="scrollToTop" onclick="scrollToTop()">↑</button>
 
     <script>
+              const trustedDomains = [
+        'gmail.com',
+        'outlook.com',
+        'yahoo.com',
+        'protonmail.com',
+        'icloud.com',
+        'tutanota.com',
+        'hotmail.com',
+        'live.com',
+        'mail.com',
+        'zoho.com',
+        'gmx.com',
+        'aol.com',
+        'fastmail.com',
+        'yandex.com',
+        '*.edu',
+        '*.ac.uk',
+        '*.edu.in',
+        '*.edu.au',
+        'examplecompany.com',
+        'mailfence.com',
+        'posteo.de',
+        'runbox.com',
+        'countermail.com',
+        'hushmail.com',
+        'inbox.com',
+        'mail.ru',
+        'rediffmail.com',
+        'seznam.cz'
+    ];
+
+    function validateEmail(email) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email format validation
+        const domain = email.split('@')[1];
+    
+        return (
+            emailPattern.test(email) && 
+            trustedDomains.some((trusted) => 
+                trusted.includes('*') ? domain.endsWith(trusted.slice(1)) : domain === trusted
+            )
+        );
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || !email || !message) {
+            alert('Please fill in all the fields.');
+            return;
+        }
+
+        if (!validateEmail(email)) {
+            alert('Please enter a valid email address from a trusted provider.');
+            return;
+        }
+
+        alert(`Thank you, ${name}! Your message has been received.`);
+        document.getElementById('contactForm').reset(); // Reset the form
+      }
+
+      document.querySelector("form").addEventListener("submit",handleSubmit);
+
         // Scroll to top function
         function scrollToTop() {
             window.scrollTo({
