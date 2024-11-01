@@ -283,12 +283,39 @@ p {
   text-decoration: none;
   margin-right: 20px;
   font-weight: 600;
+  position: relative; /* Needed for the underline to position correctly */
 }
 
+/* Hover Effect */
 .navbar a:hover {
-  text-decoration: underline;
+  color: #ffd700; /* Change text color on hover */
+  font-weight: bold; /* Optional: make hover link bold */
 }
 
+/* Active Link Styles */
+.navbar a.active {
+  color: #ffd700; 
+  font-weight: bold; 
+}
+
+/* Underline effect for active link */
+.navbar a.active::after,
+.navbar a:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px; 
+  height: 2px; 
+  background-color: #ffd700; 
+  transform: scaleX(1); 
+  transition: transform 0.3s ease; 
+}
+
+/* Optional: Remove underline on hover if you want to keep it only for active */
+.navbar a:hover::after {
+  transform: scaleX(1); /* Keep underline visible on hover */
+}
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
