@@ -1697,6 +1697,15 @@ animateCircles();
     <!-- AOS Library & Initialization Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
+        const scrollTopBtn = document.getElementById("topBtn");
+        scrollTopBtn.style.setProperty('visibility', 'hidden', 'important');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                scrollTopBtn.style.setProperty('visibility', 'visible', 'important');
+            } else {
+                scrollTopBtn.style.setProperty('visibility', 'hidden', 'important');
+            }
+        });
         AOS.init();
     </script>
 
