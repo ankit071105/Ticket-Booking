@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ATOL - Ticket Booking</title>
+   
+    <link rel="stylesheet" href="footer.css"> 
+    <link rel="stylesheet" href="styles.css" />
+   
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+        /* Resetting margin and padding */
+             /* Resetting margin and padding */
+     * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+
+  /* Body styling */
+  body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+  }
+
+  /* Full-width container for page */
+  .container {
+  
+      display: flex;
+      width: 100%;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+  }
+
+  /* Table of contents styling */
+  .abto {
+      flex-basis: 25%;
+      background-color: #e9ecef;
+      padding:70px 20px;
+      border-radius: 8px;
+      margin-right: 20px;
+      height: fit-content;
+      position: sticky;
+      top: 20px;
+  }
+
+  .abto h2 {
+      font-size: 1.5rem;
+      color: #004085;
+  }
+
+  .abto ul {
+      list-style: none;
+      padding: 0;
+  }
+
+  .abto ul li {
+      margin-bottom: 10px;
+  }
+
+  .abto ul li a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+  }
+
+  .abto ul li a:hover {
+      text-decoration: underline;
+  }
+
+  /* Main content styling */
+  .main-content {
+      flex-basis: 75%;
+  }
+
+  h1, h2 {
+      color: #004085;
+    
+  }
+
+  h1 {
+      font-size: 2.2rem;
+      text-align: center;
+      margin: 53px 0;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #004085;
+      padding-bottom: 10px;
+  }
+
+  h2 {
+      font-size: 1.8rem;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+  }
+
+  p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 20px;
+  }
+
+  ul {
+      margin-left: 20px;
+      padding-left: 20px;
+      list-style: disc;
+  }
+
+  li {
+      margin-bottom: 10px;
+  }
+
+  /* Button styling for links */
+  a {
+      color: #007bff;
+      text-decoration: none;
+  }
+
+  a:hover {
+      text-decoration: underline;
+  }
+
+  /* Smooth scrolling for anchor links */
+  html {
+      scroll-behavior: smooth;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+      .container {
+          flex-direction: column;
+      }
+
+      .abto {
+          margin-bottom: 20px;
+          margin-right: 0;
+          width: 100%;
+          position: relative; /* Changed to relative to make abto non-sticky */
+      }
+
+      .main-content {
+          width: 100%;
+      }
+
+      h1 {
+          font-size: 1.8rem;
+      }
+
+      h2 {
+          font-size: 1.4rem;
+      }
+
+      p {
+          font-size: 0.95rem;
+      }
+  }
+  :root {
+    --bg-color: #fff;
+    --text-color: #333;
+    --abto-bg: #e9ecef;
+    --link-color: #007bff;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+a {
+    color: var(--link-color);
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+    --bg-color: #000;
+    --text-color: #fff;
+    --abto-bg: #333;
+    --link-color: #90caf9;
+}
+
+.dark-mode .container {
+    background-color: var(--bg-color);
+}
+
+.dark-mode-abto {
+    background-color: var(--abto-bg);
+}
+
+.dark-mode-abto ul li a,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode p,
+.dark-mode ul li {
+    color: var(--text-color);
+}
+
+.dark-mode-content {
+    background-color: var(--bg-color);
+}
+
+.dark-mode-content h1,
+.dark-mode-content h2,
+.dark-mode-content p,
+.dark-mode-content li {
+    color: var(--text-color);
+}
+    </style>
+</head>
+<body>
+  
+  <header>
+    <div class="container3">
+   
+        <nav class="navbar">
+            <a href="./index.html" id="logo-href">
+              <div class="logo-container">
+                <img
+                  src="images/4.jpeg"
+                  alt="Ticket Booking Logo"
+                  class="logo-image"
+                />
+                <div class="logo">Ticket Booking</div>
+              </div>
+            </a>
+      
+            <div class="nav-container">
+              <div class="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+              </div>
+      
+              <ul class="nav-links">
+                <li>
+                  <a href="index.html" class="home-button"
+                    ><i class="fas fa-home"></i>HOME</a
+                  >
+                </li>
+                <li>
+                  <a href="buy.html"><i class="fas fa-shopping-cart"></i> Buy</a>
+                </li>
+                <li>
+                  <a href="sell.html"><i class="fas fa-tag"></i> Sell</a>
+                </li>
+                <li>
+                  <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+                </li>
+                <li>
+                  <a href="contributors.html"
+                    ><i class="fas fa-users"></i> Our Contributors</a
+                  >
+                </li>
+      
+                <li>
+                  <a href="/client/register.html" class="login-btn"
+                    ><i class="fas fa-user"></i
+                  ></a>
+                </li>
+              </ul>
+      
+              <button class="mode-toggle" id="modeToggle" style="width: 40px; height: 40px">
+                🌙
+            </button>
+              
+            </div>
+          
+          
+        
+       
+      </nav>
+    </div>
+  </header>
+           
+  
+  <div class="container mt-5">
+        
+    <!-- Table of contents on the left side -->
+    <div class="abto">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#section1">1. What is ATOL protection?</a></li>
+            <li><a href="#section2">2. How to Check if Your Booking is ATOL Protected:</a></li>
+            <li><a href="#section3">3. Why ATOL Matters: Your Peace of Mind</a></li>
+            <li><a href="#section4">4. find out more about ATOL</a></li>
+            <li><a href="#section5">5. Feedback & Assistance</a></li>
+        </ul>
+    </div>
+
+    <!-- Main content on the right side -->
+    <div class="main-content">
+        <h1>ATOL Protected - Your Holiday Security</h1>
+        <img style="height: 150px;width: auto;display: block;margin-left: auto;margin-right: auto; margin-bottom: 10px;" src="images/atol.png" alt="">
+        <p>At Ticket-Booking, Your holiday is protected by the ATOL scheme. This means your money is safeguarded, and you'll receive a refund if your travel company fails.</p>
+
+        <h2 id="section1">1. What is ATOL protection?</h2>
+        <ul>
+            <li><b>Financial Security:</b> Your money is protected, ensuring you get a refund if your travel company goes bust.</li>
+            <li><b>Peace of Mind:</b> Travel worry-free, knowing you're covered.</li>
+            <li><b>Expert Assistance:</b> The Civil Aviation Authority (CAA) provides support and guidance.</li>
+            
+        </ul>
+
+        <h2 id="section2">2. How to Check if Your Booking is ATOL Protected:</h2>
+        <ul>
+            <li><b>Look for the ATOL Logo:</b> This should be displayed on our website and in any booking confirmation documents.</li>
+            <li><b>Check Your ATOL Certificate:</b> You will receive an ATOL Certificate after making a payment. This will confirm your protection and provide details of what to do if things go wrong.</li>
+        </ul>
+
+        <h2 id="section3">3. Why ATOL Matters: Your Peace of Mind</h2>
+        <p>ATOL (Air Travel Organiser's Licence) is a financial protection scheme that ensures your holiday is safeguarded.
+            When you book a holiday with an ATOL-protected travel company, you can rest assured that:</p>
+                <ul>
+                    <li><b>Your Money is Safe:</b> If your travel company goes out of business before or during your trip, ATOL will cover the cost of your return flight or refund the money you've paid.</li>
+                    <li><b>You're Not Left Stranded:</b> In the event of a company failure, ATOL will arrange for your return flight home, ensuring you're not left stranded in a foreign country.</li>
+                    <li><b>You're Protected:</b> ATOL provides peace of mind knowing that your holiday investment is secure.</li>
+                    
+                </ul>
+        
+        <h2 id="section4"> For more information on ATOL protection, please visit: <a href="https://www.atol.org/">ATOL Website</a></h2>
+
+        <h2 id="section5"> Feedback & Assistance</h2>
+        <p>If you need help or have feedback, reach out to us anytime:</p>
+        <p>Email: <a href="mailto:support@travelaware.com">support@travelaware.com</a></p>
+        <p>Phone: <a href="tel:+1234567890" style="color: rgb(117, 114, 206); text-decoration: none;">+123 456 7890</a></p>
+ 
+    </div>
+</div>
+  
+        
+      <script>
+        window.gtranslateSettings = {
+          default_language: "en",
+          detect_browser_language: true,
+          wrapper_selector: ".gtranslate_wrapper",
+        };
+      </script>
+      <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+      <script>
+        const modeToggle = document.getElementById('modeToggle');
+        const body = document.body;
+        const abto = document.querySelector('.abto');
+        const mainContent = document.querySelector('.main-content');
+    
+        modeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            abto.classList.toggle('dark-mode-abto');
+            mainContent.classList.toggle('dark-mode-content');
+        });
+    </script>
+    
+    <footer class="footer-container">
+        <div class="footer-top">
+          
+          <div class="footer-logo-section">
+            <a href="#"> <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo"></a>
+            <p style="color: #b5fdf4;" >Affordable adventures, unforgettable memories—explore with ease.</p>
+            <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
+            <div class="social-icons">
+    
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#" ><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+    
+                <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.twitter.com" ><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+    
+            </div>
+          </div>
+      
+          
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>HELPFUL LINKS</h4>
+              <ul>
+                <li><a href="help.html">Help Centre</a></li>
+                <li><a href="#">Special Assistance</a></li>
+                <li><a href="#">Download The App</a></li>
+                <li><a href="book_condition.html">Booking Conditions</a></li>
+              </ul>
+            </div>
+      
+            <div class="footer-column">
+              <h4>ABOUT US</h4>
+              <ul>
+                <li><a href="#">Media Center</a></li>
+                <li><a href="#">Investors</a></li>
+    
+                <li><a href="ModernSlaveryAct.html">Modern Slavery Act</a></li>
+    
+                <li><a href="terms.html">Terms Of Use</a></li>
+              </ul>
+            </div>
+      
+            <div class="footer-column">
+              <h4>KEEPING SAFE</h4>
+              <ul>
+                <li><a href="atol.html">ATOL Protected</a></li>
+                <li><a href="travelAware.html">Travel Aware</a></li>
+                <li><a href="fcdoTravel.html">FCDO Travel Advice</a></li>
+                <li><a href="abta.html">ABTA</a></li>
+              </ul>
+            </div>
+      
+            <div class="footer-column">
+              <h4>FIND US</h4>
+              <ul>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="GroupCookieNotice.html">Group Cookie Notice</a></li>
+                <li><a href="privacy.html">Privacy And Policy</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      
+        
+        <div class="footer-bottom">
+          <ul>
+            <li><a href="#">Holiday Type</a></li>
+            <li><a href="#">Holiday Deals</a></li>
+            <li><a href="#">Popular Counters</a></li>
+            <!-- <li><a href="#">Flight Only</a></li> -->
+            <li><a href="#">Top Hotels</a></li>
+          </ul>
+        </div>
+      </footer>
+      <div class="gtranslate_wrapper"></div>
+      <script>
+        window.gtranslateSettings = {
+          default_language: "en",
+          detect_browser_language: true,
+          wrapper_selector: ".gtranslate_wrapper",
+        };
+      </script>
+      <script
+        src="https://cdn.gtranslate.net/widgets/latest/float.js"
+        defer
+      ></script>
+    </body>
+  </html>
+
