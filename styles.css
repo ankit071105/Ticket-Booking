@@ -1217,6 +1217,12 @@ button:hover {
   }
 
 
+@media (max-width: 768px) {
+  .circle {
+      display: none;
+  }
+}
+
 
 
 
