@@ -1,0 +1,149 @@
+<html>
+ <head>
+  <title>
+   Ticket Marketplace
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            color: white;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .navbar img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+        }
+        .navbar .title {
+            color: #00d1b2;
+            font-size: 18px; /* Decreased font size */
+            font-weight: bold;
+            margin-left: 10px;
+            flex-grow: 1;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+            font-size: 14px; /* Decreased font size */
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            position: relative;
+        }
+        .navbar a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .navbar a:hover::after {
+            width: 100%;
+        }
+        .navbar a:hover {
+            background-color: #575757;
+            transform: scale(1.1);
+        }
+        .navbar .icon {
+            margin-right: 5px;
+        }
+        .navbar .theme-icon {
+            margin-left: auto;
+            font-size: 20px; /* Decreased font size */
+            color: #f1c40f;
+            cursor: pointer;
+        }
+        .light-mode {
+            background-color: white;
+            color: black;
+        }
+        .light-mode .navbar {
+            background-color: #f1f1f1;
+        }
+        .light-mode .navbar a {
+            color: black;
+        }
+        .light-mode .navbar a::after {
+            background: black;
+        }
+        .light-mode .navbar .theme-icon {
+            color: #333;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="navbar">
+   <img alt="Logo image" height="40" src="https://ticket-booking-blue.vercel.app/images/4.jpeg" width="40"/>
+   <div class="title">
+    Ticket Marketplace
+   </div>
+   <a href="#">
+    <i class="fas fa-home icon">
+    </i>
+    Home
+   </a>
+   <a href="#">
+    <i class="fas fa-users icon">
+    </i>
+    Contributors
+   </a>
+   <a href="#">
+    <i class="fas fa-ticket-alt icon">
+    </i>
+    Buy Ticket
+   </a>
+   <a href="#">
+    <i class="fas fa-tag icon">
+    </i>
+    Sell
+   </a>
+   <a href="#">
+    <i class="fas fa-envelope icon">
+    </i>
+    Contact
+   </a>
+   <a href="#">
+    <i class="fas fa-info-circle icon">
+    </i>
+    About
+   </a>
+   <a href="#">
+    <i class="fas fa-sign-in-alt icon">
+    </i>
+    Login
+   </a>
+   <i class="fas fa-moon theme-icon" id="theme-icon" onclick="toggleTheme()">
+   </i>
+  </div>
+  <script>
+   function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+            body.classList.toggle('light-mode');
+            if (body.classList.contains('light-mode')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        }
+  </script>
+ </body>
+</html>

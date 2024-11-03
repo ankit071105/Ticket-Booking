@@ -74,7 +74,7 @@ h3,
 p {
   margin-bottom: 20px;
 }
-
+/* 
 .logo {
   display: flex;
 }
@@ -86,6 +86,28 @@ p {
   font-weight: bold;
   color: #00bfa6;
 }
+/* Logo Container Styling */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Adjust as needed */
+  text-decoration: none;
+}
+
+/* Logo Image Styling */
+.logo-image {
+  width: 40px; /* Adjust size as necessary */
+  height: auto;
+}
+
+/* Logo Text Styling */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 240px;
+  color: #333;
+} */
+
 
 .nav-links {
   list-style: none;
