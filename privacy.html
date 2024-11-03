@@ -240,6 +240,37 @@
         wrapper_selector: ".gtranslate_wrapper",
       };
     </script>
+     <script>
+      //toggle chatbot function
+      function toggleChatbot() {
+        const chatbotContainer = document.getElementById("chatbot-container");
+        chatbotContainer.classList.toggle("chatbot-show");
+    }
+
+      // Toggle Navbar Links
+      const navToggle = document.getElementById('navToggle');
+      const navlinks = document.getElementById('navLinks');
+
+      navToggle.addEventListener('click', () => {
+          navlinks.style.display = navlinks.style.display === 'flex' ? 'none' : 'flex';
+      });
+
+      // Ensure navbar links are visible on large screens
+      window.addEventListener('resize', () => {
+          if (window.innerWidth > 768) {
+              navlinks.style.display = 'flex'; // Show links on large screens
+          } else {
+              navlinks.style.display = 'none'; // Hide links on small screens
+          }
+      });
+
+      // Set initial state based on the current window size
+      if (window.innerWidth > 768) {
+          navlinks.style.display = 'flex'; // Show links if starting on a large screen
+      } else {
+          navlinks.style.display = 'none'; // Hide links if starting on a small screen
+      }
+  </script>
     <script
       src="https://cdn.gtranslate.net/widgets/latest/float.js"
       defer
