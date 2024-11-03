@@ -43,8 +43,12 @@ By doing this, you support the project and help grow our community!
 
 ## 🎉 Accepted for GirlScript Summer of Code 2024 and Hactoberfest
 
-  ![image](https://github.com/user-attachments/assets/5263dc32-ce09-4835-b964-7f996e970eb5)
-  <img src="https://github.com/neeru24/Connect_icons/blob/main/hacktober.png" width="1100" height="300" loading="lazy" alt="Hacktober Image">
+| Name                  | Logo                                                      | Purpose                                                                                                      |
+|-----------------------|-----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| GSSoC'2024-Extd       | ![GSSoC Logo](images/GSSoC-Ext.png)             | The coding period is from October 1st to October 30th, during which contributors make contributions and earn points on the platform. |
+| Hacktoberfest 2024    | ![Hacktoberfest Logo](images/hacktoberfest.png) | Hacktoberfest is a month-long October event welcoming all skill levels to join the open-source community.     |
+
+---
 
   
 Congratulations! GG Extensions has been selected for participation in GirlScript Summer of Code 2024. We're excited to have you on board to contribute and learn together!
