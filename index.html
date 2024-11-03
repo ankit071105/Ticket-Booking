@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="faq.css">
+    <!-- <link rel="stylesheet" href="faq.css"> -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="why-us.css">
@@ -508,27 +508,25 @@
 
 
 
-    <nav class="navbar">
-        <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
-        <div class="logo" style="font-size: 20px;">Ticket Marketplace</div>
 
-        <!-- Toggle Button (Visible on Small Screens) -->
-        <button id="navToggle">☰</button>
-
-        <!-- Navbar Links -->
-        <div id="navLinks">
+      <nav class="navbar">
+        <a href="index.html" style="display: flex; align-items: center; text-decoration: none; white-space: nowrap; margin-right: -250px;">
+          <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
+          <div class="logo" style="font-size: 20px; margin-left: 8px;">Ticket Marketplace</div>
+      </a><div>
             <a href="index.html"><i class="fas fa-home"></i> Home</a>
+
             <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
             <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
             <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
             <a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a>
             <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
-            <a href="client/login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
-        </div>
-
-        <!-- Dark Mode Button -->
-        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
-    </nav>
+            <a href="register.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+    
+          </div>
+          <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+    
+      </nav>
     <!-- <div class="slider"> -->
         <div class="slide active">
             <img src="images/6.jpeg" alt="Slide 1">
@@ -612,7 +610,7 @@
                 <div class="ticket-card4">
                     <h3 style="color: black;">Sell Train Tickets</h3>
                     <p>Have train tickets to sell? Reach out to us to list your tickets and get great deals.</p>
-                    <a href="train_sell.html"><button class="bbtn">Sell Train Tickets</button></a>
+                    <a href="sell.html"><button class="bbtn">Sell Train Tickets</button></a> <!--chnaged href from train_sell.html to sell.html-->
                 </div>
             </div>
         </div>
@@ -714,26 +712,26 @@
 
 
 
-<div class="container" id="sxs" style="display: flex; align-items: center; justify-content: center; flex-direction: column; max-width: 80vw; align-self: center; justify-self:center; background: linear-gradient(to right, #4a90e2, #6cb2eb); padding: 40px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-    <div id="contact" class="contact-info" style="background-color: rgb(0, 0, 0); padding: 20px; display: flex; margin: auto; border-radius: 10px; overflow: hidden; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); width: auto;">
+<div id="sxs" style="display: flex; align-items: center; justify-content: center; flex-direction: column; max-width: 80vw; align-self: center; justify-self: center; background: linear-gradient(to right, #4a90e2, #6cb2eb); padding: 40px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+    <div id="contact2" class="contact2" style="background-color: rgb(0, 0, 0); padding: 20px; display: flex; margin: auto; border-radius: 10px; overflow: hidden; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); width: auto;">
         
         <!-- Left Section -->
         <div class="contact2-div1" style="max-width: 100%; background: linear-gradient(135deg, hsl(204, 75%, 50%), #079874); padding: 30px; color: white; display: flex; flex-direction: column; justify-content: center;">
-            <h2 style="color: white; text-align: left; font-size: 2.5rem; margin-bottom: 10px;">Contact Us</h2>
+            <h2 style="color: white; text-align: left; font-size: 4rem; margin-bottom: 10px;">Contact Us</h2>
             <p style="color: white; font-size: 16px; line-height: 1.6; margin-bottom: 20px;">We value your feedback! Reach out for inquiries, feedback, or support. Your insights help us improve your experience.</p>
 
-            <div style="display: flex; align-items: center; margin-top: 20px;">
+            <div style="display: flex; gap: 10px; margin-top: 20px;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
                     <path d="M12 2c-3.866 0-7 3.134-7 7 0 4.506 6.24 11.084 6.532 11.384.197.208.473.316.751.316s.554-.108.75-.316c.292-.3 6.533-6.878 6.533-11.384 0-3.866-3.134-7-7-7zm0 9c-1.104 0-2-.896-2-2s.896-2 2-2 2 .896 2 2-.896 2-2 2z" />
                 </svg>
-                <p style="color: white; font-size: 16px; margin-left: 10px;">ABC Colony, Bangalore, Pin: 76896</p>
+                <p style="color: white; font-size: 16px;">ABC Colony, Bangalore, Pin: 76896</p>
             </div>
 
-            <div style="display: flex; align-items: center; margin-top: 20px;">
+            <div style="display: flex; gap: 10px; margin-top: 20px;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
                     <path d="M6.615 10.193c1.513 3.142 4.05 5.676 7.195 7.193l1.767-1.767c.282-.282.682-.382 1.043-.294 1.149.285 2.37.437 3.64.437.552 0 1 .447 1 1v3.625c0 .552-.448 1-1 1-10.493 0-19-8.507-19-19 0-.553.448-1 1-1h3.625c.552 0 1 .447 1 1 0 1.27.152 2.491.437 3.64.087.361-.012.762-.294 1.043l-1.767 1.767z" />
                 </svg>
-                <p style="color: white; font-size: 16px; margin-left: 10px;">+91 9685478526</p>
+                <p style="color: white; font-size: 16px;">+91 9685478526</p>
             </div>
         </div>
 
@@ -757,7 +755,6 @@
     </div>
 
     <style>
-        /* Container style for input and textarea */
         input[type="text"],
         input[type="email"],
         textarea {
@@ -766,12 +763,10 @@
             margin-bottom: 15px;
             border: none;
             border-bottom: 2px solid #ccc;
-            border-radius: 0;
             outline: none;
             transition: border-color 0.3s, box-shadow 0.3s;
         }
 
-        /* Focus style */
         input[type="text"]:focus,
         input[type="email"]:focus,
         textarea:focus {
@@ -784,7 +779,6 @@
             border-bottom: 2px solid #0077cc;
         }
 
-        /* Button styling */
         button[type="submit"] {
             width: 100%;
             padding: 10px;
@@ -797,7 +791,6 @@
             transition: background-color 0.3s;
         }
 
-        /* Button hover effect */
         button[type="submit"]:hover {
             background-color: #005fa3;
         }
@@ -808,15 +801,26 @@
             }
         }
     </style>
+<!-- </div>
+
+        /* Button hover effect */
+        button[type="submit"]:hover {
+            background-color: #005fa3;
+        }
+
+        @media (max-width: 1000px) {
+            .contact2 {
+                flex-direction: column;
+            }
+        }
+    </style> -->
 </div>
-
-
 
 
         <div class="map-container">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126915.40242030277!2d85.7892607!3d20.2498709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a7a3b9692fff%3A0x87cd0a356bbc39ce!2sITER%2C%20Siksha%20'O'%20Anusandhan!5e0!3m2!1sen!2sin!4v1689514124518!5m2!1sen!2sin"
-                allowfullscreen>
+                allowfullscreen frameborder="0" >
             </iframe>
         </div>
     </div>
@@ -962,6 +966,81 @@
                 </form>
             </div>
         </section>
+
+
+
+
+        <!-- FAQ section -->
+        <!-- <section id="faq">
+            <div class="container faq-container">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is your cancellation policy?
+                        <span class="expand-toggle">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none;">
+                        <p>We offer a flexible cancellation policy that allows you to cancel your booking up to 48 hours before your scheduled departure for a full refund.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I make changes to my booking?
+                        <span class="expand-toggle">+</span>
+                    </button>
+                    <div class="faq-answer"style="display: none;">
+                        <p>You can make changes to your booking by logging into your account and accessing your booking details. For major changes, please contact our support team directly.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I change the date of my travel after booking?
+                        <span class="expand-toggle">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Yes, you can change your travel date, but it depends on the availability and our policy for date changes. Some changes may incur additional charges. Please contact our support team for assistance.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Are there any additional fees not included in the booking price?
+                        <span class="expand-toggle">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Our booking price includes most fees. However, depending on your destination, there may be extra charges like city taxes, resort fees, or baggage fees charged by airlines. Please review your booking details carefully or contact us for more information.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What should I do if I miss my flight?
+                        <span class="expand-toggle">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none;">
+                        <p>If you miss your flight, please contact us immediately. We can help you explore options such as rescheduling or booking a new flight, but additional charges may apply based on airline policies.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do you offer travel insurance?
+                        <span class="expand-toggle">+</span>
+                    </button>
+                    <div class="faq-answer"style="display: none;">
+                        <p>Yes, we offer travel insurance options for our customers. Travel insurance can provide coverage for trip cancellations, lost luggage, medical emergencies, and more. You can add insurance to your booking during the checkout process.</p>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+
+
+
+
         <style>
             /* Basic Reset */
 * {
@@ -1051,7 +1130,7 @@
     .faq-container {
       width: 100%;
       max-width: 500px;
-      height: 600px; /* Fixed height */
+      max-height: 100%; /* Fixed height */
       border: 3px solid #4CAF50;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -1077,7 +1156,6 @@
     .faq-items {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       flex-grow: 1;
       margin-top: 20px;
     }
@@ -1244,6 +1322,8 @@
                         <li><a href="#">Special Assistance</a></li>
                         <li><a href="#">Download The App</a></li>
                         <li><a href="#">Booking Conditions</a></li>
+                        <li><a href="Faq.html">FAQ</a></li>
+
                     </ul>
                 </div>
 
@@ -1260,10 +1340,10 @@
                 <div class="footer-column">
                     <h4>KEEPING SAFE</h4>
                     <ul>
-                        <li><a href="#">ATOL Protected</a></li>
+                        <li><a href="atol.html">ATOL Protected</a></li>
                         <li><a href="./travelawares.html">Travel Aware</a></li>
                         <li><a href="fcdoTravel.html">FCDO Travel Advice</a></li>
-                        <li><a href="#">ABTA</a></li>
+                        <li><a href="abta.html">ABTA</a></li>
                     </ul>
                 </div>
 
@@ -1289,6 +1369,8 @@
                 <li><a href="#">Popular Counters</a></li>
                 <!-- <li><a href="#">Flight Only</a></li> -->
                 <li><a href="#">Top Hotels</a></li>
+                <li><a href="Faq.html">FAQ</a></li>
+
             </ul>
         </div>
     </footer>
@@ -1617,6 +1699,15 @@ animateCircles();
     <!-- AOS Library & Initialization Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
+        const scrollTopBtn = document.getElementById("topBtn");
+        scrollTopBtn.style.setProperty('visibility', 'hidden', 'important');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                scrollTopBtn.style.setProperty('visibility', 'visible', 'important');
+            } else {
+                scrollTopBtn.style.setProperty('visibility', 'hidden', 'important');
+            }
+        });
         AOS.init();
     </script>
 

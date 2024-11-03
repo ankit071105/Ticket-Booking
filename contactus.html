@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Trainline</title>
+    
     <style>
         /* Basic Reset */
         * {
@@ -191,7 +192,6 @@
         }
 
         /* Footer */
-        /* General Footer Styling */
 .footer-container {
   background-color: #1f2937;
   color: #ffffff;
@@ -296,6 +296,25 @@
     flex-basis: 100%;
     text-align: center;
   }
+}
+
+footer ul li a:hover {
+    color: #fff;
+}
+
+/* Scroll Back Button */
+#scrollToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #ff8c00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    z-index: 1000;
 }
 
 
@@ -320,26 +339,29 @@
 
     <!-- Navigation -->
     <nav class="navbar">
+      <a href="index.html" style="display: flex; align-items: center; text-decoration: none; white-space: nowrap; margin-right: -250px;">
         <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
-        <div class="logo" style="margin-right: 200px; font-size: 20px;">Ticket Marketplace</div>
-        <div>
-            <a href="index.html"><i class="fas fa-home"></i> Home</a>
-            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
-            <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
-            <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
-            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-            <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
-            <a href="register.html"><i class="fas fa-sign-in-alt"></i> Login</a>
-    
-          </div>
-          <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
-    
-      </nav>
+
+        <div class="logo" style="font-size: 20px; margin-left: 8px;">Ticket Marketplace</div>
+    </a><div>
+          <a href="index.html"><i class="fas fa-home"></i> Home</a>
+          <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+          <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
+          <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
+          <a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a>
+          <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
+          <a href="register.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+  
+        </div>
+        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+  
+
+    </nav>
     <!-- Contact Form Section -->
     <section class="container">
         <div class="contact-form">
             <h2>Contact Us</h2>
-            <form>
+            <form id="contactForm">
                 <div class="form-group">
                     <input type="text" id="name" name="name" required placeholder=" ">
                     <label for="name">Full Name</label>
@@ -356,85 +378,267 @@
                     <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
                     <label for="message">Your Message</label>
                 </div>
-                <button type="submit" class="submit-btn" style="height: 60px;">Send Message</button>
+                <button type="submit" class="submit-btn">Send Message</button>
             </form>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer class="footer-container">
       <div class="footer-top">
 <footer>
-    <div class="footer-logo-section">
-        <a href="#"> <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo"></a>
-        <p style="color: #b5fdf4;">Affordable adventures, unforgettable memories—explore with ease.</p>
-        <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
-        <div class="social-icons">
-            <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.twitter.com"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+    <div class="footer-container">
+        <div class="footer-logo-section">
+            <a href="#"><img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo"></a>
+            <p style="color: #b5fdf4;">Affordable adventures, unforgettable memories—explore with ease.</p>
+            <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.twitter.com"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+            </div>
         </div>
-    </div>
 
-    <div class="footer-links">
-        <div class="footer-column">
-            <h4>HELPFUL LINKS</h4>
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4>HELPFUL LINKS</h4>
+                <ul>
+                    <li><a href="#">Help Centre</a></li>
+                    <li><a href="#">Special Assistance</a></li>
+                    <li><a href="#">Download The App</a></li>
+                    <li><a href="#">Booking Conditions</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>ABOUT US</h4>
+                <ul>
+                    <li><a href="#">Media Center</a></li>
+                    <li><a href="#">Investors</a></li>
+                    <li><a href="ModernSlaveryAct.html">Modern Slavery Act</a></li>
+                    <li><a href="terms.html">Terms Of Use</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>KEEPING SAFE</h4>
+                <ul>
+                    <li><a href="#">ATOL Protected</a></li>
+                    <li><a href="./travelawares.html">Travel Aware</a></li>
+                    <li><a href="fcdoTravel.html">FCDO Travel Advice</a></li>
+                    <li><a href="#">ABTA</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>FIND US</h4>
+                <ul>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                    <li><a href="GroupCookieNotice.html">Group Cookie Notice</a></li>
+                    <li><a href="privacy.html">Privacy And Policy</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
             <ul>
-                <li><a href="#">Help Centre</a></li>
-                <li><a href="#">Special Assistance</a></li>
-                <li><a href="#">Download The App</a></li>
-                <li><a href="#">Booking Conditions</a></li>
+                <li><a href="#">Holiday Type</a></li>
+                <li><a href="#">Holiday Deals</a></li>
+                <li><a href="#">Popular Counters</a></li>
+                <li><a href="#">Top Hotels</a></li>
             </ul>
         </div>
-
-        <div class="footer-column">
-            <h4>ABOUT US</h4>
-            <ul>
-                <li><a href="#">Media Center</a></li>
-                <li><a href="#">Investors</a></li>
-                <li><a href="ModernSlaveryAct.html">Modern Slavery Act</a></li>
-                <li><a href="terms.html">Terms Of Use</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-column">
-            <h4>KEEPING SAFE</h4>
-            <ul>
-                <li><a href="#">ATOL Protected</a></li>
-                <li><a href="./travelawares.html">Travel Aware</a></li>
-                <li><a href="fcdoTravel.html">FCDO Travel Advice</a></li>
-                <li><a href="#">ABTA</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-column">
-            <h4>FIND US</h4>
-            <ul>
-                <li><a href="contactus.html">Contact Us</a></li>
-                <li><a href="GroupCookieNotice.html">Group Cookie Notice</a></li>
-                <li><a href="privacy.html">Privacy And Policy</a></li>
-                <li><a href="sitemap.html">Sitemap</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <ul>
-            <li><a href="#">Holiday Type</a></li>
-            <li><a href="#">Holiday Deals</a></li>
-            <li><a href="#">Popular Counters</a></li>
-            <!-- <li><a href="#">Flight Only</a></li> -->
-            <li><a href="#">Top Hotels</a></li>
-        </ul>
     </div>
 </footer>
 
+
+          <div class="footer-links">
+              <div class="footer-column">
+                  <h4>HELPFUL LINKS</h4>
+                  <ul>
+                      <li><a href="#">Help Centre</a></li>
+                      <li><a href="#">Special Assistance</a></li>
+                      <li><a href="#">Download The App</a></li>
+                      <li><a href="#">Booking Conditions</a></li>
+                      <li><a href="Faq.html">FAQ</a></li>
+
+                  </ul>
+              </div>
+
+              <div class="footer-column">
+                  <h4>ABOUT US</h4>
+                  <ul>
+                      <li><a href="#">Media Center</a></li>
+                      <li><a href="#">Investors</a></li>
+                      <li><a href="ModernSlaveryAct.html">Modern Slavery Act</a></li>
+                      <li><a href="terms.html">Terms Of Use</a></li>
+                  </ul>
+              </div>
+
+              <div class="footer-column">
+                  <h4>KEEPING SAFE</h4>
+                  <ul>
+                      <li><a href="#">ATOL Protected</a></li>
+                      <li><a href="./travelawares.html">Travel Aware</a></li>
+                      <li><a href="fcdoTravel.html">FCDO Travel Advice</a></li>
+                      <li><a href="#">ABTA</a></li>
+                  </ul>
+              </div>
+
+              <div class="footer-column">
+                  <h4>FIND US</h4>
+                  <ul>
+
+                      <li><a href="contactus.html">Contact 
+                      <li><a href="GroupCookieNotice.html">Group Cookie Notice</a></li>
+                     <li><a href="privacy.html">Privacy And Policy</a></li>
+                      <li><a href="sitemap.html">Sitemap</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+      <div class="footer-bottom">
+          <ul>
+              <li><a href="#">Holiday Type</a></li>
+              <li><a href="#">Holiday Deals</a></li>
+              <li><a href="#">Popular Counters</a></li>
+              <!-- <li><a href="#">Flight Only</a></li> -->
+              <li><a href="#">Top Hotels</a></li>
+          </ul>
+      </div>
+  </footer>
+
 <style>
+/* General Footer Styling */
+.footer-container {
+    background-color: #1f2937;
+    color: #ffffff;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Logo and Tagline */
+.footer-logo-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 10px;
+    border-radius: 50px;
+}
+.footer-logo-section p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+.follow-us {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Social Media Icons */
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    color: #12e9cc;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+.social-icons a:hover {
+    color: #76b2ab;
+}
+
+/* Footer Link Sections */
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 100px;
+}
+.footer-column {
+    flex-basis: 20%;
+    margin-bottom: 10px;
+}
+.footer-column h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #12e9cc;
+}
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+.footer-column ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Bottom Links */
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+.footer-bottom ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-bottom ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+.footer-bottom ul li a {
+    color: #12e9cc;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+.footer-bottom ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-column {
+        flex-basis: 100%;
+        text-align: center;
+    }
+}
+</style>
+
+<style>
+    /* Social Media Icons */
+    .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
+      color: #12e9cc;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+    .social-icons a:hover {
+      color: #76b2ab;
+    }
+
     /* Contact Form Styling */
     .contact-form {
-        background-color: #f0f4f8; /* Light cool background */
+        background-color: #f0f4f8;
         padding: 40px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
@@ -444,7 +648,7 @@
 
     .contact-form h2 {
         margin-bottom: 20px;
-        color: #3a506b; /* Darker cool color for headings */
+        color: #3a506b;
         text-align: center;
         font-weight: bold;
     }
@@ -460,8 +664,8 @@
         width: 100%;
         padding: 16px 12px;
         font-size: 16px;
-        color: #3a506b; /* Text color */
-        background: #e6f0fa; /* Subtle light blue */
+        color: #3a506b;
+        background: #e6f0fa;
         border: 1px solid #b3c7d6;
         border-radius: 5px;
         outline: none;
@@ -470,7 +674,7 @@
 
     .form-group input:focus,
     .form-group textarea:focus {
-        border-color: #5c91ad; /* Accent color */
+        border-color: #5c91ad;
         background-color: #ffffff;
     }
 
@@ -479,7 +683,7 @@
         top: 50%;
         left: 12px;
         transform: translateY(-50%);
-        color: #6c757d; /* Muted label color */
+        color: #6c757d;
         font-size: 16px;
         transition: 0.3s ease-in-out;
         pointer-events: none;
@@ -501,7 +705,7 @@
 
     /* Submit Button */
     .submit-btn {
-        background-color: #3a506b; /* Darker primary color */
+        background-color: #3a506b;
         color: #fff;
         border: none;
         padding: 14px 20px;
@@ -514,80 +718,123 @@
     }
 
     .submit-btn:hover {
-        background-color: #5c91ad; /* Accent on hover */
+        background-color: #5c91ad;
+    }
+
+    /* General Footer Styling */
+    .footer-container {
+      background-color: #1f2937;
+      color: #ffffff;
+      padding: 40px 0;
+      font-family: Arial, sans-serif;
     }
 </style>
 
-<style>
 /* General Footer Styling */
 .footer-container {
-  background-color: #1f2937;
-  color: #ffffff;
-  padding: 40px 0;
-  font-family: Arial, sans-serif;
+    background-color: #1f2937;
+    color: #ffffff;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
 }
 
 /* Logo and Tagline */
 .footer-logo-section {
-  text-align: center;
-  margin-bottom: 30px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 .footer-logo {
-  max-width: 150px;
-  margin-bottom: 10px;
-  border-radius: 50px;
+    max-width: 150px;
+    margin-bottom: 10px;
+    border-radius: 50px;
 }
 .footer-logo-section p {
-  margin: 5px 0;
-  font-size: 0.95rem;
+    margin: 5px 0;
+    font-size: 0.95rem;
 }
 .follow-us {
-  margin-top: 10px;
-  font-weight: bold;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
 /* Social Media Icons */
 .social-icons a {
-  display: inline-block;
-  margin: 0 10px;
-  color: #12e9cc;
-  font-size: 1.5rem;
-  text-decoration: none;
+    display: inline-block;
+    margin: 0 10px;
+    color: #12e9cc;
+    font-size: 1.5rem;
+    text-decoration: none;
 }
 .social-icons a:hover {
-  color: #76b2ab;
+    color: #76b2ab;
 }
 
 /* Footer Link Sections */
 .footer-links {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin: 20px 100px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 100px;
 }
 .footer-column {
-  flex-basis: 20%;
-  margin-bottom: 10px;
+    flex-basis: 20%;
+    margin-bottom: 10px;
 }
 .footer-column h4 {
-  font-size: 1rem;
-  margin-bottom: 10px;
-  color: #12e9cc;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #12e9cc;
 }
 .footer-column ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 .footer-column ul li {
-  margin-bottom: 8px;
+    margin-bottom: 8px;
 }
 .footer-column ul li a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 0.95rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
 }
 .footer-column ul li a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
+}
+
+/* Footer Bottom Links */
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+.footer-bottom ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-bottom ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+.footer-bottom ul li a {
+    color: #12e9cc;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+.footer-bottom ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-column {
+        flex-basis: 100%;
+        text-align: center;
+    }
 }
 
 /* Footer Bottom Links */
@@ -626,11 +873,109 @@
   }
 }
 </style>
-  
+
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" onclick="scrollToTop()">↑</button>
+
     <script>
-        document.querySelector("form").addEventListener("submit", function(e) {
-            e.preventDefault();
-            alert("Thank you for reaching out! We will get back to you soon.");
+              const trustedDomains = [
+        'gmail.com',
+        'outlook.com',
+        'yahoo.com',
+        'protonmail.com',
+        'icloud.com',
+        'tutanota.com',
+        'hotmail.com',
+        'live.com',
+        'mail.com',
+        'zoho.com',
+        'gmx.com',
+        'aol.com',
+        'fastmail.com',
+        'yandex.com',
+        '*.edu',
+        '*.ac.uk',
+        '*.edu.in',
+        '*.edu.au',
+        'examplecompany.com',
+        'mailfence.com',
+        'posteo.de',
+        'runbox.com',
+        'countermail.com',
+        'hushmail.com',
+        'inbox.com',
+        'mail.ru',
+        'rediffmail.com',
+        'seznam.cz'
+    ];
+
+    function validateEmail(email) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email format validation
+        const domain = email.split('@')[1];
+    
+        return (
+            emailPattern.test(email) && 
+            trustedDomains.some((trusted) => 
+                trusted.includes('*') ? domain.endsWith(trusted.slice(1)) : domain === trusted
+            )
+        );
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || !email || !message) {
+            alert('Please fill in all the fields.');
+            return;
+        }
+
+        if (!validateEmail(email)) {
+            alert('Please enter a valid email address from a trusted provider.');
+            return;
+        }
+
+        alert(`Thank you, ${name}! Your message has been received.`);
+        document.getElementById('contactForm').reset(); // Reset the form
+      }
+
+      document.querySelector("form").addEventListener("submit",handleSubmit);
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide scroll button based on scroll position
+        window.onscroll = function() {
+            const scrollButton = document.getElementById('scrollToTop');
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                scrollButton.style.display = 'block';
+            } else {
+                scrollButton.style.display = 'none';
+            }
+        };
+
+        // Dark mode toggle functionality
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                darkModeToggle.innerHTML = '🌞'; // Switch to sun icon
+                document.body.style.backgroundColor = '#333';
+                document.body.style.color = '#fff';
+            } else {
+                darkModeToggle.innerHTML = '🌙'; // Switch to moon icon
+                document.body.style.backgroundColor = '#e0e5ec';
+                document.body.style.color = '#333';
+            }
         });
     </script>
 </body>
