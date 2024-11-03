@@ -508,16 +508,14 @@
 
 
 
-    <nav class="navbar">
-        <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
-        <div class="logo" style="font-size: 20px;">Ticket Marketplace</div>
 
-        <!-- Toggle Button (Visible on Small Screens) -->
-        <button id="navToggle">☰</button>
+      <nav class="navbar">
+        <a href="index.html" style="display: flex; align-items: center; text-decoration: none; white-space: nowrap; margin-right: -250px;">
+          <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
+          <div class="logo" style="font-size: 20px; margin-left: 8px;">Ticket Marketplace</div>
+      </a><div>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
 
-        <!-- Navbar Links -->
-        <div id="navLinks">
-            <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
             <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
             <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
             <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
@@ -530,6 +528,7 @@
         <!-- Dark Mode Button -->
         <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
     </nav>
+
     <!-- <div class="slider"> -->
         <div class="slide active">
             <img src="images/6.jpeg" alt="Slide 1">
@@ -613,7 +612,7 @@
                 <div class="ticket-card4">
                     <h3 style="color: black;">Sell Train Tickets</h3>
                     <p>Have train tickets to sell? Reach out to us to list your tickets and get great deals.</p>
-                    <a href="train_sell.html"><button class="bbtn">Sell Train Tickets</button></a>
+                    <a href="sell.html"><button class="bbtn">Sell Train Tickets</button></a> <!--chnaged href from train_sell.html to sell.html-->
                 </div>
             </div>
         </div>
@@ -804,7 +803,7 @@
             }
         }
     </style>
-</div>
+<!-- </div>
 
         /* Button hover effect */
         button[type="submit"]:hover {
@@ -816,14 +815,14 @@
                 flex-direction: column;
             }
         }
-    </style>
+    </style> -->
 </div>
 
 
         <div class="map-container">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126915.40242030277!2d85.7892607!3d20.2498709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a7a3b9692fff%3A0x87cd0a356bbc39ce!2sITER%2C%20Siksha%20'O'%20Anusandhan!5e0!3m2!1sen!2sin!4v1689514124518!5m2!1sen!2sin"
-                allowfullscreen>
+                allowfullscreen frameborder="0" >
             </iframe>
         </div>
     </div>
@@ -1133,7 +1132,7 @@
     .faq-container {
       width: 100%;
       max-width: 500px;
-      height: 600px; /* Fixed height */
+      max-height: 100%; /* Fixed height */
       border: 3px solid #4CAF50;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -1159,7 +1158,6 @@
     .faq-items {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       flex-grow: 1;
       margin-top: 20px;
     }
@@ -1344,10 +1342,10 @@
                 <div class="footer-column">
                     <h4>KEEPING SAFE</h4>
                     <ul>
-                        <li><a href="#">ATOL Protected</a></li>
+                        <li><a href="atol.html">ATOL Protected</a></li>
                         <li><a href="./travelawares.html">Travel Aware</a></li>
                         <li><a href="fcdoTravel.html">FCDO Travel Advice</a></li>
-                        <li><a href="#">ABTA</a></li>
+                        <li><a href="abta.html">ABTA</a></li>
                     </ul>
                 </div>
 
