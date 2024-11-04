@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Availability</title>
+    <link rel="shortcut icon" href="images/4.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="index.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin: 30px;
+        }
+
+        .availability-section {
+            margin-bottom: 30px;
+        }
+
+        .availability {
+            border: 5px solid #ccc;
+            padding: 10px; /* Reduced padding for smaller containers */
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            border-radius: 20px;
+            max-width: 800px; /* Set a maximum width for tickets */
+            margin: 20px auto; /* Center the ticket boxes */
+        }
+
+        .availability h3 {
+            margin-top: 2;
+        }
+
+        .availability p {
+            margin: 5px 0;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .buy-ticket-button {
+        padding: 15px 25px; /* Adjust padding (top/bottom, left/right) */
+        font-size: 18px; /* Increase font size */
+        background-color: #ff0000; /* Button color */
+        color: white; /* Text color */
+        border: none; /* Remove border */
+        border-radius: 5px; /* Round corners */
+        cursor: pointer; /* Change cursor on hover */
+        transition: background-color 0.3s; /* Smooth transition on hover */
+        width: auto; /* You can set a specific width if desired */
+        }
+
+        .buy-ticket-button:hover {
+        background-color: #e60606; /* Darker shade on hover */
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
+            <div class="logo" style="margin-right: 200px; font-size: 20px;">Ticket Marketplace</div>
+            <div>
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+                <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
+                <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
+                <a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
+                <a href="register.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+            </div>
+            <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Available Tickets</h2>
+
+        <div class="availability-section">
+            <div class="availability">
+                <h3>Bus Ticket</h3>
+                <p><strong>Departure:</strong> City A</p>
+                <p><strong>Destination:</strong> City B</p>
+                <p><strong>Departure Time:</strong> 10:00 AM</p>
+                <p><strong>Available Tickets:</strong> 20</p>
+                <p><strong>Price:</strong> $30</p>
+                <p><strong>Seating Arrangement:</strong> Window and Aisle</p>
+                <p><strong>Time Slot:</strong> Morning</p>
+                <p><strong>Seating Criteria:</strong> Family Seating Available</p>
+            </div>
+            <div class="availability">
+                <h3>Train Ticket</h3>
+                <p><strong>Departure:</strong> City C</p>
+                <p><strong>Destination:</strong> City D</p>
+                <p><strong>Departure Time:</strong> 2:00 PM</p>
+                <p><strong>Available Tickets:</strong> 15</p>
+                <p><strong>Price:</strong> $45</p>
+                <p><strong>Seating Arrangement:</strong> Upper and Lower Berths</p>
+                <p><strong>Time Slot:</strong> Afternoon</p>
+                <p><strong>Seating Criteria:</strong> Quiet Zone Available</p>
+            </div>
+            <div class="availability">
+                <h3>Bus Ticket</h3>
+                <p><strong>Departure:</strong> City E</p>
+                <p><strong>Destination:</strong> City F</p>
+                <p><strong>Departure Time:</strong> 5:00 PM</p>
+                <p><strong>Available Tickets:</strong> 25</p>
+                <p><strong>Price:</strong> $25</p>
+                <p><strong>Seating Arrangement:</strong> Standard Seating</p>
+                <p><strong>Time Slot:</strong> Evening</p>
+                <p><strong>Seating Criteria:</strong> No Smoking Zone</p>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button class="buy-ticket-button" onclick="location.href='buy.html'">Buy Ticket</button>
+        </div>
+    </div>
+</body>
+
+    <footer>
+        <p>&copy; 2024 Ticket Marketplace. All rights reserved.</p>
+    </footer>
+</body>
+<script>
+    const tickets = JSON.parse(localStorage.getItem('tickets')) || [];
+    document.getElementById('showTickets').addEventListener('click', function () {
+      const ticketType = document.getElementById('ticketType').value;
+      document.getElementById('busTicketsList').innerHTML = '';
+      document.getElementById('trainTicketsList').innerHTML = '';
+  
+      if (ticketType === 'bus') {
+        displayTickets('bus');
+      } else if (ticketType === 'train') {
+        displayTickets('train');
+      }
+    });
+  
+    function displayTickets(type) {
+      const filteredTickets = tickets.filter(ticket => ticket.type === type);
+      const ticketList = type === 'bus' ? document.getElementById('busTicketsList') : document.getElementById('trainTicketsList');
+  
+      if (filteredTickets.length === 0) {
+        ticketList.innerHTML = `<p>No ${type} tickets available.</p>`;
+      } else {
+        filteredTickets.forEach(ticket => {
+          const ticketElement = document.createElement('div');
+          ticketElement.classList.add('ticket');
+          ticketElement.innerHTML = `
+            <h3>${type === 'bus' ? ticket.busName : 'Train Number: ' + ticket.trainNumber}</h3>
+            <p><strong>From:</strong> ${ticket.departureStation} <strong>To:</strong> ${ticket.arrivalStation}</p>
+            <p><strong>Departure Time:</strong> ${ticket.departureTime} on ${ticket.date}</p>
+            <p><strong>Seat Number:</strong> ${ticket.seatNumber}</p>
+            <p><strong>Price:</strong> ₹${ticket.buyerPrice}</p>
+            <button class="buy-ticket-button" onclick="buyTicket('${ticket.ticketNumber}', '${type}')" aria-label="Buy ticket">Buy Now</button>
+          `;
+          ticketList.appendChild(ticketElement);
+        });
+      }
+    }
+  
+    function buyTicket(ticketNumber, type) {
+      alert(`You have successfully purchased the ${type} ticket: ${ticketNumber}`);
+    }
+  </script>
+  
+  <!-- footer -->
+  <footer class="footer-container">
+    <div class="footer-top">
+      <!-- Logo and Tagline -->
+      <div class="footer-logo-section">
+        <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo">
+        <p style="color: #b5fdf4;">Affordable adventures, unforgettable memories—explore with ease.</p>
+        <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+          <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.twitter.com"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+  
+      <!-- Links Sections -->
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>HELPFUL LINKS</h4>
+          <ul>
+            <li><a href="help.html">Help Centre</a></li>
+            <li><a href="#">Special Assistance</a></li>
+            <li><a href="#">Download The App</a></li>
+            <li><a href="book_condition.html">Booking Conditions</a></li>
+          </ul>
+        </div>
+  
+        <div class="footer-column">
+          <h4>ABOUT US</h4>
+          <ul>
+            <li><a href="#">Media Center</a></li>
+            <li><a href="#">Investors</a></li>
+            <li><a href="ModernSlaveryAct.html">Modern Slavery Act</a></li>
+            <li><a href="terms.html">Terms Of Use</a></li>
+          </ul>
+        </div>
+  
+        <div class="footer-column">
+          <h4>KEEPING SAFE</h4>
+          <ul>
+            <li><a href="">ATOL Protected</a></li>
+            <li><a href="travelAware.html">Travel Aware</a></li>
+            <li><a href="fcdoTravel.html">FCDO Travel Advice</a></li>
+            <li><a href="">ABTA</a></li>
+          </ul>
+        </div>
+  
+        <div class="footer-column">
+          <h4>FIND US</h4>
+          <ul>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="GroupCookieNotice.html">Group Cookie Notice</a></li>
+            <li><a href="privacy.html">Privacy And Policy</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Additional Links Section -->
+    <div class="footer-bottom">
+      <ul>
+        <li><a href="#">Holiday Type</a></li>
+        <li><a href="#">Holiday Deals</a></li>
+        <li><a href="#">Popular Counters</a></li>
+        <li><a href="tophotels.html">Top Hotels</a></li>
+      </ul>
+    </div>
+  </footer>
+  <!-- footer end -->
+  
+  <script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.querySelector('body');
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                darkModeToggle.innerHTML = "🔆";
+            } else {
+                darkModeToggle.innerHTML = "🌙";
+            }
+        });
+    }
+  
+    let mybutton = document.getElementById("myBtn");
+    window.onscroll = function () { scrollFunction() };
+  
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+  
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  
+    // toggle chatbot function
+    function toggleChatbot() {
+      const chatbotContainer = document.getElementById("chatbot-container");
+      chatbotContainer.classList.toggle("chatbot-show");
+    }
+    window.addEventListener('scroll', () => {
+      const scrollProgressBar = document.getElementById('scrollProgressBar');
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progressHeight = (window.scrollY / totalHeight) * 100;
+      scrollProgressBar.style.width = progressHeight + '%';
+    });
+  
+    // Restrict the input to only valid dates (YYYY-MM-DD)
+    document.getElementById('journeyDate').addEventListener('input', function() {
+        // Enforce a strict date pattern of YYYY-MM-DD
+        const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+        if (!datePattern.test(this.value)) {
+            // Remove any invalid characters from the input
+            this.value = this.value.slice(0, 10);
+        }
+    });
+  </script>
+  
+  <script src="app.js"></script>
+  <div class="gtranslate_wrapper"></div>
+  <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+  <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+  <script src="chatbot.js"></script>
+  
+  <style>
+    /* Additional CSS for button enlargement */
+    .buy-ticket-button {
+      padding: 15px 30px; /* Increase padding */
+      font-size: 16px; /* Increase font size */
+      background-color: #007bff; /* Button color */
+      color: white; /* Text color */
+      border: none; /* Remove border */
+      border-radius: 5px; /* Round corners */
+      cursor: pointer; /* Change cursor on hover */
+    }
+    
+    .buy-ticket-button:hover {
+      background-color: #0056b3; /* Darker shade on hover */
+    }
+  </style>
+  
+  </body>
+  
+</html>
