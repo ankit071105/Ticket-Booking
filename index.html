@@ -364,6 +364,7 @@
 
     <div class="popup" id="pollPopup">
         <div class="popup-content">
+            <div class="closeBtn" id="voteCloseBtn" style="display: flex;justify-content: right;font-size: 1.5vw;"><i class="fas fa-window-close"></i></div>
             <h2>What type of transportation do you prefer for your travels?</h2>
             <div id="pollOptions">
                 <button class="poll-button" data-value="Bus">Bus - Convenient for short to medium distances</button>
@@ -399,6 +400,10 @@
           });
         });
         
+        document.getElementById("voteCloseBtn").onclick = function() {
+            document.getElementById("pollPopup").style.display = "none";
+        }
+
         
         document.getElementById('voteButton').addEventListener('click', function() {
           if (selectedValue) {
