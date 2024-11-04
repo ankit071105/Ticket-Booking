@@ -21,7 +21,7 @@
     "express": "^4.21.0",
     "helmet": "^8.0.0",
     "jsonwebtoken": "^9.0.2",
-    "mongodb": "^6.9.0",
+    "mongodb": "^6.10.0",
     "mongoose": "^8.7.0",
     "nodemailer": "^6.9.15",
     "zod": "^3.23.8"
