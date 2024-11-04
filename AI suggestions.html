@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Travel Cost Suggestion</title>
+  <style>
+    /* Reset and Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #9face6);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #444;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    /* Card Style */
+    .card {
+      background-color: #ffffff;
+      padding: 2em;
+      width: 90%;
+      max-width: 450px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.8em;
+      color: #333;
+      margin-bottom: 1.5em;
+    }
+
+    /* Input Group */
+    .input-group {
+      margin-bottom: 1.5em;
+    }
+
+    .input-group label {
+      font-weight: bold;
+      margin-bottom: 0.5em;
+      display: block;
+      color: #555;
+    }
+
+    input[type="text"], input[type="date"], select {
+      width: 100%;
+      padding: 0.7em;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: border 0.3s;
+    }
+
+    input[type="text"]:focus, input[type="date"]:focus, select:focus {
+      border-color: #74ebd5;
+      outline: none;
+    }
+
+    /* Button */
+    button {
+      width: 100%;
+      padding: 0.9em;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #74ebd5, #9face6);
+      color: white;
+      font-weight: bold;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #9face6, #74ebd5);
+    }
+
+    /* Suggestion Box */
+    .suggestion-box {
+      margin-top: 2em;
+      padding: 1.5em;
+      background-color: #f1f1f1;
+      border-radius: 8px;
+      display: none;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .suggestion-box h2 {
+      font-size: 1.5em;
+      color: #333;
+      margin-bottom: 0.5em;
+    }
+
+    #costOutput {
+      font-size: 1.3em;
+      color: #2d8d2d;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Travel Cost Suggestion</h1>
+      <form id="travelForm">
+        <div class="input-group">
+          <label for="origin">Origin</label>
+          <input type="text" id="origin" placeholder="City of Origin" required>
+        </div>
+        <div class="input-group">
+          <label for="destination">Destination</label>
+          <input type="text" id="destination" placeholder="City of Destination" required>
+        </div>
+        <div class="input-group">
+          <label for="travelDate">Travel Date</label>
+          <input type="date" id="travelDate" required>
+        </div>
+        <div class="input-group">
+          <label for="travelType">Travel Type</label>
+          <select id="travelType">
+            <option value="economy">Economy</option>
+            <option value="business">Business</option>
+          </select>
+        </div>
+        <button type="button" onclick="suggestCost()">Get Suggestion</button>
+      </form>
+      
+      <div id="suggestion" class="suggestion-box">
+        <h2>Suggested Travel Cost</h2>
+        <p id="costOutput"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function suggestCost() {
+      // Capture user input values
+      const origin = document.getElementById("origin").value;
+      const destination = document.getElementById("destination").value;
+      const travelDate = document.getElementById("travelDate").value;
+      const travelType = document.getElementById("travelType").value;
+
+      // Simple validation
+      if (!origin || !destination || !travelDate || !travelType) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      // Simulate AI-based travel cost suggestion (this can be replaced with an API call)
+      const cost = calculateCost(origin, destination, travelDate, travelType);
+
+      // Display the result with smooth reveal
+      const suggestionBox = document.getElementById("suggestion");
+      suggestionBox.style.display = "block";
+      suggestionBox.classList.add("show");
+      document.getElementById("costOutput").textContent = `Estimated Cost: $${cost.toFixed(2)}`;
+    }
+
+    // Simulated AI function for cost estimation
+    function calculateCost(origin, destination, date, type) {
+      let basePrice = 100;
+      const distanceFactor = Math.random() * 50 + 50; // Random multiplier
+      const typeFactor = type === "business" ? 2.0 : 1.0;
+      const randomAdjustment = Math.random() * 20;
+
+      return (basePrice + distanceFactor) * typeFactor + randomAdjustment;
+    }
+  </script>
+</body>
+</html>
