@@ -212,7 +212,7 @@ p {
 }
 
 /* Footer Styles */
-/* footer {
+footer {
     background-color: #1f2937;
     color: white;
     text-align: center;
@@ -231,7 +231,7 @@ p {
 
 .footer a:hover {
     color: #00a690;
-} */
+}
 
 /* Form Section */
 form {
