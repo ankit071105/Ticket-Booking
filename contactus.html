@@ -138,6 +138,89 @@
             text-align: center;
             font-weight: bold;
         }
+        /*new form form-cont css*/
+        .form-cont {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      text-align: left;
+    }
+    .form-cont textarea {
+        width: 100%;
+        padding: 16px 12px;
+        font-size: 16px;
+        color: #3a506b;
+        background: #e6f0fa;
+        border: 1px solid #b3c7d6;
+        border-radius: 5px;
+        outline: none;
+        transition: 0.3s border-color ease-in-out;
+    }
+    form label {
+      font-weight: 600;
+      color: #333;
+      width: 100%;
+    }
+
+    form input,
+    form select {
+      width: 100%;
+      align-self: center;
+
+      border: 1px solid #ccc;
+      border-radius: 0px;
+      border: none;
+      border-bottom: 2px solid #ccc;
+      font-size: 1rem;
+      background-color: transparent;
+      transition: all 0.3s ease-in-out;
+    }
+
+    form input[type="text"]:focus,
+    form input[type="date"]:focus,
+    form input[type="time"]:focus,
+    form input[type="email"]:focus,
+    form select:focus {
+      outline: none;
+      background-color: transparent;
+      border-bottom: 2px solid #ff4d4d;
+      /* White bottom border on focus */
+    }
+
+    form .btn {
+      background-color: #ff4d4d;
+      border: 2px solid #ff4d4d;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      padding: 25px;
+      width: 100%;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1.25rem;
+      margin-top: 30px;
+    }
+
+
+    form .btn:hover {
+      background-color: transparent;
+      color: #ff4d4d;
+    }
+    /* Floating label effect */
+    .form-group input:focus + label,
+    .form-group textarea:focus + label,
+    .form-group input:not(:placeholder-shown) + label,
+    .form-group textarea:not(:placeholder-shown) + label {
+        top: -8px;
+        left: 8px;
+        font-size: 12px;
+        background-color: #f0f4f8;
+        color: #5c91ad;
+        padding: 0 5px;
+        border-radius: 3px;
+    }
 
         /* Form Group and Floating Label */
         /*.form-group {
@@ -379,7 +462,7 @@ footer ul li a:hover {
                     <label for="name">Message:</label>
                     <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
                   </div>
-                <button type="submit" class="submit-btn">Send Message</button>
+                  <button type="submit" class="btn">Send Message</button>
             </form>
         <!--</div>-->
     </section>
@@ -977,7 +1060,7 @@ footer ul li a:hover {
 </style>
 
 
-    <!-- Scroll to Top Button -->
+    Scroll to Top Button -->
     <button id="scrollToTop" onclick="scrollToTop()">↑</button>
 
 
