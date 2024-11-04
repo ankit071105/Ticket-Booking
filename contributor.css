@@ -530,8 +530,14 @@ body.dark-mode .contributor-stats-grid,
 body.dark-mode .contributor-contributors-grid {
     color: #000000; /* Text color for content in dark mode */
 }
-
+body.dark-mode .contributor-stats h2{
+  color:white;
+}
+body.dark-mode .contributor-contributors h2{
+  color:white;
+}
 /* Optional: Background color for dark mode */
 body.dark-mode {
     background-color: #121212; /* Example dark background */
 }
+
