@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <link rel="stylesheet" href="styles.css">
@@ -364,6 +364,7 @@
 
     <div class="popup" id="pollPopup">
         <div class="popup-content">
+            <div class="closeBtn" id="voteCloseBtn" style="display: flex;justify-content: right;font-size: 1.5vw;"><i class="fas fa-window-close"></i></div>
             <h2>What type of transportation do you prefer for your travels?</h2>
             <div id="pollOptions">
                 <button class="poll-button" data-value="Bus">Bus - Convenient for short to medium distances</button>
@@ -399,6 +400,10 @@
           });
         });
         
+        document.getElementById("voteCloseBtn").onclick = function() {
+            document.getElementById("pollPopup").style.display = "none";
+        }
+
         
         document.getElementById('voteButton').addEventListener('click', function() {
           if (selectedValue) {
@@ -522,11 +527,62 @@
             <a href="contactus.html" style="text-decoration: none;"><i class="fas fa-envelope"></i> Contact</a>
             <a href="contributor.html" style="text-decoration: none;"><i class="fas fa-users"></i> Contributors</a>
             <a href="register.html" style="text-decoration: none;"><i class="fas fa-sign-in-alt"></i> Login</a>
+        
+
     
           </div>
+
+
+           <!-- Profile Icon -->
+            <a href="./testp.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
+            <img src="https://i.postimg.cc/tCL5Td4H/gold-membership-icon-default-avatar-profile-icon-membership-icon-social-media-user-image-illustratio.jpg" alt="Profile Icon" style="width: 35px; height: 35px; border-radius: 50%; margin-left: -170px;">
+           </a>
+       </li>
+
+       <style>
+
+         /* Override the existing hover styles */
+         .navbar-nav .nav-item .profile-link:hover {
+             background-color: transparent !important; /* Remove background color */
+             border-radius: 0 !important; /* Reset border radius */
+             transform: none !important; /* Prevent scaling */
+         }
+
+       </style>
+
+        <script>
+
+            function toggleMenu() {
+                const menu = document.getElementById('profileMenu');
+                menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            }
+
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function(event) {
+                if (!event.target.matches('.profile-icon img')) {
+                    const menu = document.getElementById('profileMenu');
+                    if (menu.style.display === 'block') {
+                        menu.style.display = 'none';
+                    }
+                }
+            }
+            
+        </script>
+
+
           <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
     
       </nav>
+
+            <a href="AI suggestions.html"><i class="fas fa-robot"></i> AI Suggestions</a>
+            <a href="client/login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+        </div>
+
+        <!-- Dark Mode Button -->
+        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+    </nav>
+
+
     <!-- <div class="slider"> -->
         <div class="slide active">
             <img src="images/6.jpeg" alt="Slide 1">
@@ -800,10 +856,9 @@
                 flex-direction: column;
             }
         }
-    </style>
-<!-- </div>
-
-        /* Button hover effect */
+   
+  <style> -->
+      hover effect */
         button[type="submit"]:hover {
             background-color: #005fa3;
         }
@@ -814,7 +869,6 @@
             }
         }
     </style> -->
-</div>
 
 
         <div class="map-container">
@@ -1311,6 +1365,7 @@
                     <a href="#"><i class="fab fa-linkedin"></i></a>
                     <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
+                <button id="visitorCounter" class="btn btn-info text-white rounded">Visitors Count: 1</button>
             </div>
 
 
@@ -1375,8 +1430,24 @@
         </div>
     </footer>
 
+<!-- visitor -->
+<script>
+    // JavaScript to fetch visitor count from API
+    async function getVisitorCount() {
+        try {
+            const response = await fetch('http://localhost:5000/api/visitor-count');
+            const data = await response.json();
+            document.getElementById("visitorCount").innerText = data.count;
+        } catch (error) {
+            console.error("Error fetching visitor count:", error);
+        }
+    }
 
-    <script>
+    // Call the function on page load
+    getVisitorCount();
+</script>
+
+<script>
 // cursor 
 
 const coords = { x: 0, y: 0 };
