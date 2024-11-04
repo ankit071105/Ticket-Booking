@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="faq.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="why-us.css">
     <script src="chatbot.js"></script>
     <style>
@@ -211,6 +212,14 @@
   <!-- cursor ends -->
 
   <nav class="navbar">
+    <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
+    <div class="logo" style="font-size: 20px;">Ticket Marketplace</div>
+
+    <!-- Toggle Button (Visible on Small Screens) -->
+    <button id="navToggle">☰</button>
+
+    <!-- Navbar Links -->
+    <div id="navLinks">
     <a href="index.html" style="display: flex; align-items: center; text-decoration: none; white-space: nowrap; margin-right: -250px;">
       <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
       <div class="logo" style="font-size: 20px; margin-left: 8px;">Ticket Marketplace</div>
@@ -221,12 +230,12 @@
         <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
         <a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a>
         <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
-        <a href="register.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+        <a href="client/login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+    </div>
 
-      </div>
-      <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
-
-  </nav>
+    <!-- Dark Mode Button -->
+    <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+</nav>
     <script>
 
     // cursor 
@@ -339,6 +348,31 @@ animateCircles();
             }
         });
     </script>
+     <script>
+      // Toggle Navbar Links
+      const navToggle = document.getElementById('navToggle');
+      const navlinks = document.getElementById('navLinks');
+
+      navToggle.addEventListener('click', () => {
+          navlinks.style.display = navlinks.style.display === 'flex' ? 'none' : 'flex';
+      });
+
+      // Ensure navbar links are visible on large screens
+      window.addEventListener('resize', () => {
+          if (window.innerWidth > 768) {
+              navlinks.style.display = 'flex'; // Show links on large screens
+          } else {
+              navlinks.style.display = 'none'; // Hide links on small screens
+          }
+      });
+
+      // Set initial state based on the current window size
+      if (window.innerWidth > 768) {
+          navlinks.style.display = 'flex'; // Show links if starting on a large screen
+      } else {
+          navlinks.style.display = 'none'; // Hide links if starting on a small screen
+      }
+  </script>
     <section id="about-us">
       <div class="about-container">
           <h1>About Us 🚀</h1>
@@ -455,18 +489,6 @@ animateCircles();
 
     </style>
     <script>
-      // Get the button
-const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-
-// Show the button when scrolling down 20px from the top
-window.onscroll = function() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        scrollToTopBtn.style.display = "flex";
-    } else {
-        scrollToTopBtn.style.display = "none";
-    }
-};
-
 // toggle chatbot function
 function toggleChatbot() {
         const chatbotContainer = document.getElementById("chatbot-container");
@@ -478,8 +500,11 @@ function toggleChatbot() {
     const progressHeight = (window.scrollY / totalHeight) * 100;
     scrollProgressBar.style.width = progressHeight + '%';
 });
-
     </script>
+    
+    <button onclick="moveToTop()" id="topBtn" title="Go to top" style="display:flex; position: fixed;  right: 30px; z-index: 100000;">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+  </button>
 
     <footer class="footer-container">
         <div class="footer-top">
