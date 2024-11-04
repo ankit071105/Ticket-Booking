@@ -16,3 +16,5 @@ connect_db()
     console.error("Failed to connect to the database:", err.message);
     process.exit(1); // Exit process if DB connection fails
 });
+
+
