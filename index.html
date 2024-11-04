@@ -521,6 +521,53 @@
             <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
             <a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a>
             <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
+
+            <a href="register.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+    
+          </div>
+
+
+           <!-- Profile Icon -->
+            <a href="./testp.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
+            <img src="https://i.postimg.cc/tCL5Td4H/gold-membership-icon-default-avatar-profile-icon-membership-icon-social-media-user-image-illustratio.jpg" alt="Profile Icon" style="width: 35px; height: 35px; border-radius: 50%; margin-left: -170px;">
+           </a>
+       </li>
+
+       <style>
+
+         /* Override the existing hover styles */
+         .navbar-nav .nav-item .profile-link:hover {
+             background-color: transparent !important; /* Remove background color */
+             border-radius: 0 !important; /* Reset border radius */
+             transform: none !important; /* Prevent scaling */
+         }
+
+       </style>
+
+        <script>
+
+            function toggleMenu() {
+                const menu = document.getElementById('profileMenu');
+                menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            }
+
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function(event) {
+                if (!event.target.matches('.profile-icon img')) {
+                    const menu = document.getElementById('profileMenu');
+                    if (menu.style.display === 'block') {
+                        menu.style.display = 'none';
+                    }
+                }
+            }
+            
+        </script>
+
+
+          <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+    
+      </nav>
+
             <a href="AI suggestions.html"><i class="fas fa-robot"></i> AI Suggestions</a>
             <a href="client/login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
         </div>
@@ -528,6 +575,7 @@
         <!-- Dark Mode Button -->
         <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
     </nav>
+
 
     <!-- <div class="slider"> -->
         <div class="slide active">
