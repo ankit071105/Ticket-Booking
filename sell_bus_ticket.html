@@ -723,7 +723,7 @@
           <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
     
       </nav>
-
+      
 <style>
     .navbar {
   display: flex;
@@ -865,9 +865,9 @@ body.dark-mode #preloader {
   </div>
 
 
-  <!-- Sell Train Ticket Form -->
+  <!-- Sell Bus Ticket Form -->
   <section class="sell-ticket">
-    <h1>Sell Ticket</h1>
+    <h1>Sell Bus Ticket</h1>
     <form id="trainTicketForm">
       <div class="form-cont">
         <label for="name">Your Name:</label>
@@ -886,18 +886,9 @@ body.dark-mode #preloader {
         <label for="ticketNumber">Ticket Number:</label>
         <input type="text" id="ticketNumber" placeholder="Enter ticket number" required>
       </div>
-      <!--added the option for bus / train -->
       <div class="form-cont">
-        <label for="optionBusTrain">Choose Transport:</label>
-        <select id="optionBusTrain">
-          <option value="">--Train/Bus--</option>
-          <option value="Second">Train</option>
-          <option value="First">Bus</option>
-        </select>
-      </div>
-      <div class="form-cont">
-        <label for="trainNumber">Train/Bus Number:</label>
-        <input type="text" id="trainNumber" placeholder="Enter train/bus number" required>
+        <label for="trainNumber">Bus Number:</label>
+        <input type="text" id="trainNumber" placeholder="Enter bus number" required>
       </div>
 
       <div class="form-cont">
@@ -917,97 +908,29 @@ body.dark-mode #preloader {
         <label for="date">Date:</label>
         <input type="date" id="date" required>
       </div>
-      
-      <div class="form-cont">
+
+      <!-- <div class="form-cont">
         <label for="coachType">Coach Type:</label>
         <select id="coachType" required>
-          <option value="">--Select coach type--</option>
+          <option value="">Select coach type</option>
           <option value="Sleeper">Sleeper</option>
           <option value="Non-AC">Non-AC</option>
           <option value="AC">AC</option>
         </select>
-      </div>
+      </div> -->
       <div class="form-cont">
-        <label for="acClass">AC Class (If applicable):</label>
+        <label for="acClass">AC Availability:</label>
         <select id="acClass">
-          <option value="">--Select AC Class--</option>
-          <option value="First">First</option>
-          <option value="Second">Second</option>
-          <option value="Third">Third</option>
-          <option value="Economy">Economy</option>
+          <option value="">--Select--</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
         </select>
       </div>
-
-
-        <h1>Sell Bus Ticket</h1>
-        <form id="ticketForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}">
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="ticketNo">Ticket No:</label>
-            <input type="text" id="ticketNo" name="ticketNo" required>
-
-            <label for="busNo">Bus No:</label>
-            <input type="text" id="busNo" name="busNo" required>
-
-
-  </style>  
-
-            <label for="departureLocation">Departure Location:</label>
-            <input type="text" id="departureLocation" name="departureLocation" required>
-
-            <label for="arrivalLocation">Arrival Location:</label>
-            <input type="text" id="arrivalLocation" name="arrivalLocation" required>
-
-            <label for="departureTime">Departure Time:</label>
-            <input type="time" id="departureTime" name="departureTime" required>
-
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date" required>
-
-            <label for="seatNo">Seat Number:</label>
-            <input type="text" id="seatNo" name="seatNo" required>
-
-            <label for="acClass">AC Class:</label>
-            <select id="acClass" name="acClass" required>
-                <option value="Non-AC">Non-AC</option>
-                <option value="AC">AC</option>
-            </select>
-
-            <label for="price">Original Price:</label>
-            <input type="number" id="price" name="price" required min="0" step="0.01">
-
-            <button type="submit">Submit Ticket</button>
-        </form>
-        
-    </main>
-    <footer class="footer-container">
-      <div class="footer-top">
-
-          <div class="footer-logo-section">
-              <a href="#"> <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo"></a>
-              <p style="color: #b5fdf4;">Affordable adventures, unforgettable memories—explore with ease.</p>
-              <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
-              <div class="social-icons">
-                  <a href="#"><i class="fab fa-facebook"></i></a>
-                  <a href="#"><i class="fab fa-instagram"></i></a>
-                  <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                  <a href="#"><i class="fab fa-linkedin"></i></a>
-                  <a href="#"><i class="fab fa-youtube"></i></a>
-              </div>
-          </div>
 
       <div class="form-cont">
         <label for="seatNumber">Seat Number:</label>
         <input type="text" id="seatNumber" placeholder="Enter seat number" required>
       </div>
-
 
       <div class="form-cont">
         <label for="price">Original Price:</label>
