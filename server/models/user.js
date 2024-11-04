@@ -1,5 +1,11 @@
 import mongoose from "mongoose";
 
+const CounterSchema = new mongoose.Schema({
+  _id: String,
+  count: { type: Number, default: 0 }
+});
+const Counter = mongoose.model("Counter", CounterSchema);
+
 const userSchema = new mongoose.Schema({
   email: {
     type: String,

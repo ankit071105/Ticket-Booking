@@ -333,7 +333,9 @@ body.dark-mode {
   background-color: #121212;
   color: #f0f0f0;
 }
-
+body.dark-mode .bus h2{
+  color:white;
+}
 body.dark-mode .navbar {
   background-color: #333;
 }
