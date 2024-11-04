@@ -32,6 +32,21 @@ app.use((req, res, next) => {
 // Route Definitions
 app.use("/api/v1/auth", auth_route); // Authentication routes
 
+
+// Route to get and increment the visitor count
+app.get('/api/visitor-count', async (req, res) => {
+  try {
+    const visitorCounter = await Counter.findByIdAndUpdate(
+      "visitorCount",
+      { $inc: { count: 1 } },
+      { new: true, upsert: true }
+    );
+    res.json({ count: visitorCounter.count });
+  } catch (err) {
+    console.error("Error updating visitor count:", err);
+    res.status(500).send("Server error");
+  }
+});
 // Error Handling Middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
