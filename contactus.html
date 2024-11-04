@@ -24,10 +24,23 @@
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: linear-gradient(135deg, #ead6ee, #a0f1ea);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+        .container h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            /* Bigger typography */
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #ff4d4d;
+            cursor: default;
+    }
 
         /* Navbar */
         nav {
@@ -127,7 +140,7 @@
         }
 
         /* Form Group and Floating Label */
-        .form-group {
+        /*.form-group {
             position: relative;
             margin-bottom: 25px;
         }
@@ -159,8 +172,9 @@
             transition: 0.3s ease-in-out;
             pointer-events: none;
         }
-
+*/
         /* Floating label effect */
+        /*
         .form-group input:focus + label,
         .form-group textarea:focus + label,
         .form-group input:not(:placeholder-shown) + label,
@@ -175,6 +189,7 @@
         }
 
         /* Submit Button */
+        /*
         .submit-btn {
             background-color: #ff8c00;
             color: #fff;
@@ -192,7 +207,7 @@
             background-color: #2e3b4e;
             color: #ff8c00;
         }
-
+*/
         /* Footer */
 /* .footer-container {
   background-color: #1f2937;
@@ -345,28 +360,28 @@ footer ul li a:hover {
     </nav>
     <!-- Contact Form Section -->
     <section class="container">
-        <div class="contact-form">
-            <h2>Contact Us</h2>
+        <!--<div class="contact-form">--> <!--removed div to match it with the differnt forms in the website-->
+            <h1>Contact Us</h1>
             <form id="contactForm">
-                <div class="form-group">
-                    <input type="text" id="name" name="name" required placeholder=" ">
-                    <label for="name">Full Name</label>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" name="email" required placeholder=" ">
-                    <label for="email">Email Address</label>
-                </div>
-                <div class="form-group">
-                    <input type="text" id="subject" name="subject" required placeholder=" ">
-                    <label for="subject">Subject</label>
-                </div>
-                <div class="form-group">
+                <div class="form-cont">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" placeholder="Enter your full name" required>
+                  </div>
+                  <div class="form-cont">
+                    <label for="email">Email Address:</label>
+                    <input type="text" id="email" placeholder="Enter your email" required>
+                  </div>
+                  <div class="form-cont">
+                    <label for="name">Subject:</label>
+                    <input type="text" id="subject" placeholder="Enter the subject" required>
+                  </div>
+                  <div class="form-cont">
+                    <label for="name">Message:</label>
                     <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
-                    <label for="message">Your Message</label>
-                </div>
+                  </div>
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
-        </div>
+        <!--</div>-->
     </section>
 
     <button onclick="moveToTop()" id="topBtn" title="Go to top" style="display:flex; position: fixed;  right: 30px; z-index: 100000;">
@@ -375,82 +390,149 @@ footer ul li a:hover {
 
     <!-- Footer Section -->
     <footer class="footer-container">
-        <div class="footer-top">
+      <div class="footer-top">
+<footer>
 
-            <div class="footer-logo-section">
-                <a href="#"> <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo"></a>
-                <p style="color: #b5fdf4;">Affordable adventures, unforgettable memories—explore with ease.</p>
-                <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-
-
-            <div class="footer-links">
-                <div class="footer-column">
-                    <h4>HELPFUL LINKS</h4>
-                    <ul>
-                        <li><a href="#">Help Centre</a></li>
-                        <li><a href="#">Special Assistance</a></li>
-                        <li><a href="#">Download The App</a></li>
-                        <li><a href="#">Booking Conditions</a></li>
-                        <li><a href="Faq.html">FAQ</a></li>
-
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h4>ABOUT US</h4>
-                    <ul>
-                        <li><a href="#">Media Center</a></li>
-                        <li><a href="#">Investors</a></li>
-                        <li><a href="ModernSlaveryAct.html">Modern Slavery Act</a></li>
-                        <li><a href="terms.html">Terms Of Use</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h4>KEEPING SAFE</h4>
-                    <ul>
-                        <li><a href="atol.html">ATOL Protected</a></li>
-                        <li><a href="./travelawares.html">Travel Aware</a></li>
-                        <li><a href="fcdoTravel.html">FCDO Travel Advice</a></li>
-                        <li><a href="abta.html">ABTA</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h4>FIND US</h4>
-                    <ul>
- 
-                        <li><a href="contactus.html">Contact 
-                        <li><a href="GroupCookieNotice.html">Group Cookie Notice</a></li>
-                       <li><a href="privacy.html">Privacy And Policy</a></li>
-                        <li><a href="sitemap.html">Sitemap</a></li>
-                    </ul>
-                </div>
+    <div class="footer-logo-section">
+        <a href="#"> <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo"></a>
+        <p style="color: #b5fdf4;">Affordable adventures, unforgettable memories—explore with ease.</p>
+        <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+      </div>      
+    </div>
+  
+    <div class="footer-container">
+        <div class="footer-logo-section">
+            <a href="#"><img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo"></a>
+            <p style="color: #b5fdf4;">Affordable adventures, unforgettable memories—explore with ease.</p>
+            <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.twitter.com"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
-    </div>
 
+
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4>HELPFUL LINKS</h4>
+                <ul>
+                    <li><a href="#">Help Centre</a></li>
+                    <li><a href="#">Special Assistance</a></li>
+                    <li><a href="#">Download The App</a></li>
+                    <li><a href="#">Booking Conditions</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>ABOUT US</h4>
+                <ul>
+                    <li><a href="#">Media Center</a></li>
+                    <li><a href="#">Investors</a></li>
+                    <li><a href="ModernSlaveryAct.html">Modern Slavery Act</a></li>
+                    <li><a href="terms.html">Terms Of Use</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>KEEPING SAFE</h4>
+                <ul>
+                    <li><a href="#">ATOL Protected</a></li>
+                    <li><a href="./travelawares.html">Travel Aware</a></li>
+                    <li><a href="fcdoTravel.html">FCDO Travel Advice</a></li>
+                    <li><a href="#">ABTA</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>FIND US</h4>
+                <ul>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                    <li><a href="GroupCookieNotice.html">Group Cookie Notice</a></li>
+                    <li><a href="privacy.html">Privacy And Policy</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </div>
+        </div>
 
         <div class="footer-bottom">
             <ul>
                 <li><a href="#">Holiday Type</a></li>
                 <li><a href="#">Holiday Deals</a></li>
                 <li><a href="#">Popular Counters</a></li>
-                <li><a href="#">Flight Only</a></li>
                 <li><a href="#">Top Hotels</a></li>
-                <li><a href="Faq.html">FAQ</a></li>
-
             </ul>
         </div>
-    </footer>
+    </div>
+</footer>
+
+
+          <div class="footer-links">
+              <div class="footer-column">
+                  <h4>HELPFUL LINKS</h4>
+                  <ul>
+                      <li><a href="#">Help Centre</a></li>
+                      <li><a href="#">Special Assistance</a></li>
+                      <li><a href="#">Download The App</a></li>
+                      <li><a href="#">Booking Conditions</a></li>
+                      <li><a href="Faq.html">FAQ</a></li>
+
+                  </ul>
+              </div>
+
+              <div class="footer-column">
+                  <h4>ABOUT US</h4>
+                  <ul>
+                      <li><a href="#">Media Center</a></li>
+                      <li><a href="#">Investors</a></li>
+                      <li><a href="ModernSlaveryAct.html">Modern Slavery Act</a></li>
+                      <li><a href="terms.html">Terms Of Use</a></li>
+                  </ul>
+              </div>
+
+              <div class="footer-column">
+                  <h4>KEEPING SAFE</h4>
+                  <ul>
+                      <li><a href="#">ATOL Protected</a></li>
+                      <li><a href="./travelawares.html">Travel Aware</a></li>
+                      <li><a href="fcdoTravel.html">FCDO Travel Advice</a></li>
+                      <li><a href="#">ABTA</a></li>
+                  </ul>
+              </div>
+
+              <div class="footer-column">
+                  <h4>FIND US</h4>
+                  <ul>
+
+                      <li><a href="contactus.html">Contact 
+                      <li><a href="GroupCookieNotice.html">Group Cookie Notice</a></li>
+                     <li><a href="privacy.html">Privacy And Policy</a></li>
+                      <li><a href="sitemap.html">Sitemap</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+      <div class="footer-bottom">
+          <ul>
+              <li><a href="#">Holiday Type</a></li>
+              <li><a href="#">Holiday Deals</a></li>
+              <li><a href="#">Popular Counters</a></li>
+              <!-- <li><a href="#">Flight Only</a></li> -->
+              <li><a href="#">Top Hotels</a></li>
+          </ul>
+      </div>
+  </footer>
 
 <!-- <style>
 /* General Footer Styling */
@@ -592,7 +674,7 @@ footer ul li a:hover {
     }
 
     /* Form Group and Floating Label */
-    .form-group {
+    /*.form-group {
         position: relative;
         margin-bottom: 25px;
     }
@@ -626,7 +708,83 @@ footer ul li a:hover {
         transition: 0.3s ease-in-out;
         pointer-events: none;
     }
+*/
+    /*added new form to have uniformity*/
+    form {
+      display: flex;
+      width: 100%;
+      height: auto;
+    }
 
+    .form-cont {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      text-align: left;
+    }
+    .form-cont textarea {
+        width: 100%;
+        padding: 16px 12px;
+        font-size: 16px;
+        color: #3a506b;
+        background: #e6f0fa;
+        border: 1px solid #b3c7d6;
+        border-radius: 5px;
+        outline: none;
+        transition: 0.3s border-color ease-in-out;
+    }
+    form label {
+      font-weight: 600;
+      color: #333;
+      width: 100%;
+    }
+
+    form input,
+    form select {
+      width: 100%;
+      align-self: center;
+
+      border: 1px solid #ccc;
+      border-radius: 0px;
+      border: none;
+      border-bottom: 2px solid #ccc;
+      font-size: 1rem;
+      background-color: transparent;
+      transition: all 0.3s ease-in-out;
+    }
+
+    form input[type="text"]:focus,
+    form input[type="date"]:focus,
+    form input[type="time"]:focus,
+    form input[type="email"]:focus,
+    form select:focus {
+      outline: none;
+      background-color: transparent;
+      border-bottom: 2px solid #ff4d4d;
+      /* White bottom border on focus */
+    }
+
+    form .btn {
+      background-color: #ff4d4d;
+      border: 2px solid #ff4d4d;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      padding: 25px;
+      width: 100%;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1.25rem;
+      margin-top: 30px;
+    }
+
+
+    form .btn:hover {
+      background-color: transparent;
+      color: #ff4d4d;
+    }
     /* Floating label effect */
     .form-group input:focus + label,
     .form-group textarea:focus + label,
@@ -642,22 +800,28 @@ footer ul li a:hover {
     }
 
     /* Submit Button */
+    
     .submit-btn {
-        background-color: #3a506b;
-        color: #fff;
-        border: none;
-        padding: 14px 20px;
-        font-size: 18px;
-        cursor: pointer;
-        transition: all 0.3s;
-        width: 100%;
-        border-radius: 5px;
-        font-weight: bold;
+        background-color: #ff4d4d;
+      border: 2px solid #ff4d4d;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      padding: 25px;
+      width: 100%;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1.25rem;
+      margin-top: 30px;
     }
 
     .submit-btn:hover {
-        background-color: #5c91ad;
+        background-color: transparent;
+      color: #ff4d4d;
     }
+    
 
     /* General Footer Styling */
     .footer-container {
@@ -666,10 +830,151 @@ footer ul li a:hover {
       padding: 40px 0;
       font-family: Arial, sans-serif;
     }
-</style> -->
+</style>
 
-<!-- <<<<<<< feature-branch -->
-<!-- </style> -->
+/* General Footer Styling */
+.footer-container {
+    background-color: #1f2937;
+    color: #ffffff;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Logo and Tagline */
+.footer-logo-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 10px;
+    border-radius: 50px;
+}
+.footer-logo-section p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+.follow-us {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Social Media Icons */
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    color: #12e9cc;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+.social-icons a:hover {
+    color: #76b2ab;
+}
+
+/* Footer Link Sections */
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 100px;
+}
+.footer-column {
+    flex-basis: 20%;
+    margin-bottom: 10px;
+}
+.footer-column h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #12e9cc;
+}
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+.footer-column ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Bottom Links */
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+.footer-bottom ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-bottom ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+.footer-bottom ul li a {
+    color: #12e9cc;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+.footer-bottom ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-column {
+        flex-basis: 100%;
+        text-align: center;
+    }
+}
+
+/* Footer Bottom Links */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+.footer-bottom ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-bottom ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+.footer-bottom ul li a {
+  color: #12e9cc;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.footer-bottom ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-column {
+    flex-basis: 100%;
+    text-align: center;
+  }
+}
+</style>
 
 
     <!-- Scroll to Top Button -->
