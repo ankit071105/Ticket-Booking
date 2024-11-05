@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,27 +10,29 @@
     <!-- Font Awesome CDN for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-         .go-home-button {
-      padding: 10px 20px;
-      font-size: 16px;
-      color: white;
-      /* background-color: #8e3106ee; */
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      text-decoration: none;
-    }
+        .go-home-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            /* background-color: #8e3106ee; */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
 
-    /* .go-home-button:hover {
+        /* .go-home-button:hover {
       background-color: #0056b3;
     } */
     </style>
 </head>
+
 <body class="bg-white">
     <div class="relative flex items-top justify-center min-h-screen bg-white sm:items-center sm:pt-0">
         <div class="absolute top-4 left-4">
             <!-- Left arrow icon with background, positioned at the top left corner -->
-            <a href="../index.html" class="py-3 px-3 bg-gray-200 rounded-full text-gray-700 hover:bg-gray-300 transition duration-300">
+            <a href="../index.html"
+                class="py-3 px-3 bg-gray-200 rounded-full text-gray-700 hover:bg-gray-300 transition duration-300">
                 <i class="fas fa-arrow-left fa-lg"></i>
             </a>
         </div>
@@ -46,7 +49,7 @@
                             Don't Have an Account?
                         </p><br />
                         <a href="/client/register.html"
-                           class="md:w-32 bg-orange-700 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg mt-3 transition ease-in-out duration-300">
+                            class="md:w-32 bg-orange-700 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg mt-3 transition ease-in-out duration-300">
                             Register
                         </a>
                     </div>
@@ -57,42 +60,36 @@
                                 Log in
                             </h2>
                             <br />
-                            <input
-                                type="email"
-                                name="email"
-                                id="email"
-                                placeholder="Email"
+                            <input type="email" name="email" id="email" placeholder="Email"
                                 class="w-full mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
-                                required
-                            />
+                                required />
                             <p id="emailError" class="text-red-500 mt-1"></p> <!-- Email Error Message -->
 
                             <div class="relative flex items-center">
-                                <input
-                                    type="password"
-                                    name="password"
-                                    id="password"
-                                    placeholder="Password"
+                                <input type="password" name="password" id="password" placeholder="Password"
                                     class="w-full mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
-                                    required
-                                />
-                                <button type="button" id="togglePassword" class="absolute right-3 top-5 text-black-500 hover:text-orange-700">
-                                    <!-- Icons for password visibility toggle here -->
+                                    required />
+                                <button type="button" id="togglePassword"
+                                    class="absolute right-3 top-5 text-black-500 hover:text-orange-700">
+                                    <i class="fas fa-eye" id="togglePasswordIcon"></i>
                                 </button>
                             </div>
                             <p id="passwordError" class="text-red-500 mt-1"></p> <!-- Password Error Message -->
                             <button type="submit"
-                                    class="md:w-32 bg-orange-700 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg mt-3 transition ease-in-out duration-300">
+                                class="md:w-32 bg-orange-700 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg mt-3 transition ease-in-out duration-300">
                                 SignIn
                             </button>
-                            <a href="/client/forgot_password.html" class="text-orange-700 ml-0 py-5 hover:underline mt-0">Forgot Password?</a>
-                            <button id="googleSignin" class="w-full mt-2 flex items-center justify-center bg-white border border-gray-400 text-gray-800 font-semibold py-3 px-6 rounded-lg transition ease-in-out duration-300 hover:bg-gray-100">
+                            <a href="/client/forgot_password.html"
+                                class="text-orange-700 ml-0 py-5 hover:underline mt-0">Forgot Password?</a>
+                            <button id="googleSignin"
+                                class="w-full mt-2 flex items-center justify-center bg-white border border-gray-400 text-gray-800 font-semibold py-3 px-6 rounded-lg transition ease-in-out duration-300 hover:bg-gray-100">
                                 <img src="../images/googleLogo.png" alt="Google Logo" class="w-5 h-5 mr-2">
                                 Continue with Google
                             </button>
-                            
+
                         </form>
-                        <a href="../index.html" class="go-home-button  bg-orange-700 hover:bg-orange-600 ">Back to Home</a>
+                        <a href="../index.html" class="go-home-button  bg-orange-700 hover:bg-orange-600 ">Back to
+                            Home</a>
                     </div>
                 </div>
             </div>
@@ -101,7 +98,21 @@
 
     <!-- js script -->
     <script>
-        // Your JavaScript code here
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+        const togglePasswordIcon = document.querySelector('#togglePasswordIcon');
+
+        togglePassword.addEventListener('click', function (e) {
+            // Toggle the type attribute
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+
+            // Toggle the icon
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+
     </script>
 </body>
+
 </html>
