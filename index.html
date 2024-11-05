@@ -857,10 +857,17 @@
                 flex-direction: column;
             }
         }
+
+   
+  
+      /* hover effect */
+        button[type="submit"]:hover {
+
    </style>
   <style>
       hover effect */
         button[type="submit"]:hover {  
+
             background-color: #005fa3;
         }
 
@@ -869,7 +876,10 @@
                 flex-direction: column;
             }
         }
-    </style>
+
+    </style> 
+
+
 
 
         <div class="map-container">
@@ -1024,78 +1034,6 @@
 
 
 
-
-        <!-- FAQ section -->
-        <!-- <section id="faq">
-            <div class="container faq-container">
-                <h2>Frequently Asked Questions</h2>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        What is your cancellation policy?
-                        <span class="expand-toggle">+</span>
-                    </button>
-                    <div class="faq-answer" style="display: none;">
-                        <p>We offer a flexible cancellation policy that allows you to cancel your booking up to 48 hours before your scheduled departure for a full refund.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        How do I make changes to my booking?
-                        <span class="expand-toggle">+</span>
-                    </button>
-                    <div class="faq-answer"style="display: none;">
-                        <p>You can make changes to your booking by logging into your account and accessing your booking details. For major changes, please contact our support team directly.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Can I change the date of my travel after booking?
-                        <span class="expand-toggle">+</span>
-                    </button>
-                    <div class="faq-answer" style="display: none;">
-                        <p>Yes, you can change your travel date, but it depends on the availability and our policy for date changes. Some changes may incur additional charges. Please contact our support team for assistance.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Are there any additional fees not included in the booking price?
-                        <span class="expand-toggle">+</span>
-                    </button>
-                    <div class="faq-answer" style="display: none;">
-                        <p>Our booking price includes most fees. However, depending on your destination, there may be extra charges like city taxes, resort fees, or baggage fees charged by airlines. Please review your booking details carefully or contact us for more information.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        What should I do if I miss my flight?
-                        <span class="expand-toggle">+</span>
-                    </button>
-                    <div class="faq-answer" style="display: none;">
-                        <p>If you miss your flight, please contact us immediately. We can help you explore options such as rescheduling or booking a new flight, but additional charges may apply based on airline policies.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Do you offer travel insurance?
-                        <span class="expand-toggle">+</span>
-                    </button>
-                    <div class="faq-answer"style="display: none;">
-                        <p>Yes, we offer travel insurance options for our customers. Travel insurance can provide coverage for trip cancellations, lost luggage, medical emergencies, and more. You can add insurance to your booking during the checkout process.</p>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
-
-
-
-
         <style>
             /* Basic Reset */
 * {
@@ -1181,142 +1119,11 @@
         background-color: #367836; /* Darker green on hover */
     }
  
-    /* FAQ container styling */
-    .faq-container {
-      width: 100%;
-      max-width: 500px;
-      max-height: 100%; /* Fixed height */
-      border: 3px solid #4CAF50;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      background-color: white;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
-      box-sizing: border-box;
-      margin-top: 30px;
-    }
-
-    /* FAQ title styling */
-    .faq-title {
-      font-size: 1.8em;
-      text-align: center;
-      color: #4CAF50;
-      font-weight: bold;
-      border-bottom: 2px solid #4CAF50;
-      margin-bottom: 20px;
-    }
-
-    /* FAQ items container */
-    .faq-items {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      margin-top: 20px;
-    }
-
-    /* Individual FAQ item styling */
-    .faq-item {
-      width: 100%;
-      box-sizing: border-box;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      background-color: #e0e0e0;
-      overflow: hidden;
-      transition: all 0.4s ease;
-      margin-bottom: 20px; /* Spacing between FAQs */
-    }
-
-    .faq-question {
-      font-size: 1.1em;
-      padding: 12px 15px;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background-color 0.3s;
-    }
-
-    .faq-question:hover {
-      background-color: #d4d4d4;
-    }
-
-    /* FAQ answer styling */
-    .faq-answer {
-      padding: 0 15px;
-      box-sizing: border-box;
-      max-height: 0;
-      overflow: hidden;
-      background-color: #f9f9f9;
-      color: #333;
-      font-size: 1em;
-      transition: max-height 0.4s ease, padding 0.4s ease; /* Smooth padding transition */
-    }
-
-    /* Circular toggle symbol styling */
-    .toggle-symbol {
-      width: 25px;
-      height: 25px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2em;
-      color: white;
-      background-color: #4CAF50;
-      border-radius: 50%;
-      transition: transform 0.4s ease;
-    }
-
-    /* Rotate symbol when active */
-    .faq-item.active .toggle-symbol {
-      transform: rotate(45deg);
-    }
+ 
   </style>
 
 
-  <div class="faq-container">
-    <!-- FAQ Title -->
-    <div class="faq-title">Frequently Asked Questions</div>
-
-    <!-- FAQ Items Wrapper -->
-    <div class="faq-items">
-      <!-- FAQ Item 1 -->
-      <div class="faq-item">
-        <div class="faq-question">
-            What is your cancellation policy?
-          <span class="toggle-symbol">+</span>
-        </div>
-        <div class="faq-answer">
-            We offer a flexible cancellation policy that allows you to cancel your booking 
-            up to 48 hours before your scheduled departure for a full refund.
-        </div>
-      </div>
-
-      <!-- FAQ Item 2 -->
-      <div class="faq-item">
-        <div class="faq-question">
-            How do I make changes to my booking?
-          <span class="toggle-symbol">+</span>
-        </div>
-        <div class="faq-answer">
-            You can make changes to your booking by logging into your account 
-            and accessing your booking details
-        </div>
-      </div>
-
-      <!-- FAQ Item 3 -->
-      <div class="faq-item">
-        <div class="faq-question">
-            Can I change the date of my travel after booking?
-          <span class="toggle-symbol">+</span>
-        </div>
-        <div class="faq-answer">
-            Yes, you can change your travel date, but it depends 
-            on the availability and our policy for date changes.
-        </div>
-      </div>
-    </div>
-  </div>
+  
 
   <script>
     const faqItems = document.querySelectorAll(".faq-item");
