@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continue with Google</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .google-login {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        .google-login h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .google-login button {
+            padding: 10px;
+            width: 100%;
+            font-size: 16px;
+            color: #fff;
+            background-color: #4285f4; /* Google blue */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .google-login button:hover {
+            background-color: #357ae8; /* Darker blue */
+        }
+        .message {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="google-login">
+    <h2>Continue with Google</h2>
+    <button onclick="continueWithGoogle()">Sign in with Google</button>
+    <div id="message" class="message"></div>
+</div>
+
+<script>
+    function continueWithGoogle() {
+        // Simulate Google login
+        const messageElement = document.getElementById('message');
+        messageElement.textContent = 'Logging in with Google...';
+        messageElement.className = 'message';
+
+        // Simulate a delay for login process
+        setTimeout(() => {
+            messageElement.textContent = 'Login successful! Redirecting to home page...';
+            messageElement.className = 'message success';
+            // Redirect to home page after 2 seconds
+            setTimeout(() => {
+                window.location.href = 'index.html'; // Change this to your actual home page
+            }, 2000);
+        }, 2000); // Simulate a 2-second login process
+    }
+</script>
+
+</body>
+</html>
