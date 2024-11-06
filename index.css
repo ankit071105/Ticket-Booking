@@ -208,6 +208,7 @@ p {
   background-color: #1f2937;
   padding: 15px;
   color: white;
+  height: 10vh;
 
   position: sticky;
   top: 0;
