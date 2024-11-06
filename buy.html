@@ -317,7 +317,7 @@
 
     <nav class="navbar">
       <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
-      <div class="logo" style="font-size: 20px;">Ticket Marketplace</div>
+      <div class="logo">Ticket Marketplace</div>
 
       <!-- Toggle Button (Visible on Small Screens) -->
       <button id="navToggle">☰</button>
@@ -334,7 +334,7 @@
       </div>
 
       <!-- Dark Mode Button -->
-      <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+      <button id="darkModeToggle">🌙</button>
   </nav>
 
               
@@ -673,7 +673,7 @@ h2:hover{
         const ticketList = type === 'bus' ? document.getElementById('busTicketsList') : document.getElementById('trainTicketsList');
 
         if (filteredTickets.length === 0) {
-          ticketList.innerHTML = `<p>No ${type} tickets available.</p>`;
+          ticketList.innerHTML = <p>No ${type} tickets available.</p>;
         } else {
           filteredTickets.forEach(ticket => {
             const ticketElement = document.createElement('div');
@@ -692,7 +692,7 @@ h2:hover{
       }
 
       function buyTicket(ticketNumber, type) {
-        alert(`You have successfully purchased the ${type} ticket: ${ticketNumber}`);
+        alert(`You have successfully purchased the ${type}` `ticket: ${ticketNumber}`);
       }
     </script>
     <!-- footer -->
