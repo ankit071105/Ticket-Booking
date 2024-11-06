@@ -4,6 +4,7 @@ body {
 }
 /* Popup Styles */
 .popup {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   left: 0;
@@ -142,6 +143,8 @@ p {
 }
 
 .video-container video {
+  max-width: 100%;
+
   width: calc(100% + 150px); /* Increase the width to crop from the right */
   height: auto; /* Maintain aspect ratio */
   position: relative;
@@ -330,6 +333,13 @@ p {
 }
 @media (max-width:480px)
 { 
+  .ticket-list {
+    flex-direction: column; /* Stack cards vertically on smaller screens */
+    align-items: center;
+  }
+  .navbar ul {
+    flex-direction: column;
+  }
   #darkModeToggle{
   margin-top: 20px;
   }
