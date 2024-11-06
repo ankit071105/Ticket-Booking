@@ -8,7 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <link rel="stylesheet" href="styles.css">
@@ -41,7 +42,7 @@
 
         /* cursor */
 
-        
+
         #preloader {
             position: fixed;
             top: 0;
@@ -183,80 +184,83 @@
             align-items: center;
             text-align: center;
         }
+
         #faq {
-        background-color: #f9f9f9;
-        padding: 3rem 0;
-    }
+            background-color: #f9f9f9;
+            padding: 3rem 0;
+        }
 
-    .faq-container {
-        max-width: 800px;
-        margin: auto;
-        padding: 2rem;
-        border-radius: 8px;
-    }
+        .faq-container {
+            max-width: 800px;
+            margin: auto;
+            padding: 2rem;
+            border-radius: 8px;
+        }
 
-    /* Heading styling */
-    #faq h2 {
-        text-align: center;
-        font-size: 2.5rem;
-        font-weight: bold;
-        margin-bottom: 2rem;
-        color: #333;
-    }
+        /* Heading styling */
+        #faq h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            color: #333;
+        }
 
-    /* FAQ item styling */
-    .faq-item {
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        margin-bottom: 1rem;
-        overflow: hidden;
-    }
+        /* FAQ item styling */
+        .faq-item {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
 
-    /* Question button styling */
-    .faq-question {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        background-color: #f1f1f1;
-        padding: 1rem;
-        font-size: 1.25rem;
-        font-weight: 500;
-        color: #333;
-        cursor: pointer;
-        border: none;
-        outline: none;
-        transition: background-color 0.3s;
-    }
+        /* Question button styling */
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            background-color: #f1f1f1;
+            padding: 1rem;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            transition: background-color 0.3s;
+        }
 
-    .faq-question:hover {
-        background-color: #e1e1e1;
-    }
+        .faq-question:hover {
+            background-color: #e1e1e1;
+        }
 
-    /* Answer text styling */
-    .faq-answer {
-        padding: 1rem;
-        font-size: 1rem;
-        line-height: 1.6;
-        color: #555;
-        display: none;
-    }
+        /* Answer text styling */
+        .faq-answer {
+            padding: 1rem;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+            display: none;
+        }
 
-    /* Toggle icon styling */
-    .expand-toggle {
-        font-size: 1.5rem;
-        transition: transform 0.3s;
-    }
+        /* Toggle icon styling */
+        .expand-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
 
-    /* Toggle open state */
-    .faq-item.active .expand-toggle {
-        transform: rotate(45deg); /* Rotate the plus to form an "X" */
-    }
+        /* Toggle open state */
+        .faq-item.active .expand-toggle {
+            transform: rotate(45deg);
+            /* Rotate the plus to form an "X" */
+        }
 
-    .faq-item.active .faq-answer {
-        display: block;
-    }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
         #next,
         #prev {
             position: absolute;
@@ -352,9 +356,33 @@
             font-style: italic;
             margin: 0 0 15px 0;
         }
-        .fa-telegram{
+
+        .fa-telegram {
             margin-top: 5px;
             scale: 1.5;
+        }
+
+        #progress-container {
+            position: fixed;
+            top: 0px;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            z-index: 99990;
+            /* background: #f3f3f3; */
+        }
+
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 7px;
+            width: 0;
+            background: linear-gradient(90deg, rgb(0, 72, 255) 0%, rgb(153, 187, 255) 50%, rgb(0, 184, 250) 100%);
+            box-shadow: 0 0 4px rgba(0, 166, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.7);
+            transition: width 0.09s ease-in-out;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -364,7 +392,8 @@
 
     <div class="popup" id="pollPopup">
         <div class="popup-content">
-            <div class="closeBtn" id="voteCloseBtn" style="display: flex;justify-content: right;font-size: 1.5vw;"><i class="fas fa-window-close"></i></div>
+            <div class="closeBtn" id="voteCloseBtn" style="display: flex;justify-content: right;font-size: 1.5vw;"><i
+                    class="fas fa-window-close"></i></div>
             <h2>What type of transportation do you prefer for your travels?</h2>
             <div id="pollOptions">
                 <button class="poll-button" data-value="Bus">Bus - Convenient for short to medium distances</button>
@@ -375,95 +404,95 @@
             <p id="result"></p>
         </div>
     </div>
-    
+
     <script>
         // Show the poll popup 10 seconds after the page loads, if not already voted
-        window.onload = function() {
-          const hasVoted = sessionStorage.getItem('hasVoted');
-          setTimeout(function() {
-            if (!hasVoted) {
-              document.getElementById('pollPopup').style.display = 'flex';
-            }
-          }, 10000); // 10000 milliseconds = 10 seconds
+        window.onload = function () {
+            const hasVoted = sessionStorage.getItem('hasVoted');
+            setTimeout(function () {
+                if (!hasVoted) {
+                    document.getElementById('pollPopup').style.display = 'flex';
+                }
+            }, 10000); // 10000 milliseconds = 10 seconds
         };
-        
+
         const pollButtons = document.querySelectorAll('.poll-button[data-value]');
         let selectedValue = '';
-        
+
         pollButtons.forEach(button => {
-          button.addEventListener('click', function() {
-            // Remove selected class from all buttons
-            pollButtons.forEach(btn => btn.classList.remove('selected'));
-            // Add selected class to the clicked button
-            button.classList.add('selected');
-            selectedValue = button.getAttribute('data-value');
-          });
+            button.addEventListener('click', function () {
+                // Remove selected class from all buttons
+                pollButtons.forEach(btn => btn.classList.remove('selected'));
+                // Add selected class to the clicked button
+                button.classList.add('selected');
+                selectedValue = button.getAttribute('data-value');
+            });
         });
-        
-        document.getElementById("voteCloseBtn").onclick = function() {
+
+        document.getElementById("voteCloseBtn").onclick = function () {
             document.getElementById("pollPopup").style.display = "none";
         }
 
-        
-        document.getElementById('voteButton').addEventListener('click', function() {
-          if (selectedValue) {
-            document.getElementById('result').innerHTML = `You voted for: ${selectedValue}<br>Thank you!`;
-            // Save voting status in session storage
-            sessionStorage.setItem('hasVoted', 'true');
-            // Hide the popup after voting
-            setTimeout(() => {
-              document.getElementById('pollPopup').style.display = 'none';
-            }, 2000);
-          } else {
-            alert("Please select an option!");
-          }
-        });
-        
-        
-        function initializePoll() {
-          console.log("Poll initialized.");
-        }
-        
-        function clearSelectedButton() {
-          pollButtons.forEach(btn => btn.classList.remove('selected'));
-        }
-        
-        function addEventListenersToButtons() {
-          pollButtons.forEach(button => {
-            button.addEventListener('mouseenter', function() {
-              button.style.backgroundColor = '#3e8e41'; // Change color on hover
-            });
-            button.addEventListener('mouseleave', function() {
-                button.style.backgroundColor = ''; // Reset color on mouse leave
-              });
-            });
-          }
-        
-          function handleVoteSubmission() {
+
+        document.getElementById('voteButton').addEventListener('click', function () {
             if (selectedValue) {
-              console.log("Vote submitted for: " + selectedValue);
+                document.getElementById('result').innerHTML = `You voted for: ${selectedValue}<br>Thank you!`;
+                // Save voting status in session storage
+                sessionStorage.setItem('hasVoted', 'true');
+                // Hide the popup after voting
+                setTimeout(() => {
+                    document.getElementById('pollPopup').style.display = 'none';
+                }, 2000);
+            } else {
+                alert("Please select an option!");
             }
-          }
-        
-        
-          pollButtons.forEach(button => {
-            button.addEventListener('click', function() {
-              logButtonClick(button);
-              handleVoteSubmission();
+        });
+
+
+        function initializePoll() {
+            console.log("Poll initialized.");
+        }
+
+        function clearSelectedButton() {
+            pollButtons.forEach(btn => btn.classList.remove('selected'));
+        }
+
+        function addEventListenersToButtons() {
+            pollButtons.forEach(button => {
+                button.addEventListener('mouseenter', function () {
+                    button.style.backgroundColor = '#3e8e41'; // Change color on hover
+                });
+                button.addEventListener('mouseleave', function () {
+                    button.style.backgroundColor = ''; // Reset color on mouse leave
+                });
             });
-          });
-        
-        
-          for (let i = 0; i < 5; i++) {
+        }
+
+        function handleVoteSubmission() {
+            if (selectedValue) {
+                console.log("Vote submitted for: " + selectedValue);
+            }
+        }
+
+
+        pollButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                logButtonClick(button);
+                handleVoteSubmission();
+            });
+        });
+
+
+        for (let i = 0; i < 5; i++) {
             console.log("Simulating poll process: Step " + (i + 1));
-          }
-        
-        
-        </script>
+        }
+
+
+    </script>
 
     <div class="Wrapper">
         <div class="loader"></div>
-    </div>  
+    </div>
 
     <!-- cursor -->
     <div class="circle"></div>
@@ -487,32 +516,40 @@
     <div class="circle"></div>
     <div class="circle"></div>
 
- 
+
 
     <div id="scrollProgressBar" class="progress-bar"></div>
-  
+
 
     <div class="gtranslate_wrapper"></div>
     <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
     <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
-    
-    
-    
+
+
+
     <button onclick="document.getElementById('chatbot-container').classList.toggle('chatbot-show')" id="chatbotBtn"
-            title="chat bot"></button>
+        title="chat bot"></button>
     <div class="chatbot-container" id="chatbot-container">
         <div class="chatbot-title">not Bot</div>
         <div class="chatbot-chat" id="chatbot-chat"></div>
         <input type="text" class="chatbot-input" id="chatbot-input" placeholder="Type your message here...." />
         <button class="chatbot-button" id="chatbot-button"><i class="fa-brands fa-telegram"></i></button>
     </div>
-    <button onclick="moveToTop()" id="topBtn" title="Go to top" style="display:flex; position: fixed;  right: 30px; z-index: 100000;">
+    <button onclick="moveToTop()" id="topBtn" title="Go to top"
+        style="display:flex; position: fixed;  right: 30px; z-index: 100000;">
         <i class="fa fa-arrow-up" aria-hidden="true"></i>
     </button>
 
 
 
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div> 
+    <nav class="navbar">
+        <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt=""
+            style="border-radius: 50%; height: 35px; width: 35px;">
+        <div class="logo" style="font-size: 20px;">Ticket Marketplace</div>
 
     <nav class="navbar">
         <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
@@ -540,9 +577,36 @@
           <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
           <div class="logo" style="font-size: 20px; margin-left: 8px;">Ticket Marketplace</div>
       </a><div>
+        <!-- Toggle Button (Visible on Small Screens) -->
+        <button id="navToggle">☰</button>
+
+        <!-- Navbar Links -->
+        <div id="navLinks">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+            <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
+            <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
+            <a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
+            <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <a href="AI suggestions.html"><i class="fas fa-robot"></i> AI Suggestions</a>
+        </div>
+
+        <!-- Dark Mode Button -->
+        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+    </nav>
+  
+
+    <!-- <nav class="navbar">
+        <a href="index.html"
+            style="display: flex; align-items: center; text-decoration: none; white-space: nowrap; margin-right: -250px;">
+            <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt=""
+                style="border-radius: 50%; height: 35px; width: 35px;">
+            <div class="logo" style="font-size: 20px; margin-left: 8px;">Ticket Marketplace</div>
+        </a>
+        <div>
 
             <a href="index.html" style="text-decoration: none;"><i class="fas fa-home"></i> Home</a>
-
             <a href="about.html" style="text-decoration: none;"><i class="fas fa-info-circle"></i> About</a>
             <a href="buy.html" style="text-decoration: none;"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
             <a href="sell.html" style="text-decoration: none;"><i class="fas fa-tags"></i> Sell</a>
@@ -550,29 +614,30 @@
             <a href="contributor.html" style="text-decoration: none;"><i class="fas fa-users"></i> Contributors</a>
             <a href="register.html" style="text-decoration: none;"><i class="fas fa-sign-in-alt"></i> Login</a>
 
-          
-    
-          </div>
+
+        </div>
 
 
-           <!-- Profile Icon -->
-            <a href="./testp.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
-            <img src="https://i.postimg.cc/tCL5Td4H/gold-membership-icon-default-avatar-profile-icon-membership-icon-social-media-user-image-illustratio.jpg" alt="Profile Icon" style="width: 35px; height: 35px; border-radius: 50%; margin-left: -170px;">
-           </a>
-       </li>
+        Profile Icon -->
+        <!-- <a href="./testp.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
+            <img src="https://i.postimg.cc/tCL5Td4H/gold-membership-icon-default-avatar-profile-icon-membership-icon-social-media-user-image-illustratio.jpg"
+                alt="Profile Icon" style="width: 35px; height: 35px; border-radius: 50%; margin-left: -170px;">
+        </a> -->
+        <!-- </li> -->
+<!-- 
+        <style>
+            
+            .navbar-nav .nav-item .profile-link:hover {
+                background-color: transparent !important;
+                /* Remove background color */
+                border-radius: 0 !important;
+                /* Reset border radius */
+                transform: none !important;
+                /* Prevent scaling */
+            }
+        </style> -->
 
-       <style>
-
-         /* Override the existing hover styles */
-         .navbar-nav .nav-item .profile-link:hover {
-             background-color: transparent !important; /* Remove background color */
-             border-radius: 0 !important; /* Reset border radius */
-             transform: none !important; /* Prevent scaling */
-         }
-
-       </style>
-
-        <script>
+        <!-- <script>
 
             function toggleMenu() {
                 const menu = document.getElementById('profileMenu');
@@ -580,7 +645,7 @@
             }
 
             // Close the dropdown if the user clicks outside of it
-            window.onclick = function(event) {
+            window.onclick = function (event) {
                 if (!event.target.matches('.profile-icon img')) {
                     const menu = document.getElementById('profileMenu');
                     if (menu.style.display === 'block') {
@@ -588,56 +653,57 @@
                     }
                 }
             }
-            
+
         </script>
 
 
-          <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button> 
+
+    </nav>-->
     
-      </nav>
 
-            <a href="AI suggestions.html"><i class="fas fa-robot"></i> AI Suggestions</a>
-            <a href="client/login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
-        </div>
+   <!-- <a href="AI suggestions.html"><i class="fas fa-robot"></i> AI Suggestions</a>
+    <a href="client/login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+    </div>
 
-        <!-- Dark Mode Button -->
-        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
-    </nav>
+    Dark Mode Button 
+    <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+    </nav> -->
 
 
     <!-- <div class="slider"> -->
-        <div class="slide active">
-            <img src="images/6.jpeg" alt="Slide 1">
-        </div>
-        <div class="slide">
-            <img src="images/4.jpeg" alt="Slide 2">
-        </div>
-        <div class="slide">
-            <img src="images/3.jpeg" alt="Slide 3">
-        </div>
-        <div class="slide">
-            <img src="images/2.jpeg" alt="Slide 4">
-        </div>
-        <div class="slide">
-            <img src="images/1.jpeg" alt="Slide 5">
-        </div>
-        <div class="slide">
-            <img src="images/5.jpeg" alt="Slide 6">
-        </div>
-        <div class="slide">
-            <img src="images/7.jpeg" alt="Slide 7">
-        </div>
+    <div class="slide active">
+        <img src="images/6.jpeg" alt="Slide 1">
+    </div>
+    <div class="slide">
+        <img src="images/4.jpeg" alt="Slide 2">
+    </div>
+    <div class="slide">
+        <img src="images/3.jpeg" alt="Slide 3">
+    </div>
+    <div class="slide">
+        <img src="images/2.jpeg" alt="Slide 4">
+    </div>
+    <div class="slide">
+        <img src="images/1.jpeg" alt="Slide 5">
+    </div>
+    <div class="slide">
+        <img src="images/5.jpeg" alt="Slide 6">
+    </div>
+    <div class="slide">
+        <img src="images/7.jpeg" alt="Slide 7">
+    </div>
 
-        <!-- The dots/circles -->
-        <div class="slider-dots" style="text-align:center">
-            <span class="dot" onclick="clickThumbs(0)"></span>
-            <span class="dot" onclick="clickThumbs(1)"></span>
-            <span class="dot" onclick="clickThumbs(2)"></span>
-            <span class="dot" onclick="clickThumbs(3)"></span>
-            <span class="dot" onclick="clickThumbs(4)"></span>
-            <span class="dot" onclick="clickThumbs(5)"></span>
-            <span class="dot" onclick="clickThumbs(6)"></span>
-        </div>
+    <!-- The dots/circles -->
+    <div class="slider-dots" style="text-align:center">
+        <span class="dot" onclick="clickThumbs(0)"></span>
+        <span class="dot" onclick="clickThumbs(1)"></span>
+        <span class="dot" onclick="clickThumbs(2)"></span>
+        <span class="dot" onclick="clickThumbs(3)"></span>
+        <span class="dot" onclick="clickThumbs(4)"></span>
+        <span class="dot" onclick="clickThumbs(5)"></span>
+        <span class="dot" onclick="clickThumbs(6)"></span>
+    </div>
 
 
 
@@ -675,7 +741,8 @@
                     <h3 style="color: black;">Sell Bus Tickets</h3>
                     <p>Looking to sell your bus tickets? Contact us 24/7 for the best price of your bus ticket without
                         any hassle.</p>
-                    <a href="sell_bus_ticket.html"><button class="bbtn">Sell Bus Tickets</button></a> <!--changed the href from sell.html to sell_bus_ticket.html(added a new file)-->
+                    <a href="sell_bus_ticket.html"><button class="bbtn">Sell Bus Tickets</button></a>
+                    <!--changed the href from sell.html to sell_bus_ticket.html(added a new file)-->
                 </div>
 
                 <div class="ticket-card3">
@@ -688,7 +755,8 @@
                 <div class="ticket-card4">
                     <h3 style="color: black;">Sell Train Tickets</h3>
                     <p>Have train tickets to sell? Reach out to us to list your tickets and get great deals.</p>
-                    <a href="sell_train_ticket.html"><button class="bbtn">Sell Train Tickets</button></a> <!--chnaged href from train_sell.html to sell.html-->
+                    <a href="sell_train_ticket.html"><button class="bbtn">Sell Train Tickets</button></a>
+                    <!--chnaged href from train_sell.html to sell.html-->
                 </div>
             </div>
         </div>
@@ -784,594 +852,429 @@
 
 
         <button id="next" style="display: block; color: rgba(164, 157, 157, 0.8);"> > </button>
-        <button id="prev" style="display: block; color: rgba(164, 157, 157, 0.8);">  </button>
+        <button id="prev" style="display: block; color: rgba(164, 157, 157, 0.8);"> </button>
     </div>
 
 
 
 
-<div id="sxs" style="display: flex; align-items: center; justify-content: center; flex-direction: column; max-width: 80vw; align-self: center; justify-self: center; background: linear-gradient(to right, #4a90e2, #6cb2eb); padding: 40px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-    <div id="contact2" class="contact2" style="background-color: rgb(0, 0, 0); padding: 20px; display: flex; margin: auto; border-radius: 10px; overflow: hidden; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); width: auto;">
-        
-        <!-- Left Section -->
-        <div class="contact2-div1" style="max-width: 100%; background: linear-gradient(135deg, hsl(204, 75%, 50%), #079874); padding: 30px; color: white; display: flex; flex-direction: column; justify-content: center;">
-            <h2 style="color: white; text-align: left; font-size: 4rem; margin-bottom: 10px;">Contact Us</h2>
-            <p style="color: white; font-size: 16px; line-height: 1.6; margin-bottom: 20px;">We value your feedback! Reach out for inquiries, feedback, or support. Your insights help us improve your experience.</p>
+    <div id="sxs"
+        style="display: flex; align-items: center; justify-content: center; flex-direction: column; max-width: 80vw; align-self: center; justify-self: center; background: linear-gradient(to right, #4a90e2, #6cb2eb); padding: 40px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        <div id="contact2" class="contact2"
+            style="background-color: rgb(0, 0, 0); padding: 20px; display: flex; margin: auto; border-radius: 10px; overflow: hidden; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); width: auto;">
 
-            <div style="display: flex; gap: 10px; margin-top: 20px;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
-                    <path d="M12 2c-3.866 0-7 3.134-7 7 0 4.506 6.24 11.084 6.532 11.384.197.208.473.316.751.316s.554-.108.75-.316c.292-.3 6.533-6.878 6.533-11.384 0-3.866-3.134-7-7-7zm0 9c-1.104 0-2-.896-2-2s.896-2 2-2 2 .896 2 2-.896 2-2 2z" />
-                </svg>
-                <p style="color: white; font-size: 16px;">ABC Colony, Bangalore, Pin: 76896</p>
-            </div>
+            <!-- Left Section -->
+            <div class="contact2-div1"
+                style="max-width: 100%; background: linear-gradient(135deg, hsl(204, 75%, 50%), #079874); padding: 30px; color: white; display: flex; flex-direction: column; justify-content: center;">
+                <h2 style="color: white; text-align: left; font-size: 4rem; margin-bottom: 10px;">Contact Us</h2>
+                <p style="color: white; font-size: 16px; line-height: 1.6; margin-bottom: 20px;">We value your feedback!
+                    Reach out for inquiries, feedback, or support. Your insights help us improve your experience.</p>
 
-            <div style="display: flex; gap: 10px; margin-top: 20px;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
-                    <path d="M6.615 10.193c1.513 3.142 4.05 5.676 7.195 7.193l1.767-1.767c.282-.282.682-.382 1.043-.294 1.149.285 2.37.437 3.64.437.552 0 1 .447 1 1v3.625c0 .552-.448 1-1 1-10.493 0-19-8.507-19-19 0-.553.448-1 1-1h3.625c.552 0 1 .447 1 1 0 1.27.152 2.491.437 3.64.087.361-.012.762-.294 1.043l-1.767 1.767z" />
-                </svg>
-                <p style="color: white; font-size: 16px;">+91 9685478526</p>
-            </div>
-        </div>
-
-        <!-- Right Section (Contact Form) -->
-        <div class="contact-form" style="display: flex; align-items: center; justify-content: center; width: 100%;">
-            <form style="width: 100%; max-width: 600px; margin: 0 auto; padding: 20px;">
-                <div style="display: flex; gap: 30px; margin-bottom: 20px; margin-top: 50px;">
-                    <input type="text" placeholder="Name" style="flex: 1; padding: 10px; border-bottom: 2px solid #ccc; border-radius: 10px; outline: none; transition: border-color 0.3s; background-color: #c4c2c2;">
-                    <input type="email" placeholder="Email" style="flex: 1; padding: 10px; border-bottom: 2px solid #ccc; border-radius: 10px; outline: none; transition: border-color 0.3s; background-color: #c4c2c2;">
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2c-3.866 0-7 3.134-7 7 0 4.506 6.24 11.084 6.532 11.384.197.208.473.316.751.316s.554-.108.75-.316c.292-.3 6.533-6.878 6.533-11.384 0-3.866-3.134-7-7-7zm0 9c-1.104 0-2-.896-2-2s.896-2 2-2 2 .896 2 2-.896 2-2 2z" />
+                    </svg>
+                    <p style="color: white; font-size: 16px;">ABC Colony, Bangalore, Pin: 76896</p>
                 </div>
-                
-                <input type="text" placeholder="Subject" style="width: 100%; padding: 10px; margin-bottom: 20px; border-bottom: 2px solid #ccc; border-radius: 10px; outline: none; transition: border-color 0.3s; background-color: #c4c2c2;">
-                
-                <textarea placeholder="Message"  rows="3" style="width: 100%; padding: 10px; margin-bottom: 20px; border-bottom: 2px solid #ccc; border-radius: 10px; outline: none; transition: border-color 0.3s; background-color: #c4c2c2;"></textarea>
-                
-                <button type="submit" style="width: 100%; padding: 12px; background: linear-gradient(135deg, hsl(204, 75%, 50%), #079874); color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
-                    Send Message
-                </button>
-            </form>
+
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
+                        <path
+                            d="M6.615 10.193c1.513 3.142 4.05 5.676 7.195 7.193l1.767-1.767c.282-.282.682-.382 1.043-.294 1.149.285 2.37.437 3.64.437.552 0 1 .447 1 1v3.625c0 .552-.448 1-1 1-10.493 0-19-8.507-19-19 0-.553.448-1 1-1h3.625c.552 0 1 .447 1 1 0 1.27.152 2.491.437 3.64.087.361-.012.762-.294 1.043l-1.767 1.767z" />
+                    </svg>
+                    <p style="color: white; font-size: 16px;">+91 9685478526</p>
+                </div>
+            </div>
+
+            <!-- Right Section (Contact Form) -->
+            <div class="contact-form" style="display: flex; align-items: center; justify-content: center; width: 100%;">
+                <form style="width: 100%; max-width: 600px; margin: 0 auto; padding: 20px;">
+                    <div style="display: flex; gap: 30px; margin-bottom: 20px; margin-top: 50px;">
+                        <input type="text" placeholder="Name"
+                            style="flex: 1; padding: 10px; border-bottom: 2px solid #ccc; border-radius: 10px; outline: none; transition: border-color 0.3s; background-color: #c4c2c2;">
+                        <input type="email" placeholder="Email"
+                            style="flex: 1; padding: 10px; border-bottom: 2px solid #ccc; border-radius: 10px; outline: none; transition: border-color 0.3s; background-color: #c4c2c2;">
+                    </div>
+
+                    <input type="text" placeholder="Subject"
+                        style="width: 100%; padding: 10px; margin-bottom: 20px; border-bottom: 2px solid #ccc; border-radius: 10px; outline: none; transition: border-color 0.3s; background-color: #c4c2c2;">
+
+                    <textarea placeholder="Message" rows="3"
+                        style="width: 100%; padding: 10px; margin-bottom: 20px; border-bottom: 2px solid #ccc; border-radius: 10px; outline: none; transition: border-color 0.3s; background-color: #c4c2c2;"></textarea>
+
+                    <button type="submit"
+                        style="width: 100%; padding: 12px; background: linear-gradient(135deg, hsl(204, 75%, 50%), #079874); color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
+                        Send Message
+                    </button>
+                </form>
+            </div>
         </div>
-    </div>
 
-    <style>
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: none;
-            border-bottom: 2px solid #ccc;
-            outline: none;
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        textarea:focus {
-            border-bottom: 2px solid #0077cc;
-        }
-
-        input[type="text"]:hover,
-        input[type="email"]:hover,
-        textarea:hover {
-            border-bottom: 2px solid #0077cc;
-        }
-
-        button[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            background-color: #b0b0b0;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button[type="submit"]:hover {
-            background-color: #005fa3;
-        }
-
-        @media (max-width: 1000px) {
-            .contact2 {
-                flex-direction: column;
+        <style>
+            input[type="text"],
+            input[type="email"],
+            textarea {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 15px;
+                border: none;
+                border-bottom: 2px solid #ccc;
+                outline: none;
+                transition: border-color 0.3s, box-shadow 0.3s;
             }
-        }
-   </style>
-  <style>
-      hover effect */
-        button[type="submit"]:hover {  
-            background-color: #005fa3;
-        }
 
-        @media (max-width: 1000px) {
-            .contact2 {
-                flex-direction: column;
+            input[type="text"]:focus,
+            input[type="email"]:focus,
+            textarea:focus {
+                border-bottom: 2px solid #0077cc;
             }
-        }
-    </style>
+
+            input[type="text"]:hover,
+            input[type="email"]:hover,
+            textarea:hover {
+                border-bottom: 2px solid #0077cc;
+            }
+
+            button[type="submit"] {
+                width: 100%;
+                padding: 10px;
+                background-color: #b0b0b0;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            button[type="submit"]:hover {
+                background-color: #005fa3;
+            }
+
+            @media (max-width: 1000px) {
+                .contact2 {
+                    flex-direction: column;
+                }
+            }
+
+
+
+            /* hover effect */
+            button[type="submit"]:hover {
+        </style>
+        <style>
+            hover effect */ button[type="submit"]:hover {
+
+                background-color: #005fa3;
+            }
+
+            @media (max-width: 1000px) {
+                .contact2 {
+                    flex-direction: column;
+                }
+            }
+        </style>
+
+
 
 
         <div class="map-container">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126915.40242030277!2d85.7892607!3d20.2498709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a7a3b9692fff%3A0x87cd0a356bbc39ce!2sITER%2C%20Siksha%20'O'%20Anusandhan!5e0!3m2!1sen!2sin!4v1689514124518!5m2!1sen!2sin"
-                allowfullscreen frameborder="0" >
+                allowfullscreen frameborder="0">
             </iframe>
         </div>
     </div>
-        <!-- feedback form -->
-        <section id="feedback-form">
-            <div class="container">
-                <h2>We Value Your Feedback!</h2>
-                <p>Your input helps us improve our services. Please share your thoughts with us below.</p>
-                <form>
-        
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your Name" required pattern="[a-zA-Z ]+"
-                            oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
-                            oninput="this.setCustomValidity('')">
+    <!-- feedback form -->
+    <section id="feedback-form">
+        <div class="container">
+            <h2>We Value Your Feedback!</h2>
+            <p>Your input helps us improve our services. Please share your thoughts with us below.</p>
+            <form>
+
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required pattern="[a-zA-Z ]+"
+                        oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
+                        oninput="this.setCustomValidity('')">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+
+                <style>
+                    /* Feedback Form Section Styling */
+                    #feedback-form {
+                        background: linear-gradient(to right, #92b7e1, #ab8cd1);
+                        padding: 40px;
+                        border-radius: 10px;
+                        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                        color: #ffffff;
+                        /* Change text color to white */
+                    }
+
+                    .container {
+                        max-width: 600px;
+                        margin: 0 auto;
+                    }
+
+                    /* Form Group Styling */
+                    .form-group {
+                        margin-bottom: 20px;
+                    }
+
+                    .form-group label {
+                        display: block;
+                        margin-bottom: 5px;
+                    }
+
+                    .form-group input,
+                    .form-group textarea {
+                        width: 100%;
+                        padding: 10px;
+                        border: none;
+                        border-radius: 5px;
+                        font-size: 1rem;
+                    }
+
+                    /* Textarea specific styling */
+                    .form-group textarea {
+                        resize: none;
+                        /* Prevent resizing */
+                    }
+
+                    /* Submit Button Styling */
+                    button[type="submit"] {
+                        background-color: #ff8c00;
+                        color: #ffffff;
+                        border: none;
+                        border-radius: 5px;
+                        padding: 15px 30px;
+                        /* Increased padding for a larger button */
+                        font-size: 1.2rem;
+                        /* Increased font size */
+                        cursor: pointer;
+                        transition: background-color 0.3s ease;
+                    }
+
+                    button[type="submit"]:hover {
+                        background-color: #e07b00;
+                        /* Darker shade on hover */
+                    }
+
+                    /* Rating Section Styling */
+                    .rating-group {
+                        display: flex;
+                        justify-content: center;
+                        gap: 8px;
+                        font-size: 24px;
+                        cursor: pointer;
+                    }
+
+                    /* Individual Star Styling */
+                    .rating-group i {
+                        color: #ccc;
+                        /* Default star color */
+                        transition: color 0.3s ease;
+                    }
+
+                    /* Hover Effect */
+                    .rating-group i:hover,
+                    .rating-group i:hover~i {
+                        color: #f4d03f;
+                        /* Highlighted star color on hover */
+                    }
+
+                    /* Selected Star Color */
+                    .rating-group .selected,
+                    .rating-group .selected~i {
+                        color: #ff8c00;
+                        /* Color when star is selected */
+                    }
+                </style>
+
+                <div class="form-group">
+                    <label for="rating">Rating</label>
+                    <div class="rating-group" id="rating-group">
+                        <i class="fas fa-star" data-value="1"></i>
+                        <i class="fas fa-star" data-value="2"></i>
+                        <i class="fas fa-star" data-value="3"></i>
+                        <i class="fas fa-star" data-value="4"></i>
+                        <i class="fas fa-star" data-value="5"></i>
                     </div>
-        
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    </div>
-        
-                    <style>
-                        /* Feedback Form Section Styling */
-                        #feedback-form {
-                            background: linear-gradient(to right, #92b7e1, #ab8cd1);
-                            padding: 40px;
-                            border-radius: 10px;
-                            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-                            color: #ffffff; /* Change text color to white */
-                        }
-        
-                        .container {
-                            max-width: 600px;
-                            margin: 0 auto;
-                        }
-        
-                        /* Form Group Styling */
-                        .form-group {
-                            margin-bottom: 20px;
-                        }
-        
-                        .form-group label {
-                            display: block;
-                            margin-bottom: 5px;
-                        }
-        
-                        .form-group input,
-                        .form-group textarea {
-                            width: 100%;
-                            padding: 10px;
-                            border: none;
-                            border-radius: 5px;
-                            font-size: 1rem;
-                        }
-        
-                        /* Textarea specific styling */
-                        .form-group textarea {
-                            resize: none; /* Prevent resizing */
-                        }
-        
-                        /* Submit Button Styling */
-                        button[type="submit"] {
-                            background-color: #ff8c00;
-                            color: #ffffff;
-                            border: none;
-                            border-radius: 5px;
-                            padding: 15px 30px; /* Increased padding for a larger button */
-                            font-size: 1.2rem; /* Increased font size */
-                            cursor: pointer;
-                            transition: background-color 0.3s ease;
-                        }
-        
-                        button[type="submit"]:hover {
-                            background-color: #e07b00; /* Darker shade on hover */
-                        }
-        
-                        /* Rating Section Styling */
-                        .rating-group {
-                            display: flex;
-                            justify-content: center;
-                            gap: 8px;
-                            font-size: 24px;
-                            cursor: pointer;
-                        }
-        
-                        /* Individual Star Styling */
-                        .rating-group i {
-                            color: #ccc; /* Default star color */
-                            transition: color 0.3s ease;
-                        }
-        
-                        /* Hover Effect */
-                        .rating-group i:hover,
-                        .rating-group i:hover ~ i {
-                            color: #f4d03f; /* Highlighted star color on hover */
-                        }
-        
-                        /* Selected Star Color */
-                        .rating-group .selected,
-                        .rating-group .selected ~ i {
-                            color: #ff8c00; /* Color when star is selected */
-                        }
-                    </style>
-        
-                    <div class="form-group">
-                        <label for="rating">Rating</label>
-                        <div class="rating-group" id="rating-group">
-                            <i class="fas fa-star" data-value="1"></i>
-                            <i class="fas fa-star" data-value="2"></i>
-                            <i class="fas fa-star" data-value="3"></i>
-                            <i class="fas fa-star" data-value="4"></i>
-                            <i class="fas fa-star" data-value="5"></i>
-                        </div>
-                    </div>
-        
-                    <script>
-                        const stars = document.querySelectorAll('#rating-group i');
-        
-                        stars.forEach(star => {
-                            star.addEventListener('click', () => {
-                                // Remove 'selected' class from all stars
-                                stars.forEach(s => s.classList.remove('selected'));
-        
-                                // Add 'selected' class to clicked star and all previous ones
-                                star.classList.add('selected');
-                                let previousSibling = star.previousElementSibling;
-                                while (previousSibling) {
-                                    previousSibling.classList.add('selected');
-                                    previousSibling = previousSibling.previousElementSibling;
-                                }
-                            });
+                </div>
+
+                <script>
+                    const stars = document.querySelectorAll('#rating-group i');
+
+                    stars.forEach(star => {
+                        star.addEventListener('click', () => {
+                            // Remove 'selected' class from all stars
+                            stars.forEach(s => s.classList.remove('selected'));
+
+                            // Add 'selected' class to clicked star and all previous ones
+                            star.classList.add('selected');
+                            let previousSibling = star.previousElementSibling;
+                            while (previousSibling) {
+                                previousSibling.classList.add('selected');
+                                previousSibling = previousSibling.previousElementSibling;
+                            }
                         });
-                    </script>
-        
-                    <div class="form-group">
-                        <label for="feedback">Your Feedback</label>
-                        <textarea id="feedback" name="feedback" rows="5" placeholder="Tell us about your experience..."
-                            required></textarea>
-                    </div>
-        
-                    <button type="submit">Submit Feedback</button>
-                </form>
-            </div>
-        </section>
+                    });
+                </script>
 
-
-
-
-        <!-- FAQ section -->
-        <!-- <section id="faq">
-            <div class="container faq-container">
-                <h2>Frequently Asked Questions</h2>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        What is your cancellation policy?
-                        <span class="expand-toggle">+</span>
-                    </button>
-                    <div class="faq-answer" style="display: none;">
-                        <p>We offer a flexible cancellation policy that allows you to cancel your booking up to 48 hours before your scheduled departure for a full refund.</p>
-                    </div>
+                <div class="form-group">
+                    <label for="feedback">Your Feedback</label>
+                    <textarea id="feedback" name="feedback" rows="5" placeholder="Tell us about your experience..."
+                        required></textarea>
                 </div>
 
-                <div class="faq-item">
-                    <button class="faq-question">
-                        How do I make changes to my booking?
-                        <span class="expand-toggle">+</span>
-                    </button>
-                    <div class="faq-answer"style="display: none;">
-                        <p>You can make changes to your booking by logging into your account and accessing your booking details. For major changes, please contact our support team directly.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Can I change the date of my travel after booking?
-                        <span class="expand-toggle">+</span>
-                    </button>
-                    <div class="faq-answer" style="display: none;">
-                        <p>Yes, you can change your travel date, but it depends on the availability and our policy for date changes. Some changes may incur additional charges. Please contact our support team for assistance.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Are there any additional fees not included in the booking price?
-                        <span class="expand-toggle">+</span>
-                    </button>
-                    <div class="faq-answer" style="display: none;">
-                        <p>Our booking price includes most fees. However, depending on your destination, there may be extra charges like city taxes, resort fees, or baggage fees charged by airlines. Please review your booking details carefully or contact us for more information.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        What should I do if I miss my flight?
-                        <span class="expand-toggle">+</span>
-                    </button>
-                    <div class="faq-answer" style="display: none;">
-                        <p>If you miss your flight, please contact us immediately. We can help you explore options such as rescheduling or booking a new flight, but additional charges may apply based on airline policies.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Do you offer travel insurance?
-                        <span class="expand-toggle">+</span>
-                    </button>
-                    <div class="faq-answer"style="display: none;">
-                        <p>Yes, we offer travel insurance options for our customers. Travel insurance can provide coverage for trip cancellations, lost luggage, medical emergencies, and more. You can add insurance to your booking during the checkout process.</p>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
-
-
-
-
-        <style>
-            /* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Section Styling */
-#feedback-form,#faq {
-    background: linear-gradient(135deg, #b29ee3, #05ffcd); /* Gradient green background */
-    padding: 50px 20px;
-    font-family: Arial, sans-serif;
-}
-
-#feedback-form h2,.faq-title {
-    color: #0d0d0d; /* Dark green for headings */
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-#feedback-form p {
-    color: #07fbd6; /* Medium green for description */
-    font-size: 1.2em;
-    margin-bottom: 30px;
-}
-    /* Form Styling */
-    .form-group {
-        margin-bottom: 20px;
-        text-align: left;
-    }
-
-    .form-group label {
-        font-size: medium;
-        color: #2b472b; /* Dark green for labels */
-        font-weight: bold;
-        display: block;
-        margin-bottom: 5px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        width: 100%;
-        padding: 12px;
-        font-size: 1em;
-        border: 2px solid #a8d8a8; /* Light green border */
-        border-radius: 5px;
-        background-color: #757675; /* Light background */
-        transition: border 0.3s ease;
-        color: #2b472b; /* Dark green for input text */
-    }
-
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-        color: #fafbfa; /* Medium green for placeholder text */
-        font-size: medium;
-        font-weight: bolder;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-        border-color: #4d994d; /* Dark green on focus */
-        outline: none;
-    }
-
-    /* Button Styling */
-    button[type="submit"] {
-        width: 100%;
-        padding: 15px;
-        background-color: #4d994d; /* Dark green */
-        color: white;
-        font-size: 1em;
-        font-weight: bold;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    button[type="submit"]:hover {
-        background-color: #367836; /* Darker green on hover */
-    }
- 
-    /* FAQ container styling */
-    .faq-container {
-      width: 100%;
-      max-width: 500px;
-      max-height: 100%; /* Fixed height */
-      border: 3px solid #4CAF50;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      background-color: white;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
-      box-sizing: border-box;
-      margin-top: 30px;
-    }
-
-    /* FAQ title styling */
-    .faq-title {
-      font-size: 1.8em;
-      text-align: center;
-      color: #4CAF50;
-      font-weight: bold;
-      border-bottom: 2px solid #4CAF50;
-      margin-bottom: 20px;
-    }
-
-    /* FAQ items container */
-    .faq-items {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      margin-top: 20px;
-    }
-
-    /* Individual FAQ item styling */
-    .faq-item {
-      width: 100%;
-      box-sizing: border-box;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      background-color: #e0e0e0;
-      overflow: hidden;
-      transition: all 0.4s ease;
-      margin-bottom: 20px; /* Spacing between FAQs */
-    }
-
-    .faq-question {
-      font-size: 1.1em;
-      padding: 12px 15px;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background-color 0.3s;
-    }
-
-    .faq-question:hover {
-      background-color: #d4d4d4;
-    }
-
-    /* FAQ answer styling */
-    .faq-answer {
-      padding: 0 15px;
-      box-sizing: border-box;
-      max-height: 0;
-      overflow: hidden;
-      background-color: #f9f9f9;
-      color: #333;
-      font-size: 1em;
-      transition: max-height 0.4s ease, padding 0.4s ease; /* Smooth padding transition */
-    }
-
-    /* Circular toggle symbol styling */
-    .toggle-symbol {
-      width: 25px;
-      height: 25px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2em;
-      color: white;
-      background-color: #4CAF50;
-      border-radius: 50%;
-      transition: transform 0.4s ease;
-    }
-
-    /* Rotate symbol when active */
-    .faq-item.active .toggle-symbol {
-      transform: rotate(45deg);
-    }
-  </style>
-
-
-  <div class="faq-container">
-    <!-- FAQ Title -->
-    <div class="faq-title">Frequently Asked Questions</div>
-
-    <!-- FAQ Items Wrapper -->
-    <div class="faq-items">
-      <!-- FAQ Item 1 -->
-      <div class="faq-item">
-        <div class="faq-question">
-            What is your cancellation policy?
-          <span class="toggle-symbol">+</span>
+                <button type="submit">Submit Feedback</button>
+            </form>
         </div>
-        <div class="faq-answer">
-            We offer a flexible cancellation policy that allows you to cancel your booking 
-            up to 48 hours before your scheduled departure for a full refund.
-        </div>
-      </div>
+    </section>
 
-      <!-- FAQ Item 2 -->
-      <div class="faq-item">
-        <div class="faq-question">
-            How do I make changes to my booking?
-          <span class="toggle-symbol">+</span>
-        </div>
-        <div class="faq-answer">
-            You can make changes to your booking by logging into your account 
-            and accessing your booking details
-        </div>
-      </div>
 
-      <!-- FAQ Item 3 -->
-      <div class="faq-item">
-        <div class="faq-question">
-            Can I change the date of my travel after booking?
-          <span class="toggle-symbol">+</span>
-        </div>
-        <div class="faq-answer">
-            Yes, you can change your travel date, but it depends 
-            on the availability and our policy for date changes.
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <script>
-    const faqItems = document.querySelectorAll(".faq-item");
-    faqItems.forEach(item => {
-      const question = item.querySelector(".faq-question");
-      const answer = item.querySelector(".faq-answer");
-
-      question.addEventListener("click", () => {
-        const isActive = item.classList.contains("active");
-
-        // Close any open item
-        faqItems.forEach(otherItem => {
-          otherItem.classList.remove("active");
-          otherItem.querySelector(".faq-answer").style.maxHeight = "0";
-          otherItem.querySelector(".faq-answer").style.padding = "0 15px";
-        });
-
-        // Toggle the current item with smooth transition
-        if (!isActive) {
-          item.classList.add("active");
-          answer.style.padding = "10px 15px"; // Add padding
-
-          // Calculate height dynamically and add buffer for extra space
-          const scrollHeight = answer.scrollHeight;
-          answer.style.maxHeight = (scrollHeight + 20) + "px"; // Buffer for extra space
-        } else {
-          // Close the current item smoothly
-          item.classList.remove("active");
-          answer.style.maxHeight = "0";
-          answer.style.padding = "0 15px"; // Collapse padding
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-      });
-    });
-  </script>
+
+        /* Section Styling */
+        #feedback-form,
+        #faq {
+            background: linear-gradient(135deg, #b29ee3, #05ffcd);
+            /* Gradient green background */
+            padding: 50px 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        #feedback-form h2,
+        .faq-title {
+            color: #0d0d0d;
+            /* Dark green for headings */
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        #feedback-form p {
+            color: #07fbd6;
+            /* Medium green for description */
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        /* Form Styling */
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-size: medium;
+            color: #2b472b;
+            /* Dark green for labels */
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 1em;
+            border: 2px solid #a8d8a8;
+            /* Light green border */
+            border-radius: 5px;
+            background-color: #757675;
+            /* Light background */
+            transition: border 0.3s ease;
+            color: #2b472b;
+            /* Dark green for input text */
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #fafbfa;
+            /* Medium green for placeholder text */
+            font-size: medium;
+            font-weight: bolder;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #4d994d;
+            /* Dark green on focus */
+            outline: none;
+        }
+
+        /* Button Styling */
+        button[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            background-color: #4d994d;
+            /* Dark green */
+            color: white;
+            font-size: 1em;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #367836;
+            /* Darker green on hover */
+        }
+    </style>
+
+
+
+
+    <script>
+        const faqItems = document.querySelectorAll(".faq-item");
+        faqItems.forEach(item => {
+            const question = item.querySelector(".faq-question");
+            const answer = item.querySelector(".faq-answer");
+
+            question.addEventListener("click", () => {
+                const isActive = item.classList.contains("active");
+
+                // Close any open item
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove("active");
+                    otherItem.querySelector(".faq-answer").style.maxHeight = "0";
+                    otherItem.querySelector(".faq-answer").style.padding = "0 15px";
+                });
+
+                // Toggle the current item with smooth transition
+                if (!isActive) {
+                    item.classList.add("active");
+                    answer.style.padding = "10px 15px"; // Add padding
+
+                    // Calculate height dynamically and add buffer for extra space
+                    const scrollHeight = answer.scrollHeight;
+                    answer.style.maxHeight = (scrollHeight + 20) + "px"; // Buffer for extra space
+                } else {
+                    // Close the current item smoothly
+                    item.classList.remove("active");
+                    answer.style.maxHeight = "0";
+                    answer.style.padding = "0 15px"; // Collapse padding
+                }
+            });
+        });
+    </script>
 
     <footer class="footer-container">
         <div class="footer-top">
@@ -1427,16 +1330,16 @@
                 <div class="footer-column">
                     <h4>FIND US</h4>
                     <ul>
- 
-                        <li><a href="contactus.html">Contact 
+
+                        <li><a href="contactus.html">Contact
                         <li><a href="GroupCookieNotice.html">Group Cookie Notice</a></li>
-                       <li><a href="privacy.html">Privacy And Policy</a></li>
+                        <li><a href="privacy.html">Privacy And Policy</a></li>
                         <li><a href="sitemap.html">Sitemap</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-    </div>
+        </div>
 
 
         <div class="footer-bottom">
@@ -1452,69 +1355,69 @@
         </div>
     </footer>
 
-<!-- visitor -->
-<script>
-    // JavaScript to fetch visitor count from API
-    async function getVisitorCount() {
-        try {
-            const response = await fetch('http://localhost:5000/api/visitor-count');
-            const data = await response.json();
-            document.getElementById("visitorCount").innerText = data.count;
-        } catch (error) {
-            console.error("Error fetching visitor count:", error);
+    <!-- visitor -->
+    <script>
+        // JavaScript to fetch visitor count from API
+        async function getVisitorCount() {
+            try {
+                const response = await fetch('http://localhost:5000/api/visitor-count');
+                const data = await response.json();
+                document.getElementById("visitorCount").innerText = data.count;
+            } catch (error) {
+                console.error("Error fetching visitor count:", error);
+            }
         }
-    }
 
-    // Call the function on page load
-    getVisitorCount();
-</script>
+        // Call the function on page load
+        getVisitorCount();
+    </script>
 
-<script>
-// cursor 
+    <script>
+        // cursor 
 
-const coords = { x: 0, y: 0 };
-const circles = document.querySelectorAll(".circle");
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
 
-const colors = [
-    "#BCE954", "#98FF98", "#9CB071", "#90C209", "#B2C248",
-    "#85BB65", "#99C68E", "#6CBB3C", "#3ea055", "#41a317",
-    "#4AA02C", "#6AA121", "#347C2C", "#387C44", "#437C17",
-    "#306754", "#254117", "#667C26", "#728C00", "#008000"
-];
+        const colors = [
+            "#BCE954", "#98FF98", "#9CB071", "#90C209", "#B2C248",
+            "#85BB65", "#99C68E", "#6CBB3C", "#3ea055", "#41a317",
+            "#4AA02C", "#6AA121", "#347C2C", "#387C44", "#437C17",
+            "#306754", "#254117", "#667C26", "#728C00", "#008000"
+        ];
 
-circles.forEach(function (circle, index) {
-    circle.x = 0;
-    circle.y = 0;
-    circle.style.backgroundColor = colors[index % colors.length];
-});
+        circles.forEach(function (circle, index) {
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];
+        });
 
-window.addEventListener("mousemove", function (e) {
-    coords.x = e.clientX;
-    coords.y = e.clientY + window.scrollY; // Add scrollY to the y-coordinate
-});
+        window.addEventListener("mousemove", function (e) {
+            coords.x = e.clientX;
+            coords.y = e.clientY + window.scrollY; // Add scrollY to the y-coordinate
+        });
 
-function animateCircles() {
-    let x = coords.x;
-    let y = coords.y;
+        function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
 
-    circles.forEach(function (circle, index) {
-        circle.style.left = x - 12 + "px"; // Center the circle on the cursor
-        circle.style.top = y - 12 + "px"; // Center the circle on the cursor
+            circles.forEach(function (circle, index) {
+                circle.style.left = x - 12 + "px"; // Center the circle on the cursor
+                circle.style.top = y - 12 + "px"; // Center the circle on the cursor
 
-        circle.style.scale = (circles.length - index) / circles.length;
+                circle.style.scale = (circles.length - index) / circles.length;
 
-        circle.x = x;
-        circle.y = y;
+                circle.x = x;
+                circle.y = y;
 
-        const nextCircle = circles[index + 1] || circles[0];
-        x += (nextCircle.x - x) * 0.3;
-        y += (nextCircle.y - y) * 0.6;
-    });
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.6;
+            });
 
-    requestAnimationFrame(animateCircles);
-}
+            requestAnimationFrame(animateCircles);
+        }
 
-animateCircles();
+        animateCircles();
 
 
 
@@ -1734,7 +1637,7 @@ animateCircles();
             window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
         }
 
-        
+
 
         // toggle chatbot function
         function toggleChatbot() {
@@ -1750,42 +1653,42 @@ animateCircles();
         });
 
     </script>
-        <script>
-            const fadeOut = () => {
-         const loaderWrapper = document.querySelector('.Wrapper');
-         setTimeout(() => {
-             loaderWrapper.classList.add('fade');
-         }, 2000); // 2 seconds delay
-     };
-     
-     window.addEventListener('load', fadeOut);
-     
-        </script>
+    <script>
+        const fadeOut = () => {
+            const loaderWrapper = document.querySelector('.Wrapper');
+            setTimeout(() => {
+                loaderWrapper.classList.add('fade');
+            }, 2000); // 2 seconds delay
+        };
 
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const faqContainer = document.querySelector('.faq-container');
-            
-                faqContainer.addEventListener('click', function(event) {
-                    // Check if the clicked element is a button with class 'faq-question'
-                    if (event.target.classList.contains('faq-question')) {
-                        const answer = event.target.nextElementSibling; // Get the corresponding answer div
-                        const toggleSymbol = event.target.querySelector('.expand-toggle'); // Get the toggle symbol
-            
-                        // Toggle the answer display and the symbol
-                        if (answer.style.display === 'none' || answer.style.display === '') {
-                            answer.style.display = 'block'; // Show the answer
-                            toggleSymbol.textContent = '-'; // Change symbol to minus
-                        } else {
-                            answer.style.display = 'none'; // Hide the answer
-                            toggleSymbol.textContent = '+'; // Change symbol to plus
-                        }
+        window.addEventListener('load', fadeOut);
+
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqContainer = document.querySelector('.faq-container');
+
+            faqContainer.addEventListener('click', function (event) {
+                // Check if the clicked element is a button with class 'faq-question'
+                if (event.target.classList.contains('faq-question')) {
+                    const answer = event.target.nextElementSibling; // Get the corresponding answer div
+                    const toggleSymbol = event.target.querySelector('.expand-toggle'); // Get the toggle symbol
+
+                    // Toggle the answer display and the symbol
+                    if (answer.style.display === 'none' || answer.style.display === '') {
+                        answer.style.display = 'block'; // Show the answer
+                        toggleSymbol.textContent = '-'; // Change symbol to minus
+                    } else {
+                        answer.style.display = 'none'; // Hide the answer
+                        toggleSymbol.textContent = '+'; // Change symbol to plus
                     }
-                });
+                }
             });
-            
-        </script>
-    
+        });
+
+    </script>
+
 
     <script src="app.js"></script>
     <script src="faq.js"></script>
@@ -1794,7 +1697,7 @@ animateCircles();
     <script>
         const scrollTopBtn = document.getElementById("topBtn");
         scrollTopBtn.style.setProperty('visibility', 'hidden', 'important');
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             if (window.scrollY > 100) {
                 scrollTopBtn.style.setProperty('visibility', 'visible', 'important');
             } else {
@@ -1802,6 +1705,15 @@ animateCircles();
             }
         });
         AOS.init();
+    </script>
+    <script>
+        window.addEventListener('scroll', function () {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
+        });
+
     </script>
 
 </body>
