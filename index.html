@@ -546,32 +546,10 @@
     <div id="progress-container">
         <div id="progress-bar"></div>
     </div> 
-    <nav class="navbar">
-        <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt=""
-            style="border-radius: 50%; height: 35px; width: 35px;">
-        <div class="logo" style="font-size: 20px;">Ticket Marketplace</div>
+   
 
-        <!-- Toggle Button (Visible on Small Screens) -->
-        <button id="navToggle">☰</button>
 
-        <!-- Navbar Links -->
-        <div id="navLinks">
-            <a href="index.html"><i class="fas fa-home"></i> Home</a>
-            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
-            <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
-            <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
-            <a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a>
-            <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
-            <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
-            <a href="AI suggestions.html"><i class="fas fa-robot"></i> AI Suggestions</a>
-        </div>
-
-        <!-- Dark Mode Button -->
-        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
-    </nav>
-  
-
-    <!-- <nav class="navbar">
+  <nav class="navbar">
         <a href="index.html"
             style="display: flex; align-items: center; text-decoration: none; white-space: nowrap; margin-right: -250px;">
             <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt=""
@@ -592,48 +570,46 @@
         </div>
 
 
-        Profile Icon -->
-        <!-- <a href="./testp.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
-            <img src="https://i.postimg.cc/tCL5Td4H/gold-membership-icon-default-avatar-profile-icon-membership-icon-social-media-user-image-illustratio.jpg"
-                alt="Profile Icon" style="width: 35px; height: 35px; border-radius: 50%; margin-left: -170px;">
-        </a> -->
-        <!-- </li> -->
-<!-- 
-        <style>
-            
-            .navbar-nav .nav-item .profile-link:hover {
-                background-color: transparent !important;
-                /* Remove background color */
-                border-radius: 0 !important;
-                /* Reset border radius */
-                transform: none !important;
-                /* Prevent scaling */
+ <!-- Profile Icon -->
+ <a href="./testp.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
+    <img src="https://i.postimg.cc/tCL5Td4H/gold-membership-icon-default-avatar-profile-icon-membership-icon-social-media-user-image-illustratio.jpg" alt="Profile Icon" style="width: 35px; height: 35px; border-radius: 50%; margin-left: -170px;">
+   </a>
+</li>
+
+<style>
+
+ /* Override the existing hover styles */
+ .navbar-nav .nav-item .profile-link:hover {
+     background-color: transparent !important; /* Remove background color */
+     border-radius: 0 !important; /* Reset border radius */
+     transform: none !important; /* Prevent scaling */
+ }
+
+</style>
+
+<script>
+
+    function toggleMenu() {
+        const menu = document.getElementById('profileMenu');
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('.profile-icon img')) {
+            const menu = document.getElementById('profileMenu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
             }
-        </style> -->
+        }
+    }
 
-        <!-- <script>
-
-            function toggleMenu() {
-                const menu = document.getElementById('profileMenu');
-                menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-            }
-
-            // Close the dropdown if the user clicks outside of it
-            window.onclick = function (event) {
-                if (!event.target.matches('.profile-icon img')) {
-                    const menu = document.getElementById('profileMenu');
-                    if (menu.style.display === 'block') {
-                        menu.style.display = 'none';
-                    }
-                }
-            }
-
-        </script>
+</script>
 
 
         <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button> 
 
-    </nav>-->
+    </nav>
     
 
    <!-- <a href="AI suggestions.html"><i class="fas fa-robot"></i> AI Suggestions</a>
