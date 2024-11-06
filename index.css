@@ -682,9 +682,10 @@ p {
 
 .nav-buttons {
   position: absolute;
-  top: 35%;
-  width: 100%;
+  top: 90%;
+  width: 50%;
   display: flex;
+  margin-left: 25%;
   justify-content: space-between;
   transform: translateY(-50%);
 }

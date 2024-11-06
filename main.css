@@ -153,13 +153,13 @@ body {
 
 .prev,
 .next {
-  background-color: rgb(53 48 48 / 80%); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
   border: none;
   border-radius: 50%;
   cursor: pointer;
   outline: none;
   padding: 0;
-  font-size: 23px;
+  font-size: 43px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   transition: background-color 0.3s;
 }
