@@ -328,7 +328,12 @@ p {
   font-size: 20px;
   cursor: pointer;
 }
-
+@media (max-width:480px)
+{ 
+  #darkModeToggle{
+  margin-top: 20px;
+  }
+}
 /* Dark Mode CSS */
 body.dark-mode {
   background-color: #121212;
@@ -615,7 +620,8 @@ body.dark-mode .ticket-card button:hover {
 
 @media (max-width: 500px) {
   .navbar .logo {
-    font-size: 20px;
+    font-size: 15px;
+    margin-top: -15px;
   }
 
   .btn {
