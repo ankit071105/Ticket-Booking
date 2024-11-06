@@ -1040,46 +1040,64 @@
                     }
 
                     /* Rating Section Styling */
-                    .rating-group {
-                        display: flex;
-                        justify-content: center;
-                        gap: 8px;
-                        font-size: 24px;
-                        cursor: pointer;
+                    .star-rating {
+
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 10px;
+                    flex-direction: row-reverse;
+                    font-size: 3rem;
+                    gap: 25px;
+                    line-height: 1;
+
                     }
 
-                    /* Individual Star Styling */
-                    .rating-group i {
-                        color: #ccc;
-                        /* Default star color */
-                        transition: color 0.3s ease;
+                    .star-rating input {
+
+                    display: none; /* Hide the radio buttons */
+
+                    }
+                    .star-rating label {
+
+                    color: #4b5563; /* Default star color */
+                    cursor: pointer;
                     }
 
-                    /* Hover Effect */
-                    .rating-group i:hover,
-                    .rating-group i:hover~i {
-                        color: #f4d03f;
-                        /* Highlighted star color on hover */
+
+                    .star-rating input:checked ~ label {
+
+                    color: #4d994d;
+
+
                     }
 
-                    /* Selected Star Color */
-                    .rating-group .selected,
-                    .rating-group .selected~i {
-                        color: #ff8c00;
-                        /* Color when star is selected */
-                    }
+                    .star-rating label:hover,
+                            .star-rating label:hover ~ label {
+
+                                color: #4d994d; /* Hover effect */
+                                
+
+                            }
                 </style>
 
-                <div class="form-group">
-                    <label for="rating">Rating</label>
-                    <div class="rating-group" id="rating-group">
-                        <i class="fas fa-star" data-value="1"></i>
-                        <i class="fas fa-star" data-value="2"></i>
-                        <i class="fas fa-star" data-value="3"></i>
-                        <i class="fas fa-star" data-value="4"></i>
-                        <i class="fas fa-star" data-value="5"></i>
-                    </div>
-                </div>
+<div class="feedback-box">
+
+    <form id="feedback-form" action="#" method="post">
+        <div class="star-rating" aria-label="Rating" role="radiogroup">
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5" title="5 stars">★</label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4" title="4 stars">★</label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3" title="3 stars">★</label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2" title="2 stars">★</label>
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1" title="1 star">★</label>
+
+        </div>
+
+      </div>
 
                 <script>
                     const stars = document.querySelectorAll('#rating-group i');
