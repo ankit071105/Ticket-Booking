@@ -25,21 +25,18 @@
     <script src="https://kit.fontawesome.com/3d20c433e1.js" crossorigin="anonymous"></script>
 
     <style>
-        /* cursor */
+        /* circle styles */
         .circle {
             height: 24px;
             width: 24px;
             border-radius: 24px;
-            background-color: black;
+            background-color: rgb(255, 0, 0);
             position: fixed;
             top: 0;
             left: 0;
             pointer-events: none;
             z-index: 99999999;
-            /* so that it stays on top of all other elements */
-        }
-
-        /* cursor */
+          }
 
         
         #preloader {
@@ -287,16 +284,6 @@
             opacity: 8;
         }
 
-        /* css for mouse cursor trail effect */
-        .circle {
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            pointer-events: none;
-            background: radial-gradient(circle, rgba(70, 130, 180, 0.3), skyblue, rgba(0, 0, 50, 0.3), white);
-            transition: transform 0.1s, left 0.1s, top 0.1s;
-        }
 
         .circle-container {
             position: fixed;
@@ -1275,37 +1262,36 @@
 </script>
 
 <script>
-// cursor 
+    // coordinates for the cursor :
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
 
-const coords = { x: 0, y: 0 };
-const circles = document.querySelectorAll(".circle");
-
-const colors = [
-    "#BCE954", "#98FF98", "#9CB071", "#90C209", "#B2C248",
-    "#85BB65", "#99C68E", "#6CBB3C", "#3ea055", "#41a317",
-    "#4AA02C", "#6AA121", "#347C2C", "#387C44", "#437C17",
-    "#306754", "#254117", "#667C26", "#728C00", "#008000"
-];
-
-circles.forEach(function (circle, index) {
-    circle.x = 0;
-    circle.y = 0;
-    circle.style.backgroundColor = colors[index % colors.length];
-});
-
-window.addEventListener("mousemove", function (e) {
-    coords.x = e.clientX;
-    coords.y = e.clientY + window.scrollY; // Add scrollY to the y-coordinate
-});
-
-function animateCircles() {
-    let x = coords.x;
-    let y = coords.y;
+    const colors = [
+      "#fc5720", "#fc6532", "#fc6532","#fd8b65", "#d5585c", "#fac3b1", "#f4d5cb", "#fefefe", "#fefefe", "#cdf2c5", "#b2eca5", "#95e283", "#7dda68", "#4adc2d", "#69d451", "#54c939", "#34b916", "#28b309", "#1e9c02", 
+    ];
 
     circles.forEach(function (circle, index) {
-        circle.style.left = x - 12 + "px"; // Center the circle on the cursor
-        circle.style.top = y - 12 + "px"; // Center the circle on the cursor
+      circle.x = 0;
+      circle.y = 0;
+      circle.style.backgroundColor = colors[index % colors.length];
+    });
 
+    // update the coordinates when the mouse moves:
+    window.addEventListener("mousemove", function (e) {
+      coords.x = e.clientX;
+      coords.y = e.clientY;
+    });
+
+    // animation function to move the circles:
+    function animateCircles() {
+      let x = coords.x;
+      let y = coords.y;
+
+        circles.forEach(function (circle, index) {
+       
+
+        circle.style.left = x - 12 + "px";
+        circle.style.top = y - 12 + "px";
         circle.style.scale = (circles.length - index) / circles.length;
 
         circle.x = x;
@@ -1313,15 +1299,16 @@ function animateCircles() {
 
         const nextCircle = circles[index + 1] || circles[0];
         x += (nextCircle.x - x) * 0.3;
-        y += (nextCircle.y - y) * 0.6;
-    });
+        y += (nextCircle.y - y) * 0.3;
+      });
 
-    requestAnimationFrame(animateCircles);
-}
+      requestAnimationFrame(animateCircles);
+    }
+    
+    animateCircles();
+  </script>
 
-animateCircles();
-
-
+<script>
 
 
         let items = document.querySelectorAll('.slider .item');
@@ -1609,11 +1596,8 @@ animateCircles();
         AOS.init();
     </script>
 
-</body>
-
-</html>
-
 <script src="chatbot.js"></script>
+
 </body>
 
 </html>
