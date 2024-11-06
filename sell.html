@@ -915,8 +915,14 @@ body.dark-mode #preloader {
 
       <div class="form-cont">
         <label for="date">Date:</label>
-        <input type="date" id="date" required>
+        <input type="date" id="date" required min="">
       </div>
+
+      <script>
+        // calender date validation logic
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').setAttribute('min', today);
+      </script>
       
       <div class="form-cont">
         <label for="coachType">Coach Type:</label>
@@ -969,7 +975,13 @@ body.dark-mode #preloader {
             <input type="time" id="departureTime" name="departureTime" required>
 
             <label for="date">Date:</label>
-            <input type="date" id="date" name="date" required>
+            <input type="date" id="date2" name="date" required min="">
+
+            <script>
+              // calender date validation logic
+              const today2 = new Date().toISOString().split('T')[0];
+              document.getElementById('date2').setAttribute('min', today2);
+            </script>
 
             <label for="seatNo">Seat Number:</label>
             <input type="text" id="seatNo" name="seatNo" required>
