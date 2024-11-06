@@ -880,7 +880,7 @@ button:hover {
   height: 10px;
   width: 10px;
   margin: 0 2px;
-  background-color: #bbb;
+  background-color: #ffffff;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
@@ -898,7 +898,7 @@ button:hover {
 }
 .slider-dot-active,
 .dot:hover {
-  background-color: #717171;
+  background-color: #00e5ff;
 }
 
 .slider {
