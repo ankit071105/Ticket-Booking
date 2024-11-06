@@ -185,7 +185,7 @@ body {
 .social-sidebar {
   position: fixed;
   top: 50%;
-  left: 0;
+  left: -25px;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
