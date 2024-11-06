@@ -200,17 +200,18 @@ p {
 }
 
 /* Styling the navbar */
-.navbar {
+.navbar{
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   background-color: #1f2937;
   padding: 15px;
   color: white;
 
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
@@ -227,16 +228,16 @@ p {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 25px;
   }
 
   /* Navbar links styling */
   .navbar ul li a {
     text-decoration: none;
-    color: white;
+    color: rgb(177, 61, 61);
     font-weight: 500;
     font-size: 1.1em;
-    padding: 8px 16px;
+    padding: 8px 14px;
     transition: all 0.3s ease;
     border-radius: 5px;
   }
@@ -279,9 +280,9 @@ p {
 }
 
 .navbar a {
-  color: white;
+  color: rgb(255, 255, 255);
   text-decoration: none;
-  margin-right: 20px;
+  margin-right: 10px;
   font-weight: 600;
   position: relative; /* Needed for the underline to position correctly */
 }
@@ -319,6 +320,7 @@ p {
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
+  margin-right: 0px;
 }
 
 #darkModeToggle {

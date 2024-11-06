@@ -3,12 +3,16 @@
             align-items: center;
             justify-content: space-between;
             background-color: #333;
-            padding: 10px;
+            padding: 8px;
             color: white;
+        }
+        .navbar.logo{
+            margin-right: 0px;
+            margin-left: 0px;
         }
 
         .navbar div a {
-            margin-right: 15px;
+            margin-right: 12px;
             color: white;
             text-decoration: none;
         }
@@ -20,6 +24,8 @@
         /* Navbar links (visible on large screens) */
         #navLinks {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
 
         #navLinks a {
