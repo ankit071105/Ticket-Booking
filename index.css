@@ -4,6 +4,7 @@ body {
 }
 /* Popup Styles */
 .popup {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   left: 0;
@@ -142,6 +143,8 @@ p {
 }
 
 .video-container video {
+  max-width: 100%;
+
   width: calc(100% + 150px); /* Increase the width to crop from the right */
   height: auto; /* Maintain aspect ratio */
   position: relative;
@@ -208,6 +211,7 @@ p {
   background-color: #1f2937;
   padding: 15px;
   color: white;
+  height: 10vh;
 
   position: sticky;
   top: 0;
@@ -327,13 +331,27 @@ p {
   font-size: 20px;
   cursor: pointer;
 }
-
+@media (max-width:480px)
+{ 
+  .ticket-list {
+    flex-direction: column; /* Stack cards vertically on smaller screens */
+    align-items: center;
+  }
+  .navbar ul {
+    flex-direction: column;
+  }
+  #darkModeToggle{
+  margin-top: 20px;
+  }
+}
 /* Dark Mode CSS */
 body.dark-mode {
   background-color: #121212;
   color: #f0f0f0;
 }
-
+body.dark-mode .bus h2{
+  color:white;
+}
 body.dark-mode .navbar {
   background-color: #333;
 }
@@ -612,7 +630,8 @@ body.dark-mode .ticket-card button:hover {
 
 @media (max-width: 500px) {
   .navbar .logo {
-    font-size: 20px;
+    font-size: 15px;
+    margin-top: -15px;
   }
 
   .btn {
@@ -680,9 +699,10 @@ p {
 
 .nav-buttons {
   position: absolute;
-  top: 35%;
-  width: 100%;
+  top: 90%;
+  width: 50%;
   display: flex;
+  margin-left: 25%;
   justify-content: space-between;
   transform: translateY(-50%);
 }
