@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking Conditions</title>
-    <link rel="stylesheet" href="footer.css"> 
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f2f7fc;
             margin: 0;
             padding: 20px;
+            color: #333;
         }
         .container {
             max-width: 800px;
@@ -20,7 +22,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-        .container h1 {
+        h1 {
             text-align: center;
             color: #333;
         }
@@ -47,24 +49,22 @@
         footer {
             background-color: #1e2a38;
             color: #b5fdf4;
-            padding: 30px 20px;
+            padding: 40px 20px;
             font-size: 14px;
         }
         .footer-container {
             max-width: 1000px;
             margin: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .footer-logo-section {
             text-align: center;
-            margin-bottom: 20px;
+        }
+        .footer-logo {
+            width: 150px;
+            margin-bottom: 10px;
         }
         .social-icons a {
             color: #b5fdf4;
-            font-size: 18px;
-            margin: 0 5px;
+            font-size: 24px;
+            margin: 0 8px;
             text-decoration: none;
         }
         .social-icons a:hover {
@@ -72,10 +72,9 @@
         }
         .footer-links {
             display: flex;
-            flex-wrap: wrap;
             justify-content: space-around;
             margin-top: 20px;
-            width: 100%;
+            flex-wrap: wrap;
         }
         .footer-column {
             width: 45%;
@@ -128,11 +127,6 @@
         @media (max-width: 768px) {
             .footer-column {
                 width: 100%;
-                text-align: center;
-            }
-            .footer-logo-section,
-            .footer-bottom {
-                text-align: center;
             }
         }
     </style>
@@ -157,76 +151,43 @@
     <div class="container">
         <h1>Booking Conditions</h1>
         
-        <!-- Booking condition content sections -->
+        <!-- Booking conditions content sections -->
         <div class="box">
             <h2>General Terms</h2>
             <p>When using our online ticket booking system, you agree to the terms and conditions outlined below. The term “ticket” refers to any pass purchased for events, services, or transportation.</p>
         </div>
-        <!-- Add more boxes as needed -->
+        
+        <div class="box">
+            <h2>Payment and Confirmation</h2>
+            <p>All payments must be completed at the time of booking. Upon successful payment, you will receive a confirmation email with your ticket details. Please check your email spam folder if you do not see this.</p>
+        </div>
 
+        <div class="box">
+            <h2>Cancellations and Refunds</h2>
+            <p>Cancellations may be requested through our Help Center. Refund eligibility depends on the terms of the purchased ticket and any third-party provider’s policies.</p>
+        </div>
+
+        <div class="box">
+            <h2>Privacy and Data Protection</h2>
+            <p>Your personal data is protected under our privacy policy. We may share your information only with necessary third parties involved in processing your booking.</p>
+        </div>
     </div>
     
     <footer class="footer-container">
 
-        <div class="footer-top">
-          <head>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-         </head>
-         <body>
-            <div class="footer-logo-section">
-                <a href="#"> <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo"></a>
-                <p style="color: #b5fdf4;">Affordable adventures, unforgettable memories—explore with ease.</p>
-                <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
-                </div>          
-            </div>
-            <style>
-                .social-icons a i {
-                    color: #ffffff; /* Visible color */
-                    font-size: 24px;
-                    margin-right: 10px;
-                }
-            </style>
-         </body>         
-          <div class="footer-links">
-            <div class="footer-column">
-              <h4>HELPFUL LINKS</h4>
-              <ul>
-                <li><a href="help.html">Help Centre</a></li>
-                <li><a href="#">Special Assistance</a></li>
-                <li><a href="#">Download The App</a></li>
-                <li><a href="./book_condition.html">Booking Conditions</a></li>
-              </ul>
-            </div>
-      
-            <div class="footer-column">
-              <h4>ABOUT US</h4>
-              <ul>
-                <li><a href="#">Media Center</a></li>
-                <li><a href="#">Investors</a></li>
-                <li><a href="ModernSlaveryAct.html">Modern Slavery Act</a></li>
-                <li><a href="terms.html">Terms Of Use</a></li>
-              </ul>
-              
         <div class="footer-logo-section">
-            <a href="#"><img src="./images/3.jpeg" alt="logo" class="footer-logo"></a>
-            <p>Affordable adventures, unforgettable memories—explore with ease.</p>
-            <p class="follow-us">FOLLOW US:</p>
+            <a href="#"><img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo"></a>
+            <p style="color: #b5fdf4;">Affordable adventures, unforgettable memories—explore with ease.</p>
+            <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON:</p>
             <div class="social-icons">
                 <a href="https://www.facebook.com" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.twitter.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                 <a href="https://www.linkedin.com" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://www.youtube.com" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-              
-            </div>
+            </div>          
         </div>
-        
+          
         <div class="footer-links">
             <div class="footer-column">
                 <h4>HELPFUL LINKS</h4>
@@ -237,7 +198,16 @@
                     <li><a href="./book_condition.html">Booking Conditions</a></li>
                 </ul>
             </div>
-            <!-- Add other footer columns as needed -->
+      
+            <div class="footer-column">
+                <h4>ABOUT US</h4>
+                <ul>
+                    <li><a href="#">Media Center</a></li>
+                    <li><a href="#">Investors</a></li>
+                    <li><a href="ModernSlaveryAct.html">Modern Slavery Act</a></li>
+                    <li><a href="terms.html">Terms Of Use</a></li>
+                </ul>
+            </div>
         </div>
 
         <div class="footer-bottom">
