@@ -211,16 +211,17 @@
 
   <!-- cursor ends -->
 
+
   <nav class="navbar">
-    <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
-    <div class="logo" style="font-size: 20px;">Ticket Marketplace</div>
+    <!-- <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;"> -->
+    <!-- <div class="logo" style="font-size: 20px;">Ticket Marketplace</div> -->
 
     <!-- Toggle Button (Visible on Small Screens) -->
     <button id="navToggle">☰</button>
 
     <!-- Navbar Links -->
-    <div id="navLinks">
-    <a href="index.html" style="display: flex; align-items: center; text-decoration: none; white-space: nowrap; margin-right: -250px;">
+    <!-- <div id="navLinks"> -->
+    <!-- <a href="index.html" style="display: flex; align-items: center; text-decoration: none; white-space: nowrap; margin-right: -250px;"> -->
       <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
       <div class="logo" style="font-size: 20px; margin-left: 8px;">Ticket Marketplace</div>
   </a><div>
@@ -321,21 +322,26 @@ animateCircles();
             });
         }
         // change icon of the dark/light mode
-      const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-            // Special effect for hamburger icon
-            const bars = menuToggle.querySelectorAll('.bar');
-            bars.forEach((bar, index) => {
-                if (menuToggle.classList.contains('active')) {
-                    bar.style.transform = index === 1 ? 'scale(0)' : rotate(${index === 0 ? '45deg' : '-45deg'});
-                } else {
-                    bar.style.transform = 'none';
-                }
-            });
-        });
+      // Change icon of the dark/light mode
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+
+    // Special effect for hamburger icon
+    const bars = menuToggle.querySelectorAll('.bar');
+    bars.forEach((bar, index) => {
+      if (menuToggle.classList.contains('active')) {
+        bar.style.transform = index === 1 ? 'scale(0)' : `rotate(${index === 0 ? '45deg' : '-45deg'})`;
+      } else {
+        bar.style.transform = '';
+      }
+    });
+  });
+}
 
         // Close menu when clicking outside
         document.addEventListener('click', (event) => {
@@ -504,7 +510,17 @@ function toggleChatbot() {
     
     <button onclick="moveToTop()" id="topBtn" title="Go to top" style="display:flex; position: fixed;  right: 30px; z-index: 100000;">
       <i class="fa fa-arrow-up" aria-hidden="true"></i>
-  </button>
+    </button>
+
+    <script>      
+      // Scroll to top function
+      function moveToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      } 
+    </script>
 
     <footer class="footer-container">
         <div class="footer-top">
