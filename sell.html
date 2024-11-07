@@ -216,6 +216,11 @@
     }
 
     /* chatbot css end */
+    .sell-ticket form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
     .sell-ticket {
       width: 100%;
       max-width: 800px;
@@ -251,11 +256,19 @@
     }
 
     form label {
+      font-size: 0.9rem;
+    }
+    form label {
       font-weight: 600;
       color: #333;
       width: 100%;
     }
 
+    form input,
+    form select {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
     form input,
     form select {
       width: 100%;
@@ -282,6 +295,12 @@
     }
 
     form .btn {
+      grid-column: 1 / -1;
+      width: 50%;
+      margin: 20px auto 0;
+      padding: 12px;
+      font-size: 1rem;
+    }
       background-color: #ff4d4d;
       border: 2px solid #ff4d4d;
       color: white;
@@ -708,7 +727,12 @@
         }
       </script>
   <style>  
-    @media screen and (max-width: 768px) {
+    .sell-ticket form {
+      grid-template-columns: 1fr;
+    }
+    form .btn {
+      width: 100%;
+    }
       form {
         grid-template-columns: 1fr;
         /* Stack items on smaller screens */
