@@ -6,6 +6,7 @@
     <title>Modern Slavery Act - Ticket Booking</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="navbar.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
@@ -19,64 +20,40 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
     <style>
-      .nav-container {
+      .nav-container { 
         display: flex;
       }
     </style>
   </head>
   <body>
     <nav class="navbar">
-      <a href="./index.html" id="logo-href">
-        <div class="logo-container">
-          <img
-            src="images/4.jpeg"
-            alt="Ticket Booking Logo"
-            class="logo-image"
-          />
-          <div class="logo">Ticket Booking</div>
-        </div>
-      </a>
-
-      <div class="nav-container">
-        <div class="menu-toggle">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-
-        <ul class="nav-links">
-          <li>
-            <a href="index.html" class="home-button"
-              ><i class="fas fa-home"></i>HOME</a
-            >
-          </li>
-          <li>
-            <a href="buy.html"><i class="fas fa-shopping-cart"></i> Buy</a>
-          </li>
-          <li>
-            <a href="sell.html"><i class="fas fa-tag"></i> Sell</a>
-          </li>
-          <li>
-            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-          </li>
-          <li>
-            <a href="contributors.html"
-              ><i class="fas fa-users"></i> Our Contributors</a
-            >
-          </li>
-
-          <li>
-            <a href="/client/register.html" class="login-btn"
-              ><i class="fas fa-user"></i
-            ></a>
-          </li>
-        </ul>
-
-        <button id="darkModeToggle" style="width: 40px; height: 40px">
-          🌙
-        </button>
+      <!-- <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;"> -->
+      <!-- <div class="logo" style="font-size: 20px;">Ticket Marketplace</div> -->
+  
+      <!-- Toggle Button (Visible on Small Screens) -->
+      <button id="navToggle">☰</button>
+  
+      <!-- Navbar Links -->
+      <!-- <div id="navLinks"> -->
+      <!-- <a href="index.html" style="display: flex; align-items: center; text-decoration: none; white-space: nowrap; margin-right: -250px;"> -->
+        <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
+        <div class="logo" style="font-size: 20px; margin-left: 8px;">Ticket Marketplace</div>
+    </a><div>
+          <a href="index.html"><i class="fas fa-home"></i> Home</a>
+          <a href="about.html" class="active"><i class="fas fa-info-circle"></i> About</a>
+          <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
+          <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
+          <a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a>
+          <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
+          <a href="client/login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
       </div>
-    </nav>
+  
+      <!-- Dark Mode Button -->
+      <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+      
+  </nav>
+
+
     <script>
       const darkModeToggle = document.getElementById("darkModeToggle");
       const body = document.querySelector("body");
