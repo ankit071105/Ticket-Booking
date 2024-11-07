@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sell Bus Ticket</title>
+  <title>Sell Ticket</title>
   <link rel="shortcut icon" href="images/4.jpeg" type="image/x-icon">
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -680,13 +680,6 @@
                 }, 100); // Match the transition duration
             }, 200);  // Adjust to the length of your spinner animation
         });
-
-
-
-
-
-
-
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         const slider_dots = document.querySelectorAll(".dot");
@@ -957,78 +950,9 @@ body.dark-mode #preloader {
           <option value="Third">Third</option>
           <option value="Economy">Economy</option>
         </select>
-      </div>
+      </div>        
+    
 
-
-        <h1>Sell Bus Ticket</h1>
-        <form id="ticketForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}">
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="ticketNo">Ticket No:</label>
-            <input type="text" id="ticketNo" name="ticketNo" required>
-
-            <label for="busNo">Bus No:</label>
-            <input type="text" id="busNo" name="busNo" required>
-
-
-  </style>  
-
-            <label for="departureLocation">Departure Location:</label>
-            <input type="text" id="departureLocation" name="departureLocation" required>
-
-            <label for="arrivalLocation">Arrival Location:</label>
-            <input type="text" id="arrivalLocation" name="arrivalLocation" required>
-
-            <label for="departureTime">Departure Time:</label>
-            <input type="time" id="departureTime" name="departureTime" required>
-
-            <label for="date">Date:</label>
-            <input type="date" id="date2" name="date" required min="">
-
-            <script>
-              // calender date validation logic
-              const today2 = new Date().toISOString().split('T')[0];
-              document.getElementById('date2').setAttribute('min', today2);
-            </script>
-
-            <label for="seatNo">Seat Number:</label>
-            <input type="text" id="seatNo" name="seatNo" required>
-
-            <label for="acClass">AC Class:</label>
-            <select id="acClass" name="acClass" required>
-                <option value="Non-AC">Non-AC</option>
-                <option value="AC">AC</option>
-            </select>
-
-            <label for="price">Original Price:</label>
-            <input type="number" id="price" name="price" required min="0" step="0.01">
-
-            <button type="submit">Submit Ticket</button>
-        </form>
-        
-    </main>
-    <footer class="footer-container">
-      <div class="footer-top">
-
-          <div class="footer-logo-section">
-              <a href="#"> <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo"></a>
-              <p style="color: #b5fdf4;">Affordable adventures, unforgettable memories—explore with ease.</p>
-              <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
-              <div class="social-icons">
-                  <a href="#"><i class="fab fa-facebook"></i></a>
-                  <a href="#"><i class="fab fa-instagram"></i></a>
-                  <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                  <a href="#"><i class="fab fa-linkedin"></i></a>
-                  <a href="#"><i class="fab fa-youtube"></i></a>
-              </div>
-          </div>
 
       <div class="form-cont">
         <label for="seatNumber">Seat Number:</label>
@@ -1047,7 +971,6 @@ body.dark-mode #preloader {
 
     <p id="sellerMessage"></p>
   </section>
-
   <!-- footer -->
 
   <footer class="footer-container">
