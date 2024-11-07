@@ -27,6 +27,7 @@
     </style>
 </head>
 
+    <div class="circle"></div>
 <body class="bg-white">
     <div class="relative flex items-top justify-center min-h-screen bg-white sm:items-center sm:pt-0">
         <div class="absolute top-4 left-4">
@@ -101,6 +102,13 @@
     </div>
 
     <!-- js script -->
+    <script>
+        const circle = document.querySelector('.circle');
+        document.addEventListener('mousemove', (e) => {
+            circle.style.left = e.pageX + 'px';
+            circle.style.top = e.pageY + 'px';
+        });
+    </script>
     <script>
         // Your JavaScript code here
     </script>
