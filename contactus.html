@@ -1063,7 +1063,65 @@
 
 
     <!-- Scroll to Top Button -->
-    <button id="scrollToTop" onclick="scrollToTop()">↑</button>
+    <button id="scrollToTopBtn" onclick="scrollToTop()">↑</button>
+
+    <style>
+      #scrollToTopBtn {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        width: 48px;
+        height: 48px;
+        background-color: rgb(20, 184, 166); /* Teal color matching your theme */
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none; /* Hidden by default */
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s, opacity 0.3s;
+      }
+      
+      #scrollToTopBtn:hover {
+        background-color: rgb(13, 148, 136); /* Darker teal on hover */
+      }
+      
+      #scrollToTopBtn svg {
+        width: 24px;
+        height: 24px;
+      }
+    </style>
+
+    <script>
+      // Get the button
+      const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+      
+      // Show/hide button based on scroll position
+      function toggleScrollButton() {
+        if (window.scrollY > 300) {
+          scrollToTopBtn.style.display = 'flex';
+        } else {
+          scrollToTopBtn.style.display = 'none';
+        }
+      }
+      
+      // Scroll to top function
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+      
+      // Add event listeners
+      window.addEventListener('scroll', toggleScrollButton);
+      scrollToTopBtn.addEventListener('click', scrollToTop);
+      
+      // Initial check for scroll position
+      toggleScrollButton();
+    </script>
 
     <script>
         document.querySelector("form").addEventListener("submit", function(e) {
