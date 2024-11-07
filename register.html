@@ -14,6 +14,20 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+
+
+.circle {
+    height: 24px;
+    width: 24px;
+    border-radius: 24px;
+    background-color: black; /* Default color */
+    position: fixed; /* Ensure they stay in place relative to the viewport */
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Prevent interaction with the circles */
+    z-index: 99999999; /* Keep them above other elements */
+}
+
         /* CSS for styling the form */
         body {
             font-family: Arial, sans-serif;
@@ -107,6 +121,33 @@
     </nav>
 </header>
 <body>
+
+    
+
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+
+
 <div class="registration-form">
     <h2>Register</h2>
     <div class="form-field">
@@ -284,6 +325,59 @@
     } else {
         navlinks.style.display = 'none'; // Hide links if starting on a small screen
     }
+
+    const coords = { x: 0, y: 0 };
+const circles = document.querySelectorAll(".circle");
+
+const colors = [
+    "#BCE954", "#98FF98", "#9CB071", "#90C209", "#B2C248", 
+    "#85BB65", "#99C68E", "#6CBB3C", "#3ea055", "#41a317", 
+    "#4AA02C", "#6AA121", "#347C2C", "#387C44", "#437C17", 
+    "#306754", "#254117", "#667C26", "#728C00", "#008000"
+];
+
+// Initialize circles
+circles.forEach(function (circle, index) {
+    circle.x = 0;
+    circle.y = 0;
+    circle.style.backgroundColor = colors[index % colors.length];
+});
+
+window.addEventListener("mousemove", function(e){
+    coords.x = e.clientX;
+    coords.y = e.clientY;
+});
+
+// Animate circles
+function animateCircles() {
+    let x = coords.x;
+    let y = coords.y;
+
+    circles.forEach(function (circle, index) {
+        circle.style.left = x - 12 + "px"; // Center the circle on the cursor
+        circle.style.top = y - 12 + "px"; // Center the circle on the cursor
+
+        // Scale the circles based on their index
+        circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+        
+        circle.x = x;
+        circle.y = y;
+
+        const nextCircle = circles[index + 1] || circles[0];
+        x += (nextCircle.x - x) * 0.3; // Smooth movement
+        y += (nextCircle.y - y) * 0.6; // Smooth movement
+    });
+
+    requestAnimationFrame(animateCircles);
+}
+
+// Start the animation
+animateCircles();
+
+
+
+
+
 </script>
 </body>
 </html>
