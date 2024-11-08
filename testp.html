@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="testp.css"> <!-- Link to your CSS file -->
 
-    <script src="testp.js" defer></script>
-
     <title>Profile Page</title>
 
 </head>
@@ -17,7 +15,6 @@
 <body>
 
     <div class="profile-container">
-
         <div class="content-section">
             <h2>Your Profile</h2>
             <a href="index.html">
@@ -25,74 +22,67 @@
             </a>
             <div class="profile-card">
                 <div class="profile-header">
-                    <img src="https://i.postimg.cc/tCL5Td4H/gold-membership-icon-default-avatar-profile-icon-membership-icon-social-media-user-image-illustratio.jpg" alt="Profile Image" class="profile-image">
+                    <!-- Profile Image with upload functionality -->
+                    <img src="https://i.postimg.cc/tCL5Td4H/gold-membership-icon-default-avatar-profile-icon-membership-icon-social-media-user-image-illustratio.jpg" 
+                         alt="Profile Image" class="profile-image" id="profileImage">
 
                     <div class="profile-info">
-                        <h3 class="profile-name">Skylar Reed</h3>
-                        <p class="profile-email">Email: skylar.reed@example.com</p>
-                        <p class="profile-phone">Phone: +987 654 3210</p>
-                        <p class="profile-bio">Joined: October 31, 2024</p>
-                        <p class="profile-bio">About Me: Hello!🙋🏻‍♂️ Feel free to reach out to me at skylar.reed@example.com 😎</p>
+                        <!-- Editable fields with IDs -->
+                        <h3 id="profile-name" class="profile-name">Skylar Reed</h3>
+                        <p id="profile-email" class="profile-email">Email: skylar.reed@example.com</p>
+                        <p id="profile-phone" class="profile-phone">Phone: +987 654 3210</p>
+                        <p id="joined" class="profile-bio">Joined: October 31, 2024</p>
+                        <p id="about" class="profile-bio">About Me: Hello!🙋🏻‍♂️ Feel free to reach out to me at skylar.reed@example.com 😎</p>
                         <p id="last-active">Last active: 31/10/2024, 11:12 PM</p>
-
                     </div>
-
                 </div>
-                    <button class="edit-profile-btn edit_profiled">Edit Profile</button>
-                </a>
+                <button class="edit-profile-btn edit_profiled">Edit Profile</button>
             </div>
         </div>
 
         <div class="content-section">
-
             <h2>Account Details</h2>
             <div class="profile-details">
-                <div class="profile-detail-card" id="profileCard">
+                <div class="profile-detail-card">
                     <h3>Address</h3>
-                    <p id="addressText" contenteditable="false">789 Pine Lane, Austin, TX 73301</p>
-                    <a href="#"><button class="edit-profile-btn">Edit</button></a>
+                    <p id="addressText" contenteditable="true">789 Pine Lane, Austin, TX 73301</p>
+                    <button class="edit-profile-btn">Edit</button>
                 </div>
 
                 <div class="profile-detail-card">
                     <h3>Change Password</h3>
                     <p>*********63</p>
-                    <button class="edit-profile-btn">Change</button></a>
+                    <button class="edit-profile-btn">Change</button>
                 </div>
 
                 <div class="profile-detail-card">
                     <h3>Privacy Settings</h3>
-                    <p>Visibility Status: Public</p>
-                    <a href="#">
-                    <button class="edit-profile-btn">Edit</button></a>
+                    <p id="visibility">Visibility Status: Public</p>
+                    <button class="edit-profile-btn">Edit</button>
                 </div>
 
                 <div class="profile-detail-card">
                     <h3>Recent Activity</h3>
                     <p>Updated profile information</p>
-                    <a href="#">
-                    <button class="edit-profile-btn">View</button></a>
+                    <button class="edit-profile-btn">View</button>
                 </div>
-
             </div>
         </div>
 
         <section class="content-section">
-
             <h2>Notifications</h2>
+            <!-- Notifications section -->
             <div class="card">
                 <p>Your profile has been updated successfully!</p>
-
                 <button class="edit-profile-btn">View Notification</button>
             </div>
             <div class="card">
                 <p>Your ticket has been successfully booked! Confirmation number: 71381.</p>
-
                 <button class="edit-profile-btn">View Notification</button>
             </div>
-
         </section>
 
+        <script src="testp.js"></script> <!-- Link to your JavaScript file -->
+    </div>
 </body>
-
 </html>
-
