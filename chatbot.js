@@ -56,19 +56,20 @@ function displayBotMessage(message) {
 }
 
 // Send the user message and get the bot response
+// Send the user message and get the bot response
 async function sendMessage() {
   let input = document.getElementById("chatbot-input").value;
   if (input) {
     displayUserMessage(input);
     
-    // Wait for the chatbot response
-    let output = await chatbot(input); // Ensure this line is awaited
-
-    setTimeout(function () {
-      displayBotMessage(output);
-    }, 1000);
-    
+    // Clear the input field immediately after displaying the user message
     document.getElementById("chatbot-input").value = "";
+
+    // Wait for the chatbot response
+    let output = await chatbot(input);
+
+    // Display the bot's response
+    displayBotMessage(output);
   }
 }
 
@@ -85,3 +86,5 @@ document
       sendMessage();
     }
   });
+
+  
