@@ -60,15 +60,14 @@ async function sendMessage() {
   let input = document.getElementById("chatbot-input").value;
   if (input) {
     displayUserMessage(input);
-    
+    document.getElementById("chatbot-input").value = ""; // Clearing the mesage iput field justn after user message is displayed.
+
     // Wait for the chatbot response
     let output = await chatbot(input); // Ensure this line is awaited
 
     setTimeout(function () {
       displayBotMessage(output);
     }, 1000);
-    
-    document.getElementById("chatbot-input").value = "";
   }
 }
 
