@@ -3,15 +3,32 @@ const repoName = "Ticket-Booking";
 const contributorsUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contributors`;
 const repoUrl = `https://api.github.com/repos/${repoOwner}/${repoName}`;
 
+async function fetchAllContributors(url) {
+  let contributors = [];
+  let page = 1;
+  let perPage = 100; // Max per page is 100
+
+  while (true) {
+    const response = await fetch(`${url}?per_page=${perPage}&page=${page}`);
+    const data = await response.json();
+
+    if (data.length === 0) {
+      break;
+    }
+
+    contributors = contributors.concat(data);
+    page++;
+  }
+
+  return contributors;
+}
+
 async function fetchContributorData() {
   try {
-    const [contributorsRes, repoRes] = await Promise.all([
-      fetch(contributorsUrl),
-      fetch(repoUrl)
+    const [contributors, repoData] = await Promise.all([
+      fetchAllContributors(contributorsUrl),
+      fetch(repoUrl).then(res => res.json())
     ]);
-
-    const contributors = await contributorsRes.json();
-    const repoData = await repoRes.json();
 
     const statsGrid = document.getElementById("statsGrid");
 
