@@ -385,6 +385,11 @@
             transition: width 0.09s ease-in-out;
             border-radius: 10px;
         }
+        .profile-darkMode2{
+            display: flex;
+            justify-content: space-between;
+            gap: 2px;
+        }
     </style>
 </head>
 
@@ -571,11 +576,36 @@
         </div>
 
 
- <!-- Profile Icon -->
- <a href="./testp.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
-    <img src="https://i.postimg.cc/tCL5Td4H/gold-membership-icon-default-avatar-profile-icon-membership-icon-social-media-user-image-illustratio.jpg" alt="Profile Icon" style="width: 35px; height: 35px; border-radius: 50%; margin-left: -170px;">
-   </a>
+ 
+<!-- Profile Icon -->
+
+    <a href="./testp.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
+        <img id="homeProfileImage" src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" 
+             alt="Profile Icon" 
+             style="width: 35px; height: 35px; border-radius: 50%; margin-left: -170px;">
+    </a>
+    
 </li>
+
+
+
+<script>
+    
+    document.addEventListener("DOMContentLoaded", function() {
+    // Retrieve the saved avatar from localStorage
+    const savedAvatar = localStorage.getItem("selectedAvatar");
+
+    // If an avatar is saved, update the profile image
+    if (savedAvatar) {
+        const homeProfileImage = document.getElementById("homeProfileImage");
+        if (homeProfileImage) {
+            homeProfileImage.src = savedAvatar;
+        }
+    }
+});
+
+</script>
+
 
 <style>
 
@@ -608,7 +638,15 @@
 </script>
 
 
-        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button> 
+        <!-- <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>  -->
+<!-- for maintaining profile icon -->
+        <div class="profile-darkMode2">
+            <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button> 
+            <a href="./testp.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="https://i.postimg.cc/tCL5Td4H/gold-membership-icon-default-avatar-profile-icon-membership-icon-social-media-user-image-illustratio.jpg" alt="Profile Icon" style="width: 35px; height: 35px; border-radius: 50%; margin-left: -170px;">
+               </a>
+            </li>
+        </div>
 
     </nav>
     
@@ -1043,7 +1081,7 @@
 
                     .star-rating input:checked ~ label {
 
-                    color: #4d994d;
+                    color: #d3f803;
 
 
                     }
@@ -1051,7 +1089,7 @@
                     .star-rating label:hover,
                             .star-rating label:hover ~ label {
 
-                                color: #4d994d; /* Hover effect */
+                                color: #c4da4b; /* Hover effect */
                                 
 
                             }
