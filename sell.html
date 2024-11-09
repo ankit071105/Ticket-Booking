@@ -248,6 +248,29 @@
       width: 100%;
       align-items: center;
       text-align: left;
+      margin-bottom: 10px;
+      padding: 20px;
+    }
+
+    #form-input {
+      width: 450px;
+      padding: 8px 12px;
+      border-bottom: 4px;
+      border: 1px solid #e2e8f0;
+      background-color: white;
+    }
+
+    #form-input2 {
+      width: 450px;
+      padding: 8px 12px;
+      border-bottom: 4px;
+      border: 1px solid #e2e8f0;
+      background-color: white;
+    }
+
+    .form-label {
+      margin-right: 10px;
+      padding-left: 60px;
     }
 
     form label {
@@ -1052,14 +1075,14 @@ body.dark-mode #preloader {
           </div>
 
       <div class="form-cont">
-        <label for="seatNumber">Seat Number:</label>
-        <input type="text" id="seatNumber" placeholder="Enter seat number" required>
+        <label class="form-label" for="form-input">Seat Number:</label>
+        <input type="text" id="form-input" placeholder="Enter seat number" required>
       </div>
 
 
       <div class="form-cont">
-        <label for="price">Original Price:</label>
-        <input type="number" id="price" placeholder="Enter ticket price" required>
+        <label class="form-label" for="form-input2">Original Price:</label>
+        <input type="number" id="form-input2" placeholder="Enter ticket price" required>
       </div>
 
       <button type="submit" class="btn">Submit Ticket</button>
