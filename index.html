@@ -1146,11 +1146,15 @@
                                 
 
                             }
+                    .feedback-box{
+                            color: #2b472b;
+                    }
                 </style>
 
 <div class="feedback-box">
 
     <form id="feedback-form" action="#" method="post">
+        <label for="rate">Rate your Experience</label>
         <div class="star-rating" aria-label="Rating" role="radiogroup">
             <input type="radio" id="star5" name="rating" value="5">
             <label for="star5" title="5 stars">★</label>
@@ -1280,13 +1284,13 @@
 
         /* Button Styling */
         button[type="submit"] {
-            width: 100%;
-            padding: 15px;
+            width: 50%;
             background-color: #4d994d;
             /* Dark green */
             color: white;
             font-size: 1em;
             font-weight: bold;
+            text-align: center;
             border: none;
             border-radius: 5px;
             cursor: pointer;
