@@ -4,177 +4,206 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking Conditions</title>
-    <link rel="stylesheet" href="footer.css"> 
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            background-color: #f2f7fc;
             margin: 0;
             padding: 20px;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .box {
-            background-color: #e6f0ff;
-            border-left: 8px solid #28fcfc;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .box h2 {
-            font-size: 1.2em;
-            margin: 0;
-            color: #0d0d0d;
-        }
-        .box p {
-            margin: 10px 0 0 0;
-            font-size: 1em;
             color: #333;
         }
-        .container .box:last-child {
-            margin-bottom: 0;
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .box {
+            background-color: #eaf4ff;
+            border-left: 5px solid #0073e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: 0.3s;
         }
         .box:hover {
-            background-color: #55f1d7;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            background-color: #d0e9ff;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .box h2 {
+            font-size: 1.4em;
+            color: #00509e;
+        }
+        .box p {
+            font-size: 1em;
+            color: #555;
+        }
+        footer {
+            background-color: #1e2a38;
+            color: #b5fdf4;
+            padding: 40px 20px;
+            font-size: 14px;
+        }
+        .footer-container {
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+        }
+        .footer-logo {
+            width: 150px;
+            margin-bottom: 10px;
+        }
+        .social-icons a {
+            color: #b5fdf4;
+            font-size: 24px;
+            margin: 0 8px;
+            text-decoration: none;
+        }
+        .social-icons a:hover {
+            color: #ffffff;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .footer-column {
+            width: 45%;
+            margin-bottom: 20px;
+        }
+        .footer-column h4 {
+            font-size: 1.1em;
+            color: #dcfffa;
+            margin-bottom: 10px;
+        }
+        .footer-column ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .footer-column ul li {
+            margin: 5px 0;
+        }
+        .footer-column ul li a {
+            color: #b5fdf4;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-column ul li a:hover {
+            color: #ffffff;
+        }
+        .footer-bottom {
+            border-top: 1px solid #3a4a5a;
+            padding-top: 15px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .footer-bottom ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+        .footer-bottom ul li {
+            display: inline;
+            margin: 0 8px;
+        }
+        .footer-bottom ul li a {
+            color: #b5fdf4;
+            text-decoration: none;
+        }
+        .footer-bottom ul li a:hover {
+            color: #ffffff;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .footer-column {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-               <h1 style="padding-left:40%">Booking Condition</h1>
+        <h1>Booking Conditions</h1>
+        
+        <!-- Booking conditions content sections -->
         <div class="box">
             <h2>General Terms</h2>
-            <p>When using our online ticket booking system, you agree to the terms and conditions outlined below. The term “ticket” refers to any pass purchased for events, services, or transportation. “Booking” refers to the act of purchasing a ticket, while “cancellation” refers to the process of voiding an existing booking.</p>
+            <p>When using our online ticket booking system, you agree to the terms and conditions outlined below. The term “ticket” refers to any pass purchased for events, services, or transportation.</p>
         </div>
-
-        <div class="box">
-            <h2>Payment Terms</h2>
-            <p>We accept the following payment methods: credit cards, debit cards, and PayPal. Payment must be made in full at the time of booking unless an installment plan is offered. We use third-party processors to securely handle all payment data, with encryption in place to protect your information.</p>
-        </div>
-
-        <div class="box">
-            <h2>Booking Confirmation</h2>
-            <p>Once your payment is processed, you will receive a confirmation via email or SMS with your booking details. This confirmation serves as your proof of purchase and is essential for entry. Please keep it safe. Confirmation is typically sent within a few minutes, but it can take up to 24 hours in rare cases.</p>
-        </div>
-
-        <div class="box">
-            <h2>Ticket Changes and Cancellations</h2>
-            <p>Bookings can be modified or canceled up to 24 hours before the event or service. If you wish to make changes, please use the "Manage My Booking" feature on our website or contact customer support.</p>
-        </div>
-
-        <div class="box">
-            <h2>No-Show Policy</h2>
-            <p>If you do not show up for the event or service you’ve booked, your ticket will be forfeited, and no refund will be issued. In some cases, rescheduling may be possible, but this is subject to availability and terms outlined by the service provider.</p>
-        </div>
-
-        <div class="box">
-            <h2>Customer Obligations</h2>
-            <p>Customers are responsible for providing accurate details during the booking process, including name, contact information, and any additional requirements. You will need to present a valid form of ID and your booking reference at check-in or when redeeming your ticket.</p>
-        </div>
-
-        <div class="box">
-            <h2>System Limitations and Disclaimers</h2>
-            <p>While we strive to maintain an uninterrupted booking experience, technical issues may occur. In the event of system downtime or other interruptions, we will notify customers and work to resolve the issue as quickly as possible. We are not liable for disruptions caused by circumstances beyond our control (e.g., natural disasters, force majeure events).</p>
-        </div>
-
-        <div class="box">
-            <h2>Privacy Policy</h2>
-            <p>We are committed to protecting your personal information. Your data is collected only for the purpose of processing your booking and will not be shared with third parties, except as required by law or as outlined in our Privacy Policy.</p>
-        </div>
-
-        <div class="box">
-            <h2>Governing Law and Jurisdiction</h2>
-            <p>These booking conditions are governed by the laws of [Insert Region]. Any disputes arising out of or in connection with these terms will be subject to the exclusive jurisdiction of the courts of [Insert Region].</p>
-        </div>
-
-    </div>
-    <footer class="footer-container">
-        <div class="footer-top">
-          
-          <div class="footer-logo-section">
-            <a href="#"> <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo"></a>
-            <p style="color: #b5fdf4;" >Affordable adventures, unforgettable memories—explore with ease.</p>
-            <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
-            <div class="social-icons">
-    
-              <a href="#"><i class="fab fa-facebook"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#" ><i class="fa-brands fa-x-twitter"></i></a>
-              <a href="#"><i class="fab fa-linkedin"></i></a>
-              <a href="#"><i class="fab fa-youtube"></i></a>
-    
-                <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.twitter.com" ><i class="fab fa-x-twitter"></i></a>
-                <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
-    
-            </div>
-          </div>
-      
-          
-          <div class="footer-links">
-            <div class="footer-column">
-              <h4>HELPFUL LINKS</h4>
-              <ul>
-                <li><a href="help.html">Help Centre</a></li>
-                <li><a href="#">Special Assistance</a></li>
-                <li><a href="#">Download The App</a></li>
-                <li><a href="./book_condition.html">Booking Conditions</a></li>
-              </ul>
-            </div>
-      
-            <div class="footer-column">
-              <h4>ABOUT US</h4>
-              <ul>
-                <li><a href="#">Media Center</a></li>
-                <li><a href="#">Investors</a></li>
-    
-                <li><a href="#">Modern Slavery Act</a></li>
-    
-                <li><a href="ModernSlaveryAct.html">Modern Slavery Act</a></li>
-    
-                <li><a href="terms.html">Terms Of Use</a></li>
-              </ul>
-            </div>
-      
-            <div class="footer-column">
-              <h4>KEEPING SAFE</h4>
-              <ul>
-                <li><a href="#">ATOL Protected</a></li>
-                <li><a href="travelAware.html">Travel Aware</a></li>
-                <li><a href="#">FCDO Travel Advice</a></li>
-                <li><a href="#">ABTA</a></li>
-              </ul>
-            </div>
-      
-            <div class="footer-column">
-              <h4>FIND US</h4>
-              <ul>
-                <li><a href="contactus.html">Contact Us</a></li>
-                <li><a href="#">Group Cookie Notice</a></li>
-                <li><a href="privacy.html">Privacy And Policy</a></li>
-                <li><a href="#">Sitemap</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      
         
-        <div class="footer-bottom">
-          <ul>
-            <li><a href="#">Holiday Type</a></li>
-            <li><a href="#">Holiday Deals</a></li>
-            <li><a href="#">Popular Counters</a></li>
-            <!-- <li><a href="#">Flight Only</a></li> -->
-            <li><a href="#">Top Hotels</a></li>
-          </ul>
+        <div class="box">
+            <h2>Payment and Confirmation</h2>
+            <p>All payments must be completed at the time of booking. Upon successful payment, you will receive a confirmation email with your ticket details. Please check your email spam folder if you do not see this.</p>
         </div>
-      </footer>
+
+        <div class="box">
+            <h2>Cancellations and Refunds</h2>
+            <p>Cancellations may be requested through our Help Center. Refund eligibility depends on the terms of the purchased ticket and any third-party provider’s policies.</p>
+        </div>
+
+        <div class="box">
+            <h2>Privacy and Data Protection</h2>
+            <p>Your personal data is protected under our privacy policy. We may share your information only with necessary third parties involved in processing your booking.</p>
+        </div>
+    </div>
+    
+    <footer class="footer-container">
+
+        <div class="footer-logo-section">
+            <a href="#"><img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo"></a>
+            <p style="color: #b5fdf4;">Affordable adventures, unforgettable memories—explore with ease.</p>
+            <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON:</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.twitter.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.youtube.com" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>          
+        </div>
+          
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4>HELPFUL LINKS</h4>
+                <ul>
+                    <li><a href="help.html">Help Centre</a></li>
+                    <li><a href="#">Special Assistance</a></li>
+                    <li><a href="#">Download The App</a></li>
+                    <li><a href="./book_condition.html">Booking Conditions</a></li>
+                </ul>
+            </div>
+      
+            <div class="footer-column">
+                <h4>ABOUT US</h4>
+                <ul>
+                    <li><a href="#">Media Center</a></li>
+                    <li><a href="#">Investors</a></li>
+                    <li><a href="ModernSlaveryAct.html">Modern Slavery Act</a></li>
+                    <li><a href="terms.html">Terms Of Use</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <ul>
+                <li><a href="#">Holiday Type</a></li>
+                <li><a href="#">Holiday Deals</a></li>
+                <li><a href="#">Popular Counters</a></li>
+                <li><a href="#">Top Hotels</a></li>
+            </ul>
+        </div>
+    </footer>
+    
 </body>
 </html>

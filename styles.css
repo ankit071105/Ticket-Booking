@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 .review-section {
   width: 80%;
   margin: 50px auto;
@@ -74,7 +76,7 @@ h3,
 p {
   margin-bottom: 20px;
 }
-
+/* 
 .logo {
   display: flex;
 }
@@ -86,6 +88,28 @@ p {
   font-weight: bold;
   color: #00bfa6;
 }
+/* Logo Container Styling */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Adjust as needed */
+  text-decoration: none;
+}
+
+/* Logo Image Styling */
+.logo-image {
+  width: 40px; /* Adjust size as necessary */
+  height: auto;
+}
+
+/* Logo Text Styling */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 240px;
+  color: #333;
+} */
+
 
 .nav-links {
   list-style: none;
@@ -190,7 +214,7 @@ p {
 }
 
 /* Footer Styles */
-/* footer {
+footer {
     background-color: #1f2937;
     color: white;
     text-align: center;
@@ -209,7 +233,7 @@ p {
 
 .footer a:hover {
     color: #00a690;
-} */
+}
 
 /* Form Section */
 form {
@@ -858,7 +882,7 @@ button:hover {
   height: 10px;
   width: 10px;
   margin: 0 2px;
-  background-color: #bbb;
+  background-color: #ffffff;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
@@ -876,7 +900,7 @@ button:hover {
 }
 .slider-dot-active,
 .dot:hover {
-  background-color: #717171;
+  background-color: #00e5ff;
 }
 
 .slider {
@@ -1195,7 +1219,47 @@ button:hover {
   }
 
 
+@media (max-width: 768px) {
+  .circle {
+      display: none;
+  }
+}
 
 
+.profile-icon {
 
-  
+  border-radius: 50%;
+  position: relative;
+  margin-left: 20px; /* Adjust space between Login button and Profile icon */
+
+}
+
+.dropdown-menu {
+
+  display: none;
+  position: absolute;
+  top: 35px; /* Adjust based on the height of your navbar */
+  right: 0;
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  z-index: 1;
+
+}
+
+.dropdown-menu a {
+
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+
+}
+
+.dropdown-menu a:hover {
+
+  background-color: #f1f1f1;
+
+}
+
+

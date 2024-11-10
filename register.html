@@ -1,189 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register Page</title>
+    <title>Simple Registration Form</title>
     <link rel="shortcut icon" href="https://ticket-booking-blue.vercel.app/images/4.jpeg" type="image/x-icon">
-
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="navbar.css">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+          --primary-color: #6366f1; /* Indigo */
+          --primary-hover: #4338ca; /* Indigo darker */
+          --secondary-color: #f3f4f6; /* Light Gray */
+          --text-color: #1f2937; /* Gray-900 */
+          --success-color: #16a34a; /* Green */
+          --error-color: #dc2626; /* Red */
+        }
+
+        body {
+          font-family: 'Poppins', sans-serif;
+          display: flex;
+          flex-direction: column; /* Stack elements vertically */
+          justify-content: flex-start; /* Align items at the top */
+          align-items: center; /* Center items horizontally */
+          margin: 0;
+          padding: 20px; /* Add padding to the body for spacing */
+          background-color: var(--secondary-color);
+        } 
+
+        .registration-form {
+          background-color: #fff;
+          padding: 30px;
+          border-radius: 12px;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+          width: 400px;
+          margin-top: 30px;
+        }
+        
+        .registration-form h2 {
+          text-align: center;
+          color: var(--text-color);
+          font-weight: 700;
+          margin-bottom: 20px;
+        }
+        
+        .form-field {
+          margin-bottom: 15px;
+        }
+        
+        .form-field label {
+          display: block;
+          font-weight: 500;
+          color: var(--text-color);
+          margin-bottom: 4px;
+        }
+        
+        .form-field input {
+          width: 100%;
+          padding: 12px 16px;
+          border: 2px solid #d1d5db; /* Gray-300 */
+          border-radius: 8px;
+          font-size: 16px;
+          font-family: 'Roboto', sans-serif;
+          color: var(--text-color);
+          transition: border-color 0.3s ease;
+        }
+        
+        .form-field input:focus {
+          outline: none;
+          border-color: var(--primary-color);
+        }
+        
+        .form-field button {
+          width: 100%;
+          padding: 12px 16px;
+          font-size: 16px;
+          font-weight: 500;
+          color: #fff;
+          background-color: var(--primary-color);
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+        
+        .form-field button:hover {
+          background-color: var(--primary-hover);
+        }
+        
+        .message {
+          text-align: center;
+          margin-top: 15px;
+          font-weight: 500;
+        }
+        
+        .success {
+          color: var(--success-color);
+        }
+        
+        .error {
+          color: var(--error-color);
+        }
+    </style>
 </head>
+<header>
+    <nav class="navbar">
+        <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
+        <div class="logo" style="font-size: 20px;">Ticket Marketplace</div>
+  
+        <!-- Toggle Button (Visible on Small Screens) -->
+        <button id="navToggle">☰</button>
+  
+        <!-- Navbar Links -->
+        <div id="navLinks">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+            <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
+            <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
+            <a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
+            <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+        </div>
+  
+        <!-- Dark Mode Button -->
+        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+    </nav>
+</header>
+<body>
+<div class="registration-form">
+    <h2>Register</h2>
+    <div class="form-field">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+    </div>
+    <div class="form-field">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your username" required>
+    </div>
+    <div class="form-field">
+        <label for="mobile">Mobile</label>
+        <input type="text" id="mobile" placeholder="Enter your mobile number" required>
+    </div>
+    <div class="form-field">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+    </div>
+    <div class="form-field">
+        <button onclick="registerUser()">Register</button>
+        <a href="./index.html">Back to Home</a>
+    </div>
+    <div id="message" class="message"></div>
+</div>
 
-<body class="bg-white">
+<script>
+    // JavaScript for registration logic and validation
+    function registerUser() {
+        const email = document.getElementById('email').value.trim();
+        const username = document.getElementById('username').value.trim();
+        const mobile = document.getElementById('mobile').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const messageElement = document.getElementById('message');
 
-    <div class="relative flex items-top justify-center min-h-screen bg-white sm:items-center sm:pt-0">
-        <div class="w-5/6 mx-auto sm:px-6 lg:px-8">
-            <div class="mt-8 overflow-hidden">
-                <div class="grid grid-cols-1 md:grid-cols-2">
-                    <div class="hidden lg:block p-6 mr-2 bg-gray-100 sm:rounded-lg">
-                        <h1 class="text-4xl text-gray-800 font-extrabold tracking-tight md:text-3xl">
-                            Welcome!
-                        </h1>
-                        <br /><br />
-                        <p class="text-normal text-lg sm:text-xl font-medium text-gray-600 mt-2">
-                            Already Have an Account?
-                        </p>
-                        <br />
-                        <a href="/client/login.html"
-                            class="md:w-32 bg-orange-700 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg mt-3 transition ease-in-out duration-300">
-                            Log in
-                        </a>
-                    </div>
+        // Basic validation
+        if (!email || !username || !mobile || !password) {
+            showMessage('All fields are required!', 'error');
+            return;
+        }
 
-                    <div
-                        class="p-6 flex flex-col justify-center bg-white border border-gray-200 rounded-lg shadow-lg relative">
-                        <button id="closeButton"
-                            class="absolute top-2 right-2 text-gray-600 hover:text-red-600 text-xl">
-                            &times; <!-- Close icon -->
-                        </button>
-                        <h2 class="text-3xl sm:text-4xl text-gray-800 font-extrabold tracking-tight">Sign up</h2>
-                        <br />
-                        <form id="signupForm" novalidate>
-                            <!-- Email Input -->
-                            <input type="email" name="email" id="email" placeholder="Email"
-                                class="w-full mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
-                                required />
-                            <span id="emailError" class="text-red-500"></span>
-                            <!-- Username Input -->
-                            <input type="text" name="username" id="username" placeholder="Username"
-                                class="w-full mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
-                                required />
-                            <span id="usernameError" class="text-red-500"></span>
-                            <!-- Mobile Number Input -->
-                            <input type="tel" name="mobile" id="mobile" placeholder="Mobile Number"
-                                class="w-full mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
-                                required />
-                            <span id="mobileError" class="text-red-500"></span>
-                            <!-- Password Input -->
-                            <div class="relative flex items-center">
-                                <input type="password" name="password" id="password" placeholder="Password"
-                                    class="w-full mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
-                                    required />
-                                <button type="button" id="togglePassword"
-                                    class="absolute right-3 top-5 text-black-500 hover:text-orange-700">
-                                    <svg id="showIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                        fill="currentColor" class="size-6 w-6 h-6">
-                                        <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-                                        <path fill-rule="evenodd"
-                                            d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-                                    <svg id="hideIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                        fill="currentColor" class="size-6 w-6 h-6 hidden">
-                                        <path
-                                            d="M3.53 2.47a.75.75 0 0 0-1.06 1.06l18 18a.75.75 0 1 0 1.06-1.06l-18-18ZM22.676 12.553a11.249 11.249 0 0 1-2.631 4.31l-3.099-3.099a5.25 5.25 0 0 0-6.71-6.71L7.759 4.577a11.217 11.217 0 0 1 4.242-.827c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113Z" />
-                                        <path
-                                            d="M15.75 12c0 .18-.013.357-.037.53l-4.244-4.243A3.75 3.75 0 0 1 15.75 12ZM12.53 15.713l-4.243-4.244a3.75 3.75 0 0 0 4.244 4.243Z" />
-                                        <path
-                                            d="M6.75 12c0-.619.107-1.213.304-1.764l-3.1-3.1a11.25 11.25 0 0 0-2.63 4.31c-.12.362-.12.752 0 1.114 1.489 4.467 5.704 7.69 10.675 7.69 1.5 0 2.933-.294 4.242-.827l-2.477-2.477A5.25 5.25 0 0 1 6.75 12Z" />
-                                    </svg>
-                                </button>
-                            </div>
-                            <span id="passwordError" class="text-red-500"></span>
-                            
-                            <script>
-                                const passwordInput = document.getElementById("password");
-                                const togglePasswordButton = document.getElementById("togglePassword");
-                                const showIcon = document.getElementById("showIcon");
-                                const hideIcon = document.getElementById("hideIcon");
-                            
-                                togglePasswordButton.addEventListener("click", function () {
-                                    const isPasswordVisible = passwordInput.getAttribute("type") === "text";
-                                    passwordInput.setAttribute("type", isPasswordVisible ? "password" : "text");
-                                    
-                                    // Toggle the icons
-                                    showIcon.classList.toggle("hidden", !isPasswordVisible);
-                                    hideIcon.classList.toggle("hidden", isPasswordVisible);
-                                });
-                            </script>
-                            
-                                 <span id="errorMessage" class="text-red-500"></span>
-                                </div>
-                            <button type="submit"
-                                class="md:w-32 bg-orange-700 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg mt-3 transition ease-in-out duration-300">
-                                Register
-                            </button>
-                        </form>
-                        <!-- Continue with Google Button -->
-                        <button id="googleSignup"
-                            class="w-full mt-4 flex items-center justify-center bg-white border border-gray-400 text-gray-800 font-semibold py-3 px-6 rounded-lg transition ease-in-out duration-300 hover:bg-gray-100">
-                            <img src="../images/googleLogo.png" alt="Google Logo" class="w-5 h-5 mr-2">
-                            Continue with Google
-                        </button>
-                    </div>
-                </div>
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            showMessage('Invalid email format!', 'error');
+            return;
+        }
+
+        // Username validation
+        if (username.length < 3) {
+            showMessage('Username must be at least 3 characters long!', 'error');
+            return;
+        }
+
+        // Mobile number validation
+        if (!/^\d{10}$/.test(mobile)) {
+            showMessage('Mobile number must be 10 digits!', 'error');
+            return;
+        }
+
+        // Password validation
+        if (password.length < 6) {
+            showMessage('Password must be at least 6 characters long!', 'error');
+            return;
+        }
+
+        // If all validations pass, display success message
+        showMessage('Registration successful!', 'success');
+    }
+
+    // Function to display messages
+    function showMessage(message, type) {
+        const messageElement = document.getElementById('message');
+        messageElement.textContent = message;
+        messageElement.className = `message ${type}`;
+    }
+</script>
+<footer class="footer-container">
+    <div class="footer-top">
+
+        <div class="footer-logo-section">
+            <a href="#"> <img src="./images/3.jpeg" alt="easyJet holidays logo" class="footer-logo"></a>
+            <p style="color: #b5fdf4;">Affordable adventures, unforgettable memories—explore with ease.</p>
+            <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4>HELPFUL LINKS</h4>
+                <ul>
+                    <li><a href="help.html">Help Centre</a></li>
+                    <li><a href="#">Special Assistance</a></li>
+                    <li><a href="#">Download The App</a></li>
+                    <li><a href="#">Booking Conditions</a></li>
+                    <li><a href="Faq.html">FAQ</a></li>
+
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>ABOUT US</h4>
+                <ul>
+                    <li><a href="#">Media Center</a></li>
+                    <li><a href="#">Investors</a></li>
+                    <li><a href="ModernSlaveryAct.html">Modern Slavery Act</a></li>
+                    <li><a href="terms.html">Terms Of Use</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>KEEPING SAFE</h4>
+                <ul>
+                    <li><a href="atol.html">ATOL Protected</a></li>
+                    <li><a href="./travelawares.html">Travel Aware</a></li>
+                    <li><a href="fcdoTravel.html">FCDO Travel Advice</a></li>
+                    <li><a href="abta.html">ABTA</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>FIND US</h4>
+                <ul>
+
+                    <li><a href="contactus.html">Contact 
+                    <li><a href="GroupCookieNotice.html">Group Cookie Notice</a></li>
+                   <li><a href="privacy.html">Privacy And Policy</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
             </div>
         </div>
     </div>
+</div>
 
-    <script>
-        document.getElementById('signupForm').addEventListener('submit', async function (event) {
-            event.preventDefault();
 
-            document.getElementById('emailError').textContent = '';
-            document.getElementById('usernameError').textContent = '';
-            document.getElementById('mobileError').textContent = '';
-            document.getElementById('passwordError').textContent = '';
+    <div class="footer-bottom">
+        <ul>
+            <li><a href="#">Holiday Type</a></li>
+            <li><a href="#">Holiday Deals</a></li>
+            <li><a href="#">Popular Counters</a></li>
+            <!-- <li><a href="#">Flight Only</a></li> -->
+            <li><a href="#">Top Hotels</a></li>
+            <li><a href="Faq.html">FAQ</a></li>
 
-            let email = document.getElementById('email').value;
-            let username = document.getElementById('username').value;
-            let mobile = document.getElementById('mobile').value;
-            let password = document.getElementById('password').value;
-            let valid = true;
+        </ul>
+    </div>
+</footer>
+<script>
+    // Toggle Navbar Links
+    const navToggle = document.getElementById('navToggle');
+    const navlinks = document.getElementById('navLinks');
 
-            if (!/^\S+@\S+\.\S+$/.test(email)) {
-                document.getElementById('emailError').textContent = 'Please enter a valid email.';
-                valid = false;
-            }
+    navToggle.addEventListener('click', () => {
+        navlinks.style.display = navlinks.style.display === 'flex' ? 'none' : 'flex';
+    });
 
-            if (username.length < 3) {
-                document.getElementById('usernameError').textContent = 'Username must be at least 3 characters.';
-                valid = false;
-            }
+    // Ensure navbar links are visible on large screens
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            navlinks.style.display = 'flex'; // Show links on large screens
+        } else {
+            navlinks.style.display = 'none'; // Hide links on small screens
+        }
+    });
 
-            if (!/^\d{10}$/.test(mobile)) {
-                document.getElementById('mobileError').textContent = 'Please enter a valid 10-digit mobile number.';
-                valid = false;
-            }
-
-            if (password.length < 6) {
-                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters long.';
-                valid = false;
-            }
-
-            if (!valid) {
-                return;
-            }
-
-            try {
-                let response = await fetch('/api/register', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ email, username, mobile, password }),
-                });
-
-                let result = await response.json();
-
-                if (response.ok) {
-                    alert('Registration successful!');
-                } else {
-                    document.getElementById('errorMessage').textContent = result.message || 'Registration failed. Please try again.';
-                }
-            } catch (error) {
-                console.error('Error during registration:', error);
-                document.getElementById('errorMessage').textContent = 'An error occurred. Please try again later.';
-            }
-        });
-    </script>
-    <script src="signup.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-auth-compat.js"></script>
-    <script src="../firebase.js"></script>
-
+    // Set initial state based on the current window size
+    if (window.innerWidth > 768) {
+        navlinks.style.display = 'flex'; // Show links if starting on a large screen
+    } else {
+        navlinks.style.display = 'none'; // Hide links if starting on a small screen
+    }
+</script>
 </body>
-
 </html>
