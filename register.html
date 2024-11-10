@@ -14,72 +14,98 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* CSS for styling the form */
+        :root {
+          --primary-color: #6366f1; /* Indigo */
+          --primary-hover: #4338ca; /* Indigo darker */
+          --secondary-color: #f3f4f6; /* Light Gray */
+          --text-color: #1f2937; /* Gray-900 */
+          --success-color: #16a34a; /* Green */
+          --error-color: #dc2626; /* Red */
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column; /* Stack elements vertically */
-            justify-content: flex-start; /* Align items at the top */
-            align-items: center; /* Center items horizontally */
-            margin: 0;
-            padding: 20px; /* Add padding to the body for spacing */
-            background-color: #f0f0f0;
-        }
+          font-family: 'Poppins', sans-serif;
+          display: flex;
+          flex-direction: column; /* Stack elements vertically */
+          justify-content: flex-start; /* Align items at the top */
+          align-items: center; /* Center items horizontally */
+          margin: 0;
+          padding: 20px; /* Add padding to the body for spacing */
+          background-color: var(--secondary-color);
+        } 
+
         .registration-form {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            margin-top: 50px; /* Add margin to push the form down below the header */
+          background-color: #fff;
+          padding: 30px;
+          border-radius: 12px;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+          width: 400px;
+          margin-top: 30px;
         }
+        
         .registration-form h2 {
-            margin-top: 0;
-            text-align: center;
-            color: #333;
+          text-align: center;
+          color: var(--text-color);
+          font-weight: 700;
+          margin-bottom: 20px;
         }
+        
         .form-field {
-            margin-bottom: 15px;
+          margin-bottom: 15px;
         }
+        
         .form-field label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
+          display: block;
+          font-weight: 500;
+          color: var(--text-color);
+          margin-bottom: 4px;
         }
+        
         .form-field input {
-            width: 95%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
+          width: 100%;
+          padding: 12px 16px;
+          border: 2px solid #d1d5db; /* Gray-300 */
+          border-radius: 8px;
+          font-size: 16px;
+          font-family: 'Roboto', sans-serif;
+          color: var(--text-color);
+          transition: border-color 0.3s ease;
         }
+        
         .form-field input:focus {
-            border-color: #007bff;
-            outline: none;
+          outline: none;
+          border-color: var(--primary-color);
         }
+        
         .form-field button {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #007bff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+          width: 100%;
+          padding: 12px 16px;
+          font-size: 16px;
+          font-weight: 500;
+          color: #fff;
+          background-color: var(--primary-color);
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
         }
+        
         .form-field button:hover {
-            background-color: #0056b3;
+          background-color: var(--primary-hover);
         }
+        
         .message {
-            text-align: center;
-            margin-top: 10px;
-            font-weight: bold;
+          text-align: center;
+          margin-top: 15px;
+          font-weight: 500;
         }
+        
         .success {
-            color: green;
+          color: var(--success-color);
         }
+        
         .error {
-            color: red;
+          color: var(--error-color);
         }
     </style>
 
