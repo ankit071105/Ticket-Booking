@@ -130,10 +130,11 @@
 </body>
 
     <footer>
-        <p>&copy; 2024 Ticket Marketplace. All rights reserved.</p>
+        <p>&copy; <span id="currentYear"></span> Ticket Marketplace. All rights reserved.</p>
     </footer>
 </body>
 <script>
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
     const tickets = JSON.parse(localStorage.getItem('tickets')) || [];
     document.getElementById('showTickets').addEventListener('click', function () {
       const ticketType = document.getElementById('ticketType').value;
