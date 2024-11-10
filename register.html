@@ -369,7 +369,88 @@
                 </ul>
             </div>
         </div>
+  
+        <!-- Dark Mode Button -->
+        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+    </nav>
+</header>
+<body>
+<div class="registration-form">
+    <h2>Register</h2>
+    <div class="form-field">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
     </div>
+    <div class="form-field">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your username" required>
+    </div>
+    <div class="form-field">
+        <label for="mobile">Mobile</label>
+        <input type="text" id="mobile" placeholder="Enter your mobile number" required>
+    </div>
+    <div class="form-field">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+    </div>
+    <div class="form-field">
+        <button onclick="registerUser()">Register</button>
+        <a href="./index.html">Back to Home</a>
+    </div>
+    <div id="message" class="message"></div>
+</div>
+
+<script>
+    // JavaScript for registration logic and validation
+    function registerUser() {
+        const email = document.getElementById('email').value.trim();
+        const username = document.getElementById('username').value.trim();
+        const mobile = document.getElementById('mobile').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const messageElement = document.getElementById('message');
+
+        // Basic validation
+        if (!email || !username || !mobile || !password) {
+            showMessage('All fields are required!', 'error');
+            return;
+        }
+
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            showMessage('Invalid email format!', 'error');
+            return;
+        }
+
+        // Username validation
+        if (username.length < 3) {
+            showMessage('Username must be at least 3 characters long!', 'error');
+            return;
+        }
+
+        // Mobile number validation
+        if (!/^\d{10}$/.test(mobile)) {
+            showMessage('Mobile number must be 10 digits!', 'error');
+            return;
+        }
+
+        // Password validation
+        if (password.length < 6) {
+            showMessage('Password must be at least 6 characters long!', 'error');
+            return;
+        }
+
+        // If all validations pass, display success message
+        showMessage('Registration successful!', 'success');
+    }
+
+    // Function to display messages
+    function showMessage(message, type) {
+        const messageElement = document.getElementById('message');
+        messageElement.textContent = message;
+        messageElement.className = `message ${type}`;
+    }
+</script>
 </div>
 
 
