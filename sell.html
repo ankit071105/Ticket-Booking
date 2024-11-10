@@ -34,6 +34,21 @@
       height: 40px !important;
     }
 
+/* cursor animation  */
+
+.circle {
+  height: 24px;
+  width: 24px;
+  border-radius: 24px;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999999; /* so that it stays on top of all other elements */
+}
+
+
     #myBtn:hover {
       background-color: #4cc6ad;
     }
@@ -284,6 +299,27 @@
 
 
     form .btn:hover {
+      background-color: transparent;
+      color: #ff4d4d;
+    }
+    form .btn1 {
+      background-color: #ff4d4d;
+      border: 2px solid #ff4d4d;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      padding: 25px;
+      width: 100%;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1.25rem;
+      margin-top: 30px;
+    }
+
+
+    form .btn1:hover {
       background-color: transparent;
       color: #ff4d4d;
     }
@@ -915,8 +951,14 @@ body.dark-mode #preloader {
 
       <div class="form-cont">
         <label for="date">Date:</label>
-        <input type="date" id="date" required>
+        <input type="date" id="date" required min="">
       </div>
+
+      <script>
+        // calender date validation logic
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').setAttribute('min', today);
+      </script>
       
       <div class="form-cont">
         <label for="coachType">Coach Type:</label>
@@ -969,7 +1011,13 @@ body.dark-mode #preloader {
             <input type="time" id="departureTime" name="departureTime" required>
 
             <label for="date">Date:</label>
-            <input type="date" id="date" name="date" required>
+            <input type="date" id="date2" name="date" required min="">
+
+            <script>
+              // calender date validation logic
+              const today2 = new Date().toISOString().split('T')[0];
+              document.getElementById('date2').setAttribute('min', today2);
+            </script>
 
             <label for="seatNo">Seat Number:</label>
             <input type="text" id="seatNo" name="seatNo" required>
@@ -983,7 +1031,7 @@ body.dark-mode #preloader {
             <label for="price">Original Price:</label>
             <input type="number" id="price" name="price" required min="0" step="0.01">
 
-            <button type="submit">Submit Ticket</button>
+            <button type="submit" class="btn1">Submit Ticket</button>
         </form>
         
     </main>

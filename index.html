@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="why-us.css">
     <link rel="stylesheet" href="navbar.css">
+    <link rel="manifest" href="/manifest.json">
     <!-- this is for twitter icons -->
     <script src="https://kit.fontawesome.com/3d20c433e1.js" crossorigin="anonymous"></script>
 
@@ -384,6 +385,11 @@
             transition: width 0.09s ease-in-out;
             border-radius: 10px;
         }
+        .profile-darkMode2{
+            display: flex;
+            justify-content: space-between;
+            gap: 2px;
+        }
     </style>
 </head>
 
@@ -551,6 +557,32 @@
             style="border-radius: 50%; height: 35px; width: 35px;">
         <div class="logo" style="font-size: 20px;">Ticket Marketplace</div>
 
+    <nav class="navbar">
+        <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
+        <div class="logo" style="font-size: 20px;">Ticket Marketplace</div>
+  
+        <!-- Toggle Button (Visible on Small Screens) -->
+        <button id="navToggle">☰</button>
+  
+        <!-- Navbar Links -->
+        <div id="navLinks">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+            <a href="buy.html"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
+            <a href="sell.html"><i class="fas fa-tags"></i> Sell</a>
+            <a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
+            <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+        </div>
+  
+        <!-- Dark Mode Button -->
+        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
+    </nav>
+      <nav class="navbar">
+        <a href="index.html" style="display: flex; align-items: center; text-decoration: none; white-space: nowrap; margin-right: -250px;">
+          <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt="" style="border-radius: 50%; height: 35px; width: 35px;">
+          <div class="logo" style="font-size: 20px; margin-left: 8px;">Ticket Marketplace</div>
+      </a><div>
         <!-- Toggle Button (Visible on Small Screens) -->
         <button id="navToggle">☰</button>
 
@@ -565,13 +597,10 @@
             <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
             <a href="AI suggestions.html"><i class="fas fa-robot"></i> AI Suggestions</a>
         </div>
+   
 
-        <!-- Dark Mode Button -->
-        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>
-    </nav>
-  
 
-    <!-- <nav class="navbar">
+  <nav class="navbar">
         <a href="index.html"
             style="display: flex; align-items: center; text-decoration: none; white-space: nowrap; margin-right: -250px;">
             <img src="https://ticket-booking-blue.vercel.app/images/4.jpeg" alt=""
@@ -586,6 +615,8 @@
             <a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a>
             <a href="contributor.html"><i class="fas fa-users"></i> Contributors</a>
             <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+
+            <a href="register.html"><i class="fas fa-sign-in-alt"></i> Login</a>
             <a href="index.html" style="text-decoration: none;"><i class="fas fa-home"></i> Home</a>
             <a href="about.html" style="text-decoration: none;"><i class="fas fa-info-circle"></i> About</a>
             <a href="buy.html" style="text-decoration: none;"><i class="fas fa-ticket-alt"></i> Buy Ticket</a>
@@ -598,48 +629,79 @@
         </div>
 
 
-        Profile Icon -->
-        <!-- <a href="./testp.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
-            <img src="https://i.postimg.cc/tCL5Td4H/gold-membership-icon-default-avatar-profile-icon-membership-icon-social-media-user-image-illustratio.jpg"
-                alt="Profile Icon" style="width: 35px; height: 35px; border-radius: 50%; margin-left: -170px;">
-        </a> -->
-        <!-- </li> -->
-<!-- 
-        <style>
-            
-            .navbar-nav .nav-item .profile-link:hover {
-                background-color: transparent !important;
-                /* Remove background color */
-                border-radius: 0 !important;
-                /* Reset border radius */
-                transform: none !important;
-                /* Prevent scaling */
+ 
+<!-- Profile Icon -->
+
+    <a href="./testp.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
+        <img id="homeProfileImage" src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" 
+             alt="Profile Icon" 
+             style="width: 35px; height: 35px; border-radius: 50%; margin-left: -170px;">
+    </a>
+    
+</li>
+
+
+
+<script>
+    
+    document.addEventListener("DOMContentLoaded", function() {
+    // Retrieve the saved avatar from localStorage
+    const savedAvatar = localStorage.getItem("selectedAvatar");
+
+    // If an avatar is saved, update the profile image
+    if (savedAvatar) {
+        const homeProfileImage = document.getElementById("homeProfileImage");
+        if (homeProfileImage) {
+            homeProfileImage.src = savedAvatar;
+        }
+    }
+});
+
+</script>
+
+
+<style>
+
+ /* Override the existing hover styles */
+ .navbar-nav .nav-item .profile-link:hover {
+     background-color: transparent !important; /* Remove background color */
+     border-radius: 0 !important; /* Reset border radius */
+     transform: none !important; /* Prevent scaling */
+ }
+
+</style>
+
+<script>
+
+    function toggleMenu() {
+        const menu = document.getElementById('profileMenu');
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('.profile-icon img')) {
+            const menu = document.getElementById('profileMenu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
             }
-        </style> -->
+        }
+    }
 
-        <!-- <script>
-
-            function toggleMenu() {
-                const menu = document.getElementById('profileMenu');
-                menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-            }
-
-            // Close the dropdown if the user clicks outside of it
-            window.onclick = function (event) {
-                if (!event.target.matches('.profile-icon img')) {
-                    const menu = document.getElementById('profileMenu');
-                    if (menu.style.display === 'block') {
-                        menu.style.display = 'none';
-                    }
-                }
-            }
-
-        </script>
+</script>
 
 
-        <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button> 
+        <!-- <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button>  -->
+<!-- for maintaining profile icon -->
+        <div class="profile-darkMode2">
+            <button id="darkModeToggle" style="width: 40px; height: 40px;">🌙</button> 
+            <a href="./testp.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="https://i.postimg.cc/tCL5Td4H/gold-membership-icon-default-avatar-profile-icon-membership-icon-social-media-user-image-illustratio.jpg" alt="Profile Icon" style="width: 35px; height: 35px; border-radius: 50%; margin-left: -170px;">
+               </a>
+            </li>
+        </div>
 
-    </nav>-->
+    </nav>
     
 
    <!-- <a href="AI suggestions.html"><i class="fas fa-robot"></i> AI Suggestions</a>
@@ -1046,46 +1108,64 @@
                     }
 
                     /* Rating Section Styling */
-                    .rating-group {
-                        display: flex;
-                        justify-content: center;
-                        gap: 8px;
-                        font-size: 24px;
-                        cursor: pointer;
+                    .star-rating {
+
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 10px;
+                    flex-direction: row-reverse;
+                    font-size: 3rem;
+                    gap: 25px;
+                    line-height: 1;
+
                     }
 
-                    /* Individual Star Styling */
-                    .rating-group i {
-                        color: #ccc;
-                        /* Default star color */
-                        transition: color 0.3s ease;
+                    .star-rating input {
+
+                    display: none; /* Hide the radio buttons */
+
+                    }
+                    .star-rating label {
+
+                    color: #4b5563; /* Default star color */
+                    cursor: pointer;
                     }
 
-                    /* Hover Effect */
-                    .rating-group i:hover,
-                    .rating-group i:hover~i {
-                        color: #f4d03f;
-                        /* Highlighted star color on hover */
+
+                    .star-rating input:checked ~ label {
+
+                    color: #d3f803;
+
+
                     }
 
-                    /* Selected Star Color */
-                    .rating-group .selected,
-                    .rating-group .selected~i {
-                        color: #ff8c00;
-                        /* Color when star is selected */
-                    }
+                    .star-rating label:hover,
+                            .star-rating label:hover ~ label {
+
+                                color: #c4da4b; /* Hover effect */
+                                
+
+                            }
                 </style>
 
-                <div class="form-group">
-                    <label for="rating">Rating</label>
-                    <div class="rating-group" id="rating-group">
-                        <i class="fas fa-star" data-value="1"></i>
-                        <i class="fas fa-star" data-value="2"></i>
-                        <i class="fas fa-star" data-value="3"></i>
-                        <i class="fas fa-star" data-value="4"></i>
-                        <i class="fas fa-star" data-value="5"></i>
-                    </div>
-                </div>
+<div class="feedback-box">
+
+    <form id="feedback-form" action="#" method="post">
+        <div class="star-rating" aria-label="Rating" role="radiogroup">
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5" title="5 stars">★</label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4" title="4 stars">★</label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3" title="3 stars">★</label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2" title="2 stars">★</label>
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1" title="1 star">★</label>
+
+        </div>
+
+      </div>
 
                 <script>
                     const stars = document.querySelectorAll('#rating-group i');
@@ -1264,11 +1344,11 @@
                 <p style="color: #b5fdf4;">Affordable adventures, unforgettable memories—explore with ease.</p>
                 <p style="color: #dcfffa;" class="follow-us">FOLLOW US ON HERE:</p>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
                 </div>
                 <button id="visitorCounter" class="btn btn-info text-white rounded">Visitors Count: 1</button>
             </div>
@@ -1701,6 +1781,10 @@
 </html>
 
 <script src="chatbot.js"></script>
+
+<script src="script.js"></script> <!-- Link to your service worker registration script -->
+
 </body>
 
 </html>
+</head>
