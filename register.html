@@ -67,6 +67,18 @@
         .form-field {
           margin-bottom: 15px;
         }
+
+        .back button {
+          width: 50%;
+          font-size: 14px;
+          font-weight: 500;
+          color: #fff;
+          background-color: orange;
+          border: none;
+          border-radius: 18px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
         
         .form-field label {
           display: block;
@@ -252,7 +264,9 @@
     </div>
     <div class="form-field">
         <button onclick="registerUser()">Register</button>
-        <a href="./index.html">Back to Home</a>
+    </div>
+    <div class="back">
+        <button><a href="./index.html">&#8592; Back to Home</a></button>
     </div>
     <div id="message" class="message"></div>
 </div>
