@@ -59,7 +59,19 @@ body {
 }
 
 .social-sidebar a:hover i {
-  transform: scale(1);
+  animation-name: spin;
+  animation-duration: 2500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .social-sidebar li a:hover {
@@ -69,13 +81,25 @@ body {
   transform: scale(1.1);
 }
 
+.social-sidebar li a:hover i.fa-meta {
+  color: #316ff6 !important;
+}
+
+.social-sidebar li a:hover i.fa-x-twitter {
+  color: #1da1f2 !important;
+}
+
+.social-sidebar li a:hover i.fa-instagram {
+  color: #e1306c !important;
+}
+
+.social-sidebar li a:hover i.fa-linkedin {
+  color: #0072b1 !important;
+}
+
 .social-sidebar i {
   display: inline-block;
   transition: transform 0.3s ease-in-out;
-}
-
-.social-sidebar a:hover i {
-  transform: scale(1.1);
 }
 
 .ticket-list {
@@ -1051,7 +1075,7 @@ button[type="submit"]:active {
     font-size: 0.9rem;
   }
   /* < main */
-  
+
   /* Form Group */
   .form-group {
     margin-bottom: 20px;
